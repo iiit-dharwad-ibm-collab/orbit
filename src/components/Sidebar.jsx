@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { href: "/knowledge", icon: "📚", label: "Knowledge Base" },
   { href: "/leaderboard", icon: "🏆", label: "Leaderboard" },
   { href: "/browse", icon: "🔍", label: "Browse & Export" },
+  { href: "/help", icon: "🧭", label: "Help & Training" },
 ];
 
 export default function Sidebar() {

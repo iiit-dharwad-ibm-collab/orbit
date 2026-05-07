@@ -106,6 +106,9 @@ export default function DashboardPage() {
           <button className="btn btn-secondary" onClick={() => router.push("/browse")}>
             🔍 Browse & Export
           </button>
+          <button className="btn btn-secondary" onClick={() => router.push("/help")}>
+            🧭 Help & Training
+          </button>
         </div>
       </main>
     </div>

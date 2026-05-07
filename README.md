@@ -29,14 +29,20 @@ Internal web app to create, manage, and export ITOps training examples with opti
   - generate structured dataset drafts
   - optional grounding from wiki search + Stack Overflow sources
   - concept registry support to reduce concept repetition
+- Annotation workflow:
+  - preserve the original `model_answer`
+  - capture `annotator_verdict` as `yes`/`no`
+  - store `annotator_answer` only when the verdict is `no`
+  - export the resolved final `answer` alongside the annotation fields
 
 ## Project Structure
 
 - `src/app/login`: sign-in page
 - `src/app/dashboard`: dataset and vector stats
-- `src/app/create`: manual + AI-assisted dataset creation
+- `src/app/create`: manual + AI-assisted dataset creation and annotation
 - `src/app/knowledge`: wiki docs and embedding management
 - `src/app/browse`: detail view + export
+- `src/app/help`: interactive page-by-page training guide
 - `src/app/api`: backend routes (auth, datasets, wiki, vectors, generate)
 - `src/lib/db.js`: Neon DB client + schema init
 - `src/lib/auth.js`: JWT + password helpers
@@ -132,6 +138,22 @@ AI + enrichment:
 - `GET /api/concepts`
 
 Most routes (except login/register) require `Authorization: Bearer <JWT>`.
+
+## Annotation Workflow
+
+Use the Create page as the annotation tool:
+
+1. Generate a draft in the AI tab or enter a model/proposed answer manually.
+2. Review the question, sources, and the preserved model answer.
+3. Mark the annotator verdict as `yes` if the answer is acceptable.
+4. Mark the verdict as `no` and provide `annotator_answer` when the answer needs correction.
+
+Saved and exported dataset rows keep:
+
+- `answer`: the final resolved answer used downstream
+- `model_answer`: the original model-generated/proposed answer
+- `annotator_verdict`: the required `yes`/`no` evaluation label
+- `annotator_answer`: the human correction when the verdict is `no`
 
 ## Data Model (high level)
 

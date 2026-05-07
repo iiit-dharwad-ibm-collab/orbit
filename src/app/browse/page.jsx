@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Sidebar from "@/components/Sidebar";
-import { apiJson, isLoggedIn, getUsername } from "@/lib/api";
+import { apiJson, isLoggedIn } from "@/lib/api";
 
 const QTYPE_ICON = { 0: "🔵", 1: "🟢", 2: "🟡" };
 const QTYPE_LABEL = { 0: "MCQ", 1: "QA", 2: "Reasoning" };
@@ -77,6 +77,27 @@ export default function BrowseExportPage() {
     try { return JSON.parse(state.content_json); } catch { return {}; }
   }
 
+  function getFinalAnswer(content) {
+    if (content.answer) return content.answer;
+    if (content.annotator_verdict === "no") return content.annotator_answer || "";
+    return content.model_answer || "";
+  }
+
+  function formatAnswerDisplay(content, value) {
+    const normalized = String(value || "").trim();
+    if (!normalized) return "—";
+    if ((content.qtype ?? 1) !== 0) return normalized;
+
+    const choiceMap = {
+      A: content.A || content.choices?.[0] || "",
+      B: content.B || content.choices?.[1] || "",
+      C: content.C || content.choices?.[2] || "",
+      D: content.D || content.choices?.[3] || "",
+    };
+    const choiceText = choiceMap[normalized];
+    return choiceText ? `${normalized} — ${choiceText}` : normalized;
+  }
+
   return (
     <div className="app-shell">
       <Sidebar />
@@ -84,7 +105,7 @@ export default function BrowseExportPage() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "1rem" }}>
           <div>
             <h1 className="page-title">Browse & Export</h1>
-            <p className="page-subtitle">Review, edit, and export your dataset</p>
+            <p className="page-subtitle">Review annotations, inspect preserved model answers, and export your dataset</p>
           </div>
           <button className="btn btn-primary" onClick={handleExport}>
             📥 Export JSON
@@ -115,6 +136,7 @@ export default function BrowseExportPage() {
                     let content = {};
                     try { content = JSON.parse(ex.latest_content || "{}"); } catch {}
                     const qt = content.qtype ?? 1;
+                    const verdict = content.annotator_verdict;
                     return (
                       <div
                         key={ex.id}
@@ -135,6 +157,13 @@ export default function BrowseExportPage() {
                             <div style={{ fontSize: "0.78rem", color: "#6B7280", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                               {content.question?.slice(0, 80) || "—"}
                             </div>
+                            {verdict && (
+                              <div style={{ marginTop: "0.2rem" }}>
+                                <span className={`pill ${verdict === "yes" ? "pill-green" : "pill-amber"}`}>
+                                  Review: {verdict.toUpperCase()}
+                                </span>
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -150,6 +179,7 @@ export default function BrowseExportPage() {
                 {detail.states?.length > 0 && (() => {
                   const content = parseContent(detail.states[0]);
                   const qt = content.qtype ?? 1;
+                  const finalAnswer = getFinalAnswer(content);
                   return (
                     <>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
@@ -157,6 +187,11 @@ export default function BrowseExportPage() {
                           <span className="pill pill-blue">{QTYPE_ICON[qt]} {QTYPE_LABEL[qt]}</span>
                           <span className="pill pill-green">👤 {detail.example?.account_label}</span>
                           <span className="pill pill-gray">v{detail.states[0].version}</span>
+                          {content.annotator_verdict && (
+                            <span className={`pill ${content.annotator_verdict === "yes" ? "pill-green" : "pill-amber"}`}>
+                              Review {content.annotator_verdict.toUpperCase()}
+                            </span>
+                          )}
                         </div>
                         <button className="btn btn-danger btn-sm" onClick={() => handleDelete(detail.example.id)}>
                           Delete
@@ -175,9 +210,9 @@ export default function BrowseExportPage() {
                             {["A", "B", "C", "D"].map((l) => (
                               <div key={l} style={{
                                 padding: "0.3rem 0.6rem",
-                                background: content.answer === l ? "#ECFDF5" : undefined,
+                                background: finalAnswer === l ? "#ECFDF5" : undefined,
                                 borderRadius: "6px",
-                                fontWeight: content.answer === l ? 600 : 400,
+                                fontWeight: finalAnswer === l ? 600 : 400,
                               }}>
                                 <strong>{l}.</strong> {content[l]}
                               </div>
@@ -186,10 +221,46 @@ export default function BrowseExportPage() {
                         </div>
                       )}
 
-                      <div className="form-group">
-                        <label className="form-label">Answer</label>
-                        <div className="card card-compact" style={{ background: "#ECFDF5", fontSize: "0.88rem" }}>{content.answer}</div>
-                      </div>
+                      {content.model_answer ? (
+                        <>
+                          <div className="form-group">
+                            <label className="form-label">Model Generated Answer</label>
+                            <div className="card card-compact" style={{ background: "#EFF6FF", fontSize: "0.88rem" }}>
+                              {formatAnswerDisplay(content, content.model_answer)}
+                            </div>
+                          </div>
+
+                          <div className="form-group">
+                            <label className="form-label">Annotator Verdict</label>
+                            <div className="card card-compact" style={{ background: "#F9FAFB", fontSize: "0.88rem" }}>
+                              {content.annotator_verdict ? content.annotator_verdict.toUpperCase() : "—"}
+                            </div>
+                          </div>
+
+                          {content.annotator_verdict === "no" && (
+                            <div className="form-group">
+                              <label className="form-label">Corrected Answer</label>
+                              <div className="card card-compact" style={{ background: "#FFFBEB", fontSize: "0.88rem" }}>
+                                {formatAnswerDisplay(content, content.annotator_answer)}
+                              </div>
+                            </div>
+                          )}
+
+                          <div className="form-group">
+                            <label className="form-label">Final Saved Answer</label>
+                            <div className="card card-compact" style={{ background: "#ECFDF5", fontSize: "0.88rem" }}>
+                              {formatAnswerDisplay(content, finalAnswer)}
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="form-group">
+                          <label className="form-label">Answer</label>
+                          <div className="card card-compact" style={{ background: "#ECFDF5", fontSize: "0.88rem" }}>
+                            {formatAnswerDisplay(content, finalAnswer)}
+                          </div>
+                        </div>
+                      )}
 
                       <div className="form-group">
                         <label className="form-label">Solution</label>

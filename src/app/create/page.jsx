@@ -19,7 +19,9 @@ export default function CreateEntryPage() {
   const [choiceB, setChoiceB] = useState("");
   const [choiceC, setChoiceC] = useState("");
   const [choiceD, setChoiceD] = useState("");
-  const [answer, setAnswer] = useState("");
+  const [modelAnswer, setModelAnswer] = useState("");
+  const [annotatorVerdict, setAnnotatorVerdict] = useState("");
+  const [annotatorAnswer, setAnnotatorAnswer] = useState("");
   const [solution, setSolution] = useState("");
   const [reasoning, setReasoning] = useState("");
   const [concepts, setConcepts] = useState("");
@@ -86,6 +88,65 @@ export default function CreateEntryPage() {
     const name = c.concept || c;
     return name.toLowerCase().includes(conceptFilter.toLowerCase());
   });
+
+  const hasLockedModelAnswer = aiModelUsed !== "manual_entry" && Boolean(modelAnswer.trim());
+
+  function renderAnswerInput(value, onChange, rows = 2, disabled = false) {
+    if (qtype === 0) {
+      return (
+        <select className="form-select" value={value} onChange={(e) => onChange(e.target.value)} disabled={disabled}>
+          <option value="">Select...</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>
+      );
+    }
+    return (
+      <textarea
+        className="form-textarea"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        rows={rows}
+        disabled={disabled}
+      />
+    );
+  }
+
+  function formatAnswerForDisplay(value) {
+    const normalized = String(value || "").trim();
+    if (!normalized) return "—";
+    if (qtype !== 0) return normalized;
+
+    const choiceMap = { A: choiceA, B: choiceB, C: choiceC, D: choiceD };
+    const choiceText = choiceMap[normalized];
+    return choiceText ? `${normalized} — ${choiceText}` : normalized;
+  }
+
+  function getResolvedAnswer() {
+    if (annotatorVerdict === "no") {
+      return annotatorAnswer.trim();
+    }
+    return modelAnswer.trim();
+  }
+
+  function resetEntryFields() {
+    setDatasetId("");
+    setQuestion("");
+    setChoiceA("");
+    setChoiceB("");
+    setChoiceC("");
+    setChoiceD("");
+    setModelAnswer("");
+    setAnnotatorVerdict("");
+    setAnnotatorAnswer("");
+    setSolution("");
+    setReasoning("");
+    setConcepts("");
+    setSelectedSources([]);
+    setAiModelUsed("manual_entry");
+  }
 
   /* ── Concept Picker Component ──────── */
   function ConceptPicker() {
@@ -238,7 +299,9 @@ export default function CreateEntryPage() {
       setDatasetId(draft.id || "");
       setQtype(draft.qtype ?? 1);
       setQuestion(draft.question || "");
-      setAnswer(draft.answer || "");
+      setModelAnswer(draft.answer || "");
+      setAnnotatorVerdict("");
+      setAnnotatorAnswer("");
       setSolution(draft.solution || "");
       setReasoning(draft.reasoning_thought || "");
 
@@ -252,6 +315,11 @@ export default function CreateEntryPage() {
         setChoiceB(draft.B || draft.choices?.[1] || "");
         setChoiceC(draft.C || draft.choices?.[2] || "");
         setChoiceD(draft.D || draft.choices?.[3] || "");
+      } else {
+        setChoiceA("");
+        setChoiceB("");
+        setChoiceC("");
+        setChoiceD("");
       }
       setTab("manual");
       setAiModelUsed(`${data.provider || decoderProvider}:${data.model || decoderModel}`);
@@ -265,18 +333,27 @@ export default function CreateEntryPage() {
 
   /* ── Save ──────────────────────────── */
   async function handleSave() {
-    if (!datasetId.trim() || !question.trim() || !answer.trim() || !solution.trim()) {
-      setMsg({ type: "error", text: "ID, Question, Answer, and Solution are required." });
+    if (!datasetId.trim() || !question.trim() || !modelAnswer.trim() || !solution.trim()) {
+      setMsg({ type: "error", text: "ID, Question, Model / Proposed Answer, and Solution are required." });
       return;
     }
     if (qtype === 0 && (!choiceA || !choiceB || !choiceC || !choiceD)) {
       setMsg({ type: "error", text: "All 4 MCQ choices are required." });
       return;
     }
+    if (annotatorVerdict !== "yes" && annotatorVerdict !== "no") {
+      setMsg({ type: "error", text: "Select Yes or No for the annotator evaluation." });
+      return;
+    }
+    if (annotatorVerdict === "no" && !annotatorAnswer.trim()) {
+      setMsg({ type: "error", text: "Provide a corrected answer when the annotator verdict is No." });
+      return;
+    }
 
     setLoading(true);
     try {
       const conceptList = currentConcepts;
+      const resolvedAnswer = getResolvedAnswer();
       const content = {
         id: datasetId.trim(),
         question: question.trim(),
@@ -284,7 +361,11 @@ export default function CreateEntryPage() {
         choices: qtype === 0 ? [choiceA, choiceB, choiceC, choiceD] : [],
         A: qtype === 0 ? choiceA : "", B: qtype === 0 ? choiceB : "",
         C: qtype === 0 ? choiceC : "", D: qtype === 0 ? choiceD : "",
-        answer: answer.trim(),
+        answer: resolvedAnswer,
+        model_answer: modelAnswer.trim(),
+        annotator_verdict: annotatorVerdict,
+        annotator_answer: annotatorVerdict === "no" ? annotatorAnswer.trim() : "",
+        answer_source: annotatorVerdict === "no" ? "annotator_override" : "model_approved",
         solution: solution.trim(),
         reasoning_thought: reasoning.trim(),
         concept_coverage: conceptList,
@@ -313,11 +394,7 @@ export default function CreateEntryPage() {
 
       setMsg({ type: "success", text: `Example #${data.id} created successfully!` });
       apiJson("/api/concepts").then(setConceptRegistry).catch(() => {});
-
-      setDatasetId(""); setQuestion(""); setAnswer(""); setSolution("");
-      setReasoning(""); setConcepts(""); setChoiceA(""); setChoiceB("");
-      setChoiceC(""); setChoiceD(""); setSelectedSources([]);
-      setAiModelUsed("manual_entry");
+      resetEntryFields();
     } catch (err) {
       setMsg({ type: "error", text: err.message });
     } finally {
@@ -325,12 +402,23 @@ export default function CreateEntryPage() {
     }
   }
 
+  const resolvedAnswer = getResolvedAnswer();
+
   return (
     <div className="app-shell">
       <Sidebar />
       <main className="main-content">
-        <h1 className="page-title">Create Entry</h1>
-        <p className="page-subtitle">Build a new dataset example</p>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", gap: "1rem", marginBottom: "1rem" }}>
+          <div>
+            <h1 className="page-title">Create & Annotate Entry</h1>
+            <p className="page-subtitle" style={{ marginBottom: 0 }}>
+              Review model answers, capture a yes/no annotation, and save the final dataset answer
+            </p>
+          </div>
+          <button type="button" className="btn btn-secondary" onClick={resetEntryFields}>
+            Reset Form
+          </button>
+        </div>
 
         <div className="tabs">
           <button className={`tab ${tab === "manual" ? "active" : ""}`} onClick={() => setTab("manual")}>
@@ -339,6 +427,19 @@ export default function CreateEntryPage() {
           <button className={`tab ${tab === "ai" ? "active" : ""}`} onClick={() => setTab("ai")}>
             AI Assisted
           </button>
+        </div>
+
+        <div className="card" style={{ background: "#EFF6FF", borderColor: "#BFDBFE", marginBottom: "1rem" }}>
+          <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.75rem" }}>How to use the annotation tool</h3>
+          <ol style={{ paddingLeft: "1.1rem", color: "#1E3A8A", fontSize: "0.85rem", display: "grid", gap: "0.45rem" }}>
+            <li>Generate a draft in the AI tab or enter a model/proposed answer manually.</li>
+            <li>Review the question, sources, and the preserved model answer before saving.</li>
+            <li>Mark <strong>Yes</strong> if the model answer is acceptable, or <strong>No</strong> if it needs correction.</li>
+            <li>If you choose <strong>No</strong>, provide the corrected answer. The export keeps both the final answer and the original model answer.</li>
+          </ol>
+          <div style={{ fontSize: "0.8rem", color: "#1D4ED8", marginTop: "0.75rem" }}>
+            Saved entries include <code>answer</code> for the final value, plus <code>model_answer</code>, <code>annotator_verdict</code>, and <code>annotator_answer</code> for evaluation.
+          </div>
         </div>
 
         {msg.text && <div className={`alert alert-${msg.type}`}>{msg.text}</div>}
@@ -552,9 +653,12 @@ export default function CreateEntryPage() {
 
         {/* Manual entry form (also where AI drafts land) */}
         <div className="card">
-          <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "1rem" }}>
+          <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.45rem" }}>
             {tab === "ai" ? "Review & Edit Draft" : "Entry Details"}
           </h3>
+          <p style={{ fontSize: "0.82rem", color: "#6B7280", marginBottom: "1rem" }}>
+            The human annotation is captured as a yes/no verdict. If the verdict is No, add the corrected answer and the saved export will keep both values.
+          </p>
 
           <div className="form-row">
             <div className="form-group">
@@ -598,19 +702,68 @@ export default function CreateEntryPage() {
           )}
 
           <div className="form-group">
-            <label className="form-label">Answer {qtype === 0 ? "(A/B/C/D)" : ""}</label>
-            {qtype === 0 ? (
-              <select className="form-select" value={answer} onChange={(e) => setAnswer(e.target.value)}>
-                <option value="">Select...</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-              </select>
+            <label className="form-label">{hasLockedModelAnswer ? "Model Generated Answer" : "Model / Proposed Answer"} {qtype === 0 ? "(A/B/C/D)" : ""}</label>
+            {hasLockedModelAnswer ? (
+              <div className="card card-compact" style={{ background: "#EFF6FF", fontSize: "0.88rem" }}>
+                {formatAnswerForDisplay(modelAnswer)}
+              </div>
             ) : (
-              <textarea className="form-textarea" value={answer} onChange={(e) => setAnswer(e.target.value)} rows={2} />
+              renderAnswerInput(modelAnswer, setModelAnswer)
             )}
+            <div style={{ fontSize: "0.78rem", color: "#6B7280", marginTop: "0.35rem" }}>
+              {hasLockedModelAnswer
+                ? "This original model answer is locked and preserved automatically for evaluation."
+                : "Enter the model or proposed answer first, then record the annotator verdict below."}
+            </div>
           </div>
+
+          <div className="form-group">
+            <label className="form-label">Annotator Verdict</label>
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+              <button
+                type="button"
+                className={`btn ${annotatorVerdict === "yes" ? "btn-primary" : "btn-secondary"}`}
+                onClick={() => setAnnotatorVerdict("yes")}
+              >
+                Yes, keep the answer
+              </button>
+              <button
+                type="button"
+                className={`btn ${annotatorVerdict === "no" ? "btn-danger" : "btn-secondary"}`}
+                onClick={() => setAnnotatorVerdict("no")}
+              >
+                No, provide a correction
+              </button>
+            </div>
+            <div style={{ fontSize: "0.78rem", color: "#6B7280", marginTop: "0.35rem" }}>
+              This yes/no annotation is saved as the evaluation label.
+            </div>
+          </div>
+
+          {annotatorVerdict === "no" && (
+            <div className="form-group">
+              <label className="form-label">Corrected Answer {qtype === 0 ? "(A/B/C/D)" : ""}</label>
+              {renderAnswerInput(annotatorAnswer, setAnnotatorAnswer)}
+            </div>
+          )}
+
+          {resolvedAnswer && (
+            <div className="form-group">
+              <label className="form-label">Final Saved Answer</label>
+              <div
+                className="card card-compact"
+                style={{ background: annotatorVerdict === "no" ? "#FFFBEB" : "#ECFDF5", fontSize: "0.88rem" }}
+              >
+                {formatAnswerForDisplay(resolvedAnswer)}
+              </div>
+            </div>
+          )}
+
+          {annotatorVerdict === "no" && (
+            <div className="alert alert-warning" style={{ marginBottom: "1rem" }}>
+              The export will keep the original <code>model_answer</code> and save your correction as the final <code>answer</code>.
+            </div>
+          )}
 
           <div className="form-group">
             <label className="form-label">Solution</label>
