@@ -50,6 +50,7 @@ const KNOWN_TOPICS = [
   { canonical: "openshift", aliases: ["openshift"] },
   { canonical: "observability", aliases: ["observability"] },
   { canonical: "monitoring", aliases: ["monitoring"] },
+  { canonical: "grafana", aliases: ["grafana"] },
   { canonical: "finops", aliases: ["finops"] },
   { canonical: "rightsizing", aliases: ["rightsizing"] },
   { canonical: "utilization", aliases: ["utilization"] },
@@ -164,4 +165,18 @@ export function isUsefulTopic(value) {
   if (STOP_TOPICS.has(normalized)) return false;
   if (extractKnownTopicsFromText(raw).length > 0) return true;
   return isUsefulFallbackTopic(raw);
+}
+
+export function filterKnownTopics(values = []) {
+  const topics = [];
+  const seen = new Set();
+  const list = Array.isArray(values) ? values : [values];
+
+  for (const value of list) {
+    for (const topic of extractKnownTopicsFromText(value)) {
+      addTopic(topics, seen, topic);
+    }
+  }
+
+  return topics;
 }

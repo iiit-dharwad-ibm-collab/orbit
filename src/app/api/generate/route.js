@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 import { getUser, unauthorized } from "@/lib/auth";
-import { deriveTopicCoverage } from "@/lib/topics";
+import { deriveTopicCoverage, filterKnownTopics } from "@/lib/topics";
 
 const GEMINI_MODELS = ["gemini-3-flash-preview", "gemini-2.5-flash"];
 const OLLAMA_BASE_URL = process.env.OLLAMA_BASE_URL || "http://localhost:11434";
@@ -151,7 +151,7 @@ ${groundingBlob.slice(0, 18000)}`;
       result.concept_coverage = result.concept_coverage ? [String(result.concept_coverage)] : [];
     }
     if (!Array.isArray(result.choices)) result.choices = [];
-    result.concept_coverage = deriveTopicCoverage({
+    const derivedConcepts = deriveTopicCoverage({
       concepts: [...selected_concepts, ...result.concept_coverage],
       question: result.question || objective,
       grounding: grounding_sources.map((source) => ({
@@ -160,6 +160,11 @@ ${groundingBlob.slice(0, 18000)}`;
       })),
       sources: grounding_sources,
     });
+    result.concept_coverage = filterKnownTopics([
+      ...selected_concepts,
+      ...derivedConcepts,
+      result.question || objective,
+    ]);
 
     return Response.json({
       draft: result,
