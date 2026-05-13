@@ -140,21 +140,6 @@ export function deriveTopicCoverage({
     }
   }
 
-  if (topics.length === 0) {
-    for (const text of textPool) {
-      const normalized = normalizeSpaces(text);
-      if (!normalized) continue;
-      const tokens = normalized.split(" ");
-      for (const token of tokens) {
-        if (STOP_TOPICS.has(token)) continue;
-        if (token.length < 3) continue;
-        if (/\d/.test(token)) continue;
-        addTopic(topics, seen, token);
-      }
-      if (topics.length > 0) break;
-    }
-  }
-
   return topics.slice(0, 5);
 }
 
