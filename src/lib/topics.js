@@ -163,5 +163,12 @@ export function filterKnownTopics(values = []) {
     }
   }
 
+  if (topics.length > 0) return topics;
+
+  for (const value of list) {
+    if (!isUsefulTopic(value)) continue;
+    addTopic(topics, seen, value);
+  }
+
   return topics;
 }
