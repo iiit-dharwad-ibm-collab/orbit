@@ -1,4 +1,5 @@
 import json
+import random
 from datetime import datetime
 from pathlib import Path
 
@@ -28,6 +29,10 @@ if "annotations" not in st.session_state:
     st.session_state.annotations = {}
 if "item_index" not in st.session_state:
     st.session_state.item_index = 0
+if "item_order" not in st.session_state:
+    st.session_state.item_order = []
+if "order_key" not in st.session_state:
+    st.session_state.order_key = ""
 
 with st.sidebar:
     st.header("Annotator Login")
@@ -76,7 +81,17 @@ if not items_sorted:
     st.warning("No items found in combined_export.json")
     st.stop()
 
-max_index = len(items_sorted) - 1
+order_key = f"{st.session_state.annotator}:{len(items_sorted)}"
+if st.session_state.order_key != order_key or len(st.session_state.item_order) != len(items_sorted):
+    rng = random.Random(order_key)
+    st.session_state.item_order = list(items_sorted)
+    rng.shuffle(st.session_state.item_order)
+    st.session_state.order_key = order_key
+    st.session_state.item_index = 0
+
+items_ordered = st.session_state.item_order
+
+max_index = len(items_ordered) - 1
 if st.session_state.item_index > max_index:
     st.session_state.item_index = max_index
 
@@ -85,12 +100,12 @@ with nav_col1:
     if st.button("Previous") and st.session_state.item_index > 0:
         st.session_state.item_index -= 1
 with nav_col2:
-    st.markdown(f"**Item {st.session_state.item_index + 1} of {len(items_sorted)}**")
+    st.markdown(f"**Item {st.session_state.item_index + 1} of {len(items_ordered)}**")
 with nav_col3:
     if st.button("Next") and st.session_state.item_index < max_index:
         st.session_state.item_index += 1
 
-item = items_sorted[st.session_state.item_index]
+item = items_ordered[st.session_state.item_index]
 item_id = item.get("id")
 question = item.get("question", "")
 qtype = int(item.get("qtype", 0))
