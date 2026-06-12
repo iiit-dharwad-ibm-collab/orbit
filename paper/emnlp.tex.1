@@ -1,0 +1,161 @@
+\documentclass[11pt]{article}
+\usepackage[review]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{inconsolata}
+\usepackage{graphicx}
+
+
+
+\title{ORBIT: Objective Reasoning Benchmark for IT Automation}
+% A Reasoning Benchmark for IT Automation
+
+% Author information can be set in various styles:
+% For several authors from the same institution:
+% \author{Author 1 \and ... \and Author n \\
+%         Address line \\ ... \\ Address line}
+% if the names do not fit well on one line use
+%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
+% For authors from different institutions:
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \And  ... \And
+%         Author n \\ Address line \\ ... \\ Address line}
+% To start a separate ``row'' of authors use \AND, as in
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \AND
+%         Author 2 \\ Address line \\ ... \\ Address line \And
+%         Author 3 \\ Address line \\ ... \\ Address line}
+
+\author{First Author \\
+  Affiliation / Address line 1 \\
+  Affiliation / Address line 2 \\
+  Affiliation / Address line 3 \\
+  \texttt{email@domain} \\\And
+  Second Author \\
+  Affiliation / Address line 1 \\
+  Affiliation / Address line 2 \\
+  Affiliation / Address line 3 \\
+  \texttt{email@domain} \\}
+
+%\author{
+%  \textbf{First Author\textsuperscript{1}},
+%  \textbf{Second Author\textsuperscript{1,2}},
+%  \textbf{Third T. Author\textsuperscript{1}},
+%  \textbf{Fourth Author\textsuperscript{1}},
+%\\
+%  \textbf{Fifth Author\textsuperscript{1,2}},
+%  \textbf{Sixth Author\textsuperscript{1}},
+%  \textbf{Seventh Author\textsuperscript{1}},
+%  \textbf{Eighth Author \textsuperscript{1,2,3,4}},
+%\\
+%  \textbf{Ninth Author\textsuperscript{1}},
+%  \textbf{Tenth Author\textsuperscript{1}},
+%  \textbf{Eleventh E. Author\textsuperscript{1,2,3,4,5}},
+%  \textbf{Twelfth Author\textsuperscript{1}},
+%\\
+%  \textbf{Thirteenth Author\textsuperscript{3}},
+%  \textbf{Fourteenth F. Author\textsuperscript{2,4}},
+%  \textbf{Fifteenth Author\textsuperscript{1}},
+%  \textbf{Sixteenth Author\textsuperscript{1}},
+%\\
+%  \textbf{Seventeenth S. Author\textsuperscript{4,5}},
+%  \textbf{Eighteenth Author\textsuperscript{3,4}},
+%  \textbf{Nineteenth N. Author\textsuperscript{2,5}},
+%  \textbf{Twentieth Author\textsuperscript{1}}
+%\\
+%\\
+%  \textsuperscript{1}Affiliation 1,
+%  \textsuperscript{2}Affiliation 2,
+%  \textsuperscript{3}Affiliation 3,
+%  \textsuperscript{4}Affiliation 4,
+%  \textsuperscript{5}Affiliation 5
+%\\
+%  \small{
+%    \textbf{Correspondence:} \href{mailto:email@domain}{email@domain}
+%  }
+%}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+
+\end{abstract}
+
+\section{Introduction}\label{sec1}
+
+% current landscape of the domain of the study
+% Problem statement & Motivation
+% How is our study a solution to the problem statement identified? Implications and Applications of the Study
+
+The rapid proliferation of complex, distributed IT infrastructures has elevated Application Performance Management (APM) and Site Reliability Engineering (SRE) to mission-critical disciplines, in which operational teams must continuously reason across heterogeneous telemetry streams, system logs, and dynamic configuration states under stringent time constraints. The convergence of AIOps, defined by the systematic integration of machine learning into ITOps workflows, with large language models (LLMs) has catalyzed a fundamental paradigm shift toward intelligent, automated operational reasoning. Empirical evidence indicates that 60\% of enterprises are projected to adopt DevOps analytics tooling, reflecting broad institutional recognition that manual incident triage and workflow bookkeeping are computationally insufficient at scale. Currently, frontier models have demonstrated consistent performance across many tasks, including document summarization, reviews, coding, debugging, test case generation, issue resolution, and general reasoning. 
+
+Despite these advances, a structurally persistent gap persists between offline benchmark performance and real-world operational deployment reliability. Evaluations, including SWE-bench, ITBench, and OpsEval, are respectively code-centric, execution-centric, or constrained to single-turn question-answering paradigms, none of which capture the diagnostic, multi-step inferential structure that is intrinsic to benchmarking the reasoning aspects required to execute ITOps workflows. Critically, no existing benchmark simultaneously provides multi-step reasoning annotations grounded in realistic operational contexts, while pervasive privacy restrictions further constrain real-world data accessibility, rendering targeted LLM capability assessment fundamentally infeasible.
+
+This paper directly addresses the identified gap by introducing a reasoning benchmark explicitly constructed for IT automation, systematically grounded in operational wikis and practitioner forums, sources that authentically encode the diagnostic heuristics and inferential patterns employed by domain experts. By synthesizing knowledge from Application Monitoring Management tools (APMs) such as Instana, Datadogs, Dynatrace, etc., documentations and real-world incident-resolution discourses on Reddit, Stack Overflow platforms, the proposed dataset provides multi-step reasoning annotations anchored in executable operational contexts, enabling rigorous LLM evaluation under realistic conditions. This resource facilitates targeted diagnosis of model failure modes, particularly long-context localization and multi-hop causal inference, advancing self-aware, auto-healing system development, while simultaneously serving as a structured fine-tuning foundation for production-oriented, operationally grounded AI reasoning systems.
+
+% Taxonomy diagram of the dataset
+
+% Contributions
+
+This paper makes the following contributions:
+\begin{itemize}
+    \item A well-curated reasoning benchmark dataset for ITOps, systematically grounded in operational wikis and practitioner forums, providing multi-step reasoning annotations anchored in authentic diagnostic and incident-resolution contexts.
+    \item An extensive benchmarking study evaluating large language models across operationally grounded multi-step reasoning tasks, enabling targeted diagnosis of model failure modes, particularly long-context localization and multi-hop causal inference, under realistic IT automation conditions.
+\end{itemize}
+
+% Organization of the research study
+
+The paper is organized as follows. Section~\ref{sec2} reviews related works; Section~\ref{sec3} details the dataset construction methodology; Section~\ref{sec:impl} describes the annotation system implementation; Section~\ref{sec4} presents the experimental setup and benchmarking results; and Section~\ref{sec5} concludes with key findings and future directions.
+
+\section{Related Works}\label{sec2}
+
+% The Evolution of ITOps to AIOps
+% The Role of Generative AI in Automation
+% Evaluating AI Reasoning in Operations
+% Dataset Construction Methodologies
+% Research Gap
+
+The transition from traditional ITOps to AIOps has introduced intelligent, automated paradigms that fundamentally reshape infrastructure management. \cite{dang2019aiops} synthesize real-world AIOps experiences from Microsoft, noting that 60\% of firms will adopt DevOps analytics by 2024, while identifying persistent limitations including poor data quality, missing ground-truth labels, and complex system dependencies. This foundational work advocates for continuous academia-industry collaboration to build self-aware, auto-healing systems. Complementing this, \cite{zheng2023survey} systematically surveyed 134 papers on Code LLMs, demonstrating that code-specialized models consistently outperform general-purpose counterparts, establishing the technical foundation for deploying intelligent operational tooling at scale.
+
+Generative AI has demonstrated strong potential for operational automation, yet a recurring gap between offline benchmark performance and real-world operational reliability persists across approaches. \cite{sacco2025intent} showed this through Kubernetes manifest generation, where LoRA accelerated training by 3× and reduced memory by 45\%, while full fine-tuning retained superior task accuracy, revealing that efficiency optimizations trade against fidelity. \cite{saha-etal-2024-sequential} advanced sequential API evaluation through GraphQLRestBench, yet non-executable settings limit operational transferability. \cite{shan2025rca} introduced RCACopilot, where few-shot retrieval achieved 0.95 BERTScore F1 against 0.66 zero-shot, confirming that grounding consistently improves reliability but remains architecturally contingent on retrieval quality.
+
+Current benchmarks consistently expose deep, structurally specific failures in AI reasoning under realistic operational conditions. \cite{jimenez2023swe} introduced SWE-bench across 2,294 real GitHub issues, where Claude 2 resolved only 1.96\%, reflecting empirically observed failures in long-context code localization. \cite{jha2025itbench} deployed ITBench across 94 Kubernetes-grounded tasks, where GPT-4o resolved 0\% of FinOps and only 13.8\% of SRE scenarios. Execution non-determinism from live telemetry and incomplete observability were identified as the primary failure drivers. These results empirically demonstrate that operational reasoning demands multi-step, execution-aware judgment that current models struggle to sustain across realistic task conditions.
+
+These empirical failures are linked to a primary bottleneck at the dataset level. Robust dataset construction is imperative for reliably assessing AI. LogPPT \cite{le2023log} achieves 0.923 Group Accuracy across sixteen log datasets through an adaptive random sampling algorithm for few-shot learning, and GraphQLRestBench \cite{saha-etal-2024-sequential} constructs sequential API pipelines, yet both remain narrowly scoped to single-step operational sub-tasks. \cite{liu2025opseval} further confirms that privacy restrictions severely constrain real-world data access. Critically, no existing dataset provides multi-step reasoning annotations grounded in authentic operational contexts. Because benchmark failures trace specifically to execution-aware, multi-step reasoning, and current datasets do not capture that reasoning structure, the design of annotations represents a primary bottleneck to further progress.
+
+\textbf{Research Gap:} Despite notable advances, no existing resource simultaneously combines operational knowledge, multi-step reasoning structure, and realistic execution context. ITBench \cite{jha2025itbench}, OpsEval \cite{liu2025opseval}, and SWE-bench \cite{jimenez2023swe} are respectively execution-centric, QA-style, and code-centric. Adapting these resources is insufficient because their annotation schemas do not capture the diagnostic, multi-step inference characteristic of real ITOps workflows. Furthermore, \cite{dang2019aiops} and \cite{sacco2025intent} highlight compounding limitations, including missing ground-truth labels, scarce datasets, and ongoing reasoning collapse in models. This paper directly addresses this gap by constructing a reasoning dataset grounded in operational wikis and practitioner forums, enabling targeted evaluation of LLM analytical capabilities within operationally grounded contexts.
+
+\section{Proposed Dataset}\label{sec3}
+
+\section{Implementation}\label{sec:impl}
+
+To operationalize the construction methodology in Section~\ref{sec3}, we developed a purpose-built annotation platform that unifies retrieval, model-assisted drafting, and expert review within a single human-in-the-loop curation pipeline. The platform is organized around four design commitments that reflect the requirements of grounded, multi-step reasoning data: (i) full provenance and revision history for every example, (ii) semantic retrieval over a curated operational knowledge base, (iii) external grounding against authoritative practitioner discourse, and (iv) explicit mechanisms for enforcing conceptual diversity across the dataset.
+
+\paragraph{Versioned annotation store.} Each example is represented as an immutable identity paired with an append-only sequence of states. Every annotator edit produces a new versioned state that records the example payload, the reasoning trace, the attributed model or annotator, and a change note, so the dataset retains a complete audit trail rather than only its final form. Each state is linked to the specific grounding sources used at generation time, preserving traceability between the produced reasoning and the evidence that justified it.
+
+\paragraph{Retrieval-grounded knowledge base.} Operational wikis and APM documentation are ingested through an HTML-aware normalization pipeline that preserves code and structural cues before sentence-aware chunking. Chunks are encoded with a dense embedding model and indexed in a vector store, enabling semantic retrieval over heterogeneous operational sources. At annotation time, an annotator's natural-language query returns ranked passages by cosine similarity, which are then offered as candidate grounding for the example under construction.
+
+\paragraph{Practitioner ground truth.} To complement curated documentation with authoritative practitioner discourse, the platform integrates Stack Overflow as an external ground-truth source. Top-voted answers are retrieved and tagged so that the drafting model is instructed to align its outputs with them, while retrieved wiki passages are treated as material to be verified rather than copied. This separation of evidence roles directly supports the multi-hop, evidence-anchored reasoning targeted by the benchmark.
+
+\paragraph{Model-assisted drafting with diversity control.} Annotators may author examples manually or request a draft from a frontier LLM, conditioned on the user objective, the selected grounding sources, and the target task format (multiple-choice, open-ended QA, or multi-step reasoning). To prevent topical collapse across a benchmark of this kind, a concept registry tracks every concept that has already been used and is injected into the prompt as a do-not-repeat constraint, while annotator-pinned concepts are injected as must-include constraints. The model returns a structured draft that is parsed into the canonical example schema and routed into the same review interface used for manual entry, where an expert verifies, edits, and commits it as the first version of the example.
+
+\paragraph{Annotator workflow.} The interface presents manual and assisted drafting as two entry points into a shared review surface, so every example---regardless of origin---passes through human verification before being persisted. Selected retrieval hits and Stack Overflow answers accumulate into a unified source list that is forwarded both to the drafting prompt and to the example's provenance record, ensuring that the evidence visible to the model is exactly the evidence stored with the final annotation. Completed examples are exported in a normalized JSON format suitable for downstream benchmarking.
+
+\section{Experiments}\label{sec4}
+\section{Conclusion}\label{sec5}
+
+\bibliography{custom}
+
+%\appendix
+
+%\section{Example Appendix}
+%\label{sec:appendix}
+
+%This is an appendix.
+
+\end{document}
+
+
