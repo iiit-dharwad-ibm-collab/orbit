@@ -13,26 +13,38 @@ statement, candidate responses, a verified answer, structured reasoning traces, 
 links to grounding sources. The corpus is intentionally designed to evaluate operational
 decision-making rather than isolated factual recall.
 
-## Pipeline
+## Directories
 
-ORBIT is built through a human-in-the-loop curation pipeline:
+Each directory is one stage in the lifecycle of the dataset — building it, evaluating models on
+it, letting people play against it, and measuring how uncertain models are when answering it.
 
-1. **Data Generation & Collection** — retrieval-augmented, AI-assisted synthesis of reasoning
-   instances from a curated operational knowledge base.
-2. **Multi-Annotation** — independent annotators validate examples and establish inter-annotator
-   agreement / consensus.
-3. **Uncertainty Quantification** — Snorkel/UQ analysis characterising how hard the dataset is
-   (semantic consistency, semantic entropy, difficulty).
-4. **Benchmarking** — evaluation of frontier LLMs across the multi-step reasoning tasks.
+### `Dataset-Annotator/` — building the reasoning dataset
+The tool that **creates the ORBIT reasoning dataset**. A Next.js app that grounds authoring in
+operational knowledge (RAG over APM docs, wikis, and practitioner forums), assists drafting with an
+LLM, and tracks full provenance and versioning for every question. This is where the dataset
+itself comes from. *(orig. `rakshverma/Dataset-Annotator`; paper Sec. 4.1 / 5)*
 
-## Repository layout
+### `benchmark/` — evaluating models on the dataset
+Runs **benchmarks against the dataset with different models**. Uses `llm_agent.py`, a single client
+that fans out to multiple hosting platforms (RITS, WatsonX, OpenAI, Anthropic, LiteLLM), so the
+same ORBIT questions can be scored across frontier and open models. *(paper Sec. 6)*
 
-| Directory | Role | Paper |
-|-----------|------|-------|
-| `Dataset-Annotator/` | Next.js dataset annotation & generation platform — RAG over operational knowledge, AI-assisted drafting, provenance tracking (orig. `rakshverma/Dataset-Annotator`) | Sec. 4.1 / 5 |
-| `IAA-Labelling/` | Streamlit multi-annotator labelling UI — inter-annotator agreement and consensus over the dataset (orig. `rakshit-verma1/IAA-Labelling`) | Sec. 4.2 |
-| `uq/` | Uncertainty quantification — Snorkel/UQ analysis of dataset difficulty and label quality | Sec. 4.3 |
-| `benchmark/` | LLM benchmarking harness — runs experiments over the ORBIT dataset | Sec. 6 |
-| `paper/` | LaTeX sources (`icse_2027.tex`, `ref.bib`) | — |
+### `IAA-Labelling/` — gamifying the dataset for people
+A **gamified quiz** built on the reasoning dataset: it presents ORBIT questions to a person so they
+can **test their own IT-automation knowledge** and see how they score against the verified answers.
+A Streamlit UI backed by Postgres. *(The directory name is historical — it began as an
+inter-annotator labelling tool. orig. `rakshit-verma1/IAA-Labelling`; paper Sec. 4.2)*
 
-The two tools were previously separate repositories, merged here with their git history preserved.
+### `uq/` — quantifying uncertainty in answering
+**Further experiments to quantify the uncertainty** in answering the ORBIT questions — how
+confident (or not) a model is, and how hard each question is. Built on
+[lm-polygraph](https://github.com/IINemo/lm-polygraph), tied to the paper's semantic-entropy and
+semantic-consistency metrics. *(paper Sec. 4.3)*
+
+### `paper/` — the write-up
+LaTeX sources for the ICSE 2027 paper (`icse_2027.tex`, `ref.bib`).
+
+---
+
+`Dataset-Annotator/` and `IAA-Labelling/` were previously separate repositories, merged here with
+their git history preserved.
