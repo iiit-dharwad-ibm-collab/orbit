@@ -1,0 +1,59 @@
+{
+  "approach": "reference-only (documents NOT vendored; public repo)",
+  "source_repo": "balajinix/itopsgraph_docs",
+  "source_commit": "503c19aac8594f5fde3780b6c9a6d42272979fb2",
+  "mapped_docs": 2001,
+  "unresolved": [],
+  "rewrites_sample": [
+    {
+      "id": "DP-00032",
+      "from": "Product_watsonx-orchestrate.html",
+      "to": "wiki_pages/Product_watsonx-orchestrate.html"
+    },
+    {
+      "id": "DP-00016",
+      "from": "Category_Proto.html",
+      "to": "wiki_pages/Category_Proto.html"
+    },
+    {
+      "id": "DP-00029",
+      "from": "Product_instana.html",
+      "to": "wiki_pages/Product_instana.html"
+    },
+    {
+      "id": "DP-00001",
+      "from": "Category_aws.html",
+      "to": "wiki_pages/Category_aws.html"
+    },
+    {
+      "id": "DP-00002",
+      "from": "Category_azure.html",
+      "to": "wiki_pages/Category_azure.html"
+    },
+    {
+      "id": "DP-00041",
+      "from": "Type_aws_AwsEc2Instance.html",
+      "to": "wiki_pages/Type_aws_AwsEc2Instance.html"
+    },
+    {
+      "id": "DP-00047",
+      "from": "Type_aws_AwsIamRole.html",
+      "to": "wiki_pages/Type_aws_AwsIamRole.html"
+    },
+    {
+      "id": "DP-00024",
+      "from": "Product_concert.html",
+      "to": "wiki_pages/Product_concert.html"
+    },
+    {
+      "id": "DP-00005",
+      "from": "Category_gcp.html",
+      "to": "wiki_pages/Category_gcp.html"
+    },
+    {
+      "id": "DP-00034",
+      "from": "Template_Infobox product.html",
+      "to": "wiki_pages/Template_Infobox product.html"
+    }
+  ]
+}

@@ -48,8 +48,27 @@ Requires a provider configured in `benchmark/.env`. A local venv with
 `litellm`, `python-dotenv`, `ibm_watsonx_ai` is expected at `qa/.venv`
 (gitignored).
 
-## Tier 3 — grounding provenance (not in this change)
+## Tier 3 — grounding provenance (`resolve_grounding.py`, reference-only)
 
-2,005 grounding refs are bare `.html` filenames that resolve 1:1 to the private
-`itopsgraph_docs` repo. Rewriting them into resolvable paths/URLs is tracked
-separately.
+The internal grounding refs were bare `.html` filenames that pointed nowhere.
+They map 1:1 to the **private** repo `balajinix/itopsgraph_docs`.
+
+**The documents are NOT vendored into this repo.** ORBIT is public and the source
+documents contain internal infrastructure identifiers / PII, so copying them in
+would leak them. Instead each internal ref's `url` is rewritten to its path
+*within the source repo* (e.g. `wiki_pages/Category_aws.html`) and pinned with
+`repo` + `commit` fields. Consumers with access to `itopsgraph_docs` resolve them.
+
+`resolve_grounding.py` reads `qa/basename_to_path.json` (basename → repo-relative
+path, derived from the source repo's git tree at the pinned commit), rewrites the
+2,001 internal refs, and verifies each is a valid source path and that no
+local/vendored path leaks in. The 1,442 external http refs are left untouched.
+
+Outputs:
+- updated `IAA-Labelling/combined_export.fixed.json` — pinned, resolvable grounding
+- `qa/resolve_grounding_report.json` — audit trail
+
+Run: `python3 qa/resolve_grounding.py`
+
+Residual: 4 grounding entries (`DP-02004/2007/2010/2013`) have a title but an
+empty `url` (no filename to map) and remain unresolved.
