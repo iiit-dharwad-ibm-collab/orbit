@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_findLogAlertConfigVersions_items</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_findLogAlertConfigVersions_items</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_findLogAlertConfigVersions_items</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>5</td></tr></table>
+
+<h2>Overview</h2>
+query_findLogAlertConfigVersions_items type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>changeSummary</td><td>query_findApplicationAlertConfigVersions_items_changeSummary</td><td></td><td></td></tr>
+<tr><td>created</td><td>BigInt</td><td></td><td>Unix timestamp representing the creation time of this revision.</td></tr>
+<tr><td>deleted</td><td>Boolean</td><td></td><td>Flag to indicate whether or not the configuration was deleted.</td></tr>
+<tr><td>enabled</td><td>Boolean</td><td></td><td>Set this flag to `true` if custom rule configurations has to be considered.</td></tr>
+<tr><td>id</td><td>query_findApplicationAlertConfigVersions_items_id</td><td></td><td>GraphNode ID.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type query_findLogAlertConfigVersions_items {
+  changeSummary: query_findApplicationAlertConfigVersions_items_changeSummary
+
+  # Unix timestamp representing the creation time of this revision.
+  created: BigInt
+
+  # Flag to indicate whether or not the configuration was deleted.
+  deleted: Boolean @deprecated(reason: "deprecated")
+
+  # Flag to indicate whether or not the configuration is enabled.
+  enabled: Boolean @deprecated(reason: "deprecated")
+
+  # ID of this configuration version.
+  id: query_findApplicationAlertConfigVersions_items_id!
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_findLogAlertConfigVersions_items</b>:
+
+<h3>To get all the Windows event security logs, modify the following configuration fields in the opentelemetry-collector-config.yaml file:</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+receivers:
+ windowseventlog:
+ channel: security
+ 
+If you want different log types, modify the channel field with the type of log required.
+Filtering OpenTelemetry
+logs
+The OpenTelemetry Collector allows the log data that it collects
+to be filtered in many different ways. This document provides
+examples of how to filter logs in certain
+common scenarios. These
+features are included only in the OpenTelemetry Collector Contrib
+repo, so these examples require that version. For more information,
+see the
+OpenTelemetry Collector's contrib documentation.
+Filtering logs by their
+contents
+The filter processor accepts regular expressions that are
+applied to the contents of log messages. Any log messages that
+match the given regular expression are dropped,
+and never forwarded
+on to the receiver on the other end.
+Examples
+All these examples follow a similar pattern.
+
+<h3>New-EventLog -LogName "Customlog" -Source "MySource"</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Write-EventLog -LogName "Customlog" -Source "MySource" -EntryType Error -EventId 1001 -Message "This is an error message body 
+for testing."
+ 
+The New-EventLog cmdlet in PowerShell creates a new event log. However, it doesn't directly create an event with a body and severity. Therefore, to create an event with
+specific details, including a body and severity, you need to use the Write-EventLog cmdlet.
+Ingressing the OTEL collector data
+You can use the OTEL Collector to ingress data as an administrative or nonadministrative user.
+Ingressing data as a nonadministrative user
+As a nonadministrative user, complete the following steps to ingress data by using the OTEL Collector:
+
+<h3>On the .NET process dashboard, click Setup .NET Debug Env as shown in the following image. This step activates the Log Collector application on the host and sets</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+the required environment variables for the .NET log collection.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

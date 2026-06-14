@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product:cloudability</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Product:cloudability</h1>
+
+
+<h2>Overview</h2>
+IBM Cloudability - Cloud cost management and FinOps platform.
+
+<h2>Types</h2>
+<table>
+<tr><th>Type</th><th>Kind</th><th>Fields</th><th>Description</th></tr>
+<tr><td><a href="#Type:cloudability/Aggregate">Aggregate</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/AggregatesEntry">AggregatesEntry</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/BudgetResultEntry">BudgetResultEntry</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/Budgets">Budgets</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/Clusters">Clusters</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/ClustersEntry">ClustersEntry</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/CostReport">CostReport</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/DateRangeInput">DateRangeInput</a></td><td>INPUT</td><td>2</td><td>Input for specifying a date range.</td></tr>
+<tr><td><a href="#Type:cloudability/Dates">Dates</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/Dimension_MeasureInfo">Dimension_MeasureInfo</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/DimensionsCsvOutput">DimensionsCsvOutput</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/Filter_MetaInfo">Filter_MetaInfo</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/FiltersArrayOutput">FiltersArrayOutput</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/FloatFilterInput">FloatFilterInput</a></td><td>INPUT</td><td>8</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/Group">Group</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/IntFilterInput">IntFilterInput</a></td><td>INPUT</td><td>8</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/LLMCostReport">LLMCostReport</a></td><td>OBJECT</td><td>5</td><td>Response structure for cost reports.</td></tr>
+<tr><td><a href="#Type:cloudability/LookupResult">LookupResult</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/Measure_MeasureInfo">Measure_MeasureInfo</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/Meta">Meta</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/Metric_MetaInfo">Metric_MetaInfo</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/MetricsCsvOutput">MetricsCsvOutput</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/MonthsEntry">MonthsEntry</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/NodesEntry">NodesEntry</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/RecommendationMeta">RecommendationMeta</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/RecommendationResultEntry">RecommendationResultEntry</a></td><td>OBJECT</td><td>40</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/RecommendationsEC2">RecommendationsEC2</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/RecommendationsEntry">RecommendationsEntry</a></td><td>OBJECT</td><td>35</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/ReportDimension">ReportDimension</a></td><td>ENUM</td><td>286</td><td>Identifies dimensions available for reporting and filtering.</td></tr>
+<tr><td><a href="#Type:cloudability/ReportFilter">ReportFilter</a></td><td>INPUT</td><td>241</td><td>Main input for filtering the cost report.</td></tr>
+<tr><td><a href="#Type:cloudability/ReportMetric">ReportMetric</a></td><td>ENUM</td><td>70</td><td>Identifies metrics available for reporting.</td></tr>
+<tr><td><a href="#Type:cloudability/ReportRow">ReportRow</a></td><td>OBJECT</td><td>241</td><td>Represents a single row in the cost report.</td></tr>
+<tr><td><a href="#Type:cloudability/ReportSortInput">ReportSortInput</a></td><td>INPUT</td><td>2</td><td>Input for specifying sorting criteria for the cost report.</td></tr>
+<tr><td><a href="#Type:cloudability/Result">Result</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/ResultMeta">ResultMeta</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/SortCsvOutput">SortCsvOutput</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/SortDirection">SortDirection</a></td><td>ENUM</td><td>3</td><td>Sort directions for report sorting.</td></tr>
+<tr><td><a href="#Type:cloudability/StringFilterInput">StringFilterInput</a></td><td>INPUT</td><td>8</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/TagMappingsEntry">TagMappingsEntry</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:cloudability/_Backend_CostReportArguments">_Backend_CostReportArguments</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+</table>
+
+<h2>Type Mappings</h2>
+Types from this product that map to other products:
+
+<table>
+<tr><th>Source Type</th><th>Maps To</th><th>Target Product</th></tr>
+<tr><td><a href="#Type:cloudability/SortDirection">SortDirection</a></td><td><a href="#Type:concert/SortDirection">SortDirection</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:cloudability/SortDirection">SortDirection</a></td><td><a href="#Type:instana/queryInput_getAllSloConfigs_orderDirection">queryInput_getAllSloConfigs_orderDirection</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/SortDirection">SortDirection</a></td><td><a href="#Type:instana/callGroup_input_order_direction">callGroup_input_order_direction</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/StringFilterInput">StringFilterInput</a></td><td><a href="#Type:concert/FilterValueType">FilterValueType</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:cloudability/StringFilterInput">StringFilterInput</a></td><td><a href="#Type:instana/mutationInput_getMobileAppBeacons_input_tagFilters_items_operator">mutationInput_getMobileAppBeacons_input_tagFilters_items_operator</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/StringFilterInput">StringFilterInput</a></td><td><a href="#Type:turbonomic/TagValueFilterInput">TagValueFilterInput</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:cloudability/StringFilterInput">StringFilterInput</a></td><td><a href="#Type:turbonomic/FilterInput">FilterInput</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:cloudability/ReportSortInput">ReportSortInput</a></td><td><a href="#Type:instana/mutationInput_getEndpointsMetrics_input_order_Input">mutationInput_getEndpointsMetrics_input_order_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/ReportSortInput">ReportSortInput</a></td><td><a href="#Type:instana/mutationInput_getServicesMetrics_input_order_Input">mutationInput_getServicesMetrics_input_order_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/ReportSortInput">ReportSortInput</a></td><td><a href="#Type:instana/mutationInput_getLocationSummaryList_input_order_Input">mutationInput_getLocationSummaryList_input_order_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/ReportSortInput">ReportSortInput</a></td><td><a href="#Type:instana/mutationInput_getTestSummaryList_input_order_Input">mutationInput_getTestSummaryList_input_order_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/ReportSortInput">ReportSortInput</a></td><td><a href="#Type:instana/queryInput_getCallGroup_input_order_Input">queryInput_getCallGroup_input_order_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/ReportFilter">ReportFilter</a></td><td><a href="#Type:turbonomic/StatFilterEntry">StatFilterEntry</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:cloudability/Aggregate">Aggregate</a></td><td><a href="#Type:instana/query_getInfrastructureCatalogMetrics_items">query_getInfrastructureCatalogMetrics_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Aggregate">Aggregate</a></td><td><a href="#Type:instana/query_getSyntheticCatalogMetrics_items">query_getSyntheticCatalogMetrics_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Aggregate">Aggregate</a></td><td><a href="#Type:instana/query_getWebsiteCatalogMetrics_items">query_getWebsiteCatalogMetrics_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Aggregate">Aggregate</a></td><td><a href="#Type:turbonomic/StatFilterEntry">StatFilterEntry</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:cloudability/Group">Group</a></td><td><a href="#Type:instana/query_getGroupMappings_items">query_getGroupMappings_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Group">Group</a></td><td><a href="#Type:instana/createGroupMapping_200_response">createGroupMapping_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Group">Group</a></td><td><a href="#Type:instana/createGroupMapping_request_Input">createGroupMapping_request_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Group">Group</a></td><td><a href="#Type:instana/updateGroupMapping_200_response">updateGroupMapping_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Group">Group</a></td><td><a href="#Type:instana/updateGroupMapping_request_Input">updateGroupMapping_request_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Measure_MeasureInfo">Measure_MeasureInfo</a></td><td><a href="#Type:instana/query_getInfrastructureCatalogMetrics_items">query_getInfrastructureCatalogMetrics_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Measure_MeasureInfo">Measure_MeasureInfo</a></td><td><a href="#Type:instana/callGroup_input_group">callGroup_input_group</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Metric_MetaInfo">Metric_MetaInfo</a></td><td><a href="#Type:instana/query_getInfrastructureCatalogMetrics_items">query_getInfrastructureCatalogMetrics_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Filter_MetaInfo">Filter_MetaInfo</a></td><td><a href="#Type:concert/FilterInfo">FilterInfo</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:cloudability/Filter_MetaInfo">Filter_MetaInfo</a></td><td><a href="#Type:concert/FiltersValues">FiltersValues</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:cloudability/Filter_MetaInfo">Filter_MetaInfo</a></td><td><a href="#Type:turbonomic/StatFilterEntry">StatFilterEntry</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:cloudability/Meta">Meta</a></td><td><a href="#Type:instana/getInfrastructureMetrics_request_Input">getInfrastructureMetrics_request_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/Meta">Meta</a></td><td><a href="#Type:instana/queryInput_getCallGroup_input_metrics_items_Input">queryInput_getCallGroup_input_metrics_items_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/CostReport">CostReport</a></td><td><a href="#Type:instana/getLocationSummaryList_200_response">getLocationSummaryList_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/CostReport">CostReport</a></td><td><a href="#Type:instana/getTestSummaryList_200_response">getTestSummaryList_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/_Backend_CostReportArguments">_Backend_CostReportArguments</a></td><td><a href="#Type:instana/getEntities_request_Input">getEntities_request_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/_Backend_CostReportArguments">_Backend_CostReportArguments</a></td><td><a href="#Type:instana/getBeaconMetrics_request_Input">getBeaconMetrics_request_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/LookupResult">LookupResult</a></td><td><a href="#Type:instana/Entity">Entity</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/ClustersEntry">ClustersEntry</a></td><td><a href="#Type:instana/query_getSyntheticLocations_items_configuration">query_getSyntheticLocations_items_configuration</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/ResultMeta">ResultMeta</a></td><td><a href="#Type:instana/getSyntheticResultMetadata_200_response">getSyntheticResultMetadata_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/NodesEntry">NodesEntry</a></td><td><a href="#Type:infragraph/NodeIdentifier">NodeIdentifier</a></td><td>infragraph</td></tr>
+<tr><td><a href="#Type:cloudability/NodesEntry">NodesEntry</a></td><td><a href="#Type:turbonomic/ConnectedEntitiesEntry">ConnectedEntitiesEntry</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:cloudability/TagMappingsEntry">TagMappingsEntry</a></td><td><a href="#Type:instana/getDynamicParametersTagCatalog_200_response">getDynamicParametersTagCatalog_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/TagMappingsEntry">TagMappingsEntry</a></td><td><a href="#Type:instana/getBusinessTagCatalog_200_response">getBusinessTagCatalog_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/TagMappingsEntry">TagMappingsEntry</a></td><td><a href="#Type:instana/getTagCatalogAll_200_response">getTagCatalogAll_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/TagMappingsEntry">TagMappingsEntry</a></td><td><a href="#Type:instana/getTagCatalog_200_response">getTagCatalog_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:cloudability/TagMappingsEntry">TagMappingsEntry</a></td><td><a href="#Type:turbonomic/TagValueFilterOperator">TagValueFilterOperator</a></td><td>turbonomic</td></tr>
+</table>
+
+<a href="#Category:Products">Category:Products</a>
+<a href="#Category:GraphQL">Category:GraphQL</a>
+</body>
+</html>

@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" style="--c4d-sticky-header-height: 49px;"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">.truste_caIcon_display {display: flex !important;}</style><style type="text/css">@font-face {font-family: "Source Sans Pro";src: url(https://consent.trustarc.com/get?name=SourceSansPro-Regular.ttf) format("truetype"),url(https://consent.trustarc.com/get?name=SourceSansPro-Regular.woff) format("woff"),url(https://consent.trustarc.com/get?name=SourceSansPro-Regular.otf) format("opentype"),url(https://consent.trustarc.com/get?name=SourceSansPro-Regular.eot) format("embedded-opentype");}.truste_cursor_pointer {cursor: pointer;}.truste_border_none {border: none;}.truste_accessible_link {font-family: "Source Sans Pro", sans-serif;color: #1D4ED8;font-size: 14px;font-weight: 600;text-decoration: underline;}.truste_accessible_link:hover {color: #1D4ED8;text-decoration: none !important;}.truste_accessible_link:focus-visible {outline: none;border-radius: 4px;box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #3699F1;}</style><style type="text/css">.ta-display-none { display: none; }</style><script type="text/javascript" async="" src="turbonomic_application_resource_management_files/munchkin_002.js"></script><script type="text/javascript" async="" charset="utf-8" id="utag_238" src="turbonomic_application_resource_management_files/js"></script><script id="instana-eum" defer="defer" crossorigin="anonymous" src="turbonomic_application_resource_management_files/eum.min.js"></script><script type="text/javascript" async="" charset="utf-8" id="utag_80" src="turbonomic_application_resource_management_files/munchkin.js"></script><script src="turbonomic_application_resource_management_files/utag.js" type="application/javascript" async=""></script><script src="turbonomic_application_resource_management_files/p_dd81f1bddebc1a0247a7fe6e0c64c87e87408b6ec320d66f338294470dd.js" type="application/javascript" async="" fetchpriority="high"></script><script src="turbonomic_application_resource_management_files/launch-d91723c9d1ad.min.js" type="application/javascript" async="" fetchpriority="high"></script><script>// fill in DDO
+      digitalData = {
+        page: {
+          category: {
+            primaryCategory: 'ELSKCS', // e.g. SB03
+          },
+          pageInfo: {
+            effectiveDate: '', // e.g. 2014-11-19
+            expiryDate: '', // e.g. 2017-11-19
+            language: 'en-US', // e.g. en-US FIX
+            publishDate: '', // e.g. 2014-11-19
+            publisher: 'IBM Corporation', // e.g. IBM Corporation
+            version: 'Carbon for IBM.com', // e.g. dds.v1.0.0. NOTE: This is dynamically set by the IBM.com Library
+            ibm: {
+              contentDelivery: 'IBM Documentation', // e.g. ECM/Filegen
+              contentProducer: 'IBM Documentation 1.0', // e.g. ECM/IConS Adopter 34 - GS83J2343G3H3ERG - 11/19/2014 05:14:02 PM
+              country: 'US', // e.g. FIX
+              industry: 'ZZ', // e.g. B,U
+              owner: 'IBM Documentation/Raleigh/IBM', // e.g. Some Person/City/IBM
+              siteID: 'ESTKCS', // e.g. MySiteID
+              subject: 'SSFV9Z', // e.g. SW492
+              type: 'CT701', // e.g CT305
+            },
+          },
+        },
+      };</script><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Glossary - IBM Documentation</title><meta charset="UTF-8"><link rel="icon" href="https://www.ibm.com/favicon.ico"><meta name="keywords" content="IBM, documentation"><meta name="description" content="IBM Documentation."><meta name="dcterms.date" content=""><meta name="dcterms.rights" content="© Copyright IBM Corporation 2026"><meta name="geo.country" content="US"><meta name="robots" content="index,follow"><meta property="og:title" content="IBM Turbonomic Application Resource Management"><meta name="canonical" content=""><script src="turbonomic_application_resource_management_files/ibm-common.js"></script><meta property="og:image" content="https://1.www.s81c.com/common/images/ibm-leadspace-1200x627.jpg"><meta property="og:type" content="website"><meta property="og:description" content="IBM Documentation."><meta property="og:url" content="www.ibm.com/docs/en/tarm/8.18.x"><meta property="og:locale" content="en-US"><link rel="stylesheet" href="turbonomic_application_resource_management_files/style.css"><script>function convertUnicode(input) {
+          return input.replace(/\\u(\w\w\w\w)/g,function(a,b) {
+          var charcode = parseInt(b,16);
+          return String.fromCharCode(charcode);
+          });
+        }
+        var kcGlobals = {
+          translation: {
+			"common.error":"Sorry,%20we%20have%20an%20error",
+			"common.externalLinkTooltipText":"(Opens%20in%20a%20new%20tab%20or%20window)",
+			"common.yes":"Yes",
+			"common.no":"No",
+			"common.warning":"Warning",
+			"common.notFound":"We%20didn't%20find%20a%20matching%20topic%20in%20the%20product%20version%20you%20requested.%20Would%20you%20like%20to%20go%20to%20the%20$PRODUCT$%20homepage?",
+			"common.returnToDocs":"Open%20the%20Red%20Hat%20documentation%20in%20a%20new%20tab",
+			"common.externalDocumentation":"Viewing%20external%20documentation",
+			"common.externalDocumentation2":"Use%20this%20link%20to%20view%20OpenShift%20documentation%20on%20the%20Red%20Hat%20documentation%20site.",
+			"common.previous":"Previous",
+			"common.next":"Next",
+			"common.backToTopButton":"Back%20to%20top%20button",
+			"common.copyright":"%C2%A9%20Copyright%20IBM%20Corporation%20$CURRENTYEAR$",
+			"common.seemore":"See%20more",
+			"common.showmore":"Show%20more",
+			"common.showless":"Show%20less",
+			"error.unexpectedErrorHeading":"An%20unexpected%20error%20occurred",
+			"error.sorryText1":"We're%20sorry!",
+			"error.sorryText2":"The%20requested%20page%20does%20not%20exist%20or%20might%20have%20moved.",
+			"error.sorryText3":"If%20you%20accessed%20this%20page%20by%20using%20a%20bookmark%20or%20external%20URL,%20the%20bookmark%20or%20links%20might%20need%20to%20be%20updated.%20Use%20IBM%20Documentation%20search%20to%20find%20the%20content's%20new%20location.",
+			"error.sorryText4":"In%20this%20case,%20use%20the%20table%20of%20contents%20or%20the%20search%20to%20find%20the%20content.",
+			"error.sorryText5":"If%20you%20accessed%20this%20page%20from%20the%20table%20of%20contents%20or%20a%20search,%20please%20report%20the%20broken%20link%20to%20%3Ca%20id=%22ibmdocs-mailto-link%22%20href=%22%22%3EIBM%20Documentation%20support%3C/a%3E%20who%20will%20alert%20the%20appropriate%20content%20group.",
+			"error.tabError":"Resource%20not%20found",
+			"error.notAuthorizedHeading":"Authentication%20required",
+			"error.loginButton":"Log%20in%20to%20view%20content",
+			"error.notAuthorizedText1":"To%20view%20the%20documentation,%20you%20need%20to%20be%20authorized.",
+			"error.notAuthorizedText2":"Please%20sign%20in%20with%20your%20email%20address%20associated%20with%20your%20IBM%20ID.",
+			"error.notAuthorizedText3":"If%20you%20can't%20view%20the%20documentation%20after%20you%20sign%20in,%20contact%20%3Ca%20id=%22ibmdocs-mailto-link%22%20href=%22%22%3EIBM%20Documentation%20support%3C/a%3E%20to%20request%20access%20to%20this%20documentation.",
+			"error.tabSignIn":"Please%20sign%20in%20with%20your%20IBM%20ID",
+			"error.authRequired":"Authentication%20required",
+			"error.loginToView":"Login%20to%20view%20content",
+			"error.requestAccess":"Request%20access",
+			"error.permissionRequired":"Permission%20required",
+			"error.unexpectedError":"An%20unexpected%20error%20occurred",
+			"error.reportBrokenLink":"Report%20broken%20link",
+			"error.renderError":"IBM%20Docs%20is%20unable%20to%20render%20this%20topic.%20We%20have%20registered%20this%20error%20message%20and%20will%20notify%20the%20content%20owner.",
+			"error.notEntitledHeading":"Permission%20required",
+			"error.notEntitledText1":"You%20do%20not%20have%20access%20to%20this%20product%20documentation.",
+			"error.notEntitledText2":"Reach%20out%20to%20%3Ca%20id=%22ibmdocs-mailto-link%22%20href=%22%22%3EIBM%20Documentation%20support%3C/a%3E%20to%20get%20access.",
+			"error.tabAccessRequest":"Access%20request",
+			"toc.loadingIndicator":"Active%20loading%20indicator",
+			"toc.dropdown":"Choose%20a%20version.%20Enter%20and%20select%20another%20product%20version%20with%20the%20enter%20key.",
+			"toc.showFull":"Show%20full%20table%20of%20contents",
+			"toc.checkBox":"Check%20full%20TOC",
+			"toc.otherLinks":"Other%20resources%20on%20this%20topic",
+			"toc.downloadPDF":"Download%20PDF",
+			"toc.docsOffline":"Offline%20docs",
+			"toc.docsUpdateAvailable":"Update%20available",
+			"toc.docsDownloaded":"Downloaded",
+			"toc.inDevelopment":"This%20feature%20is%20in%20development.",
+			"toc.toc":"Table%20of%20contents",
+			"toc.filterTiles":"Filter%20on%20titles",
+			"toc.searchIn":"Search%20%22$QUERY$%22%20in%20all%20$PRODUCT$%20documentation%20titles",
+			"toc.apihubLink":"APIs%20on%20IBM%20API%20Hub",
+			"toc.iconTocClose":"Close%20table%20of%20contents",
+			"toc.iconTocOpen":"Open%20table%20of%20contents",
+			"bc.changeVersion":"Change%20version",
+			"toolbar.save":"Save",
+			"toolbar.feedback":"Feedback",
+			"toolbar.share":"Share",
+			"toolbar.productList":"Product%20list",
+			"toolbar.announcements":"Announcements",
+			"home.home":"Home",
+			"home.IBMDocumentation":"IBM%20Documentation",
+			"home.searchInDocumentation":"Search%20in%20IBM%20Documentation",
+			"home.searchDocumentation":"Search%20for%20IBM%20Documentation",
+			"home.title":"Find%20documentation%20for%20IBM%20products%20and%20services",
+			"home.viewDoc":"View%20all%20documentation",
+			"home.featuredDocumentation":"Featured%20documentation",
+			"home.popularDocs":"Popular%20docs",
+			"home.infrastructure":"IT%20infrastructure",
+			"home.CPdescription":"IBM%20Cloud%5Cu00ae%20Paks%20are%20AI-powered%20software%20for%20hybrid%20clouds%20that%20can%20help%20you%20fully%20implement%20intelligent%20workflows%20in%20your%20business%20to%20accelerate%20digital%20transformation.",
+			"home.exploreDocs":"Explore%20the%20docs",
+			"home.resources":"Resources",
+			"home.readMore":"Read%20more",
+			"home.supportPortalDescription":"Get%20assistance%20for%20the%20IBM%20products,%20services%20and%20software%20you%20own.",
+			"home.redbooksDescription":"Find%20best%20practices%20for%20integrating%20IBM%20technologies.",
+			"home.fixCentralDescription":"Provides%20fixes%20and%20updates%20for%20your%20system's%20software,%20hardware,%20and%20operating%20system.",
+			"home.developerDescription":"Explore%20technical%20topics,%20find%20trial%20software%20and%20join%20the%20community.",
+			"home.passportDescription":"Provides%20you%20with%20secure%20access%20to%20software%20downloads%20and%20media.",
+			"home.skillsDescription":"Explore,%20learn%20and%20succeed%20with%20IBM%20training%20and%20certification.",
+			"home.watsonxTitle":"IBM%20watsonx",
+			"home.watsonxDesc":"Build,%20govern,%20and%20manage%20your%20data%20for%20generative%20AI%20solutions.",
+			"home.cloudpakAutomationTitle":"IBM%20Cloud%20Pak%20for%20Business%20Automation",
+			"home.cloudpakAutomationDesc":"Use%20pre-integrated%20automation%20technologies%20to%20design,%20build,%20and%20run%20automation%20applications%20and%20services%20on%20the%20cloud.",
+			"home.cloudpakDataTitle":"IBM%20Cloud%20Pak%20for%20Data",
+			"home.cloudpakDataDesc":"Collect,%20organize,%20analyze,%20and%20operationalize%20data%20and%20AI%20throughout%20your%20business%20within%20a%20single,%20flexible%20interface.",
+			"home.cloudpakSecurityTitle":"IBM%20Cloud%20Pak%20for%20Security",
+			"home.cloudpakSecurityDesc":"Uncover%20threats,%20make%20informed%20decisions%20about%20risks,%20and%20respond%20faster%20to%20incursions%20all%20while%20protecting%20the%20integrity%20of%20your%20data.",
+			"home.cloudpakIntegrationTitle":"IBM%20Cloud%20Pak%20for%20Integration",
+			"home.cloudpakIntegrationDesc":"Scale%20to%20demand,%20reduce%20costs,%20and%20increase%20operational%20efficiency%20by%20leveraging%20API%20management,%20data%20integration,%20and%20messaging%20capabilities.",
+			"home.cloudpakWatsonAIOpsTitle":"IBM%20Cloud%20Pak%20for%20Watson%20AIOps",
+			"home.cloudpakWatsonAIOpsDesc":"Proactively%20avoid%20incidents%20and%20accelerate%20remediation%20using%20advanced,%20explainable%20AI%20across%20the%20ITOps%20toolchain.",
+			"home.viewAllDocumentation":"View%20all%20products%20in%20IBM%20Documentation",
+			"home.trendingDocumentation":"Trending%20documentation",
+			"home.Electrontitle":"IBM%20Documentation%20for%20offline%20environments",
+			"home.Electrondescription1":"Do%20you%20work%20in%20a%20Dark%20shop%20or%20Airgap%20environment%20where%20you%20don't%20have%20access%20to%20the%20internet,%20but%20still%20need%20to%20use%20documentation%20to%20troubleshoot%20problems%20or%20reference%20guides?",
+			"home.Electrondescription2":"We%20have%20built%20an%20offline%20application%20to%20be%20able%20to%20view%20your%20product%20documentation%20in%20environments%20without%20internet%20access.",
+			"home.Electronbutton":"Learn%20more%20about%20IBM%20Documentation%20Offline",
+			"cloudpak.documentation":"IBM%20Cloud%20Pak%20Documentation",
+			"cloudpak.select":"Select%20a%20Cloud%20Pak%20for%20details",
+			"cloudpak.description":"IBM%20Cloud%20Paks%20are%20enterprise-ready,%20containerized%20software%20solutions%20that%20give%20clients%20and%20open,%20faster%20and%20more%20secure%20way%20to%20move%20core%20business%20applications%20to%20any%20cloud.",
+			"content.notFound":"Content%20not%20found",
+			"content.notAccess":"You%20are%20not%20entitled%20to%20access%20this%20content",
+			"content.tocError":"Unable%20to%20load%20TOC",
+			"content.userJourneys":"Trending%20documentation",
+			"content.recommendedTopics":"Recommended%20topics",
+			"content.version":"Version",
+			"content.notFoundSorry":"We're%20sorry!",
+			"content.openInNewTab":"Open%20in%20a%20new%20tab",
+			"content.firefoxApiPages":"Firefox%20has%20a%20known%20issue%20displaying%20content%20within%20anchor%20links,%20click%20here%20to%20open%20this%20page%20in%20a%20new%20tab.",
+			"content.lastUpdated":"Last%20Updated",
+			"content.salesManualLabel":"Sales%20manual",
+			"eos.productNotSupported":"$PRODUCT$%20is%20no%20longer%20published.",
+			"eos.noLongerSupported":"Product%20version%20no%20longer%20published",
+			"eos.latestVerions":"We%20found%20the%20product%20you%20requested%20in%20a%20newer%20version.",
+			"eos.relatedInfo":"For%20related%20information,%20visit:%20",
+			"eos.providedBy":"All%20$PRODUCT$%20support%20is%20provided%20by%20$COMPANY$.",
+			"eos.endOfSupport":"End%20of%20support%20for%20$PRODUCT$",
+			"eos.contentNotAvailable":"On%20December%206,%202018,%20IBM%20and%20HCL%20Technologies%20announced%20%3Ca%20href=%22https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B%22%20target=_blank%3E%20a%20definitive%20agreement%3C/a%3E%20under%20which%20HCL%20will%20acquire%20select%20IBM%20collaboration,%20commerce,%20digital%20experience%20and%20security%20software%20products.%20The%20transaction%20closed%20on%20June%2030,%202019.%20The%20full%20list%20of%20products%20and%20part%20numbers%20included%20in%20this%20transaction%20can%20be%20found%20%3Ca%20href=%22https://www.ibm.com/downloads/cas/AL1OBXBJ%22%20target=_blank%3Ehere%3C/a%3E.%20%20%3C/br%3E%3C/br%3EThis%20%3Cb%3E$PRODUCT$%20documentation%3C/b%3E%20is%20current%20as%20of%20the%20closing%20date%20set%20forth%20above%20but%20will%20not%20be%20updated%20further.%20%20It%20will%20be%20retained%20here%20for%20a%20limited%20time%20for%20the%20convenience%20of%20our%20customers%20but%20may%20be%20removed%20in%20whole%20in%20part%20at%20any%20time.%20The%20systems%20requirements%20links%20off%20this%20site%20are%20no%20longer%20active%20on%20IBM.com.%20Systems%20requirements%20for%20the%20HCL%20owned%20products%20listed%20above%20will%20be%20available%20on%20%3Ca%20href=%22https://www.hcltech.com%22%20target=_blank%3Ewww.hcltech.com%3C/a%3E.%3C/br%3E%3C/br%3EIf%20you%20have%20any%20questions,%20please%20visit%20%3Ca%20href=%22https://www.hcltech.com%22%20target=_blank%3Ewww.hcltech.com%3C/a%3E%20or%20you%20may%20send%20an%20email%20to:%20%3Ca%20id=%22js-divested-mailto%22%20href=%22mailto:toHCL@us.ibm.com%22%3EHCL@us.ibm.com%3C/a%3E.",
+			"eos.contentNotAvailableAcoustic":"Centerbridge%20Partners%20acquires%20IBM's%20marketing%20platform%20and%20commerce%20software%20offerings%20to%20form%20a%20standalone%20next%20generation%20marketing%20and%20advertising%20technology%20company.%20Learn%20more%20%3Ca%20target=%22_blank%22%20href=%22https://acoustic.co/%22%3Ehttps://acoustic.co%3C/a%3E",
+			"eos.viewSupported":"View%20supported%20version",
+			"eos.visitWebsite":"Visit%20$COMPANY$%20website",
+			"eos.noLoongerSupportedByIBM":"Product%20no%20longer%20supported%20by%20IBM",
+			"topic.translationBannerTitle":"Topic%20translated%20by%20machine",
+			"topic.translationBannerSubtitle":"This%20topic%20has%20been%20automatically%20translated.%20If%20you%20are%20unable%20to%20understand%20enough%20to%20complete%20your%20task,please%20provide%20feedback.",
+			"topic.translationBannerButton":"Revert%20to%20English",
+			"offlinedocs.headingtitle":"IBM%20Documentation%20Offline",
+			"offlinedocs.headingtext":"%20If%20you%20are%20in%20an%20airgap%20environment%20without%20access%20to%20the%20internet,%20use%20our%20Dark%20shop%20application.",
+			"offlinedocs.download":"Download",
+			"offlinedocs.login":"Log%20in%20to%20Download",
+			"offlinedocs.cardheadingmac":"IBM%20Documentation%20Offline%20for%20macOS",
+			"offlinedocs.cardheadingwin":"IBM%20Documentation%20Offline%20for%20Windows",
+			"offlinedocs.cardheadinglin":"IBM%20Documentation%20Offline%20for%20Linux",
+			"offlinedocs.descriptiontitle":"Welcome%20to%20IBM%20Documentation%20Offline%20",
+			"offlinedocs.descriptiontext1":"Deploy%20IBM%20Documentation%20Offline%20to%20view%20product%20documentation%20without%20an%20internet%20connection.%20Designed%20for%20organizations%20running%20in%20a%20dark%20shop%20environment,%20IBM%20Documentation%20Offline%20offers%20two%20deployment%20types:",
+			"offlinedocs.descriptiontext2":"Desktop%20application%20%E2%80%93%20available%20for%20macOS,%20Windows,%20or%20Linux.%20IBM%20Documentation%20desktop%20is%20built%20using%20Electron,%20a%20framework%20for%20building%20desktop%20applications%20that%20use%20web%20technologies%20such%20as%20JavaScript,%20HTML,%20and%20CSS.%20Node.js%20based,%20IBM%20Documentation%20uses%20an%20electron%20wrapper%20to%20provide%20a%20local%20desktop%20version%20that%20you%20can%20run%20offline%20from%20your%20desktop.",
+			"offlinedocs.descriptiontext3":"Intranet%20version%20-%20the%20ability%20to%20host%20the%20electron%20package%20on%20an%20intranet%20server.%20This%20version%20includes%20shell%20scripts%20and%20a%20configuration%20file%20for%20your%20admin%20to%20set%20up%20the%20intranet%20deployment.%20The%20intranet%20version%20also%20includes%20a%20docker%20file%20from%20which%20you%20can%20build%20a%20Docker%20image%20to%20deploy%20IBM%20Documentation.",
+			"offlinedocs.importantnote":"IMPORTANT%20NOTE:%20The%20intranet%20version%20is%20only%20available%20bundled%20with%20products%20that%20support%20it.%20The%20intranet%20version%20is%20not%20customer%20installable.",
+			"offlinedocs.downloadtitle1":"Download%20and%20Setting%20up%20IBM%20Documentation%20Offline",
+			"offlinedocs.downloadandsetupdescription1":"Setting%20up%20IBM%20Documentation%20Offline%20application%20(the%20app)%20is%20a%20multi-step%20process:",
+			"offlinedocs.downloadandsetupdescription2":"Download%20%E2%80%93%20requires%20you%20to%20download%20two%20different%20archived%20files.",
+			"offlinedocs.downloadandsetupdescription3":"Installation%20and%20setup%20%E2%80%93%20requires%20you%20to%20install%20the%20app%20and%20add%20the%20product%20documentation%20to%20it.",
+			"offlinedocs.downloadandsetupdescription4":"Download%20the%20app.",
+			"offlinedocs.downloadandsetupdescription5":"Download%20the%20product%20documentation%20set%20that%20you%20want%20to%20view%20and%20access%20offline.",
+			"offlinedocs.downloadtitle2":"IBM%20Documentation%20Offline%20application%20download%20instructions%20",
+			"offlinedocs.downloaddescription1":"The%20application%20is%20available%20to%20download%20for%20many%20operating%20systems.%20Choose%20the%20system%20that%20best%20fits%20your%20offline%20environment%20then%20login%20with%20your%20IBMid%20to%20download%20the%20application.%20Once%20you%20have%20downloaded%20the%20application,%20transfer%20it%20to%20your%20offline%20environment%20computer.%20This%20could%20be%20done%20through%20use%20of%20a%20memory%20stick%20or%20USB%20device.",
+			"offlinedocs.downloadlicencingagreementText":"Before%20downloading,%20you%20will%20be%20prompted%20to%20accept%20our%20",
+			"offlinedocs.downloadlicencingagreement":"license%20agreement.",
+			"offlinedocs.downloadtitle3":"Downloading%20product%20documentation%20sets",
+			"offlinedocs.downloaddescription2":"You%20will%20need%20internet%20access%20to%20download%20the%20product%20documentation%20for%20use%20in%20the%20offline%20application,%20plan%20accordingly.",
+			"offlinedocs.downloadstep1":"Visit%20the%20IBM%20Documentation%20page%20for%20the%20product%20documentation%20and%20specific%20version%20you%20want%20available%20offline.%20Be%20sure%20to%20navigate%20to%20a%20topic%20and%20not%20the%20welcome%20page.%20For%20example,%20for%20db2%20navigate%20to:%20%20%3Ca%20href=%22https://www.ibm.com/docs/en/db2/11.5%22%20target=%22_blank%22%3E%20https://www.ibm.com/docs/en/db2/11.5%20%3C/a%3E%20and%20select%20one%20of%20the%20topics,%20like%20%E2%80%9CAccessibility%20features%E2%80%9D",
+			"offlinedocs.downloadstep2":"If%20you%20are%20not%20already%20logged%20in,%20log%20in%20with%20your%20IBMid.%20You%20must%20be%20logged%20in%20to%20access%20the%20product%20download%20in%20the%20next%20step.",
+			"offlinedocs.downloadstep3":"Once%20you%20are%20logged%20in,%20at%20the%20bottom%20of%20the%20left-hand%20navigation%20click%20the%20%E2%80%9COffline%20docs%20download%E2%80%9D%20button%20to%20download%20that%20set%20of%20product%20documentation.%20This%20will%20download%20all%20available%20languages%20as%20part%20of%20the%20file.%20You%20will%20select%20which%20language(s)%20you%20would%20like%20in%20the%20upload%20phase%20inside%20the%20application.",
+			"offlinedocs.downloadstep4":"The%20downloaded%20product%20documentation%20set%20is%20an%20archive%20which%20you%20can%20upload%20using%20the%20application.%20Transfer%20the%20file%20to%20your%20offline%20environment%20computer%20like%20you%20did%20for%20the%20application%20file.",
+			"offlinedocs.installationtitle1":"IBM%20Documentation%20Offline%20desktop%20application%20installation%20and%20setup",
+			"offlinedocs.installandsetup":"IBM%20Documentation%20Offline%20desktop%20application%20installation%20and%20setup%20is%20a%20two-step%20process:",
+			"offlinedocs.downloadandsetup1":"install%20the%20desktop%20application%20that%20you%20downloaded,%20and%20you%20need%20to%20add%20the%20documentation%20set.",
+			"offlinedocs.downloadandsetup2":"add%20the%20downloaded%20product%20documentation%20step%20to%20the%20application%20that%20you%20just%20installed.",
+			"offlinedocs.installationtitle2":"Installing%20the%20desktop%20application",
+			"offlinedocs.installationstep1":"When%20on%20your%20local%20machine%20in%20the%20offline%20environment,%20run%20the%20application%20to%20initiate%20the%20install.%20You%20can%20do%20this%20by%20double-clicking%20the%20application%20download%20file%20(.exe)%20or%20by%20right%20clicking%20the%20file%20and%20selecting%20%E2%80%9Copen%E2%80%9D%20or%20%E2%80%9Crun%E2%80%9D.%20Follow%20the%20on-screen%20instructions%20to%20complete%20the%20installation.",
+			"offlinedocs.installationstep2":"Once%20the%20installation%20is%20complete,%20find%20the%20application%20on%20your%20computer%20(either%20as%20a%20desktop%20short%20cut%20or%20in%20your%20applications%20folder).%20The%20initial%20load%20may%20be%20slow.%20Once%20it%20is%20fully%20loaded%20you%20will%20see%20a%20blank%20home%20page%20with%20upload%20instructions.%20The%20next%20step%20is%20to%20upload%20the%20product%20documentation%20you%20need%20that%20you%20previously%20downloaded.",
+			"offlinedocs.uploadtitle":"Adding%20product%20documentation%20sets%20to%20the%20Offline%20desktop%20application",
+			"offlinedocs.uploadstep1":"From%20the%20application%20home%20page,%20select%20%E2%80%9Cupload%20or%20update%20docs%E2%80%9D%20from%20the%20right-hand%20menu.%20This%20will%20open%20a%20file%20explorer.%20Select%20the%20product%20documentation%20archive%20you%20download%20previously.",
+			"offlinedocs.uploadstep2":"%20After%20you%20click%20upload,%20a%20card%20will%20become%20available%20on%20the%20application%20home%20page.%20You%20may%20see%20an%20indicator%20showing%20the%20loading%20status%20of%20the%20documentation%20and%20the%20search%20index.%20Once%20the%20content%20package%20finishes%20uploading%20and%20unpacking,%20a%20tile%20will%20be%20active,%20and%20you%20can%20click%20on%20it%20to%20open%20the%20product%20documentation%20offline.",
+			"offlinedocs.uploadstep3":"Feel%20free%20to%20delete%20the%20documentation%20archive%20from%20your%20memory%20stick%20or%20computer.%20It%20is%20no%20longer%20needed.",
+			"offlinedocs.updatetitle":"Updates",
+			"offlinedocs.updatedescription1":"Now%20that%20you%20have%20your%20offline%20documentation%20running%20on%20your%20local%20machine,%20how%20do%20you%20keep%20your%20documentation%20in%20sync%20with%20the%20latest%20updates?%20The%20online%20doc%20set%20will%20indicate%20when%20content%20has%20been%20updated%20or%20added,%20and%20a%20new%20download%20is%20available.",
+			"offlinedocs.updatedescription2":"While%20logged%20in,%20the%20original%20document%20download%20button%20will%20update%20to%20let%20you%20know%20if%20you%20are%20in%20sync%20or%20an%20update%20is%20available.%20Download%20the%20new%20documentation%20set%20as%20before,%20and%20re-upload%20into%20the%20application.",
+			"offlinedocs.intranettitle1":"Intranet%20version",
+			"offlinedocs.intranettitle2":"Downloading%20for%20intranet%20deployment",
+			"offlinedocs.intranetdescription":"An%20administrator%20can%20install%20and%20deploy%20the%20help%20content%20on%20an%20intranet%20server%20behind%20a%20firewall.%20Then,%20team%20members%20can%20access%20help%20on%20their%20network%20without%20using%20the%20Internet%20or%20downloading%20content%20to%20their%20computers.%20Deploying%20for%20as%20an%20intranet%20app%20is%20a%20multi-step%20process.",
+			"offlinedocs.intranetstep1":"Be%20sure%20you%20have%20a%20server%20set%20up.%20IBM%20Documentation%20Offline%20does%20NOT%20include%20an%20app%20server.%20Node.js%20is%20required%20version%2016%20or%20higher.",
+			"offlinedocs.intranetstep2":"Download%20the%20IBM%20Documentation%20Offline%20intranet%20server%20package.",
+			"offlinedocs.intranetstep3":"Download%20the%20product%20documentation%20content%20package",
+			"offlinedocs.intranetstep4":"Configure%20the%20application%20using%20the%20doc.properties%20file.",
+			"offlinedocs.intranetstep5":"Upload%20the%20content%20package%20into%20IBM%20Documentation%20Offline",
+			"offlinedocs.intranetstep6":"Each%20of%20these%20steps%20is%20detailed%20below",
+			"offlinedocs.intranetinstalltitle":"Installation%20and%20setup",
+			"offlinedocs.intranetinstallstep1":"%20Click%20download%20from%20the%20Intranet%20version%20offline%20tile.%20The%20downloaded%20intranet%20package%20contains%20the%20following",
+			"offlinedocs.intranetinstallstep2":"IBM%20Documentation%20Offline%20application",
+			"offlinedocs.intranetinstallstep3":"shell%20scripts%20if%20you%20want%20to%20launch%20the%20application%20via%20a%20command%20line",
+			"offlinedocs.intranetinstallstep4":"configuration%20file%20(doc.properties)%20allows%20you%20to%20designate%20file%20location,%20port,%20and%20to%20rebrand%20if%20OEM%20product.",
+			"offlinedocs.intranetinstallstep5":"Locate%20the%20%3Cstrong%3Eproperties%3C/strong%3E%20file%20inside%20of%20the%20unpacked%20folder.",
+			"offlinedocs.intranetinstallstep6":"Update%20the%20property%20%3Cstrong%3Elocation%3C/strong%3E%20to%20the%20path%20where%20the%20content%20will%20be%20stored,%20noting%20that%20you%20can%20enter%20the%20%3Cstrong%3Eabsolute%20path%3C/strong%3E%20or%20the%20%3Cstrong%3Erelative%20path%3C/strong%3E.",
+			"offlinedocs.intranetinstallstep7":"Designate%20the%20port.",
+			"offlinedocs.intranetinstallstep8":"Note:%20The%20IBM%20Documentation%20application%20url%20is%20based%20on%20the%20server%20where%20it%20is%20running%20and%20the%20port%20numbers%20specified%20in%20the%20properties.%20When%20running%20from%20localhost,%20it%20is",
+			"offlinedocs.intranetinstallstep9":"Download%20the%20content%20package.",
+			"offlinedocs.intranetinstallstep10":"Navigate%20to%20the%20product%20content%20on",
+			"offlinedocs.intranetinstallstep11":"From%20the%20product%20doc%20TOC,%20click%20download.",
+			"offlinedocs.intranetinstallstep12":"Repeat%20this%20for%20each%20collection%20of%20product%20content%20that%20you%20want%20to%20access%20offline.",
+			"offlinedocs.intranetinstallstep13":"Start%20IBM%20Documentation%20Offline.%20You%20can%20start%20IBM%20Documentation%20by%20using%20the%20script%20startDocs.sh%20or%20startDocs.bat,%20depending%20on%20the%20operating%20system.",
+			"offlinedocs.intranetinstallstep14":"Note:%20There%20is%20no%20stop%20script,%20so%20you%20must%20stop%20the%20IBM%20Documentation%20application%20from%20the%20terminal%20where%20it%20was%20started",
+			"offlinedocs.intranetinstallstep15":"Locate%20the%20folder%20in%20which%20you%20downloaded%20the%20content%20package",
+			"offlinedocs.intranetinstallstep16":"Upload%20the%20content%20into%20IBM%20Documentation.%20To%20add%20content%20into%20IBM%20Documentation%20Offline%20run%20following%20script",
+			"offlinedocs.intranetinstallstep17":"based%20OS",
+			"offlinedocs.intranetinstallstep18":"path%20to%20product%20package%20download%20from%20the%20IBM%20Documentation",
+			"offlinedocs.faqtitle":"FAQs",
+			"offlinedocs.faqQuestiondownload":"Question:%20Why%20can't%20I%20download%20the%20intranet%20version?",
+			"offlinedocs.faqAnswerdownload":"Answer:%20The%20intranet%20version%20is%20only%20available%20to%20internal%20IBM%20Development%20teams%20who%20have%20decided%20to%20partner%20with%20IBM%20Documentation%20and%20make%20an%20intranet%20version%20of%20the%20IBM%20Documentation%20Offline%20product%20available%20via%20an%20intranet.%20This%20is%20typical%20for%20dark%20shops%20that%20have%20admins%20who%20manage%20documentation%20access%20or%20for%20products%20that%20do%20not%20have%20UIs,%20but%20a%20console.",
+			"offlinedocs.faqQuestion1":"Question:%20When%20will%20the%20macOS%20version%20be%20available?",
+			"offlinedocs.faqAnswer1":"Answer:%20macOS%20version%20is%20pending%20certification.%20You%20can%20still%20download%20the%20mac%20version,%20but%20you%20need%20to%20click%20Allow%20when%20you%20get%20the%20error%20message.",
+			"offlinedocs.faqQuestion2":"Question:%20I%20downloaded%20for%20Linux,%20and%20I%20cannot%20open%20the%20executable.%20How%20can%20I%20fix%20this?",
+			"offlinedocs.faqAnswer2":"Answer:%20If%20running%20IBM%20Documentation%20Offline%20on%20Linux,%20if%20double%20click%20doesn't%20work%20to%20open%20the%20application,%20then%20you%20need%20to%20drag%20and%20drop%20it%20to%20the%20terminal%20to%20run%20the%20application.",
+			"offlinedocs.faqQuestion3":"Question:%20How%20do%20videos%20and%20links%20work%20in%20IBM%20Documentation%20Offline?",
+			"offlinedocs.faqAnswer3":"Answer:%20If%20a%20content%20collection%20points%20to%20other%20collections,%20those%20linked%20collections%20are%20included%20in%20the%20download%20and%20all%20links%20will%20work.%20For%20external%20links,%20all%20links%20should%20work%20if%20you%20are%20online%20and%20have%20internet%20access.%20If%20you%20are%20not%20online,%20like%20with%20previous%20versions%20of%20our%20dark%20shop%20application%20(known%20as%20KCCI),%20external%20links%20will%20not%20work,%20like%20when%20Knowledge%20Center%20Customer%20Installable%20(KCCI)%20was%20deployed%20offline.%20Videos%20%E2%80%93%20if%20videos%20are%20embedded%20into%20a%20topic%20and%20stored%20in%20IBM%20Documentation%20cloud%20object%20storage,%20customers%20will%20be%20able%20to%20access%20videos,%20otherwise%20videos%20will%20not%20play.%20If%20you%20are%20online%20and%20video%20is%20not%20restricted%20in%20any%20way,%20it%20will%20open%20and%20play%20correctly.",
+			"offlinedocs.faqQuestion4":"Question:%20How%20does%20search%20work?",
+			"offlinedocs.faqAnswer4":"Answer:%20IBM%20Documentation%20Offline%20uses%20the%20Flex%20search%20engine,%20whereas%20IBM%20Documentation%20hosted%20site%20search%20is%20unified%20with%20IBM%20masthead%20search,%20which%20uses%20the%20Elastic%20search%20engine.%20This%20difference%20means%20that%20search%20results%20will%20be%20similar%20but%20will%20not%20be%20identical.",
+			"offlinedocs.faqQuestion5":"Question:%20Does%20IBM%20Documentation%20Offline%20notify%20me%20when%20there%20is%20updated%20content%20to%20download?",
+			"offlinedocs.faqAnswer5":"Answer:%20Not%20yet%20but%20coming%20soon%20we%20will%20introduce%20this%20feature%20that%20notifies%20anyone%20using%20IBM%20Documentation%20Offline%20that%20the%20application%20and/or%20the%20content%20have%20been%20updated.",
+			"offlinedocs.faqQuestion6":"Question:%20Can%20I%20add%20custom%20content%20to%20my%20offline%20version?",
+			"offlinedocs.faqAnswer6":"Answer:%20Post%20MVP,%20we%20will%20introduce%20this%20feature%20that%20allows%20you%20to%20upload%20your%20own%20content%20into%20IBM%20Documentation%20Offline%20in%20a%20custom%20folder%20to%20search%20and%20access%20within%20the%20offline%20version.",
+			"offlinedocs.navigation1":"IBM%20Documentation%20Offline%20application",
+			"offlinedocs.navigation2":"Download",
+			"offlinedocs.navigation3":"IBM%20Documentation%20Offline%20desktop%20application%20installation",
+			"offlinedocs.navigation4":"Intranet%20version",
+			"offlinedocs.navigation5":"Updates",
+			"offlinedocs.navigation6":"FAQs",
+			"offlinedocs.downloadheadingbutton1":"Download%20IBM%20Documentation%20Offline%20for%20Windows",
+			"offlinedocs.downloadheadingbutton2":"Download%20IBM%20Documentation%20Offline%20for%20macOS",
+			"offlinedocs.downloadheadingbutton3":"Download%20IBM%20Documentation%20Offline%20for%20Linux",
+			"offlinedocs.downloadheadingbutton4":"Log%20in%20to%20download",
+			"offlinedocs.downloadheadingbutton5":"Download%20intranet%20version",
+			"offlinedocs.downloadheadingbutton6":"Download%20for%20your%20OS",
+			"offlinedocs.downloadheadingbutton7":"Download%20for%20a%20different%20OS",
+			"offlinedocs.cardheading":"Intranet%20IBM%20Documentation%20offline",
+			"offlinedocs.unavailable":"Temporarily%20unavailable",
+			"offlinedocs.licensingAgreement":"License%20Agreement",
+			"offlinedocs.licensingAgreementText":"Please%20read%20and%20accept%20the%20license%20agreement%20to%20download%20the%20IBM%20Documentation%20Offline%20application.%20If%20you%20would%20like%20to%20view%20the%20agreement%20at%20a%20later%20time,%20access%20is%20available%20on%20our%20license%20agreement%20below.",
+			"offlinedocs.licensingAgreementAgree":"I%20agree%20to%20the%20terms%20and%20conditions",
+			"products.header":"IBM%20Documentation%20products",
+			"products.alternativeHeader":"IBM%20Documentation%20-%20product%20catalog",
+			"products.all":"All",
+			"products.showing":"Showing%20$COUNT$%20results",
+			"products.filter":"Search%20results%20for%20%3Cb%3E$FILTER$%3C/b%3E",
+			"products.noResults":"No%20products%20found",
+			"products.filterCatalogue":"Filter%20within%20the%20product%20catalog",
+			"products.filterList":"Filter%20within%20the%20product%20list",
+			"products.product":"product",
+			"products.products":"products",
+			"products.favorite":"favorite",
+			"products.favorites":"favorites",
+			"products.removeFavorite":"Click%20to%20remove%20favorite",
+			"products.addFavorite":"Click%20to%20save%20as%20favorite",
+			"products.addedFavourite":"$PRODUCT$%20was%20added%20to%20my%20favorites.",
+			"products.removedFavourite":"$PRODUCT$%20was%20removed%20from%20my%20favorites.",
+			"products.result":"result",
+			"products.results":"results",
+			"products.clearFilter":"Clear%20filter%20to%20see%20all%20favorites%20and%20products.",
+			"products.allProducts":"All%20products",
+			"feedback.greatLetUsKnow":"Great!%20Let%20us%20know%20what%20you%20found%20helpful.",
+			"feedback.comment":"Comment",
+			"feedback.tellUs":"Tell%20us%20about%20your%20IBM%20Documentation%20experience.",
+			"feedback.note":"Note:%20This%20feedback%20goes%20to%20your%20product's%20documentation%20team%20and%20does%20not%20include%20a%20response.%20Issues%20that%20require%20a%20response%20should%20go%20through%20IBM%20support.",
+			"feedback.emailSupport":"Email%20IBM%20Documentation%20support",
+			"feedback.rateContent":"Rate%20this%20content",
+			"feedback.improve":"What%20can%20we%20do%20to%20improve%20the%20content?",
+			"feedback.submit":"Submit",
+			"feedback.cancel":"Cancel",
+			"feedback.wasHelpful":"Was%20this%20topic%20helpful?",
+			"feedback.togetherMessage":"Together,%20we%20can%20continue%20to%20improve%20IBM%20Documentation.",
+			"feedback.thankYou":"Thank%20you%20for%20your%20feedback!",
+			"feedback.returnToTopic":"Return%20to%20topic",
+			"feedback.maxCharacters":"Maximum%20of%20750%20characters",
+			"feedback.errorHeading":"Error%20submitting%20rating",
+			"feedback.errorText1":"There%20has%20been%20an%20error%20sending%20your%20feedback%20to%20the%20team.%20Your%20comment%20was%20saved%20locally,%20if%20not%20in%20an%20incognito%20browser,%20and%20will%20be%20available%20when%20attempting%20to%20submit%20feedback%20again.",
+			"feedback.errorText2":"Please%20try%20again%20later.",
+			"feedback.submittedHeading":"Thank%20you%20for%20your%20submission.",
+			"feedback.submittedText":"Submissions%20are%20limited%20to%201%20per%20day%20per%20topic.",
+			"feedback.buttons":"Topic%20rating%20buttons",
+			"feedback.positiveFeedback":"Positive%20feedback%20module",
+			"feedback.negativeFeedback":"Negative%20feedback%20module",
+			"feedback.provideMoreFeedback":"provide%20more%20feedback",
+			"feedback.provideMoreFeedbackCapital":"Provide%20more%20feedback",
+			"feedback.providePositiveFeedback":"positive%20feedback",
+			"feedback.provideNegativeFeedback":"negative%20feedback",
+			"footer.tellUs":"Tell%20us%20what%20you%20think",
+			"footer.helpUs1":"Help%20us%20improve%20IBM%20Content",
+			"footer.helpUs2":"Give%20us%20%3Cspan%20id=%22ibmdocs-feedback-label%22%3Efeedback%3C/span%3E%20for%20this%20page%20on%20GitHub.",
+			"footer.feedback":"feedback",
+			"footer.footer":"Footer",
+			"footer.statement":"While%20IBM%20values%20the%20use%20of%20inclusive%20language,%20terms%20that%20are%20outside%20of%20IBM's%20direct%20influence,%20for%20the%20sake%20of%20maintaining%20user%20understanding,%20are%20sometimes%20required.%20As%20other%20industry%20leaders%20join%20IBM%20in%20embracing%20the%20use%20of%20inclusive%20language,%20IBM%20will%20continue%20to%20update%20the%20documentation%20to%20reflect%20those%20changes.",
+			"footer.docsHelp":"IBM%20Documentation%20Help",
+			"leadspace.changeProduct":"Change%20product",
+			"leadspace.select":"Select%20a%20mini%20journey%20to%20get%20started",
+			"resources.read":"Read%20more",
+			"search.tips":"Search%20tips",
+			"search.filterInfo":"Filter%20search%20by",
+			"search.searchDocumentation":"Search%20IBM%20Documentation",
+			"search.searchIn":"Search%20in",
+			"search.pagination":"Pagination",
+			"search.products":"Product%20pages",
+			"search.resultsFor":"results%20for",
+			"search.resultsAllDocs":"$AMOUNT$%20results%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20all%20of%20IBM%20Documentation.",
+			"search.resultsScopedDocs":"$AMOUNT$%20results%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20$SCOPE$.",
+			"search.resultsForNoScope":"$AMOUNT$%20results%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E.",
+			"search.resultsRepeatSearchAllDocs":"Repeat%20this%20search%20in%20%3Cspan%20id=%22ibm-search-all-docs-link%22%3Eall%20of%20IBM%20Documentation%3C/span%3E.",
+			"search.resultsRepeatSearchScoped":"Repeat%20this%20search%20in%20%3Cspan%20id=%22ibm-search-scoped-link%22%3E$SCOPE$%3C/span%3E.",
+			"search.resultsRedbooks":"$AMOUNT$%20results%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20IBM%20Redbooks.",
+			"search.resultsDeveloper":"$AMOUNT$%20results%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20IBM%20Developer.",
+			"search.resultsTechnotes":"$AMOUNT$%20results%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20Support%20Technotes.",
+			"search.resultsAnnouncements":"$AMOUNT$%20results%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20all%20of%20IBM%20Announcement%20letters.",
+			"search.resultsSalesManuals":"$AMOUNT$%20results%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20all%20of%20IBM%20Sales%20manuals.",
+			"search.resultsTraining":"$AMOUNT$%20results%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20IBM%20Training.",
+			"search.resultsApihub":"$AMOUNT$%20results%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20IBM%20API%20Hub.",
+			"search.resultsFallbackAll":"We%20didn't%20find%20any%20results%20in%20the%20product%20version%20you%20were%20searching,%20but%20we%20did%20find%20related%20results%20in%20other%20products%20in%20IBM%20Documentation.",
+			"search.resultsFallbackFamily":"We%20didn't%20find%20any%20results%20in%20the%20product%20version%20you%20were%20searching,%20but%20we%20did%20find%20related%20results%20in%20other%20versions%20of%20this%20product.",
+			"search.resultsFallbackVersionBookshelf":"We%20didn't%20find%20any%20results%20in%20the%20bookshelf%20you%20were%20searching,%20but%20we%20did%20find%20related%20results%20in%20other%20documents%20of%20this%20product.",
+			"search.resultsFallbackVersionBook":"We%20didn't%20find%20any%20results%20in%20the%20book%20you%20were%20searching,%20but%20we%20did%20find%20related%20results%20in%20other%20documents%20of%20this%20product.",
+			"search.allDocumentation":"All%20of%20IBM%20Documentation",
+			"search.allOf":"All%20of%20$PRODUCT$",
+			"search.refineSearch":"Select%20a%20scope%20to%20refine%20search",
+			"search.changeScope":"Change%20search%20scope:",
+			"search.repeatSearchZOS":"Repeat%20the%20search%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20all%20of%20$SCOPE$",
+			"search.fallbackIncorrectTag":"We%20didn't%20find%20any%20results%20in%20the%20bookshelf%20or%20book%20you%20were%20searching,%20because%20it%20is%20not%20enabled%20for%20scoped%20search.",
+			"search.fallbackIncorrectTagFeedback":"Submit%20feedback%20to%20IBM%20Documentation%20support.",
+			"search.zeroResultsIncorrectTag":"0%20result%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20$SCOPE$",
+			"search.zeroResultsInccorectTagUnknown":"0%20result%20for%20%3Cem%3E%3Cstrong%3E%22$SEARCHTEXT$%22%3C/strong%3E%3C/em%3E%20in%20this%20bookshelf%20or%20book",
+			"search.correction":"Did%20you%20mean%20%3Cspan%20id=%22ibmdocs-correction-link%22%3E$SEARCHTEXT$%3C/span%3E.",
+			"search.errormessageDescription":"Search%20is%20temporarily%20unavailable.",
+			"search.errormessageSubtitle":"We%20are%20currently%20working%20on%20the%20fix.%20It%20should%20be%20back%20up%20shortly.",
+			"search.errormessageTitle":"Search%20is%20temporarily%20unavailable.",
+			"search.minutes":"Minutes",
+			"search.minute":"Minute",
+			"search.hours":"Hours",
+			"search.noResults":"No%20content%20meets%20your%20search%20criteria,%20please%20try%20again.",
+			"search.technical":"Technical%20documentation",
+			"search.filters":"Search%20filters",
+			"search.filterIBMDocs":"IBM%20Documentation",
+			"search.filterIBMDev":"IBM%20Developer",
+			"search.filterTechnotes":"Support%20Technotes",
+			"search.filterRedbooks":"IBM%20Redbooks",
+			"search.filterAnnouncements":"IBM%20Announcement%20letters",
+			"search.filterSalesManuals":"IBM%20Sales%20manuals",
+			"search.filterTraining":"IBM%20Training",
+			"search.filterApihub":"IBM%20API%20Hub",
+			"search.filterMoreOptions":"Filters",
+			"search.filterDateRangeLabel":"Date%20range",
+			"search.filterDateRangeStart":"Start%20date",
+			"search.filterDateRangeEnd":"End%20date",
+			"search.filterAnnouncementType":"Announcement%20type",
+			"search.results":"Search%20results",
+			"search.sorry":"We're%20sorry!",
+			"search.pageMoved":"The%20page%20you're%20looking%20for%20may%20have%20been%20moved%20or%20deleted.%20Start%20a%20new%20search%20on%20IBM%20Documentation%20or%20visit%20IBM%20Documentation",
+			"search.search":"Search",
+			"search.homepage":"home%20page",
+			"search.notFound1":"Search%20couldn't%20find%20any%20matches.",
+			"search.notFound2":"Be%20aware%20of%20your%20spelling.%20Even%20a%20single,%20misspelled%20word%20can%20impact%20your%20results.",
+			"search.notFound3":"The%20more%20specific%20your%20search%20terms%20are,%20the%20better%20quality%20search%20results%20you%20will%20receive.",
+			"search.notFound4":"Repeat%20your%20search%20across%20%3Ca%20id=%22ibm-search-link%22%20class=%22bx--link%22%20target=%22_blank%22%20rel=%22noreferrer%22%3Eall%20of%20IBM%3C/a%3E.",
+			"search.typeaheadLandingPages":"Product%20documentation%20landing%20pages",
+			"search.save":"Save",
+			"search.cancel":"Cancel",
+			"search.sortBy":"Sort%20by",
+			"search.sortByLabel":"Sorting%20options",
+			"search.optionRelevancy":"relevancy",
+			"search.optionDate":"date",
+			"search.optionRating":"rating",
+			"landing.selectVersion":"Select%20a%20product%20version%20for%20details",
+			"landing.showAllVersions":"Show%20all%20versions",
+			"landing.showLessVersions":"Show%20fewer%20versions",
+			"landing.showAllProducts":"Show%20all%20products",
+			"landing.showLessProducts":"Show%20fewer%20products",
+			"landing.documentation":"documentation",
+			"landing.IBMDocumentation":"IBM%20Documentation",
+			"landing.cloudpakSectionHeading":"What%20are%20IBM%20Cloud%20Paks?",
+			"landing.cloudpakVideoHeading":"AI-powered%20hybrid%20cloud%20software",
+			"landing.cloudpakVideoDescOne":"IBM%20Cloud%5Cu00ae%20%20Paks%20are%20AI-powered%20software%20that%20can%20help%20organizations%20build,%20modernize,%20and%20manage%20applications%20securely%20across%20any%20cloud.",
+			"landing.cloudpakVideoDescTwo":"They%20include%20pre-certified%20containerized%20software%20and%20foundational%20services%20that%20provide%20customers%20with%20a%20common%20operations%20and%20integration%20framework.%20Built%20on%20Red%20Hat%5Cu00ae%20OpenShift%5Cu00ae,%20the%20market%20leader%20for%20open%20source,%20hybrid%20cloud%20platform%5Cu00b9,%20they%20provide%20a%20consistent%20experience%20for%20an%20infrastructure%20management%20control%20plane%20that%20includes%20AI,%20automation%20and%20security.",
+			"landing.allCloudPaks":"All%20IBM%20Cloud%20Paks",
+			"landing.cloudpakTile1Heading":"Adopt%20IBM%20Cloud%20Paks",
+			"landing.cloudpakTile1Text":"Learn%20about%20benefits%20and%20advantages%20of%20migrating%20to%20the%20IBM%20Cloud%20Pak%20Platform%20as%20an%20existing%20IBM%20customer.",
+			"landing.cloudpakTile2Heading":"Explore%20IBM%20Cloud%20Pak%20Capabilities",
+			"landing.cloudpakTile2Text":"Interested%20in%20specific%20capabilities?%20Find%20out%20which%20Cloud%20Pak%20is%20right%20for%20your%20business.",
+			"landing.cloudpakTile3Heading":"See%20how%20AI%20can%20transform%20your%20business",
+			"landing.cloudpakTile3Text":"Artificial%20intelligence%20enables%20computers%20and%20machines%20to%20mimic%20the%20perception,%20learning,%20problem-solving,%20and%20decision-making%20capabilities%20of%20the%20human%20mind.",
+			"landing.cloudpakTile4Heading":"Visit%20IBM%20Cloud%20Learn%20Hub",
+			"landing.cloudpakTile4Text":"Broaden%20your%20expertise%20in%20cloud%20technologies,%20concepts,%20and%20methods.",
+			"landing.learnMore":"Learn%20more",
+			"landing.entitledVersionMessage":"Content%20is%20entitled%20for%20limited%20users.",
+			"landing.entitledLogin":"Login%20is%20required",
+			"masthead.IBMDocumentation":"Documentation",
+			"rightnav.region":"Region",
+			"rightnav.region.worldwide":"World%20wide",
+			"rightnav.downloadPDF":"PDF%20Download",
+			"rightnav.downloadEPUB":"EPUB%20Download",
+			"rightnav.savePDF":"Save%20PDF",
+			"rightnav.login":"Login",
+			"rightnav.loginText":"IBMers%20login%20for%20internal%20only%20content",
+			"rightnav.selectRole":"Choose%20a%20role",
+			"rightnav.onThisPage":"On%20this%20page",
+			"languages.ar":"Arabic",
+			"languages.bg":"Bulgarian",
+			"languages.bs":"Bosnian",
+			"languages.ca":"Catalan",
+			"languages.cs":"Czech",
+			"languages.da":"Danish",
+			"languages.de":"German",
+			"languages.el":"Greek",
+			"languages.en":"English",
+			"languages.es":"Spanish",
+			"languages.fi":"Finnish",
+			"languages.fr":"French",
+			"languages.hr":"Croatian",
+			"languages.hu":"Hungarian",
+			"languages.it":"Italian",
+			"languages.he":"Hebrew",
+			"languages.ja":"Japanese",
+			"languages.ko":"Korean",
+			"languages.kk":"Kazakh",
+			"languages.mk":"Macedonian",
+			"languages.nl":"Dutch",
+			"languages.no":"Norwegian",
+			"languages.pl":"Polish",
+			"languages.pt":"Portuguese/Portugal",
+			"languages.pt-br":"Portuguese/Brazil",
+			"languages.ro":"Romanian",
+			"languages.ru":"Russian",
+			"languages.sk":"Slovak",
+			"languages.sl":"Slovenian",
+			"languages.sr":"Serbian",
+			"languages.sv":"Swedish",
+			"languages.th":"Thai",
+			"languages.tr":"Turkish",
+			"languages.vi":"Vietnamese",
+			"languages.zh":"Chinese%20Simplified",
+			"languages.zh-tw":"Chinese%20Traditional",
+			"bannerNotification.title":"We'd%20like%20your%20opinion",
+			"bannerNotification.subtitle":"IBM%20is%20conduction%20research%20to%20improve%20the%20documentation%20translation%20experience%20and%20we%20would%20like%20tour%20thoughts%20to%20help%20improve%20design.",
+			"bannerNotification.link":"Take%20the%20survey",
+			"announcements.menuItem":"Announcements%20&%20sales%20manuals",
+			"announcements.title":"IBM%20Announcements%20",
+			"announcements.subtitle":"Review%20newly%20announced%20products,%20features,%20withdrawal%20dates%20and%20more",
+			"announcements.searchplaceholder":"Search%20all%20announcements%20by%20keyword,%20subject%20or%20product",
+			"announcements.recentAnnouncements":"Recent%20announcements",
+			"announcements.salesManuals":"Sales%20manuals",
+			"announcements.previousWeekAnnouncements":"Previous%20week%20announcements",
+			"announcements.PCAnnouncements":"Price%20change%20announcements",
+			"announcements.EOSAnnouncements":"EOS%20announcements",
+			"announcements.IBMCloudAnnouncements":"IBM%20Cloud%20recent%20announcements",
+			"announcements.IBMCloudAnnouncementsViewAll":"View%20all%20IBM%20Cloud%20announcements",
+			"announcements.internalOnlyLetters":"Internal%20announcements",
+			"announcements.internalOnlyText":"IBMers%20looking%20for%20internal%20only%20announcement%20letters%20can%20do%20so%20by%20logging%20in.",
+			"announcements.internalOnlyLoginBtn":"Login%20for%20internal%20letters",
+			"announcements.recentSalesManuals":"Recent%20sales%20manuals",
+			"announcements.noAnnouncements":"No%20new%20announcements%20were%20posted",
+			"announcements.searchAnnouncements":"Search%20all%20announcements",
+			"announcements.searchSalesmanuals":"Search%20all%20sales%20manuals",
+			"announcements.published":"Published:",
+			"announcements.nosalesManual":"No%20Sales%20Manuals%20are%20associated%20with%20this%20product.",
+			"announcements.nosalesManualonhomepage":"No%20sales%20manuals%20have%20been%20published%20in%20the%20last%202%20weeks.",
+			"announcements.noCloudAnnouncements":"No%20IBM%20Cloud%20announcements",
+			"announcements.noEOSAnnouncements":"No%20EOS%20announcements",
+			"announcements.noPCAnnouncements":"No%20price%20chage%20announcements",
+			"announcements.internalmessage":"%20No%20recent%20internal%20letters%20have%20been%20published%20in%20the%20last%202%20weeks.",
+			"announcements.nointernnalproductpage":"No%20internal%20letters%20are%20associated%20with%20this%20product.",
+			"announcements.showLink":"Show%20older%20letters",
+			"announcements.hideLink":"Hide%20older%20letters",
+			"announcements.showless":"show%20less",
+			"announcements.showmore":"%20show%20more",
+			"announcements.archived":"Archived%20announcements",
+			"announcements.archivedDescription":"Are%20you%20looking%20for%20announcements%20published%20earlier%20than%202020?%20Price%20actions%20(price%20changes)%20or%20RPQ%20(requests%20for%20price%20quotation)%20published%20before%202024?%20Some%20of%20these%20letters%20were%20originally%20created%20in%20earlier%20versions%20of%20HTML%20and%20may%20have%20formatting%20issues.",
+			"announcements.archivedBtn":"Search%20archived%20announcements",
+			"announcements.toggleArchived":"Include%20older%20announcements",
+			"announcements.tearsheetOpen":"Show%20Tools%20and%20services%20map",
+			"announcements.tearsheetOpenIntro":"See%20how%20this%20service%20fits%20in%20with%20other%20services%20on%20Cloud%20Pak%20for%20Data.",
+			"announcements.notificationUpdates":"Notification%20updates",
+			"announcements.notificationUpdatesDescription":"Subscribe%20to%20notifications%20to%20keep%20up%20to%20date%20with%20the%20latest%20announcements.%20Through%20the%20myNotification%20portal%20you%20can%20sign%20up%20to%20receive%20email%20notifications,%20daily%20or%20weekly,%20when%20announcements%20are%20published.",
+			"announcements.notificationUpdatesBtn":"Subscribe%20to%20announcements",
+			"announcements.manageNotifications":"Manage%20notifications",
+			"announcements.myNotificationsSubscribeHeader":"Subcribe%20to%20notifications%20for%20announcements",
+			"announcements.myNotificationsSubscribeBody":"Receive%20email%20notifications%20when%20new%20announcements%20are%20published.%20Once%20subscribed%20you%20can%20update%20your%20notification%20preferences%20to%20daily%20or%20weekly.%20",
+			"announcements.myNotificationsSubscribeBodyP2":"You%20will%20also%20be%20auto-subscribed%20to%20other%20product%20notifications%20such%20as%20security%20bulletins,%20flash%20notices,%20and%20more.%20%3Ca%20href=%22$URL$%22%20target=%22_blank%22%3EManage%20your%20notifications%3C/a%3E%20to%20see%20the%20full%20list%20of%20content%20sent%20through%20notifications.",
+			"announcements.myNotificationsSubscribeSubmit":"Login%20to%20subscribe",
+			"announcements.myNotificationsSubscribeCancel":"Cancel",
+			"announcements.myNotifications":"Notifications",
+			"announcements.myNotificationSubscripbedBtn":"Subscribed",
+			"announcements.myNotificationSubscriptionErrorTitle":"Subscription%20failed",
+			"announcements.myNotificationSubscriptionErrorMsg":"There%20was%20an%20error%20processing%20your%20request.%20Please%20try%20again%20later.",
+			"announcements.myNotificationSubscriptionSuccessMsg":"You%20have%20been%20subscribed%20to%20notifications%20for%20announcements.",
+			"announcements.myNotificationSubscriptionSuccessTitle":"Notification%20subscription",
+			"announcements.RPQ":"Request%20for%20price%20quotation",
+			"announcements.noRPQ":"No%20requests%20for%20price%20quotation",
+			"topic.AnnouncementBannerSubtitle":"The%20contents%20of%20this%20letter%20are%20for%20your%20information%20and%20for%20your%20use%20in%20planning%20marketing%20activities.%20All%20information%20is%20subject%20to%20change.%20Do%20not%20disclose%20the%20information%20in%20this%20announcement%20letter%20before%20the%20Day%20of%20Announcement.",
+			"regions.US":"United%20States",
+			"regions.CAN":"Canada",
+			"regions.LA":"Latin%20America",
+			"regions.EMEA":"Europe%20(EMEA)",
+			"regions.JPN":"Japan",
+			"regions.AP":"Asia%20Pacific",
+			"rfaType.TC":"Terms%20and%20Conditions",
+			"rfaType.HW":"Hardware",
+			"rfaType.HWW":"Hardware%20withdrawal",
+			"rfaType.PLA":"PLA%20software",
+			"rfaType.PLAW":"PLAW%20Software%20withdrawal",
+			"rfaType.ALP":"ALP%20software",
+			"rfaType.ALPW":"ALPW%20Software%20withdrawal",
+			"rfaType.PREV":"Preview",
+			"rfaType.SVC":"Services",
+			"rfaType.Services":"Services",
+			"rfaType.Hardware":"Hardware",
+			"rfaType.Software":"Software",
+			"rfaType.Withdrawal":"Withdrawal",
+			"rfaType.StatementOfDirection":"Statement%20of%20direction",
+			"rfaType.EOS":"End%20of%20service%20(EOS)",
+			"rfaType.PC":"Price%20change",
+			"rfaType.RPQ":"Request%20for%20price%20quotation",
+			"downloadPDX.heading":"New%20searchable%20PDFs%20available",
+			"downloadPDX.label":"Docs%20PDF",
+			"downloadPDX.primaryButton":"Download%20PDX",
+			"downloadPDX.secondaryButton":"Cancel",
+			"downloadPDX.secondaryButton2":"Download%20individual%20PDFs",
+			"downloadPDX.content":"For%20larger%20doc%20sets,%20IBM%20Documentation%20now%20provides%20a%20PDX%20download%20package.%20The%20PDX%20is%20a%20searchable%20index%20that%20enables%20you%20to%20search%20across%20multiple%20PDF%20documents.%20Click%20here%20for%20instructions%20on%20how%20to%20unpack%20and%20use%20the%20PDX.",
+			"downloadPDX.howToUnpackLink":"How%20to%20unpack%20PDX%20files",
+			"redbooks.productTitle":"IBM%20Redbooks%20for%20$PRODUCT$",
+			"redbooks.recentlyPublished":"Recently%20published",
+			"redbooks.noAvailable":"No%20Redbooks%20available",
+			"redbooks.menuItem":"IBM%20Redbooks",
+			"redbooks.title":"IBM%20%3Cspan%20class=%22ibmdocs-red-label%22%3ERed%3C/span%3Ebooks%20",
+			"redbooks.searchplaceholder":"Search%20all%20IBM%20Redbooks%20by%20keyword,%20subject%20or%20product",
+			"redbooks.newRedbooks":"%20New%20Redbooks",
+			"redbooks.noRedbooks":"%20No%20new%20Redbooks",
+			"redbooks.aboutRedbooks":"%20About%20IBM%20Redbooks",
+			"redbooks.aboutArticle":"%20%3Cp%20class=%22ibm-padding-bottom-1%22%3EIBM%20Redbooks%20content%20is%20developed%20and%20published%20by%20IBM%20Systems%20typically%20through%20a%20residency%20process.%20We%20develop%20and%20deliver%20skills,%20technical%20know-how,%20and%20materials%20exploring%20integration,%20implementation,%20and%20operation%20of%20realistic%20client%20scenarios%20that%20include%20IBM%20products%20as%20well%20as%20technologies%20from%20Red%20Hat,%20SAP,%20Oracle,%20Linux%20and%20others.%3C/p%3E%3Cp%20class=%22ibm-padding-bottom-1%22%3EWe%20work%20with%20IBM%20Divisions%20and%20Business%20Partners%20to%20develop%20a%20broad%20range%20of%20IBM%20Redbooks%20content.%20Our%20value-add%20information%20products%20address%20product,%20platform,%20and%20solution%20perspectives.%20%3C/p%3E%3Cp%20class=%22ibm-padding-bottom-1%22%3EIBM%20Redbooks%20content%20is%20available%20in%20various%20formats%20for%20download%20at%20no%20cost%20from%20IBM,%20Google%20Play%20books%20and%20Apple%20iBooks.%3C/p%3E",
+			"redbooks.publications":"%20Redbooks%20publications",
+			"redbooks.publicationsArticle":"%20%3Cp%20class=%22ibm-padding-bottom-1%22%3EIBM%20Redbooks%20core%20content%20typically%20provides%20positioning%20and%20value%20guidance,%20installation%20and%20implementation%20experiences,%20typical%20solution%20scenarios,%20and%20step-by-step%20%E2%80%9Chow-to%E2%80%9D%20guidelines.%20It%20sometimes%20reflects%20working%20experiences%20about%20a%20specific%20topic%20and%20often%20includes%20sample%20code%20and%20other%20support%20materials.%20%3C/p%3E%3Cp%20class=%22ibm-padding-bottom-1%22%3EShorter%20Redbooks%20content%20(such%20as%20papers%20and%20guides)%20often%20focuses%20on%20a%20business%20view%20of%20technology%20that%20solves%20business%20issues,%20provides%20business%20value,%20or%20enables%20competitive%20advantage%20by%20applying%20existing%20technologies%20or%20exploring%20a%20roadmap%20for%20emerging%20technologies.%3C/p%3E",
+			"redbooks.webdocs":"%20Web%20docs",
+			"redbooks.webdocsArticle":"%20Web%20docs%20are%20brief%20technical%20tips%20and%20hints%20that%20address%20a%20specific%20feature%20or%20problem%20with%20an%20IBM%20product.%20They%20might%20be%20excerpts%20from%20existing%20Redbooks%20content,%20or%20they%20can%20be%20contributed%20from%20other%20sources.",
+			"redbooks.draft":"%20Draft",
+			"redbooks.draftArticle":"%20Drafts%20include%20published%20Redbooks%20content%20that%20is%20still%20under%20development.%20This%20allows%20access%20to%20content%20that%20has%20not%20yet%20completed%20the%20review%20process%20(and%20might%20contain%20some%20errors).",
+			"redbooks.video":"%20Videos%20and%20social%20media",
+			"redbooks.videoArticle":"%20We%20create%20content%20beyond%20books%20and%20papers,%20such%20as%20videos%20and%20blog%20posts%20that%20range%20from%20solution%20overviews%20to%20detailed%20workshop%20experiences.",
+			"redbooks.notificationBannerMsg":"You%20can%20now%20access%20a%20subset%20of%20IBM%20Redbooks%20from%20IBM%20Documentation.%20We%E2%80%99re%20exploring%20how%20to%20improve%20the%20discoverability%20of%20related%20content%20and%20we%E2%80%99d%20like%20your%20feedback.%20Learn%20more%20in%20our%20%3Ca%20href=%22$URL$%22%3Erelease%20notes%3C/a%3E.",
+			"redbooks.provideFeedback":"Provide%20feedback",
+			"redbooks.relatedVideos":"Related%20videos",
+			"redbooks.relatedVideo":"Related%20video",
+			"notifications.newVersion.title":"A%20newer%20version%20of%20this%20product%20documentation%20is%20available.",
+			"notifications.newVersion.message":"You%20are%20viewing%20an%20older%20version.%20",
+			"notifications.newVersion.link":"View%20latest",
+			"watsonx.search.seemore.title":"Verified%20sources%20used%20to%20generate%20the%20watsonx%20answer",
+			"watsonx.aislug.tooltip.content":"Answers%20have%20been%20generated%20by%20watsonx%20using%20IBM%20content.%20Answers%20may%20not%20be%20completely%20accurate.%20For%20more%20information,%20view%20the%20AI%20model%20documentation.",
+			"watsonx.aislug.tooltip.disclaimer.link":"View%20disclaimer",
+			"watsonx.error":"We%20are%20having%20trouble%20returning%20your%20watsonx%20results,%20please%20wait%20a%20few%20moments%20and%20try%20again.",
+			"announcement.aislug.tooltip.content":"Portions%20of%20this%20content%20were%20created%20with%20the%20assistance%20of%20AI%20technology.%20For%20more%20information,%20view%20the%20AI%20model%20documentation.",
+			"announcement.aislug.tooltip.disclaimer.link":"View%20disclaimer",
+			"common.IBMDOCS":"IBM%20Documentation",
+	}
+,
+          properties: {"ui.electron.enabled":false,"ui.toc.localParse":true,"ui.darkMode.enabled":true,"ui.ctr.tracking.enabled":true,"ui.search.errorNotification.enabled":false,"ui.announcementLetters.enabled":true,"ui.redbooks.enabled":true,"ui.redbooksDocs.enabled":true,"ui.productList.enabled":false,"ui.watsonxStreamApi.enabled":false,"ui.trendingDocumentation":[{"productTitle":"IBM watsonx","description":"home.watsonxDesc","url":"watsonx"},{"productTitle":"IBM Cloud Pak for Business Automation","description":"home.cloudpakAutomationDesc","url":"SSYHZ8"},{"productTitle":"IBM Cloud Pak for Data","description":"home.cloudpakDataDesc","url":"SSQNUZ"},{"productTitle":"IBM Cloud Pak for Integration","description":"home.cloudpakAutomationDesc","url":"SSGT7J"},{"productTitle":"IBM Cloud Pak for AIOps","description":"home.cloudpakWatsonAIOpsDesc","url":"SSJGDOB"}],"ui.redbooksBanner.enabled":false,"ui.tearsheetMapping.enabled":false,"ui.tearsheetMappingProduct.support":[{"url":"SSQNUZ_4.7.x/cpd/overview/overview.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=overview","id":"concept_pjc_vfr_5jb__title__6","tool":"","service":""},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/ml-spaces_local.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=learning-deployment-spaces","id":"lastModifiedDate","tool":"deployments","service":"wkc"},{"url":"SSQNUZ_4.7.x/wsj/governance/governance.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=governance-artifacts","id":"lastModifiedDate","tool":"governance","service":"wkc"},{"url":"SSQNUZ_4.7.x/wsj/catalog/manage-catalog.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=governance-catalogs","id":"lastModifiedDate","tool":"catalogs","service":"wkc"},{"url":"SSQNUZ_4.7.x/wsj/quality/manage-dq-rules.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=quality-managing-data-rules","id":"lastModifiedDate","tool":"data_quality_rules","service":"wkc"},{"url":"SSQNUZ_4.7.x/wsj/quality/manage-dq-definitions.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=quality-managing-data-definitions","id":"lastModifiedDate","tool":"data_quality_definitions","service":"wkc"},{"url":"SSQNUZ_4.7.x/wsj/governance/metadata-enrichment.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=data-enriching-your-assets","id":"lastModifiedDate","tool":"metadata_enrichment","service":"wkc"},{"url":"SSQNUZ_4.7.x/wsj/manage-data/metadata-import.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=data-importing-metadata","id":"lastModifiedDate","tool":"metadata_import","service":"wmla"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/ml-experimnt-builder_local.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=models-deep-learning-experiment-builder","id":"lastModifiedDate","tool":"deep_learning_experiment_builder","service":"wml"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/fed-lea.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=models-federated-learning","id":"lastModifiedDate","tool":"federated_learning","service":"wkc"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/autoai-overview.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=models-autoai","id":"lastModifiedDate","tool":"autoai","service":"wmla"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/notebook-editor.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=scripts-jupyter-notebook-editor","id":"lastModifiedDate","tool":"notebook_editor","service":"wkc"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/vs-code-support.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=scripts-visual-studio-code","id":"lastModifiedDate","tool":"visual_studio_code"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/jupyterlab-parent.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=scripts-jupyterlab","id":"lastModifiedDate","tool":"jupyterlab"},{"url":"SSQNUZ_4.7.x/svc-welcome/aifact.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-ai-factsheets","id":"welcome-ai-fact__sl-desc__title__1","tool":"ai_factsheets"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/factsheets-model-inventory.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=governance-ai-factsheets","id":"managing-governance-with-ai-factsheets","tool":"ai_factsheets"},{"url":"SSQNUZ_4.7.x/svc-welcome/spark.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-analytics-engine-powered-by-apache-spark","id":"welcome-spark__sl-desc__title__1","tool":"data_refinery","service":"analytics_engine"},{"url":"SSQNUZ_4.7.x/wsj/spark/spark.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=models-apache-spark","id":"lastModifiedDate","tool":"data_refinery","service":"analytics_engine"},{"url":"SSQNUZ_4.7.x/svc-welcome/ca.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-cognos-analytics","id":"welcome-ca__sl-desc__title__1","tool":"cognos_analytics","service":"cognos_analytics"},{"url":"SSQNUZ_4.7.x/svc-cognos/ca-overview.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=analytics-analyzing-visualizing-data-cognos","id":"lastModifiedDate","tool":"cognos_analytics"},{"url":"SSQNUZ_4.7.x/svc-welcome/idash.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-cognos-dashboards","id":"welcome-idash__sl-desc__title__1","tool":"cognos_dashboards","service":"cognos_dashboard"},{"url":"SSQNUZ_4.7.x/svc-idash/welcome_idash.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=analytics-building-interactive-visualizations-cognos-dashboards","id":"lastModifiedDate","tool":"cognos_dashboards"},{"url":"SSQNUZ_4.7.x/svc-welcome/dp.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-data-privacy-masking-flow","id":"welcome-dp__sl-desc__title__1","tool":"masking_flow","service":"data_privacy"},{"url":"SSQNUZ_4.7.x/wsj/governance/data-privacy.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=data-masking-masking-flow","id":"lastModifiedDate","tool":"masking_flow"},{"url":"SSQNUZ_4.7.x/svc-welcome/dr.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-data-refinery","id":"welcome-dr__sl-desc__title__1","tool":"data_refinery","service":"data_refinery"},{"url":"SSQNUZ_4.7.x/wsj/refinery/refining_data.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=data-refining","id":"lastModifiedDate","tool":"data_refinery"},{"url":"SSQNUZ_4.7.x/svc-welcome/data-replication.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-data-replication","id":"welcome-data-replication__sl-desc__title__1","tool":"data_replication","service":"data_replication"},{"url":"SSQNUZ_4.7.x/wsj/manage-data/rep-data-ovr.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=data-replicating","id":"lastModifiedDate","tool":"data_replication"},{"url":"SSQNUZ_4.7.x/svc-welcome/ds.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-datastage","id":"welcome-ds__sl-desc__title__1","tool":"datastage","service":"datastage"},{"url":"SSQNUZ_4.7.x/dstage/dsnav/topics/datastage.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=data-transforming","id":"lastModifiedDate","tool":"datastage"},{"url":"SSQNUZ_4.7.x/svc-welcome/do.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-decision-optimization","id":"welcome-do__sl-desc__title__1","tool":"decision_optimization","service":"decision_optimization"},{"url":"SSQNUZ_4.7.x/do/ICPD_home.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=models-decision-optimization","id":"lastModifiedDate","tool":"decision_optimization"},{"url":"SSQNUZ_4.7.x/svc-welcome/hadoopaddon.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-execution-engine-apache-hadoop","id":"welcome-hadoopaddon__sl-desc__title__1","tool":"jupyterlab","service":"execution_engine"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/hadoop-analyze-clusters.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=models-apache-hadoop","id":"lastModifiedDate","tool":"jupyterlab","service":"execution_engine"},{"url":"SSQNUZ_4.7.x/svc-welcome/mdc.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-match-360-watson","id":"welcome-mdc__sl-desc__title__1","tool":"master_data","service":"match360"},{"url":"SSQNUZ_4.7.x/wsj/mdm/getting-started.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=data-managing-master","id":"lastModifiedDate","tool":"master_data"},{"url":"SSQNUZ_4.7.x/svc-welcome/openpages.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-openpages","id":"welcome-openpages__sl-desc__title__1","tool":"openpages","service":"openpages"},{"url":"SSQNUZ_4.7.x/svc-openpages/openpages-overview.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=governance-risk-compliance-openpages","id":"lastModifiedDate","tool":"openpages"},{"url":"SSQNUZ_4.7.x/svc-welcome/pa.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-planning-analytics","id":"welcome-pa__sl-desc__title__1","tool":"planning_analytics","service":"planning_analytics"},{"url":"SSQNUZ_4.7.x/svc-pa/pa-get-started.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=analytics-modeling-reporting-patterns-in-data-planning","id":"lastModifiedDate","tool":"planning_analytics"},{"url":"SSQNUZ_4.7.x/svc-welcome/pm.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-product-master","id":"welcome-pm__sl-desc__title__1","tool":"product_master","service":"product_master"},{"url":"SSQNUZ_4.7.x/svc-pm/usage/pm-intro.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=governance-managing-master-data-by-using-product-master","id":"lastModifiedDate","tool":"product_master"},{"url":"SSQNUZ_4.7.x/svc-welcome/rstudio.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-rstudio-server-runtimes","id":"welcome-rstudio__sl-desc__title__1","tool":"rstudio","service":"rstudio_server_runtimes"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/rstudio-overview.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=scripts-rstudio","id":"lastModifiedDate","tool":"rstudio"},{"url":"SSQNUZ_4.7.x/svc-welcome/spssmodeler.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-spss-modeler","id":"welcome-spssmodeler__sl-desc__title__1","tool":"spss_modeler","service":"spss_modeler"},{"url":"SSQNUZ_4.7.x/wsd/spss-modeler.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=models-spss-modeler","id":"lastModifiedDate","tool":"spss_modeler"},{"url":"SSQNUZ_4.7.x/svc-welcome/voice.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-voice-gateway","id":"welcome-voice__sl-desc__title__1","tool":"voice_gateway","service":"voice_gateway"},{"url":"SSQNUZ_4.7.x/svc-voice/voice.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=solutions-voice-gateway","id":"lastModifiedDate","tool":"voice_gateway"},{"url":"SSQNUZ_4.7.x/svc-welcome/watsonassist.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-watson-assistant","id":"welcome-watsonassist__desc__title__1","tool":"watson_assistant","service":"watson_assistant"},{"url":"SSQNUZ_4.7.x/svc-assistant/assistant.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=solutions-watson-assistant","id":"lastModifiedDate","tool":"watson_assistant"},{"url":"SSQNUZ_4.7.x/svc-welcome/watsondisc.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-watson-discovery","id":"welcome-watsondisc__sl-desc__title__1","tool":"watson_discovery","service":"watson_discovery"},{"url":"SSQNUZ_4.7.x/svc-discovery/discovery.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=solutions-watson-discovery","id":"lastModifiedDate","tool":"watson_discovery"},{"url":"SSQNUZ_4.7.x/svc-welcome/wkc.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-watson-knowledge-catalog","id":"welcome-wkc__sl-desc__title__1","tool":"catalogs","service":"wkc"},{"url":"SSQNUZ_4.7.x/wsj/catalog/get-started-op.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=governance-data","id":"lastModifiedDate","tool":"catalogs","service":"wkc"},{"url":"SSQNUZ_4.7.x/svc-welcome/wml.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-watson-machine-learning","id":"welcome-wml__body__title__1","tool":"autoai","service":"wml"},{"url":"SSQNUZ_4.7.x/svc-welcome/wmlaccelerator.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-watson-machine-learning-accelerator","id":"welcome-wmlaccelerator__sl-desc__title__1","tool":"deep_learning_experiment_builder","sevice":"wmla"},{"url":"SSQNUZ_4.7.x/svc-wmla/wmla.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=models-watson-machine-learning-accelerator","id":"lastModifiedDate","tool":"deep_learning_experiment_builder","sevice":"wmla"},{"url":"SSQNUZ_4.7.x/svc-welcome/aiopenscale.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-watson-openscale","id":"welcome-aiopenscale__sl-desc__title__1","tool":"openscale","service":"watson_openscale"},{"url":"SSQNUZ_4.7.x/wsj/model/getting-started.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=governance-evaluating-ai-models-watson-openscale","id":"lastModifiedDate","tool":"openscale"},{"url":"SSQNUZ_4.7.x/svc-welcome/wsp.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-watson-pipelines","id":"welcome-wsp__sl-desc__title__1","tool":"pipelines","service":"watson_pipelines"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/ml-orchestration-overview.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=assets-watson-pipelines","id":"lastModifiedDate","tool":"pipelines"},{"url":"SSQNUZ_4.7.x/svc-welcome/dv.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-watson-query","id":"welcome-dv__sl-desc__title__1","tool":"data_virtualization","service":"watson_query"},{"url":"SSQNUZ_4.7.x/svc-dv/virtualizing_data.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=data-virtualizing","id":"lastModifiedDate","tool":"data_virtualization"},{"url":"SSQNUZ_4.7.x/svc-welcome/wstt.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-watson-speech","id":"welcome-wstt__sl-desc__title__1","tool":"catalogs","service":"watson_speech_services"},{"url":"SSQNUZ_4.7.x/svc-speech/speech-to-text.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=solutions-watson-speech-services","id":"lastModifiedDate","tool":"catalogs","service":"watson_speech_services"},{"url":"SSQNUZ_4.7.x/svc-welcome/wsl.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-watson-studio","id":"welcome-wsl__body__title__1","tool":"pipelines","service":"watson_studio"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/data-science.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=analyzing-data-working-models","id":"lastModifiedDate","tool":"pipelines","service":"watson_studio"},{"url":"SSQNUZ_4.7.x/svc-welcome/jupyter.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=services-watson-studio-runtimes","id":"welcome-jupyter__sl-desc__title__1","tool":"data_refinery","service":"watson_studio_runtimes"},{"url":"SSQNUZ_4.7.x/wsj/analyze-data/notebook-environments.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=environments-notebook","id":"lastModifiedDate","tool":"data_refinery","service":"watson_studio_runtimes"},{"url":"SSQNUZ_4.7.x/svc-nav/head/services.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=integrations-services","id":"lastModifiedDate","tool":"","service":""},{"url":"SSQNUZ_4.7.x/wsj/getting-started/assets.html","newUrl":"cloud-paks/cp-data/4.7.x?topic=tutorials-asset-types-properties","id":"types","tool":"","service":""}],"env":"cloudprod","href":"/en/tarm/8.18.x","userInfo":{"authenticated":false,"internal":false},"productName":"IBM Turbonomic Application Resource Management","productBreadcrumb":[{"label":"IBM Turbonomic Application Resource Management","href":"SSFV9Z","newHref":"tarm"},{"label":"8.18.x","href":"SSFV9Z_8.x.x","newHref":"tarm/8.18.x"}],"ui.guidebuilder.url":"https://guide-builder-dev.dcs.ibm.com"},
+          newUrlStrategyEnabled: true,
+          darkshop: false,
+          ctrTrackingEnabled: false,
+        };
+
+        // darkshop (electron) flag
+        if( kcGlobals.properties && kcGlobals.properties['ui.electron.enabled']) {
+          kcGlobals.darkshop = kcGlobals.properties['ui.electron.enabled']
+        }
+        // unescape the values only once
+        Object.keys(kcGlobals.translation).forEach(key => kcGlobals.translation[key] = convertUnicode(decodeURI(kcGlobals.translation[key])));
+        if(kcGlobals.properties && kcGlobals.properties.oldUrl) {
+          kcGlobals.properties.oldUrl = decodeURIComponent(kcGlobals.properties.oldUrl);
+          if(document.location.hash !== '') {
+            kcGlobals.properties.oldUrl += document.location.hash;
+          }
+        }
+
+      //CTR tracking
+      if (kcGlobals.properties && kcGlobals.properties['ui.ctr.tracking.enabled']) {
+        kcGlobals.ctrTrackingEnabled = kcGlobals.properties['ui.ctr.tracking.enabled'];
+        const sr7 = document.createElement( 'script' );
+        sr7.setAttribute( 'src', 'https://www.ibm.com/marketplace/static/components/search/insights/r7insight.min.js' );
+        sr7.setAttribute( 'defer','');
+        document.head.appendChild( sr7 );
+        const sinsights = document.createElement( 'script' );
+        sinsights.setAttribute( 'src', 'https://www.ibm.com/marketplace/static/components/search/insights/ibm-search-insights.js' );
+        sinsights.setAttribute( 'defer','');
+        document.head.appendChild( sinsights );
+        sinsights.onload = () => {
+          const scriptElm = document.createElement('script');
+          const inlineCode = document.createTextNode('IBMSearchInsightsData.setAdopter(IBMSearchInsightsData.ADOPTERS.DOCS)');
+          scriptElm.appendChild(inlineCode);
+          document.head.appendChild(scriptElm);
+        }
+      }</script><script src="turbonomic_application_resource_management_files/r7insight.min.js" defer="defer"></script><script src="turbonomic_application_resource_management_files/ibm-search-insights.js" defer="defer"></script><style>.unified-navigation-button-no-access a:hover{background-color:initial;cursor:default}.unified-navigation-button-no-access a .cds--toggletip svg{top:2px;position:relative}button.unified-navigation-button-no-access:hover{background-color:initial;cursor:default}.idm-styling.unified-navigation-container{height:3rem}.docs-styling .unified-navigation-docs-button{padding-top:3px;border-bottom:3px solid #4589ff}.docs-styling .unified-navigation-docs-button svg{fill:#4589ff !important}</style><script>IBMSearchInsightsData.setAdopter(IBMSearchInsightsData.ADOPTERS.DOCS)</script><style type="text/css">.truste_box_overlay_inner{box-shadow: rgb(0, 0, 0, 0.2) 0px 0px 16px 2px !important;}</style><style type="text/css">.truste-close-button{visibility:visible !important;position: initial !important;}.truste-close-button-container{z-index: 1}.trustarc-domain-list-container{color:#161616;padding: 16px 8% 16px 16px !important;}.bpopmodal-head:{font-size:20px !important;}.flex-container-ccm{height: auto !important;width: auto !important;overflow: inherit !important;}#truste-consent-track{opacity:.95 !important;}</style><script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_257" src="turbonomic_application_resource_management_files/utag.257.js"></script><script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_184" src="turbonomic_application_resource_management_files/utag.184.js"></script><script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_238" src="turbonomic_application_resource_management_files/utag.238.js"></script><script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_301" src="turbonomic_application_resource_management_files/utag.301.js"></script><script type="text/javascript" async="" charset="utf-8" id="tealium_visitor_service_184main_1" src="turbonomic_application_resource_management_files/019c33c2f9a30015dbe547fe265505054002800f00b3b_002"></script><script type="text/javascript" async="" charset="utf-8" id="tealium_visitor_service_184main_2" src="turbonomic_application_resource_management_files/019c33c2f9a30015dbe547fe265505054002800f00b3b"></script><script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_192" src="turbonomic_application_resource_management_files/utag.192.js"></script><script type="text/javascript" async="" charset="utf-8" id="tealium_visitor_service_184main_3" src="turbonomic_application_resource_management_files/019c33c2f9a30015dbe547fe265505054002800f00b3b_003"></script><script src="turbonomic_application_resource_management_files/RCa01675387b8541cbbab70fd358fd43e5-source.min.js" async=""></script></head><body style="margin-inline-end: 0px;"><div id="app"><div class="cds--white cds--layer-one"><div class="ibmdocs-layout-grid cds--grid cds--grid--full-width"><div class="cds--row"><div class="ibmdocs-layout-grid-col cds--col-sm-4 cds--col-md-8 cds--col-lg-16"><div class="ibmdocs-toc-open  ibmdocs-toolbar-closed"><div class="ibm-docs-sticky-headers " role="banner"><div class="announcement-header redbooks-header"><c4d-masthead-composite id="masthead-container" classname="docs-masthead" auth-method="profile-api" searchnoredirect="true" has-contact="false" platform="Documentation" has-search="true" searchplaceholder="Search in IBM Turbonomic Application Resource Management" custom-typeahead-api="true" has-profile="true" user-status="Unauthenticated" selected-menu-item="undefined" has-language-selector="true" cart-label="Cart" style="z-index: 900; position: relative; display: block; height: 49px;"><!---->
+      <!--?lit$802160819$-->
+      <c4d-masthead has-language-selector="" data-autoid="c4d--masthead" style="transition: none; inset-block-start: 0px;">
+        <c4d-skip-to-content href="#main-content" link-assistive-text="Skip to content" role="navigation" slot="brand" aria-label="Skip to content"></c4d-skip-to-content>
+        <!--?lit$802160819$--> <!--?lit$802160819$-->
+        <c4d-masthead-logo hide-logo="" data-autoid="c4d--masthead-logo" size="" slot="brand"></c4d-masthead-logo>
+      
+        <!--?lit$802160819$-->
+          <c4d-top-nav-name href="https://www.ibm.com/docs/en" slot="">
+            <!--?lit$802160819$-->Documentation
+          </c4d-top-nav-name>
+        
+        <!--?lit$802160819$-->
+          <c4d-top-nav selected-menu-item="undefined" hidenav="" data-autoid="c4d--masthead__l0-nav" hide-divider="">
+            <!--?lit$802160819$--><!---->
+      <c4d-top-nav-item href="/docs/en/announcements" title="Announcements" data-autoid="c4d--masthead__l0-nav--nav0"></c4d-top-nav-item>
+    <!----><!---->
+      <c4d-top-nav-item href="/docs/en/redbooks" title="IBM Redbooks" data-autoid="c4d--masthead__l0-nav--nav1"></c4d-top-nav-item>
+    <!----><!---->
+      <c4d-top-nav-item href="/docs/en/products" title="Product list" data-autoid="c4d--masthead__l0-nav--nav2"></c4d-top-nav-item>
+    <!----><!---->
+      <c4d-top-nav-item href="javascript:window.openToc()" title="Table of contents" data-autoid="c4d--masthead__l0-nav--nav3"></c4d-top-nav-item>
+    <!----><!---->
+      <c4d-top-nav-item href="javascript:window.switchTheme()" title="Dark mode" data-autoid="c4d--masthead__l0-nav--nav4"></c4d-top-nav-item>
+    <!----><!---->
+        <c4d-megamenu-top-nav-menu menu-label="IBM Turbonomic Application Resource Management" trigger-content="IBM Turbonomic Application Resource Management" data-autoid="c4d--masthead__l0-nav--nav5" style="--c4d-ce--viewport-width: 1920px;">
+          <!--?lit$802160819$-->
+        </c4d-megamenu-top-nav-menu>
+      <!---->
+          </c4d-top-nav>
+         <!--?lit$802160819$-->
+          <c4d-search-with-typeahead active="" custom-typeahead-api="" input-timeout="200" placeholder="Search in IBM Turbonomic Application Resource Management" searchopenonload="" data-autoid="c4d--search-with-typeahead" aria-label="" direction="bottom" size="md" type="" value="" slot="search"></c4d-search-with-typeahead>
+        
+        <c4d-masthead-global-bar has-search-active="" data-autoid="c4d--masthead-global-bar" slot="profile">
+          <!--?lit$802160819$-->
+          <!--?lit$802160819$--><!--?lit$802160819$-->
+          <c4d-megamenu-language-selector></c4d-megamenu-language-selector>
+        
+          <!--?lit$802160819$-->
+          <c4d-masthead-profile data-autoid="c4d--masthead-profile">
+            <!--?lit$802160819$--><!---->
+                  <c4d-masthead-profile-item href="https://myibm.ibm.com/?lnk=mmi" role="listitem">
+                    <!--?lit$802160819$-->My IBM
+                  </c4d-masthead-profile-item>
+                <!----><!---->
+                  <c4d-masthead-profile-item href="/docs/login?redirect_url=https%3A%2F%2Fwww.ibm.com%2Fdocs%2Fen%2Ftarm%2F8.18.x" role="listitem">
+                    <!--?lit$802160819$-->Log in
+                  </c4d-masthead-profile-item>
+                <!---->
+          </c4d-masthead-profile>
+        
+        </c4d-masthead-global-bar>
+        <!--?lit$802160819$-->
+        <c4d-megamenu-overlay></c4d-megamenu-overlay>
+      </c4d-masthead>
+    </c4d-masthead-composite></div><div id="dark-mode-wrapper" role="complementary" aria-label="Dark mode button"><span class="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--bottom cds--tooltip cds--icon-tooltip"><div class="cds--tooltip-trigger__wrapper"><button aria-labelledby="tooltip-:r0:" class="cds--btn--icon-only dark-mode-btn cds--btn cds--btn--secondary" type="button"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7.2,2.3c-1,4.4,1.7,8.7,6.1,9.8c0.1,0,0.1,0,0.2,0c-1.1,1.2-2.7,1.8-4.3,1.8c-0.1,0-0.2,0-0.2,0C5.6,13.8,3,11,3.2,7.7 C3.2,5.3,4.8,3.1,7.2,2.3 M8,1L8,1C4.1,1.6,1.5,5.3,2.1,9.1c0.6,3.3,3.4,5.8,6.8,5.9c0.1,0,0.2,0,0.3,0c2.3,0,4.4-1.1,5.8-3 c0.2-0.2,0.1-0.6-0.1-0.7c-0.1-0.1-0.2-0.1-0.3-0.1c-3.9-0.3-6.7-3.8-6.4-7.6C8.3,3,8.4,2.4,8.6,1.8c0.1-0.3,0-0.6-0.3-0.7 C8.1,1,8.1,1,8,1z"></path></svg></button></div><span aria-hidden="true" id="tooltip-:r0:" role="tooltip" class="cds--popover"><span class="cds--popover-content cds--tooltip-content">Dark mode</span><span class="cds--popover-caret"></span></span></span></div></div><div class="ibmdocs-topic-container cds--css-grid cds--css-grid--condensed cds--css-grid--full-width" id="ibmdocs-topic-container"><div class="cds--sm:col-span-4 cds--md:col-span-3 cds--lg:col-span-4 ibmdocs-toc-column"><div class="toc-wrapper" style="width: 480px;"><div class="toc-fixed"><div class="ibmdocs-toc-version-section bx--grid" role="navigation" aria-label="TOC version selector"><div class="ibmdocs-toc-product-section"><div class="ibmdocs-product-name">IBM Turbonomic Application Resource Management</div><div class="ibmdocs-close-toc-btn"><span class="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--bottom cds--tooltip cds--icon-tooltip"><div class="cds--tooltip-trigger__wrapper"><button aria-label="Table of contents" aria-labelledby="tooltip-:r1l:" class="cds--btn--icon-only cds--btn cds--btn--md cds--layout--size-md cds--btn--ghost" type="button"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 16L20 6 21.4 7.4 12.8 16 21.4 24.6 20 26z"></path></svg></button></div><span aria-hidden="true" id="tooltip-:r1l:" role="tooltip" class="cds--popover"><span class="cds--popover-content cds--tooltip-content">Close table of contents</span><span class="cds--popover-caret"></span></span></span></div></div><div id="ibmdocs-change-version-label" class="ibmdocs-change-version-label">Change version</div><div role="complementary" aria-label="Check full TOC"><div class="cds--form-item"><div class="cds--select"><label for="toc-version-selector" class="cds--label cds--visually-hidden" dir="auto">Select</label><div class="cds--select-input__wrapper"><select aria-labelledby="ibmdocs-change-version-label" aria-label="Choose a version. Enter and select another product version with the enter key." role="combobox" title="" id="toc-version-selector" class="cds--select-input"><option class="cds--select-option" value="SSFV9Z_8.x.x/misc/glossary.html" selected="selected">8.18.x</option><option class="cds--select-option" value="SSFV9Z_8.x.0/misc/glossary.html">8.18.0</option></select><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cds--select__arrow" xmlns="http://www.w3.org/2000/svg"><path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path></svg></div></div></div></div></div><div class="ibmdocs-showmore bx--grid" role="complementary" aria-label="Show full table of contents"><div class="cds--form-item cds--checkbox-wrapper"><input type="checkbox" class="cds--checkbox" id="ibmdocs-showmore-checkbox" checked="checked"><label for="ibmdocs-showmore-checkbox" class="cds--checkbox-label" title=""><span class="cds--checkbox-label-text" dir="auto">Show full table of contents</span></label><div class="cds--checkbox__validation-msg"></div></div></div><div class="ibmdocs-tocfilter bx--grid"><div role="search" aria-label="Filter on titles" class="cds--search cds--search--md"><div class="cds--search-magnifier" tabindex="-1"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" class="cds--search-magnifier-icon" xmlns="http://www.w3.org/2000/svg"><path d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"></path></svg></div><label id="search-input-:r1p:-search" for="search-input-:r1p:" class="cds--label">Filter on titles</label><input autocomplete="off" class="cds--search-input" role="searchbox" id="search-input-:r1p:" placeholder="Filter on titles" type="text"><button aria-label="Clear search input" class="cds--search-close cds--search-close--hidden" title="Clear search input" type="button"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"></path></svg></button></div></div></div><div class="ibmdocs-toc-container" role="navigation" aria-label="TOC navigation"><ul class="cds--list--unordered ibmdocs-toc"><li class="cds--list__item ibmdocs-toc" dir="auto"><ul class="ibmdocs-toc-links"><li class="cds--list__item" dir="auto"><div id="toc-node-documentation-home" class="
+               ibmdocs-toc-row"><a id="tocnode-documentation-home" path="false" href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=documentation-home" class="ibmdocs-toc-link ibmdocs-expand-placeholder" rel="noreferrer">Documentation Home</a></div><div class="ibmdocs-toc-children"></div></li><li class="cds--list__item" dir="auto"><div id="toc-node-documentation-all-turbonomic-versions" class="
+               ibmdocs-toc-row"><a id="tocnode-documentation-all-turbonomic-versions" path="false" href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=documentation-all-turbonomic-versions" class="ibmdocs-toc-link ibmdocs-expand-placeholder" rel="noreferrer">Documentation for all Turbonomic versions</a></div><div class="ibmdocs-toc-children"></div></li><li class="cds--list__item" dir="auto"><div id="toc-node-turbonomic-8186-latest-bi-weekly-release-documentation" class="
+               ibmdocs-toc-row"><a id="tocnode-turbonomic-8186-latest-bi-weekly-release-documentation" path="false" href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=turbonomic-8186-latest-bi-weekly-release-documentation" class="ibmdocs-toc-link" aria-expanded="false" rel="noreferrer">Turbonomic  8.18.6 (latest bi-weekly release) documentation</a><div class="ibmdocs-expand-icon icon-down"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="ibmdocs-expand-icon" xmlns="http://www.w3.org/2000/svg"><path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path></svg></div></div><div class="ibmdocs-toc-children"></div></li><li class="cds--list__item" dir="auto"><div id="toc-node-compliance" class="
+               ibmdocs-toc-row"><a id="tocnode-compliance" path="false" href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=compliance" class="ibmdocs-toc-link ibmdocs-expand-placeholder" rel="noreferrer">Compliance</a></div><div class="ibmdocs-toc-children"></div></li><li class="cds--list__item" dir="auto"><div id="toc-node-module_1649961524734" class="
+               ibmdocs-toc-row"><a id="tocnode-module_1649961524734" path="false" href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=module_1649961524734" class="ibmdocs-toc-link" aria-expanded="false" rel="noreferrer">IBM SaaS Console</a><div class="ibmdocs-expand-icon icon-down"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="ibmdocs-expand-icon" xmlns="http://www.w3.org/2000/svg"><path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path></svg></div></div><div class="ibmdocs-toc-children"></div></li><li class="cds--list__item" dir="auto"><div id="toc-node-providing-feedback" class="
+               ibmdocs-toc-row"><a id="tocnode-providing-feedback" path="false" href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=providing-feedback" class="ibmdocs-toc-link ibmdocs-expand-placeholder" rel="noreferrer">Providing feedback</a></div><div class="ibmdocs-toc-children"></div></li><li class="cds--list__item" dir="auto"><div id="toc-node-glossary" class="ibmdocs-link-active
+               ibmdocs-toc-row"><a id="tocnode-glossary" path="true" href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary" class="ibmdocs-toc-link ibmdocs-expand-placeholder" rel="noreferrer">Glossary</a></div><div class="ibmdocs-toc-children"></div></li><li class="cds--list__item" dir="auto"><div id="toc-node-notices" class="
+               ibmdocs-toc-row"><a id="tocnode-notices" path="false" href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=notices" class="ibmdocs-toc-link ibmdocs-expand-placeholder" rel="noreferrer">Notices </a></div><div class="ibmdocs-toc-children"></div></li></ul></li></ul><div class="announcement-letters"><a class="" aria-disabled="false" href="https://www.ibm.com/docs/en/tarm/8.18.x?announcement=all"><span>Announcements &amp; sales manuals</span><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg></a></div></div><div class="sticky-buttons" role="complementary" aria-label="Download PDF"><div class="download-box"><div class="ibmdocs-pdf-export bx--grid" style="visibility: visible;"><a href="https://ibm.box.com/v/IBMTurbonomic-8186PDF" title="Download PDF" rel="noreferrer" target="_blank">Download PDF <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"></path></svg></a></div><div class="ibmdocs-package-export bx--grid" style="visibility: hidden;"><a title="Offline docs" download="">Offline docs <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M13 7L12.3 6.3 8.5 10.1 8.5 1 7.5 1 7.5 10.1 3.7 6.3 3 7 8 12zM13 12v2H3v-2H2v2l0 0c0 .6.4 1 1 1h10c.6 0 1-.4 1-1l0 0v-2H13z"></path></svg></a></div></div></div></div></div><div class="cds--sm:col-span-0 cds--md:col-span-5 cds--lg:col-span-9 cds--css-grid-column ibmdocs-open-toc-main-content"><div class="ibmdocs-topic-grid cds--subgrid cds--subgrid--wide"><div class="cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-16 cds--css-grid-column"></div></div><div class="ibmdocs-topic-header"><div><div class="ibmdocs-breadcrumb"><div><nav aria-label="Breadcrumb"><ol class="cds--breadcrumb"><li class="cds--breadcrumb-item"><a href="https://www.ibm.com/docs/en/products" aria-label="All products" class="cds--link">All products</a></li><li class="cds--breadcrumb-item"><a class="cds--link" href="https://www.ibm.com/docs/en/tarm">IBM Turbonomic Application Resource Management</a></li><li class="cds--breadcrumb-item"><a class="cds--link" href="https://www.ibm.com/docs/en/tarm/8.18.x">8.18.x</a></li></ol></nav></div></div><div class="ibmdocs-version-selector-wrapper"><div class="cds--form-item ibm-hide"><div class="cds--select cds--select--inline"><label for="ibmdocs-version-selector" class="cds--label" dir="auto">Change version</label><div class="cds--select-input--inline__wrapper"><div class="cds--select-input__wrapper"><select id="ibmdocs-version-selector" class="cds--select-input" title=""><option class="cds--select-option" value="SSFV9Z_8.x.x/misc/glossary.html" selected="selected">8.18.x</option><option class="cds--select-option" value="SSFV9Z_8.x.0/misc/glossary.html">8.18.0</option></select><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cds--select__arrow" xmlns="http://www.w3.org/2000/svg"><path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path></svg></div></div></div></div></div></div><div><div role="none" class="ibmdocs-toolbar" style="display: flex; flex-direction: row;"><div><div class="ibmdocs-topic-rating"><div>Was this topic helpful?</div><div class="ibmdocs-topic-rating-buttons" role="complementary" aria-label="Topic rating buttons"><span class="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--bottom cds--tooltip cds--icon-tooltip"><div class="cds--tooltip-trigger__wrapper"><button id="ibmdics-rating-button-positive" aria-label="positive feedback" aria-labelledby="tooltip-:re:" class="cds--btn--icon-only ibmdocs-rating-button  cds--btn cds--btn--sm cds--layout--size-sm cds--btn--ghost" type="button"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M26,12H20V6a3.0033,3.0033,0,0,0-3-3H14.8672a2.0094,2.0094,0,0,0-1.98,1.7173l-.8453,5.9165L8.4648,16H2V30H23a7.0078,7.0078,0,0,0,7-7V16A4.0045,4.0045,0,0,0,26,12ZM8,28H4V18H8Zm20-5a5.0057,5.0057,0,0,1-5,5H10V17.3027l3.9578-5.9365L14.8672,5H17a1.0008,1.0008,0,0,1,1,1v8h8a2.0025,2.0025,0,0,1,2,2Z"></path></svg></button></div><span aria-hidden="true" id="tooltip-:re:" role="tooltip" class="cds--popover"><span class="cds--popover-content cds--tooltip-content">positive feedback</span><span class="cds--popover-caret"></span></span></span><span class="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--bottom cds--tooltip cds--icon-tooltip"><div class="cds--tooltip-trigger__wrapper"><button id="ibmdics-rating-button-negative" aria-label="negative feedback" aria-labelledby="tooltip-:rh:" class="cds--btn--icon-only ibmdocs-rating-button  cds--btn cds--btn--sm cds--layout--size-sm cds--btn--ghost" type="button"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M30,16V9a7.0078,7.0078,0,0,0-7-7H2V16H8.4648l3.5774,5.3662.8453,5.9165A2.0094,2.0094,0,0,0,14.8672,29H17a3.0033,3.0033,0,0,0,3-3V20h6A4.0045,4.0045,0,0,0,30,16ZM8,14H4V4H8Zm20,2a2.0025,2.0025,0,0,1-2,2H18v8a1.0008,1.0008,0,0,1-1,1H14.8672l-.9094-6.3662L10,14.6973V4H23a5.0057,5.0057,0,0,1,5,5Z"></path></svg></button></div><span aria-hidden="true" id="tooltip-:rh:" role="tooltip" class="cds--popover"><span class="cds--popover-content cds--tooltip-content">negative feedback</span><span class="cds--popover-caret"></span></span></span></div></div><div role="complementary" aria-label="Positive feedback module"><div id="ibmdocs-topic-rating-positive-modal" role="presentation" class="cds--layer-one cds--modal cds--modal-tall ibmdocs-topic-rating-modal"><span tabindex="0" role="link" class="cds--visually-hidden">Focus sentinel</span><div role="dialog" class="cds--modal-container cds--modal-container--sm" aria-label="Positive feedback module" aria-modal="true" tabindex="-1"><div class="cds--modal-header"><h2 id="cds--modal-header__heading--modal-id-:rk:" class="cds--modal-header__heading" dir="auto"><span class="ibmdocs-popup-title">Rate this content</span></h2><div class="cds--modal-close-button"><span class="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--left cds--tooltip cds--icon-tooltip"><div class="cds--tooltip-trigger__wrapper"><button aria-label="Close" aria-labelledby="tooltip-:rl:" class="cds--btn--icon-only cds--modal-close cds--btn cds--btn--primary" type="button"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 32 32" class="cds--modal-close__icon" xmlns="http://www.w3.org/2000/svg"><path d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"></path></svg></button></div><span aria-hidden="true" id="tooltip-:rl:" role="tooltip" class="cds--popover"><span class="cds--popover-content cds--tooltip-content">Close</span><span class="cds--popover-caret"></span></span></span></div></div><div id="cds--modal-body--modal-id-:rk:" class="cds--layer-two cds--modal-content"><div class="ibmdocs-modal-content"><p class="ibm-padding-bottom-1">Great! Let us know what you found helpful.</p><div class="cds--form-item feedback-text-area ibm-padding-bottom-1"><div class="cds--text-area__label-wrapper"><label for="ibmdocs-feedback-positive" class="cds--label" dir="auto"><p class="ibmdocs-small"><span>Comment </span><span class="characters-count">0/750</span></p></label></div><div class="cds--text-area__wrapper cds--text-area__wrapper--cols"><textarea maxlength="750" cols="50" id="ibmdocs-feedback-positive" placeholder="Maximum of 750 characters" aria-readonly="false" class="cds--text-area" aria-invalid="false" rows="3" style="resize: none;"></textarea><span class="cds--text-area__counter-alert" role="alert" aria-live="assertive" aria-atomic="true"></span></div></div><div class="ibm-padding-top-2 ibmdocs-small">Note:
+ This feedback goes to your product's documentation team and does not 
+include a response. Issues that require a response should go through IBM
+ support. </div></div></div><div aria-busy="false" class="cds--modal-footer cds--btn-set"><button class="cds--btn cds--btn--secondary" type="button">Cancel</button><button class="cds--btn cds--btn--primary" type="button">Submit</button></div></div><span tabindex="0" role="link" class="cds--visually-hidden">Focus sentinel</span></div></div><div role="complementary" aria-label="Negative feedback module"><div id="ibmdocs-topic-rating-negative-modal" role="presentation" class="cds--layer-one cds--modal cds--modal-tall ibmdocs-topic-rating-modal"><span tabindex="0" role="link" class="cds--visually-hidden">Focus sentinel</span><div role="dialog" class="cds--modal-container cds--modal-container--sm" aria-label="Negative feedback module" aria-modal="true" tabindex="-1"><div class="cds--modal-header"><h2 id="cds--modal-header__heading--modal-id-:rr:" class="cds--modal-header__heading" dir="auto"><span class="ibmdocs-popup-title">Rate this content</span></h2><div class="cds--modal-close-button"><span class="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--left cds--tooltip cds--icon-tooltip"><div class="cds--tooltip-trigger__wrapper"><button aria-label="Close" aria-labelledby="tooltip-:rs:" class="cds--btn--icon-only cds--modal-close cds--btn cds--btn--primary" type="button"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 32 32" class="cds--modal-close__icon" xmlns="http://www.w3.org/2000/svg"><path d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"></path></svg></button></div><span aria-hidden="true" id="tooltip-:rs:" role="tooltip" class="cds--popover"><span class="cds--popover-content cds--tooltip-content">Close</span><span class="cds--popover-caret"></span></span></span></div></div><div id="cds--modal-body--modal-id-:rr:" class="cds--layer-two cds--modal-content"><div class="ibmdocs-modal-content"><p class="ibm-padding-bottom-1">What can we do to improve the content?</p><div class="cds--form-item feedback-text-area ibm-padding-bottom-1"><div class="cds--text-area__label-wrapper"><label for="ibmdocs-feedback-negative" class="cds--label" dir="auto"><p class="ibmdocs-small"><span>Comment </span><span class="characters-count">0/750</span></p></label></div><div class="cds--text-area__wrapper cds--text-area__wrapper--cols"><textarea maxlength="750" cols="50" id="ibmdocs-feedback-negative" placeholder="Maximum of 750 characters" aria-readonly="false" class="cds--text-area" aria-invalid="false" rows="3" style="resize: none;"></textarea><span class="cds--text-area__counter-alert" role="alert" aria-live="assertive" aria-atomic="true"></span></div></div><div class="ibm-padding-top-2 ibmdocs-small">Note:
+ This feedback goes to your product's documentation team and does not 
+include a response. Issues that require a response should go through IBM
+ support.</div></div></div><div aria-busy="false" class="cds--modal-footer cds--btn-set"><button class="cds--btn cds--btn--secondary" type="button">Cancel</button><button class="cds--btn cds--btn--primary" type="button">Submit</button></div></div><span tabindex="0" role="link" class="cds--visually-hidden">Focus sentinel</span></div></div><div role="complementary" aria-label="provide more feedback"><div id="ibmdocs-topic-rating-provide-feedback-modal" role="presentation" class="cds--layer-one cds--modal cds--modal-tall ibmdocs-topic-rating-modal"><span tabindex="0" role="link" class="cds--visually-hidden">Focus sentinel</span><div role="dialog" class="cds--modal-container cds--modal-container--sm" aria-label="provide more feedback" aria-modal="true" tabindex="-1"><div class="cds--modal-header"><h2 id="cds--modal-header__heading--modal-id-:r12:" class="cds--modal-header__heading" dir="auto"><span class="ibmdocs-popup-title">Provide more feedback</span></h2><div class="cds--modal-close-button"><span class="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--left cds--tooltip cds--icon-tooltip"><div class="cds--tooltip-trigger__wrapper"><button aria-label="Close" aria-labelledby="tooltip-:r13:" class="cds--btn--icon-only cds--modal-close cds--btn cds--btn--primary" type="button"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 32 32" class="cds--modal-close__icon" xmlns="http://www.w3.org/2000/svg"><path d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"></path></svg></button></div><span aria-hidden="true" id="tooltip-:r13:" role="tooltip" class="cds--popover"><span class="cds--popover-content cds--tooltip-content">Close</span><span class="cds--popover-caret"></span></span></span></div></div><div id="cds--modal-body--modal-id-:r12:" class="cds--layer-two cds--modal-content"><div class="ibmdocs-modal-content"><div class="cds--form-item feedback-text-area ibm-padding-bottom-1"><div class="cds--text-area__label-wrapper"><label for="ibmdocs-feedback-comment" class="cds--label" dir="auto"><p class="ibmdocs-small"><span>Comment </span><span class="characters-count">0/750</span></p></label></div><div class="cds--text-area__wrapper cds--text-area__wrapper--cols"><textarea maxlength="750" cols="50" id="ibmdocs-feedback-comment" placeholder="Maximum of 750 characters" aria-readonly="false" class="cds--text-area" aria-invalid="false" rows="3" style="resize: none;"></textarea><span class="cds--text-area__counter-alert" role="alert" aria-live="assertive" aria-atomic="true"></span></div></div><div class="ibm-padding-top-2 ibmdocs-small">Note:
+ This feedback goes to your product's documentation team and does not 
+include a response. Issues that require a response should go through IBM
+ support.</div></div></div><div aria-busy="false" class="cds--modal-footer cds--btn-set"><button class="cds--btn cds--btn--secondary" type="button">Cancel</button><button class="cds--btn cds--btn--primary" type="button">Submit</button></div></div><span tabindex="0" role="link" class="cds--visually-hidden">Focus sentinel</span></div></div><div id="ibmdocs-feedback-sent-message-modal" role="presentation" aria-hidden="true" class="cds--layer-one cds--modal"><div class="cds--modal-container cds--modal-container--xs" role="dialog" aria-modal="true" aria-label="feedback-sent-message"><button type="button" class="cds--visually-hidden">Focus sentinel</button><div class="cds--modal-container-body"><div class="cds--modal-header"><div class="cds--modal-close-button"><span class="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--left cds--tooltip cds--icon-tooltip"><div class="cds--tooltip-trigger__wrapper"><button aria-label="Close" aria-labelledby="tooltip-:r19:" class="cds--btn--icon-only cds--modal-close cds--btn cds--btn--primary" type="button"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 32 32" class="cds--modal-close__icon" xmlns="http://www.w3.org/2000/svg"><path d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"></path></svg></button></div><span aria-hidden="true" id="tooltip-:r19:" role="tooltip" class="cds--popover"><span class="cds--popover-content cds--tooltip-content">Close</span><span class="cds--popover-caret"></span></span></span></div></div><div class="cds--layer-two cds--modal-content"><div class="ibmdocs-modal-content"><div class="ibm-padding-bottom-1 ibmdocs-popup-title">Rate this content</div><div class="ibm-padding-bottom-1">Thank you for your feedback!</div><div>Together, we can continue to improve IBM Documentation.</div></div></div><div aria-busy="false" class="cds--modal-footer cds--btn-set"><button class="cds--btn cds--btn--primary" type="button">Return to topic</button></div></div><button type="button" class="cds--visually-hidden">Focus sentinel</button></div></div><div id="ibmdocs-feedback-submission-limited-modal" role="presentation" class="cds--layer-one cds--modal"><span tabindex="0" role="link" class="cds--visually-hidden">Focus sentinel</span><div role="dialog" class="cds--modal-container cds--modal-container--xs" aria-label="feedback-submission-modal" aria-modal="true" tabindex="-1"><div class="cds--modal-header"><div class="cds--modal-close-button"><span class="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--left cds--tooltip cds--icon-tooltip"><div class="cds--tooltip-trigger__wrapper"><button aria-label="Close" aria-labelledby="tooltip-:r1e:" class="cds--btn--icon-only cds--modal-close cds--btn cds--btn--primary" type="button"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 32 32" class="cds--modal-close__icon" xmlns="http://www.w3.org/2000/svg"><path d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"></path></svg></button></div><span aria-hidden="true" id="tooltip-:r1e:" role="tooltip" class="cds--popover"><span class="cds--popover-content cds--tooltip-content">Close</span><span class="cds--popover-caret"></span></span></span></div><h2 id="cds--modal-header__heading--modal-id-:r1d:" class="cds--modal-header__heading" dir="auto">Thank you for your submission.</h2></div><div id="cds--modal-body--modal-id-:r1d:" class="cds--layer-two cds--modal-content"><div class="ibmdocs-modal-content"><p class="ibm-padding-bottom-1">Submissions are limited to 1 per day per topic.</p></div></div></div><span tabindex="0" role="link" class="cds--visually-hidden">Focus sentinel</span></div><div id="ibmdocs-feedback-error-modal" role="presentation" class="cds--layer-one cds--modal"><span tabindex="0" role="link" class="cds--visually-hidden">Focus sentinel</span><div role="dialog" class="cds--modal-container cds--modal-container--sm" aria-label="feedback-error-modal" aria-modal="true" tabindex="-1"><div class="cds--modal-header"><div class="cds--modal-close-button"><span class="cds--popover-container cds--popover--caret cds--popover--high-contrast cds--popover--left cds--tooltip cds--icon-tooltip"><div class="cds--tooltip-trigger__wrapper"><button aria-label="Close" aria-labelledby="tooltip-:r1i:" class="cds--btn--icon-only cds--modal-close cds--btn cds--btn--primary" type="button"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 32 32" class="cds--modal-close__icon" xmlns="http://www.w3.org/2000/svg"><path d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"></path></svg></button></div><span aria-hidden="true" id="tooltip-:r1i:" role="tooltip" class="cds--popover"><span class="cds--popover-content cds--tooltip-content">Close</span><span class="cds--popover-caret"></span></span></span></div><h2 id="cds--modal-header__heading--modal-id-:r1h:" class="cds--modal-header__heading" dir="auto">Error submitting rating</h2></div><div id="cds--modal-body--modal-id-:r1h:" class="cds--layer-two cds--modal-content"><div class="ibmdocs-modal-content"><p class="ibm-padding-bottom-1">There
+ has been an error sending your feedback to the team. Your comment was 
+saved locally, if not in an incognito browser, and will be available 
+when attempting to submit feedback again.</p><p class="ibm-padding-bottom-1">Please try again later.</p></div></div></div><span tabindex="0" role="link" class="cds--visually-hidden">Focus sentinel</span></div></div></div></div></div><div class="ibmdocs-notifications"><div style="position: relative; width: 100%; top: 0px; z-index: 20;" id="ibmdocs-notifications"></div></div><div style="min-height: calc(-128px + 100vh);" class="cds--subgrid cds--subgrid--wide"><div class="ibmdocs-topic-content cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-16 cds--css-grid-column"><div class="ibmdocs-content-container"><html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+<h1 id="glossary__title__1" class="title topictitle1">Glossary</h1><div id="lastModifiedDate"><span>Last Updated</span>: 2026-01-22</div>
+
+
+<div class="body refbody">
+<section class="section"><p class="p">This glossary provides terms and definitions for the <span class="ph">Turbonomic</span> software and
+products. </p><div class="p">The following cross-references are used in this glossary: <ul class="ul cds--list--unordered">
+<li class="li cds--list__item"><span class="ph"><em class="ph i">See</em></span> refers you from a nonpreferred term to the preferred term or from an abbreviation to the spelled-out form.</li>
+<li class="li cds--list__item"><span class="ph"><em class="ph i">See also</em></span> refers you to a related or contrasting term.</li>
+</ul></div> </section>
+</div>
+<article class="topic reference nested1" aria-labelledby="ariaid-title2" lang="en-us" id="gloss_A">
+  <h2 id="gloss_A__title__1" class="title topictitle2">A<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_A__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_A__x10435399">action execution schedule</dt>
+        <dd class="dd">An automation policy setting in Turbonomic that determines when specific generated actions are executed.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x3679069">action mode</dt>
+        <dd class="dd">A policy setting in Turbonomic that specifies the
+ degree of automation for generated actions. An action mode can direct 
+Turbonomic to execute actions automatically, or post actions for review.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x3055114">Active Directory (AD)</dt>
+        <dd class="dd">A hierarchical directory service that enables 
+centralized, secure management of an entire network, which is a central 
+component of the Microsoft Windows platform.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x4850865">AD</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_A__x3055114">Active Directory</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x9860350">affinity rule</dt>
+        <dd class="dd">A VMware rule that specifies that the members of a
+ selected virtual machine Distributed Resource Scheduler (DRS) group can
+ or must run on the members of a specific host DRS group.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x2000100">agent</dt>
+        <dd class="dd">A process that performs an action on behalf of a 
+user or other program without user intervention or on a regular 
+schedule, and reports the results back to the user or program.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x7886094">anti-affinity rule</dt>
+        <dd class="dd">A VMware rule that specifies that the members of a
+ selected virtual machine Distributed Resource Scheduler (DRS) group 
+cannot run on the members of a specific host DRS group.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x2008805">API</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_A__x2000186">application programming
+interface</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x2000166">application</dt>
+        <dd class="dd">One or more computer programs or software 
+components that provide a function in direct support of a specific 
+business process or processes.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x2806116">application component</dt>
+        <dd class="dd">A software component, application code, or a unit
+ of processing that consumes resources, such as memory or CPU, to enable
+ it to perform its function.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x2000186">application programming interface (API)</dt>
+        <dd class="dd">An interface that allows an application program 
+that is written in a high-level language to use specific data or 
+functions of the operating system or another program.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x10435407">application resource management (ARM)</dt>
+        <dd class="dd">A top-down, application-driven approach that 
+continuously analyzes applications' resource needs and generates fully 
+automatable actions to ensure applications always get what they need to 
+perform. ARM is the Turbonomic mission to simultaneously optimize 
+performance, compliance, and cost of applications and infrastructure in 
+real time.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x2049239">ARM</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_A__x10435407">application resource
+management</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_A__x10435412">availability set</dt>
+        <dd class="dd">A logical grouping in Microsoft Azure that isolates VM resources from each other to limit the impact of failure.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title3" lang="en-us" id="gloss_B">
+  <h2 id="gloss_B__title__1" class="title topictitle2">B<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_B__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_B__x10293538">ballooning</dt>
+        <dd class="dd">A technique for hypervisors to reclaim memory 
+from virtual machines that they host by claiming physical pages on a 
+guest OS and allocating the pages to other consumers.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_B__x10435418">bring your own license (BYOL)</dt>
+        <dd class="dd">A licensing model in which corporate customers 
+use their existing licenses flexibly, on-premise or in the cloud, 
+without additional fees. Under this model, the customer remains 
+responsible for managing these licenses, including renewals.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_B__x2197558">business application</dt>
+        <dd class="dd">a logical grouping of application entities and 
+nodes that work together to compose a complete application as end users 
+would view it. Turbonomic users can monitor overall performance, make 
+resourcing decisions, and set policies in the context of their business 
+applications.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_B__x2197609">business transaction</dt>
+        <dd class="dd">A logical grouping of underlying elements in the 
+supply chain of the Application View in Turbonomic. These elements, 
+which represent all elements that fulfill a user-initiated request, 
+could include services, applications, components, database servers, 
+containers, and virtual machines.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_B__x2117562">buyer</dt>
+        <dd class="dd">An entity in the Turbonomic environment that 
+consumes resources from another entity, such as a virtual machine that 
+buys memory resources from a host.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_B__x10312742">BYOL</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_B__x10435418">bring your own license</a>.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title4" lang="en-us" id="gloss_C">
+  <h2 id="gloss_C__title__1" class="title topictitle2">C<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_C__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_C__x2016358">central processing unit (CPU)</dt>
+        <dd class="dd">A measurable unit of processing capacity on a 
+host. CPU is typically expressed on the host as the number of cores, 
+with a given processing speed.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_C__x9581819">cloud-native (cloud native)</dt>
+        <dd class="dd">Pertaining to a model for building and running 
+applications or services that takes advantage of cloud computing 
+principles such as containers, microservices, and dynamic orchestration.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_C__x10132285">cloud native</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_C__x9581819">cloud-native</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_C__x2017080">cluster</dt>
+        <dd class="dd">A collection of complete systems that work together to provide a single, unified computing capability.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_C__x2010901">container</dt>
+        <dd class="dd">A standard unit of software that packages code 
+and dependencies so that applications runs quickly and reliably from one
+ computer environment to another.
+</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_C__x2018514">controller</dt>
+        <dd class="dd">In Kubernetes, a control loop that watches the 
+state of a cluster, then makes or requests changes where needed to move 
+the current cluster state closer to the required state.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_C__x2018778">CPU</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_C__x2016358">central processing unit</a>.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title5" lang="en-us" id="gloss_D">
+  <h2 id="gloss_D__title__1" class="title topictitle2">D<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_D__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_D__x6265019">database memory (DBMem)</dt>
+        <dd class="dd">A monitored resource in Turbonomic that is the 
+measurement of memory utilized by a database server. Turbonomic uses 
+this resource to drive actions for databases, instead of the Vmem on the
+ hosting VM.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_D__x8930162">data transfer object (DTO)</dt>
+        <dd class="dd">An object that carries data between processes to reduce the number of method calls.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_D__x10435439">DBMem</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_D__x6265019">database memory</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_D__x2367676">desired state</dt>
+        <dd class="dd">The state of an operating environment that 
+assures application performance while achieving efficient use of 
+resources and complying with business rules and constraints.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_D__x8930166">DTO</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_D__x8930162">data transfer object</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_D__x2214150">dynamic group</dt>
+        <dd class="dd">A group whose membership can change according to specified criteria such as entity names, resource capacity, or tags.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title6" lang="en-us" id="gloss_F">
+  <h2 id="gloss_F__title__1" class="title topictitle2">F<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_F__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_F__x10435442">fabric target</dt>
+        <dd class="dd">A service that unites compute, network and storage access into a cohesive system.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title7" lang="en-us" id="gloss_G">
+  <h2 id="gloss_G__title__1" class="title topictitle2">G<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_G__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_G__x10435447">ghost volume</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_W__x10435574">wasted storage</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_G__x9773864">Grafana</dt>
+        <dd class="dd">An open source analytics and visualization platform to monitor, search, analyze, and visualize metrics.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_G__x2002179">group</dt>
+        <dd class="dd">A named collection of like entities that can be used in Turbonomic to set scope to policies, plans, charts, and so forth.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title8" lang="en-us" id="gloss_H">
+  <h2 id="gloss_H__title__1" class="title topictitle2">H<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_H__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_H__x2024305">heap</dt>
+        <dd class="dd">The portion of a VM or container's memory allocated to individual applications.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_H__x10435459">hot-add</dt>
+        <dd class="dd">The addition of CPU and memory, or both, without requiring rebooting.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_H__x2024731">hypervisor</dt>
+        <dd class="dd">A service that creates and runs virtual machines 
+(VMs), providing them compute and storage resources. The hypervisor 
+treats on-prem resources such as CPU, memory, and storage as a pool that
+ can be easily reallocated between existing guests or to new virtual 
+machines.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title9" lang="en-us" id="gloss_I">
+  <h2 id="gloss_I__title__1" class="title topictitle2">I<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_I__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_I__x2193801">IAM</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_I__x7547040">identity and access
+management</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_I__x7547040">identity and access management (IAM)</dt>
+        <dd class="dd">The process of controlling access of authorized 
+users to data and applications, while helping companies comply with 
+various regulatory requirements.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_I__x2714740">identity provider (IdP)</dt>
+        <dd class="dd">A provider who offers user authentication as a 
+service. Authentication of a user's sign in details is performed by the 
+identity provider who creates, manages, and maintains the user's 
+identity information. Identity providers enable users in an organization
+ to single sign-on (SSO) to one or more systems.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_I__x7027913">IdP</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_I__x2714740">identity provider</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_I__x2457201">Information Technology Infrastructure Library (ITIL)</dt>
+        <dd class="dd">A best-practice framework for facilitating the delivery and management of IT services.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_I__x10435465">information technology service management (ITSM)</dt>
+        <dd class="dd">A set of workflows and tools to develop, deliver,
+ and manage IT services. ITSM is used to handle incidents, service 
+requests, problems, and changes, all of which are typically linked 
+through an ITSM platform, such as ServiceNow.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_I__x3858854">input/output operations per second (IOPS)</dt>
+        <dd class="dd">A standard computing benchmark used to determine the best configuration settings for servers.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_I__x3858859">IOPS</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_I__x3858854">input/output operations per
+second</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_I__x10437427">ISO image</dt>
+        <dd class="dd">An electronic file that contains the identical 
+content of an optical disc, including the folder and file hierarchy. 
+Using an .ISO file extension, ISO images are created to distribute the 
+disc’s data over a network in order to burn a CD or DVD at the 
+destination computer.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_I__x2457205">ITIL</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_I__x2457201">Information Technology Infrastructure
+Library</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_I__x3429495">ITSM</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_I__x10435465">information technology service
+management</a>.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title10" lang="en-us" id="gloss_L">
+  <h2 id="gloss_L__title__1" class="title topictitle2">L<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_L__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_L__x2028315">latency</dt>
+        <dd class="dd">The time delay between the moment an operation is initiated, and the moment it begins to take effect.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_L__x2028490">license</dt>
+        <dd class="dd">A legal agreement that authorizes the use of 
+proprietary information including, but not limited to, copyrighted or 
+patented information.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_L__x2003619">lift and shift</dt>
+        <dd class="dd">A strategy for moving an application or operation
+ from one environment to another without redesigning the workflow for 
+the app or operation.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title11" lang="en-us" id="gloss_M">
+  <h2 id="gloss_M__title__1" class="title topictitle2">M<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_M__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_M__x2118106">market</dt>
+        <dd class="dd">In Turbonomic, a model of the data center 
+environment that represents each entity, such as physical machines, 
+virtual machines, storage device, volume, or application component, as a
+ buyer or seller in a market. Turbonomic uses virtual currency to give a
+ budget to buyers and assign cost to resources so that users can compare
+ the cost of application transactions with the cost of space on a disk 
+or physical space in a data center.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_M__x8379238">microservice</dt>
+        <dd class="dd">A set of small, independent architectural 
+components, each with a single purpose, that communicate over a common 
+lightweight API.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title12" lang="en-us" id="gloss_N">
+  <h2 id="gloss_N__title__1" class="title topictitle2">N<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_N__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_N__x2031005">namespace</dt>
+        <dd class="dd"><ol class="ol glossnoindent cds--list--ordered--temporary"><li class="li cds--list__item">A virtual cluster within a Kubernetes cluster that can be used to organize and divide resources across multiple users.</li><li class="li cds--list__item">A
+ logical container in which all the names are unique. The unique 
+identifier for an artifact is composed of the namespace and the local 
+name of the artifact.</li></ol></dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_N__x2104973">network interface card (NIC)</dt>
+        <dd class="dd">A physical hardware component that attaches computers to a computer network.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_N__x10435484">NFU</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_N__x10435479">normalized factor unit</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_N__x2031512">NIC</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_N__x2104973">network interface card</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_N__x10435486">non-disruptive mode</dt>
+        <dd class="dd">A policy setting for VMs that prevents actions that require a reboot or introduce disruptions from executing automatically.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_N__x10435479">normalized factor unit (NFU)</dt>
+        <dd class="dd">For a reserved instance (RI) in AWS environments,
+ a measure of RI capacity that is used to compare or combine that 
+capacity for different template families.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title13" lang="en-us" id="gloss_O">
+  <h2 id="gloss_O__title__1" class="title topictitle2">O<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_O__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_O__x10127332">OAS</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_O__x10127327">OpenAPI Specification</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_O__x10435491">observation period</dt>
+        <dd class="dd">For Turbonomic analysis, the time span of sampling for the data that is used to calculate utilization percentiles.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_O__x10127327">OpenAPI Specification (OAS)</dt>
+        <dd class="dd">A standard, programming language-agnostic 
+interface description for HTTP APIs, which allows both humans and 
+computers to discover and understand the capabilities of a service 
+without  requiring access to source code, additional documentation, or 
+inspection of network traffic.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_O__x6441071">Open Virtual Appliance (OVA)</dt>
+        <dd class="dd">A package that is deployed in a virtual 
+environment to create virtual machines and virtual appliances. The OVA 
+package is an archive file that contains the OVF directory.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_O__x10435585">Open Virtualization Format</dt>
+        <dd class="dd">A packaging standard designed to address the portability and deployment of virtualization appliances.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_O__x2455477">orchestration</dt>
+        <dd class="dd">The automated configuration, management, and coordination of computer systems, applications, and services.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_O__x10435499">OVA</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_O__x6441071">Open Virtual Appliance</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_O__x10435590">OVF file</dt>
+        <dd class="dd">A package consisting of many files that is deployed in a virtual environment to create virtual appliances.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title14" lang="en-us" id="gloss_P">
+  <h2 id="gloss_P__title__1" class="title topictitle2">P<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_P__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_P__x10435501">plan market</dt>
+        <dd class="dd">A snapshot of the real-time market that is 
+created in Turbonomic to simulate what-if scenarios against an 
+environment. The plan market starts with the same entities, utilization 
+levels, placement constraints and analysis settings as the real-time 
+market has.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_P__x10435506">policy schedule</dt>
+        <dd class="dd">A schedule that determines that an automation 
+policy is active only at designated times. For example, a policy 
+schedule can set a policy to automatically resize or start VMs for the 
+entire month of December, in anticipation of an increase in demand.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title15" lang="en-us" id="gloss_R">
+  <h2 id="gloss_R__title__1" class="title topictitle2">R<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_R__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_R__x2182544">ready queue</dt>
+        <dd class="dd">A queue for VMs that are waiting for available CPU. </dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_R__x3566221">regex</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_R__x2091404">regular expression</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_R__x2091404">regular expression (regex)</dt>
+        <dd class="dd">A set of characters, meta characters, and operators that define a string or group of strings in a search pattern.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_R__x10435514">remaining garbage collection capacity (remaining GC capacity)</dt>
+        <dd class="dd">The percentage of CPU time not spent on garbage 
+collection (GC). Turbonomic uses this metric in conjunction with Heap 
+Utilization when making scaling decisions for application component 
+entities.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_R__x10435519">remaining GC capacity</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_R__x10435514">remaining garbage collection
+capacity</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_R__x3220976">Representational State Transfer (REST)</dt>
+        <dd class="dd">A software architectural style that guides the 
+design and development of the architecture for the web. REST defines a 
+set of constraints for  the architecture of  Internet-scale distributed 
+hypermedia systems, such as the web.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_R__x10435521">reserved instance (RI)</dt>
+        <dd class="dd">A reservation of cloud resources and capacity 
+that is purchased at a set price for a given time period. Unlike 
+on-demand pricing, the purchaser commits to paying for all of the hours 
+of the contract's term. As a benefit, the hourly rate is lowered 
+significantly.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_R__x2037047">response time</dt>
+        <dd class="dd">The elapsed time between entering an inquiry or request and receiving a response.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_R__x3220987">REST</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_R__x3220976">Representational State
+Transfer</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_R__x2134878">return on investment (ROI)</dt>
+        <dd class="dd">The calculation an entity makes in each 
+Turbonomic market cycle to decide what action, if any, it wants to take.
+ ROI equals revenue divided by expenses.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_R__x10435526">RI</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_R__x10435521">reserved instance</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_R__x2118365">ROI</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_R__x2134878">return on investment</a>.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title16" lang="en-us" id="gloss_S">
+  <h2 id="gloss_S__title__1" class="title topictitle2">S<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_S__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_S__x4585391">SaaS</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_S__x4585386">software as a service</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x2483381">SAML</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_S__x2284996">Security Assertion Markup
+Language</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x3574365">Secure Shell (SSH)</dt>
+        <dd class="dd">A network protocol for secure data exchange 
+between two networked devices. The client can use public-key and 
+private-key authentication, or password authentication, to access the 
+remote server.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x2284996">Security Assertion Markup Language (SAML)</dt>
+        <dd class="dd">An XML framework for exchanging authentication and authorization information.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x2162050">seller</dt>
+        <dd class="dd">An entity in the Turbonomic environment that 
+provides resources to another entity, such as a host that sells CPU 
+resources to a virtual machine.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x2038343">service</dt>
+        <dd class="dd">A measurable function that is part of an internal or user-initiated request, such as a request to update inventory.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x2038443">service provider (SP)</dt>
+        <dd class="dd">Any company that provides services for a fee to 
+its customers, such as telecommunication companies, application service 
+providers, enterprise IT, and Internet service providers.
+</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x2038933">Simple Network Management Protocol (SNMP)</dt>
+        <dd class="dd">A set of protocols for monitoring systems and 
+devices in complex networks. Information about managed devices is 
+defined and stored in a Management Information Base (MIB).</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x2793321">SNMP</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_S__x2038933">Simple Network Management
+Protocol</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x4585386">software as a service (SaaS)</dt>
+        <dd class="dd">A model of software deployment whereby software 
+including business processes, enterprise applications, and collaboration
+ tools, are provided as a service to customers through the cloud.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x2483509">SP</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_S__x2038443">service provider</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x2009651">SQL</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_S__x2004901">Structured Query Language</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x4318877">SSH</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_S__x3574365">Secure Shell</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x3954749">static group</dt>
+        <dd class="dd">A group with a fixed list of members.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x2004901">Structured Query Language (SQL)</dt>
+        <dd class="dd">A standardized language for defining and manipulating data in a relational database.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_S__x10435540">supercluster</dt>
+        <dd class="dd">Two or more clusters that are merged into a 
+single group of providers. This enables Turbonomic to move workload from
+ a host in one of the clusters to a host in any of the merged clusters.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title17" lang="en-us" id="gloss_T">
+  <h2 id="gloss_T__title__1" class="title topictitle2">T<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_T__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_T__x2262507">target</dt>
+        <dd class="dd">A resource or workload management service in a virtual environment that is connected to Turbonomic</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_T__x5364069">tenant</dt>
+        <dd class="dd">An entity that accesses services through a subscription that is associated with an account or namespace.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title18" lang="en-us" id="gloss_V">
+  <h2 id="gloss_V__title__1" class="title topictitle2">V<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_V__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_V__x10435554">VCPU</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_V__x10435549">virtual CPU</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_V__x10435561">VDC</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_V__x10435556">virtual datacenter</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_V__x10435564">VDI</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_V__x6435019">virtual desktop
+infrastructure</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_V__x10435549">virtual CPU (VCPU)</dt>
+        <dd class="dd">A measure of the CPU resources on a VM. VCPU is typically expressed in a VM as the number of cores.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_V__x10435556">virtual datacenter (VDC)</dt>
+        <dd class="dd">A collection or pool of resources that groups the
+ resources around specific requirements or business needs. vDCs can 
+implement boundaries for a private cloud infrastructure, and then can 
+establish tenant groups on that infrastructure.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_V__x6435019">virtual desktop infrastructure (VDI)</dt>
+        <dd class="dd">An infrastructure that consists of desktop operating systems hosted within virtual machines on a centralized server.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_V__x2095726">virtual memory (VMem)</dt>
+        <dd class="dd">The allocated memory capacity in a virtual machine.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_V__x2043196">virtual storage (VStorage)</dt>
+        <dd class="dd">The allocated virtual storage capacity.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_V__x10435567">VMem</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_V__x2095726">virtual memory</a>.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_V__x10435572">VStorage</dt>
+        <dd class="dd">See <a class="xref" href="https://www.ibm.com/docs/en/SSFV9Z_8.x.x/misc/glossary.html#gloss_V__x2043196">virtual storage</a>.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+<article class="topic reference nested1" aria-labelledby="ariaid-title19" lang="en-us" id="gloss_W">
+  <h2 id="gloss_W__title__1" class="title topictitle2">W<a href="https://www.ibm.com/docs/en/tarm/8.18.x?topic=glossary#gloss_W__title__1" title="Copy to clipboard" class="header-link-to-clipboard"><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z"></path><path d="M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z"></path></svg></a></h2>
+  <div class="body refbody">
+    <section class="section"><dl class="dl">
+      
+        <dt class="dt dlterm" id="gloss_W__x10435574">wasted storage</dt>
+        <dd class="dd">Storage volumes that are not actively used by any
+ workload in the system. Typically, volumes that are wasted storage are 
+paid for but unused.</dd>
+      
+      
+        <dt class="dt dlterm" id="gloss_W__x10435579">workload controller</dt>
+        <dd class="dd">A Kubernetes controller that watches the state of a user's pods and then requests changes where needed.</dd>
+      
+    </dl></section>
+  </div>
+</article>
+</article></main><script type="text/javascript" src="turbonomic_application_resource_management_files/xOF3IB"></script></body></html></div></div></div><c4d-back-to-top id="ibmdocs-back-to-top" role="navigation" aria-label="Back to top" data-autoid="c4d--back-to-top" hidden=""></c4d-back-to-top><div class="ibmdocs-footer cds--subgrid cds--subgrid--condensed"><div class="ibmdocs-statement cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-9 cds--xlg:col-span-9 cds--css-grid-column"><span>While
+ IBM values the use of inclusive language, terms that are outside of 
+IBM's direct influence, for the sake of maintaining user understanding, 
+are sometimes required. As other industry leaders join IBM in embracing 
+the use of inclusive language, IBM will continue to update the 
+documentation to reflect those changes.</span></div><div class="ibmdocs-copyright cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-3 cds--xlg:col-span-3 cds--css-grid-column"><span>© Copyright IBM Corporation 2022, 2025</span></div></div><div class="ibmdocs-dotcom-footer"><c4d-footer-container size="micro" selected-language="English"><!---->
+      <c4d-footer size="micro" role="contentinfo" aria-label="footer" data-autoid="c4d--footer">
+        <c4d-footer-logo data-autoid="c4d--footer-logo" slot="brand"></c4d-footer-logo>
+        <!--?lit$802160819$-->
+        <!--?lit$802160819$-->
+        <!--?lit$802160819$-->
+          <c4d-language-selector-desktop size="micro" slot="language-selector" trigger-content="" label-text="" label="" value="English" clear-selection-label="" aria-label="" direction="bottom" type="">
+            <!--?lit$802160819$--><!---->
+                <cds-combo-box-item value="Arabic / عربية" lang="ar" role="option" id="cds-dropdown-item-68" aria-selected="false" size="micro"><!--?lit$802160819$-->Arabic / عربية</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Bulgarian / Български" lang="bg" role="option" id="cds-dropdown-item-69" aria-selected="false" size="micro"><!--?lit$802160819$-->Bulgarian / Български</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Catalan / Català" lang="ca" role="option" id="cds-dropdown-item-70" aria-selected="false" size="micro"><!--?lit$802160819$-->Catalan / Català</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Czech / Čeština" lang="cs" role="option" id="cds-dropdown-item-71" aria-selected="false" size="micro"><!--?lit$802160819$-->Czech / Čeština</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Danish / Dansk" lang="da" role="option" id="cds-dropdown-item-72" aria-selected="false" size="micro"><!--?lit$802160819$-->Danish / Dansk</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="German / Deutsch" lang="de" role="option" id="cds-dropdown-item-73" aria-selected="false" size="micro"><!--?lit$802160819$-->German / Deutsch</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Greek / Ελληνικά" lang="el" role="option" id="cds-dropdown-item-74" aria-selected="false" size="micro"><!--?lit$802160819$-->Greek / Ελληνικά</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="English" lang="en" role="option" id="cds-dropdown-item-75" aria-selected="false" selected="" size="micro"><!--?lit$802160819$-->English</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Spanish / Español" lang="es" role="option" id="cds-dropdown-item-76" aria-selected="false" size="micro"><!--?lit$802160819$-->Spanish / Español</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Finnish / Suomi" lang="fi" role="option" id="cds-dropdown-item-77" aria-selected="false" size="micro"><!--?lit$802160819$-->Finnish / Suomi</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="French / Français" lang="fr" role="option" id="cds-dropdown-item-78" aria-selected="false" size="micro"><!--?lit$802160819$-->French / Français</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Croatian / Hrvatski" lang="hr" role="option" id="cds-dropdown-item-79" aria-selected="false" size="micro"><!--?lit$802160819$-->Croatian / Hrvatski</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Hungarian / Magyar" lang="hu" role="option" id="cds-dropdown-item-80" aria-selected="false" size="micro"><!--?lit$802160819$-->Hungarian / Magyar</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Italian / Italien" lang="it" role="option" id="cds-dropdown-item-81" aria-selected="false" size="micro"><!--?lit$802160819$-->Italian / Italien</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Hebrew / עברית" lang="he" role="option" id="cds-dropdown-item-82" aria-selected="false" size="micro"><!--?lit$802160819$-->Hebrew / עברית</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Japanese / 日本語" lang="ja" role="option" id="cds-dropdown-item-83" aria-selected="false" size="micro"><!--?lit$802160819$-->Japanese / 日本語</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Korean / 한국어" lang="ko" role="option" id="cds-dropdown-item-84" aria-selected="false" size="micro"><!--?lit$802160819$-->Korean / 한국어</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Kazakh / Қазақша" lang="kk" role="option" id="cds-dropdown-item-85" aria-selected="false" size="micro"><!--?lit$802160819$-->Kazakh / Қазақша</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Dutch / Nederlands" lang="nl" role="option" id="cds-dropdown-item-86" aria-selected="false" size="micro"><!--?lit$802160819$-->Dutch / Nederlands</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Norwegian / Norsk" lang="no" role="option" id="cds-dropdown-item-87" aria-selected="false" size="micro"><!--?lit$802160819$-->Norwegian / Norsk</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Polish / polski" lang="pl" role="option" id="cds-dropdown-item-88" aria-selected="false" size="micro"><!--?lit$802160819$-->Polish / polski</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Portuguese/Brazil / Português/Brasil" lang="pt-br" role="option" id="cds-dropdown-item-89" aria-selected="false" size="micro"><!--?lit$802160819$-->Portuguese/Brazil / Português/Brasil</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Portuguese/Portugal / Português/Portugal" lang="pt" role="option" id="cds-dropdown-item-90" aria-selected="false" size="micro"><!--?lit$802160819$-->Portuguese/Portugal / Português/Portugal</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Romanian / Română" lang="ro" role="option" id="cds-dropdown-item-91" aria-selected="false" size="micro"><!--?lit$802160819$-->Romanian / Română</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Russian / Русский" lang="ru" role="option" id="cds-dropdown-item-92" aria-selected="false" size="micro"><!--?lit$802160819$-->Russian / Русский</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Slovak / Slovenčina" lang="sk" role="option" id="cds-dropdown-item-93" aria-selected="false" size="micro"><!--?lit$802160819$-->Slovak / Slovenčina</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Slovenian / slovenščina" lang="sl" role="option" id="cds-dropdown-item-94" aria-selected="false" size="micro"><!--?lit$802160819$-->Slovenian / slovenščina</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Serbian / srpski" lang="sr" role="option" id="cds-dropdown-item-95" aria-selected="false" size="micro"><!--?lit$802160819$-->Serbian / srpski</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Swedish / Svenska" lang="sv" role="option" id="cds-dropdown-item-96" aria-selected="false" size="micro"><!--?lit$802160819$-->Swedish / Svenska</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Thai / ภาษาไทย" lang="th" role="option" id="cds-dropdown-item-97" aria-selected="false" size="micro"><!--?lit$802160819$-->Thai / ภาษาไทย</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Turkish / Türkçe" lang="tr" role="option" id="cds-dropdown-item-98" aria-selected="false" size="micro"><!--?lit$802160819$-->Turkish / Türkçe</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Vietnamese / Việt" lang="vi" role="option" id="cds-dropdown-item-99" aria-selected="false" size="micro"><!--?lit$802160819$-->Vietnamese / Việt</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Chinese Simplified / 简体中文" lang="zh" role="option" id="cds-dropdown-item-100" aria-selected="false" size="micro"><!--?lit$802160819$-->Chinese Simplified / 简体中文</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Chinese Traditional / 繁體中文" lang="zh-tw" role="option" id="cds-dropdown-item-101" aria-selected="false" size="micro"><!--?lit$802160819$-->Chinese Traditional / 繁體中文</cds-combo-box-item>
+              <!---->
+          </c4d-language-selector-desktop>
+        
+
+        <c4d-legal-nav size="micro" data-autoid="c4d--footer-legal-nav" slot="legal-nav">
+          <c4d-footer-logo size="micro" data-autoid="c4d--footer-logo" slot="brand"></c4d-footer-logo>
+          <!--?lit$802160819$--><!---->
+              <c4d-legal-nav-item autoid="Contact IBM" href="https://www.ibm.com/contact?lnk=flg-cont-usen" role="listitem" size=""><!--?lit$802160819$-->Contact IBM</c4d-legal-nav-item>
+            <!----><!---->
+              <c4d-legal-nav-item autoid="Privacy" href="https://www.ibm.com/us-en/privacy" role="listitem" size=""><!--?lit$802160819$-->Privacy</c4d-legal-nav-item>
+            <!----><!---->
+              <c4d-legal-nav-item autoid="Terms of use" href="https://www.ibm.com/legal?lnk=flg-tous-usen" role="listitem" size=""><!--?lit$802160819$-->Terms of use</c4d-legal-nav-item>
+            <!----><!---->
+              <c4d-legal-nav-item autoid="Accessibility" href="https://www.ibm.com/able/?lnk=flg-acce-usen" role="listitem" size=""><!--?lit$802160819$-->Accessibility</c4d-legal-nav-item>
+            <!---->
+          <!--?lit$802160819$-->
+          <c4d-legal-nav-cookie-preferences-placeholder data-autoid="c4d--privacy-cp"></c4d-legal-nav-cookie-preferences-placeholder>
+          <!--?lit$802160819$-->
+          <!--?lit$802160819$-->
+          <c4d-language-selector-desktop size="micro" slot="locale" trigger-content="" label-text="" label="" value="English" clear-selection-label="" aria-label="" direction="bottom" type="">
+            <!--?lit$802160819$--><!---->
+                <cds-combo-box-item value="Arabic / عربية" lang="ar" role="option" id="cds-dropdown-item-102" aria-selected="false" size="micro"><!--?lit$802160819$-->Arabic / عربية</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Bulgarian / Български" lang="bg" role="option" id="cds-dropdown-item-103" aria-selected="false" size="micro"><!--?lit$802160819$-->Bulgarian / Български</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Catalan / Català" lang="ca" role="option" id="cds-dropdown-item-104" aria-selected="false" size="micro"><!--?lit$802160819$-->Catalan / Català</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Czech / Čeština" lang="cs" role="option" id="cds-dropdown-item-105" aria-selected="false" size="micro"><!--?lit$802160819$-->Czech / Čeština</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Danish / Dansk" lang="da" role="option" id="cds-dropdown-item-106" aria-selected="false" size="micro"><!--?lit$802160819$-->Danish / Dansk</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="German / Deutsch" lang="de" role="option" id="cds-dropdown-item-107" aria-selected="false" size="micro"><!--?lit$802160819$-->German / Deutsch</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Greek / Ελληνικά" lang="el" role="option" id="cds-dropdown-item-108" aria-selected="false" size="micro"><!--?lit$802160819$-->Greek / Ελληνικά</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="English" lang="en" role="option" id="cds-dropdown-item-109" aria-selected="false" selected="" size="micro"><!--?lit$802160819$-->English</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Spanish / Español" lang="es" role="option" id="cds-dropdown-item-110" aria-selected="false" size="micro"><!--?lit$802160819$-->Spanish / Español</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Finnish / Suomi" lang="fi" role="option" id="cds-dropdown-item-111" aria-selected="false" size="micro"><!--?lit$802160819$-->Finnish / Suomi</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="French / Français" lang="fr" role="option" id="cds-dropdown-item-112" aria-selected="false" size="micro"><!--?lit$802160819$-->French / Français</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Croatian / Hrvatski" lang="hr" role="option" id="cds-dropdown-item-113" aria-selected="false" size="micro"><!--?lit$802160819$-->Croatian / Hrvatski</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Hungarian / Magyar" lang="hu" role="option" id="cds-dropdown-item-114" aria-selected="false" size="micro"><!--?lit$802160819$-->Hungarian / Magyar</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Italian / Italien" lang="it" role="option" id="cds-dropdown-item-115" aria-selected="false" size="micro"><!--?lit$802160819$-->Italian / Italien</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Hebrew / עברית" lang="he" role="option" id="cds-dropdown-item-116" aria-selected="false" size="micro"><!--?lit$802160819$-->Hebrew / עברית</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Japanese / 日本語" lang="ja" role="option" id="cds-dropdown-item-117" aria-selected="false" size="micro"><!--?lit$802160819$-->Japanese / 日本語</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Korean / 한국어" lang="ko" role="option" id="cds-dropdown-item-118" aria-selected="false" size="micro"><!--?lit$802160819$-->Korean / 한국어</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Kazakh / Қазақша" lang="kk" role="option" id="cds-dropdown-item-119" aria-selected="false" size="micro"><!--?lit$802160819$-->Kazakh / Қазақша</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Dutch / Nederlands" lang="nl" role="option" id="cds-dropdown-item-120" aria-selected="false" size="micro"><!--?lit$802160819$-->Dutch / Nederlands</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Norwegian / Norsk" lang="no" role="option" id="cds-dropdown-item-121" aria-selected="false" size="micro"><!--?lit$802160819$-->Norwegian / Norsk</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Polish / polski" lang="pl" role="option" id="cds-dropdown-item-122" aria-selected="false" size="micro"><!--?lit$802160819$-->Polish / polski</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Portuguese/Brazil / Português/Brasil" lang="pt-br" role="option" id="cds-dropdown-item-123" aria-selected="false" size="micro"><!--?lit$802160819$-->Portuguese/Brazil / Português/Brasil</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Portuguese/Portugal / Português/Portugal" lang="pt" role="option" id="cds-dropdown-item-124" aria-selected="false" size="micro"><!--?lit$802160819$-->Portuguese/Portugal / Português/Portugal</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Romanian / Română" lang="ro" role="option" id="cds-dropdown-item-125" aria-selected="false" size="micro"><!--?lit$802160819$-->Romanian / Română</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Russian / Русский" lang="ru" role="option" id="cds-dropdown-item-126" aria-selected="false" size="micro"><!--?lit$802160819$-->Russian / Русский</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Slovak / Slovenčina" lang="sk" role="option" id="cds-dropdown-item-127" aria-selected="false" size="micro"><!--?lit$802160819$-->Slovak / Slovenčina</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Slovenian / slovenščina" lang="sl" role="option" id="cds-dropdown-item-128" aria-selected="false" size="micro"><!--?lit$802160819$-->Slovenian / slovenščina</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Serbian / srpski" lang="sr" role="option" id="cds-dropdown-item-129" aria-selected="false" size="micro"><!--?lit$802160819$-->Serbian / srpski</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Swedish / Svenska" lang="sv" role="option" id="cds-dropdown-item-130" aria-selected="false" size="micro"><!--?lit$802160819$-->Swedish / Svenska</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Thai / ภาษาไทย" lang="th" role="option" id="cds-dropdown-item-131" aria-selected="false" size="micro"><!--?lit$802160819$-->Thai / ภาษาไทย</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Turkish / Türkçe" lang="tr" role="option" id="cds-dropdown-item-132" aria-selected="false" size="micro"><!--?lit$802160819$-->Turkish / Türkçe</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Vietnamese / Việt" lang="vi" role="option" id="cds-dropdown-item-133" aria-selected="false" size="micro"><!--?lit$802160819$-->Vietnamese / Việt</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Chinese Simplified / 简体中文" lang="zh" role="option" id="cds-dropdown-item-134" aria-selected="false" size="micro"><!--?lit$802160819$-->Chinese Simplified / 简体中文</cds-combo-box-item>
+              <!----><!---->
+                <cds-combo-box-item value="Chinese Traditional / 繁體中文" lang="zh-tw" role="option" id="cds-dropdown-item-135" aria-selected="false" size="micro"><!--?lit$802160819$-->Chinese Traditional / 繁體中文</cds-combo-box-item>
+              <!---->
+          </c4d-language-selector-desktop>
+        
+        </c4d-legal-nav>
+      </c4d-footer>
+    </c4d-footer-container></div><div class="ibmdocs-dotcom-footer-extra" role="navigation" aria-label="IBM Documentation Help"><ul><li><a href="https://www.ibm.com/docs/en/about">IBM Documentation Help</a></li></ul></div></div><div class="cds--sm:col-span-0 cds--md:col-span-0 cds--lg:col-span-3 cds--css-grid-column ibmdocs-right-nav"><aside class="ibmdocs-right-nav-fixed" aria-label="announcements-right-navigation"><div class="ibmdocs-right-nav-content"><div class="redbooks-download-buttons"></div><div class="ibmdocs-right-nav-scroll no-role-selector"><div><ul class="cds--list--unordered ibmdocs-right-nav-list chapters-list" aria-label="content-chapters-navigation"><li class="cds--list__item ibmdocs-right-nav-list-title ibm-bold" dir="auto">On this page</li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_A__title__1">A</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_B__title__1">B</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_C__title__1">C</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_D__title__1">D</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_F__title__1">F</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_G__title__1">G</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_H__title__1">H</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_I__title__1">I</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_L__title__1">L</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_M__title__1">M</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_N__title__1">N</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_O__title__1">O</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_P__title__1">P</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_R__title__1">R</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_S__title__1">S</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_T__title__1">T</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_V__title__1">V</a></div></li><li class="cds--list__item ibmdocs-right-nav-list-item" dir="auto"><div class="ibmdocs-right-nav-chapter multiline-ellipsis"><a href="#gloss_W__title__1">W</a></div></li></ul></div></div></div></aside></div></div></div></div></div></div></div></div><script src="turbonomic_application_resource_management_files/index_bundle.js.br"></script><script type="text/javascript" src="turbonomic_application_resource_management_files/xOF3IB"></script><link rel="stylesheet" type="text/css" href="turbonomic_application_resource_management_files/ZuOyNZ.css"><script src="turbonomic_application_resource_management_files/0YGVAp" async="" defer="defer"></script><div id="sec-overlay" style="display:none;"><div id="sec-container"></div></div><script>_satellite["_runScript1"](function(event, target, Promise) {
+// set the alloy version to object so when the network call goes out it can be included.  
+// Had to do this for timing since it is a promise
+if (typeof alloy !== "undefined") {
+window.alloy("getLibraryInfo").then(result=>{
+ window.alloy.customLibraryInfo = {};
+ window.alloy.customLibraryInfo.version = result.libraryInfo.version;
+ window.alloy.customLibraryInfo.edgeConfigId = result.libraryInfo.configs.datastreamId;
+});
+
+  //console.log(" ran alloy set-----------", window.alloy.customLibraryInfo)
+}
+});</script><div id="consent_blackbar" role="banner" aria-label="consent_blackbar"></div><iframe class="ta-display-none" name="trustarc_notice" id="trustarcNoticeFrame" title="Trustarc Cross-Domain Consent Frame" src="turbonomic_application_resource_management_files/get.html"></iframe><script>_satellite["_runScript2"](function(event, target, Promise) {
+var ibmlaunchConsent={cookieBehavior:_satellite.getVar("Consent | cookieConsentBehavior | [WebSDK]-[Global]"),privacySettings:_satellite.getVar("Consent | privacySettings | [WebSDK]-[Global]")};localStorage.setItem("ibmlaunchConsent",JSON.stringify(ibmlaunchConsent));
+});</script></body></html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/putApplicationConfig_200_response</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/putApplicationConfig_200_response</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>putApplicationConfig_200_response</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>7</td></tr></table>
+
+<h2>Overview</h2>
+putApplicationConfig_200_response type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>accessRules</td><td>query_getApplicationConfigs_items_accessRules_items</td><td>Yes</td><td>Defines permissions and access relationships.</td></tr>
+<tr><td>boundaryScope</td><td>query_getApplicationConfigs_items_boundaryScope</td><td></td><td>Here, `ALL` Application Boundary Scope is considered.</td></tr>
+<tr><td>id</td><td>query_getApplicationConfigs_items_id</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>label</td><td>query_getApplicationConfigs_items_label</td><td></td><td>Label of the entity</td></tr>
+<tr><td>matchSpecification</td><td>query_getApplicationConfigs_items_matchSpecification</td><td></td><td>Calls will be matched with the array of key-value tags present in this field.</td></tr>
+<tr><td>scope</td><td>query_getApplicationConfigs_items_scope</td><td></td><td></td></tr>
+<tr><td>tagFilterExpression</td><td>query_getApplicationConfigs_items_tagFilterExpression</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type putApplicationConfig_200_response {
+  # Defines permissions and access relationships.
+  accessRules: [query_getApplicationConfigs_items_accessRules_items]!
+  boundaryScope: query_getApplicationConfigs_items_boundaryScope!
+
+  # Unique ID of the Application Perspective. Eg: `Av62RoIKQv-A3n6DbMQh9g`.
+  id: query_getApplicationConfigs_items_id!
+
+  # Name of the Application Perspective. Eg: `app1`.
+  label: query_getApplicationConfigs_items_label!
+  matchSpecification: query_getApplicationConfigs_items_matchSpecification
+  scope: query_getApplicationConfigs_items_scope!
+  tagFilterExpression: query_getApplicationConfigs_items_tagFilterExpression
+}
+</code></pre>
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:turbonomic/TagValueFilterOperator">turbonomic/TagValueFilterOperator</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>instana.putApplicationConfig_200_response</b> maps to:
+
+<h3><a href="#Type:turbonomic/TagValueFilterOperator">turbonomic.TagValueFilterOperator</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>putApplicationConfig_200_response Field</th><th>TagValueFilterOperator Field</th><th>Reason</th></tr>
+<tr><td>tagFilterExpression</td><td>EQ</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+<li><a href="#Type:turbonomic/TagValueFilterOperator">turbonomic.TagValueFilterOperator</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

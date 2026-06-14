@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/Application</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/Application</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Application</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>22</td></tr></table>
+
+<h2>Overview</h2>
+Application type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>associations</td><td>ApplicationAssociationsInfo</td><td></td><td>Associations for this vulnerability</td></tr>
+<tr><td>auth_user_role</td><td>String</td><td></td><td>Role of the auth user for the entity</td></tr>
+<tr><td>business_id</td><td>String</td><td></td><td>Business id of application</td></tr>
+<tr><td>business_name</td><td>String</td><td></td><td>Business name of application</td></tr>
+<tr><td>business_units</td><td>String</td><td>Yes</td><td>Array of units of a business</td></tr>
+<tr><td>created_on</td><td>Int</td><td></td><td>Date when the API key was created</td></tr>
+<tr><td>criticality</td><td>Int</td><td></td><td>The criticality of the application</td></tr>
+<tr><td>data_impact_risk</td><td>Int</td><td></td><td>Data impact risk of image</td></tr>
+<tr><td>description</td><td>String</td><td></td><td>Vulnerability description</td></tr>
+<tr><td>id</td><td>String</td><td></td><td>Unique ID of the issue</td></tr>
+<tr><td>last_modified_by</td><td>String</td><td></td><td>Application last modified by</td></tr>
+<tr><td>last_updated_by</td><td>String</td><td></td><td>Who last updated the issue</td></tr>
+<tr><td>last_updated_on</td><td>Int</td><td></td><td>Last updated timestamp</td></tr>
+<tr><td>latest</td><td>Boolean</td><td></td><td>Current state of the application</td></tr>
+<tr><td>name</td><td>String</td><td></td><td>Name of the artifact</td></tr>
+<tr><td>properties</td><td>ApplicationReleaseProperties</td><td></td><td>Application release properties</td></tr>
+<tr><td>resilience_status</td><td>String</td><td></td><td>The resilience is enabled / disabled on the application</td></tr>
+<tr><td>revenue_per_hour</td><td>Float</td><td></td><td>Application revenue per hour</td></tr>
+<tr><td>sample</td><td>Boolean</td><td></td><td>Application belongs to sample data</td></tr>
+<tr><td>status</td><td>String</td><td></td><td>Current status</td></tr>
+<tr><td>tags</td><td>TagsPrototype</td><td>Yes</td><td>Application tags</td></tr>
+<tr><td>version</td><td>String</td><td></td><td>Version information</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Application {
+  # ID of the application
+  id: String!
+  # Name of the application
+  name: String!
+  # Current state of the application
+  latest: Boolean!
+  # Status of the application
+  status: String
+  # Role of the auth user for the application
+  auth_user_role: String
+  # The version of the application
+  version: String
+  # The tags of the application
+  tags: <a href="TagsPrototype!]!"># The description of the application
+  description: String
+  # The application created time
+  created_on: Int
+  # The last updated time of the application
+  last_updated_on: Int
+  # Application last updated by
+  last_updated_by: String
+  # Application last modified by
+  last_modified_by: String
+  # The criticality of the application
+  criticality: Int!
+  # Data impact risk of the application
+  data_impact_risk: Int!
+  # Business name of application
+  business_name: String
+  # Application revenue per hour
+  revenue_per_hour: Float
+  # Array of units of a business
+  business_units: [String!</a>!
+  # Business id of application
+  business_id: String
+  # Application belongs to sample data
+  sample: Boolean!
+  # The resilience is enabled / disabled on the application
+  resilience_status: String
+  # Application release properties
+  properties: ApplicationReleaseProperties!
+  # Application associations
+  associations: ApplicationAssociationsInfo
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Application</b>:
+
+<h3>Next to applicationName, enter the name of the application associated with these images.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Note: The name of the associated application must match the way it appears in your Concert inventory.
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:turbonomic/Entity">turbonomic/Entity</a> (via AnyTool (Llama), AnyTool (Mistral))</li>
+<li><a href="#Type:unknown/tags">unknown/tags</a> (via AnyTool (Granite))</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>concert.Application</b> maps to:
+
+<h3><a href="#Type:turbonomic/Entity">turbonomic.Entity</a></h3>
+<i>Mapped by: AnyTool (Llama), AnyTool (Mistral)</i>
+
+<table>
+<tr><th>Application Field</th><th>Entity Field</th><th>Reason</th></tr>
+<tr><td>properties.revenue</td><td>costPrice</td><td></td></tr>
+<tr><td>vulnerabilities.severity</td><td>severityBreakdown.MAJOR</td><td></td></tr>
+<tr><td>associations.environments.tags.name</td><td>tags</td><td></td></tr>
+<tr><td>associations.source_repos.tags.name</td><td>tags</td><td></td></tr>
+<tr><td>associations.build_artifacts.tags.name</td><td>tags</td><td></td></tr>
+</table>
+
+<h3><a href="#Type:unknown/tags">unknown.tags</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+<li><a href="#Type:turbonomic/Entity">turbonomic.Entity</a></li>
+<li><a href="#Type:unknown/tags">unknown.tags</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

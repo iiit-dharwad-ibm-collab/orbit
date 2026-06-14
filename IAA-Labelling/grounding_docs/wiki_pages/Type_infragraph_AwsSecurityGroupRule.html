@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:infragraph/AwsSecurityGroupRule</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:infragraph/AwsSecurityGroupRule</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>AwsSecurityGroupRule</td></tr>
+<tr><td><b>product</b></td><td>infragraph</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>2</td></tr></table>
+
+<h2>Overview</h2>
+AwsSecurityGroupRule type from infragraph.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>aws_resource</td><td>AwsResource</td><td></td><td></td></tr>
+<tr><td>security_rule</td><td>BaseSecurityRule</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>AwsSecurityGroupRule</b>:
+
+<h3>AWS ECS (Fargate and EC2) prerequisites</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+(such as CPU, memory, and error counts) that are required to calculate
+resilience scores.
+Table 1. ECS resources and CloudWatch metrics access
+ECS object or resource
+Required permissions
+Clusters (ClusterName)
+ecs:DescribeClusters, ecs:ListClusters
+Services (ServiceName)
+ecs:DescribeServices, ecs:ListServices
+Container instances
+ecs:DescribeContainerInstances, ecs:ListContainerInstances
+Task definitions
+ecs:DescribeTaskDefinition, ecs:ListTaskDefinitions
+Tasks
+ecs:DescribeTasks, ecs:ListTasks
+Resource ARNs
+Resolved automatically through ECS Describe APIs
+TargetDiscoveryName (ClusterName) Resolved through ECS Describe* APIs
+Log groups (from TaskDefinition)
+logs:DescribeLogGroups, logs:GetLogEvents
+The following IAM policy grants the minimum read-only permissions that are required for ECS discovery and
+metrics ingestion:
+{
+ "Version": "2012-10-17",
+ "Statement": [
+ {
+ "Effect": "Allow",
+ "Action": [
+ "ecs:DescribeClusters",
+ "ecs:ListClusters",
+ "ecs:DescribeServices",
+
+<h3>AWS</h3>
+<small><i>Source: kubecost.md (kubecost)</i></small>
+
+/aws-athena-query-results-*, so the IAM roles 
+defined above will automatically allow access to it. The bucket can have a canned ACL set to Private or 
+other permissions as needed.
+<ATHENA_REGION> is the AWS region Athena is running in
+<ATHENA_DATABASE> is the name of the database created by the Athena setup. The Athena database name 
+is available as the value (physical id) of AWSCURDatabase in the CloudFormation stack created above.
+<ATHENA_TABLE> is the name of the table created by the Athena setup The table name is typically the 
+database name with the leading athenacurcfn_ removed (but is not available as a CloudFormation stack 
+resource).
+<ATHENA_WORKGROUP> is the workgroup assigned to be used with Athena. Default value is Primary.
+<ATHENA_PROJECT_ID>is the AWS AccountID where the Athena CUR is.
+
+<h3>Seeing the changes for a group of entities</h3>
+<small><i>Source: IBMTurbonomic_8.16.0.md (turbonomic)</i></small>
+
+68", "displayName":"producttrust", "category":"Public Cloud", "type":"AWS", "readonly":false }, ... }, { "uuid":"73422419372921", "displayName":"PT_Consistent_Scaling_VM_1", "className":"VirtualMachine", "priceIndex":100.357, "state":"ACTIVE", "severity":"Normal", "costPrice":0.0159137,
+
+"discoveredBy":{ "uuid":"73422416392368", "displayName":"producttrust", "category":"Public Cloud", "type":"AWS", "readonly":false }, ... } ]
+<pre><code>
+
+Using this result, you can either use each UUID found, or filter based on entities. For example, to iterate through a group and get the UUID of all VM entities:
+
+</code></pre>
+foreach (var entity in groupApiResponse) { if (entity<a href=""className"]">== VirtualMachine) { Console.Writeline(entity["uuid"</a>) } }
+```
+
+<h3>AWS Organization service</h3>
+<small><i>Source: IBMTurbonomic_8.16.5.md (turbonomic)</i></small>
+
+The result should include all AWS accounts in your organization, as shown in the following example.
+
+<pre><code>
+"Accounts": [ { "Id": "xxx", "Arn": "xxx, "Email": "xxx@xxx.com", "Name": "xxx", "Status": "ACTIVE", "JoinedMethod": "CREATED", "JoinedTimestamp": "2018-05-23T09:41:43.942000-04:00" }]
+</code></pre>
+
+If access is blocked, you may see the following errors:
+
+<pre><code>
+Could not connect to the endpoint URL: "https://organizations.us-east-1.amazonaws.com/"
+</code></pre>
+
+<pre><code>
+Could not connect to the endpoint URL: "https://organizations.us-gov-west-1.amazonaws.com/"
+</code></pre>
+
+To resolve the errors:
+
+1. Update any service control policy that is blocking access to the AWS Organization service in the regions. The following example shows a service control policy that unblocks access.
+2. Run the following command to verify that access is now unblocked.
+
+<pre><code>
+{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Action": "organizations:<i>", "Resource": "</i>" } ] }
+</code></pre>
+
+<pre><code>
+aws organizations list-accounts
+</code></pre>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:infragraph">infragraph Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:infragraph">Category:infragraph</a>
+</body>
+</html>

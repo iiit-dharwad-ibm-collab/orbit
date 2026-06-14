@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_getAvailablePayloadKeysByPluginId_items</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_getAvailablePayloadKeysByPluginId_items</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_getAvailablePayloadKeysByPluginId_items</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>2</td></tr></table>
+
+<h2>Overview</h2>
+| * NUMBER: Generic number * BYTES: Number of bytes * KILO_BYTES: Number of kilobytes * MEGA_BYTES: Number of megabytes * PERCENTAGE: Percentage in scale <a href="0,1]">* PERCENTAGE_100: Percentage in scale [0,100</a> * PERCENTAGE_NO_CAPPING: Percentage in scale <a href="0,1]">but value could exceed 1 for example when metric is aggregated * PERCENTAGE_100_NO_CAPPING: Percentage in scale [0,100</a> but value could exceed 100 for example when metric is aggregated * LATENCY: Time in milliseconds, with value of 0 should not be considered a a strict 0, but considered as < 1ms * NANOS: Time in nanoseconds * MILLIS: Time in milliseconds * MICROS: Time in microseconds * SECONDS: Time in seconds * RATE: Number of occurrences per second * BYTE_RATE: Number of bytes per second * UNDEFINED: Metric value unit is not known
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>payloadKeys</td><td>String</td><td>Yes</td><td>Keys that can be used to retrieve plugin payloads.</td></tr>
+<tr><td>payload_for_snapshot</td><td>getPluginPayload_200_response</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type query_getAvailablePayloadKeysByPluginId_items {
+  # Keys that can be used to retrieve plugin payloads.
+  payloadKeys: [String]
+  payload_for_snapshot: getPluginPayload_200_response
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_getAvailablePayloadKeysByPluginId_items</b>:
+
+<h3>Generate the API payload needed to aggregate data and answer the</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+query as per the identified technology. The data retrieved from the
+API call, including the
+necessary tag filters, is displayed in a
+table format.
+Results from query
+processing
+The AI assistant provides the following features:
+Download the data in the CSV format
+Search the results
+Display a chart for the results
+1908 IBM Instana Observability
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

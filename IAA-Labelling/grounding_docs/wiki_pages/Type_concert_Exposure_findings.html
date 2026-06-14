@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/Exposure_findings</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/Exposure_findings</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Exposure_findings</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>28</td></tr></table>
+
+<h2>Overview</h2>
+Exposure_findings type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>additional_data</td><td>JSON</td><td></td><td>Additional data</td></tr>
+<tr><td>archived_date</td><td>ID</td><td></td><td></td></tr>
+<tr><td>count</td><td>Int</td><td></td><td>Count of exposures</td></tr>
+<tr><td>created_by</td><td>String</td><td></td><td></td></tr>
+<tr><td>created_date</td><td>ID</td><td></td><td>Recommendation created date</td></tr>
+<tr><td>cwe_id</td><td>String</td><td></td><td>CWE ID</td></tr>
+<tr><td>description</td><td>String</td><td></td><td>Vulnerability description</td></tr>
+<tr><td>exposure_object_attr1</td><td>String</td><td></td><td>Exposure object attribute 1</td></tr>
+<tr><td>exposure_object_attr2</td><td>String</td><td></td><td>Exposure object attribute 2</td></tr>
+<tr><td>exposure_object_attr3</td><td>String</td><td></td><td>Exposure object attribute 3</td></tr>
+<tr><td>exposure_object_id</td><td>String</td><td></td><td>Exposure object ID</td></tr>
+<tr><td>exposure_path</td><td>String</td><td></td><td>Exposed path</td></tr>
+<tr><td>exposure_type</td><td>String</td><td></td><td>Exposure type</td></tr>
+<tr><td>id</td><td>ID</td><td></td><td>Unique ID of the issue</td></tr>
+<tr><td>is_archived</td><td>Boolean</td><td></td><td>Whether the scan is archived</td></tr>
+<tr><td>last_updated_by</td><td>String</td><td></td><td>Who last updated the issue</td></tr>
+<tr><td>num_of_occurences</td><td>Int</td><td></td><td></td></tr>
+<tr><td>other_info</td><td>String</td><td></td><td>Other information</td></tr>
+<tr><td>rule_id</td><td>String</td><td></td><td>Rule ID</td></tr>
+<tr><td>rule_name</td><td>String</td><td></td><td>Rule name</td></tr>
+<tr><td>scan_type</td><td>String</td><td></td><td>Scan type</td></tr>
+<tr><td>score</td><td>Float</td><td></td><td>Score</td></tr>
+<tr><td>severity</td><td>String</td><td></td><td>Severity filter</td></tr>
+<tr><td>solution</td><td>String</td><td></td><td>Solution information</td></tr>
+<tr><td>status</td><td>String</td><td></td><td>Current status</td></tr>
+<tr><td>tool_version</td><td>String</td><td></td><td>Tool version</td></tr>
+<tr><td>updated_date</td><td>ID</td><td></td><td></td></tr>
+<tr><td>wasc_id</td><td>String</td><td></td><td>WASC ID</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Exposure_findings {
+  additional_data: JSON
+  archived_date: ID
+  count: Int
+  created_by: String
+  created_date: ID
+  cwe_id: String
+  description: String
+  exposure_object_attr1: String
+  exposure_object_attr2: String
+  exposure_object_attr3: String
+  exposure_object_id: String
+  exposure_path: String
+  exposure_type: String
+  id: ID!
+  is_archived: Boolean
+  last_updated_by: String
+  num_of_occurences: Int
+  other_info: String
+  rule_id: String
+  rule_name: String
+  scan_type: String
+  score: Float
+  severity: String
+  solution: String
+  status: String
+  tool_version: String
+  updated_date: ID
+  wasc_id: String
+}
+</code></pre>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

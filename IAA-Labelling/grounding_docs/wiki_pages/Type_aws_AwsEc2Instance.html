@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:aws/AwsEc2Instance</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:aws/AwsEc2Instance</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>AwsEc2Instance</td></tr>
+<tr><td><b>product</b></td><td>aws</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>5</td></tr></table>
+
+<h2>Overview</h2>
+AwsEc2Instance domain model message.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>aws_resource</td><td>AwsResource</td><td></td><td></td></tr>
+<tr><td>monitoring</td><td>bool</td><td></td><td></td></tr>
+<tr><td>private_ip</td><td>string</td><td></td><td></td></tr>
+<tr><td>tenancy</td><td>string</td><td></td><td></td></tr>
+<tr><td>virtual_machine</td><td>BaseVirtualMachine</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>AwsEc2Instance</b>:
+
+<h3>AWSEC2/latest/UserGuide/ec2-instances.html</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+<h3>AWSEC2/latest/UserGuide/EC2_GetStarted.html</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+<h3>Step 2: Connect to your instance</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+The procedure that you use depends on the operating system of the instance. If you can't connect to your instance, see Troubleshoot issues connecting to your Amazon EC2 Linux instance for assistance.
+
+<h3>Access Amazon EC2</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+You can create and manage your Amazon EC2 instances using the following interfaces:
+A simple web interface to create and manage Amazon EC2 instances and resources. If you've signed up for an AWS account, you can access the Amazon EC2 console by signing into the AWS Management Console and selecting EC2 from the console home page.
+Enables you to interact with AWS services using commands in your command-line shell. It is supported on Windows, Mac, and Linux. For more information about the AWS CLI , see AWS Command Line Interface User Guide. You can find the Amazon EC2 commands in the AWS CLI Command Reference.
+Amazon EC2 supports creating resources using CloudFormation. You create a template, in JSON or YAML format, that describes your AWS resources, and CloudFormation provisions and configures those resources for you. You can reuse your CloudFormation templates to provision the same resources multiple times, whether in the same Region and account or in multiple Regions and accounts.
+
+<h3>Get started with Amazon EC2</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+A set of security credentials that you use to prove your identity when connecting to your instance. The public key is on your instance and the private key is on your computer.
+- A network – A virtual private cloud (VPC) is a virtual network dedicated to your AWS account. To help you get started quickly, your account comes with a default VPC in each AWS Region, and each default VPC has a default subnet in each Availability Zone.
+A network – A virtual private cloud (VPC) is a virtual network dedicated to your AWS account. To help you get started quickly, your account comes with a default VPC in each AWS Region, and each default VPC has a default subnet in each Availability Zone.
+- A security group – Acts as a virtual firewall to control inbound and outbound traffic.
+A security group – Acts as a virtual firewall to control inbound and outbound traffic.
+- An EBS volume – We require a root volume for the image.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:aws">aws Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:aws">Category:aws</a>
+</body>
+</html>

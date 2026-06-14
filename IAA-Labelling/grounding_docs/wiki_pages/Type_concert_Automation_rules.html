@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/Automation_rules</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/Automation_rules</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Automation_rules</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>13</td></tr></table>
+
+<h2>Overview</h2>
+Automation_rules type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>action</td><td>String</td><td></td><td>Action to perform</td></tr>
+<tr><td>component_id</td><td>ID</td><td></td><td>Component ID</td></tr>
+<tr><td>component_type</td><td>String</td><td></td><td>Component type</td></tr>
+<tr><td>created_by</td><td>String</td><td></td><td></td></tr>
+<tr><td>created_on</td><td>ID</td><td></td><td>Date when the API key was created</td></tr>
+<tr><td>credential_id</td><td>ID</td><td></td><td></td></tr>
+<tr><td>description</td><td>String</td><td></td><td>Vulnerability description</td></tr>
+<tr><td>id</td><td>ID</td><td></td><td>Unique ID of the issue</td></tr>
+<tr><td>name</td><td>String</td><td></td><td>Name of the artifact</td></tr>
+<tr><td>option</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>status</td><td>String</td><td></td><td>Current status</td></tr>
+<tr><td>target_service_details</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>use_case</td><td>String</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Automation_rules {
+  action: String
+  component_id: ID
+  component_type: String
+  created_by: String
+  created_on: ID!
+  credential_id: ID
+  description: String
+  id: ID!
+  name: String
+  option: JSON
+  status: String
+  target_service_details: JSON
+  use_case: String
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Automation_rules</b>:
+
+<h3>Select the Environment to associate with this automation rule. Only</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+compliance issues found in this
+environment will trigger this automation rule.
+
+<h3>Click Create to save and activate the automation rule.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+The automation rule is triggered whenever an environment is deemed non-compliant with a control
+listed in the
+compliance profile. The priority is determined by the number of controls with which an
+environment is not
+compliant. If there are multiple compliance issues related to the same control ID
+detected in an assessment, they
+are grouped in a single issue or ticket.
+Note: If you create an automation rule, but your access to the corresponding application
+or environment is revoked,
+you will still be able to view the automation rule, but you will not be
+able to edit or delete it.
+Automating tickets for package (SCA) recommendations
+The Software composition dimension provides recommendations to address
+package-related issues, such as a
+missing license file or an outdated or unsupported package.
+
+<h3>Automation rules</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Automation rules are used to create tickets and issues automatically in the defined third-party ticketing
+system based on the specific triggers or conditions impacting an application or environment. For more
+advanced automation, you can use Concert Workflows to facilitate automated actions, such as automated
+certificate renewal.
+Supported integrations (connections)
+IBM® Concert supports a growing list of external integrations to enable continuous data ingestion to update your
+applications and environments data.
+
+<h3>Click Create to create and activate the automation rule.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+The new automation rule appears in the list and Concert begins sending alerts to Slack when the automation rule is
+triggered. Repeat this
+process for each triggering condition you'd like to result in a Slack message.
+276 IBM Concert
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:instana/query_getActions_items">instana/query_getActions_items</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/getActionByID_200_response">instana/getActionByID_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action">instana/query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/query_getCustomEventSpecifications_items_actions_items">instana/query_getCustomEventSpecifications_items_actions_items</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/mutation_getActionMatches_items_action">instana/mutation_getActionMatches_items_action</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input">instana/query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/mutationInput_postCustomEventSpecification_input_actions_items_Input">instana/mutationInput_postCustomEventSpecification_input_actions_items_Input</a> (via schema_mapping)</li>
+<li><a href="#Type:turbonomic/Action">turbonomic/Action</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+</ul>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

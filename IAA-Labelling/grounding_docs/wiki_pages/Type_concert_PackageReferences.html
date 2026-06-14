@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/PackageReferences</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/PackageReferences</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>PackageReferences</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+PackageReferences type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>images_count</td><td>Int</td><td></td><td>Total count of images related to a package</td></tr>
+<tr><td>libraries_count</td><td>Int</td><td></td><td>Total count of libraries related to a package</td></tr>
+<tr><td>repositories_count</td><td>Int</td><td></td><td>Total count of repositories related to a package</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type PackageReferences {
+  # Total count of images related to a package
+  images_count: Int!
+  # Total count of repositories related to a package
+  repositories_count: Int!
+  # Total count of libraries related to a package
+  libraries_count: Int!
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>PackageReferences</b>:
+
+<h3>Automating tickets for package (SCA) recommendations</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+The Software composition dimension provides recommendations to address package-related issues, such as
+a missing license file or an outdated or unsupported package. Using automation rules, you automate ticket
+creation in a connected external issue tracking system, such as GitHub, Jira, Salesforce, or ServiceNow, to
+quickly address package-related vulnerabilities and recommendations.
+
+<h3>Generating a package SBOM (CycloneDX)</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Generate and upload a package SBOM file in CycloneDX format to assess the reliability, maintenance,
+licensing, and security of the software package components used in your applications. After you upload
+packages, you can view them as Correlated or Uncorrelated components.
+
+<h3>Table 1. Package risks and</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+istence, compliance,
+restrictions, or comparability with the
+licenses associated with each package.
+Review or renew the
+licenses that are
+associated with this
+package
+Note: Under Recommendations you can view only correlated data.
+Creating tickets to address risks in packages
+Concert evaluates your package components to
+identify risks and provide recommended action to address or
+resolve it. Refer to Viewing package-related risk and recommendations for details.
+Option 1: Configure an automation rule (Recommended)
+From the Concert UI, you can open tickets in your
+third-party issue tracking system to address identified risks in
+your software packages based on
+Concert's recommended actions. Refer to the section
+Automating ticket creation
+for
+software composition for instructions.
+Option 2: Creating tickets manually from Concert
+482 IBM Concert
+
+<h3>Workflow: Assessing package risk and reliability</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+ating a package SBOM (CycloneDX) for instructions on generating a package
+SBOM in CycloneDX
+format. Alternatively, you can
+use the Concert toolkit to generate, validate, and upload
+package SBOM data.
+Step 2: Upload the package SBOM file
+Use one of the following methods to upload the package SBOM to Concert:
+Use the toolkit to integrate SBOM data ingestion with
+your CI/CD pipeline.
+Upload using the API.
+Upload from the Concert UI.
+Step 3: Review the reliability score for each package
+Concert retrieves a set of checks defined in the
+OpenSSF scorecard to each package contained in the package
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

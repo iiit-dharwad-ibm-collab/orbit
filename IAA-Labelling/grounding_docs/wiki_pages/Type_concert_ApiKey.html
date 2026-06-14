@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/ApiKey</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/ApiKey</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>ApiKey</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>1</td></tr></table>
+
+<h2>Overview</h2>
+API key
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>key</td><td>String</td><td></td><td>UUID</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+# API key object
+type ApiKey {
+  # The generated API key
+  key: String
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>ApiKey</b>:
+
+<h3>From the upper-right of the screen, click the API key.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Note: If you see the option Revoke the existing API key, stop and identify the existing API key before you
+proceed.
+Note: If you see the message No API key currently exists, but you can generate one, click Generate API
+key.
+Save the generated API key securely. You need this key in later steps.
+
+<h3>Revoking or replacing an API key</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+If your Concert API key is jeopardized or lost, you can revoke the previous key and generate a new one.
+
+<h3>Click Add key and select Create new key from the dropdown and the key type JSON. Or if you have an</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+existing key, open in JSON and have it ready for Step 2.
+For the project ID and token:
+
+<h3>Record the API key value and API key usage details</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+and store these in a secure location. You cannot view the
+API key secret after closing the dialog
+box.
+An API key, Request header, and API key
+usage example are displayed.
+Note the Authorization header is used to authenticate the API requests. It
+contains the C_API_KEY type
+followed by the unique API key secret. For
+example:
+-H "Authorization: C_API_KEY <API_key>"
+Additionally, note the unique Instance ID provided as you will need to
+pass this value in the InstanceId header
+when using the API. For
+example:
+-H "InstanceId: 0000-0000-0000-0000"
+Refer to API reference and authentication for details on the various custom headers
+required to invoke the Concert
+
+<h3>Click Revoke API key.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+The API key generated previously is deactivated and will no longer work when used to authenticate
+API requests. If
+needed, you can create Generate new API key to replace the
+one you just revoked.
+Uploading data via API
+Use the IBM® Concert API to upload SBOM files, image scans, and certificate data.
+Known limitations and best practices
+
+<h3>Select IBM Concert API Key as the service and set the required properties:</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Name: Provide a name of your choice (for example, concertApi)
+Service: Select API Key
+Header name: Authorization
+API Key value: C_API_KEY <API_KEY>
+Triggering the Concert Workflows
+To trigger the Concert Workflows:
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

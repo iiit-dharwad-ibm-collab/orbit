@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/putAlertingChannel_request_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/putAlertingChannel_request_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>putAlertingChannel_request_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+putAlertingChannel_request_Input type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>id</td><td>String</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>kind</td><td>String</td><td></td><td>The type of the Alerting Channel.</td></tr>
+<tr><td>name</td><td>String</td><td></td><td>Name of the group.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input putAlertingChannel_request_Input {
+  # Unique ID of the returned Alert Channel
+  id: String!
+
+  # The type of the Alerting Channel.
+  kind: String!
+
+  # The name of the Alerting Channel.
+  name: String!
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>putAlertingChannel_request_Input</b>:
+
+<h3>RC 2540 - Channel is not defined.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Instana agent log message: Channel {channel} is not defined ({exceptionCode}). {message}.
+Solution: Check if the correct SVRCONN channel is configured in the configuration.yaml agent configuration file.
+
+<h3>Paste the channel link in the Channel link field. You can see the Microsoft Teams channel name in the following Channel name field. Check and confirm that the</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+channel information that you entered is correct.
+Figure 1. Create an app for Microsoft Teams alert channel
+2190 IBM Instana Observability
+
+<h3>Creating a webhook alert channel</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+To create a generic webhook alert channel, click Settings > Global settings > Events & alerts > Alert channels > Add alert channel in the Instana UI.
+Figure 1. Generic webhook alert channel
+The Webhook URL format is protocol://domainOrIPAddress:port/path
+Alerting examples
+The following Webhook events are received as an HTTP POST to the configured URLs (HTTP or HTTPS):
+Note: In the following examples, the Instana Webhook format is used. The Instana Webhook format is not compatible with third-party tools that expect an Incoming
+Webhook in their format.
+
+<h3>Private channel: By default, workflow bots do</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+not support posting to private channels. As a workaround, modify
+the workflow to post as a user.
+Incoming Webhooks
+Note: New incoming webhook connectors cannot be created
+in Microsoft Teams after 15 August 2024. To migrate from existing
+incoming webhooks to workflows, follow
+the steps under Workflows section and update the Instana alert
+channel webhook URL to the workflow URL.
+To set up an Incoming Webhook for the Office 365 or Microsoft
+Teams alert channel integration, see Post external requests to Teams with Incoming Webhook.
+Step 2: Creating an alert
+channel
+Create an Office 365 or Microsoft Teams alert channel by
+navigating to Settings > Global
+Settings > Events & Alerts >
+Alert Channels > Add Alert
+Channel in the Instana
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

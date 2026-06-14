@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/IngestionJob</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/IngestionJob</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>IngestionJob</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+Ingestion job details
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>id</td><td>String</td><td></td><td>Unique ID of the issue</td></tr>
+<tr><td>name</td><td>String</td><td></td><td>Name of the artifact</td></tr>
+<tr><td>status</td><td>String</td><td></td><td>Current status</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+# Ingestion job details
+type IngestionJob {
+  # Unique identifier of the ingestion job
+  id: String
+  
+  # Name of the ingestion job
+  name: String
+  
+  # Current status of the ingestion job
+  status: String
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>IngestionJob</b>:
+
+<h3>Creating a data ingestion job</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+The quality and completeness of your organization’s application definitions are essential to Concert's ability
+to surface vulnerabilities, compliance issues, and other valuable insights. One way to share your applicationrelated data with Concert is by creating an ingestion job.
+
+<h3>Click the overflow menu for the ingestion job you created and select Run now to start</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+ingesting data from
+Instana.
+When the ingestion job completes, you can see your Instana-managed applications, environments, clusters,
+and
+namespaces in the Concert
+Arena view and Inventory.
+Note: The Concert data ingestion job collects data
+from Instana only for applications that are
+running on a
+Kubernetes cluster.
+Step 4: Generate a Concert API key
+
+<h3>Run the job to import the application components and details from the third-party service.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+312 IBM Concert
+
+The new ingestion job appears in the list. After running the job, the corresponding application
+component appears
+in the component library where you can apply it to an application definition.
+Repeat this process for all of your
+application components.
+Exporting an application or environment
+As needed, you can export an application or environment defined in your Concert instance, and then import it into a
+new Concert instance as part of a migration or replication
+process. The output of the export will be a .tar file and
+is stored in the LZ
+bucket.
+You can export the application SBOM, build SBOM, deploy SBOM, and package SBOM.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

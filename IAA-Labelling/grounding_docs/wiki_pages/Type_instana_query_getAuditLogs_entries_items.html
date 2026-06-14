@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_getAuditLogs_entries_items</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_getAuditLogs_entries_items</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_getAuditLogs_entries_items</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>6</td></tr></table>
+
+<h2>Overview</h2>
+query_getAuditLogs_entries_items type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>action</td><td>String</td><td></td><td></td></tr>
+<tr><td>actor</td><td>query_getAuditLogs_entries_items_actor</td><td></td><td></td></tr>
+<tr><td>id</td><td>String</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>message</td><td>String</td><td></td><td></td></tr>
+<tr><td>meta</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>timestamp</td><td>BigInt</td><td></td><td>Earliest timestamp of the call from the group</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type query_getAuditLogs_entries_items {
+  action: String!
+  actor: query_getAuditLogs_entries_items_actor!
+  id: String!
+  message: String!
+  meta: JSON!
+  timestamp: BigInt
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_getAuditLogs_entries_items</b>:
+
+<h3>Viewing logs</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+View logging information.
+To view logging information, complete the following steps:
+
+<h3>In the Filter field on the Analytics logs dashboard, add the Docker container filter.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+You can view all the logs that are collected by the Docker log sensor.
+Streams
+The Docker log sensor collects the streams stdout and stderr from Docker containers.
+Limitations of Docker log sensor
+The Docker log sensor has the following limitations:
+Collecting container logs requires the Docker daemon to be running.
+
+<h3>Creating customized applications and services logs</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Sometimes the application and service logs are not available for collection by the OTEL Collector. In that case, you must create customized applications and services logs
+by running the following commands:
+
+<h3>From the drop-down list, select Logs to view the Analytics logs dashboard.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Filtering and grouping logs
+You can filter and group logs by using the following approaches:
+Query builder
+Directly from within a log
+Filter sidebar
+You can use each of the approaches individually, but the best results are achieved when you combine these approaches.
+Using a query builder
+To filter and group logs with the query builder, complete the following steps:
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

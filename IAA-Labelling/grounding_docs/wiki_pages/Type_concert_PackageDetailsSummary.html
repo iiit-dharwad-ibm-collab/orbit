@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/PackageDetailsSummary</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/PackageDetailsSummary</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>PackageDetailsSummary</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>26</td></tr></table>
+
+<h2>Overview</h2>
+PackageDetailsSummary type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>avg_score</td><td>Float</td><td></td><td>Average score</td></tr>
+<tr><td>backlevel</td><td>String</td><td></td><td>Backlevel of package</td></tr>
+<tr><td>checks</td><td>Checks</td><td>Yes</td><td>Check level info for a package</td></tr>
+<tr><td>cves</td><td>CveInfo</td><td>Yes</td><td>List of CVEs</td></tr>
+<tr><td>default_published_at</td><td>String</td><td></td><td>Package default published at</td></tr>
+<tr><td>default_version</td><td>String</td><td></td><td>Default version of package</td></tr>
+<tr><td>description</td><td>String</td><td></td><td>Vulnerability description</td></tr>
+<tr><td>id</td><td>String</td><td></td><td>Unique ID of the issue</td></tr>
+<tr><td>last_updated_by</td><td>String</td><td></td><td>Who last updated the issue</td></tr>
+<tr><td>last_updated_on</td><td>Int</td><td></td><td>Last updated timestamp</td></tr>
+<tr><td>latest_published_at</td><td>String</td><td></td><td>Package latest published at</td></tr>
+<tr><td>latest_version</td><td>String</td><td></td><td>Latest version of package</td></tr>
+<tr><td>license_status</td><td>String</td><td></td><td>License status of the package</td></tr>
+<tr><td>licenses</td><td>LicenseStatus</td><td>Yes</td><td>License of the package</td></tr>
+<tr><td>min_score</td><td>Int</td><td></td><td>Score of package</td></tr>
+<tr><td>name</td><td>String</td><td></td><td>Name of the artifact</td></tr>
+<tr><td>ossrepo</td><td>String</td><td></td><td>ossrepo of package</td></tr>
+<tr><td>published_at</td><td>String</td><td></td><td>Package was published at</td></tr>
+<tr><td>recommendation</td><td>PackageRecommendation</td><td></td><td>Recommendation</td></tr>
+<tr><td>references</td><td>PackageReferences</td><td></td><td>References</td></tr>
+<tr><td>registry</td><td>String</td><td></td><td>Registry / ecosystem of package</td></tr>
+<tr><td>source_url</td><td>String</td><td></td><td>Source URL of the package</td></tr>
+<tr><td>stat</td><td>String</td><td></td><td>Stat of package</td></tr>
+<tr><td>tags</td><td>String</td><td>Yes</td><td>Application tags</td></tr>
+<tr><td>version</td><td>String</td><td></td><td>Version information</td></tr>
+<tr><td>vulnerability_count</td><td>Int</td><td></td><td>Vulnerability count of package</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type PackageDetailsSummary {
+  # Package ID
+  id: String
+  # Name of the package
+  name: String!
+  # License of the package
+  licenses: <a href="LicenseStatus!]!"># License status of the package
+  license_status: String
+  # Version of the package
+  version: String!
+  # Source URL of the package
+  source_url: String
+  # Registry / ecosystem of package
+  registry: String
+  # Tags of the package
+  tags: [String!</a>!
+  # Package last updated time
+  last_updated_on: Int
+  # Package last updated by
+  last_updated_by: String
+  # Package was published at
+  published_at: String
+  # Backlevel of package
+  backlevel: String!
+  # Default version of package
+  default_version: String
+  # Package default published at
+  default_published_at: String
+  # Latest version of package
+  latest_version: String
+  # Package latest published at
+  latest_published_at: String
+  # ossrepo of package
+  ossrepo: String
+  # Stat of package
+  stat: String
+  # Score of package
+  avg_score: Float
+  # Score of package
+  min_score: Int
+  # Description of package
+  description: String
+  # Vulnerability count of package
+  vulnerability_count: Int!
+  # Array of CVEs for a package
+  cves: <a href="CveInfo!]!"># Check level info for a package
+  checks: [Checks!</a>!
+  # References
+  references: PackageReferences!
+  # Recommendation
+  recommendation: PackageRecommendation!
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>PackageDetailsSummary</b>:
+
+<h3>Automating tickets for package (SCA) recommendations</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+The Software composition dimension provides recommendations to address package-related issues, such as
+a missing license file or an outdated or unsupported package. Using automation rules, you automate ticket
+creation in a connected external issue tracking system, such as GitHub, Jira, Salesforce, or ServiceNow, to
+quickly address package-related vulnerabilities and recommendations.
+
+<h3>Table 1. Package risks and</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+istence, compliance,
+restrictions, or comparability with the
+licenses associated with each package.
+Review or renew the
+licenses that are
+associated with this
+package
+Note: Under Recommendations you can view only correlated data.
+Creating tickets to address risks in packages
+Concert evaluates your package components to
+identify risks and provide recommended action to address or
+resolve it. Refer to Viewing package-related risk and recommendations for details.
+Option 1: Configure an automation rule (Recommended)
+From the Concert UI, you can open tickets in your
+third-party issue tracking system to address identified risks in
+your software packages based on
+Concert's recommended actions. Refer to the section
+Automating ticket creation
+for
+software composition for instructions.
+Option 2: Creating tickets manually from Concert
+482 IBM Concert
+
+<h3>Workflow: Assessing package risk and reliability</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+ating a package SBOM (CycloneDX) for instructions on generating a package
+SBOM in CycloneDX
+format. Alternatively, you can
+use the Concert toolkit to generate, validate, and upload
+package SBOM data.
+Step 2: Upload the package SBOM file
+Use one of the following methods to upload the package SBOM to Concert:
+Use the toolkit to integrate SBOM data ingestion with
+your CI/CD pipeline.
+Upload using the API.
+Upload from the Concert UI.
+Step 3: Review the reliability score for each package
+Concert retrieves a set of checks defined in the
+OpenSSF scorecard to each package contained in the package
+
+<h3>Generating a package SBOM (CycloneDX)</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Generate and upload a package SBOM file in CycloneDX format to assess the reliability, maintenance,
+licensing, and security of the software package components used in your applications. After you upload
+packages, you can view them as Correlated or Uncorrelated components.
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:concert/ApiKeyDate">concert/ApiKeyDate</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:concert/PackageDetailsCollection">concert/PackageDetailsCollection</a> (via ReAct (Mistral))</li>
+<li><a href="#Type:unknown/created">unknown/created</a> (via AnyTool (Granite), AnyTool (Mistral))</li>
+<li><a href="#Type:unknown/recommendation">unknown/recommendation</a> (via AnyTool (Llama))</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>concert.PackageDetailsSummary</b> maps to:
+
+<h3><a href="#Type:concert/ApiKeyDate">concert.ApiKeyDate</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:concert/PackageDetailsCollection">concert.PackageDetailsCollection</a></h3>
+<i>Mapped by: ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/created">unknown.created</a></h3>
+<i>Mapped by: AnyTool (Granite), AnyTool (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+<li><a href="#Type:unknown/created">unknown.created</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:watsonx-orchestrate/Data</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:watsonx-orchestrate/Data</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Data</td></tr>
+<tr><td><b>product</b></td><td>watsonx-orchestrate</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>7</td></tr></table>
+
+<h2>Overview</h2>
+Data type from watsonx-orchestrate.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>assistant</td><td>Assistant</td><td></td><td></td></tr>
+<tr><td>delta</td><td>String</td><td></td><td></td></tr>
+<tr><td>last_error</td><td>String</td><td></td><td></td></tr>
+<tr><td>message</td><td>Message</td><td></td><td></td></tr>
+<tr><td>message_id</td><td>ID</td><td></td><td></td></tr>
+<tr><td>run_id</td><td>String</td><td></td><td></td></tr>
+<tr><td>thread_id</td><td>String</td><td></td><td>The unique identifier of the thread the message belongs to.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Data {
+  message: Message
+  message_id: ID
+
+  last_error: String
+  # event
+  assistant: Assistant
+
+  delta: String
+  run_id: String
+  thread_id: String
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Data</b>:
+
+<h3>Unspecified services</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+e data.
+
+<h3>Store Pod Information: Save the pod</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+information to a database for further analysis or reporting.
+
+<h3>5</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+for data storage.
+
+<h3>historical\_entity\_attrs table</h3>
+<small><i>Source: IBMTurbonomic_8.16.0.md (turbonomic)</i></small>
+
+This table tracks the historical attributes that are associated with an entity. Each row represents the value of an attribute of an entity at a point in time. New rows are written when the value of a property changes between topologies, and at regular intervals (for example daily) to keep a recent value available within a reasonable time range.
+
+| Data Object      | Type                     | Nullable   | Primary   | Description                                                                                                                                                                                                                                                                              | Reference   |
+
+<h3>Contents</h3>
+<small><i>Source: redp4873.md (turbonomic)</i></small>
+
+<table>
+<tr><th>Example: Tier cold data . . . . . . . . . . . . . . . . . . . . . . . .</th><th>40</th></tr>
+<tr><td>2.6.2</td><td>Example: Backup/snapshot data . . . . . . . . . . . . . . . . .</td><td>40</td></tr>
+<tr><td>2.6.3</td><td>Example: Disaster recovery data . . . . . . . . . . . . . . . . .</td><td>41</td></tr>
+</table>| 2.6.4                                                                                                                           | Example: Daily operations and dev/test data . . . . . . . .
+
+<h3>2.6.3  Example: Disaster recovery data</h3>
+<small><i>Source: redp4873.md (turbonomic)</i></small>
+
+In this section, an example of disaster recover data is described.
+
+<h3>Analyze monitoring data</h3>
+<small><i>Source: azure-aks-2.md (azure)</i></small>
+
+There are many tools for analyzing monitoring data.
+
+<h3>1.3  Introduction to Cognitive computing</h3>
+<small><i>Source: redp4873.md (turbonomic)</i></small>
+
+characteristics are defined by the 'five V's': variety, volume, velocity, veracity and visibility. Big data requires innovative forms of information processing to draw insights, automate processes, and assist in decision making.
+
+Big data can be structured data that corresponds to a formal pattern, such as traditional data sets and databases. Also, big data includes semi-structured and unstructured formats, such as word processing documents, videos, images, audio, presentations, social media interactions, streams, web pages, and many other kinds of content. Unstructured data is not contained in a regular database and is growing exponentially, making up the majority of all the data in the world.
+
+Cognitive computing enables people to create a new kind of value by finding answers and insights that are locked away in the volumes of data.
+
+<h3>Run queries - If you have connected your data source, the built-in query editor can be used to retrieve the</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+required data. Query results are updated in real time and can be directly linked to individual widgets for
+dynamic data visualization.
+
+<h3>Regional office tier</h3>
+<small><i>Source: redp4873.md (turbonomic)</i></small>
+
+patches. Other read-only data can include corporate policy documents and other reference material. Although this type of data is often accessed through web technologies, where manipulation or printing is required, the data might be better placed locally to reduce the impact of WAN traffic.
+
+Read/write data that is held in this tier includes a user's personal data, and data shared among co-workers within a team. Teams might be spread across regional offices within this tier.
+
+Although most users who are operating within this tier are normally dedicated to a single regional office, users in management roles might roam across the regional offices.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:watsonx-orchestrate">watsonx-orchestrate Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:watsonx-orchestrate">Category:watsonx-orchestrate</a>
+</body>
+</html>

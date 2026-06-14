@@ -48,8 +48,25 @@ Requires a provider configured in `benchmark/.env`. A local venv with
 `litellm`, `python-dotenv`, `ibm_watsonx_ai` is expected at `qa/.venv`
 (gitignored).
 
-## Tier 3 — grounding provenance (not in this change)
+## Tier 3 — grounding provenance (`resolve_grounding.py`)
 
-2,005 grounding refs are bare `.html` filenames that resolve 1:1 to the private
-`itopsgraph_docs` repo. Rewriting them into resolvable paths/URLs is tracked
-separately.
+The internal grounding refs were bare `.html` filenames that pointed nowhere.
+They resolve 1:1 to the private `balajinix/itopsgraph_docs` repo, so the
+documents are **vendored** into `IAA-Labelling/grounding_docs/` (2,001 files,
+~123 MB, ~10 MB packed) at pinned commit
+`503c19aac8594f5fde3780b6c9a6d42272979fb2`.
+
+`resolve_grounding.py` rewrites each internal ref's `url` to the vendored path
+(relative to the dataset file, e.g. `grounding_docs/wiki_pages/Category_aws.html`),
+adds `repo` + `commit` provenance fields, and verifies every ref resolves on
+disk. External http refs (1,442) are left untouched.
+
+Outputs:
+- `IAA-Labelling/grounding_docs/**` — vendored source documents (+ `PROVENANCE.md`)
+- updated `IAA-Labelling/combined_export.fixed.json` — resolvable grounding
+- `qa/resolve_grounding_report.json` — audit trail
+
+Run: `python3 qa/resolve_grounding.py`
+
+Residual: 4 grounding entries (`DP-02004/2007/2010/2013`) have a title but an
+empty `url` (no filename to map) and remain unresolved.

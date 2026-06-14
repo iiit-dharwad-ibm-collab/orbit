@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:aws/AwsLambdaFunction</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:aws/AwsLambdaFunction</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>AwsLambdaFunction</td></tr>
+<tr><td><b>product</b></td><td>aws</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>9</td></tr></table>
+
+<h2>Overview</h2>
+AwsLambdaFunction type from aws.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>architectures</td><td>string</td><td>Yes</td><td></td></tr>
+<tr><td>aws_resource</td><td>AwsResource</td><td></td><td></td></tr>
+<tr><td>description</td><td>string</td><td></td><td></td></tr>
+<tr><td>memory_size</td><td>int32</td><td></td><td></td></tr>
+<tr><td>role</td><td>string</td><td></td><td></td></tr>
+<tr><td>run_time</td><td>string</td><td></td><td></td></tr>
+<tr><td>security_group_ids</td><td>string</td><td>Yes</td><td></td></tr>
+<tr><td>serverless_function</td><td>BaseServerlessFunction</td><td></td><td></td></tr>
+<tr><td>subnet_ids</td><td>string</td><td>Yes</td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>AwsLambdaFunction</b>:
+
+<h3>lambda/latest/dg/lambda-functions.html</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+<h3>lambda/latest/dg/welcome.html</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+<h3>Configuring AWS Lambda functions</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+a functions to run for extended periods—up to one year—while maintaining state between invocations. Configure execution timeouts, state retention, and versioning behavior for long-running, stateful workflows. Durable functions allow you to build complex, multi-step processes that can pause, resume, and automatically handle interruptions.
+You can make your function code portable and keep secrets out of your code by storing them in your function's configuration by using environment variables.
+You can use your Lambda function with AWS resources in an Amazon VPC. Connecting your function to a VPC lets you access resources in a private subnet such as relational databases and caches.
+You can use an interface VPC endpoint to invoke your Lambda functions without crossing the public internet.
+You can use your Lambda function to mount a Amazon EFS to a local directory.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:aws">aws Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:aws">Category:aws</a>
+</body>
+</html>

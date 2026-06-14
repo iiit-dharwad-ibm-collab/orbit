@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/findApplicationAlertConfig_200_response</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/findApplicationAlertConfig_200_response</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>findApplicationAlertConfig_200_response</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>26</td></tr></table>
+
+<h2>Overview</h2>
+findApplicationAlertConfig_200_response type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>alertChannelIds</td><td>String</td><td>Yes</td><td>List of IDs of alert channels defined in Instana. Can be left empty.</td></tr>
+<tr><td>alertChannels</td><td>JSON</td><td></td><td>Set of alert channel IDs associated with the severity.</td></tr>
+<tr><td>applicationId</td><td>query_findActiveApplicationAlertConfigs_items_applicationId</td><td></td><td>Filter by application ID</td></tr>
+<tr><td>applications</td><td>query_findActiveApplicationAlertConfigs_items_applications</td><td></td><td></td></tr>
+<tr><td>boundaryScope</td><td>query_findActiveApplicationAlertConfigs_items_boundaryScope</td><td></td><td>Here, `ALL` Application Boundary Scope is considered.</td></tr>
+<tr><td>created</td><td>BigInt</td><td></td><td>Unix timestamp representing the creation time of this revision.</td></tr>
+<tr><td>customPayloadFields</td><td>query_findActiveApplicationAlertConfigs_items_customPayloadFields_items</td><td>Yes</td><td>Custom payload fields to send additional information in the alert notifications. Can be left empty.</td></tr>
+<tr><td>description</td><td>query_findActiveApplicationAlertConfigs_items_description</td><td></td><td>The description provided, if any.</td></tr>
+<tr><td>enabled</td><td>Boolean</td><td></td><td>Set this flag to `true` if custom rule configurations has to be considered.</td></tr>
+<tr><td>evaluationType</td><td>query_findActiveApplicationAlertConfigs_items_evaluationType</td><td></td><td></td></tr>
+<tr><td>gracePeriod</td><td>BigInt</td><td></td><td>The duration for which an alert remains open after conditions are no longer violated, with the alert auto-closing once the grace period expires.</td></tr>
+<tr><td>granularity</td><td>query_findActiveApplicationAlertConfigs_items_granularity</td><td></td><td>* If granularity is not specified an aggregated value for the selected timeframe is returned.</td></tr>
+<tr><td>id</td><td>query_findActiveApplicationAlertConfigs_items_id</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>includeInternal</td><td>Boolean</td><td></td><td>Flag to include Internal Calls. These calls are work done inside a service and correspond to intermediate spans in custom tracing.</td></tr>
+<tr><td>includeSynthetic</td><td>Boolean</td><td></td><td>Flag to include Synthetic Calls. These calls have a synthetic endpoint as their destination, such as calls to health-check endpoints.</td></tr>
+<tr><td>initialCreated</td><td>BigInt</td><td></td><td>Unix timestamp representing the time of the initial revision.</td></tr>
+<tr><td>name</td><td>query_findActiveApplicationAlertConfigs_items_name</td><td></td><td>Name of the group.</td></tr>
+<tr><td>readOnly</td><td>Boolean</td><td></td><td>Read only action flag. Value is `true` if read only `false` otherwise.</td></tr>
+<tr><td>rule</td><td>query_findActiveApplicationAlertConfigs_items_rule</td><td></td><td></td></tr>
+<tr><td>rules</td><td>query_findActiveApplicationAlertConfigs_items_rules_items</td><td>Yes</td><td>Specify custom rule configuration apart from Instana predefined rules. This rule has the highest precedence. This is only available for HTTP endpoints.</td></tr>
+<tr><td>severity</td><td>Int</td><td></td><td>The severity of the Event when triggered.</td></tr>
+<tr><td>tagFilterExpression</td><td>query_findActiveApplicationAlertConfigs_items_tagFilterExpression</td><td></td><td></td></tr>
+<tr><td>tagFilters</td><td>query_findActiveApplicationAlertConfigs_items_tagFilters_items</td><td>Yes</td><td></td></tr>
+<tr><td>threshold</td><td>query_findActiveApplicationAlertConfigs_items_threshold</td><td></td><td>Specifies the threshold value for the metric being monitored</td></tr>
+<tr><td>timeThreshold</td><td>query_findActiveApplicationAlertConfigs_items_timeThreshold</td><td></td><td></td></tr>
+<tr><td>triggering</td><td>Boolean</td><td></td><td>Optional flag to indicate whether an Incident is also triggered or not.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type findApplicationAlertConfig_200_response {
+  # List of IDs of alert channels defined in Instana. Can be left empty.
+  alertChannelIds: <a href="String]!">@deprecated(reason: "deprecated")
+
+  # Set of alert channel IDs associated with the severity.
+  alertChannels: JSON
+
+  # ID of the application that this Smart Alert configuration is applied to.
+  applicationId: query_findActiveApplicationAlertConfigs_items_applicationId @deprecated(reason: "deprecated")
+  applications: query_findActiveApplicationAlertConfigs_items_applications!
+  boundaryScope: query_findActiveApplicationAlertConfigs_items_boundaryScope!
+
+  # Unix timestamp representing the creation time of this revision.
+  created: BigInt
+
+  # Custom payload fields to send additional information in the alert notifications. Can be left empty.
+  customPayloadFields: [query_findActiveApplicationAlertConfigs_items_customPayloadFields_items</a>!
+
+  # Description of the application alert configuration. Used as a template for the description of alert/event notifications triggered by this Smart Alert configuration.
+  description: query_findActiveApplicationAlertConfigs_items_description!
+
+  # Flag to indicate whether or not the configuration is enabled.
+  enabled: Boolean
+  evaluationType: query_findActiveApplicationAlertConfigs_items_evaluationType!
+
+  # The duration for which an alert remains open after conditions are no longer violated, with the alert auto-closing once the grace period expires.
+  gracePeriod: BigInt
+  granularity: query_findActiveApplicationAlertConfigs_items_granularity!
+
+  # ID of this Application App Alert Config.
+  id: query_findActiveApplicationAlertConfigs_items_id!
+
+  # Flag to include Internal Calls. These calls are work done inside a service and correspond to intermediate spans in custom tracing.
+  includeInternal: Boolean
+
+  # Flag to include Synthetic Calls. These calls have a synthetic endpoint as their destination, such as calls to health-check endpoints.
+  includeSynthetic: Boolean
+
+  # Unix timestamp representing the time of the initial revision.
+  initialCreated: BigInt
+
+  # Name of the application alert configuration. Used as a template for the title of alert/event notifications triggered by this Smart Alert configuration.
+  name: query_findActiveApplicationAlertConfigs_items_name!
+
+  # Flag to indicate whether or not the configuration is read-only. Read-only access restricts modification of the config.
+  readOnly: Boolean
+  rule: query_findActiveApplicationAlertConfigs_items_rule
+
+  # A list of rules where each rule is associated with multiple thresholds and their corresponding severity levels. This enables more complex alert configurations with validations to ensure consistent and logical threshold-severity combinations.
+  rules: <a href="query_findActiveApplicationAlertConfigs_items_rules_items]"># The severity of the alert when triggered, which is either 5 (Warning), or 10 (Critical).
+  severity: Int @deprecated(reason: "deprecated")
+  tagFilterExpression: query_findActiveApplicationAlertConfigs_items_tagFilterExpression!
+  tagFilters: [query_findActiveApplicationAlertConfigs_items_tagFilters_items</a>
+  threshold: query_findActiveApplicationAlertConfigs_items_threshold @deprecated(reason: "deprecated")
+  timeThreshold: query_findActiveApplicationAlertConfigs_items_timeThreshold!
+
+  # Optional flag to indicate whether an Incident is also triggered or not.
+  triggering: Boolean
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>findApplicationAlertConfig_200_response</b>:
+
+<h3>Get the services that have trace data for an application</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Getting an application ID
+To list all services for an application, you must send a GET
+request to the `<code>/api/application-monitoring/applications</code>
+endpoint.
+The preceding GET request includes the following details:
+GET /api/application-monitoring/applications/
+Host: {tenant}-{unit}.instana.io
+2368 IBM Instana Observability
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

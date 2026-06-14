@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product:watsonx-orchestrate</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Product:watsonx-orchestrate</h1>
+
+
+<h2>Overview</h2>
+IBM watsonx Orchestrate - AI-powered automation and skill orchestration.
+
+<h2>Types</h2>
+<table>
+<tr><th>Type</th><th>Kind</th><th>Fields</th><th>Description</th></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/AccessToken">AccessToken</a></td><td>OBJECT</td><td>3</td><td>AccessToken generation</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/AdditionalProperties">AdditionalProperties</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Assistant">Assistant</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/AssistantInfo">AssistantInfo</a></td><td>OBJECT</td><td>3</td><td>Basic information about an assistant.</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/AssistantRun">AssistantRun</a></td><td>OBJECT</td><td>15</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/AssistantRunConnection">AssistantRunConnection</a></td><td>OBJECT</td><td>2</td><td>AssistantRun Connection with edges</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/AssistantRunEdge">AssistantRunEdge</a></td><td>OBJECT</td><td>2</td><td>AssistantRun Edge with node</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/AssistantRunRoot">AssistantRunRoot</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/BaseLlm">BaseLlm</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ChatMessageInput">ChatMessageInput</a></td><td>INPUT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ChatMessageTextInput">ChatMessageTextInput</a></td><td>INPUT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ContentEntry">ContentEntry</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Data">Data</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/DefaultAgentSettings">DefaultAgentSettings</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Embeddings">Embeddings</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/GenericEntry">GenericEntry</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/GuardrailConfigInput">GuardrailConfigInput</a></td><td>INPUT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/GuardrailInput">GuardrailInput</a></td><td>INPUT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/GuardrailMaskInput">GuardrailMaskInput</a></td><td>INPUT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Guardrails">Guardrails</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/GuardrailsInput">GuardrailsInput</a></td><td>INPUT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Hap">Hap</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Input">Input</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Input1">Input1</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/LLMParamsInput">LLMParamsInput</a></td><td>INPUT</td><td>16</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/LengthPenaltyInput">LengthPenaltyInput</a></td><td>INPUT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Mask">Mask</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Mention">Mention</a></td><td>OBJECT</td><td>2</td><td>mention will specify a assistant</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Message">Message</a></td><td>OBJECT</td><td>16</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ModelParams">ModelParams</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ModelParams1">ModelParams1</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ModelParams2">ModelParams2</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ModelSettings">ModelSettings</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/OkResponse">OkResponse</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Output">Output</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Output1">Output1</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Pii">Pii</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Result">Result</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ReturnOptions">ReturnOptions</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ReturnOptions1">ReturnOptions1</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ReturnOptionsInput">ReturnOptionsInput</a></td><td>INPUT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/RouterConfig">RouterConfig</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/RouterSettings">RouterSettings</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/RunEvent">RunEvent</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/SkillSetByID">SkillSetByID</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/SkillSets">SkillSets</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/SkillsetsEntry">SkillsetsEntry</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/SlotFillingSettings">SlotFillingSettings</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Thread">Thread</a></td><td>OBJECT</td><td>13</td><td>message threads</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ThreadConnection">ThreadConnection</a></td><td>OBJECT</td><td>2</td><td>Thread Connection with edges</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ThreadEdge">ThreadEdge</a></td><td>OBJECT</td><td>2</td><td>Thread Edge with node</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/TokenUsage">TokenUsage</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/Usage">Usage</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/UserSettings">UserSettings</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/WXAOutput">WXAOutput</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/WxaMessage">WxaMessage</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/_CloudIBM">_CloudIBM</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+</table>
+
+<h2>Type Mappings</h2>
+Types from this product that map to other products:
+
+<table>
+<tr><th>Source Type</th><th>Maps To</th><th>Target Product</th></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ThreadConnection">ThreadConnection</a></td><td><a href="#Type:instana/ApplicationConnection">ApplicationConnection</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ThreadEdge">ThreadEdge</a></td><td><a href="#Type:instana/ApplicationEdge">ApplicationEdge</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/ContentEntry">ContentEntry</a></td><td><a href="#Type:concert/SuccessResponse">SuccessResponse</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/AssistantRun">AssistantRun</a></td><td><a href="#Type:concert/Ingestion_jobs">Ingestion_jobs</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/AccessToken">AccessToken</a></td><td><a href="#Type:turbonomic/AccessToken">AccessToken</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/AssistantRunConnection">AssistantRunConnection</a></td><td><a href="#Type:instana/ApplicationConnection">ApplicationConnection</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:watsonx-orchestrate/AssistantRunEdge">AssistantRunEdge</a></td><td><a href="#Type:instana/ApplicationEdge">ApplicationEdge</a></td><td>instana</td></tr>
+</table>
+
+<a href="#Category:Products">Category:Products</a>
+<a href="#Category:GraphQL">Category:GraphQL</a>
+</body>
+</html>

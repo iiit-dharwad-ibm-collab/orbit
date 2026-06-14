@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_getAllSliConfigs_items_metricConfiguration</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_getAllSliConfigs_items_metricConfiguration</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_getAllSliConfigs_items_metricConfiguration</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+Details regarding the metric to be configured, including the metric name, threshold, and aggregation method
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>metricAggregation</td><td>query_getAllSliConfigs_items_metricConfiguration_metricAggregation</td><td></td><td></td></tr>
+<tr><td>metricName</td><td>String</td><td></td><td>Defines the name of the metric to be monitored. Examples include `calls` and `latency`</td></tr>
+<tr><td>threshold</td><td>NonNegativeFloat</td><td></td><td>Specifies the threshold value for the metric being monitored</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+# Details regarding the metric to be configured, including the metric name, threshold, and aggregation method
+type query_getAllSliConfigs_items_metricConfiguration {
+  metricAggregation: query_getAllSliConfigs_items_metricConfiguration_metricAggregation
+
+  # Defines the name of the metric to be monitored. Examples include `calls` and `latency`
+  metricName: String!
+
+  # Specifies the threshold value for the metric being monitored
+  threshold: NonNegativeFloat
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_getAllSliConfigs_items_metricConfiguration</b>:
+
+<h3>Select a metric from the Metric list by using one of the following options:</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+On the List tab, search the metrics list by using keywords.
+On the Regex tab, define the metric scope through regular expressions.
+Figure 1. selecting the metrics
+
+<h3>Pull the metric catalog to grab a list of supported metrics.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+From here you can find the metricId for the metric
+data you want to get for a particular service.
+
+<h3>From the Metric list, select a histogram metric</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+that corresponds to a natively stored histogram. The following
+example shows that several Prometheus histogram
+metric names that
+begin with vehicle_repair. However, only the first
+histogram metric (vehicle_repair_history) is a
+natively stored histogram. So, you
+must select it.
+1952 IBM Instana Observability
+
+Note: When you are selecting a metric to
+visualize using the Histogram widget, ensure that
+you select a metric name that corresponds to a natively stored
+histogram (otherwise the results might be unpredictable). You can
+determine which metric names correspond to natively stored
+histograms by using the following
+criteria:
+The metric type is histogram.
+The metric name does not list label values in braces ({
+}) following the name.
+The metric name does not contain metric type identifiers, such
+as _bucket, _sum, or _count,
+and it does not include bucket labels, such as le="2.0".
+
+<h3>Enable resource metering on all VMs</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+$vms = Get-VM
+foreach ($vm in $vms) {
+ if (-not $vm.ResourceMeteringEnabled) {
+ Enable-VMResourceMetering -VMName $vm.Name
+ }
+}
+Viewing metrics
+To view the metrics, complete the following steps:
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

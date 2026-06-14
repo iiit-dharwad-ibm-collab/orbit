@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_findActiveApplicationAlertConfigs_items_granularity</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_findActiveApplicationAlertConfigs_items_granularity</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_findActiveApplicationAlertConfigs_items_granularity</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>ENUM</td></tr>
+<tr><td><b>fields_count</b></td><td>6</td></tr></table>
+
+<h2>Overview</h2>
+The evaluation granularity used for detection of violations of the defined threshold. Defines the size of the tumbling window used.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>_1200000</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>_1800000</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>_300000</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>_60000</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>_600000</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>_900000</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+# The evaluation granularity used for detection of violations of the defined threshold. Defines the size of the tumbling window used.
+enum query_findActiveApplicationAlertConfigs_items_granularity {
+  _60000
+  _300000
+  _600000
+  _900000
+  _1200000
+  _1800000
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_findActiveApplicationAlertConfigs_items_granularity</b>:
+
+<h3>Select the alert channels to be alerted on.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+an expected.
+Confirm your scope
+The scope, your current open mobile app, is automatically selected. By applying the Unbounded Analytics queries, you can further scope the alert to a specific subset of
+mobile app traffic; for example, by geolocation, view name, or platform.
+Each query filter connects with the AND logic operator by default, so a mobile app beacon needs to match all the filters applied:
+Specific pages.
+Operating systems.
+Countries.
+Meta: specify more metadata that you can use to annotate page views and sessions. Select one of the available keys, a predefined value, and then select an
+operator.
+Add alert channels
+To add alerts channels, click Select alert channels, and select the channels to send the alerts. In Smart Alerts for mobile applications, you can add different alert
+channels for warning and critical severities. In simple mode, the system automatically assigns the selected channels the default severity level. The default severity level is
+warning.
+
+<h3>For this application perspective</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+to manually select or exclude individual services that this Smart Alert must restrict its
+scope to. Within a selected or excluded service, the selected scope can be further defined for each of its endpoints.
+1670 IBM Instana Observability
+
+Enabling Sort by user selection keeps the selected services and endpoints on top.
+If you use the search field, the selection tree is reduced to just services and endpoints whose name matches the search keyword.
+Optionally, use Add filter for more advanced and granular filtering requirements that use arbitrary boolean logic.
+Alert threshold
+In this section, you can configure the alert threshold of the Smart Alert. The underlying metric is an aggregation of calls that relate to the given Application Perspective.
+When the alert threshold of the Smart Alert is configured, the alert preview of the dialog shows the metric, threshold, and the violations on historic data for the last 24
+hours or 7 days.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

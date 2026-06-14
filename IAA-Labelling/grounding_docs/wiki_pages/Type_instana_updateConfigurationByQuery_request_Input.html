@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/updateConfigurationByQuery_request_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/updateConfigurationByQuery_request_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>updateConfigurationByQuery_request_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+updateConfigurationByQuery_request_Input type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>remoteBranch</td><td>mutationInput_updateConfigurationByQuery_input_remoteBranch</td><td></td><td></td></tr>
+<tr><td>remoteName</td><td>mutationInput_updateConfigurationByQuery_input_remoteName</td><td></td><td></td></tr>
+<tr><td>remoteUri</td><td>mutationInput_updateConfigurationByQuery_input_remoteUri</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input updateConfigurationByQuery_request_Input {
+  remoteBranch: mutationInput_updateConfigurationByQuery_input_remoteBranch
+  remoteName: mutationInput_updateConfigurationByQuery_input_remoteName
+  remoteUri: mutationInput_updateConfigurationByQuery_input_remoteUri
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>updateConfigurationByQuery_request_Input</b>:
+
+<h3>configuration for IBM MQ Tracing user exit</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+set to otel
+For more information about the configuration parameters, see Configuration parameters.
+Configuration parameters
+The following table lists the configuration parameters:
+Table 1. Configuration parameters
+Parameter
+Description
+
+<h3>Configuration parameters</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+The following table outlines the configuration parameters:
+Parameter
+Description
+
+<h3>The Director applies the runtime configuration changes to each deployment during the next bosh deploy for that deployment.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+property is ignored if 'instana.agent.proxy.type' or 'instana.agent.proxy.user' have no value 
+set.
+ dns: = (Optional) If set to 'true', DNS will be used to resolve the proxy address.
+ = Default is 'true'.
+ = This property is ignored if 'instana.agent.proxy.type' has no value set.
+ updates:
+ mode:
+ dynamic = Whether the agent should update itself dynamically ("dynamic") or not ("static", default).
+ = Default is dynamic.
+ dynamic:
+ repository:
+ hostname:
+ artifact-public.instana.io = The hostname of the repository to tap for updates to agent and 
+sensors.
+ = The agent will connect to the repository on port 80 and 443.
+ version: = (Optional) Which version of the updates pack to use without further updates (version 
+pinning).
+ = This setting overrides 'instana.agent.updates.dynamic.frequency' and 
+'instana.agent.updates.dynamic.time'.
+ frequency:= (Optional) How often to update the agent.
+
+<h3>Configuration options</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+The following table lists the parameters:
+Parameter
+Description
+key (String)
+The monitoring configuration key of Instana.
+reportingURL (String)
+The URL pointing to the Instana instance to which the monitoring data is sent.
+options (SetupOptions, optional) Configuration options (such as collectionEnabled).
+Example
+@override
+void initState() {
+ super.initState();
+ setupInstana();
+}
+Future<void> setupInstana() async {
+ await InstanaAgent.setup(key: 'Your-Instana-Key', reportingUrl: 'Your-Instana-Reporting-URL', null);
+ // Alternatively with configuration options
+ var options = SetupOptions();
+ options.collectionEnabled = false;
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

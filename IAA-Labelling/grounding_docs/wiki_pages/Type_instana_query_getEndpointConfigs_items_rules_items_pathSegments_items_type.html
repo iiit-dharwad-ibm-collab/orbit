@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_getEndpointConfigs_items_rules_items_pathSegments_items_type</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_getEndpointConfigs_items_rules_items_pathSegments_items_type</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_getEndpointConfigs_items_rules_items_pathSegments_items_type</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>ENUM</td></tr>
+<tr><td><b>fields_count</b></td><td>4</td></tr></table>
+
+<h2>Overview</h2>
+query_getEndpointConfigs_items_rules_items_pathSegments_items_type type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>FIXED</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>MATCH_ALL</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>PARAMETER</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>UNSUPPORTED</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+enum query_getEndpointConfigs_items_rules_items_pathSegments_items_type {
+  UNSUPPORTED
+  FIXED
+  PARAMETER
+  MATCH_ALL
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_getEndpointConfigs_items_rules_items_pathSegments_items_type</b>:
+
+<h3>Custom endpoint rules</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Instana comes with three default HTTP rules which are always
+part of the extraction chain:
+Detected Framework: Extracts endpoints as
+specified in detected framework (if accessible).
+/'': Extracts endpoints based on the first path
+parameter.
+Unspecified: Calls that do not match a
+preceding rule are assigned to this endpoint.
+To specify additional configuration, you can define multiple
+custom rules. To do so, access the custom endpoint configuration
+dialog from any HTTP service, and select
+Add Custom HTTP
+Rule. The upcoming dialog offers you the ability to define
+a specific path (the actual rule) and multiple test cases to check
+if the defined path is working
+as expected. For the path you can
+use static segments like /api or
+/myShopEndpoint, path parameters like
+/{productId}, or match any segment with
+/''.
+In the rule tester part of the dialog, you can define multiple
+test cases to validate rules.
+
+<h3>INSTANA_IGNORE_ENDPOINTS_PATH=/absolute/path/to/config.yaml</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+In the preceding example, the config.yaml file must have an absolute path and adhere to the specified configuration structure.
+The following example shows filtering by method:
+tracing:
+ ignore-endpoints:
+ redis:
+ - get
+ - type
+ dynamodb:
+ - query
+ kafka:
+ - send 
+ http:
+ - get
+ 
+This configuration filters the following traces:
+GET and TYPE commands for Redis
+QUERY command for DynamoDB
+SEND method for Kafka and all downstream traces
+GET method for HTTP and all downstream traces
+The following example shows filtering by method, endpoint, and connection:
+tracing:
+ ignore-endpoints:
+ kafka: 
+ - methods: <a href=""consume"]">endpoints: ["topic1", "topic2"</a>
+ - methods: <a href=""consume",">"send"</a>
+ endpoints: <a href=""topic3"]">- methods: ["''"</a> = Applied to all methods
+ endpoints: <a href=""topic4"]">- methods: ["consume"</a>
+ endpoints: <a href=""''"]">= Applied to all endpoints
+ http:
+ - methods: ["get"</a>
+ endpoints: <a href=""/status"]">- methods: ["get", "post"</a>
+ endpoints: <a href=""/status",">"/v1/status"</a>
+ - methods: ["*"]
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

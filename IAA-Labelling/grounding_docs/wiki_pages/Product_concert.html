@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product:concert</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Product:concert</h1>
+
+
+<h2>Overview</h2>
+IBM Concert - Application lifecycle management and vulnerability tracking platform.
+
+<h2>Types</h2>
+<table>
+<tr><th>Type</th><th>Kind</th><th>Fields</th><th>Description</th></tr>
+<tr><td><a href="#Type:concert/About_categories">About_categories</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/About_checks">About_checks</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/Access_control">Access_control</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Access_control_view">Access_control_view</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/Access_points">Access_points</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Access_points_impact_view">Access_points_impact_view</a></td><td>OBJECT</td><td>14</td><td></td></tr>
+<tr><td><a href="#Type:concert/Activity_history">Activity_history</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/ApiKey">ApiKey</a></td><td>OBJECT</td><td>1</td><td>API key</td></tr>
+<tr><td><a href="#Type:concert/ApiKeyDate">ApiKeyDate</a></td><td>OBJECT</td><td>1</td><td>API key date information</td></tr>
+<tr><td><a href="#Type:concert/AppComponentCount">AppComponentCount</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/AppEnvironment">AppEnvironment</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/Application">Application</a></td><td>OBJECT</td><td>22</td><td></td></tr>
+<tr><td><a href="#Type:concert/ApplicationAssociationsInfo">ApplicationAssociationsInfo</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/ApplicationAssociationsInfoPrototypeInput">ApplicationAssociationsInfoPrototypeInput</a></td><td>INPUT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/ApplicationCollection">ApplicationCollection</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:concert/ApplicationDetails">ApplicationDetails</a></td><td>OBJECT</td><td>2</td><td>Application details for filtering</td></tr>
+<tr><td><a href="#Type:concert/ApplicationFilters">ApplicationFilters</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:concert/ApplicationPatchInput">ApplicationPatchInput</a></td><td>INPUT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/ApplicationPrototypeInput">ApplicationPrototypeInput</a></td><td>INPUT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/ApplicationReleaseProperties">ApplicationReleaseProperties</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:concert/ApplicationReleasePropertiesPrototypeInput">ApplicationReleasePropertiesPrototypeInput</a></td><td>INPUT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:concert/ApplicationSbomsCollection">ApplicationSbomsCollection</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:concert/ApplicationState">ApplicationState</a></td><td>ENUM</td><td>2</td><td>Application state</td></tr>
+<tr><td><a href="#Type:concert/Application_business_units">Application_business_units</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Application_cost">Application_cost</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:concert/Application_release">Application_release</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/Applications">Applications</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/Applications_environments">Applications_environments</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Applications_images">Applications_images</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Applications_source_repo">Applications_source_repo</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/ArtifactType">ArtifactType</a></td><td>ENUM</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/AssessmentCustomDetails">AssessmentCustomDetails</a></td><td>OBJECT</td><td>4</td><td>Custom details for assessment</td></tr>
+<tr><td><a href="#Type:concert/AssessmentState">AssessmentState</a></td><td>ENUM</td><td>7</td><td>Status of a vulnerability assessment</td></tr>
+<tr><td><a href="#Type:concert/Assessment_plan">Assessment_plan</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/Assessment_plan_component_definition">Assessment_plan_component_definition</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Assessment_plan_controls">Assessment_plan_controls</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Assessment_plan_metadata">Assessment_plan_metadata</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Assessment_plan_result">Assessment_plan_result</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Assessment_plan_result_controls">Assessment_plan_result_controls</a></td><td>OBJECT</td><td>10</td><td></td></tr>
+<tr><td><a href="#Type:concert/Assessment_result">Assessment_result</a></td><td>OBJECT</td><td>16</td><td></td></tr>
+<tr><td><a href="#Type:concert/AssociatedBuildArtifacts">AssociatedBuildArtifacts</a></td><td>OBJECT</td><td>5</td><td>Build artifacts associated with a vulnerability</td></tr>
+<tr><td><a href="#Type:concert/AssociationID">AssociationID</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:concert/Automation_rules">Automation_rules</a></td><td>OBJECT</td><td>13</td><td></td></tr>
+<tr><td><a href="#Type:concert/BuildArtifact">BuildArtifact</a></td><td>OBJECT</td><td>18</td><td></td></tr>
+<tr><td><a href="#Type:concert/BuildArtifactAssociations">BuildArtifactAssociations</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/Business_units">Business_units</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:concert/Businesses">Businesses</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/CVEFilters">CVEFilters</a></td><td>OBJECT</td><td>6</td><td>Available filters for CVEs</td></tr>
+<tr><td><a href="#Type:concert/Catalog">Catalog</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/Cd_rule_mapping">Cd_rule_mapping</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/Certificates">Certificates</a></td><td>OBJECT</td><td>18</td><td></td></tr>
+<tr><td><a href="#Type:concert/Certificates_environments">Certificates_environments</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Certificates_view">Certificates_view</a></td><td>OBJECT</td><td>23</td><td></td></tr>
+<tr><td><a href="#Type:concert/Checks">Checks</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/ComponentType">ComponentType</a></td><td>ENUM</td><td>2</td><td>Component type for vulnerabilities</td></tr>
+<tr><td><a href="#Type:concert/Component_definition">Component_definition</a></td><td>OBJECT</td><td>12</td><td></td></tr>
+<tr><td><a href="#Type:concert/Component_definition_controls">Component_definition_controls</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Component_definition_validator">Component_definition_validator</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/Components">Components</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/ConcertDefSbom">ConcertDefSbom</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/Concert_sbom">Concert_sbom</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Container_builds">Container_builds</a></td><td>OBJECT</td><td>8</td><td></td></tr>
+<tr><td><a href="#Type:concert/Control_relation">Control_relation</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Controls">Controls</a></td><td>OBJECT</td><td>8</td><td></td></tr>
+<tr><td><a href="#Type:concert/Credentials">Credentials</a></td><td>OBJECT</td><td>10</td><td></td></tr>
+<tr><td><a href="#Type:concert/CredentialsInput">CredentialsInput</a></td><td>INPUT</td><td>2</td><td>Contains user credentials for login</td></tr>
+<tr><td><a href="#Type:concert/CveInfo">CveInfo</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Cves">Cves</a></td><td>OBJECT</td><td>4</td><td>Vulnerability information for public access points</td></tr>
+<tr><td><a href="#Type:concert/CvesInfo">CvesInfo</a></td><td>OBJECT</td><td>10</td><td>CVE-related statistics</td></tr>
+<tr><td><a href="#Type:concert/CvesPublicAccessPoints">CvesPublicAccessPoints</a></td><td>OBJECT</td><td>3</td><td>CVEs affecting public access points</td></tr>
+<tr><td><a href="#Type:concert/Cyclonedx_sbom">Cyclonedx_sbom</a></td><td>OBJECT</td><td>12</td><td></td></tr>
+<tr><td><a href="#Type:concert/Cyclonedx_sbom_view">Cyclonedx_sbom_view</a></td><td>OBJECT</td><td>33</td><td></td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td>OBJECT</td><td>12</td><td></td></tr>
+<tr><td><a href="#Type:concert/EntityAccessUsersCollection">EntityAccessUsersCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of users and groups that have access to an entity</td></tr>
+<tr><td><a href="#Type:concert/EntityTagsInput">EntityTagsInput</a></td><td>INPUT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:concert/Entity_settings">Entity_settings</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:concert/Environment">Environment</a></td><td>OBJECT</td><td>3</td><td>Environment definition details</td></tr>
+<tr><td><a href="#Type:concert/EnvironmentCollection">EnvironmentCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of environment definitions</td></tr>
+<tr><td><a href="#Type:concert/Environments">Environments</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/Environments_access_points">Environments_access_points</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/Environments_deployed_images">Environments_deployed_images</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Error">Error</a></td><td>OBJECT</td><td>3</td><td>Error details</td></tr>
+<tr><td><a href="#Type:concert/ErrorCode">ErrorCode</a></td><td>ENUM</td><td>13</td><td>Error code enum</td></tr>
+<tr><td><a href="#Type:concert/ErrorResponse">ErrorResponse</a></td><td>OBJECT</td><td>7</td><td>Error response details</td></tr>
+<tr><td><a href="#Type:concert/Export_jobs">Export_jobs</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/ExposureAssociationsDetails">ExposureAssociationsDetails</a></td><td>OBJECT</td><td>4</td><td>Exposure associations details</td></tr>
+<tr><td><a href="#Type:concert/ExposureFilters">ExposureFilters</a></td><td>OBJECT</td><td>7</td><td>Available filters for exposures</td></tr>
+<tr><td><a href="#Type:concert/Exposure_assessment">Exposure_assessment</a></td><td>OBJECT</td><td>18</td><td></td></tr>
+<tr><td><a href="#Type:concert/Exposure_business_impact_view">Exposure_business_impact_view</a></td><td>OBJECT</td><td>24</td><td></td></tr>
+<tr><td><a href="#Type:concert/Exposure_findings">Exposure_findings</a></td><td>OBJECT</td><td>28</td><td></td></tr>
+<tr><td><a href="#Type:concert/Exposures">Exposures</a></td><td>OBJECT</td><td>31</td><td>Exposure details</td></tr>
+<tr><td><a href="#Type:concert/ExposuresCollection">ExposuresCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of exposures</td></tr>
+<tr><td><a href="#Type:concert/ExposuresInfo">ExposuresInfo</a></td><td>OBJECT</td><td>8</td><td>Exposure-related statistics</td></tr>
+<tr><td><a href="#Type:concert/FilterInfo">FilterInfo</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/FilterValueType">FilterValueType</a></td><td>ENUM</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/FiltersValues">FiltersValues</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_assessment">G_fwk_assessment</a></td><td>OBJECT</td><td>13</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_assessment_result">G_fwk_assessment_result</a></td><td>OBJECT</td><td>13</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_category">G_fwk_category</a></td><td>OBJECT</td><td>13</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_data_dictionary">G_fwk_data_dictionary</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_data_dictionary_item">G_fwk_data_dictionary_item</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_domain">G_fwk_domain</a></td><td>OBJECT</td><td>10</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_input_dataset">G_fwk_input_dataset</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_language">G_fwk_language</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_library">G_fwk_library</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_library_requirement">G_fwk_library_requirement</a></td><td>OBJECT</td><td>15</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_metric">G_fwk_metric</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_metric_metadata">G_fwk_metric_metadata</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_posture">G_fwk_posture</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_profile">G_fwk_profile</a></td><td>OBJECT</td><td>17</td><td></td></tr>
+<tr><td><a href="#Type:concert/G_fwk_profile_req">G_fwk_profile_req</a></td><td>OBJECT</td><td>12</td><td></td></tr>
+<tr><td><a href="#Type:concert/Handlers">Handlers</a></td><td>OBJECT</td><td>10</td><td></td></tr>
+<tr><td><a href="#Type:concert/HistoryDetails">HistoryDetails</a></td><td>OBJECT</td><td>4</td><td>History details for a vulnerability</td></tr>
+<tr><td><a href="#Type:concert/IDNamePair">IDNamePair</a></td><td>OBJECT</td><td>2</td><td>ID and name pair</td></tr>
+<tr><td><a href="#Type:concert/Image_deployments">Image_deployments</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/Image_to_sbomid">Image_to_sbomid</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/Image_view">Image_view</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:concert/Images">Images</a></td><td>OBJECT</td><td>14</td><td></td></tr>
+<tr><td><a href="#Type:concert/Images_access_points">Images_access_points</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Images_components">Images_components</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Images_repositories">Images_repositories</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/IngestionJob">IngestionJob</a></td><td>OBJECT</td><td>3</td><td>Ingestion job details</td></tr>
+<tr><td><a href="#Type:concert/IngestionJobCollection">IngestionJobCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of ingestion jobs</td></tr>
+<tr><td><a href="#Type:concert/IngestionJobCredential">IngestionJobCredential</a></td><td>OBJECT</td><td>3</td><td>Details of a connection credential</td></tr>
+<tr><td><a href="#Type:concert/IngestionJobCredentialCollection">IngestionJobCredentialCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of connection credentials</td></tr>
+<tr><td><a href="#Type:concert/Ingestion_jobs">Ingestion_jobs</a></td><td>OBJECT</td><td>14</td><td></td></tr>
+<tr><td><a href="#Type:concert/Instance_settings">Instance_settings</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Issue">Issue</a></td><td>OBJECT</td><td>9</td><td>Issue information for a vulnerability</td></tr>
+<tr><td><a href="#Type:concert/IssueLink">IssueLink</a></td><td>OBJECT</td><td>7</td><td>Issue data including link to external tracking system</td></tr>
+<tr><td><a href="#Type:concert/Jobs">Jobs</a></td><td>OBJECT</td><td>14</td><td></td></tr>
+<tr><td><a href="#Type:concert/Library">Library</a></td><td>OBJECT</td><td>10</td><td></td></tr>
+<tr><td><a href="#Type:concert/LicenseStatus">LicenseStatus</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Materialized_view_refresh_flag">Materialized_view_refresh_flag</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/MostCommonExposureRule">MostCommonExposureRule</a></td><td>OBJECT</td><td>3</td><td>Most common exposure rule information</td></tr>
+<tr><td><a href="#Type:concert/MostCommonExposureRules">MostCommonExposureRules</a></td><td>OBJECT</td><td>1</td><td>Collection of most common exposure rules</td></tr>
+<tr><td><a href="#Type:concert/MostVulnerableApplication">MostVulnerableApplication</a></td><td>OBJECT</td><td>5</td><td>Most vulnerable application information</td></tr>
+<tr><td><a href="#Type:concert/MostVulnerableApplicationCollection">MostVulnerableApplicationCollection</a></td><td>OBJECT</td><td>3</td><td>Collection of most vulnerable applications</td></tr>
+<tr><td><a href="#Type:concert/Os_advisory_cache">Os_advisory_cache</a></td><td>OBJECT</td><td>10</td><td></td></tr>
+<tr><td><a href="#Type:concert/Ossrepo_scores">Ossrepo_scores</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:concert/PackageDetailsCollection">PackageDetailsCollection</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:concert/PackageDetailsSummary">PackageDetailsSummary</a></td><td>OBJECT</td><td>26</td><td></td></tr>
+<tr><td><a href="#Type:concert/PackageRecommendation">PackageRecommendation</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/PackageReferences">PackageReferences</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/PackageVulnerability">PackageVulnerability</a></td><td>OBJECT</td><td>7</td><td>Package vulnerability information</td></tr>
+<tr><td><a href="#Type:concert/PackageVulnerabilityCollection">PackageVulnerabilityCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of package vulnerabilities</td></tr>
+<tr><td><a href="#Type:concert/Package_business_impact_view">Package_business_impact_view</a></td><td>OBJECT</td><td>21</td><td></td></tr>
+<tr><td><a href="#Type:concert/Package_findings">Package_findings</a></td><td>OBJECT</td><td>8</td><td></td></tr>
+<tr><td><a href="#Type:concert/Package_rollup_view">Package_rollup_view</a></td><td>OBJECT</td><td>18</td><td></td></tr>
+<tr><td><a href="#Type:concert/Package_status">Package_status</a></td><td>OBJECT</td><td>14</td><td></td></tr>
+<tr><td><a href="#Type:concert/Package_vulnerabilities">Package_vulnerabilities</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/Package_vulnerability_counts">Package_vulnerability_counts</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Packages">Packages</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Packages_images">Packages_images</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Packages_sboms">Packages_sboms</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Packages_source_repos">Packages_source_repos</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Packages_view">Packages_view</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Packages_with_backlevel_and_scores">Packages_with_backlevel_and_scores</a></td><td>OBJECT</td><td>20</td><td></td></tr>
+<tr><td><a href="#Type:concert/Profile">Profile</a></td><td>OBJECT</td><td>8</td><td></td></tr>
+<tr><td><a href="#Type:concert/Profile_controls">Profile_controls</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Projects">Projects</a></td><td>OBJECT</td><td>13</td><td></td></tr>
+<tr><td><a href="#Type:concert/Quickstart">Quickstart</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Recommendations">Recommendations</a></td><td>OBJECT</td><td>14</td><td></td></tr>
+<tr><td><a href="#Type:concert/Release">Release</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Remediation_insights">Remediation_insights</a></td><td>OBJECT</td><td>17</td><td></td></tr>
+<tr><td><a href="#Type:concert/Repo_url_to_sbomid">Repo_url_to_sbomid</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/RepositoryAssociations">RepositoryAssociations</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:concert/Repository_view">Repository_view</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/Resources">Resources</a></td><td>OBJECT</td><td>18</td><td></td></tr>
+<tr><td><a href="#Type:concert/Resources_environments">Resources_environments</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Resources_images">Resources_images</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Roja_meta">Roja_meta</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:concert/Roja_meta_history">Roja_meta_history</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Rule_to_check_mapping">Rule_to_check_mapping</a></td><td>OBJECT</td><td>8</td><td></td></tr>
+<tr><td><a href="#Type:concert/Runtime">Runtime</a></td><td>OBJECT</td><td>3</td><td>Runtime component details</td></tr>
+<tr><td><a href="#Type:concert/RuntimeCollection">RuntimeCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of runtime components</td></tr>
+<tr><td><a href="#Type:concert/RuntimeSortField">RuntimeSortField</a></td><td>ENUM</td><td>5</td><td>Field to sort runtime results by</td></tr>
+<tr><td><a href="#Type:concert/SbomBlastRadius">SbomBlastRadius</a></td><td>OBJECT</td><td>9</td><td>Complete blast radius graph for a vulnerability</td></tr>
+<tr><td><a href="#Type:concert/SbomBlastRadiusNodes">SbomBlastRadiusNodes</a></td><td>OBJECT</td><td>5</td><td>Node in the blast radius graph</td></tr>
+<tr><td><a href="#Type:concert/SbomBlastRadiusRelationNodes">SbomBlastRadiusRelationNodes</a></td><td>OBJECT</td><td>6</td><td>Relationships between nodes in the blast radius graph</td></tr>
+<tr><td><a href="#Type:concert/Sbom_categories_average_score">Sbom_categories_average_score</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/Sbom_organization">Sbom_organization</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Sbom_organization_view">Sbom_organization_view</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:concert/Sbom_package_version_status_breakdown">Sbom_package_version_status_breakdown</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:concert/Sbom_risk_summary">Sbom_risk_summary</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/Sbom_summary_metrics">Sbom_summary_metrics</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/Sbomid_to_purl">Sbomid_to_purl</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Sbomid_to_scorecard_categories">Sbomid_to_scorecard_categories</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/Sbomid_to_scorecards">Sbomid_to_scorecards</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/Scan">Scan</a></td><td>OBJECT</td><td>10</td><td>Scan information for a vulnerability</td></tr>
+<tr><td><a href="#Type:concert/ScanCollection">ScanCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of vulnerability scans</td></tr>
+<tr><td><a href="#Type:concert/Score_card_category_view">Score_card_category_view</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/Score_card_report_view">Score_card_report_view</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/Score_card_report_view_extended">Score_card_report_view_extended</a></td><td>OBJECT</td><td>15</td><td></td></tr>
+<tr><td><a href="#Type:concert/SortDirection">SortDirection</a></td><td>ENUM</td><td>3</td><td>Direction for sorting query results</td></tr>
+<tr><td><a href="#Type:concert/SourceEntityType">SourceEntityType</a></td><td>ENUM</td><td>4</td><td>Type of entity affected by vulnerability</td></tr>
+<tr><td><a href="#Type:concert/SourceRepo">SourceRepo</a></td><td>OBJECT</td><td>10</td><td></td></tr>
+<tr><td><a href="#Type:concert/Source_repos">Source_repos</a></td><td>OBJECT</td><td>8</td><td></td></tr>
+<tr><td><a href="#Type:concert/Source_repos_components">Source_repos_components</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/StateType">StateType</a></td><td>ENUM</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/SuccessResponse">SuccessResponse</a></td><td>OBJECT</td><td>2</td><td>Success response</td></tr>
+<tr><td><a href="#Type:concert/Table_of_contents_el">Table_of_contents_el</a></td><td>OBJECT</td><td>14</td><td></td></tr>
+<tr><td><a href="#Type:concert/Table_of_contents_lz">Table_of_contents_lz</a></td><td>OBJECT</td><td>19</td><td></td></tr>
+<tr><td><a href="#Type:concert/Tags">Tags</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/TagsPrototype">TagsPrototype</a></td><td>OBJECT</td><td>3</td><td>Tag information</td></tr>
+<tr><td><a href="#Type:concert/Tags_entity">Tags_entity</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/TokenDetails">TokenDetails</a></td><td>OBJECT</td><td>1</td><td>JWT details</td></tr>
+<tr><td><a href="#Type:concert/Topology_access_point_view">Topology_access_point_view</a></td><td>OBJECT</td><td>10</td><td></td></tr>
+<tr><td><a href="#Type:concert/Topology_application_view">Topology_application_view</a></td><td>OBJECT</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:concert/Topology_certificates_view">Topology_certificates_view</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/Topology_compliance_view">Topology_compliance_view</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/Topology_cves_views">Topology_cves_views</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/Topology_dast_and_sast_exposure_view">Topology_dast_and_sast_exposure_view</a></td><td>OBJECT</td><td>10</td><td></td></tr>
+<tr><td><a href="#Type:concert/Topology_environments_view">Topology_environments_view</a></td><td>OBJECT</td><td>10</td><td></td></tr>
+<tr><td><a href="#Type:concert/Topology_images_view">Topology_images_view</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/Topology_source_repo_views">Topology_source_repo_views</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/User_preferences">User_preferences</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/Userkey">Userkey</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/UsersGroupsCollection">UsersGroupsCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of users and groups</td></tr>
+<tr><td><a href="#Type:concert/Version_view">Version_view</a></td><td>OBJECT</td><td>12</td><td></td></tr>
+<tr><td><a href="#Type:concert/Vulnerabilities">Vulnerabilities</a></td><td>OBJECT</td><td>13</td><td></td></tr>
+<tr><td><a href="#Type:concert/VulnerabilitiesAssessmentSummary">VulnerabilitiesAssessmentSummary</a></td><td>OBJECT</td><td>7</td><td>Summary of vulnerability assessments by status</td></tr>
+<tr><td><a href="#Type:concert/VulnerabilitiesCveHighlightSummary">VulnerabilitiesCveHighlightSummary</a></td><td>OBJECT</td><td>2</td><td>CVE highlight summary</td></tr>
+<tr><td><a href="#Type:concert/VulnerabilitiesExposureHighlightSummary">VulnerabilitiesExposureHighlightSummary</a></td><td>OBJECT</td><td>2</td><td>Exposure highlight summary</td></tr>
+<tr><td><a href="#Type:concert/VulnerabilitiesSummary">VulnerabilitiesSummary</a></td><td>OBJECT</td><td>4</td><td>Summary of vulnerabilities by severity</td></tr>
+<tr><td><a href="#Type:concert/Vulnerabilities_insights">Vulnerabilities_insights</a></td><td>OBJECT</td><td>8</td><td></td></tr>
+<tr><td><a href="#Type:concert/Vulnerabilities_view">Vulnerabilities_view</a></td><td>OBJECT</td><td>22</td><td></td></tr>
+<tr><td><a href="#Type:concert/Vulnerability">Vulnerability</a></td><td>OBJECT</td><td>37</td><td>Vulnerability definition with detailed information</td></tr>
+<tr><td><a href="#Type:concert/VulnerabilityApplication">VulnerabilityApplication</a></td><td>OBJECT</td><td>8</td><td>Application details from vulnerability context</td></tr>
+<tr><td><a href="#Type:concert/VulnerabilityApplicationCollection">VulnerabilityApplicationCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of applications affected by a vulnerability</td></tr>
+<tr><td><a href="#Type:concert/VulnerabilityAssociationComponent">VulnerabilityAssociationComponent</a></td><td>OBJECT</td><td>35</td><td>Component associations for a vulnerability</td></tr>
+<tr><td><a href="#Type:concert/VulnerabilityAssociations">VulnerabilityAssociations</a></td><td>OBJECT</td><td>1</td><td>Associations of a vulnerability</td></tr>
+<tr><td><a href="#Type:concert/VulnerabilityCollection">VulnerabilityCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of vulnerabilities</td></tr>
+<tr><td><a href="#Type:concert/VulnerabilityDetailsCollection">VulnerabilityDetailsCollection</a></td><td>OBJECT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:concert/VulnerabilityPatchInput">VulnerabilityPatchInput</a></td><td>INPUT</td><td>5</td><td>Input for updating a vulnerability</td></tr>
+<tr><td><a href="#Type:concert/Vulnerability_alias">Vulnerability_alias</a></td><td>OBJECT</td><td>6</td><td></td></tr>
+<tr><td><a href="#Type:concert/Vulnerability_assessment">Vulnerability_assessment</a></td><td>OBJECT</td><td>20</td><td></td></tr>
+<tr><td><a href="#Type:concert/Vulnerability_business_impact_view">Vulnerability_business_impact_view</a></td><td>OBJECT</td><td>44</td><td></td></tr>
+<tr><td><a href="#Type:concert/Vulnerability_findings">Vulnerability_findings</a></td><td>OBJECT</td><td>28</td><td></td></tr>
+<tr><td><a href="#Type:concert/Vulnerability_status">Vulnerability_status</a></td><td>OBJECT</td><td>12</td><td></td></tr>
+<tr><td><a href="#Type:concert/VulnerableApplications">VulnerableApplications</a></td><td>OBJECT</td><td>5</td><td>Vulnerable application details</td></tr>
+<tr><td><a href="#Type:concert/VulnerableApplicationsCollection">VulnerableApplicationsCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of vulnerable applications</td></tr>
+<tr><td><a href="#Type:concert/WorkspaceRepositoryCollection">WorkspaceRepositoryCollection</a></td><td>OBJECT</td><td>1</td><td>Collection of workspace repositories</td></tr>
+<tr><td><a href="#Type:concert/WorkspaceRepositorySummary">WorkspaceRepositorySummary</a></td><td>OBJECT</td><td>9</td><td>Source repository summary</td></tr>
+<tr><td><a href="#Type:concert/Zsys_apar">Zsys_apar</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_apar_feature_view">Zsys_apar_feature_view</a></td><td>OBJECT</td><td>12</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_apar_product_function">Zsys_apar_product_function</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_apar_view">Zsys_apar_view</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_apar">Zsys_archive_apar</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_apar_product_function">Zsys_archive_apar_product_function</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_feature">Zsys_archive_feature</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_function">Zsys_archive_function</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_function_usage">Zsys_archive_function_usage</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_product">Zsys_archive_product</a></td><td>OBJECT</td><td>12</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_product_family">Zsys_archive_product_family</a></td><td>OBJECT</td><td>14</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_product_function">Zsys_archive_product_function</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_product_product_family">Zsys_archive_product_product_family</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_product_usage">Zsys_archive_product_usage</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_sysplex">Zsys_archive_sysplex</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_archive_system">Zsys_archive_system</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_el_metadata">Zsys_el_metadata</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_feature">Zsys_feature</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_function">Zsys_function</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_function_usage">Zsys_function_usage</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_product">Zsys_product</a></td><td>OBJECT</td><td>12</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_product_family">Zsys_product_family</a></td><td>OBJECT</td><td>14</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_product_function">Zsys_product_function</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_product_inventory_view">Zsys_product_inventory_view</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_product_product_family">Zsys_product_product_family</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_product_usage">Zsys_product_usage</a></td><td>OBJECT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_product_view">Zsys_product_view</a></td><td>OBJECT</td><td>11</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_sysplex">Zsys_sysplex</a></td><td>OBJECT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_system">Zsys_system</a></td><td>OBJECT</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_system_components_view">Zsys_system_components_view</a></td><td>OBJECT</td><td>14</td><td></td></tr>
+<tr><td><a href="#Type:concert/Zsys_system_view">Zsys_system_view</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+</table>
+
+<h2>Type Mappings</h2>
+Types from this product that map to other products:
+
+<table>
+<tr><th>Source Type</th><th>Maps To</th><th>Target Product</th></tr>
+<tr><td><a href="#Type:concert/Access_points">Access_points</a></td><td><a href="#Type:concert/AssociationID">AssociationID</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:concert/Application_release">Application_release</a></td><td><a href="#Type:instana/query_findApplicationAlertConfigVersions_items">query_findApplicationAlertConfigVersions_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/Applications_source_repo">Applications_source_repo</a></td><td><a href="#Type:unknown/filterOperator">filterOperator</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Applications_source_repo">Applications_source_repo</a></td><td><a href="#Type:unknown/tagValue">tagValue</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Catalog">Catalog</a></td><td><a href="#Type:instana/uploadSourceMapFile_200_response">uploadSourceMapFile_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/Component_definition">Component_definition</a></td><td><a href="#Type:instana/query_getSliConfigsForEntityTypeAndIdV2_items">query_getSliConfigsForEntityTypeAndIdV2_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/Container_builds">Container_builds</a></td><td><a href="#Type:instana/query_softwareVersions_items_usedBy_items">query_softwareVersions_items_usedBy_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/Credentials">Credentials</a></td><td><a href="#Type:instana/query_getSyntheticCredentialAssociations_items">query_getSyntheticCredentialAssociations_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td><a href="#Type:concert/AssessmentCustomDetails">AssessmentCustomDetails</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td><a href="#Type:turbonomic/ActionMode">ActionMode</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td><a href="#Type:turbonomic/Action">Action</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td><a href="#Type:turbonomic/SeverityBreakdown">SeverityBreakdown</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td><a href="#Type:unknown/created">created</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td><a href="#Type:unknown/last_updated">last_updated</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td><a href="#Type:unknown/mapping">mapping</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td><a href="#Type:unknown/pipeline">pipeline</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td><a href="#Type:unknown/scan">scan</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td><a href="#Type:unknown/scanner">scanner</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Data_mapper">Data_mapper</a></td><td><a href="#Type:unknown/version">version</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Entity_settings">Entity_settings</a></td><td><a href="#Type:instana/queryInput_getSliConfigsForEntityTypeAndIdV2_entityType">queryInput_getSliConfigsForEntityTypeAndIdV2_entityType</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/Entity_settings">Entity_settings</a></td><td><a href="#Type:instana/Entity">Entity</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/G_fwk_domain">G_fwk_domain</a></td><td><a href="#Type:instana/mutation_getAvailableMetrics_metrics_items">mutation_getAvailableMetrics_metrics_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/G_fwk_metric">G_fwk_metric</a></td><td><a href="#Type:instana/getBeaconMetrics_request_Input">getBeaconMetrics_request_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/Ingestion_jobs">Ingestion_jobs</a></td><td><a href="#Type:watsonx-orchestrate/AssistantRun">AssistantRun</a></td><td>watsonx-orchestrate</td></tr>
+<tr><td><a href="#Type:concert/Package_business_impact_view">Package_business_impact_view</a></td><td><a href="#Type:instana/getActionInstance_200_response">getActionInstance_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/Package_business_impact_view">Package_business_impact_view</a></td><td><a href="#Type:instana/addActionInstance_200_response">addActionInstance_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/Profile">Profile</a></td><td><a href="#Type:instana/uploadSourceMapFile_200_response">uploadSourceMapFile_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/Recommendations">Recommendations</a></td><td><a href="#Type:concert/Resources">Resources</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:concert/Recommendations">Recommendations</a></td><td><a href="#Type:instana/query_getActions_items">query_getActions_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/Recommendations">Recommendations</a></td><td><a href="#Type:turbonomic/ActionMode">ActionMode</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/Resources_environments">Resources_environments</a></td><td><a href="#Type:turbonomic/CloudAspect">CloudAspect</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/Tags_entity">Tags_entity</a></td><td><a href="#Type:concert/Tags">Tags</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:concert/Tags_entity">Tags_entity</a></td><td><a href="#Type:turbonomic/NamespaceEntity">NamespaceEntity</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/Tags_entity">Tags_entity</a></td><td><a href="#Type:unknown/None">None</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Tags_entity">Tags_entity</a></td><td><a href="#Type:unknown/turbonomic_EnvironmentType">turbonomic_EnvironmentType</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Vulnerability_assessment">Vulnerability_assessment</a></td><td><a href="#Type:instana/mutation_getSyntheticResult_testResult_items">mutation_getSyntheticResult_testResult_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/FilterValueType">FilterValueType</a></td><td><a href="#Type:cloudability/StringFilterInput">StringFilterInput</a></td><td>cloudability</td></tr>
+<tr><td><a href="#Type:concert/FilterValueType">FilterValueType</a></td><td><a href="#Type:turbonomic/TagValueFilterInput">TagValueFilterInput</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/FilterValueType">FilterValueType</a></td><td><a href="#Type:turbonomic/FilterInput">FilterInput</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/SortDirection">SortDirection</a></td><td><a href="#Type:cloudability/SortDirection">SortDirection</a></td><td>cloudability</td></tr>
+<tr><td><a href="#Type:concert/SortDirection">SortDirection</a></td><td><a href="#Type:instana/queryInput_getAllSloConfigs_orderDirection">queryInput_getAllSloConfigs_orderDirection</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/SortDirection">SortDirection</a></td><td><a href="#Type:instana/callGroup_input_order_direction">callGroup_input_order_direction</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/StateType">StateType</a></td><td><a href="#Type:turbonomic/ActionState">ActionState</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/AssessmentState">AssessmentState</a></td><td><a href="#Type:turbonomic/ActionState">ActionState</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/IssueLink">IssueLink</a></td><td><a href="#Type:turbonomic/SeverityBreakdown">SeverityBreakdown</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/Runtime">Runtime</a></td><td><a href="#Type:turbonomic/Provider">Provider</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/ApiKeyDate">ApiKeyDate</a></td><td><a href="#Type:concert/IssueLink">IssueLink</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:concert/ApiKeyDate">ApiKeyDate</a></td><td><a href="#Type:concert/PackageDetailsCollection">PackageDetailsCollection</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:concert/ApiKeyDate">ApiKeyDate</a></td><td><a href="#Type:unknown/updated">updated</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/IngestionJobCredential">IngestionJobCredential</a></td><td><a href="#Type:turbonomic/ConnectedEntitiesEntry">ConnectedEntitiesEntry</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/AssociationID">AssociationID</a></td><td><a href="#Type:instana/getServicesMap_200_response">getServicesMap_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/AssociationID">AssociationID</a></td><td><a href="#Type:instana/createGroupMapping_200_response">createGroupMapping_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/AssociationID">AssociationID</a></td><td><a href="#Type:unknown/Entity__Mock">Entity__Mock</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/AssociationID">AssociationID</a></td><td><a href="#Type:unknown/id">id</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/BuildArtifactAssociations">BuildArtifactAssociations</a></td><td><a href="#Type:instana/query_getSyntheticLocations_items_playbackCapabilities">query_getSyntheticLocations_items_playbackCapabilities</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/BuildArtifactAssociations">BuildArtifactAssociations</a></td><td><a href="#Type:unknown/id">id</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/BuildArtifactAssociations">BuildArtifactAssociations</a></td><td><a href="#Type:unknown/access_points">access_points</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/BuildArtifactAssociations">BuildArtifactAssociations</a></td><td><a href="#Type:unknown/playbackMode">playbackMode</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/ApplicationAssociationsInfo">ApplicationAssociationsInfo</a></td><td><a href="#Type:turbonomic/Entity">Entity</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/ApplicationAssociationsInfo">ApplicationAssociationsInfo</a></td><td><a href="#Type:unknown/vendorIds">vendorIds</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/Application">Application</a></td><td><a href="#Type:turbonomic/Entity">Entity</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/Application">Application</a></td><td><a href="#Type:unknown/tags">tags</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/ApplicationCollection">ApplicationCollection</a></td><td><a href="#Type:turbonomic/RelatedEntity">RelatedEntity</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/ApplicationCollection">ApplicationCollection</a></td><td><a href="#Type:turbonomic/Entity">Entity</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/ApplicationCollection">ApplicationCollection</a></td><td><a href="#Type:unknown/description">description</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/ApplicationCollection">ApplicationCollection</a></td><td><a href="#Type:unknown/tags">tags</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/VulnerabilitiesSummary">VulnerabilitiesSummary</a></td><td><a href="#Type:turbonomic/Aspects">Aspects</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/VulnerabilitiesSummary">VulnerabilitiesSummary</a></td><td><a href="#Type:unknown/vulnerabilities_summary">vulnerabilities_summary</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/PackageRecommendation">PackageRecommendation</a></td><td><a href="#Type:concert/Package_status">Package_status</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:concert/PackageRecommendation">PackageRecommendation</a></td><td><a href="#Type:turbonomic/ActionType">ActionType</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/PackageRecommendation">PackageRecommendation</a></td><td><a href="#Type:turbonomic/Action">Action</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/PackageRecommendation">PackageRecommendation</a></td><td><a href="#Type:unknown/created">created</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/PackageRecommendation">PackageRecommendation</a></td><td><a href="#Type:unknown/externalActionName">externalActionName</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/PackageRecommendation">PackageRecommendation</a></td><td><a href="#Type:unknown/packageRecommendation">packageRecommendation</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/PackageRecommendation">PackageRecommendation</a></td><td><a href="#Type:unknown/recommendationID">recommendationID</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/PackageDetailsSummary">PackageDetailsSummary</a></td><td><a href="#Type:concert/ApiKeyDate">ApiKeyDate</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:concert/PackageDetailsSummary">PackageDetailsSummary</a></td><td><a href="#Type:concert/PackageDetailsCollection">PackageDetailsCollection</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:concert/PackageDetailsSummary">PackageDetailsSummary</a></td><td><a href="#Type:unknown/created">created</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/PackageDetailsCollection">PackageDetailsCollection</a></td><td><a href="#Type:concert/PackageDetailsSummary">PackageDetailsSummary</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:concert/PackageDetailsCollection">PackageDetailsCollection</a></td><td><a href="#Type:turbonomic/ActionSchedule">ActionSchedule</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:concert/PackageDetailsCollection">PackageDetailsCollection</a></td><td><a href="#Type:unknown/packages">packages</a></td><td>unknown</td></tr>
+<tr><td><a href="#Type:concert/ApplicationPrototypeInput">ApplicationPrototypeInput</a></td><td><a href="#Type:instana/mutationInput_createApplicationAlertConfig_input_tagFilters_items">mutationInput_createApplicationAlertConfig_input_tagFilters_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/ApplicationPrototypeInput">ApplicationPrototypeInput</a></td><td><a href="#Type:instana/mutation_getApplicationMetrics_items_items_application">mutation_getApplicationMetrics_items_items_application</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/ApplicationPrototypeInput">ApplicationPrototypeInput</a></td><td><a href="#Type:instana/mutation_addPolicies_items">mutation_addPolicies_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/ApplicationPrototypeInput">ApplicationPrototypeInput</a></td><td><a href="#Type:instana/mutationInput_addPolicies_input_items_Input">mutationInput_addPolicies_input_items_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/ApplicationPrototypeInput">ApplicationPrototypeInput</a></td><td><a href="#Type:instana/mutationInput_createApplicationAlertConfig_input_tagFilters_items_Input">mutationInput_createApplicationAlertConfig_input_tagFilters_items_Input</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:concert/IDNamePair">IDNamePair</a></td><td><a href="#Type:concert/AssociationID">AssociationID</a></td><td>concert</td></tr>
+</table>
+
+<a href="#Category:Products">Category:Products</a>
+<a href="#Category:GraphQL">Category:GraphQL</a>
+</body>
+</html>

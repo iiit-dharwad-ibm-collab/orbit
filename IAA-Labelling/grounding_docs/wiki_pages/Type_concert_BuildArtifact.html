@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/BuildArtifact</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/BuildArtifact</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>BuildArtifact</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>18</td></tr></table>
+
+<h2>Overview</h2>
+BuildArtifact type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>associations</td><td>BuildArtifactAssociations</td><td></td><td>Associations for this vulnerability</td></tr>
+<tr><td>bom_ref</td><td>String</td><td></td><td>BOM reference link</td></tr>
+<tr><td>cyclonedx_link</td><td>String</td><td></td><td>CycloneDX link</td></tr>
+<tr><td>data_impact_risk</td><td>Int</td><td></td><td>Data impact risk of image</td></tr>
+<tr><td>digest</td><td>String</td><td></td><td>Digest of the artifact</td></tr>
+<tr><td>file_name</td><td>String</td><td></td><td>Filename of library</td></tr>
+<tr><td>id</td><td>String</td><td></td><td>Unique ID of the issue</td></tr>
+<tr><td>image_tag</td><td>String</td><td></td><td>Image tag</td></tr>
+<tr><td>last_updated_by</td><td>String</td><td></td><td>Who last updated the issue</td></tr>
+<tr><td>last_updated_on</td><td>Int</td><td></td><td>Last updated timestamp</td></tr>
+<tr><td>name</td><td>String</td><td></td><td>Name of the artifact</td></tr>
+<tr><td>purl</td><td>String</td><td></td><td>PURL of library</td></tr>
+<tr><td>scope</td><td>String</td><td></td><td>Scope of library</td></tr>
+<tr><td>tags</td><td>TagsPrototype</td><td>Yes</td><td>Application tags</td></tr>
+<tr><td>type</td><td>ArtifactType</td><td></td><td>Type of the artifact</td></tr>
+<tr><td>uri</td><td>String</td><td></td><td>URI of the image</td></tr>
+<tr><td>url</td><td>String</td><td></td><td>URL of library</td></tr>
+<tr><td>version</td><td>String</td><td></td><td>Version information</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type BuildArtifact {
+  # Image ID
+  id: String!
+  # Name of the image
+  name: String!
+  # Image tag
+  image_tag: String
+  # Image digest
+  digest: String
+  # Image cyclonedx_link
+  cyclonedx_link: String
+  # Type of the artifact
+  type: ArtifactType!
+  # Version of library
+  version: String
+  # PURL of library
+  purl: String
+  # Filename of library
+  file_name: String
+  # URL of library
+  url: String
+  # Scope of library
+  scope: String
+  # Tags of the image
+  tags: [TagsPrototype!]!
+  # Data impact risk of image
+  data_impact_risk: Int
+  # Image last updated time
+  last_updated_on: Int
+  # Image was last updated by
+  last_updated_by: String
+  # URI of the image
+  uri: String
+  # BOM reference link
+  bom_ref: String
+  # Associations of the build artifact
+  associations: BuildArtifactAssociations
+}
+</code></pre>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

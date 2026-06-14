@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/mutationInput_replaceAllManualServiceConfigs_input_items_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/mutationInput_replaceAllManualServiceConfigs_input_items_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>mutationInput_replaceAllManualServiceConfigs_input_items_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>5</td></tr></table>
+
+<h2>Overview</h2>
+mutationInput_replaceAllManualServiceConfigs_input_items_Input type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>description</td><td>String</td><td></td><td>The description provided, if any.</td></tr>
+<tr><td>enabled</td><td>Boolean</td><td></td><td>Set this flag to `true` if custom rule configurations has to be considered.</td></tr>
+<tr><td>existingServiceId</td><td>String</td><td></td><td>The service ID of the existing monitored service to which the calls should be linked.</td></tr>
+<tr><td>tagFilterExpression</td><td>mutationInput_addManualServiceConfig_input_tagFilterExpression_Input</td><td></td><td></td></tr>
+<tr><td>unmonitoredServiceName</td><td>String</td><td></td><td>A service name if you want to map calls to an unmonitored service.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input mutationInput_replaceAllManualServiceConfigs_input_items_Input {
+  # A description of the manual service configuration.
+  description: String
+
+  # Enable or disable the manual service configuration. By default it is enabled.
+  enabled: Boolean
+
+  # The service ID of the existing monitored service to which the calls should be linked.
+  existingServiceId: String
+  tagFilterExpression: mutationInput_addManualServiceConfig_input_tagFilterExpression_Input!
+
+  # A service name if you want to map calls to an unmonitored service.
+  unmonitoredServiceName: String
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>mutationInput_replaceAllManualServiceConfigs_input_items_Input</b>:
+
+<h3>Click the Service Levels tab. The Service Levels tab displays the configured Service Levels for your selected test.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+For more information about working with Service Levels, see Service Levels for Synthetics.
+Viewing the configuration for a test
+To view the configuration of a test, select the test on the Synthetic tests tab on the Synthetic monitoring page, and then click the Configuration tab.
+In the Configuration tab, you can view the test configuration, locations, schedule, identification, and associations.
+If you want to delete the test definition, select the trash can icon. You are prompted to confirm whether you want to delete the test. You must enter the word SYNTHETIC
+in the text box in the confirmation dialog to complete the deletion request. 
+1796 IBM Instana Observability
+
+If you want to edit the test definition, select the pencil icon. The complete test definition is then displayed. You cannot change the type of the test, but you can modify
+the rest of the configuration.
+
+<h3>Configure all services that send Kafka message to send only</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+string headers. See Configuration Options. By using this
+setting, the services are no longer affected by
+the ongoing
+migration.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

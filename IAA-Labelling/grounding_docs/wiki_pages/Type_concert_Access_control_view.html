@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/Access_control_view</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/Access_control_view</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Access_control_view</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>6</td></tr></table>
+
+<h2>Overview</h2>
+Access_control_view type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>entity_id</td><td>ID</td><td></td><td></td></tr>
+<tr><td>entity_name</td><td>String</td><td></td><td></td></tr>
+<tr><td>entity_type</td><td>String</td><td></td><td></td></tr>
+<tr><td>id</td><td>String</td><td></td><td>Unique ID of the issue</td></tr>
+<tr><td>role</td><td>String</td><td></td><td></td></tr>
+<tr><td>role_type</td><td>String</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Access_control_view {
+  entity_id: ID
+  entity_name: String
+  entity_type: String
+  id: String
+  role: String
+  role_type: String
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Access_control_view</b>:
+
+<h3>To update or revoke access of existing users, use one of the following methods to navigate to</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+the desired
+application or environment.
+Select
+Inventory > Applications and
+from Definitions choose the application for which you want to
+manage
+access.
+Select
+Inventory > Environments, and
+from Definitions choose the name of the environment for which
+you want to
+manage access.
+In the Arena view, click the environment for which you want to manage
+access.
+
+<h3>Choose Change role or Revoke access as</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+needed.
+a. Admin – Allows the user to view, edit, and delete the entity.
+b. Editor – Allows the user to view and edit the entity.
+c. Viewer – Allows the user to view the entity.
+Note: Only Admin users can grant or revoke access of other users.
+Use the Grant access + option to give access to an existing user
+to an application or environment.
+Results
+You can see users and their respective roles under Collaborators
+navigation.
+254 IBM Concert
+
+<h3>Go to Control summary sub navigation and choose the control that you want to upload evidence for. You can</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+also use search bar to search based on control name.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

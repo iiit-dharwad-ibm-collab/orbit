@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_getTrace_rootSpan_destination_physicalContext_host</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_getTrace_rootSpan_destination_physicalContext_host</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_getTrace_rootSpan_destination_physicalContext_host</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>5</td></tr></table>
+
+<h2>Overview</h2>
+query_getTrace_rootSpan_destination_physicalContext_host type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>data</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>id</td><td>String</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>label</td><td>String</td><td></td><td>Label of the entity</td></tr>
+<tr><td>plugin</td><td>String</td><td></td><td>Name of the plugin</td></tr>
+<tr><td>time</td><td>BigInt</td><td></td><td>Epoch time in milliseconds if the snapshot is offline. Set to 9223372036854775807 if the snapshot is online.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type query_getTrace_rootSpan_destination_physicalContext_host {
+  data: JSON
+  id: String!
+  label: String
+  plugin: String
+  time: BigInt
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_getTrace_rootSpan_destination_physicalContext_host</b>:
+
+<h3>OTEL_RESOURCE_ATTRIBUTES=host.alias=<alias_of_the_host></h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Replace <alias_of_the_host> with the hostname collected by the Instana middleware sensor.
+For example, if the Instana IBM MQ sensor collects the hostname instmq1.example.com, but IBM MQ OpenTelemetry tracing collects the host's IP address, you
+must export the variable as follows:
+
+<h3>Configure the host agent with the desired list of secrets as described in the agent secrets configuration.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+pointHost=<your_host_agent_endpoint>" \
+ --set "agent.additionalBackends<a href="0].key=<your_agent_key>"">\
+ --set "agent.additionalBackends[0</a>.endpointPort=443" \
+ --set "agent.additionalBackends<a href="1].endpointHost=<your_other_host_agent_endpoint>"">\
+ --set "agent.additionalBackends[1</a>.key=<your_other_agent_key>" \
+ --set "agent.additionalBackends[1].endpointPort=443" \
+ instana-agent
+ 
+For the host agent that is installed by using Operator:
+apiVersion: instana.io/v1
+kind: InstanaAgent
+metadata:
+ name: instana-agent
+ namespace: instana-agent
+spec:
+ zone:
+ name: edited-zone = (optional) name of the zone of the host
+ cluster:
+ name: my-cluster
+ agent:
+ endpointHost: <your_host_agent_endpoint>
+ endpointPort: "443"
+ env: {}
+ key: <your_agent_key>
+ additionalBackends:
+ - endpointHost: <your_host_agent_endpoint>
+ endpointPort: "443"
+ key: <your_agent_key>
+ configuration_yaml: |
+ = You can leave this empty, or use this to configure your instana agent.
+
+<h3>Choose OpenTelemetry trace context propagator for distributed</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+applications. Instana supports W3C trace headers and Instana native
+headers for trace
+propagation.
+Using Instana propagator
+OTEL_PROPAGATORS=instana
+Using tracecontext propagator
+OTEL_PROPAGATORS=tracecontext
+Using propagators allow Instana to join OpenTelemetry spans and
+other Instana spans into a single trace of your application.
+For more information on example instrumentation for distributed
+tracing, see Enabling
+context propagation for distributed tracing.
+The following simple example demonstrates manual instrumentation
+with a parent and a child span:
+use OpenTelemetry\SDK\Registry;
+use OpenTelemetry\SDK\Trace\SpanProcessor\SimpleSpanProcessor;
+use OpenTelemetry\SDK\Trace\TracerProvider;
+use OpenTelemetry\API\Trace\SpanKind;
+$tracerProvider = new TracerProvider(
+ new SimpleSpanProcessor(
+ Registry::spanExporterFactory("otlp")->create()
+ )
+ );
+$tracer = $tracerProvider->getTracer('test');
+$rootSpan = $tracer->spanBuilder('rootSpan')->startSpan();
+$scope = $rootSpan->activate();
+
+<h3>SPAN_FORMAT</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Specifies the trace system to which the span data is sent. Set this variable to instana. By default, data is sent to the host agent endpoint 
+http://localhost:42699. To send the span data to a remote host agent by using the HTTPS protocol, update the configuration items 
+INSTANA_AGENT_HOST and INSTANA_AGENT_PROTO. The SPAN_FORMAT setting must be the same for the IBM MQ hosts.
+
+<h3>HOST_ALIAS="<YOUR-HOST-NAME>" #(optional)</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+r verbose. If MONITOR_LEVEL is set to 
+off, no tracing context is appended to the outgoing request. If MONITOR_LEVEL is set to normal, the tracing context is appended only when the IBM MQ
+message includes the RFH2 header. If MONITOR_LEVEL is set to verbose, the tracing context is appended to all outgoing HTTP or IBM MQ requests.
+INSTANA_AGENT_HOST Specifies the agent host where the Instana format span data is sent to. By default, localhost is used. If you specify a remote
+agent host, you must also add a line http.listen=<i> in </i>instanaAgentDir*/etc/instana/com.instana.agent.main.config.Agent.cfg for the
+remote host agent first as the host agent is not reachable from other hosts by default.
+INSTANA_AGENT_PROTO Specifies the connection type between IBM ACE Tracing user exit and the host agent. By default, http is used. However, https is
+also supported.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

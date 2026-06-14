@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/Remediation_insights</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/Remediation_insights</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Remediation_insights</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>17</td></tr></table>
+
+<h2>Overview</h2>
+Remediation_insights type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>action_details</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>action_expected_outcome</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>action_subtype</td><td>String</td><td></td><td></td></tr>
+<tr><td>action_type</td><td>String</td><td></td><td></td></tr>
+<tr><td>actions_identifier</td><td>Int</td><td></td><td></td></tr>
+<tr><td>archived_date</td><td>ID</td><td></td><td></td></tr>
+<tr><td>comments</td><td>String</td><td></td><td>Assessment comments</td></tr>
+<tr><td>create_date</td><td>ID</td><td></td><td></td></tr>
+<tr><td>history</td><td>JSON</td><td></td><td>History of changes</td></tr>
+<tr><td>is_archived</td><td>Boolean</td><td></td><td>Whether the scan is archived</td></tr>
+<tr><td>last_update_date</td><td>ID</td><td></td><td></td></tr>
+<tr><td>risk_details</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>risk_type</td><td>String</td><td></td><td>Type of the risk</td></tr>
+<tr><td>status</td><td>String</td><td></td><td>Current status</td></tr>
+<tr><td>target_component_identifier</td><td>String</td><td></td><td></td></tr>
+<tr><td>target_component_metadata</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>target_component_type</td><td>String</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Remediation_insights {
+  action_details: JSON
+  action_expected_outcome: JSON
+  action_subtype: String
+  action_type: String
+  actions_identifier: Int!
+  archived_date: ID
+  comments: String
+  create_date: ID
+  history: JSON
+  is_archived: Boolean
+  last_update_date: ID
+  risk_details: JSON
+  risk_type: String
+  status: String
+  target_component_identifier: String
+  target_component_metadata: JSON
+  target_component_type: String
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Remediation_insights</b>:
+
+<h3>Create_Change_Request_For_Remediation_Action generates approval requests (pull</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+requests or
+incidents).
+Monitor_Remediation_Action_Status polls the external tool, tracks approval
+status, and schedules
+patch execution.
+Remediation_Master applies patches or performs upgrades on target systems
+(Linux, Windows, Tomcat,
+container images).
+Concert provides a unified dashboard
+(Dimensions > Vulnerability)
+where you can monitor vulnerabilities, review
+remediation actions, and track progress across
+environments.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

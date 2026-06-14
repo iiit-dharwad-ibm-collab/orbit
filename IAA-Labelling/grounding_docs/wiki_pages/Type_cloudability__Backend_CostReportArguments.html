@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:cloudability/_Backend_CostReportArguments</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:cloudability/_Backend_CostReportArguments</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>_Backend_CostReportArguments</td></tr>
+<tr><td><b>product</b></td><td>cloudability</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>4</td></tr></table>
+
+<h2>Overview</h2>
+_Backend_CostReportArguments type from cloudability.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>dimensions</td><td>String</td><td></td><td>(REQUIRED) Select the DIMENSIONS to include in the report.</td></tr>
+<tr><td>filters</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>metrics</td><td>String</td><td></td><td>(REQUIRED) Select the METRICS to include in the report.</td></tr>
+<tr><td>sort</td><td>String</td><td></td><td>(Optional) List of sorting criteria. You can only sort on fields included in the 'dimensions'/'metrics' arguments.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type _Backend_CostReportArguments {
+  dimensions: String
+  metrics: String
+  filters: <a href="String]">sort: String
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>_Backend_CostReportArguments</b>:
+
+<h3>Cost Reporting End Point</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+label": "Cost (Total)", 
+	 "description": "This is the default cost metric throughout Cloudability. It is a “cash” metric and simply represents the invoiced amount associated with any cost item as reported by the cloud vendor.", 
+ "data_type": "currency", 
+ "type": "metric", 
+ "group": { 
+ "id": 2, 
+ "key": "billing", 
+ "name": "Billing" 
+ }, 
+ "sub_group": { 
+ "id": 3, 
+ "key": "costs", 
+ "name": "Costs" 
+ } 
+ }, 
+ </a>, 
+ "order": "desc", 
+ "owned_by_user": false, 
+ "shared_with_organization": true, 
+ "permission": { 
+ "actions": [ 
+ "read" 
+ ] 
+ }, 
+ "report_dimension_links": <a href="],">"secondary_end_date": null, 
+ "secondary_start_date": null, 
+ "shared": false, 
+ "shares": [</a>, 
+ "sort_by": "unblended_cost", 
+ "star": false, 
+ "start_date": "0 of last month", 
+ "subscriptions": <a href="],">"title": "Costs by Vendor Last Month" 
+ } 
+ </a>
+
+curl ‘https://api.cloudability.com/v3/reporting/cost/measures’ -u ‘<a href="auth_token]:’">```
+
+<h3>Cost Sharing Rule Setting End Points</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+ule
+
+Allocate the shared costs to chosen targets proportionally based on the target's direct costs.
+
+Note:metricNameis required for theProportionaltype
+(mode) only
+
+- IBM Documentation Help
+
+<pre><code>
+{
+\t"updatedAt":"2019-03-13T18:31:36.129Z",
+\t"businessDimension":"category4",
+\t"sourceIncludeBuckets":[
+\t\t"Cloudy Production",
+\t\t"Cloudy Consolidated Master"
+\t</a>,
+\t"scopeDimension":"account_identifier",
+\t"mapping":{
+\t\t"type":"ProportionalMapping",
+\t\t"targetExcludeBuckets":[
+\t\t\t"Cloudy IAM Account",
+\t\t\t"Cloudy Staging"
+ ],
+\t\t"metricName":"unblended_cost"
+ }
+}
+</code></pre>
+
+<h3>Cost Sharing Rules</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+ing/allocation/${allocationId}/rule
+
+This API is used to delete one or more rules of an allocation.
+
+Query Arguments
+
+An existing, valid Allocation ID
+
+One or more existing, valid Rule Id(s)
+
+Example Request
+
+Example Response
+
+- Even Split DistributionEqually distributes costs across destinationsNo weighting requirementsSimplest implementation model
+- Proportional (Direct Charges)Distributes based on existing direct chargesDynamically adjusts with usageSupports multiple sources and destinations
+- Fixed WeightingUses predefined weights for distributionRequires weights to total 100%Supports precise cost control
+- Telemetry/ Consumption BasedUses actual usage metricsRequires telemetry metric indexSupports dynamic usage-based allocation
+
+- Equally distributes costs across destinations
+- No weighting requirements
+- Simplest implementation model
+
+- Distributes based on existing direct charges
+- Dynamically adjusts with usage
+- Supports multiple sources and destinations
+
+<h3>Cost Sharing Allocations</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+cation/${allocationId}
+
+This API is used for retrieving a specific allocation by its Allocation ID.
+
+Query Arguments
+
+An existing, valid Allocation ID
+
+Example Request
+
+Example Response
+
+Another example of allocation having some rules is as follows:
+
+Example Request
+
+Example Response
+
+DELETE /v3/cost-sharing/allocation
+
+This API is used for deleting one or more allocations by specifying their IDs.
+
+Query Arguments
+
+One or more existing, valid Allocation IDs
+
+Example Request
+
+Example Response
+
+- Create new allocation structures for business dimensions
+- Update existing allocations with new business dimension mappings
+- Retrieve single or multiple allocation configurations
+- Delete allocation structures with cascading rule cleanup
+- Support for up to 25 business dimensions
+
+- Maintain creation and updates timestamps
+- Support owner attribution for tracking
+- Include ordering capabilities for organization
+- Maintain referential integrity with associated rules
+
+- IBM Documentation Help
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:instana/getEntities_request_Input">instana/getEntities_request_Input</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/getBeaconMetrics_request_Input">instana/getBeaconMetrics_request_Input</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>cloudability._Backend_CostReportArguments</b> maps to:
+
+<h3><a href="#Type:instana/getEntities_request_Input">instana.getEntities_request_Input</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>_Backend_CostReportArguments Field</th><th>getEntities_request_Input Field</th><th>Reason</th></tr>
+<tr><td>metrics</td><td>metrics</td><td></td></tr>
+<tr><td>sort</td><td>order</td><td></td></tr>
+</table>
+
+<h3><a href="#Type:instana/getBeaconMetrics_request_Input">instana.getBeaconMetrics_request_Input</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>_Backend_CostReportArguments Field</th><th>getBeaconMetrics_request_Input Field</th><th>Reason</th></tr>
+<tr><td>metrics</td><td>metrics</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:cloudability">cloudability Product Page</a></li>
+<li><a href="#Type:instana/getEntities_request_Input">instana.getEntities_request_Input</a></li>
+<li><a href="#Type:instana/getBeaconMetrics_request_Input">instana.getBeaconMetrics_request_Input</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:cloudability">Category:cloudability</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

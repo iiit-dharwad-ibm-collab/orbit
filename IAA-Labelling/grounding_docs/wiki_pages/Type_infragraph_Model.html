@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:infragraph/Model</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:infragraph/Model</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Model</td></tr>
+<tr><td><b>product</b></td><td>infragraph</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>39</td></tr></table>
+
+<h2>Overview</h2>
+Model is an envelope that contains all the domain models that Infragraph supports.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>aws_account</td><td>AwsAccount</td><td></td><td></td></tr>
+<tr><td>aws_ami</td><td>AwsAmi</td><td></td><td></td></tr>
+<tr><td>aws_availability_zone</td><td>AwsAvailabilityZone</td><td></td><td></td></tr>
+<tr><td>aws_ec2_instance</td><td>AwsEc2Instance</td><td></td><td></td></tr>
+<tr><td>aws_ec2_instance_type</td><td>AwsEc2InstanceType</td><td></td><td></td></tr>
+<tr><td>aws_ec2_volume</td><td>AwsEc2Volume</td><td></td><td></td></tr>
+<tr><td>aws_ecs_cluster</td><td>AwsEcsCluster</td><td></td><td></td></tr>
+<tr><td>aws_ecs_service</td><td>AwsEcsService</td><td></td><td></td></tr>
+<tr><td>aws_iam_policy</td><td>AwsIamPolicy</td><td></td><td></td></tr>
+<tr><td>aws_iam_role</td><td>AwsIamRole</td><td></td><td></td></tr>
+<tr><td>aws_iam_role_policy_attachment</td><td>AwsIamRolePolicyAttachment</td><td></td><td></td></tr>
+<tr><td>aws_iam_user</td><td>AwsIamUser</td><td></td><td></td></tr>
+<tr><td>aws_lambda_function</td><td>AwsLambdaFunction</td><td></td><td></td></tr>
+<tr><td>aws_network_interface</td><td>AwsNetworkInterface</td><td></td><td></td></tr>
+<tr><td>aws_region</td><td>AwsRegion</td><td></td><td></td></tr>
+<tr><td>aws_s3_bucket</td><td>AwsS3Bucket</td><td></td><td></td></tr>
+<tr><td>aws_security_group</td><td>AwsSecurityGroup</td><td></td><td></td></tr>
+<tr><td>aws_security_group_rule</td><td>AwsSecurityGroupRule</td><td></td><td></td></tr>
+<tr><td>aws_subnet</td><td>AwsSubnet</td><td></td><td></td></tr>
+<tr><td>aws_vpc</td><td>AwsVpc</td><td></td><td></td></tr>
+<tr><td>azure_virtual_machine</td><td>AzureVirtualMachine</td><td></td><td></td></tr>
+<tr><td>gcp_compute_instance</td><td>GcpComputeInstance</td><td></td><td></td></tr>
+<tr><td>hcp_organization</td><td>HcpOrganization</td><td></td><td></td></tr>
+<tr><td>hcp_project</td><td>HcpProject</td><td></td><td></td></tr>
+<tr><td>hcp_terraform_agent_pool</td><td>HcpTerraformAgentPool</td><td></td><td></td></tr>
+<tr><td>hcp_terraform_organization</td><td>HcpTerraformOrganization</td><td></td><td></td></tr>
+<tr><td>hcp_terraform_project</td><td>HcpTerraformProject</td><td></td><td></td></tr>
+<tr><td>hcp_terraform_run</td><td>HcpTerraformRun</td><td></td><td></td></tr>
+<tr><td>hcp_terraform_state_version</td><td>HcpTerraformStateVersion</td><td></td><td></td></tr>
+<tr><td>hcp_terraform_workspace</td><td>HcpTerraformWorkspace</td><td></td><td></td></tr>
+<tr><td>packer_ancestry</td><td>PackerAncestry</td><td></td><td></td></tr>
+<tr><td>packer_artifact</td><td>PackerArtifact</td><td></td><td></td></tr>
+<tr><td>packer_bucket</td><td>PackerBucket</td><td></td><td></td></tr>
+<tr><td>packer_build</td><td>PackerBuild</td><td></td><td></td></tr>
+<tr><td>packer_channel</td><td>PackerChannel</td><td></td><td></td></tr>
+<tr><td>packer_inherited_revocation</td><td>PackerInheritedRevocation</td><td></td><td></td></tr>
+<tr><td>packer_registry</td><td>PackerRegistry</td><td></td><td></td></tr>
+<tr><td>packer_sbom</td><td>PackerSbom</td><td></td><td></td></tr>
+<tr><td>packer_version</td><td>PackerVersion</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Model</b>:
+
+<h3>machineTypeAndModel</h3>
+<small><i>Source: IBMTurbonomic_8.16.5.md (turbonomic)</i></small>
+
+- •
+- type: string
+- •
+- example: 9040-MR9
+- description:
+- Machine Type and Model
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:infragraph">infragraph Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:infragraph">Category:infragraph</a>
+</body>
+</html>

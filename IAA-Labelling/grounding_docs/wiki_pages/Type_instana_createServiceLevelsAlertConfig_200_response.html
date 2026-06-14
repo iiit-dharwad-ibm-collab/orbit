@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/createServiceLevelsAlertConfig_200_response</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/createServiceLevelsAlertConfig_200_response</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>createServiceLevelsAlertConfig_200_response</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>16</td></tr></table>
+
+<h2>Overview</h2>
+createServiceLevelsAlertConfig_200_response type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>alertChannelIds</td><td>String</td><td>Yes</td><td>List of IDs of alert channels defined in Instana. Can be left empty.</td></tr>
+<tr><td>burnRateTimeWindows</td><td>query_findActiveServiceLevelsAlertConfigs_items_burnRateTimeWindows</td><td></td><td></td></tr>
+<tr><td>created</td><td>BigInt</td><td></td><td>Unix timestamp representing the creation time of this revision.</td></tr>
+<tr><td>customPayloadFields</td><td>query_findActiveServiceLevelsAlertConfigs_items_customPayloadFields_items</td><td>Yes</td><td>Custom payload fields to send additional information in the alert notifications. Can be left empty.</td></tr>
+<tr><td>description</td><td>query_findActiveServiceLevelsAlertConfigs_items_description</td><td></td><td>The description provided, if any.</td></tr>
+<tr><td>enabled</td><td>Boolean</td><td></td><td>Set this flag to `true` if custom rule configurations has to be considered.</td></tr>
+<tr><td>id</td><td>query_findActiveServiceLevelsAlertConfigs_items_id</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>initialCreated</td><td>BigInt</td><td></td><td>Unix timestamp representing the time of the initial revision.</td></tr>
+<tr><td>name</td><td>query_findActiveServiceLevelsAlertConfigs_items_name</td><td></td><td>Name of the group.</td></tr>
+<tr><td>readOnly</td><td>Boolean</td><td></td><td>Read only action flag. Value is `true` if read only `false` otherwise.</td></tr>
+<tr><td>rule</td><td>query_findActiveServiceLevelsAlertConfigs_items_rule</td><td></td><td></td></tr>
+<tr><td>severity</td><td>Int</td><td></td><td>The severity of the Event when triggered.</td></tr>
+<tr><td>sloIds</td><td>String</td><td>Yes</td><td>List of SLO IDs for which details need to be fetched</td></tr>
+<tr><td>threshold</td><td>query_findActiveServiceLevelsAlertConfigs_items_threshold</td><td></td><td>Specifies the threshold value for the metric being monitored</td></tr>
+<tr><td>timeThreshold</td><td>query_findActiveServiceLevelsAlertConfigs_items_timeThreshold</td><td></td><td></td></tr>
+<tr><td>triggering</td><td>Boolean</td><td></td><td>Optional flag to indicate whether an Incident is also triggered or not.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type createServiceLevelsAlertConfig_200_response {
+  # This is the list of channel IDs when alert triggered and sent to.
+  alertChannelIds: <a href="String]!">burnRateTimeWindows: query_findActiveServiceLevelsAlertConfigs_items_burnRateTimeWindows
+
+  # Created Date of the version of Service Levels Smart Alerts Configuration.
+  created: BigInt
+
+  # This is the custom name and value pairs to be sent along with the alert to the alert channels.
+  customPayloadFields: [query_findActiveServiceLevelsAlertConfigs_items_customPayloadFields_items</a>!
+
+  # The description of the alert. It is also the alert message content.
+  description: query_findActiveServiceLevelsAlertConfigs_items_description!
+
+  # Boolean Parameter specifying the enabled state of Service Levels Smart Alerts Configuration.
+  enabled: Boolean
+
+  # Unique ID of the Service Levels Smart Alerts Configuration.
+  id: query_findActiveServiceLevelsAlertConfigs_items_id!
+
+  # Created Date of the Initial version of Service Levels Smart Alerts Configuration.
+  initialCreated: BigInt
+
+  # Name of the Service Levels Smart Alerts Configuration.
+  name: query_findActiveServiceLevelsAlertConfigs_items_name!
+
+  # Boolean Parameter specifying the readonly access to Service Levels Smart Alerts Configuration.
+  readOnly: Boolean
+  rule: query_findActiveServiceLevelsAlertConfigs_items_rule!
+
+  # This is the severity of the alert. The value can be: <b>5</b>: warning, <b>10</b>: critical.
+  severity: Int
+
+  # This is the list of SLO configurations related to this alert.
+  sloIds: [String]!
+  threshold: query_findActiveServiceLevelsAlertConfigs_items_threshold!
+  timeThreshold: query_findActiveServiceLevelsAlertConfigs_items_timeThreshold!
+
+  # Incident flag. If value is true, this alert will become an accident.
+  triggering: Boolean
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>createServiceLevelsAlertConfig_200_response</b>:
+
+<h3>KafkaConfig</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+e that has the same name as the corresponding core.
+DatastoreConfigs
+Appears in:
+CoreSpec
+Table 14. Datastore configuration fields
+Field
+Description
+Default
+Validation
+cassandraConfigs CassandraConfig array
+clickhouseConfigs ClickhouseConfig array
+elasticsearchConfig ElasticsearchConfig
+kafkaConfig KafkaConfig
+beeInstanaConfig BeeInstanaConfig
+postgresConfigs PostgresConfig array
+DeploymentConfig
+DeploymentConfig defines configuration for a component deployment.
+Appears in:
+Controller
+Gateway
+Table 15. Deployment configuration fields
+Field
+Description
+Default
+Validation
+envs Envs
+Environment variables
+resources
+ResourceRequirements
+Compute resources required by this component.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/Catalog</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/Catalog</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Catalog</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>9</td></tr></table>
+
+<h2>Overview</h2>
+Catalog type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>additional_payload</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>catalog_id</td><td>ID</td><td></td><td></td></tr>
+<tr><td>description</td><td>String</td><td></td><td>Vulnerability description</td></tr>
+<tr><td>last_updated_by</td><td>String</td><td></td><td>Who last updated the issue</td></tr>
+<tr><td>last_updated_on</td><td>ID</td><td></td><td>Last updated timestamp</td></tr>
+<tr><td>publication_date</td><td>Date</td><td></td><td></td></tr>
+<tr><td>sample_data_upload</td><td>Boolean</td><td></td><td></td></tr>
+<tr><td>title</td><td>String</td><td></td><td></td></tr>
+<tr><td>version</td><td>String</td><td></td><td>Version information</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Catalog {
+  additional_payload: JSON
+  catalog_id: ID!
+  description: String
+  last_updated_by: String
+  last_updated_on: ID!
+  publication_date: Date
+  sample_data_upload: Boolean
+  title: String
+  version: String
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Catalog</b>:
+
+<h3>After selecting the catalog of choice, click Upload.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Note: To know more on the available catalogs under Catalogs, click a catalog and choose Ask watsonx.
+Once processed, the uploaded catalog appears in the list. You can click the name of a catalog to view details,
+including the control ID, name, class, catalog, and tags for each corresponding control. Expand each row to see a
+detailed description of each catalog. You can also use AI option corresponding to each control to know more about
+the control using IBM Watson.
+Deleting a catalog
+You can remove catalogs from Concert if you no longer need them.
+
+<h3>Managing a compliance catalog</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+iance catalog into Concert. Concert's library has a few standard
+catalogs that you can choose from. Or you can upload your catalog to Concert public git for catalog and use it from
+there.
+From standards library - You can choose from available catalogs within Concert. Concert library has NIST
+800-53 (Rev4 for OCP and Rev5), Payment Card Industry Data Security Standards (PCI DSS), CIS, Red Hat
+OpenShift Container Platform catalogs to choose from.
+Click Add catalog to select From standards library to choose one or more catalogs from Concert library.
+Note: You can also add a catalog to Concert public git for catalog, and choose from GitHub.
+From exported file - You can also import a compliance catalog from Concert, edit parameters, and export
+back. Refer to export import compliance data page for steps.
+Click Add catalog and select From standards library. Click public Git repository to select your catalog from
+Github.
+
+<h3>Corresponding to the catalog you want to remove, choose Delete from overflow menu.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Component definition for catalogs
+Concert supports component definitions from all systems, ensuring a unified and comprehensive approach to
+compliance and security. Concert provides the following compliance catalogs from its library:
+Table 1. supported_catalog_platforms
+Catalog
+Supported Platforms
+CIS Controls
+Catalog
+OpenShift Container Platform 4 (OCP4), Red Hat Enterprise Linux®9 (RHEL9), Ubuntu
+Linux® 24.04 LTS
+PCI DSS v4.0.0
+Catalog
+OpenShift Container Platform 4 (OCP4), Red Hat Enterprise Linux®9 (RHEL9)
+When you import PCI DSS or CIS catalog from the standard library, corresponding component definitions are
+available for you to choose from. To view the component definitions for a catalog:
+
+<h3>Under Select controls, select the check box next to the name of the catalog to apply all controls within that</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+catalog, or click to expand the catalog details to select individual controls to apply to this profile. As you
+select controls, they appear under Selected items.
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:instana/uploadSourceMapFile_200_response">instana/uploadSourceMapFile_200_response</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>concert.Catalog</b> maps to:
+
+<h3><a href="#Type:instana/uploadSourceMapFile_200_response">instana.uploadSourceMapFile_200_response</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>Catalog Field</th><th>uploadSourceMapFile_200_response Field</th><th>Reason</th></tr>
+<tr><td>description</td><td>description</td><td></td></tr>
+<tr><td>last_updated_on</td><td>modifiedAt</td><td></td></tr>
+<tr><td>publication_date</td><td>createdAt</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+<li><a href="#Type:instana/uploadSourceMapFile_200_response">instana.uploadSourceMapFile_200_response</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

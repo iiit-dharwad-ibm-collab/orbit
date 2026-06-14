@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_findSyntheticAlertConfigVersions_items</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_findSyntheticAlertConfigVersions_items</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_findSyntheticAlertConfigVersions_items</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>5</td></tr></table>
+
+<h2>Overview</h2>
+query_findSyntheticAlertConfigVersions_items type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>changeSummary</td><td>query_findApplicationAlertConfigVersions_items_changeSummary</td><td></td><td></td></tr>
+<tr><td>created</td><td>BigInt</td><td></td><td>Unix timestamp representing the creation time of this revision.</td></tr>
+<tr><td>deleted</td><td>Boolean</td><td></td><td>Flag to indicate whether or not the configuration was deleted.</td></tr>
+<tr><td>enabled</td><td>Boolean</td><td></td><td>Set this flag to `true` if custom rule configurations has to be considered.</td></tr>
+<tr><td>id</td><td>query_findApplicationAlertConfigVersions_items_id</td><td></td><td>GraphNode ID.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type query_findSyntheticAlertConfigVersions_items {
+  changeSummary: query_findApplicationAlertConfigVersions_items_changeSummary
+
+  # Unix timestamp representing the creation time of this revision.
+  created: BigInt
+
+  # Flag to indicate whether or not the configuration was deleted.
+  deleted: Boolean @deprecated(reason: "deprecated")
+
+  # Flag to indicate whether or not the configuration is enabled.
+  enabled: Boolean @deprecated(reason: "deprecated")
+
+  # ID of this configuration version.
+  id: query_findApplicationAlertConfigVersions_items_id!
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_findSyntheticAlertConfigVersions_items</b>:
+
+<h3>INSTANA_IGNORE_ENDPOINTS_PATH=/absolute/path/to/config.yaml</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+In the preceding example, the config.yaml file must have an absolute path and adhere to the specified configuration structure.
+The following example shows filtering by method:
+tracing:
+ ignore-endpoints:
+ redis:
+ - get
+ - type
+ dynamodb:
+ - query
+ kafka:
+ - send 
+ http:
+ - get
+ 
+This configuration filters the following traces:
+GET and TYPE commands for Redis
+QUERY command for DynamoDB
+SEND method for Kafka and all downstream traces
+GET method for HTTP and all downstream traces
+The following example shows filtering by method, endpoint, and connection:
+tracing:
+ ignore-endpoints:
+ kafka: 
+ - methods: <a href=""consume"]">endpoints: ["topic1", "topic2"</a>
+ - methods: <a href=""consume",">"send"</a>
+ endpoints: <a href=""topic3"]">- methods: ["''"</a> = Applied to all methods
+ endpoints: <a href=""topic4"]">- methods: ["consume"</a>
+ endpoints: <a href=""''"]">= Applied to all endpoints
+ http:
+ - methods: ["get"</a>
+ endpoints: <a href=""/status"]">- methods: ["get", "post"</a>
+ endpoints: <a href=""/status",">"/v1/status"</a>
+ - methods: ["*"]
+
+<h3>KafkaConfig</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+e that has the same name as the corresponding core.
+DatastoreConfigs
+Appears in:
+CoreSpec
+Table 14. Datastore configuration fields
+Field
+Description
+Default
+Validation
+cassandraConfigs CassandraConfig array
+clickhouseConfigs ClickhouseConfig array
+elasticsearchConfig ElasticsearchConfig
+kafkaConfig KafkaConfig
+beeInstanaConfig BeeInstanaConfig
+postgresConfigs PostgresConfig array
+DeploymentConfig
+DeploymentConfig defines configuration for a component deployment.
+Appears in:
+Controller
+Gateway
+Table 15. Deployment configuration fields
+Field
+Description
+Default
+Validation
+envs Envs
+Environment variables
+resources
+ResourceRequirements
+Compute resources required by this component.
+
+<h3>ImageConfig</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+ImageConfig configures the Docker image for the components.
+Appears in:
+Controller
+CoreSpec
+Gateway
+Table 26. Image configuration fields
+Field
+Description
+Default
+Validation
+registry
+string
+The Docker registry to use. Defaults to 'artifact-public.instana.io'.
+repository
+string
+Path to the image within the registry. Defaults to 'backend'. The operator automatically appends component
+names when it computes the full image tag.
+tag string
+The image version to use. Each operator release comes with a default version that is used when the field is left
+empty.
+IndexConfig
+Appears in:
+ElasticsearchConfig
+Table 27. Index configuration fields
+Field
+Description
+Default
+Validation
+name string
+shards integer
+replicas integer
+routingPartitionSize integer
+KafkaConfig
+Appears in:
+DatastoreConfigs
+Table 28. Kafka configuration fields
+Field
+Description
+Default
+Validation
+hosts string array
+A list of hosts for connecting to the data store.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

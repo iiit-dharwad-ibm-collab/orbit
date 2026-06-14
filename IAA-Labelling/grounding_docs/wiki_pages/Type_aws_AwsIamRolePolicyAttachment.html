@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:aws/AwsIamRolePolicyAttachment</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:aws/AwsIamRolePolicyAttachment</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>AwsIamRolePolicyAttachment</td></tr>
+<tr><td><b>product</b></td><td>aws</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>5</td></tr></table>
+
+<h2>Overview</h2>
+AwsIamRolePolicyAttachment type from aws.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>aws_resource</td><td>AwsResource</td><td></td><td></td></tr>
+<tr><td>base</td><td>Base</td><td></td><td></td></tr>
+<tr><td>policy_arn</td><td>string</td><td></td><td></td></tr>
+<tr><td>role_id</td><td>string</td><td></td><td></td></tr>
+<tr><td>role_name</td><td>string</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>AwsIamRolePolicyAttachment</b>:
+
+<h3>IAM/latest/UserGuide/access.html</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+<h3>Access management for AWS resources</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. When a principal makes a request in AWS, the AWS enforcement code checks whether the principal is authenticated (signed in) and authorized (has permissions). You manage access in AWS by creating policies and attaching them to IAM identities or AWS resources. Policies are JSON documents in AWS that, when attached to an identity or resource, define their permissions. For more information about policy types and uses, see Policies and permissions in AWS Identity and Access Management.
+For details about the rest of the authentication and authorization process, see How IAM works.
+During authorization, the AWS enforcement code uses values from the request context to check for matching policies and determine whether to allow or deny the request.
+AWS checks each policy that applies to the context of the request.
+
+<h3>What is IAM?</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. With IAM, you can manage permissions that control which AWS resources users can access. You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources. IAM provides the infrastructure necessary to control authentication and authorization for your AWS accounts.
+Identities
+When you create an AWS account, you begin with one sign-in identity called the AWS account root user that has complete access to all AWS services and resources. We strongly recommend that you don't use the root user for everyday tasks.
+
+<h3>IAM/latest/UserGuide/introduction.html</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:aws">aws Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:aws">Category:aws</a>
+</body>
+</html>

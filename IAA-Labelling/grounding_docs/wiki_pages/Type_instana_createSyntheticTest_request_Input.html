@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/createSyntheticTest_request_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/createSyntheticTest_request_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>createSyntheticTest_request_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>24</td></tr></table>
+
+<h2>Overview</h2>
+createSyntheticTest_request_Input type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>active</td><td>Boolean</td><td></td><td></td></tr>
+<tr><td>applicationId</td><td>query_getSyntheticTests_items_applicationId</td><td></td><td>Filter by application ID</td></tr>
+<tr><td>applicationLabel</td><td>query_getSyntheticTests_items_applicationLabel</td><td></td><td></td></tr>
+<tr><td>applicationLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>applications</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>configuration</td><td>query_getSyntheticTests_items_configuration_Input</td><td></td><td></td></tr>
+<tr><td>createdAt</td><td>BigInt</td><td></td><td>Action created time.</td></tr>
+<tr><td>createdBy</td><td>query_getSyntheticTests_items_createdBy</td><td></td><td></td></tr>
+<tr><td>customProperties</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>description</td><td>query_getSyntheticTests_items_description</td><td></td><td>The description provided, if any.</td></tr>
+<tr><td>id</td><td>query_getSyntheticTests_items_id</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>label</td><td>query_getSyntheticTests_items_label</td><td></td><td>Label of the entity</td></tr>
+<tr><td>locationDisplayLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>locationLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>locations</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>mobileAppLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>mobileApps</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>modifiedAt</td><td>BigInt</td><td></td><td>Action modified time.</td></tr>
+<tr><td>modifiedBy</td><td>query_getSyntheticTests_items_modifiedBy</td><td></td><td></td></tr>
+<tr><td>playbackMode</td><td>query_getSyntheticTests_items_playbackMode</td><td></td><td></td></tr>
+<tr><td>tenantId</td><td>String</td><td></td><td></td></tr>
+<tr><td>testFrequency</td><td>Int</td><td></td><td></td></tr>
+<tr><td>websiteLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>websites</td><td>String</td><td>Yes</td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input createSyntheticTest_request_Input {
+  active: Boolean!
+  applicationId: query_getSyntheticTests_items_applicationId
+  applicationLabel: query_getSyntheticTests_items_applicationLabel
+  applicationLabels: <a href="String]">applications: [String</a>
+  configuration: query_getSyntheticTests_items_configuration_Input!
+  createdAt: BigInt
+  createdBy: query_getSyntheticTests_items_createdBy
+  customProperties: JSON
+  description: query_getSyntheticTests_items_description
+  id: query_getSyntheticTests_items_id
+  label: query_getSyntheticTests_items_label!
+  locationDisplayLabels: <a href="String]">locationLabels: [String</a>
+  locations: <a href="String]!">mobileAppLabels: [String</a>
+  mobileApps: <a href="String]">modifiedAt: BigInt
+  modifiedBy: query_getSyntheticTests_items_modifiedBy
+  playbackMode: query_getSyntheticTests_items_playbackMode
+  tenantId: String
+  testFrequency: Int!
+  websiteLabels: [String</a>
+  websites: [String]
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>createSyntheticTest_request_Input</b>:
+
+<h3>In Configuration: How will this test work?, enter the details depending on the test type that is selected in step 3.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+For API Simple test, provide the URL or API endpoint. For the test to run successfully, the URL or API endpoint must begin with 
+https://www.YourCompany.com or http://www.YourCompany.com. The portion https://www or http://www is required. To create a Synthetic test
+with a different HTTP method, use the Open API. See Synthetic monitoring section in the Open API documentation.
+Optional: Define the following elements for an API Simple test:
+Header: You can add one or multiple header elements. Each header element is added to the test by the PoPs when the test is run. You can also use $secure
+to refer to your user credential or $synthetic to refer to an environment variable in the Value field, such as $secure.API_TOKEN or 
+$synthetic.LOCATION.
+Body: You can define specific content to include in the body of the request. Only one body element can be added.
+
+<h3>Set the appearance for the alert. You can provide dynamic placeholders as part of the title and description. For example, you can use ${synthetic.testName},</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+which resolves to the name of the test configuration. To view and insert the list of available placeholders, click Insert placeholder.
+
+<h3>Browser script test</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Browser testing simulates the paths that users might take through web applications by playing back Node.js based test scripts through browsers to monitor and
+measure the performance of users' websites.
+Creating a scheduled test
+1778 IBM Instana Observability
+
+To create a scheduled Synthetic test, go to Synthetic Monitoring > Synthetic tests > Create synthetic test, and complete the steps.
+You can choose one of the following test types:
+API Simple test to perform a single REST call to a URL or API endpoint. It is equivalent to the HTTPAction test type.
+API Script test to perform a complex test by using a script that you enter or upload. It is equivalent to the HTTPScript test type.
+Browser Simple test to test a webpage URL. It is equivalent to the WebpageAction test type.
+Browser Script test to test web applications by using a Node.js script or a recorded Selenium IDE script that you upload.
+
+<h3>Click the Service Levels tab. The Service Levels tab displays the configured Service Levels for your selected test.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+isplayed. You cannot change the type of the test, but you can modify
+the rest of the configuration. The following modifications are supported for the tests:
+API Simple test: You can change the URL or API endpoint and modify any of the optional elements.
+API Script test: You can edit the single script or upload a new file or bundle.
+Browser Simple test: you can change the URL.
+Browser Script test: if you added a single script, you can change it in the text box. If you uploaded a script or bundle, you can upload a new file or bundle or switch
+from a single file to a bundle.
+SSL Certificate test: You can change the hostname, the port number, and the number of days before expiration when the test should fail.
+DNS test: You can change the URL, the DNS server, the DNS server port number, the query type, the response time threshold, assertions, the recursive lookup, the
+accept CNAME, and the server retries.
+
+<h3>Sending a test email alert</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+The test channel button tests that the message gets delivered,
+as it follows a template format. The following image shows a
+successful test.
+
+<h3>Step 6: Instana reports Synthetic Results</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+The pipeline can monitor the OnDemand tests completion using the Instana api/synthetics/settings/tests/ci-cd API and the testResultId shown in the preceding
+sample response.
+curl -s -H "Content-Type: application/json" -H "authorization: apiToken $INSTANA_API_TOKEN" \
+ https://your-instance.instana.io/api/synthetics/settings/tests/ci-cd/4e6451ba-7e47-487c-813d-5b95c73f391b
+ 
+Sample response:
+{
+ "testResultId": "4e6451ba-7e47-487c-813d-5b95c73f391b",
+ "locationId": "<location-id>",
+ "locationLabel": "<location-label>",
+ "testId": "<test-id>",
+ "testLabel": "<test-label>",
+ "testType": "<test-type>",
+ "runType": "OnDemand",
+ "completed": true,
+ "customization": {"configuration":{"retries":0,"timeout":"2m"}}
+}
+ 
+You can get details about the OnDemand test executions (success or failure) using the Synthetic Playback api/synthetics/results/list API.
+
+<h3>Fill scriptFile and bundle in the test</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+}
+Script examples
+Send API with credentials
+To create credentials, you can use the synctl command.
+Creating a credential for the username and a credential for the
+password is shown in the following example:
+synctl create cred --key username --value user123
+synctl create cred --key password --value pass123
+Basic authentication with the credentials is shown in the
+following example:
+const assert = require('assert');
+(async function(){
+ const auth = Buffer.from($secure.username + ":" + $secure.password).toString('base64');
+ let gotResponse = await $got.get('https://<your-basic-auth-url>', {
+ // If rejectUnauthorized is true, it will throw on invalid certificates, such as expired or self-signed ones.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

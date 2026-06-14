@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/mutationInput_createInfraAlertConfig_input_threshold_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/mutationInput_createInfraAlertConfig_input_threshold_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>mutationInput_createInfraAlertConfig_input_threshold_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>2</td></tr></table>
+
+<h2>Overview</h2>
+Indicates the type of threshold this alert rule is evaluated on.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>operator</td><td>query_findActiveApplicationAlertConfigs_items_threshold_operator</td><td></td><td></td></tr>
+<tr><td>type</td><td>String</td><td></td><td>Type of entities</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+# Indicates the type of threshold this alert rule is evaluated on.
+input mutationInput_createInfraAlertConfig_input_threshold_Input {
+  operator: query_findActiveApplicationAlertConfigs_items_threshold_operator!
+  type: String!
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>mutationInput_createInfraAlertConfig_input_threshold_Input</b>:
+
+<h3>Configuring threshold values</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+To configure threshold values, complete the following steps:
+
+<h3>Defining the threshold</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+ote: At least 12 hours of continuous metric data is required for adaptive thresholds to initialize. If this requirement is not met, the Smart Alert can still be created. Issue
+detection and alerting starts as soon as the data requirement is met.
+Advanced settings for adaptive thresholds
+When you configure an adaptive threshold, you can optionally adjust the following advanced settings:
+Seasonality: Defines how the threshold accounts for recurring patterns in your data. Options include:
+Auto: Automatically detects patterns (suggested)
+None: Ignores seasonal patterns
+Daily: Uses 24-hour cycles
+Weekly: Uses 7-day cycles
+Adaptability: Controls how quickly the threshold adapts to changes in the underlying metric. Higher values make the threshold more responsive to recent data,
+while lower values provide more stable thresholds based on longer-term patterns.
+Figure 6. Advanced settings for adaptive thresholds
+1470 IBM Instana Observability
+
+<h3>Figure 11. Time threshold</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+(if applicable), but the alert-specific configuration is prioritized over the global
+configuration. As a result, if you use the same key, the value of the global custom payload field is overridden by the alert-specific one.
+To add global custom payloads, see Configure custom payload globally.
+The following image shows globally defined custom payloads that are used in the alert configuration:
+Figure 13. Read only global custom payload
+1474 IBM Instana Observability
+
+To add alert-specific custom payloads, complete the following steps:
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

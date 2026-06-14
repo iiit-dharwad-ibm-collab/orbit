@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/updateLogAlertConfig_200_response</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/updateLogAlertConfig_200_response</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>updateLogAlertConfig_200_response</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>16</td></tr></table>
+
+<h2>Overview</h2>
+updateLogAlertConfig_200_response type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>alertChannelIds</td><td>String</td><td>Yes</td><td>List of IDs of alert channels defined in Instana. Can be left empty.</td></tr>
+<tr><td>created</td><td>BigInt</td><td></td><td>Unix timestamp representing the creation time of this revision.</td></tr>
+<tr><td>customPayloadFields</td><td>query_findActiveLogAlertConfigs_items_customPayloadFields_items</td><td>Yes</td><td>Custom payload fields to send additional information in the alert notifications. Can be left empty.</td></tr>
+<tr><td>description</td><td>query_findActiveLogAlertConfigs_items_description</td><td></td><td>The description provided, if any.</td></tr>
+<tr><td>enabled</td><td>Boolean</td><td></td><td>Set this flag to `true` if custom rule configurations has to be considered.</td></tr>
+<tr><td>gracePeriod</td><td>BigInt</td><td></td><td>The duration for which an alert remains open after conditions are no longer violated, with the alert auto-closing once the grace period expires.</td></tr>
+<tr><td>granularity</td><td>query_findActiveLogAlertConfigs_items_granularity</td><td></td><td>* If granularity is not specified an aggregated value for the selected timeframe is returned.</td></tr>
+<tr><td>groupBy</td><td>query_findActiveLogAlertConfigs_items_groupBy_items</td><td>Yes</td><td>The grouping tags used to group the metric results.</td></tr>
+<tr><td>id</td><td>query_findActiveLogAlertConfigs_items_id</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>initialCreated</td><td>BigInt</td><td></td><td>Unix timestamp representing the time of the initial revision.</td></tr>
+<tr><td>name</td><td>query_findActiveLogAlertConfigs_items_name</td><td></td><td>Name of the group.</td></tr>
+<tr><td>readOnly</td><td>Boolean</td><td></td><td>Read only action flag. Value is `true` if read only `false` otherwise.</td></tr>
+<tr><td>severity</td><td>Int</td><td></td><td>The severity of the Event when triggered.</td></tr>
+<tr><td>tagFilterExpression</td><td>query_findActiveLogAlertConfigs_items_tagFilterExpression</td><td></td><td></td></tr>
+<tr><td>threshold</td><td>query_findActiveLogAlertConfigs_items_threshold</td><td></td><td>Specifies the threshold value for the metric being monitored</td></tr>
+<tr><td>timeThreshold</td><td>query_findActiveLogAlertConfigs_items_timeThreshold</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type updateLogAlertConfig_200_response {
+  alertChannelIds: <a href="String]">created: BigInt
+  customPayloadFields: [query_findActiveLogAlertConfigs_items_customPayloadFields_items</a>
+  description: query_findActiveLogAlertConfigs_items_description!
+  enabled: Boolean
+
+  # The duration for which an alert remains open after conditions are no longer violated, with the alert auto-closing once the grace period expires.
+  gracePeriod: BigInt
+  granularity: query_findActiveLogAlertConfigs_items_granularity!
+  groupBy: [query_findActiveLogAlertConfigs_items_groupBy_items]
+  id: query_findActiveLogAlertConfigs_items_id!
+  initialCreated: BigInt
+  name: query_findActiveLogAlertConfigs_items_name!
+  readOnly: Boolean
+  severity: Int
+  tagFilterExpression: query_findActiveLogAlertConfigs_items_tagFilterExpression!
+  threshold: query_findActiveLogAlertConfigs_items_threshold! @deprecated(reason: "deprecated")
+  timeThreshold: query_findActiveLogAlertConfigs_items_timeThreshold!
+}
+</code></pre>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

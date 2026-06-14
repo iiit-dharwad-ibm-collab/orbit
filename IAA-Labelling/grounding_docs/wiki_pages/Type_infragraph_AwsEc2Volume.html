@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:infragraph/AwsEc2Volume</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:infragraph/AwsEc2Volume</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>AwsEc2Volume</td></tr>
+<tr><td><b>product</b></td><td>infragraph</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>2</td></tr></table>
+
+<h2>Overview</h2>
+AwsEc2Volume type from infragraph.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>aws_resource</td><td>AwsResource</td><td></td><td></td></tr>
+<tr><td>volume</td><td>BaseVolume</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>AwsEc2Volume</b>:
+
+<h3>AWSEC2/latest/UserGuide/ec2-instances.html</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+<h3>AWSEC2/latest/UserGuide/EC2_GetStarted.html</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+<h3>5.1.1  Installing Storage Virtualize for Public Cloud on AWS</h3>
+<small><i>Source: redp5671.md (turbonomic)</i></small>
+
+s template, AWS CloudFormation might require an unrecognized capability: CAPABILITY \_AUTO\_EXPAND. Check the capabilities of these resources.
+
+Stack description
+
+• lacknowledge that AWS CloudFormation might create IAM resources with custom names.
+
+Step 2: Specify stack details
+
+• I acknowledge that AWS CloudFormation might require the following capability:
+
+Parameters (17)
+
+CAPABILITY \_AUTO\_EXPAND
+
+Q Search
+
+Key
+
+AccessSubnetCIDR
+
+AllowedIPRange
+
+AvailabilityZone
+
+Confirmpassword
+
+IDil Oroctem ll'drolien foe Dhl' Aioud, Otocl Daiinn cclont'ne ond t'nclient'n
+
+Figure 5-13   IBM Spectrum Virtualize for Public Cloud: Stack Review selections and finalization
+
+Figure 5-14   IBM Spectrum Virtualize for Public Cloud: CloudFormation Stack Final acknowledgment checkboxes
+
+Cim.
+
+<h3>Pre-configuration steps that are required for AWS to AWS secured policy-based replication</h3>
+<small><i>Source: redp5671.md (turbonomic)</i></small>
+
+e two VPCs do not have an overlapping CIDR range or the peering connection will not be created.
+
+3. After peering is set up, modify the private route table that is associated with IBM Spectrum Virtualize nodes subnet of the production cluster on the AWS console. Add the route to the recovery cluster VPC CIDR range by using the VPC peering connection in the route table, as shown in Figure 7-11. Perform a similar step at the recovery cluster route table.
+4. After the route table is modified, the production cluster can ping the recovery cluster by using the svctask ping command if all ICMP-IPv4 protocol traffic is allowed in the inbound rules of the IBM Spectrum Virtualize node security group.
+
+<h3>Annotations:   volume.beta.kubernetes.io/storage-provisioner: ebs.csi.aws.com</h3>
+<small><i>Source: kubecost.md (kubecost)</i></small>
+
+volume.kubernetes.io/storage-provisioner: ebs.csi.aws.com
+Normal  ExternalProvisioning  69s (x82 over 21m)  persistentvolume-controller  waitingfora 
+volume to be created, either by external provisioner"ebs.csi.aws.com"or manually created by 
+system administrator
+ 
+YTo fix this, you need to install the AWS EBS CSI driver. This may be because the Amazon EKS cluster version
+
+<h3>3.6  AWS solution architecture</h3>
+<small><i>Source: redp5671.md (turbonomic)</i></small>
+
+AWS delivers IaaS as VPCs, within which network, compute, and storage resources are housed. IBM Spectrum Virtualize nodes are built on EC2 instances and virtualize Amazon EBS volumes that are provisioned to those nodes, as shown in Figure 3-2. This configuration provides advanced capacity savings functions and replication and PiT copy services over a block virtualization layer through a user interface that is familiar to IBM Spectrum Virtualize users.
+
+Figure 3-2   Architectural overview of high-level AWS components
+
+Region
+
+this document.
+
+<h3>3.3  Key components of the AWS solution</h3>
+<small><i>Source: redp5671.md (turbonomic)</i></small>
+
+The IBM Spectrum Virtualize for AWS infrastructure as a service (IaaS) solution includes the following building blocks:
+
+- /SM590000 AWS EC2 instances
+- /SM590000 Amazon EBS
+- /SM590000 AWS networking elements, such as subnets and elastic network interfaces
+- /SM590000 AWS constructs, such as VPC and placement group
+- /SM590000 AWS security groups
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:infragraph">infragraph Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:infragraph">Category:infragraph</a>
+</body>
+</html>

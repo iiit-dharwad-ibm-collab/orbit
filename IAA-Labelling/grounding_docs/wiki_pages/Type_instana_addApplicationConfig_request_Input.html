@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/addApplicationConfig_request_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/addApplicationConfig_request_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>addApplicationConfig_request_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>6</td></tr></table>
+
+<h2>Overview</h2>
+addApplicationConfig_request_Input type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>accessRules</td><td>mutationInput_addApplicationConfig_input_accessRules_items_Input</td><td>Yes</td><td>Defines permissions and access relationships.</td></tr>
+<tr><td>boundaryScope</td><td>mutationInput_addApplicationConfig_input_boundaryScope</td><td></td><td>Here, `ALL` Application Boundary Scope is considered.</td></tr>
+<tr><td>label</td><td>mutationInput_addApplicationConfig_input_label</td><td></td><td>Label of the entity</td></tr>
+<tr><td>matchSpecification</td><td>mutationInput_addApplicationConfig_input_matchSpecification_Input</td><td></td><td>Calls will be matched with the array of key-value tags present in this field.</td></tr>
+<tr><td>scope</td><td>mutationInput_addApplicationConfig_input_scope</td><td></td><td></td></tr>
+<tr><td>tagFilterExpression</td><td>mutationInput_addApplicationConfig_input_tagFilterExpression_Input</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input addApplicationConfig_request_Input {
+  # Defines permissions and access relationships.
+  accessRules: <a href="mutationInput_addApplicationConfig_input_accessRules_items_Input]!">boundaryScope: mutationInput_addApplicationConfig_input_boundaryScope!
+
+  # Name of the Application Perspective. Eg: `app1`.
+  label: mutationInput_addApplicationConfig_input_label!
+  matchSpecification: mutationInput_addApplicationConfig_input_matchSpecification_Input
+  scope: mutationInput_addApplicationConfig_input_scope!
+  tagFilterExpression: mutationInput_addApplicationConfig_input_tagFilterExpression_Input
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>addApplicationConfig_request_Input</b>:
+
+<h3>In the root folder of your Langflow application, edit the existing Langflow .env file or create a new one. Copy the following script into that file, then update the</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+placeholder values with the details from your deployment.
+This integration uses the Traceloop SDK for instrumentation, which requires a Traceloop API key to initialize properly. If you do not have a Traceloop API key, you
+can use the following dummy API key:
+For agent mode:
+TRACELOOP_API_KEY=tl_dummy_1234567890abcdef1234567890abcdef
+OTEL_RESOURCE_ATTRIBUTES="INSTANA_PLUGIN=genai"
+TRACELOOP_BASE_URL=<instana-agent-host>:4317
+TRACELOOP_HEADERS="x-instana-key= "
+OTEL_EXPORTER_OTLP_INSECURE=true
+Make sure that the TRACELOOP_HEADERS="x-instana-key= " entry is present to avoid unnecessary error messages.
+For agentless mode:
+TRACELOOP_API_KEY=tl_dummy_1234567890abcdef1234567890abcdef
+OTEL_RESOURCE_ATTRIBUTES="INSTANA_PLUGIN=genai"
+TRACELOOP_BASE_URL=<instana-otlp-endpoint>:4317
+TRACELOOP_HEADERS="x-instana-key=<your_instana_key>,x-instana-host=<instana-host>"
+
+<h3>Then, add the environment variables in the</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+web.config file of the application that you want to
+trace in the following format:
+<aspNetCore ...>
+<environmentVariables>
+<environmentVariable name="CORECLR_ENABLE_PROFILING" value="1" />
+<environmentVariable name="CORECLR_PROFILER" value="{FA8F1DFF-0B62-4F84-887F-ECAC69A65DD3}" />
+<environmentVariable name="CORECLR_PROFILER_PATH_64" value="[Path_to_your_app</a>/instana_tracing/CoreRewriter_x64.dll" 
+/>
+<environmentVariable name="CORECLR_PROFILER_PATH_32" value="<a href="Path_to_your_app]/instana_tracing/CoreRewriter_x32.dll"">/>
+<environmentVariable name="DOTNET_STARTUP_HOOKS" value="[Path_to_your_app</a>/Instana.Tracing.Core.dll" />
+</environmentVariables>
+</aspNetCore>
+After the variables are added, run the iisreset
+command to reload the process.
+Note: If IIS is not reset, the IIS workers aren't
+instrumented, and you cannot trace IIS-hosted applications.
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:turbonomic/TagValueFilterOperator">turbonomic/TagValueFilterOperator</a> (via schema_mapping)</li>
+<li><a href="#Type:turbonomic/TagValueFilterInput">turbonomic/TagValueFilterInput</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>instana.addApplicationConfig_request_Input</b> maps to:
+
+<h3><a href="#Type:turbonomic/TagValueFilterOperator">turbonomic.TagValueFilterOperator</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>addApplicationConfig_request_Input Field</th><th>TagValueFilterOperator Field</th><th>Reason</th></tr>
+<tr><td>tagFilterExpression</td><td>EQ</td><td></td></tr>
+</table>
+
+<h3><a href="#Type:turbonomic/TagValueFilterInput">turbonomic.TagValueFilterInput</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>addApplicationConfig_request_Input Field</th><th>TagValueFilterInput Field</th><th>Reason</th></tr>
+<tr><td>tagFilterExpression</td><td>values</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+<li><a href="#Type:turbonomic/TagValueFilterOperator">turbonomic.TagValueFilterOperator</a></li>
+<li><a href="#Type:turbonomic/TagValueFilterInput">turbonomic.TagValueFilterInput</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/updateSyntheticTest_request_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/updateSyntheticTest_request_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>updateSyntheticTest_request_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>24</td></tr></table>
+
+<h2>Overview</h2>
+updateSyntheticTest_request_Input type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>active</td><td>Boolean</td><td></td><td></td></tr>
+<tr><td>applicationId</td><td>query_getSyntheticTests_items_applicationId</td><td></td><td>Filter by application ID</td></tr>
+<tr><td>applicationLabel</td><td>query_getSyntheticTests_items_applicationLabel</td><td></td><td></td></tr>
+<tr><td>applicationLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>applications</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>configuration</td><td>query_getSyntheticTests_items_configuration_Input</td><td></td><td></td></tr>
+<tr><td>createdAt</td><td>BigInt</td><td></td><td>Action created time.</td></tr>
+<tr><td>createdBy</td><td>query_getSyntheticTests_items_createdBy</td><td></td><td></td></tr>
+<tr><td>customProperties</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>description</td><td>query_getSyntheticTests_items_description</td><td></td><td>The description provided, if any.</td></tr>
+<tr><td>id</td><td>query_getSyntheticTests_items_id</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>label</td><td>query_getSyntheticTests_items_label</td><td></td><td>Label of the entity</td></tr>
+<tr><td>locationDisplayLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>locationLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>locations</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>mobileAppLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>mobileApps</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>modifiedAt</td><td>BigInt</td><td></td><td>Action modified time.</td></tr>
+<tr><td>modifiedBy</td><td>query_getSyntheticTests_items_modifiedBy</td><td></td><td></td></tr>
+<tr><td>playbackMode</td><td>query_getSyntheticTests_items_playbackMode</td><td></td><td></td></tr>
+<tr><td>tenantId</td><td>String</td><td></td><td></td></tr>
+<tr><td>testFrequency</td><td>Int</td><td></td><td></td></tr>
+<tr><td>websiteLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>websites</td><td>String</td><td>Yes</td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input updateSyntheticTest_request_Input {
+  active: Boolean!
+  applicationId: query_getSyntheticTests_items_applicationId
+  applicationLabel: query_getSyntheticTests_items_applicationLabel
+  applicationLabels: <a href="String]">applications: [String</a>
+  configuration: query_getSyntheticTests_items_configuration_Input!
+  createdAt: BigInt
+  createdBy: query_getSyntheticTests_items_createdBy
+  customProperties: JSON
+  description: query_getSyntheticTests_items_description
+  id: query_getSyntheticTests_items_id
+  label: query_getSyntheticTests_items_label!
+  locationDisplayLabels: <a href="String]">locationLabels: [String</a>
+  locations: <a href="String]!">mobileAppLabels: [String</a>
+  mobileApps: <a href="String]">modifiedAt: BigInt
+  modifiedBy: query_getSyntheticTests_items_modifiedBy
+  playbackMode: query_getSyntheticTests_items_playbackMode
+  tenantId: String
+  testFrequency: Int!
+  websiteLabels: [String</a>
+  websites: <a href="String]">}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>updateSyntheticTest_request_Input</b>:
+
+<h3>In Configuration: How will this test work?, enter the details depending on the test type that is selected in step 3.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+define specific content to include in the body of the request. Only one body element can be added. The body element is added to the test by
+the PoPs when the test is run.
+Validation String: You can define a string that should appear in the response when the test has run. Only one validation string element can be added. When
+the test is run, if the string is missing, the test fails.
+expectStatus: You can define the expected HTTP return code for the test. If the return code does not match when the test has run, the test fails. Only one
+expectStatus element can be added. Use the drop-down menu to select the desired expect condition. Use Add Validation to add more than one expect
+condition. You can add one of each type of expect condition to a test.
+expectMatch: You can provide a regular expression to check when the test runs. Only one expectMatch element can be added. If the expression is not
+matched when the test is run, the test fails. Use the drop-down menu to select expectMatch.
+
+<h3>Click the Service Levels tab. The Service Levels tab displays the configured Service Levels for your selected test.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+esponse time threshold, assertions, the recursive lookup, the
+accept CNAME, and the server retries.
+All test types: You can modify the locations where the test needs to run, the scheduled interval between test runs, the associations, and the custom properties.
+You should be aware of the following limitation:
+Some test properties cannot be modified on the Instana UI; you can use the APIs or the 'synctl' tool to update these properties. If you update a Synthetic test by using the
+UI and API or 'synctl' tool at the same, an error message is displayed. The error message indicates that the test is being modified in another method. Save the changes
+before you switch the update method.
+Bulk delete Synthetic tests and bulk update Synthetic tests are supported through OpenAPI calls. For more information, see bulk delete and bulk update.
+Viewing test result details
+
+<h3>Step 6: Instana reports Synthetic Results</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+The pipeline can monitor the OnDemand tests completion using the Instana api/synthetics/settings/tests/ci-cd API and the testResultId shown in the preceding
+sample response.
+curl -s -H "Content-Type: application/json" -H "authorization: apiToken $INSTANA_API_TOKEN" \
+ https://your-instance.instana.io/api/synthetics/settings/tests/ci-cd/4e6451ba-7e47-487c-813d-5b95c73f391b
+ 
+Sample response:
+{
+ "testResultId": "4e6451ba-7e47-487c-813d-5b95c73f391b",
+ "locationId": "<location-id>",
+ "locationLabel": "<location-label>",
+ "testId": "<test-id>",
+ "testLabel": "<test-label>",
+ "testType": "<test-type>",
+ "runType": "OnDemand",
+ "completed": true,
+ "customization": {"configuration":{"retries":0,"timeout":"2m"}}
+}
+ 
+You can get details about the OnDemand test executions (success or failure) using the Synthetic Playback api/synthetics/results/list API.
+
+<h3>How to verify test results</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+How to verify whether your test case is successful?
+In the browser testing field, use Assertions, Explicit WAIT to verify your test results. Thus, you can ensure your web page is loaded and rendered as expected. With
+Instana browser testing, you can also generate screenshot for your test run and check console logs (Echo command in Selenium recorded scripts), browser logs, and
+timeline chart.
+The following commands can be helpful:
+{
+ "id": "938df959-9b65-4ae4-a2f5-59be6188ea5f",
+ "comment": "This is how to sleep for 5 seconds.",
+ "command": "pause",
+ "target": "5000",
+ "targets": [</a>,
+ "value": ""
+},
+{
+ "id": "2d5c6b52-d2d7-4592-8052-87572a09e58b",
+ "comment": "This is how to take screenshot",
+ "command": "executeScript",
+ "target": "await $browser.takeScreenshot()",
+ "targets": [],
+ "value": ""
+}
+ 
+You can also try the following Assertion commands:
+
+<h3>Sending a test email alert</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+The test channel button tests that the message gets delivered,
+as it follows a template format. The following image shows a
+successful test.
+
+<h3>Synthetic test execution types</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Synthetic tests support two execution types Scheduled and On-demand. The On-demand execution type is introduced to support more flexible test runs. This
+capability is useful for development, testing and troubleshooting. For example, after you apply a backend fix, you can immediately run the test to verify that the
+issue is resolved.
+Creating Synthetic test credentials
+When you adopt Synthetic monitoring, it is essential to consider the potential security risks and take the appropriate steps to protect your systems and prevent
+unauthorized access. Consider the following guidelines to optimize the secure usage of scripted Synthetic tests.
+Ensure proper user permissions: Use Role Based Access Control to make sure that the users with write access on Synthetic test definitions have only the necessary
+access.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

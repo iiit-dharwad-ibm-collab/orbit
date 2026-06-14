@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:turbonomic/GroupOrigin</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:turbonomic/GroupOrigin</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>GroupOrigin</td></tr>
+<tr><td><b>product</b></td><td>turbonomic</td></tr>
+<tr><td><b>kind</b></td><td>ENUM</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+GroupOrigin type from turbonomic.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>DISCOVERED</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>SYSTEM</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>USER</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+enum GroupOrigin {
+  # DISCOVERED groups are groups discovered by managed targets.
+  DISCOVERED
+  # USER groups are groups created within the product
+  USER
+  # SYSTEM groups are those created internally
+  SYSTEM
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>GroupOrigin</b>:
+
+<h3>dynamic group</h3>
+<small><i>Source: IBMTurbonomic_8.16.0.md (turbonomic)</i></small>
+
+A group whose membership can change according to specified criteria such as entity names, resource capacity, or tags.
+
+<h3>Constructing the input DTO and creating the group</h3>
+<small><i>Source: IBMTurbonomic_8.16.0.md (turbonomic)</i></small>
+
+Once the script has built the list of UUIDs for the group members, it can build a GroupApiDTO to describe the group you want. The DTO needs values for the following properties:
+
+- isStatic : true to create a static group
+- displayName : The group name that you set for the group\_name variable
+- memberUuidList : The array of UUID strings that the script has created
+- criteriaList : For a static group, pass an empty array
+- groupType : The entity type for this group -- the value you set for the entity\_type variable
+
+Using the obtained UUIDs and the previous information, the script will construct the input GroupApiDTO. The script creates a Python dictionary, which it passes as the input body of the POST /groups request.
+
+<h3>Verify the group</h3>
+<small><i>Source: IBMTurbonomic_8.16.0.md (turbonomic)</i></small>
+
+To verify that the group was created successfully, the script uses the returned UUID to get the group data via the /groups endpoint. If the request gets the group, the membership of the group should match what was printed to the console in the Get Expected Initial Membership portion of the script, assuming that no virtual machines have been added or removed since that time.
+
+If the group does not exist for the given UUID, the API returns the request status 404 , with the message, Group not found: &lt;Passed\_UUID&gt; . This indicates that the script failed to create the group.
+
+<pre><code>
+API Request: https://{ip}/api/v3/groups/{group_uuid}
+</code></pre>
+
+You might choose to only use a subset of the provided response. For example, this script prints the displayName and UUID for each group member.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:turbonomic">turbonomic Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:turbonomic">Category:turbonomic</a>
+</body>
+</html>

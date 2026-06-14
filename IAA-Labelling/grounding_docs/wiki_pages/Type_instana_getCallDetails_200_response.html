@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/getCallDetails_200_response</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/getCallDetails_200_response</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>getCallDetails_200_response</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>15</td></tr></table>
+
+<h2>Overview</h2>
+getCallDetails_200_response type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>batchSelfTime</td><td>BigInt</td><td></td><td></td></tr>
+<tr><td>batchSize</td><td>Int</td><td></td><td></td></tr>
+<tr><td>destination</td><td>query_getCallDetails_destination</td><td></td><td>ID of the outgoing GraphEdge.</td></tr>
+<tr><td>duration</td><td>BigInt</td><td></td><td>Duration of the Time Window</td></tr>
+<tr><td>errorCount</td><td>Int</td><td></td><td></td></tr>
+<tr><td>id</td><td>String</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>isSynthetic</td><td>Boolean</td><td></td><td></td></tr>
+<tr><td>label</td><td>query_getCallDetails_label</td><td></td><td>Label of the entity</td></tr>
+<tr><td>logs</td><td>query_getCallDetails_logs_items</td><td>Yes</td><td></td></tr>
+<tr><td>minSelfTime</td><td>BigInt</td><td></td><td></td></tr>
+<tr><td>networkTime</td><td>BigInt</td><td></td><td></td></tr>
+<tr><td>source</td><td>query_getCallDetails_source</td><td></td><td>ID of the incoming GraphEdge.</td></tr>
+<tr><td>spans</td><td>query_getCallDetails_spans_items</td><td>Yes</td><td></td></tr>
+<tr><td>start</td><td>BigInt</td><td></td><td>A Unix timestamp representing the start time of the Event.</td></tr>
+<tr><td>synthetic</td><td>Boolean</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type getCallDetails_200_response {
+  batchSelfTime: BigInt
+  batchSize: Int
+  destination: query_getCallDetails_destination
+  duration: BigInt
+  errorCount: Int
+  id: String!
+  isSynthetic: Boolean
+  label: query_getCallDetails_label!
+  logs: <a href="query_getCallDetails_logs_items]!">minSelfTime: BigInt
+  networkTime: BigInt
+  source: query_getCallDetails_source
+  spans: [query_getCallDetails_spans_items</a>!
+  start: BigInt
+  synthetic: Boolean
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>getCallDetails_200_response</b>:
+
+<h3>Set response details</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+When the response is finished, you can set the response size and the HTTP response status code on the Marker.
+Set response size
+marker.responseSizeHeader = 50; // Size of the HTTP header
+marker.responseSizeBody = 1000; // Size of the http body
+marker.responseSizeBodyDecoded = 2400; // // Size of the decoded http body
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

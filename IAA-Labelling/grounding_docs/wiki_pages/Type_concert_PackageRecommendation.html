@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/PackageRecommendation</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/PackageRecommendation</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>PackageRecommendation</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>6</td></tr></table>
+
+<h2>Overview</h2>
+PackageRecommendation type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>action</td><td>String</td><td></td><td>Action to perform</td></tr>
+<tr><td>created_date</td><td>Int</td><td></td><td>Recommendation created date</td></tr>
+<tr><td>description</td><td>String</td><td></td><td>Vulnerability description</td></tr>
+<tr><td>recommendation</td><td>String</td><td></td><td>Recommendation</td></tr>
+<tr><td>recommendation_id</td><td>String</td><td></td><td>Recommendation ID</td></tr>
+<tr><td>risk_type</td><td>String</td><td></td><td>Type of the risk</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type PackageRecommendation {
+  # Recommendation ID
+  recommendation_id: String
+  # Recommendation Description
+  description: String
+  # Type of the risk
+  risk_type: String
+  # Action to perform
+  action: String
+  # Recommendation for action
+  recommendation: String
+  # Recommendation created date
+  created_date: Int
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>PackageRecommendation</b>:
+
+<h3>Automating tickets for package (SCA) recommendations</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+The Software composition dimension provides recommendations to address package-related issues, such as
+a missing license file or an outdated or unsupported package. Using automation rules, you automate ticket
+creation in a connected external issue tracking system, such as GitHub, Jira, Salesforce, or ServiceNow, to
+quickly address package-related vulnerabilities and recommendations.
+
+<h3>Table 1. Package risks and</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+istence, compliance,
+restrictions, or comparability with the
+licenses associated with each package.
+Review or renew the
+licenses that are
+associated with this
+package
+Note: Under Recommendations you can view only correlated data.
+Creating tickets to address risks in packages
+Concert evaluates your package components to
+identify risks and provide recommended action to address or
+resolve it. Refer to Viewing package-related risk and recommendations for details.
+Option 1: Configure an automation rule (Recommended)
+From the Concert UI, you can open tickets in your
+third-party issue tracking system to address identified risks in
+your software packages based on
+Concert's recommended actions. Refer to the section
+Automating ticket creation
+for
+software composition for instructions.
+Option 2: Creating tickets manually from Concert
+482 IBM Concert
+
+<h3>Under Type of recommendation, select one or more types of package</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+recommendations that will trigger this
+automation rule:
+License review - If selected, the rule is triggered when Concert detects an issue with the package
+license, such as the
+lack of a package license file in the top-level directory, and recommends your
+review.
+Package replace - If selected, the rule is triggered when Concert makes a recommendation to replace
+a package because
+the existing one is no longer supported.
+Package upgrade - If selected, the rule is triggered when Concert makes a recommendation to
+replace a outdated package
+or one with known vulnerabilities. Typically, the recommendation is to
+upgrade to the latest stable
+version to mitigate risk.
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:concert/Package_status">concert/Package_status</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:turbonomic/ActionType">turbonomic/ActionType</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:turbonomic/Action">turbonomic/Action</a> (via AnyTool (Llama), AnyTool (Mistral), ReAct (Granite), ReAc...)</li>
+<li><a href="#Type:unknown/created">unknown/created</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:unknown/externalActionName">unknown/externalActionName</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:unknown/packageRecommendation">unknown/packageRecommendation</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:unknown/recommendationID">unknown/recommendationID</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:unknown/turbonomic_ActionType">unknown/turbonomic_ActionType</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>concert.PackageRecommendation</b> maps to:
+
+<h3><a href="#Type:concert/Package_status">concert.Package_status</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:turbonomic/ActionType">turbonomic.ActionType</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:turbonomic/Action">turbonomic.Action</a></h3>
+<i>Mapped by: AnyTool (Llama), AnyTool (Mistral), ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<table>
+<tr><th>PackageRecommendation Field</th><th>Action Field</th><th>Reason</th></tr>
+<tr><td>recommendation_id</td><td>actionID</td><td></td></tr>
+<tr><td>recommendation_id</td><td>policy</td><td></td></tr>
+<tr><td>description</td><td>actionSchedule</td><td></td></tr>
+<tr><td>description</td><td>details</td><td></td></tr>
+<tr><td>action</td><td>actionType</td><td></td></tr>
+<tr><td>created_date</td><td>createTime</td><td></td></tr>
+</table>
+
+<h3><a href="#Type:unknown/created">unknown.created</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/externalActionName">unknown.externalActionName</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/packageRecommendation">unknown.packageRecommendation</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/recommendationID">unknown.recommendationID</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+<li><a href="#Type:turbonomic/ActionType">turbonomic.ActionType</a></li>
+<li><a href="#Type:turbonomic/Action">turbonomic.Action</a></li>
+<li><a href="#Type:unknown/created">unknown.created</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

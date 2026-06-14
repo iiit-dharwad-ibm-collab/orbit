@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/EntityAccessUsersCollection</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/EntityAccessUsersCollection</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>EntityAccessUsersCollection</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>1</td></tr></table>
+
+<h2>Overview</h2>
+Collection of users and groups that have access to an entity
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>accessUsers</td><td>String</td><td>Yes</td><td>Comma separated list of user IDs to revoke access from.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+# Collection of users and groups that have access to an entity
+type EntityAccessUsersCollection {
+  # List of user IDs that have access to the entity
+  accessUsers: [String]
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>EntityAccessUsersCollection</b>:
+
+<h3>Choose Change role or Revoke access as</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+needed.
+a. Admin – Allows the user to view, edit, and delete the entity.
+b. Editor – Allows the user to view and edit the entity.
+c. Viewer – Allows the user to view the entity.
+Note: Only Admin users can grant or revoke access of other users.
+Use the Grant access + option to give access to an existing user
+to an application or environment.
+Results
+You can see users and their respective roles under Collaborators
+navigation.
+254 IBM Concert
+
+<h3>Granting access to applications and environments</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+e are granted some level access to
+your Concert
+instance based on the assigned
+instance-level role. Instance-level users and roles are typically managed in an
+external system that
+varies based on your Concert deployment method.
+The following table presents the instance-level user management options for each Concert
+deployment method with a link to the relevant
+instructions.
+Concert deployment
+method
+Managing instance-level users
+Related resources
+SaaS
+Use IBM SaaS Console to add users to your Concert instance,
+assign roles, and more.
+Getting
+started with
+IBM SaaS
+Console
+Granting
+access
+through
+service IDs
+and API keys
+On-premises deployment
+to a Kubernetes cluster
+without using CPFS
+If you are not managing the deployment using CPFS, you can
+integrate with an OIDC-enabled Keycloak client to
+authenticate instance users and manage roles.
+On-premises deployment
+to a virtual machine (VM)
+Integrate with an OIDC-enabled Keycloak client
+to
+authenticate instance users and manage roles.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

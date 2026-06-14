@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:infragraph/AwsEcsService</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:infragraph/AwsEcsService</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>AwsEcsService</td></tr>
+<tr><td><b>product</b></td><td>infragraph</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>4</td></tr></table>
+
+<h2>Overview</h2>
+AwsEcsService type from infragraph.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>aws_resource</td><td>AwsResource</td><td></td><td></td></tr>
+<tr><td>base</td><td>Base</td><td></td><td></td></tr>
+<tr><td>cluster_id</td><td>string</td><td></td><td></td></tr>
+<tr><td>subnet_ids</td><td>string</td><td>Yes</td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>AwsEcsService</b>:
+
+<h3>3.3  Key components of the AWS solution</h3>
+<small><i>Source: redp5671.md (turbonomic)</i></small>
+
+The IBM Spectrum Virtualize for AWS infrastructure as a service (IaaS) solution includes the following building blocks:
+
+- /SM590000 AWS EC2 instances
+- /SM590000 Amazon EBS
+- /SM590000 AWS networking elements, such as subnets and elastic network interfaces
+- /SM590000 AWS constructs, such as VPC and placement group
+- /SM590000 AWS security groups
+
+<h3>Provision AWS resources: Instana requires the storage type</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+":[
+ "ses:SendEmail",
+ "ses:SendRawEmail"
+ ]
+ }
+ ]
+}
+Create an IAM Role and associate the IAM role. To prevent using
+static credentials, configure IAM role which can be attached to
+Service
+Accounts to grant access to S3, SES.
+Create an OIDC provider in AWS.
+Create an IAM role with the following trust relationship:
+{
+ "Version": "2012-10-17",
+ "Statement": [
+ {
+ "Sid": "",
+ "Effect": "Allow",
+228 IBM Instana Observability
+
+ "Principal": {
+ "Federated": "arn:aws:iam::<ReplaceAccountID>:oidc-provider/oidc.eks.
+<ReplaceWithActualRegion>.amazonaws.com/id/<ReplaceWithID>"
+ },
+ "Action": "sts:AssumeRoleWithWebIdentity",
+ "Condition": {
+ "StringEquals": {
+ "oidc.eks.<ReplaceWithActualRegion>.amazonaws.com/id/<ReplaceWithID>:sub": 
+"system:serviceaccount:<KubernetesNamespace>:<KubernetesServiceAccount>",
+ "oidc.eks.<ReplaceWithActualRegion>.amazonaws.com/id/<ReplaceWithID>:aud": 
+"sts.amazonaws.com"
+ }
+ }
+ }
+ ]
+}
+Attach the newly created IAM policy.
+
+<h3>AWS ECS (Fargate and EC2) prerequisites</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+fect": "Allow",
+ "Action": [
+ "ecs:DescribeClusters",
+ "ecs:ListClusters",
+ "ecs:DescribeServices",
+ "ecs:ListServices",
+ "ecs:DescribeContainerInstances",
+ "ecs:ListContainerInstances",
+ "ecs:DescribeTaskDefinition",
+ "ecs:ListTaskDefinitions",
+ "ecs:DescribeTasks",
+ "ecs:ListTasks",
+ "cloudwatch:GetMetricData",
+ "cloudwatch:GetMetricStatistics",
+ "cloudwatch:ListMetrics",
+ "logs:DescribeLogGroups",
+ "logs:DescribeLogStreams",
+ "logs:GetLogEvents",
+ "logs:FilterLogEvents",
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:infragraph">infragraph Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:infragraph">Category:infragraph</a>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/getTestSummaryList_200_response</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/getTestSummaryList_200_response</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>getTestSummaryList_200_response</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>4</td></tr></table>
+
+<h2>Overview</h2>
+getTestSummaryList_200_response type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>items</td><td>mutation_getSyntheticResultList_items_items</td><td>Yes</td><td>Represents an array of call group item containing several attributes that describe its properties.</td></tr>
+<tr><td>page</td><td>Int</td><td></td><td>Page number from results</td></tr>
+<tr><td>pageSize</td><td>Int</td><td></td><td>Number of items per page</td></tr>
+<tr><td>totalHits</td><td>BigInt</td><td></td><td>represents the total number of results</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type getTestSummaryList_200_response {
+  items: [mutation_getSyntheticResultList_items_items]!
+
+  # Page Number
+  page: Int
+  pageSize: Int
+  totalHits: BigInt
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>getTestSummaryList_200_response</b>:
+
+<h3>In Configuration: How will this test work?, enter the details depending on the test type that is selected in step 3.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+define specific content to include in the body of the request. Only one body element can be added. The body element is added to the test by
+the PoPs when the test is run.
+Validation String: You can define a string that should appear in the response when the test has run. Only one validation string element can be added. When
+the test is run, if the string is missing, the test fails.
+expectStatus: You can define the expected HTTP return code for the test. If the return code does not match when the test has run, the test fails. Only one
+expectStatus element can be added. Use the drop-down menu to select the desired expect condition. Use Add Validation to add more than one expect
+condition. You can add one of each type of expect condition to a test.
+expectMatch: You can provide a regular expression to check when the test runs. Only one expectMatch element can be added. If the expression is not
+matched when the test is run, the test fails. Use the drop-down menu to select expectMatch.
+
+<h3>Sending a test email alert</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+The test channel button tests that the message gets delivered,
+as it follows a template format. The following image shows a
+successful test.
+
+<h3>You can find a list of all the tests you created. The results from all the assigned locations are aggregated for the selected time interval. The test with the least</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+success rate appears first in the list. You can choose to sort the table by any fields in the table except the Action column. When you sort by decreasing latency, you
+can see which test has the worst response time in the time period across all results and assigned locations.
+In addition to sorting, you can filter the table by using the Execution type, Type, Location, and Association filters. You can also search for a test by name in the list by
+using the search box.The table displays the following information:
+Test name: The name of the Synthetic test.
+Status: Indicates whether the test is actively running or has been paused.
+Type: Displays the type of test and the scheduled frequency.
+
+<h3>In the Custom Property section, you can specify one or more key-value pairs as custom properties. These properties become part of the test definition and the test</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+results. You can use these properties to locate, sort, or filter tests and test results. To add additional custom properties, select Add Property. You can add an
+unlimited number of properties to a test. If you add a property and want to remove it before you create the test, select the trash icon at the end of the row for that
+property.
+Viewing the summary for a test
+To view the summary for a test, select a test on the Synthetic tests tab on the Synthetic Monitoring page.
+The Summary tab displays aggregated information about a single synthetic test during the selected time period. The information is filtered by test execution types:
+Scheduled, On demand, or All. By default, Scheduled is selected.
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:cloudability/CostReport">cloudability/CostReport</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>instana.getTestSummaryList_200_response</b> maps to:
+
+<h3><a href="#Type:cloudability/CostReport">cloudability.CostReport</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>getTestSummaryList_200_response Field</th><th>CostReport Field</th><th>Reason</th></tr>
+<tr><td>pageSize</td><td>limit</td><td></td></tr>
+<tr><td>totalHits</td><td>total_results</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+<li><a href="#Type:cloudability/CostReport">cloudability.CostReport</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

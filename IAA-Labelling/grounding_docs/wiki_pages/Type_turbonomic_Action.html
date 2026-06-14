@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:turbonomic/Action</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:turbonomic/Action</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Action</td></tr>
+<tr><td><b>product</b></td><td>turbonomic</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>40</td></tr></table>
+
+<h2>Overview</h2>
+Action type from turbonomic.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>actionID</td><td>ID</td><td></td><td>actionID</td></tr>
+<tr><td>actionImpactID</td><td>ID</td><td></td><td>ID for the action, which will persist across restarts"</td></tr>
+<tr><td>actionMode</td><td>ActionMode</td><td></td><td></td></tr>
+<tr><td>actionSchedule</td><td>ActionSchedule</td><td></td><td></td></tr>
+<tr><td>actionState</td><td>ActionState</td><td></td><td></td></tr>
+<tr><td>actionType</td><td>ActionType</td><td></td><td></td></tr>
+<tr><td>clearTime</td><td>DateTime</td><td></td><td></td></tr>
+<tr><td>compoundActions</td><td>CompoundActionsEntry</td><td>Yes</td><td>compound move actions</td></tr>
+<tr><td>createTime</td><td>DateTime</td><td></td><td></td></tr>
+<tr><td>currentEntity</td><td>CurrentEntity</td><td></td><td>Current entity</td></tr>
+<tr><td>currentLocation</td><td>CurrentLocation</td><td></td><td>The region (DataCenter) where the current service entity is located, for cloud migration actions</td></tr>
+<tr><td>currentValue</td><td>Float</td><td></td><td></td></tr>
+<tr><td>details</td><td>String</td><td></td><td>describing the action</td></tr>
+<tr><td>displayName</td><td>String</td><td></td><td>A user readable name of the api object.</td></tr>
+<tr><td>entityCharacteristics</td><td>JSON</td><td></td><td>Characteristics of the execution of the Action. Include disruptiveness and reversibility.</td></tr>
+<tr><td>executionCharacteristics</td><td>ExecutionCharacteristics</td><td></td><td>Characteristics of the execution of the Action. Include disruptiveness and reversibility.</td></tr>
+<tr><td>externalActionName</td><td>String</td><td></td><td>name under which this action appears in third-party software or external approval backend</td></tr>
+<tr><td>externalActionUrl</td><td>String</td><td></td><td>URL to third-party software showing this action. Suitable for external action approval</td></tr>
+<tr><td>importance</td><td>Float</td><td></td><td></td></tr>
+<tr><td>marketID</td><td>ID</td><td></td><td>Market ID associated with the requested items</td></tr>
+<tr><td>newEntity</td><td>NewEntity</td><td></td><td>Destination entity, such as the host that a VM will move to for a VM move action</td></tr>
+<tr><td>newLocation</td><td>NewLocation</td><td></td><td>The region, represented as a DataCenter entity, where the target service entity will be located for cloud migration actions</td></tr>
+<tr><td>newValue</td><td>Float</td><td></td><td></td></tr>
+<tr><td>policy</td><td>JSON</td><td></td><td>policy associated with the action</td></tr>
+<tr><td>prerequisites</td><td>String</td><td>Yes</td><td>Description(s) of any prerequisite(s) that must occur before execution is possible.</td></tr>
+<tr><td>prioritizedAutomationOpportunities</td><td>String</td><td>Yes</td><td>generated using the Prioritze Automationsetting, indicating that it is possible to have more savings if these opportunities are satisfied</td></tr>
+<tr><td>relatedActionsCountByType</td><td>RelatedActionsCountByType</td><td></td><td></td></tr>
+<tr><td>relatedSettingsPolicies</td><td>JSON</td><td></td><td>The related settings policies associated with the action</td></tr>
+<tr><td>reservedInstance</td><td>JSON</td><td></td><td>The Reserved Instance associated with the action</td></tr>
+<tr><td>reservedInstancePlatform</td><td>String</td><td></td><td>The platform of the recommended RI if the action has a supersaving</td></tr>
+<tr><td>resizeAttribute</td><td>ResizeAttribute</td><td></td><td></td></tr>
+<tr><td>risk</td><td>Risk</td><td></td><td>Cause of the action</td></tr>
+<tr><td>source</td><td>ActionSource</td><td></td><td></td></tr>
+<tr><td>stats</td><td>StatsEntry</td><td>Yes</td><td>Collected monitoring statistics</td></tr>
+<tr><td>target</td><td>Target</td><td></td><td>Target entity for an action. For example, the VM in a Resize Action, or the host for a VM move</td></tr>
+<tr><td>template</td><td>Template</td><td></td><td>Related Template</td></tr>
+<tr><td>updateTime</td><td>DateTime</td><td></td><td></td></tr>
+<tr><td>uuid</td><td>ID</td><td></td><td></td></tr>
+<tr><td>valueUnits</td><td>String</td><td></td><td></td></tr>
+<tr><td>virtualDisks</td><td>VirtualDisksEntry</td><td>Yes</td><td>"Virtual Disk used for the action, for example in a storage move</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Action {
+  # actionID
+  actionID: ID
+
+  # ID for the action, which will persist across restarts"
+  actionImpactID: ID
+
+  actionMode: ActionMode
+  actionSchedule: ActionSchedule
+  actionState: ActionState
+  actionType: ActionType
+
+  # compound move actions
+  compoundActions: <a href="CompoundActionsEntry]">createTime: DateTime
+  updateTime: DateTime
+  clearTime: DateTime
+
+  # Current entity
+# e.g. the current host that a VM resides on for a VM move action
+  currentEntity: CurrentEntity
+  # The region (DataCenter) where the current service entity is located, for cloud migration actions
+  currentLocation: CurrentLocation
+  currentValue: Float
+
+  # describing the action
+  details: String
+  # A user readable name of the api object.
+# Cannot be blank.
+# The UTF-8 encoding must be at most 255 bytes."
+  displayName: String
+
+  # Characteristics of the execution of the Action. Include disruptiveness and reversibility.
+  entityCharacteristics: JSON
+
+  # Characteristics of the execution of the Action. Include disruptiveness and reversibility.
+  executionCharacteristics: ExecutionCharacteristics
+  importance: Float
+  # Market ID associated with the requested items
+  marketID: ID
+  # Destination entity, such as the host that a VM will move to for a VM move action
+  newEntity: NewEntity
+
+  # The region, represented as a DataCenter entity, where the target service entity will be located for cloud migration actions
+  newLocation: NewLocation
+  newValue: Float
+
+  # policy associated with the action
+  policy: JSON # import this later
+  # Description(s) of any prerequisite(s) that must occur before execution is possible.
+# If this field is populated, the action would otherwise be executable but has been blocked by this prerequisite, and is displayed accordingly.
+# If this field is not populated, no prerequisite has caused the action mode to be modified, and the action is displayed as normal.
+  prerequisites: [String</a>
+
+  # generated using the Prioritze Automationsetting, indicating that it is possible to have more savings if these opportunities are satisfied
+  prioritizedAutomationOpportunities: <a href="String]">relatedActionsCountByType: RelatedActionsCountByType
+
+  # The related settings policies associated with the action
+  relatedSettingsPolicies: JSON # simple for now
+  # The Reserved Instance associated with the action
+  reservedInstance: JSON # Import this later
+  # The platform of the recommended RI if the action has a supersaving
+  reservedInstancePlatform: String
+
+  # name under which this action appears in third-party software or external approval backend
+  externalActionName: String
+  # URL to third-party software showing this action. Suitable for external action approval
+  externalActionUrl: String
+
+  resizeAttribute: ResizeAttribute
+  # Cause of the action
+  risk: Risk
+
+  source: ActionSource
+
+  # Collected monitoring statistics
+  stats: [StatsEntry</a>
+  # Target entity for an action. For example, the VM in a Resize Action, or the host for a VM move
+  target: Target
+  template: Template
+  uuid: ID
+  valueUnits: String
+
+  # "Virtual Disk used for the action, for example in a storage move
+  virtualDisks: [VirtualDisksEntry]
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Action</b>:
+
+<h3>actionInput</h3>
+<small><i>Source: IBMTurbonomic_8.16.0.md (turbonomic)</i></small>
+
+- description: List of requested actions
+
+- reference: ActionApiInputDTO
+
+<h3>completed\_action Table</h3>
+<small><i>Source: IBMTurbonomic_8.16.0.md (turbonomic)</i></small>
+
+ounts. | action.attrs |
+
+<h3>action</h3>
+<small><i>Source: IBMTurbonomic_8.16.0.md (turbonomic)</i></small>
+
+- description: The basic action DTO for the related action
+
+- reference: BasicActionApiDTO
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:concert/Automation_rules">concert/Automation_rules</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:concert/Data_mapper">concert/Data_mapper</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:concert/PackageRecommendation">concert/PackageRecommendation</a> (via AnyTool (Granite), AnyTool (Mistral))</li>
+<li><a href="#Type:concert/PackageDetailsCollection">concert/PackageDetailsCollection</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:turbonomic/ActionType">turbonomic/ActionType</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:turbonomic/ActionSource">turbonomic/ActionSource</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/ActionPolicy">unknown/ActionPolicy</a> (via AnyTool (Mistral))</li>
+<li><a href="#Type:unknown/NONE">unknown/NONE</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/action">unknown/action</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:unknown/actionType">unknown/actionType</a> (via AnyTool (Granite), AnyTool (Llama))</li>
+<li><a href="#Type:unknown/apiKey">unknown/apiKey</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/concert_SourceEntityType">unknown/concert_SourceEntityType</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/created">unknown/created</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:unknown/description">unknown/description</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:unknown/details">unknown/details</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:unknown/entityCharacteristics">unknown/entityCharacteristics</a> (via AnyTool (Granite), AnyTool (Llama))</li>
+<li><a href="#Type:unknown/externalActionName">unknown/externalActionName</a> (via AnyTool (Granite), AnyTool (Llama), AnyTool (Mistral))</li>
+<li><a href="#Type:unknown/importance">unknown/importance</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:unknown/policy">unknown/policy</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:unknown/recommendation">unknown/recommendation</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:unknown/updateTime">unknown/updateTime</a> (via AnyTool (Granite))</li>
+<li><a href="#Type:instana/getActionInstance_200_response">instana/getActionInstance_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/addActionInstance_200_response">instana/addActionInstance_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:turbonomic/RelatedActionsCountByType">turbonomic/RelatedActionsCountByType</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:turbonomic/Entity">turbonomic/Entity</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/displayName">unknown/displayName</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/actionID">unknown/actionID</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/actionMode">unknown/actionMode</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/actionSchedule">unknown/actionSchedule</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/actionState">unknown/actionState</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/clearTime">unknown/clearTime</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/compoundActions">unknown/compoundActions</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/createTime">unknown/createTime</a> (via AnyTool (Mistral), ReAct (Granite), ReAct (Llama), ReAct ...)</li>
+<li><a href="#Type:unknown/currentEntity">unknown/currentEntity</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/currentLocation">unknown/currentLocation</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/currentValue">unknown/currentValue</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/executionCharacteristics">unknown/executionCharacteristics</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/marketID">unknown/marketID</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/newEntity">unknown/newEntity</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/newLocation">unknown/newLocation</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/newValue">unknown/newValue</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/prerequisites">unknown/prerequisites</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/prioritizedAutomationOpportunities">unknown/prioritizedAutomationOpportunities</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>turbonomic.Action</b> maps to:
+
+<h3><a href="#Type:concert/Automation_rules">concert.Automation_rules</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:concert/Data_mapper">concert.Data_mapper</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:concert/PackageRecommendation">concert.PackageRecommendation</a></h3>
+<i>Mapped by: AnyTool (Granite), AnyTool (Mistral)</i>
+
+<table>
+<tr><th>Action Field</th><th>PackageRecommendation Field</th><th>Reason</th></tr>
+<tr><td>actionID</td><td>recommendation_id</td><td></td></tr>
+<tr><td>actionID</td><td>action</td><td></td></tr>
+<tr><td>actionImpactID</td><td>action</td><td></td></tr>
+<tr><td>actionMode</td><td>action</td><td></td></tr>
+<tr><td>actionSchedule</td><td>recommendation</td><td></td></tr>
+<tr><td>actionState</td><td>action</td><td></td></tr>
+<tr><td>actionType</td><td>action</td><td></td></tr>
+<tr><td>compoundActions</td><td>action</td><td></td></tr>
+<tr><td>createTime</td><td>action</td><td></td></tr>
+<tr><td>createTime</td><td>created_date</td><td></td></tr>
+<tr><td>details</td><td>description</td><td></td></tr>
+<tr><td>displayName</td><td>recommendation</td><td></td></tr>
+<tr><td>policy</td><td>action</td><td></td></tr>
+<tr><td>policy</td><td>recommendation</td><td></td></tr>
+<tr><td>externalActionName</td><td>action</td><td></td></tr>
+<tr><td>risk.severity</td><td>risk_type</td><td></td></tr>
+</table>
+
+<h3><a href="#Type:concert/PackageDetailsCollection">concert.PackageDetailsCollection</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:turbonomic/ActionType">turbonomic.ActionType</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:turbonomic/ActionSource">turbonomic.ActionSource</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/ActionPolicy">unknown.ActionPolicy</a></h3>
+<i>Mapped by: AnyTool (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/NONE">unknown.NONE</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/action">unknown.action</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/actionType">unknown.actionType</a></h3>
+<i>Mapped by: AnyTool (Granite), AnyTool (Llama)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/apiKey">unknown.apiKey</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/concert_SourceEntityType">unknown.concert_SourceEntityType</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/created">unknown.created</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/description">unknown.description</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/details">unknown.details</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/entityCharacteristics">unknown.entityCharacteristics</a></h3>
+<i>Mapped by: AnyTool (Granite), AnyTool (Llama)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/externalActionName">unknown.externalActionName</a></h3>
+<i>Mapped by: AnyTool (Granite), AnyTool (Llama), AnyTool (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/importance">unknown.importance</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/policy">unknown.policy</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/recommendation">unknown.recommendation</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/updateTime">unknown.updateTime</a></h3>
+<i>Mapped by: AnyTool (Granite)</i>
+
+<i>No field-level mappings available.</i>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:turbonomic">turbonomic Product Page</a></li>
+<li><a href="#Type:concert/Automation_rules">concert.Automation_rules</a></li>
+<li><a href="#Type:concert/Data_mapper">concert.Data_mapper</a></li>
+<li><a href="#Type:concert/PackageRecommendation">concert.PackageRecommendation</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:turbonomic">Category:turbonomic</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

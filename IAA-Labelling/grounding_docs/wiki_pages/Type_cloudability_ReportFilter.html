@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:cloudability/ReportFilter</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:cloudability/ReportFilter</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>ReportFilter</td></tr>
+<tr><td><b>product</b></td><td>cloudability</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>241</td></tr></table>
+
+<h2>Overview</h2>
+Main input for filtering the cost report.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>account_identifier</td><td>StringFilterInput</td><td></td><td>(Dimension) Payer Account ID</td></tr>
+<tr><td>account_name</td><td>StringFilterInput</td><td></td><td>(Dimension) Payer Account Name</td></tr>
+<tr><td>adjusted_amortized_fairshare_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Fairshare Cost (Adjusted Amortized)</td></tr>
+<tr><td>adjusted_amortized_idle_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Idle Cost (Adjusted Amortized)</td></tr>
+<tr><td>adjusted_amortized_utilized_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Utilized Cost (Adjusted Amortized)</td></tr>
+<tr><td>adjusted_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Cost (Adjusted)</td></tr>
+<tr><td>adjusted_fairshare_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Fairshare Cost (Adjusted)</td></tr>
+<tr><td>adjusted_idle_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Idle Cost (Adjusted)</td></tr>
+<tr><td>adjusted_utilized_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Utilized Cost (Adjusted)</td></tr>
+<tr><td>ancestry_numbers</td><td>StringFilterInput</td><td></td><td>(Dimension) GCP Ancestry Numbers</td></tr>
+<tr><td>atum_service_category</td><td>StringFilterInput</td><td></td><td>(Dimension) ATUM Service Category</td></tr>
+<tr><td>atum_service_name</td><td>StringFilterInput</td><td></td><td>(Dimension) ATUM Service Name</td></tr>
+<tr><td>atum_service_type</td><td>StringFilterInput</td><td></td><td>(Dimension) ATUM Service Type</td></tr>
+<tr><td>atum_subtower</td><td>StringFilterInput</td><td></td><td>(Dimension) ATUM Sub-Tower</td></tr>
+<tr><td>atum_tower</td><td>StringFilterInput</td><td></td><td>(Dimension) ATUM Tower</td></tr>
+<tr><td>azure_reservation_order_name</td><td>StringFilterInput</td><td></td><td>(Dimension) Azure Reservation Order Name</td></tr>
+<tr><td>blended_rate</td><td>FloatFilterInput</td><td></td><td>(Metric) Rate (Blended)</td></tr>
+<tr><td>business_metric1</td><td>FloatFilterInput</td><td></td><td>(Metric) Cost (Commited)</td></tr>
+<tr><td>business_metric10</td><td>FloatFilterInput</td><td></td><td>(Metric) Someone's Test</td></tr>
+<tr><td>business_metric11</td><td>StringFilterInput</td><td></td><td>(Metric) Bytes Transferred Passthrough</td></tr>
+<tr><td>business_metric13</td><td>FloatFilterInput</td><td></td><td>(Metric) Cost of East</td></tr>
+<tr><td>business_metric14</td><td>FloatFilterInput</td><td></td><td>(Metric) CBR Savings Plans Savings</td></tr>
+<tr><td>business_metric15</td><td>FloatFilterInput</td><td></td><td>(Metric) test it</td></tr>
+<tr><td>business_metric2</td><td>FloatFilterInput</td><td></td><td>(Metric) Test_UsageFam</td></tr>
+<tr><td>business_metric3</td><td>StringFilterInput</td><td></td><td>(Metric) test_EC2_COST</td></tr>
+<tr><td>business_metric4</td><td>FloatFilterInput</td><td></td><td>(Metric) test_powerup</td></tr>
+<tr><td>business_metric5</td><td>FloatFilterInput</td><td></td><td>(Metric) GST</td></tr>
+<tr><td>business_metric6</td><td>FloatFilterInput</td><td></td><td>(Metric) test demo</td></tr>
+<tr><td>business_metric7</td><td>FloatFilterInput</td><td></td><td>(Metric) Savings testak</td></tr>
+<tr><td>business_metric8</td><td>StringFilterInput</td><td></td><td>(Metric) Account Count</td></tr>
+<tr><td>business_metric9</td><td>StringFilterInput</td><td></td><td>(Metric) Surcharge</td></tr>
+<tr><td>byte_hours</td><td>FloatFilterInput</td><td></td><td>(Metric) GiB Hours</td></tr>
+<tr><td>bytes_transferred</td><td>FloatFilterInput</td><td></td><td>(Metric) Data Transfer (GiB)</td></tr>
+<tr><td>carbon_emissions</td><td>FloatFilterInput</td><td></td><td>(Metric) Estimated Carbon Emissions (MTCO2e)</td></tr>
+<tr><td>category1</td><td>StringFilterInput</td><td></td><td>(Dimension) Transaction Type(BM)</td></tr>
+<tr><td>category10</td><td>StringFilterInput</td><td></td><td>(Dimension) JLevel2</td></tr>
+<tr><td>category11</td><td>StringFilterInput</td><td></td><td>(Dimension) Filter out Unutilized Reservation Costs</td></tr>
+<tr><td>category12</td><td>StringFilterInput</td><td></td><td>(Dimension) AWS Commitment</td></tr>
+<tr><td>category13</td><td>StringFilterInput</td><td></td><td>(Dimension) Apptio Product</td></tr>
+<tr><td>category14</td><td>StringFilterInput</td><td></td><td>(Dimension) Accounting Cost Type</td></tr>
+<tr><td>category15</td><td>StringFilterInput</td><td></td><td>(Dimension) Vendor (Dont Delete)</td></tr>
+<tr><td>category16</td><td>StringFilterInput</td><td></td><td>(Dimension) CT Customer</td></tr>
+<tr><td>category17</td><td>StringFilterInput</td><td></td><td>(Dimension) Apptio Project</td></tr>
+<tr><td>category18</td><td>StringFilterInput</td><td></td><td>(Dimension) Level 2</td></tr>
+<tr><td>category19</td><td>StringFilterInput</td><td></td><td>(Dimension) CT Customer Type</td></tr>
+<tr><td>category2</td><td>StringFilterInput</td><td></td><td>(Dimension) Service Charge</td></tr>
+<tr><td>category20</td><td>StringFilterInput</td><td></td><td>(Dimension) Cost Owner</td></tr>
+<tr><td>category21</td><td>StringFilterInput</td><td></td><td>(Dimension) Level 1</td></tr>
+<tr><td>category22</td><td>StringFilterInput</td><td></td><td>(Dimension) Layer 11</td></tr>
+<tr><td>category23</td><td>StringFilterInput</td><td></td><td>(Dimension) Products shared cost (Don't delete)</td></tr>
+<tr><td>category24</td><td>StringFilterInput</td><td></td><td>(Dimension) Apptio Team</td></tr>
+<tr><td>category25</td><td>StringFilterInput</td><td></td><td>(Dimension) Layer 22</td></tr>
+<tr><td>category3</td><td>StringFilterInput</td><td></td><td>(Dimension) Environment List(BM)</td></tr>
+<tr><td>category4</td><td>StringFilterInput</td><td></td><td>(Dimension) Categories wise spend</td></tr>
+<tr><td>category5</td><td>StringFilterInput</td><td></td><td>(Dimension) JLevel1</td></tr>
+<tr><td>category6</td><td>StringFilterInput</td><td></td><td>(Dimension) Container Namespace</td></tr>
+<tr><td>category7</td><td>StringFilterInput</td><td></td><td>(Dimension) Team Name (don't delete)</td></tr>
+<tr><td>category8</td><td>StringFilterInput</td><td></td><td>(Dimension) ATUM - Towers</td></tr>
+<tr><td>category9</td><td>StringFilterInput</td><td></td><td>(Dimension) Layer 1</td></tr>
+<tr><td>compute_usage_type</td><td>StringFilterInput</td><td></td><td>(Dimension) Compute Usage Type</td></tr>
+<tr><td>container_cluster_name</td><td>StringFilterInput</td><td></td><td>(Dimension) Cluster Name</td></tr>
+<tr><td>container_namespace</td><td>StringFilterInput</td><td></td><td>(Dimension) Namespace</td></tr>
+<tr><td>cost_adjusted</td><td>FloatFilterInput</td><td></td><td>(Metric) Cost Adjustment</td></tr>
+<tr><td>cost_adjustment_description</td><td>StringFilterInput</td><td></td><td>(Dimension) Cost Adjustment Description</td></tr>
+<tr><td>currency_code</td><td>StringFilterInput</td><td></td><td>(Dimension) Currency Code</td></tr>
+<tr><td>date</td><td>StringFilterInput</td><td></td><td>(Dimension) Date</td></tr>
+<tr><td>day</td><td>StringFilterInput</td><td></td><td>(Dimension) Day</td></tr>
+<tr><td>day_of_week</td><td>StringFilterInput</td><td></td><td>(Dimension) Day of Week</td></tr>
+<tr><td>engine</td><td>StringFilterInput</td><td></td><td>(Dimension) Engine</td></tr>
+<tr><td>enhanced_service_name</td><td>StringFilterInput</td><td></td><td>(Dimension) Service Name</td></tr>
+<tr><td>gb_months</td><td>FloatFilterInput</td><td></td><td>(Metric) GiB Months</td></tr>
+<tr><td>group_name1</td><td>StringFilterInput</td><td></td><td>(Dimension)  mock demo</td></tr>
+<tr><td>group_name10</td><td>StringFilterInput</td><td></td><td>(Dimension) Vendor</td></tr>
+<tr><td>group_name11</td><td>StringFilterInput</td><td></td><td>(Dimension) Change Control Process</td></tr>
+<tr><td>group_name12</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-1</td></tr>
+<tr><td>group_name13</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-2</td></tr>
+<tr><td>group_name14</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-3</td></tr>
+<tr><td>group_name15</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-4</td></tr>
+<tr><td>group_name16</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-5</td></tr>
+<tr><td>group_name17</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-6</td></tr>
+<tr><td>group_name18</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-7</td></tr>
+<tr><td>group_name19</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-8</td></tr>
+<tr><td>group_name2</td><td>StringFilterInput</td><td></td><td>(Dimension) Cost Center</td></tr>
+<tr><td>group_name20</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-9</td></tr>
+<tr><td>group_name21</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-10</td></tr>
+<tr><td>group_name22</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-11</td></tr>
+<tr><td>group_name23</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-12</td></tr>
+<tr><td>group_name24</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-13</td></tr>
+<tr><td>group_name25</td><td>StringFilterInput</td><td></td><td>(Dimension) Testing Limit-14</td></tr>
+<tr><td>group_name3</td><td>StringFilterInput</td><td></td><td>(Dimension) Availability Zone</td></tr>
+<tr><td>group_name4</td><td>StringFilterInput</td><td></td><td>(Dimension) Application</td></tr>
+<tr><td>group_name5</td><td>StringFilterInput</td><td></td><td>(Dimension) Region</td></tr>
+<tr><td>group_name6</td><td>StringFilterInput</td><td></td><td>(Dimension) Account Owner</td></tr>
+<tr><td>group_name7</td><td>StringFilterInput</td><td></td><td>(Dimension) Environment</td></tr>
+<tr><td>group_name8</td><td>StringFilterInput</td><td></td><td>(Dimension) product</td></tr>
+<tr><td>group_name9</td><td>StringFilterInput</td><td></td><td>(Dimension) 28</td></tr>
+<tr><td>instance_category</td><td>StringFilterInput</td><td></td><td>(Dimension) Instance Category</td></tr>
+<tr><td>instance_family</td><td>StringFilterInput</td><td></td><td>(Dimension) Instance Family</td></tr>
+<tr><td>instance_size</td><td>StringFilterInput</td><td></td><td>(Dimension) Instance Size</td></tr>
+<tr><td>instance_type</td><td>StringFilterInput</td><td></td><td>(Dimension) Instance Type</td></tr>
+<tr><td>invoice_date</td><td>StringFilterInput</td><td></td><td>(Dimension) Invoice Date</td></tr>
+<tr><td>invoice_id</td><td>StringFilterInput</td><td></td><td>(Dimension) Invoice ID</td></tr>
+<tr><td>invoiced_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Cost (Total Blended)</td></tr>
+<tr><td>io_requests</td><td>IntFilterInput</td><td></td><td>(Metric) I/O Requests</td></tr>
+<tr><td>item_description</td><td>StringFilterInput</td><td></td><td>(Dimension) Item Description</td></tr>
+<tr><td>kwh_consumption</td><td>FloatFilterInput</td><td></td><td>(Metric) Power Consumed (kWh)</td></tr>
+<tr><td>lease_type</td><td>StringFilterInput</td><td></td><td>(Dimension) Lease Type</td></tr>
+<tr><td>month</td><td>StringFilterInput</td><td></td><td>(Dimension) Month (Category)</td></tr>
+<tr><td>offering_class</td><td>StringFilterInput</td><td></td><td>(Dimension) Reservation Class</td></tr>
+<tr><td>on_demand_hours</td><td>FloatFilterInput</td><td></td><td>(Metric) On Demand Hours</td></tr>
+<tr><td>operating_system</td><td>StringFilterInput</td><td></td><td>(Dimension) Operating System</td></tr>
+<tr><td>operation</td><td>StringFilterInput</td><td></td><td>(Dimension) Operation</td></tr>
+<tr><td>part_number</td><td>StringFilterInput</td><td></td><td>(Dimension) Part Number</td></tr>
+<tr><td>public_on_demand_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Cost (List)</td></tr>
+<tr><td>region</td><td>StringFilterInput</td><td></td><td>(Dimension) Region</td></tr>
+<tr><td>region_zone</td><td>StringFilterInput</td><td></td><td>(Dimension) Availability Zone</td></tr>
+<tr><td>requests</td><td>IntFilterInput</td><td></td><td>(Metric) Requests</td></tr>
+<tr><td>reservation_identifier</td><td>StringFilterInput</td><td></td><td>(Dimension) Reservation ID</td></tr>
+<tr><td>reservation_name</td><td>StringFilterInput</td><td></td><td>(Dimension) Reservation Name</td></tr>
+<tr><td>reserved_hours</td><td>FloatFilterInput</td><td></td><td>(Metric) Reserved Hours</td></tr>
+<tr><td>reserved_utilization_rate</td><td>StringFilterInput</td><td></td><td>(Metric) Reserved Coverage Rate</td></tr>
+<tr><td>resource_identifier</td><td>StringFilterInput</td><td></td><td>(Dimension) Resource ID</td></tr>
+<tr><td>resource_identifier_count</td><td>IntFilterInput</td><td></td><td>(Metric) Resource Count</td></tr>
+<tr><td>resource_name</td><td>StringFilterInput</td><td></td><td>(Dimension) Resource Name</td></tr>
+<tr><td>seller</td><td>StringFilterInput</td><td></td><td>(Dimension) Seller</td></tr>
+<tr><td>service_name</td><td>StringFilterInput</td><td></td><td>(Dimension) Product Name</td></tr>
+<tr><td>tag1</td><td>StringFilterInput</td><td></td><td>(Dimension) Business unit (value)</td></tr>
+<tr><td>tag10</td><td>StringFilterInput</td><td></td><td>(Dimension) KubernetesPod (value)</td></tr>
+<tr><td>tag11</td><td>StringFilterInput</td><td></td><td>(Dimension) KubernetesGroup (value)</td></tr>
+<tr><td>tag12</td><td>StringFilterInput</td><td></td><td>(Dimension) Owner (value)</td></tr>
+<tr><td>tag13</td><td>StringFilterInput</td><td></td><td>(Dimension) Finance (value)</td></tr>
+<tr><td>tag14</td><td>StringFilterInput</td><td></td><td>(Dimension) Org ID (value)</td></tr>
+<tr><td>tag15</td><td>StringFilterInput</td><td></td><td>(Dimension) Department (value)</td></tr>
+<tr><td>tag16</td><td>StringFilterInput</td><td></td><td>(Dimension) Service (value)</td></tr>
+<tr><td>tag17</td><td>StringFilterInput</td><td></td><td>(Dimension) Category (value)</td></tr>
+<tr><td>tag18</td><td>StringFilterInput</td><td></td><td>(Dimension) Name (value)</td></tr>
+<tr><td>tag19</td><td>StringFilterInput</td><td></td><td>(Dimension) Production (value)</td></tr>
+<tr><td>tag2</td><td>StringFilterInput</td><td></td><td>(Dimension) Team  (value)</td></tr>
+<tr><td>tag20</td><td>StringFilterInput</td><td></td><td>(Dimension) environment (value)</td></tr>
+<tr><td>tag21</td><td>StringFilterInput</td><td></td><td>(Dimension) Team (value)</td></tr>
+<tr><td>tag22</td><td>StringFilterInput</td><td></td><td>(Dimension) GCP Tags (value)</td></tr>
+<tr><td>tag24</td><td>StringFilterInput</td><td></td><td>(Dimension) Application (value)</td></tr>
+<tr><td>tag25</td><td>StringFilterInput</td><td></td><td>(Dimension) Workload (value)</td></tr>
+<tr><td>tag26</td><td>StringFilterInput</td><td></td><td>(Dimension) org (value)</td></tr>
+<tr><td>tag27</td><td>StringFilterInput</td><td></td><td>(Dimension) account-level-team-dimension (value)</td></tr>
+<tr><td>tag28</td><td>StringFilterInput</td><td></td><td>(Dimension) OCI Compartment (value)</td></tr>
+<tr><td>tag29</td><td>StringFilterInput</td><td></td><td>(Dimension) Project (value)</td></tr>
+<tr><td>tag3</td><td>StringFilterInput</td><td></td><td>(Dimension) Cloud - HCM (value)</td></tr>
+<tr><td>tag30</td><td>StringFilterInput</td><td></td><td>(Dimension) CostCenter (value)</td></tr>
+<tr><td>tag31</td><td>StringFilterInput</td><td></td><td>(Dimension) Owners (value)</td></tr>
+<tr><td>tag32</td><td>StringFilterInput</td><td></td><td>(Dimension) Product (value)</td></tr>
+<tr><td>tag33</td><td>StringFilterInput</td><td></td><td>(Dimension) Project (value)</td></tr>
+<tr><td>tag35</td><td>StringFilterInput</td><td></td><td>(Dimension) testingtt (value)</td></tr>
+<tr><td>tag36</td><td>StringFilterInput</td><td></td><td>(Dimension) RG (value)</td></tr>
+<tr><td>tag37</td><td>StringFilterInput</td><td></td><td>(Dimension) Production (value)</td></tr>
+<tr><td>tag38</td><td>StringFilterInput</td><td></td><td>(Dimension) prod (value)</td></tr>
+<tr><td>tag39</td><td>StringFilterInput</td><td></td><td>(Dimension) Production (value)</td></tr>
+<tr><td>tag4</td><td>StringFilterInput</td><td></td><td>(Dimension) Cost Center (value)</td></tr>
+<tr><td>tag40</td><td>StringFilterInput</td><td></td><td>(Dimension) env (value)</td></tr>
+<tr><td>tag41</td><td>StringFilterInput</td><td></td><td>(Dimension) Prod (value)</td></tr>
+<tr><td>tag42</td><td>StringFilterInput</td><td></td><td>(Dimension) project 100 (value)</td></tr>
+<tr><td>tag43</td><td>StringFilterInput</td><td></td><td>(Dimension) project 1 (value)</td></tr>
+<tr><td>tag44</td><td>StringFilterInput</td><td></td><td>(Dimension) env (value)</td></tr>
+<tr><td>tag45</td><td>StringFilterInput</td><td></td><td>(Dimension) Data (value)</td></tr>
+<tr><td>tag46</td><td>StringFilterInput</td><td></td><td>(Dimension) Env (value)</td></tr>
+<tr><td>tag47</td><td>StringFilterInput</td><td></td><td>(Dimension) Time 2 (value)</td></tr>
+<tr><td>tag48</td><td>StringFilterInput</td><td></td><td>(Dimension) Environment-doNoReuseTagDimensionNames (value)</td></tr>
+<tr><td>tag49</td><td>StringFilterInput</td><td></td><td>(Dimension) testing (value)</td></tr>
+<tr><td>tag5</td><td>StringFilterInput</td><td></td><td>(Dimension) Project (value)</td></tr>
+<tr><td>tag50</td><td>StringFilterInput</td><td></td><td>(Dimension) TEST_MOCK (value)</td></tr>
+<tr><td>tag6</td><td>StringFilterInput</td><td></td><td>(Dimension) Customer_Id (value)</td></tr>
+<tr><td>tag7</td><td>StringFilterInput</td><td></td><td>(Dimension) Region (value)</td></tr>
+<tr><td>tag8</td><td>StringFilterInput</td><td></td><td>(Dimension) azure-subscription-dimension (value)</td></tr>
+<tr><td>tag9</td><td>StringFilterInput</td><td></td><td>(Dimension) Kubernetes service-clustername (value)</td></tr>
+<tr><td>tagkey1</td><td>StringFilterInput</td><td></td><td>(Dimension) Business unit (key)</td></tr>
+<tr><td>tagkey10</td><td>StringFilterInput</td><td></td><td>(Dimension) KubernetesPod (key)</td></tr>
+<tr><td>tagkey11</td><td>StringFilterInput</td><td></td><td>(Dimension) KubernetesGroup (key)</td></tr>
+<tr><td>tagkey12</td><td>StringFilterInput</td><td></td><td>(Dimension) Owner (key)</td></tr>
+<tr><td>tagkey13</td><td>StringFilterInput</td><td></td><td>(Dimension) Finance (key)</td></tr>
+<tr><td>tagkey14</td><td>StringFilterInput</td><td></td><td>(Dimension) Org ID (key)</td></tr>
+<tr><td>tagkey15</td><td>StringFilterInput</td><td></td><td>(Dimension) Department (key)</td></tr>
+<tr><td>tagkey16</td><td>StringFilterInput</td><td></td><td>(Dimension) Service (key)</td></tr>
+<tr><td>tagkey17</td><td>StringFilterInput</td><td></td><td>(Dimension) Category (key)</td></tr>
+<tr><td>tagkey18</td><td>StringFilterInput</td><td></td><td>(Dimension) Name (key)</td></tr>
+<tr><td>tagkey19</td><td>StringFilterInput</td><td></td><td>(Dimension) Production (key)</td></tr>
+<tr><td>tagkey2</td><td>StringFilterInput</td><td></td><td>(Dimension) Team  (key)</td></tr>
+<tr><td>tagkey20</td><td>StringFilterInput</td><td></td><td>(Dimension) environment (key)</td></tr>
+<tr><td>tagkey21</td><td>StringFilterInput</td><td></td><td>(Dimension) Team (key)</td></tr>
+<tr><td>tagkey22</td><td>StringFilterInput</td><td></td><td>(Dimension) GCP Tags (key)</td></tr>
+<tr><td>tagkey24</td><td>StringFilterInput</td><td></td><td>(Dimension) Application (key)</td></tr>
+<tr><td>tagkey25</td><td>StringFilterInput</td><td></td><td>(Dimension) Workload (key)</td></tr>
+<tr><td>tagkey26</td><td>StringFilterInput</td><td></td><td>(Dimension) org (key)</td></tr>
+<tr><td>tagkey27</td><td>StringFilterInput</td><td></td><td>(Dimension) account-level-team-dimension (key)</td></tr>
+<tr><td>tagkey28</td><td>StringFilterInput</td><td></td><td>(Dimension) OCI Compartment (key)</td></tr>
+<tr><td>tagkey29</td><td>StringFilterInput</td><td></td><td>(Dimension) Project (key)</td></tr>
+<tr><td>tagkey3</td><td>StringFilterInput</td><td></td><td>(Dimension) Cloud - HCM (key)</td></tr>
+<tr><td>tagkey30</td><td>StringFilterInput</td><td></td><td>(Dimension) CostCenter (key)</td></tr>
+<tr><td>tagkey31</td><td>StringFilterInput</td><td></td><td>(Dimension) Owners (key)</td></tr>
+<tr><td>tagkey32</td><td>StringFilterInput</td><td></td><td>(Dimension) Product (key)</td></tr>
+<tr><td>tagkey33</td><td>StringFilterInput</td><td></td><td>(Dimension) Project (key)</td></tr>
+<tr><td>tagkey35</td><td>StringFilterInput</td><td></td><td>(Dimension) testingtt (key)</td></tr>
+<tr><td>tagkey36</td><td>StringFilterInput</td><td></td><td>(Dimension) RG (key)</td></tr>
+<tr><td>tagkey37</td><td>StringFilterInput</td><td></td><td>(Dimension) Production (key)</td></tr>
+<tr><td>tagkey38</td><td>StringFilterInput</td><td></td><td>(Dimension) prod (key)</td></tr>
+<tr><td>tagkey39</td><td>StringFilterInput</td><td></td><td>(Dimension) Production (key)</td></tr>
+<tr><td>tagkey4</td><td>StringFilterInput</td><td></td><td>(Dimension) Cost Center (key)</td></tr>
+<tr><td>tagkey40</td><td>StringFilterInput</td><td></td><td>(Dimension) env (key)</td></tr>
+<tr><td>tagkey41</td><td>StringFilterInput</td><td></td><td>(Dimension) Prod (key)</td></tr>
+<tr><td>tagkey42</td><td>StringFilterInput</td><td></td><td>(Dimension) project 100 (key)</td></tr>
+<tr><td>tagkey43</td><td>StringFilterInput</td><td></td><td>(Dimension) project 1 (key)</td></tr>
+<tr><td>tagkey44</td><td>StringFilterInput</td><td></td><td>(Dimension) env (key)</td></tr>
+<tr><td>tagkey45</td><td>StringFilterInput</td><td></td><td>(Dimension) Data (key)</td></tr>
+<tr><td>tagkey46</td><td>StringFilterInput</td><td></td><td>(Dimension) Env (key)</td></tr>
+<tr><td>tagkey47</td><td>StringFilterInput</td><td></td><td>(Dimension) Time 2 (key)</td></tr>
+<tr><td>tagkey48</td><td>StringFilterInput</td><td></td><td>(Dimension) Environment-doNoReuseTagDimensionNames (key)</td></tr>
+<tr><td>tagkey49</td><td>StringFilterInput</td><td></td><td>(Dimension) testing (key)</td></tr>
+<tr><td>tagkey5</td><td>StringFilterInput</td><td></td><td>(Dimension) Project (key)</td></tr>
+<tr><td>tagkey50</td><td>StringFilterInput</td><td></td><td>(Dimension) TEST_MOCK (key)</td></tr>
+<tr><td>tagkey6</td><td>StringFilterInput</td><td></td><td>(Dimension) Customer_Id (key)</td></tr>
+<tr><td>tagkey7</td><td>StringFilterInput</td><td></td><td>(Dimension) Region (key)</td></tr>
+<tr><td>tagkey8</td><td>StringFilterInput</td><td></td><td>(Dimension) azure-subscription-dimension (key)</td></tr>
+<tr><td>tagkey9</td><td>StringFilterInput</td><td></td><td>(Dimension) Kubernetes service-clustername (key)</td></tr>
+<tr><td>tenancy</td><td>StringFilterInput</td><td></td><td>(Dimension) Tenancy</td></tr>
+<tr><td>total_adjusted_amortized_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Cost (Adjusted Amortized)</td></tr>
+<tr><td>total_amortized_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Cost (Amortized)</td></tr>
+<tr><td>transaction_type</td><td>StringFilterInput</td><td></td><td>(Dimension) Transaction Type</td></tr>
+<tr><td>unblended_cost</td><td>FloatFilterInput</td><td></td><td>(Metric) Cost (Total)</td></tr>
+<tr><td>unblended_rate</td><td>FloatFilterInput</td><td></td><td>(Metric) Rate (Unblended)</td></tr>
+<tr><td>usage_family</td><td>StringFilterInput</td><td></td><td>(Dimension) Usage Family</td></tr>
+<tr><td>usage_hours</td><td>FloatFilterInput</td><td></td><td>(Metric) Usage Hours</td></tr>
+<tr><td>usage_quantity</td><td>FloatFilterInput</td><td></td><td>(Metric) Usage Quantity</td></tr>
+<tr><td>usage_type</td><td>StringFilterInput</td><td></td><td>(Dimension) Usage Type</td></tr>
+<tr><td>vcpu_hours</td><td>IntFilterInput</td><td></td><td>(Metric) vCPU Hours</td></tr>
+<tr><td>vendor</td><td>StringFilterInput</td><td></td><td>(Dimension) Vendor</td></tr>
+<tr><td>vendor_account_identifier</td><td>StringFilterInput</td><td></td><td>(Dimension) Account ID</td></tr>
+<tr><td>vendor_account_name</td><td>StringFilterInput</td><td></td><td>(Dimension) Account Name</td></tr>
+<tr><td>week</td><td>StringFilterInput</td><td></td><td>(Dimension) Week (Category)</td></tr>
+<tr><td>year</td><td>StringFilterInput</td><td></td><td>(Dimension) Year</td></tr>
+<tr><td>year_month</td><td>StringFilterInput</td><td></td><td>(Dimension) Month (Year)</td></tr>
+<tr><td>year_week</td><td>StringFilterInput</td><td></td><td>(Dimension) Week (Year)</td></tr>
+<tr><td>zone</td><td>StringFilterInput</td><td></td><td>(Dimension) Zone</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+# Main input for filtering the cost report.
+input ReportFilter {
+  # Filter by: Payer Account ID
+  account_identifier: StringFilterInput
+  # Filter by: Payer Account Name
+  account_name: StringFilterInput
+  # Filter by: Fairshare Cost (Adjusted Amortized)
+  adjusted_amortized_fairshare_cost: FloatFilterInput
+  # Filter by: Idle Cost (Adjusted Amortized)
+  adjusted_amortized_idle_cost: FloatFilterInput
+  # Filter by: Utilized Cost (Adjusted Amortized)
+  adjusted_amortized_utilized_cost: FloatFilterInput
+  # Filter by: Cost (Adjusted)
+  adjusted_cost: FloatFilterInput
+  # Filter by: Fairshare Cost (Adjusted)
+  adjusted_fairshare_cost: FloatFilterInput
+  # Filter by: Idle Cost (Adjusted)
+  adjusted_idle_cost: FloatFilterInput
+  # Filter by: Utilized Cost (Adjusted)
+  adjusted_utilized_cost: FloatFilterInput
+  # Filter by: GCP Ancestry Numbers
+  ancestry_numbers: StringFilterInput
+  # Filter by: ATUM Service Category
+  atum_service_category: StringFilterInput
+  # Filter by: ATUM Service Name
+  atum_service_name: StringFilterInput
+  # Filter by: ATUM Service Type
+  atum_service_type: StringFilterInput
+  # Filter by: ATUM Sub-Tower
+  atum_subtower: StringFilterInput
+  # Filter by: ATUM Tower
+  atum_tower: StringFilterInput
+  # Filter by: Azure Reservation Order Name
+  azure_reservation_order_name: StringFilterInput
+  # Filter by: Rate (Blended)
+  blended_rate: FloatFilterInput
+  # Filter by: Cost (Commited)
+  business_metric1: FloatFilterInput
+  # Filter by: Someone's Test
+  business_metric10: FloatFilterInput
+  # Filter by: Bytes Transferred Passthrough
+  business_metric11: StringFilterInput
+  # Filter by: Cost of East
+  business_metric13: FloatFilterInput
+  # Filter by: CBR Savings Plans Savings
+  business_metric14: FloatFilterInput
+  # Filter by: test it
+  business_metric15: FloatFilterInput
+  # Filter by: Test_UsageFam
+  business_metric2: FloatFilterInput
+  # Filter by: test_EC2_COST
+  business_metric3: StringFilterInput
+  # Filter by: test_powerup
+  business_metric4: FloatFilterInput
+  # Filter by: GST
+  business_metric5: FloatFilterInput
+  # Filter by: test demo
+  business_metric6: FloatFilterInput
+  # Filter by: Savings testak
+  business_metric7: FloatFilterInput
+  # Filter by: Account Count
+  business_metric8: StringFilterInput
+  # Filter by: Surcharge
+  business_metric9: StringFilterInput
+  # Filter by: GiB Hours
+  byte_hours: FloatFilterInput
+  # Filter by: Data Transfer (GiB)
+  bytes_transferred: FloatFilterInput
+  # Filter by: Estimated Carbon Emissions (MTCO2e)
+  carbon_emissions: FloatFilterInput
+  # Filter by: Transaction Type(BM)
+  category1: StringFilterInput
+  # Filter by: JLevel2
+  category10: StringFilterInput
+  # Filter by: Filter out Unutilized Reservation Costs
+  category11: StringFilterInput
+  # Filter by: AWS Commitment
+  category12: StringFilterInput
+  # Filter by: Apptio Product
+  category13: StringFilterInput
+  # Filter by: Accounting Cost Type
+  category14: StringFilterInput
+  # Filter by: Vendor (Dont Delete)
+  category15: StringFilterInput
+  # Filter by: CT Customer
+  category16: StringFilterInput
+  # Filter by: Apptio Project
+  category17: StringFilterInput
+  # Filter by: Level 2
+  category18: StringFilterInput
+  # Filter by: CT Customer Type
+  category19: StringFilterInput
+  # Filter by: Service Charge
+  category2: StringFilterInput
+  # Filter by: Cost Owner
+  category20: StringFilterInput
+  # Filter by: Level 1
+  category21: StringFilterInput
+  # Filter by: Layer 11
+  category22: StringFilterInput
+  # Filter by: Products shared cost (Don't delete)
+  category23: StringFilterInput
+  # Filter by: Apptio Team
+  category24: StringFilterInput
+  # Filter by: Layer 22
+  category25: StringFilterInput
+  # Filter by: Environment List(BM)
+  category3: StringFilterInput
+  # Filter by: Categories wise spend
+  category4: StringFilterInput
+  # Filter by: JLevel1
+  category5: StringFilterInput
+  # Filter by: Container Namespace
+  category6: StringFilterInput
+  # Filter by: Team Name (don't delete)
+  category7: StringFilterInput
+  # Filter by: ATUM - Towers
+  category8: StringFilterInput
+  # Filter by: Layer 1
+  category9: StringFilterInput
+  # Filter by: Compute Usage Type
+  compute_usage_type: StringFilterInput
+  # Filter by: Cluster Name
+  container_cluster_name: StringFilterInput
+  # Filter by: Namespace
+  container_namespace: StringFilterInput
+  # Filter by: Cost Adjustment
+  cost_adjusted: FloatFilterInput
+  # Filter by: Cost Adjustment Description
+  cost_adjustment_description: StringFilterInput
+  # Filter by: Currency Code
+  currency_code: StringFilterInput
+  # Filter by: Date
+  date: StringFilterInput
+  # Filter by: Day
+  day: StringFilterInput
+  # Filter by: Day of Week
+  day_of_week: StringFilterInput
+  # Filter by: Engine
+  engine: StringFilterInput
+  # Filter by: Service Name
+  enhanced_service_name: StringFilterInput
+  # Filter by: GiB Months
+  gb_months: FloatFilterInput
+  # Filter by:  mock demo
+  group_name1: StringFilterInput
+  # Filter by: Vendor
+  group_name10: StringFilterInput
+  # Filter by: Change Control Process
+  group_name11: StringFilterInput
+  # Filter by: Testing Limit-1
+  group_name12: StringFilterInput
+  # Filter by: Testing Limit-2
+  group_name13: StringFilterInput
+  # Filter by: Testing Limit-3
+  group_name14: StringFilterInput
+  # Filter by: Testing Limit-4
+  group_name15: StringFilterInput
+  # Filter by: Testing Limit-5
+  group_name16: StringFilterInput
+  # Filter by: Testing Limit-6
+  group_name17: StringFilterInput
+  # Filter by: Testing Limit-7
+  group_name18: StringFilterInput
+  # Filter by: Testing Limit-8
+  group_name19: StringFilterInput
+  # Filter by: Cost Center
+  group_name2: StringFilterInput
+  # Filter by: Testing Limit-9
+  group_name20: StringFilterInput
+  # Filter by: Testing Limit-10
+  group_name21: StringFilterInput
+  # Filter by: Testing Limit-11
+  group_name22: StringFilterInput
+  # Filter by: Testing Limit-12
+  group_name23: StringFilterInput
+  # Filter by: Testing Limit-13
+  group_name24: StringFilterInput
+  # Filter by: Testing Limit-14
+  group_name25: StringFilterInput
+  # Filter by: Availability Zone
+  group_name3: StringFilterInput
+  # Filter by: Application
+  group_name4: StringFilterInput
+  # Filter by: Region
+  group_name5: StringFilterInput
+  # Filter by: Account Owner
+  group_name6: StringFilterInput
+  # Filter by: Environment
+  group_name7: StringFilterInput
+  # Filter by: product
+  group_name8: StringFilterInput
+  # Filter by: 28
+  group_name9: StringFilterInput
+  # Filter by: Instance Category
+  instance_category: StringFilterInput
+  # Filter by: Instance Family
+  instance_family: StringFilterInput
+  # Filter by: Instance Size
+  instance_size: StringFilterInput
+  # Filter by: Instance Type
+  instance_type: StringFilterInput
+  # Filter by: Invoice Date
+  invoice_date: StringFilterInput
+  # Filter by: Invoice ID
+  invoice_id: StringFilterInput
+  # Filter by: Cost (Total Blended)
+  invoiced_cost: FloatFilterInput
+  # Filter by: I/O Requests
+  io_requests: IntFilterInput
+  # Filter by: Item Description
+  item_description: StringFilterInput
+  # Filter by: Power Consumed (kWh)
+  kwh_consumption: FloatFilterInput
+  # Filter by: Lease Type
+  lease_type: StringFilterInput
+  # Filter by: Month (Category)
+  month: StringFilterInput
+  # Filter by: Reservation Class
+  offering_class: StringFilterInput
+  # Filter by: On Demand Hours
+  on_demand_hours: FloatFilterInput
+  # Filter by: Operating System
+  operating_system: StringFilterInput
+  # Filter by: Operation
+  operation: StringFilterInput
+  # Filter by: Part Number
+  part_number: StringFilterInput
+  # Filter by: Cost (List)
+  public_on_demand_cost: FloatFilterInput
+  # Filter by: Region
+  region: StringFilterInput
+  # Filter by: Availability Zone
+  region_zone: StringFilterInput
+  # Filter by: Requests
+  requests: IntFilterInput
+  # Filter by: Reservation ID
+  reservation_identifier: StringFilterInput
+  # Filter by: Reservation Name
+  reservation_name: StringFilterInput
+  # Filter by: Reserved Hours
+  reserved_hours: FloatFilterInput
+  # Filter by: Reserved Coverage Rate
+  reserved_utilization_rate: StringFilterInput
+  # Filter by: Resource ID
+  resource_identifier: StringFilterInput
+  # Filter by: Resource Count
+  resource_identifier_count: IntFilterInput
+  # Filter by: Resource Name
+  resource_name: StringFilterInput
+  # Filter by: Seller
+  seller: StringFilterInput
+  # Filter by: Product Name
+  service_name: StringFilterInput
+  # Filter by: Business unit (value)
+  tag1: StringFilterInput
+  # Filter by: KubernetesPod (value)
+  tag10: StringFilterInput
+  # Filter by: KubernetesGroup (value)
+  tag11: StringFilterInput
+  # Filter by: Owner (value)
+  tag12: StringFilterInput
+  # Filter by: Finance (value)
+  tag13: StringFilterInput
+  # Filter by: Org ID (value)
+  tag14: StringFilterInput
+  # Filter by: Department (value)
+  tag15: StringFilterInput
+  # Filter by: Service (value)
+  tag16: StringFilterInput
+  # Filter by: Category (value)
+  tag17: StringFilterInput
+  # Filter by: Name (value)
+  tag18: StringFilterInput
+  # Filter by: Production (value)
+  tag19: StringFilterInput
+  # Filter by: Team  (value)
+  tag2: StringFilterInput
+  # Filter by: environment (value)
+  tag20: StringFilterInput
+  # Filter by: Team (value)
+  tag21: StringFilterInput
+  # Filter by: GCP Tags (value)
+  tag22: StringFilterInput
+  # Filter by: Application (value)
+  tag24: StringFilterInput
+  # Filter by: Workload (value)
+  tag25: StringFilterInput
+  # Filter by: org (value)
+  tag26: StringFilterInput
+  # Filter by: account-level-team-dimension (value)
+  tag27: StringFilterInput
+  # Filter by: OCI Compartment (value)
+  tag28: StringFilterInput
+  # Filter by: Project (value)
+  tag29: StringFilterInput
+  # Filter by: Cloud - HCM (value)
+  tag3: StringFilterInput
+  # Filter by: CostCenter (value)
+  tag30: StringFilterInput
+  # Filter by: Owners (value)
+  tag31: StringFilterInput
+  # Filter by: Product (value)
+  tag32: StringFilterInput
+  # Filter by: Project (value)
+  tag33: StringFilterInput
+  # Filter by: testingtt (value)
+  tag35: StringFilterInput
+  # Filter by: RG (value)
+  tag36: StringFilterInput
+  # Filter by: Production (value)
+  tag37: StringFilterInput
+  # Filter by: prod (value)
+  tag38: StringFilterInput
+  # Filter by: Production (value)
+  tag39: StringFilterInput
+  # Filter by: Cost Center (value)
+  tag4: StringFilterInput
+  # Filter by: env (value)
+  tag40: StringFilterInput
+  # Filter by: Prod (value)
+  tag41: StringFilterInput
+  # Filter by: project 100 (value)
+  tag42: StringFilterInput
+  # Filter by: project 1 (value)
+  tag43: StringFilterInput
+  # Filter by: env (value)
+  tag44: StringFilterInput
+  # Filter by: Data (value)
+  tag45: StringFilterInput
+  # Filter by: Env (value)
+  tag46: StringFilterInput
+  # Filter by: Time 2 (value)
+  tag47: StringFilterInput
+  # Filter by: Environment-doNoReuseTagDimensionNames (value)
+  tag48: StringFilterInput
+  # Filter by: testing (value)
+  tag49: StringFilterInput
+  # Filter by: Project (value)
+  tag5: StringFilterInput
+  # Filter by: TEST_MOCK (value)
+  tag50: StringFilterInput
+  # Filter by: Customer_Id (value)
+  tag6: StringFilterInput
+  # Filter by: Region (value)
+  tag7: StringFilterInput
+  # Filter by: azure-subscription-dimension (value)
+  tag8: StringFilterInput
+  # Filter by: Kubernetes service-clustername (value)
+  tag9: StringFilterInput
+  # Filter by: Business unit (key)
+  tagkey1: StringFilterInput
+  # Filter by: KubernetesPod (key)
+  tagkey10: StringFilterInput
+  # Filter by: KubernetesGroup (key)
+  tagkey11: StringFilterInput
+  # Filter by: Owner (key)
+  tagkey12: StringFilterInput
+  # Filter by: Finance (key)
+  tagkey13: StringFilterInput
+  # Filter by: Org ID (key)
+  tagkey14: StringFilterInput
+  # Filter by: Department (key)
+  tagkey15: StringFilterInput
+  # Filter by: Service (key)
+  tagkey16: StringFilterInput
+  # Filter by: Category (key)
+  tagkey17: StringFilterInput
+  # Filter by: Name (key)
+  tagkey18: StringFilterInput
+  # Filter by: Production (key)
+  tagkey19: StringFilterInput
+  # Filter by: Team  (key)
+  tagkey2: StringFilterInput
+  # Filter by: environment (key)
+  tagkey20: StringFilterInput
+  # Filter by: Team (key)
+  tagkey21: StringFilterInput
+  # Filter by: GCP Tags (key)
+  tagkey22: StringFilterInput
+  # Filter by: Application (key)
+  tagkey24: StringFilterInput
+  # Filter by: Workload (key)
+  tagkey25: StringFilterInput
+  # Filter by: org (key)
+  tagkey26: StringFilterInput
+  # Filter by: account-level-team-dimension (key)
+  tagkey27: StringFilterInput
+  # Filter by: OCI Compartment (key)
+  tagkey28: StringFilterInput
+  # Filter by: Project (key)
+  tagkey29: StringFilterInput
+  # Filter by: Cloud - HCM (key)
+  tagkey3: StringFilterInput
+  # Filter by: CostCenter (key)
+  tagkey30: StringFilterInput
+  # Filter by: Owners (key)
+  tagkey31: StringFilterInput
+  # Filter by: Product (key)
+  tagkey32: StringFilterInput
+  # Filter by: Project (key)
+  tagkey33: StringFilterInput
+  # Filter by: testingtt (key)
+  tagkey35: StringFilterInput
+  # Filter by: RG (key)
+  tagkey36: StringFilterInput
+  # Filter by: Production (key)
+  tagkey37: StringFilterInput
+  # Filter by: prod (key)
+  tagkey38: StringFilterInput
+  # Filter by: Production (key)
+  tagkey39: StringFilterInput
+  # Filter by: Cost Center (key)
+  tagkey4: StringFilterInput
+  # Filter by: env (key)
+  tagkey40: StringFilterInput
+  # Filter by: Prod (key)
+  tagkey41: StringFilterInput
+  # Filter by: project 100 (key)
+  tagkey42: StringFilterInput
+  # Filter by: project 1 (key)
+  tagkey43: StringFilterInput
+  # Filter by: env (key)
+  tagkey44: StringFilterInput
+  # Filter by: Data (key)
+  tagkey45: StringFilterInput
+  # Filter by: Env (key)
+  tagkey46: StringFilterInput
+  # Filter by: Time 2 (key)
+  tagkey47: StringFilterInput
+  # Filter by: Environment-doNoReuseTagDimensionNames (key)
+  tagkey48: StringFilterInput
+  # Filter by: testing (key)
+  tagkey49: StringFilterInput
+  # Filter by: Project (key)
+  tagkey5: StringFilterInput
+  # Filter by: TEST_MOCK (key)
+  tagkey50: StringFilterInput
+  # Filter by: Customer_Id (key)
+  tagkey6: StringFilterInput
+  # Filter by: Region (key)
+  tagkey7: StringFilterInput
+  # Filter by: azure-subscription-dimension (key)
+  tagkey8: StringFilterInput
+  # Filter by: Kubernetes service-clustername (key)
+  tagkey9: StringFilterInput
+  # Filter by: Tenancy
+  tenancy: StringFilterInput
+  # Filter by: Cost (Adjusted Amortized)
+  total_adjusted_amortized_cost: FloatFilterInput
+  # Filter by: Cost (Amortized)
+  total_amortized_cost: FloatFilterInput
+  # Filter by: Transaction Type
+  transaction_type: StringFilterInput
+  # Filter by: Cost (Total)
+  unblended_cost: FloatFilterInput
+  # Filter by: Rate (Unblended)
+  unblended_rate: FloatFilterInput
+  # Filter by: Usage Family
+  usage_family: StringFilterInput
+  # Filter by: Usage Hours
+  usage_hours: FloatFilterInput
+  # Filter by: Usage Quantity
+  usage_quantity: FloatFilterInput
+  # Filter by: Usage Type
+  usage_type: StringFilterInput
+  # Filter by: vCPU Hours
+  vcpu_hours: IntFilterInput
+  # Filter by: Vendor
+  vendor: StringFilterInput
+  # Filter by: Account ID
+  vendor_account_identifier: StringFilterInput
+  # Filter by: Account Name
+  vendor_account_name: StringFilterInput
+  # Filter by: Week (Category)
+  week: StringFilterInput
+  # Filter by: Year
+  year: StringFilterInput
+  # Filter by: Month (Year)
+  year_month: StringFilterInput
+  # Filter by: Week (Year)
+  year_week: StringFilterInput
+  # Filter by: Zone
+  zone: StringFilterInput
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>ReportFilter</b>:
+
+<h3>Report API Documentation</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+The report endpoint is intended to replace many functions that were previously split across a
+variety of containers APIs and is intended to provide a more singular view of the data powering the
+containers insights feature.
+
+This endpoint allows for analysis of data by specification of specific metrics to be aggregated
+which can be combined with groups and filters to gather cost.
+
+/v3/containers/report
+
+Query Parameters:
+
+Request Body
+
+The report request body is a json object comprised of a the following key attributes:
+
+Supported Cost Types
+
+Supported Metric Values
+
+cpu/reserved
+
+Request-able fields
+
+total_cost_fairshare
+
+Supported Widget Types
+
+Widget Type
+
+Single result only
+
+Group is not available Pagination is not available
+
+Supported Group, Count and Filter Values
+
+Groups, Counts, and Filters share a overlapping set of accessible data, which can be utilized in
+the following ways:
+
+Groups return results aggregated by unique values in that field.
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:turbonomic/StatFilterEntry">turbonomic/StatFilterEntry</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>cloudability.ReportFilter</b> maps to:
+
+<h3><a href="#Type:turbonomic/StatFilterEntry">turbonomic.StatFilterEntry</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>ReportFilter Field</th><th>StatFilterEntry Field</th><th>Reason</th></tr>
+<tr><td>account_name</td><td>displayName</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:cloudability">cloudability Product Page</a></li>
+<li><a href="#Type:turbonomic/StatFilterEntry">turbonomic.StatFilterEntry</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:cloudability">Category:cloudability</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

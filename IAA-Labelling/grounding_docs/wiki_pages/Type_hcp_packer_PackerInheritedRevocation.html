@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:hcp_packer/PackerInheritedRevocation</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:hcp_packer/PackerInheritedRevocation</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>PackerInheritedRevocation</td></tr>
+<tr><td><b>product</b></td><td>hcp_packer</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>4</td></tr></table>
+
+<h2>Overview</h2>
+PackerInheritedRevocation domain model message.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>ancestor_id</td><td>string</td><td></td><td></td></tr>
+<tr><td>base</td><td>Base</td><td></td><td></td></tr>
+<tr><td>descendant_id</td><td>string</td><td></td><td></td></tr>
+<tr><td>hcp_resource</td><td>HcpResource</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>PackerInheritedRevocation</b>:
+
+<h3>Packer templates reference overview</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+This topic provides overview information about Packer templates, which are configuration files that determine Packer behavior.
+
+<h3>Introduction to Packer</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+This introduction describes Packer benefits and how you can get started with it.
+
+<h3>packer/docs/intro</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+<h3>packer/docs/templates</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+<h3>What is Packer?</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+Packer is a community tool for creating identical machine images for multiple platforms from a single source configuration. Packer is lightweight, runs on every major operating system, and is highly performant, creating machine images for multiple platforms in parallel. Packer does not replace configuration management like Chef or Puppet. In fact, when building images, Packer is able to use tools like Chef or Puppet to install software onto the image.
+A machine image is a single static unit that contains a pre-configured operating system and installed software which is used to quickly create new running machines. Machine image formats change for each platform. Some examples include AMIs for EC2, VMDK and VMX files for VMware, and OVF exports for VirtualBox.
+
+<h3>HCP Packer</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+For information about using HCP Packer to store metadata about build artifacts, refer to the HCP Packer documentation or sign into HCP to explore HCP Packer features.
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:infragraph/PackerRegistry">infragraph/PackerRegistry</a> (via schema_mapping)</li>
+<li><a href="#Type:infragraph/PackerInheritedRevocation">infragraph/PackerInheritedRevocation</a> (via schema_mapping)</li>
+<li><a href="#Type:infragraph/PackerSbom">infragraph/PackerSbom</a> (via schema_mapping)</li>
+<li><a href="#Type:infragraph/PackerBuild">infragraph/PackerBuild</a> (via schema_mapping)</li>
+<li><a href="#Type:infragraph/PackerAncestry">infragraph/PackerAncestry</a> (via schema_mapping)</li>
+<li><a href="#Type:infragraph/PackerArtifact">infragraph/PackerArtifact</a> (via schema_mapping)</li>
+</ul>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:hcp_packer">hcp_packer Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:hcp_packer">Category:hcp_packer</a>
+</body>
+</html>

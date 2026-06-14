@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/mutation_getSyntheticResult_testResultItems_items</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/mutation_getSyntheticResult_testResultItems_items</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>mutation_getSyntheticResult_testResultItems_items</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>10</td></tr></table>
+
+<h2>Overview</h2>
+mutation_getSyntheticResult_testResultItems_items type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>applicationId</td><td>String</td><td></td><td>Filter by application ID</td></tr>
+<tr><td>applicationIds</td><td>String</td><td>Yes</td><td>IDs of the applications that this Smart Alert is applied to.</td></tr>
+<tr><td>customTags</td><td>JSON</td><td></td><td>A map of custom properties composed of the custom property name and its value.  This information will be included if the custom properties were requested or if the query was grouped and the grouping included one or more custom properties.</td></tr>
+<tr><td>locationId</td><td>String</td><td>Yes</td><td>Defines the location id by which the returned synthetic tests will be filtered by.</td></tr>
+<tr><td>metrics</td><td>JSON</td><td>Yes</td><td>Grouped metric details like `errors.mean`, `calls.sum`.</td></tr>
+<tr><td>mobileApplicationIds</td><td>String</td><td>Yes</td><td>A list of the mobile applications associated with the Synthetic test.</td></tr>
+<tr><td>serviceId</td><td>String</td><td></td><td>The serviceId this endpoint belongs to.</td></tr>
+<tr><td>testId</td><td>String</td><td></td><td>The testId for the Synthetic test.</td></tr>
+<tr><td>testName</td><td>String</td><td></td><td>The Synthetic test's name.</td></tr>
+<tr><td>websiteIds</td><td>String</td><td>Yes</td><td>A list of the websites associated with the Synthetic test.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type mutation_getSyntheticResult_testResultItems_items {
+  applicationId: String
+  applicationIds: <a href="String]">customTags: JSON
+  locationId: [String</a>
+  metrics: <a href="JSON]">mobileApplicationIds: [String</a>
+  serviceId: String
+  testId: String!
+  testName: String
+  websiteIds: [String]
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>mutation_getSyntheticResult_testResultItems_items</b>:
+
+<h3>Click the Service Levels tab. The Service Levels tab displays the configured Service Levels for your selected test.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+esponse time threshold, assertions, the recursive lookup, the
+accept CNAME, and the server retries.
+All test types: You can modify the locations where the test needs to run, the scheduled interval between test runs, the associations, and the custom properties.
+You should be aware of the following limitation:
+Some test properties cannot be modified on the Instana UI; you can use the APIs or the 'synctl' tool to update these properties. If you update a Synthetic test by using the
+UI and API or 'synctl' tool at the same, an error message is displayed. The error message indicates that the test is being modified in another method. Save the changes
+before you switch the update method.
+Bulk delete Synthetic tests and bulk update Synthetic tests are supported through OpenAPI calls. For more information, see bulk delete and bulk update.
+Viewing test result details
+
+<h3>In the Custom Property section, you can specify one or more key-value pairs as custom properties. These properties become part of the test definition and the test</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+results. You can use these properties to locate, sort, or filter tests and test results. To add additional custom properties, select Add Property. You can add an
+unlimited number of properties to a test. If you add a property and want to remove it before you create the test, select the trash icon at the end of the row for that
+property.
+Viewing the summary for a test
+To view the summary for a test, select a test on the Synthetic tests tab on the Synthetic Monitoring page.
+The Summary tab displays aggregated information about a single synthetic test during the selected time period. The information is filtered by test execution types:
+Scheduled, On demand, or All. By default, Scheduled is selected.
+
+<h3>To schedule a test for API and Browser test types, select the frequency by using the slider. You can select any interval from 1 minute to 120 minutes. The interval</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+that you select is applied to every PoP where the test is assigned to run repeatedly.
+
+<h3>You can find a list of all the tests you created. The results from all the assigned locations are aggregated for the selected time interval. The test with the least</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+success rate appears first in the list. You can choose to sort the table by any fields in the table except the Action column. When you sort by decreasing latency, you
+can see which test has the worst response time in the time period across all results and assigned locations.
+In addition to sorting, you can filter the table by using the Execution type, Type, Location, and Association filters. You can also search for a test by name in the list by
+using the search box.The table displays the following information:
+Test name: The name of the Synthetic test.
+Status: Indicates whether the test is actively running or has been paused.
+Type: Displays the type of test and the scheduled frequency.
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:concert/VulnerabilityApplication">concert/VulnerabilityApplication</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>instana.mutation_getSyntheticResult_testResultItems_items</b> maps to:
+
+<h3><a href="#Type:concert/VulnerabilityApplication">concert.VulnerabilityApplication</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>mutation_getSyntheticResult_testResultItems_items Field</th><th>VulnerabilityApplication Field</th><th>Reason</th></tr>
+<tr><td>applicationId</td><td>id</td><td></td></tr>
+<tr><td>customTags</td><td>tags</td><td></td></tr>
+<tr><td>testName</td><td>name</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+<li><a href="#Type:concert/VulnerabilityApplication">concert.VulnerabilityApplication</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

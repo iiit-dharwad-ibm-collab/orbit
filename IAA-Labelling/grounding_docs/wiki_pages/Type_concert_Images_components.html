@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/Images_components</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/Images_components</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Images_components</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>2</td></tr></table>
+
+<h2>Overview</h2>
+Images_components type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>component_id</td><td>ID</td><td></td><td>Component ID</td></tr>
+<tr><td>image_id</td><td>ID</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Images_components {
+  component_id: ID
+  image_id: ID
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Images_components</b>:
+
+<h3>Discovering images in an image registry</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Using Concert Workflows, you can configure Concert to auto-discover images that are present in an image registry
+on a virtual machine (VM). Once ingested to Concert, the workflow scans and inspects the images to compute
+resilience metrics related to the image layers and size.
+Running image scans for resilience proactively finds hidden vulnerabilities to prevent breaches, reduce risk, and
+maintain system integrity, confirming that images are secure, reliable, and meet industry benchmarks.
+Before you begin
+The application corresponding to the images must be defined in your Concert inventory.
+Step 1: Download and import the prebuilt workflow
+In Concert Workflows, in the Workflows page, click Create workflow > Select from library, choose the
+Docker_Image_Registry_Workflow and import the workflow to your Concert Workflows instance.
+For more information about importing Concert-specific workflows into Concert Workflows, see Creating workflows.
+
+<h3>Transfer all downloaded installer files and saved image .tar files from the images directory and its subdirectories to the air-gapped environment using tools such as scp or USB flash drives.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Step 2: Load and push all the images in to a private registry
+Note: A private registry accessible in the air-gapped environment is required. If you do not have one, you can
+deploy a Docker registry on the host for temporary or test use.
+
+<h3>Download and save all images.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+AG"
+image_list="$(cat ibm-concert/ibm-concert-std-workflows/etc/images.lst)"
+for i in ${image_list}
+do
+ img_name_tag=$(echo ${i} | sed 's/.''\///g')
+ $docker_exe pull ${REGISTRY}/concert/${img_name_tag}
+ save_name=$(echo ${img_name_tag} | sed 's/:.''//g')
+ $docker_exe save -o images/$save_name.tar ${REGISTRY}/concert/${img_name_tag}
+done
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

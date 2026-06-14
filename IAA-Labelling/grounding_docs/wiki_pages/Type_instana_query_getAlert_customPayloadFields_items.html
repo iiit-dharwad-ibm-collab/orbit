@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_getAlert_customPayloadFields_items</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_getAlert_customPayloadFields_items</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_getAlert_customPayloadFields_items</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+query_getAlert_customPayloadFields_items type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>key</td><td>String</td><td></td><td>A user-specified unique identifier or name for a custom payload entry.</td></tr>
+<tr><td>type</td><td>String</td><td></td><td>Type of entities</td></tr>
+<tr><td>value</td><td>String</td><td></td><td>Custom value for static type custom payload</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type query_getAlert_customPayloadFields_items implements query_getAlerts_items_customPayloadFields_items_allOf_0 {
+  # A user-specified unique identifier or name for a custom payload entry.
+  key: String!
+  type: String!
+
+  # Custom value for static type custom payload
+  value: String!
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_getAlert_customPayloadFields_items</b>:
+
+<h3>Payload transformation with JSONata</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+onExpression field in your API request to the POST 
+/api/events/settings/alertingChannels endpoint. The transformationExpression field must follow the JSONata syntax, as shown in the following example.
+For complete API details, see Instana OpenAPI specification.
+{
+ "transformationExpression": "{\"issue\": $merge(<a href="issue,">{\"metricNames\": issue.text}</a>)}",
+ "headers": <a href="],">"rbacTags": [</a>,
+ "webhookUrls": [
+ "https://webhook.example.com/endpoint"
+ ],
+ "kind": "WEB_HOOK",
+ "name": "Transformed Webhook",
+ "oauthEnabled": false
+}
+
+<h3>Custom payloads</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+To include an additional payload that is relevant to you in alert notifications for specific alert configuration that is sent by Instana, click Add Row in the Custom Payloads
+section.
+For more information about custom payloads, see Configure Custom Payload Globally.
+Both global custom payload and alert-specific custom payload are included in alert notifications if applicable, but the alert-specific configuration has priority over the
+global configuration. As a result, if using the same key, the value of the global custom payload field is overridden by the alert-specific one.
+The following image shows globally defined custom payloads that are used in the alert configuration:
+Figure 12. Read-only global custom payload
+Dynamic custom payload fields in alert-specific configuration are also supported.
+The following image shows commonly used options that you can select for Dynamic Tag, including Mobile App Label, View Name, Platform, Country, and Meta:
+Figure 13. Dynamic custom payload
+
+<h3>Adding custom payloads</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+To include an additional payload that is relevant to you in alert notifications for specific alert configuration that is sent by Instana, click Add Row in the Custom Payloads
+section.
+Both global custom payloads and alert-specific custom payloads are included in alert notifications if applicable, but the alert-specific configuration takes precedence over
+the global configuration. As a result, if you use the same key, the value of the global custom payload field is overridden by the alert-specific one.
+The following image shows globally defined custom payloads that are used in the alert configuration:
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

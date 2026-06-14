@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_getApplicationTagCatalog_tags_items_type</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_getApplicationTagCatalog_tags_items_type</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_getApplicationTagCatalog_tags_items_type</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>ENUM</td></tr>
+<tr><td><b>fields_count</b></td><td>7</td></tr></table>
+
+<h2>Overview</h2>
+The data type of the tag. Eg: `call.name` accepts `STRING` value.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>BOOLEAN</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>KEY_NUMBER_PAIR</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>KEY_VALUE_PAIR</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>NUMBER</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>STRING</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>STRING_LIST</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>STRING_SET</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+# The data type of the tag. Eg: `call.name` accepts `STRING` value.
+enum query_getApplicationTagCatalog_tags_items_type {
+  BOOLEAN
+  STRING
+  NUMBER
+  STRING_SET
+  STRING_LIST
+  KEY_VALUE_PAIR
+  KEY_NUMBER_PAIR
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_getApplicationTagCatalog_tags_items_type</b>:
+
+<h3>Tag key and value:</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Tags are represented as key-value pairs
+For example: environment:production, where
+environment is the tag key and production
+is the tag value
+
+<h3>INSTANA_TAGS</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+String, commaseparated
+A list of tags, which are comma-separated, and associated with the monitored component, for example 
+my_tag=myvalue,my_other_tag.
+
+<h3>Specifying host tags</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+To specify tags for an agent in the com.instana.plugin.host configuration file, add a section in the following format:
+516 IBM Instana Observability
+
+com.instana.plugin.host:
+ tags:
+ - 'production'
+ - 'app1'
+ 
+Alternatively, you can use the INSTANA_TAGS=production,app1 environment variable to specify tags for an agent (tags from environment variable and config file are
+additive).
+The production and app1 tags are added to the specific agent, which enables searching and filtering of tags in the UI:
+Figure 1.
+
+<h3>Listing available tags</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+To list the available image tags, query the icr.io public tag list. The image tags can be used with the icr.io public registry and the containers.instana.io Instana
+registry.
+You need the command-line tools Curl to query and jq to filter the output. Enter the following command to list all the available tags:
+curl https://icr.io/v2/instana/agent/tags/list | jq
+ 
+To filter the tags by an Instana backend version, enter the following command. Enter the Instana version in place of <backend_version> in the following example:
+INSTANA_VERSION=<backend_version> && curl https://icr.io/v2/instana/agent/tags/list | jq '.tags[] | select(. | contains
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:cloudability/TagMappingsEntry">cloudability/TagMappingsEntry</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>instana.query_getApplicationTagCatalog_tags_items_type</b> maps to:
+
+<h3><a href="#Type:cloudability/TagMappingsEntry">cloudability.TagMappingsEntry</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>query_getApplicationTagCatalog_tags_items_type Field</th><th>TagMappingsEntry Field</th><th>Reason</th></tr>
+<tr><td>STRING</td><td>vendorTagValue</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+<li><a href="#Type:cloudability/TagMappingsEntry">cloudability.TagMappingsEntry</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

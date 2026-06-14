@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/disableCustomEventSpecification_200_response</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/disableCustomEventSpecification_200_response</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>disableCustomEventSpecification_200_response</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>15</td></tr></table>
+
+<h2>Overview</h2>
+disableCustomEventSpecification_200_response type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>actions</td><td>query_getCustomEventSpecifications_items_actions_items</td><td>Yes</td><td>List of action configurations.</td></tr>
+<tr><td>applicationAlertConfigId</td><td>query_getCustomEventSpecifications_items_applicationAlertConfigId</td><td></td><td></td></tr>
+<tr><td>deleted</td><td>Boolean</td><td></td><td>Flag to indicate whether or not the configuration was deleted.</td></tr>
+<tr><td>description</td><td>query_getCustomEventSpecifications_items_description</td><td></td><td>The description provided, if any.</td></tr>
+<tr><td>enabled</td><td>Boolean</td><td></td><td>Set this flag to `true` if custom rule configurations has to be considered.</td></tr>
+<tr><td>entityType</td><td>query_getCustomEventSpecifications_items_entityType</td><td></td><td>The category of the affected entity.</td></tr>
+<tr><td>expirationTime</td><td>BigInt</td><td></td><td></td></tr>
+<tr><td>id</td><td>query_getCustomEventSpecifications_items_id</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>lastUpdated</td><td>BigInt</td><td></td><td>Unix timestamp representing the time the configuration was last updated.</td></tr>
+<tr><td>migrated</td><td>Boolean</td><td></td><td></td></tr>
+<tr><td>name</td><td>query_getCustomEventSpecifications_items_name</td><td></td><td>Name of the group.</td></tr>
+<tr><td>query</td><td>query_getCustomEventSpecifications_items_query</td><td></td><td>query</td></tr>
+<tr><td>ruleLogicalOperator</td><td>query_getCustomEventSpecifications_items_ruleLogicalOperator</td><td></td><td></td></tr>
+<tr><td>rules</td><td>query_getCustomEventSpecifications_items_rules_items</td><td>Yes</td><td>Specify custom rule configuration apart from Instana predefined rules. This rule has the highest precedence. This is only available for HTTP endpoints.</td></tr>
+<tr><td>triggering</td><td>Boolean</td><td></td><td>Optional flag to indicate whether an Incident is also triggered or not.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type disableCustomEventSpecification_200_response {
+  actions: <a href="query_getCustomEventSpecifications_items_actions_items]">applicationAlertConfigId: query_getCustomEventSpecifications_items_applicationAlertConfigId
+  deleted: Boolean
+  description: query_getCustomEventSpecifications_items_description
+  enabled: Boolean
+  entityType: query_getCustomEventSpecifications_items_entityType!
+  expirationTime: BigInt
+  id: query_getCustomEventSpecifications_items_id!
+  lastUpdated: BigInt
+  migrated: Boolean
+  name: query_getCustomEventSpecifications_items_name!
+  query: query_getCustomEventSpecifications_items_query
+  ruleLogicalOperator: query_getCustomEventSpecifications_items_ruleLogicalOperator
+  rules: [query_getCustomEventSpecifications_items_rules_items</a>!
+  triggering: Boolean
+}
+</code></pre>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

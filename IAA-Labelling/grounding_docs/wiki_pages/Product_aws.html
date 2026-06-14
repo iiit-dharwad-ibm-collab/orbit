@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product:aws</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Product:aws</h1>
+
+
+<h2>Overview</h2>
+Amazon Web Services infrastructure resources.
+
+<h2>Types</h2>
+<table>
+<tr><th>Type</th><th>Kind</th><th>Fields</th><th>Description</th></tr>
+<tr><td><a href="#Type:aws/AwsAccount">AwsAccount</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsAmi">AwsAmi</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsAvailabilityZone">AwsAvailabilityZone</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsEc2Instance">AwsEc2Instance</a></td><td>MESSAGE</td><td>5</td><td>AwsEc2Instance domain model message.</td></tr>
+<tr><td><a href="#Type:aws/AwsEc2InstanceType">AwsEc2InstanceType</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsEc2Volume">AwsEc2Volume</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsEcsCluster">AwsEcsCluster</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsEcsService">AwsEcsService</a></td><td>MESSAGE</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsIamPolicy">AwsIamPolicy</a></td><td>MESSAGE</td><td>3</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsIamRole">AwsIamRole</a></td><td>MESSAGE</td><td>10</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsIamRolePolicyAttachment">AwsIamRolePolicyAttachment</a></td><td>MESSAGE</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsIamUser">AwsIamUser</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsLambdaFunction">AwsLambdaFunction</a></td><td>MESSAGE</td><td>9</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsNetworkInterface">AwsNetworkInterface</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsRegion">AwsRegion</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsResource">AwsResource</a></td><td>MESSAGE</td><td>1</td><td>AwsResource is a type containing AWS specific fields.</td></tr>
+<tr><td><a href="#Type:aws/AwsS3Bucket">AwsS3Bucket</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsSecurityGroup">AwsSecurityGroup</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsSecurityGroupRule">AwsSecurityGroupRule</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsSubnet">AwsSubnet</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:aws/AwsVpc">AwsVpc</a></td><td>MESSAGE</td><td>2</td><td></td></tr>
+</table>
+
+<h2>Type Mappings</h2>
+Types from this product that map to other products:
+
+<table>
+<tr><th>Source Type</th><th>Maps To</th><th>Target Product</th></tr>
+<tr><td><a href="#Type:aws/AwsNetworkInterface">AwsNetworkInterface</a></td><td><a href="#Type:turbonomic/CloudAspect">CloudAspect</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:aws/AwsSecurityGroup">AwsSecurityGroup</a></td><td><a href="#Type:infragraph/BaseSecurityGroup">BaseSecurityGroup</a></td><td>infragraph</td></tr>
+<tr><td><a href="#Type:aws/AwsSecurityGroup">AwsSecurityGroup</a></td><td><a href="#Type:infragraph/BaseSecurityRule">BaseSecurityRule</a></td><td>infragraph</td></tr>
+<tr><td><a href="#Type:aws/AwsSecurityGroup">AwsSecurityGroup</a></td><td><a href="#Type:turbonomic/CloudAspect">CloudAspect</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:aws/AwsAmi">AwsAmi</a></td><td><a href="#Type:concert/Resources_images">Resources_images</a></td><td>concert</td></tr>
+<tr><td><a href="#Type:aws/AwsAmi">AwsAmi</a></td><td><a href="#Type:infragraph/Kind">Kind</a></td><td>infragraph</td></tr>
+<tr><td><a href="#Type:aws/AwsEcsCluster">AwsEcsCluster</a></td><td><a href="#Type:infragraph/BaseAccount">BaseAccount</a></td><td>infragraph</td></tr>
+<tr><td><a href="#Type:aws/AwsEcsCluster">AwsEcsCluster</a></td><td><a href="#Type:turbonomic/CloudAspect">CloudAspect</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:aws/AwsEcsService">AwsEcsService</a></td><td><a href="#Type:infragraph/BaseNetworkInterface">BaseNetworkInterface</a></td><td>infragraph</td></tr>
+<tr><td><a href="#Type:aws/AwsEcsService">AwsEcsService</a></td><td><a href="#Type:turbonomic/CloudAspect">CloudAspect</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:aws/AwsVpc">AwsVpc</a></td><td><a href="#Type:turbonomic/CloudAspect">CloudAspect</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:aws/AwsAccount">AwsAccount</a></td><td><a href="#Type:infragraph/BaseAccount">BaseAccount</a></td><td>infragraph</td></tr>
+<tr><td><a href="#Type:aws/AwsAccount">AwsAccount</a></td><td><a href="#Type:turbonomic/CloudAspect">CloudAspect</a></td><td>turbonomic</td></tr>
+<tr><td><a href="#Type:aws/AwsEc2InstanceType">AwsEc2InstanceType</a></td><td><a href="#Type:infragraph/Kind">Kind</a></td><td>infragraph</td></tr>
+<tr><td><a href="#Type:aws/AwsEc2InstanceType">AwsEc2InstanceType</a></td><td><a href="#Type:turbonomic/CloudAspect">CloudAspect</a></td><td>turbonomic</td></tr>
+</table>
+
+<a href="#Category:Products">Category:Products</a>
+<a href="#Category:Proto">Category:Proto</a>
+</body>
+</html>

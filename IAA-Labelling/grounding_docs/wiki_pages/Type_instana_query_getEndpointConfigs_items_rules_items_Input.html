@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_getEndpointConfigs_items_rules_items_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_getEndpointConfigs_items_rules_items_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_getEndpointConfigs_items_rules_items_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+query_getEndpointConfigs_items_rules_items_Input type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>enabled</td><td>Boolean</td><td></td><td>Set this flag to `true` if custom rule configurations has to be considered.</td></tr>
+<tr><td>pathSegments</td><td>query_getEndpointConfigs_items_rules_items_pathSegments_items_Input</td><td>Yes</td><td>A list of path segment matching rules, each defining how a segment of the HTTP path should be matched.</td></tr>
+<tr><td>testCases</td><td>String</td><td>Yes</td><td>To validate whether the the defined custom endpoint rule configuration is working as expected.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input query_getEndpointConfigs_items_rules_items_Input {
+  # Set this flag to `true` if custom rule configurations has to be considered.
+  enabled: Boolean
+
+  # A list of path segment matching rules, each defining how a segment of the HTTP path should be matched.
+# Each object in this array represents a segment rule, allowing for fixed segments, dynamic parameters, wildcards, or unsupported segments.
+# **UNSUPPORTED**: A path segment that is not recognized by the system.
+# **FIXED**: This type represents a static, unchanging part of the URL path.
+# For example, `/api/{version}/users`, `api` and `users` would be `FIXED` segment.
+# **PARAMETER**: This type represents a variable part of the URL path, often used to capture specific parameters or IDs that change with each request.
+# For example, `/api/{version}/users`, `version` would be `PARAMETER` segment. `version` can be `v1`, `v2`, `v3` etc.
+# **MATCH_ALL**: This type represents a wildcard, capturing all remaining segments from this point onward in the URL path.
+# For example, `/api/{version}/users/*` — Matches all paths like `/api/v1/users/123`. `/api/v3/users/456` etc.
+  pathSegments: <a href="query_getEndpointConfigs_items_rules_items_pathSegments_items_Input]!"># To validate whether the the defined custom endpoint rule configuration is working as expected.
+# For example, given a query `/api/*/{version}`, the following test case `/api/anyName/123` will match, while `/otherApi/anyName/123` will not.
+  testCases: [String</a>
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_getEndpointConfigs_items_rules_items_Input</b>:
+
+<h3>Custom endpoint rules</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Instana comes with three default HTTP rules which are always
+part of the extraction chain:
+Detected Framework: Extracts endpoints as
+specified in detected framework (if accessible).
+/'': Extracts endpoints based on the first path
+parameter.
+Unspecified: Calls that do not match a
+preceding rule are assigned to this endpoint.
+To specify additional configuration, you can define multiple
+custom rules. To do so, access the custom endpoint configuration
+dialog from any HTTP service, and select
+Add Custom HTTP
+Rule. The upcoming dialog offers you the ability to define
+a specific path (the actual rule) and multiple test cases to check
+if the defined path is working
+as expected. For the path you can
+use static segments like /api or
+/myShopEndpoint, path parameters like
+/{productId}, or match any segment with
+/''.
+In the rule tester part of the dialog, you can define multiple
+test cases to validate rules.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

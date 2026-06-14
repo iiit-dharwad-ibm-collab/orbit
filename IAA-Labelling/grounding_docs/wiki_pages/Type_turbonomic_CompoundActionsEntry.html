@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:turbonomic/CompoundActionsEntry</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:turbonomic/CompoundActionsEntry</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>CompoundActionsEntry</td></tr>
+<tr><td><b>product</b></td><td>turbonomic</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>15</td></tr></table>
+
+<h2>Overview</h2>
+CompoundActionsEntry type from turbonomic.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>actionMode</td><td>String</td><td></td><td></td></tr>
+<tr><td>actionState</td><td>String</td><td></td><td></td></tr>
+<tr><td>actionType</td><td>String</td><td></td><td></td></tr>
+<tr><td>currentEntity</td><td>CurrentEntity</td><td></td><td>Current entity</td></tr>
+<tr><td>currentLocation</td><td>CurrentLocation</td><td></td><td>The region (DataCenter) where the current service entity is located, for cloud migration actions</td></tr>
+<tr><td>currentValue</td><td>Float</td><td></td><td></td></tr>
+<tr><td>details</td><td>String</td><td></td><td>describing the action</td></tr>
+<tr><td>displayName</td><td>String</td><td></td><td>A user readable name of the api object.</td></tr>
+<tr><td>newEntity</td><td>NewEntity</td><td></td><td>Destination entity, such as the host that a VM will move to for a VM move action</td></tr>
+<tr><td>newLocation</td><td>NewLocation</td><td></td><td>The region, represented as a DataCenter entity, where the target service entity will be located for cloud migration actions</td></tr>
+<tr><td>newValue</td><td>Float</td><td></td><td></td></tr>
+<tr><td>resizeAttribute</td><td>String</td><td></td><td></td></tr>
+<tr><td>risk</td><td>Risk</td><td></td><td>Cause of the action</td></tr>
+<tr><td>target</td><td>Target</td><td></td><td>Target entity for an action. For example, the VM in a Resize Action, or the host for a VM move</td></tr>
+<tr><td>valueUnits</td><td>String</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type CompoundActionsEntry {
+  actionMode: String
+  actionState: String
+  actionType: String
+  currentEntity: CurrentEntity
+  currentLocation: CurrentLocation
+  currentValue: Float
+  details: String
+  displayName: String
+  newEntity: NewEntity
+  newLocation: NewLocation
+  newValue: Float
+  resizeAttribute: String
+  risk: Risk
+  target: Target
+  valueUnits: String
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>CompoundActionsEntry</b>:
+
+<h3>compoundActions</h3>
+<small><i>Source: IBMTurbonomic_8.16.0.md (turbonomic)</i></small>
+
+- type: array
+- description: Property for compound move actions
+- -reference: ActionApiDTO
+
+<h3>Getting a filtered list of actions</h3>
+<small><i>Source: IBMTurbonomic_8.16.0.md (turbonomic)</i></small>
+
+d.
+
+- relatedEntityTypes
+
+Returns only actions related to entities of these types within the scope. For example, if your scope is a virtual datacenter and you specify VirtualMachine as a related entity type, the request will include only those actions related to VMs in the specified virtual datacenter.
+
+Choose from the following entity types: [ Datacenter, PhysicalMachine, VirtualMachine, Storage, Application, Chassis, DiskArray, IOModule, StorageControl, Switch, VirtualDataCenter, VPod, DPod, Container, Database, DatabaseServerContainer, LogicalPool ]
+
+- riskSeverityList
+
+Returns only actions of the given severities: [ Unknown, Normal, Minor, Major, Critical ]
+
+- riskSubCategoryList
+- returns only actions of the given subcategories: [ Performance Assurance, Efficiency Improvement, Prevention, Compliance ]
+
+The following commodities may be returned as the related commodity for an action:
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:turbonomic">turbonomic Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:turbonomic">Category:turbonomic</a>
+</body>
+</html>

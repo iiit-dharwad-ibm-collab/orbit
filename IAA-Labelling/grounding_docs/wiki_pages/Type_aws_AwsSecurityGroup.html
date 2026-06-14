@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:aws/AwsSecurityGroup</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:aws/AwsSecurityGroup</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>AwsSecurityGroup</td></tr>
+<tr><td><b>product</b></td><td>aws</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>2</td></tr></table>
+
+<h2>Overview</h2>
+AwsSecurityGroup type from aws.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>aws_resource</td><td>AwsResource</td><td></td><td></td></tr>
+<tr><td>security_group</td><td>BaseSecurityGroup</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>AwsSecurityGroup</b>:
+
+<h3>Access management and security</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+S3 buckets and objects. By default, Block Public Access settings are turned on at the bucket level. We recommend that you keep all Block Public Access settings enabled unless you know that you need to turn off one or more of them for your specific use case. For more information, see Configuring block public access settings for your S3 buckets.
+- AWS Identity and Access Management (IAM) – IAM is a web service that helps you securely control access to AWS resources, including your Amazon S3 resources. With IAM, you can centrally manage permissions that control which AWS resources users can access. You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources.
+AWS Identity and Access Management (IAM) – IAM is a web service that helps you securely control access to AWS resources, including your Amazon S3 resources. With IAM, you can centrally manage permissions that control which AWS resources users can access.
+
+<h3>Access management for AWS resources</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. When a principal makes a request in AWS, the AWS enforcement code checks whether the principal is authenticated (signed in) and authorized (has permissions). You manage access in AWS by creating policies and attaching them to IAM identities or AWS resources. Policies are JSON documents in AWS that, when attached to an identity or resource, define their permissions. For more information about policy types and uses, see Policies and permissions in AWS Identity and Access Management.
+For details about the rest of the authentication and authorization process, see How IAM works.
+During authorization, the AWS enforcement code uses values from the request context to check for matching policies and determine whether to allow or deny the request.
+AWS checks each policy that applies to the context of the request.
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:infragraph/BaseSecurityGroup">infragraph/BaseSecurityGroup</a> (via schema_mapping)</li>
+<li><a href="#Type:infragraph/BaseSecurityRule">infragraph/BaseSecurityRule</a> (via schema_mapping)</li>
+<li><a href="#Type:turbonomic/CloudAspect">turbonomic/CloudAspect</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>aws.AwsSecurityGroup</b> maps to:
+
+<h3><a href="#Type:infragraph/BaseSecurityGroup">infragraph.BaseSecurityGroup</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>AwsSecurityGroup Field</th><th>BaseSecurityGroup Field</th><th>Reason</th></tr>
+<tr><td>security_group</td><td>base</td><td></td></tr>
+</table>
+
+<h3><a href="#Type:infragraph/BaseSecurityRule">infragraph.BaseSecurityRule</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>AwsSecurityGroup Field</th><th>BaseSecurityRule Field</th><th>Reason</th></tr>
+<tr><td>security_group</td><td>base</td><td></td></tr>
+</table>
+
+<h3><a href="#Type:turbonomic/CloudAspect">turbonomic.CloudAspect</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>AwsSecurityGroup Field</th><th>CloudAspect Field</th><th>Reason</th></tr>
+<tr><td>security_group</td><td>resourceId</td><td></td></tr>
+<tr><td>aws_resource</td><td>resourceGroup</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:aws">aws Product Page</a></li>
+<li><a href="#Type:infragraph/BaseSecurityGroup">infragraph.BaseSecurityGroup</a></li>
+<li><a href="#Type:infragraph/BaseSecurityRule">infragraph.BaseSecurityRule</a></li>
+<li><a href="#Type:turbonomic/CloudAspect">turbonomic.CloudAspect</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:aws">Category:aws</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/G_fwk_metric_metadata</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/G_fwk_metric_metadata</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>G_fwk_metric_metadata</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+G_fwk_metric_metadata type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>metadata_id</td><td>ID</td><td></td><td></td></tr>
+<tr><td>origin</td><td>String</td><td></td><td></td></tr>
+<tr><td>posture_id</td><td>ID</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type G_fwk_metric_metadata {
+  metadata_id: ID!
+  origin: String
+  posture_id: ID!
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>G_fwk_metric_metadata</b>:
+
+<h3>A confirmation message appears when the metric is created successfully.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+The metric is added to the Metrics table and becomes available for use when defining requirements in custom
+libraries.
+Editing a custom metric
+Only custom metrics can be edited. Default metrics cannot be modified. Refer to the following instructions to edit a
+custom metric:
+
+<h3>Enter the metric details:</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Metric name: A unique name for the metric.
+Description (optional): Additional context about what the metric measures.
+Unit(optional): Select a measurement unit such as Count, Percentage, Minutes, Megabytes, or Days.
+Origin (optional): Identify the system or integration that provides the metric values.
+Aggregation (optional): Select how multiple metric value are combined into a single value (for
+example. Latest, Average, Sum, And, Or).
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

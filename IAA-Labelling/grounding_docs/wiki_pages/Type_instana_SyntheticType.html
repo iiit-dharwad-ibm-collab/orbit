@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/SyntheticType</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/SyntheticType</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>SyntheticType</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>ENUM</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+SyntheticType type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>MIXED</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>NON_SYNTHETIC</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>SYNTHETIC</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+enum SyntheticType {
+  NON_SYNTHETIC
+  SYNTHETIC
+  MIXED
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>SyntheticType</b>:
+
+<h3>Synthetic tests</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+A Synthetic test is code that you write that simulates the way that your end-users use your applications. You can create Synthetic tests to monitor an application.
+
+<h3>Synthetic PoP Metric</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+ormance of Synthetic PoP.
+
+<h3>Synthetic calls</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Besides being able to mark entire endpoints as Synthetic, it is
+also possible to mark individual calls as Synthetic. This is
+particularly useful when your Synthetic checks use
+"production"
+APIs, which is in general an excellent idea.
+Synthetic call rules
+A call is marked in Instana as Synthetic if one or more of the
+following conditions are met:
+It is belongs to a Synthetic
+endpoint
+It is an HTTP request that carries the
+X-INSTANA-SYNTHETIC: 1 HTTP header
+It is an HTTP request that carries one of the following User Agents:
+kube-probe, which is the value of the
+User-Agent header for probes issued by Kubernetes
+diego-healthcheck, which is the value of the
+User-Agent header for healthchecks issued by Diego the scheduler of Cloud Foundry in recent
+Cloud
+Foundry releases
+ELB-HealthChecker, which is a part of the value of
+the User-Agent header for healthchecks issued by AWS Elastic Load Balancer
+Unlike the case X-INSTANA-SYNTHETIC, Instana does
+not by default capture the User-Agent header.
+
+<h3>Setting permissions for Synthetic monitoring</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+entication or by using an Identity Provider (IdP) can perform write operations for
+Synthetic tests. This authentication provides an extra layer of security to make sure that only the verified users can create or modify tests that can run through Synthetic
+PoPs.
+Configuration of Synthetic tests: The users in this group, with this permission and the Owner role, can create, modify, and delete Synthetic tests.
+Configuration of Synthetic credentials: The users with this permission can create and delete the credentials that are used when running Synthetic tests.
+Access to use Synthetic credentials: The users with this permission can run Synthetic tests that require user credentials to run Synthetic test script.
+View Synthetic test results: The users with this permission can view the details of the Synthetic tests that were run, including any logs or screenshots that were
+taken while running the Synthetic tests.
+
+<h3>Instana Synthetic PoP</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+d
+Synthetic types.
+Active Test Count
+The number of running Synthetic tests for all Synthetic
+types.
+API Simple Workload
+The workload for API Simple tests that is running in the HTTP
+playback engine.
+API Script Workload
+The workload for API Script tests that is running in the
+Javascript playback engine.
+Browser Test Workload The workload for Browser script, Webpage script, and Webpage
+simple tests that are running on the Browserscript playback
+engine.
+1418 IBM Instana Observability
+
+<h3>Synthetic PoP (point of</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+presence)
+The agent where the Synthetic tests are executed. It runs as a
+set of Kubernetes pods in the Kubernetes cluster.
+
+<h3>Creating Synthetic test credentials</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+When you adopt Synthetic monitoring, it is essential to consider the potential security risks and take the appropriate steps to protect your systems and prevent
+unauthorized access. Consider the following guidelines to optimize the secure usage of scripted Synthetic tests.
+
+<h3>Synthetic test execution types</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+stem, application, or credential manager capabilities to create the credential and limit its scope. The Synthetic PoP requires that each Synthetic test
+script that requires credentials to run provides the credentials to Instana. You manage the scope and permission of the credential when you create it. Instana is only a
+user of the credential. When you create credentials, ensure that it is used for accessing only those application or website actions that are required for the Synthetic PoP to
+run the Synthetic test.
+Access to only those application or website actions that are required for the Synthetic PoP to run the Synthetic test.
+Expected use of the Synthetic test scripts includes script statements that can be run by any Instana user with the appropriate permission.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:infragraph/AwsIamRole</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:infragraph/AwsIamRole</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>AwsIamRole</td></tr>
+<tr><td><b>product</b></td><td>infragraph</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>10</td></tr></table>
+
+<h2>Overview</h2>
+AwsIamRole type from infragraph.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>assume_role_policy_document</td><td>string</td><td></td><td></td></tr>
+<tr><td>aws_resource</td><td>AwsResource</td><td></td><td></td></tr>
+<tr><td>description</td><td>string</td><td></td><td></td></tr>
+<tr><td>last_used_date</td><td>google.protobuf.Timestamp</td><td></td><td></td></tr>
+<tr><td>last_used_region</td><td>string</td><td></td><td></td></tr>
+<tr><td>max_session_duration</td><td>int32</td><td></td><td></td></tr>
+<tr><td>path</td><td>string</td><td></td><td></td></tr>
+<tr><td>permissions_boundary_arn</td><td>string</td><td></td><td></td></tr>
+<tr><td>permissions_boundary_type</td><td>string</td><td></td><td></td></tr>
+<tr><td>role</td><td>BaseRole</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>AwsIamRole</b>:
+
+<h3>Map an IAM role</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+mapRoles: |
+ - rolearn: arn:aws:iam::<account-id>:role/MyEksRole
+ username: my-eks-role
+ groups:
+ - system:masters
+
+<h3>What is IAM?</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. With IAM, you can manage permissions that control which AWS resources users can access. You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources. IAM provides the infrastructure necessary to control authentication and authorization for your AWS accounts.
+Identities
+When you create an AWS account, you begin with one sign-in identity called the AWS account root user that has complete access to all AWS services and resources. We strongly recommend that you don't use the root user for everyday tasks.
+
+<h3>Copy the configurations in the code block of the IAM roles topic to a IAM_permission.json file. These configurations are used for the needed IAM role for the</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+EC2 virtual machine that runs the Instana AWS agent and enable the AWS agent to discover and monitor your AWS resources. Then, create an IAM role with the 
+IAM_permission.json file. For more information, see Creating a role to delegate permissions to an IAM user.
+
+<h3>Access management for AWS resources</h3>
+<small><i>Source: aws_documentation.md (aws)</i></small>
+
+AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. When a principal makes a request in AWS, the AWS enforcement code checks whether the principal is authenticated (signed in) and authorized (has permissions). You manage access in AWS by creating policies and attaching them to IAM identities or AWS resources. Policies are JSON documents in AWS that, when attached to an identity or resource, define their permissions. For more information about policy types and uses, see Policies and permissions in AWS Identity and Access Management.
+For details about the rest of the authentication and authorization process, see How IAM works.
+During authorization, the AWS enforcement code uses values from the request context to check for matching policies and determine whether to allow or deny the request.
+AWS checks each policy that applies to the context of the request.
+
+<h3>5.1.1  Installing Storage Virtualize for Public Cloud on AWS</h3>
+<small><i>Source: redp5671.md (turbonomic)</i></small>
+
+s template, AWS CloudFormation might require an unrecognized capability: CAPABILITY \_AUTO\_EXPAND. Check the capabilities of these resources.
+
+Stack description
+
+• lacknowledge that AWS CloudFormation might create IAM resources with custom names.
+
+Step 2: Specify stack details
+
+• I acknowledge that AWS CloudFormation might require the following capability:
+
+Parameters (17)
+
+CAPABILITY \_AUTO\_EXPAND
+
+Q Search
+
+Key
+
+AccessSubnetCIDR
+
+AllowedIPRange
+
+AvailabilityZone
+
+Confirmpassword
+
+IDil Oroctem ll'drolien foe Dhl' Aioud, Otocl Daiinn cclont'ne ond t'nclient'n
+
+Figure 5-13   IBM Spectrum Virtualize for Public Cloud: Stack Review selections and finalization
+
+Figure 5-14   IBM Spectrum Virtualize for Public Cloud: CloudFormation Stack Final acknowledgment checkboxes
+
+Cim.
+
+<h3>Provision AWS resources: Instana requires the storage type</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+: 
+"sts.amazonaws.com"
+ }
+ }
+ }
+ ]
+}
+Attach the newly created IAM policy.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:infragraph">infragraph Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:infragraph">Category:infragraph</a>
+</body>
+</html>

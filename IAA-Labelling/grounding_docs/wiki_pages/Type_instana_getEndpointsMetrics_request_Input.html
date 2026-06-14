@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/getEndpointsMetrics_request_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/getEndpointsMetrics_request_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>getEndpointsMetrics_request_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>11</td></tr></table>
+
+<h2>Overview</h2>
+getEndpointsMetrics_request_Input type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>applicationBoundaryScope</td><td>mutationInput_getEndpointsMetrics_input_applicationBoundaryScope</td><td></td><td></td></tr>
+<tr><td>applicationId</td><td>mutationInput_getEndpointsMetrics_input_applicationId</td><td></td><td>Filter by application ID</td></tr>
+<tr><td>endpointId</td><td>mutationInput_getEndpointsMetrics_input_endpointId</td><td></td><td>An Instana generated unique identifier for an Endpoint. If specified, the list of results will be filtered for the specified Endpoint ID. Eg `NCRq5oYnan5x-PkdTPQwLLUdu5M`.</td></tr>
+<tr><td>endpointTypes</td><td>mutationInput_getEndpointsMetrics_input_endpointTypes_items</td><td>Yes</td><td>A list of endpoint types, each of which is a string. An endpoint can specified for a database, an SDK, etc.</td></tr>
+<tr><td>excludeSynthetic</td><td>Boolean</td><td></td><td>A variable used to specify whether synthetic endpoints should be excluded. If set to 'true', synthetic endpoints will be excluded from the result.</td></tr>
+<tr><td>metrics</td><td>mutationInput_getEndpointsMetrics_input_metrics_items_Input</td><td>Yes</td><td>Grouped metric details like `errors.mean`, `calls.sum`.</td></tr>
+<tr><td>nameFilter</td><td>mutationInput_getEndpointsMetrics_input_nameFilter</td><td></td><td>Name of application</td></tr>
+<tr><td>order</td><td>mutationInput_getEndpointsMetrics_input_order_Input</td><td></td><td></td></tr>
+<tr><td>pagination</td><td>mutationInput_getEndpointsMetrics_input_pagination_Input</td><td></td><td></td></tr>
+<tr><td>serviceId</td><td>mutationInput_getEndpointsMetrics_input_serviceId</td><td></td><td>The serviceId this endpoint belongs to.</td></tr>
+<tr><td>timeFrame</td><td>mutationInput_getEndpointsMetrics_input_timeFrame_Input</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input getEndpointsMetrics_request_Input {
+  applicationBoundaryScope: mutationInput_getEndpointsMetrics_input_applicationBoundaryScope
+
+  # An Instana generated unique identifier for an Application. If specified, the list of results will be filtered for the specified Application ID. Eg: `Av62RoIKQv-A3n6DbMQh9g`.
+# One can see the application id from Instana UI by going to an Application Perspective page. In the URL, there will be `appId=Av62RoIKQv-A3n6DbMQh9g`.
+# Alternatively, one can use `Get applications` API endpoint to get the application id in `id` parameter.
+  applicationId: mutationInput_getEndpointsMetrics_input_applicationId
+
+  # An Instana generated unique identifier for an Endpoint. If specified, the list of results will be filtered for the specified Endpoint ID. Eg `NCRq5oYnan5x-PkdTPQwLLUdu5M`.
+# One can see the endpoint id from Instana UI by going to an Endpoint page. In the URL, there will be `endpointId=NCRq5oYnan5x-PkdTPQwLLUdu5M`.
+# Alternatively, one can use `Get endpoints` API endpoint to get the endpoint id in `id` parameter.
+  endpointId: mutationInput_getEndpointsMetrics_input_endpointId
+
+  # A list of endpoint types, each of which is a string. An endpoint can specified for a database, an SDK, etc.
+  endpointTypes: <a href="mutationInput_getEndpointsMetrics_input_endpointTypes_items]"># A variable used to specify whether synthetic endpoints should be excluded. If set to 'true', synthetic endpoints will be excluded from the result.
+  excludeSynthetic: Boolean
+
+  # A list of objects each of which defines a metric and the (statistical) aggregation -- MEAN, SUM, MAX, etc -- that should be used to summarize it for the defined time frame. Eg: `[{ 'metric': 'latency', 'aggregation': 'MEAN'}</a>`. To know more about supported metrics and its aggregation, See `Get Metric catalog`.
+  metrics: [mutationInput_getEndpointsMetrics_input_metrics_items_Input]!
+
+  # filter by endpoint name with `contains` semantic. Eg: Let's say there are 2 Endpoint names `GET /api/fetch` and `GET /api/update`, you can set `GET /api/` here to include the two Endpoints.
+  nameFilter: mutationInput_getEndpointsMetrics_input_nameFilter
+  order: mutationInput_getEndpointsMetrics_input_order_Input
+  pagination: mutationInput_getEndpointsMetrics_input_pagination_Input
+
+  # An Instana generated unique identifier for a Service. If specified, the list of results will be filtered for the specified Service ID. Eg: `3feb3dcd206c166ef2b41c707e0cd38d7cd325aa`.
+# One can see the service id from Instana UI by going to a Service page. In the URL, there will be `serviceId=3feb3dcd206c166ef2b41c707e0cd38d7cd325aa`.
+# Alternatively, one can use `Get services` API endpoint to get the service id in `id` parameter.
+  serviceId: mutationInput_getEndpointsMetrics_input_serviceId
+  timeFrame: mutationInput_getEndpointsMetrics_input_timeFrame_Input
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>getEndpointsMetrics_request_Input</b>:
+
+<h3>Endpoints</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Endpoints define the API of a service and provide a fine-grained view into what operations are exposed by the services. Every call to a service happens on a single
+endpoint. Every endpoint has a single, automatically discovered type: BATCH, SHELL, DATABASE, HTTP, MESSAGING, RPC. Like services, endpoints can be viewed
+through the lens of an application perspective.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

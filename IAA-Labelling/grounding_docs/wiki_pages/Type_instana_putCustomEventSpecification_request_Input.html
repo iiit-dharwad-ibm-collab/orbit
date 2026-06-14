@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/putCustomEventSpecification_request_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/putCustomEventSpecification_request_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>putCustomEventSpecification_request_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>10</td></tr></table>
+
+<h2>Overview</h2>
+putCustomEventSpecification_request_Input type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>actions</td><td>mutationInput_postCustomEventSpecification_input_actions_items_Input</td><td>Yes</td><td>List of action configurations.</td></tr>
+<tr><td>description</td><td>mutationInput_postCustomEventSpecification_input_description</td><td></td><td>The description provided, if any.</td></tr>
+<tr><td>enabled</td><td>Boolean</td><td></td><td>Set this flag to `true` if custom rule configurations has to be considered.</td></tr>
+<tr><td>entityType</td><td>mutationInput_postCustomEventSpecification_input_entityType</td><td></td><td>The category of the affected entity.</td></tr>
+<tr><td>expirationTime</td><td>BigInt</td><td></td><td></td></tr>
+<tr><td>name</td><td>mutationInput_postCustomEventSpecification_input_name</td><td></td><td>Name of the group.</td></tr>
+<tr><td>query</td><td>mutationInput_postCustomEventSpecification_input_query</td><td></td><td>query</td></tr>
+<tr><td>ruleLogicalOperator</td><td>mutationInput_postCustomEventSpecification_input_ruleLogicalOperator</td><td></td><td></td></tr>
+<tr><td>rules</td><td>mutationInput_postCustomEventSpecification_input_rules_items_Input</td><td>Yes</td><td>Specify custom rule configuration apart from Instana predefined rules. This rule has the highest precedence. This is only available for HTTP endpoints.</td></tr>
+<tr><td>triggering</td><td>Boolean</td><td></td><td>Optional flag to indicate whether an Incident is also triggered or not.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input putCustomEventSpecification_request_Input {
+  actions: <a href="mutationInput_postCustomEventSpecification_input_actions_items_Input]">description: mutationInput_postCustomEventSpecification_input_description
+  enabled: Boolean
+  entityType: mutationInput_postCustomEventSpecification_input_entityType!
+  expirationTime: BigInt
+  name: mutationInput_postCustomEventSpecification_input_name!
+  query: mutationInput_postCustomEventSpecification_input_query
+  ruleLogicalOperator: mutationInput_postCustomEventSpecification_input_ruleLogicalOperator
+  rules: [mutationInput_postCustomEventSpecification_input_rules_items_Input</a>!
+  triggering: Boolean
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>putCustomEventSpecification_request_Input</b>:
+
+<h3>Custom events parameters</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+bject with string values that can be used to send metadata to Instana just for this singular event. In contrast to the usage of the
+metadata API, this metadata is not included in subsequent beacons.
+customMetric
+(double, optional)
+Custom metric data with precision up to 4 decimal places. Do not include sensitive information in this metric.
+Custom events example
+Instana.reportEvent('myCustomEvent', {
+ startTime: Date.now() - 500,
+ duration: 300,
+ viewName: 'overridenViewName',
+ backendTracingId: '31ab91fc1092',
+ meta: {
+ state: 'running'
+ },
+ customMetric: 123.4567
+1530 IBM Instana Observability
+
+});
+
+<h3>EventOptions</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+The following table lists the EventOptions:
+Parameter
+Description
+startTime (int)
+A timestamp in milliseconds since Epoch indicating at which time the event started. Falls back to now() - duration when not defined.
+duration (int)
+The duration in milliseconds of how long the event lasted. The default is zero.
+viewName
+(String)
+You can pass a String to group the request to a view. If you send nil explicitly, the viewName is ignored. Alternatively, you can leave out the
+parameter viewName to use the current view name that you set in setView(String).
+meta
+(Map<String, 
+String>)
+A JavaScript object with string values, which can be used to send metadata to Instana just for this singular event. In contrast to the usage of the
+metadata API, this metadata is not included in subsequent beacons.
+backendTracingI
+D (String)
+Identifier to create a backend trace for this event.
+customMetric
+(double)
+Custom metric data with precision up to 4 decimal places.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

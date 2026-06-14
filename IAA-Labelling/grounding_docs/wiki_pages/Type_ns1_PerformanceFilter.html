@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:ns1/PerformanceFilter</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:ns1/PerformanceFilter</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>PerformanceFilter</td></tr>
+<tr><td><b>product</b></td><td>ns1</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>7</td></tr></table>
+
+<h2>Overview</h2>
+PerformanceFilter type from ns1.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>area</td><td>String</td><td></td><td>Geographic region. It can be specified as a country code or</td></tr>
+<tr><td>asn</td><td>Int</td><td></td><td>Autonomous System Number (ASN) by which to filter results.</td></tr>
+<tr><td>endTime</td><td>EndTimeFrame</td><td></td><td>(absolute or relative) for the end of the time range (ISO8601)</td></tr>
+<tr><td>jobs</td><td>String</td><td>Yes</td><td>Filter the result by the given Pulsar Job(s)</td></tr>
+<tr><td>period</td><td>String</td><td></td><td>Time period expressed as a difference from the current timestamp. Period can be used alone, without specifying start or end; i.e. period=1h means "the last one hour". It also can be used with either start or end, but not both. I.e. period=1h&start=1707591600 means "calculate end time by adding one hour to start". In the current implementation, if you specify something like period=1h&end=1707591600, the end date is ignored and the time range is treated as only period=1h.</td></tr>
+<tr><td>regionParentPrefix</td><td>String</td><td></td><td>filter by the region parent prefix (R_)</td></tr>
+<tr><td>startTime</td><td>StartTimeFrame</td><td></td><td>(absolute or relative) for the beginning of the time range (ISO8601)</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input PerformanceFilter {
+  # Filter the result by the given Pulsar Job(s)
+  jobs: [String]
+  # Time period expressed as a difference from the current
+# timestamp. Period can be used alone, without specifying start or end;
+# i.e. period=1h means "the last one hour". It also can be used with
+# either start or end, but not both. I.e. period=1h&start=1707591600
+# means "calculate end time by adding one hour to start". In the current
+# implementation, if you specify something like
+# period=1h&end=1707591600, the end date is ignored and the time range
+# is treated as only period=1h.
+  period: String
+  # (absolute or relative) for the beginning of the time range (ISO8601)
+  startTime: StartTimeFrame
+  # (absolute or relative) for the end of the time range (ISO8601)
+  endTime: EndTimeFrame
+
+  # Geographic region. It can be specified as a country code or
+# country with subdivision. Also, 6 major regions can be used: NA (North
+# America), SA (South Africa), AF (Africa), EU (Europe) and OC
+# (Oceania). To differentiate between Country/Subdivision and Region,
+# the Region must have a R_ prefix.
+  area: String
+  # Autonomous System Number (ASN) by which to filter results.
+  asn: Int
+
+  # filter by prefix like "R_"
+  regionParentPrefix: String
+}
+</code></pre>
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:instana/ApplicationFilter">instana/ApplicationFilter</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>ns1.PerformanceFilter</b> maps to:
+
+<h3><a href="#Type:instana/ApplicationFilter">instana.ApplicationFilter</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>PerformanceFilter Field</th><th>ApplicationFilter Field</th><th>Reason</th></tr>
+<tr><td>startTime</td><td>timeFrame</td><td></td></tr>
+<tr><td>endTime</td><td>timeFrame</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:ns1">ns1 Product Page</a></li>
+<li><a href="#Type:instana/ApplicationFilter">instana.ApplicationFilter</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:ns1">Category:ns1</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

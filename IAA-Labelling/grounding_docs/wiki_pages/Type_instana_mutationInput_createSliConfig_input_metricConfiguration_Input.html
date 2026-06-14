@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/mutationInput_createSliConfig_input_metricConfiguration_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/mutationInput_createSliConfig_input_metricConfiguration_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>mutationInput_createSliConfig_input_metricConfiguration_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+Details regarding the metric to be configured, including the metric name, threshold, and aggregation method
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>metricAggregation</td><td>query_getAllSliConfigs_items_metricConfiguration_metricAggregation</td><td></td><td></td></tr>
+<tr><td>metricName</td><td>String</td><td></td><td>Defines the name of the metric to be monitored. Examples include `calls` and `latency`</td></tr>
+<tr><td>threshold</td><td>NonNegativeFloat</td><td></td><td>Specifies the threshold value for the metric being monitored</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+# Details regarding the metric to be configured, including the metric name, threshold, and aggregation method
+input mutationInput_createSliConfig_input_metricConfiguration_Input {
+  metricAggregation: query_getAllSliConfigs_items_metricConfiguration_metricAggregation
+
+  # Defines the name of the metric to be monitored. Examples include `calls` and `latency`
+  metricName: String!
+
+  # Specifies the threshold value for the metric being monitored
+  threshold: NonNegativeFloat
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>mutationInput_createSliConfig_input_metricConfiguration_Input</b>:
+
+<h3>Copy the configuration file</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+COPY config.yaml /app/otel-dc-genai-1.0.10/config/config.yaml
+
+<h3>Update your application configuration</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+export OTEL_EXPORTER_OTLP_INSECURE=false
+The new configuration is shown in the following example.
+export OTEL_RESOURCE_ATTRIBUTES="INSTANA_PLUGIN=genai" 
+export TRACELOOP_BASE_URL=<instana-otlp-endpoint>:4317 
+export TRACELOOP_HEADERS="x-instana-key=<agent-key>,x-instana-host=<host>" 
+export TRACELOOP_METRICS_ENABLED=true export TRACELOOP_LOGGING_ENABLED=true 
+export OTEL_EXPORTER_OTLP_INSECURE=false
+The following items are changed.
+OTEL_RESOURCE_ATTRIBUTES="INSTANA_PLUGIN=genai" is added to process your data as generative AI telemetry.
+TRACELOOP_METRICS_ENDPOINT is removed for the metrics to flow through the same endpoint as traces
+
+<h3>Confirm the installation and configuration by running the following Python code:</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+import os, types, time, random
+from ibm_watsonx_ai.metanames import GenTextParamsMetaNames
+from ibm_watsonx_ai.foundation_models import ModelInference
+from pprint import pprint
+from traceloop.sdk import Traceloop
+from traceloop.sdk.decorators import workflow
+from langchain_ibm import WatsonxLLM
+Traceloop.init(app_name="watsonx_chat_service")
+def watsonx_llm_init() -> ModelInference:
+ watsonx_llm_parameters = {
+ GenTextParamsMetaNames.DECODING_METHOD: "sample",
+ GenTextParamsMetaNames.MAX_NEW_TOKENS: 100,
+ GenTextParamsMetaNames.MIN_NEW_TOKENS: 1,
+ GenTextParamsMetaNames.TEMPERATURE: 0.5,
+ GenTextParamsMetaNames.TOP_K: 50,
+ GenTextParamsMetaNames.TOP_P: 1,
+ }
+ models = <a href="'ibm/granite-3-2-8b-instruct',">'ibm/granite-3-3-8b-instruct'</a>
+ model = random.choice(models)
+ watsonx_llm = WatsonxLLM(
+ model_id=model,
+ url=os.getenv("WATSONX_URL"),
+ apikey=os.getenv("WATSONX_API_KEY"),
+ project_id=os.getenv("WATSONX_PROJECT_ID"),
+ params=watsonx_llm_parameters,
+ )
+ return watsonx_llm
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

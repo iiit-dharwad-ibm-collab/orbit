@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/queryInput_getEvents_eventTypeFilters_items</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/queryInput_getEvents_eventTypeFilters_items</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>queryInput_getEvents_eventTypeFilters_items</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>ENUM</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+queryInput_getEvents_eventTypeFilters_items type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>CHANGE</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>INCIDENT</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>ISSUE</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+enum queryInput_getEvents_eventTypeFilters_items {
+  INCIDENT
+  ISSUE
+  CHANGE
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>queryInput_getEvents_eventTypeFilters_items</b>:
+
+<h3>Example 3: Synthetic tests event-based availability</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+99,
+ "lastUpdated": 1742587582774,
+ "entity": {
+1976 IBM Instana Observability
+
+ "type": "synthetic",
+ "syntheticTestIds": [
+ "lLW0jCW8mZRmdrEZ1cno"
+ ],
+ "tagFilterExpression": {
+ "type": "EXPRESSION",
+ "logicalOperator": "AND",
+ "elements": <a href="]">}
+ },
+ "indicator": {
+ "type": "eventBased",
+ "threshold": 0,
+ "operator": null,
+ "aggregation": null,
+ "badEventsFilter": {
+ "type": "TAG_FILTER",
+ "name": "call.erroneous",
+ "stringValue": null,
+ "numberValue": null,
+ "booleanValue": true,
+ "floatValue": null,
+ "key": null,
+ "value": null,
+ "operator": "EQUALS",
+ "entity": "NOT_APPLICABLE"
+ },
+ "goodEventsFilter": {
+ "type": "TAG_FILTER",
+ "name": "call.erroneous",
+ "stringValue": null,
+ "numberValue": null,
+ "booleanValue": false,
+ "floatValue": null,
+ "key": null,
+ "value": null,
+ "operator": "EQUALS",
+ "entity": "NOT_APPLICABLE"
+ },
+ "blueprint": "availability"
+ },
+ "timeWindow": {
+ "type": "rolling",
+ "duration": 1,
+ "durationUnit": "week"
+ },
+ "tags": [</a>
+ }
+
+<h3>Example 6: Kubernetes cluster memory saturation (event-based)</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+ull,
+ "value": 0.7,
+ "operator": "LESS_THAN",
+ "entity": "NOT_APPLICABLE"
+ },
+ "badEventsFilter": {
+ "type": "TAG_FILTER",
+ "name": "cpu.usage",
+ "stringValue": null,
+ "numberValue": 0,
+ "booleanValue": null,
+ "floatValue": 0.7,
+ "key": null,
+ "value": 0.7,
+ "operator": "GREATER_OR_EQUAL_THAN",
+ "entity": "NOT_APPLICABLE"
+ },
+ "goodEventInfraMetric": "cpu.usage",
+ "badEventInfraMetric": "cpu.usage",
+ "blueprint": "custom",
+ "operator": null,
+ "threshold": 0,
+ "aggregation": "MEAN"
+ },
+ "timeWindow": {
+ "type": "rolling",
+ "duration": 1,
+ "durationUnit": "week",
+ "timezone": "America/New_York"
+ },
+ "tags": [
+ "infrastructure",
+ "aws",
+ "ecs",
+ "custom"
+ ]
+}
+Basic APIs to create/get/update/delete SLO configurations
+The following basic APIs can create, get, update and delete SLO configuration without UI interactions.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

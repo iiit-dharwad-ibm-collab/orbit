@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:hcp_terraform/HcpTerraformRun</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:hcp_terraform/HcpTerraformRun</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>HcpTerraformRun</td></tr>
+<tr><td><b>product</b></td><td>hcp_terraform</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>5</td></tr></table>
+
+<h2>Overview</h2>
+HcpTerraformRun type from hcp_terraform.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>base</td><td>Base</td><td></td><td></td></tr>
+<tr><td>is_destroyed</td><td>bool</td><td></td><td></td></tr>
+<tr><td>message</td><td>string</td><td></td><td></td></tr>
+<tr><td>status</td><td>string</td><td></td><td></td></tr>
+<tr><td>workspace_id</td><td>string</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>HcpTerraformRun</b>:
+
+<h3>HCP Terraform's run environment</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+HCP Terraform is designed as an execution platform for Terraform, and most of its features are based around its ability to perform Terraform runs in a fleet of disposable worker VMs. This page describes some features of the run environment for Terraform runs managed by HCP Terraform.
+
+<h3>HCP Terraform Plans and Features</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+HCP Terraform is a platform that performs Terraform runs to provision infrastructure, either on demand or in response to various events. Unlike a general-purpose continuous integration (CI) system, it is deeply integrated with Terraform's workflows and data, which allows it to make Terraform significantly more convenient and powerful.
+Hands On: Try our What is HCP Terraform - Intro and Sign Up tutorial.
+
+<h3>Remote Terraform Execution</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+HCP Terraform runs Terraform on disposable virtual machines in its own cloud infrastructure by default. You can leverage HCP Terraform agents to run Terraform on your own isolated, private, or on-premises infrastructure. Remote Terraform execution is sometimes referred to as "remote operations."
+Remote execution helps provide consistency and visibility for critical provisioning operations.
+To learn more about workspace runs, refer to Runs and Remote Operations. To learn more about Stacks runs, refer to Stack deployment runs.
+
+<h3>HCP Packer</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+For information about using HCP Packer to store metadata about build artifacts, refer to the HCP Packer documentation or sign into HCP to explore HCP Packer features.
+
+<h3>The Terraform Worker VMs</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+HCP Terraform performs Terraform runs in single-use Linux virtual machines, running on an x86_64 architecture.
+The operating system and other software installed on the worker VMs is an internal implementation detail of HCP Terraform. It is not part of a stable public interface, and is subject to change at any time.
+Before Terraform is executed, the worker VM's shell environment is populated with environment variables from the workspace, the selected version of Terraform is installed, and the run's Terraform configuration version is made available.
+Changes made to the worker during a run are not persisted to subsequent runs, since the VM is destroyed after the run is completed. Notably, this requires some additional care when installing additional software with a local-exec provisioner; see Installing Additional Tools for more details.
+
+<pre><code>
+local-exec
+</code></pre>
+
+Hands-on: Try the Upgrade Terraform Version in HCP Terraform tutorial.
+
+<h3>Run Tasks</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+Run Tasks let workspaces execute tasks in external systems at specific points in the HCP Terraform run lifecycle.
+There are several partner integrations already available for workspaces, or you can create your own based on the API.
+- More info: Run Tasks
+
+<h3>Terraform Runs</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+For workspaces with remote operations enabled (the default), HCP Terraform performs Terraform runs on its own disposable virtual machines, using that workspace's configuration, variables, and state.
+Refer to Terraform Runs and Remote Operations for more details.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:hcp_terraform">hcp_terraform Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:hcp_terraform">Category:hcp_terraform</a>
+</body>
+</html>

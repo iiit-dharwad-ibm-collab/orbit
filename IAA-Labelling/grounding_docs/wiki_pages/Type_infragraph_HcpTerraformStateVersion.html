@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:infragraph/HcpTerraformStateVersion</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:infragraph/HcpTerraformStateVersion</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>HcpTerraformStateVersion</td></tr>
+<tr><td><b>product</b></td><td>infragraph</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>5</td></tr></table>
+
+<h2>Overview</h2>
+StateVersion is a type containing HCP State Version specific fields.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>base</td><td>Base</td><td></td><td></td></tr>
+<tr><td>current_run_id</td><td>string</td><td></td><td></td></tr>
+<tr><td>edge</td><td>Edge</td><td>Yes</td><td></td></tr>
+<tr><td>hosted_state_download_url</td><td>string</td><td></td><td></td></tr>
+<tr><td>status</td><td>string</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>HcpTerraformStateVersion</b>:
+
+<h3>--safeguards-version</h3>
+<small><i>Source: azure-aks-2.md (azure)</i></small>
+
+Preview
+
+The version of deployment safeguards to use. Default "v1.0.0" Use the ListSafeguardsVersions API to discover available versions.
+
+<h3>If your minSdkVersion is earlier than 24, in your module (app-level) Gradle file (usually app/build.gradle), add the following code:</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+android {
+ compileOptions {
+ sourceCompatibility JavaVersion.VERSION_1_8
+ targetCompatibility JavaVersion.VERSION_1_8
+ }
+}
+
+<h3>To upgrade to a higher Instana backend version, you can use the following subcommands of the versions command. All commands have an optional --</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+rsion flag.
+Otherwise, all supported upgrade versions are displayed. You can then select a version. Alternatively, you can configure the backend version that you want to
+upgrade to in the core spec and apply the spec, see the following sample code.
+...
+spec:
+370 IBM Instana Observability
+
+ imageConfig:
+ tag: 3.xxx.xxx-0
+...
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:infragraph/HcpResource">infragraph/HcpResource</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:infragraph/HcpTerraformOrganization">infragraph/HcpTerraformOrganization</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:infragraph/HcpTerraformRun">infragraph/HcpTerraformRun</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/None">unknown/None</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:unknown/hcp_terraform_state">unknown/hcp_terraform_state</a> (via AnyTool (Llama))</li>
+<li><a href="#Type:infragraph/PackerRegistry">infragraph/PackerRegistry</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:infragraph/PackerVersion">infragraph/PackerVersion</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:infragraph/HcpOrganization">infragraph/HcpOrganization</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>infragraph.HcpTerraformStateVersion</b> maps to:
+
+<h3><a href="#Type:infragraph/HcpResource">infragraph.HcpResource</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:infragraph/HcpTerraformOrganization">infragraph.HcpTerraformOrganization</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:infragraph/HcpTerraformRun">infragraph.HcpTerraformRun</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/None">unknown.None</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:unknown/hcp_terraform_state">unknown.hcp_terraform_state</a></h3>
+<i>Mapped by: AnyTool (Llama)</i>
+
+<i>No field-level mappings available.</i>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:infragraph">infragraph Product Page</a></li>
+<li><a href="#Type:unknown/None">unknown.None</a></li>
+<li><a href="#Type:unknown/hcp_terraform_state">unknown.hcp_terraform_state</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:infragraph">Category:infragraph</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

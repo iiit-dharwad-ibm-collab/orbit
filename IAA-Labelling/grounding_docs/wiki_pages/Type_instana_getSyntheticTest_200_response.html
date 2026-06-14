@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/getSyntheticTest_200_response</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/getSyntheticTest_200_response</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>getSyntheticTest_200_response</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>24</td></tr></table>
+
+<h2>Overview</h2>
+getSyntheticTest_200_response type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>active</td><td>Boolean</td><td></td><td></td></tr>
+<tr><td>applicationId</td><td>query_getSyntheticTests_items_applicationId</td><td></td><td>Filter by application ID</td></tr>
+<tr><td>applicationLabel</td><td>query_getSyntheticTests_items_applicationLabel</td><td></td><td></td></tr>
+<tr><td>applicationLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>applications</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>configuration</td><td>query_getSyntheticTests_items_configuration</td><td></td><td></td></tr>
+<tr><td>createdAt</td><td>BigInt</td><td></td><td>Action created time.</td></tr>
+<tr><td>createdBy</td><td>query_getSyntheticTests_items_createdBy</td><td></td><td></td></tr>
+<tr><td>customProperties</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>description</td><td>query_getSyntheticTests_items_description</td><td></td><td>The description provided, if any.</td></tr>
+<tr><td>id</td><td>query_getSyntheticTests_items_id</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>label</td><td>query_getSyntheticTests_items_label</td><td></td><td>Label of the entity</td></tr>
+<tr><td>locationDisplayLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>locationLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>locations</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>mobileAppLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>mobileApps</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>modifiedAt</td><td>BigInt</td><td></td><td>Action modified time.</td></tr>
+<tr><td>modifiedBy</td><td>query_getSyntheticTests_items_modifiedBy</td><td></td><td></td></tr>
+<tr><td>playbackMode</td><td>query_getSyntheticTests_items_playbackMode</td><td></td><td></td></tr>
+<tr><td>tenantId</td><td>String</td><td></td><td></td></tr>
+<tr><td>testFrequency</td><td>Int</td><td></td><td></td></tr>
+<tr><td>websiteLabels</td><td>String</td><td>Yes</td><td></td></tr>
+<tr><td>websites</td><td>String</td><td>Yes</td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type getSyntheticTest_200_response {
+  active: Boolean!
+  applicationId: query_getSyntheticTests_items_applicationId
+  applicationLabel: query_getSyntheticTests_items_applicationLabel
+  applicationLabels: <a href="String]">applications: [String</a>
+  configuration: query_getSyntheticTests_items_configuration!
+  createdAt: BigInt
+  createdBy: query_getSyntheticTests_items_createdBy
+  customProperties: JSON
+  description: query_getSyntheticTests_items_description
+  id: query_getSyntheticTests_items_id
+  label: query_getSyntheticTests_items_label!
+  locationDisplayLabels: <a href="String]">locationLabels: [String</a>
+  locations: <a href="String]!">mobileAppLabels: [String</a>
+  mobileApps: <a href="String]">modifiedAt: BigInt
+  modifiedBy: query_getSyntheticTests_items_modifiedBy
+  playbackMode: query_getSyntheticTests_items_playbackMode
+  tenantId: String
+  testFrequency: Int!
+  websiteLabels: [String</a>
+  websites: [String]
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>getSyntheticTest_200_response</b>:
+
+<h3>Fill scriptFile and bundle in the test</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+ctUnauthorized is true, it will throw on invalid certificates, such as expired or self-signed ones.
+ https:{ rejectUnauthorized: false },
+ // set additional headers
+ headers: {
+ Authorization: <code>Basic ${auth}</code>
+ },
+ timeout: {
+ request: 10000 //ms
+ }
+ }
+ );
+ console.log('Response statusCode:', gotResponse.statusCode);
+ // verify status code
+ assert.ok(gotResponse.statusCode == 200, "GET statusCode is " + gotResponse.statusCode + ", it should be 200");
+})();
+Instana API script
+to test httpbin APIs
+You can use the Instana API script to test the httpbin APIs in a
+synchronized way as follows:
+const assert = require('assert');
+async function getExample(){
+ var getOptions = {
+ url: 'https://httpbin.org/get',
+ https:{ rejectUnauthorized: false },
+ headers: {
+ 'Additional-Header': 'Additional-Header-Data'
+ }
+ };
+ let getResponse = await $got.get(getOptions);
+ console.info("Sample API - GET, response code: " + getResponse.statusCode);
+
+<h3>In Configuration: How will this test work?, enter the details depending on the test type that is selected in step 3.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+define specific content to include in the body of the request. Only one body element can be added. The body element is added to the test by
+the PoPs when the test is run.
+Validation String: You can define a string that should appear in the response when the test has run. Only one validation string element can be added. When
+the test is run, if the string is missing, the test fails.
+expectStatus: You can define the expected HTTP return code for the test. If the return code does not match when the test has run, the test fails. Only one
+expectStatus element can be added. Use the drop-down menu to select the desired expect condition. Use Add Validation to add more than one expect
+condition. You can add one of each type of expect condition to a test.
+expectMatch: You can provide a regular expression to check when the test runs. Only one expectMatch element can be added. If the expression is not
+matched when the test is run, the test fails. Use the drop-down menu to select expectMatch.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/Table_of_contents_lz</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/Table_of_contents_lz</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Table_of_contents_lz</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>19</td></tr></table>
+
+<h2>Overview</h2>
+Table_of_contents_lz type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>additional_comments</td><td>String</td><td></td><td></td></tr>
+<tr><td>archive_timestamp</td><td>DateTime</td><td></td><td></td></tr>
+<tr><td>data_source</td><td>String</td><td></td><td></td></tr>
+<tr><td>data_type</td><td>String</td><td></td><td></td></tr>
+<tr><td>event_method</td><td>String</td><td></td><td></td></tr>
+<tr><td>event_type</td><td>String</td><td></td><td></td></tr>
+<tr><td>file_name</td><td>String</td><td></td><td>Filename of library</td></tr>
+<tr><td>file_size</td><td>Float</td><td></td><td></td></tr>
+<tr><td>file_type</td><td>String</td><td></td><td></td></tr>
+<tr><td>ingested_by</td><td>String</td><td></td><td></td></tr>
+<tr><td>ingestion_point</td><td>String</td><td></td><td></td></tr>
+<tr><td>is_archived</td><td>Boolean</td><td></td><td>Whether the scan is archived</td></tr>
+<tr><td>lz_path</td><td>String</td><td></td><td></td></tr>
+<tr><td>meta_data</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>processing_endtime</td><td>DateTime</td><td></td><td></td></tr>
+<tr><td>processing_starttime</td><td>DateTime</td><td></td><td></td></tr>
+<tr><td>status</td><td>String</td><td></td><td>Current status</td></tr>
+<tr><td>timestamp</td><td>DateTime</td><td></td><td>When the update occurred</td></tr>
+<tr><td>uuid</td><td>ID</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Table_of_contents_lz {
+  additional_comments: String
+  archive_timestamp: DateTime
+  data_source: String!
+  data_type: String!
+  event_method: String
+  event_type: String
+  file_name: String
+  file_size: Float!
+  file_type: String!
+  ingested_by: String!
+  ingestion_point: String
+  is_archived: Boolean
+  lz_path: String!
+  meta_data: JSON
+  processing_endtime: DateTime
+  processing_starttime: DateTime
+  status: String!
+  timestamp: DateTime!
+  uuid: ID!
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Table_of_contents_lz</b>:
+
+<h3>LZ_SECRET_KEY:</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+LZ_SECURE: True
+If you are using AWS S3 storage, use following value within the concert-lzbucket-creds secret:
+
+<h3>Take a backup of the g_fwk_input_data_keys table by running the following command.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+CREATE TABLE g_fwk_input_data_keys_backup AS SELECT * FROM 
+g_fwk_input_data_keys;
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:cloudability/Result</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:cloudability/Result</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Result</td></tr>
+<tr><td><b>product</b></td><td>cloudability</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>2</td></tr></table>
+
+<h2>Overview</h2>
+Result type from cloudability.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>clusters</td><td>ClustersEntry</td><td>Yes</td><td></td></tr>
+<tr><td>meta</td><td>ResultMeta</td><td></td><td>Metadata about the report request and available fields.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Result {
+  clusters: <a href="ClustersEntry]">meta: ResultMeta
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Result</b>:
+
+<h3>Request Refetch and Reprocess in Cloudability</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+tml -->
+
+<h3>Reservation Portfolio End Point</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+0,
+	 "duration": 0,
+	 "type": "Compute Flex-CUD",
+	 "orgId": 108194,
+	 "service": "COMPUTE_ENGINE",
+	 "reservationId": "fda5efd3-ca2e-4c79-9dfd-2d16f1746bbe",
+	 "commitmentCategory": "Spend"
+ }
+ </a>
+ }
+ ],
+	 "aggregate": {
+ "quantity": 3,
+	 "unrealizedSavings": 0.000000,
+	 "netSavings": 0.000000,
+	 "overallUtilization": 0.000000,
+	 "effectiveSavingsRate": 0.000000,
+	 "coverage": 0.000000,
+	 "remainingCommitmentCost": 261.010000,
+	 "totalRemainingCost": 261.010000,
+	 "rcudCoverageAmount": 0.000000,
+	 "scudCoverageAmount": 0.000000,
+	 "spendCoveredResourceEligibleCost": 98.234687,
+	 "resourceCoveredSpendEligibleCost": 166.385452,
+	 "totalCoveredAmount": 0.000000,
+	 "spendTotalCoveredAmount": 166.385452,
+	 "resourceTotalCoveredAmount": 98.234687,
+	 "spendCommitmentEligibleCoverageCost": 1199.875958,
+	 "resourceCommitmentEligibleCoverageCost": 2769.947700,
+	 "relevantResourceCommitmentCoverageCost": 2868.182387,
+	 "relevantSpendCommitmentCoverageCost": 1366.261410,
+
+<h3>Vendor Credentials End Point (OCI)</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+o2xcda",
+ "userId": "ocid1.user.oc1..aaaaaaaaiqsrsbmubcsqt5oema7k66qjijbjqmomj5m6a4bu3qpf7opgz7za",
+ "groupId": "ocid1.group.oc1..aaaaaaaakshgi7v72falvtgwxgtay3tprboehpai3tclpa2u7dn4veigmhxq",
+ "region": "uk-london-1"
+ },
+ "createdAt": "2023-06-24T09:56:07Z",
+ "parentAccountId": "ocid1.tenancy.oc1..aaaaaaaa4pjpasfply4eky7dl6msfdt3doqpfpmbuw2aesigtvedd4oxhufa",
+ "consumerOrgId": ""
+ }
+ }
+
+curl -X POST 'https://api.cloudability.com/v3/vendors/oci/accounts?viewId=0
+\\
+-H 'Content-Type: application/json' \\
+-u ‘<a href="auth_token]:’">\\
+-d @- << EOF
+
+{
+ "vendorAccountId": "sample tenant OCID",
+ "tenancyId": "sample tenant OCID",
+ "ociCostReportSpec": {
+ "namespace": "bling",
+ "bucket": "sample tenant OCID",
+ "compartment": "sample tenant OCID"
+},
+ "type": "oci_user"
+}
+
+curl 
+'https://api.cloudability.com/v3/vendors/oci/accounts/[vendorAccountId</a>’\\
+-u ‘<a href="auth_token]:’">```
+
+<h3>Entra ID Groups APIs</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+PI, andgroupsUnitIdis the ID of the entra ID group.
+- pageNumberandpageSizeparameters are optional. Default value of pageNumber is 1,
+and the default value of pageSize is 10.
+
+- registeredUserId(string)– Frontdoor ID of a User.
+- userId(string)– External User ID (AD Groups ID).
+- email(string)– Email address.
+- pagination(object)– Contains paging info.
+
+- registeredUserId(string)– Frontdoor ID of a User.
+- userId(string)– External User ID (AD Groups ID).
+- email(string)– User’s email address.
+- pagination(object)– Metadata for paginated results:pageNumber(integer)– Current page number.pageSize(integer)– Number of results per page.totalCount(integer)– Total number of users returned.totalPages(integer)– Number of pages available.
+
+- pageNumber(integer)– Current page number.
+- pageSize(integer)– Number of results per page.
+- totalCount(integer)– Total number of users returned.
+- totalPages(integer)– Number of pages available.
+
+<h3>Cost Sharing Result Report End Points</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+Retrieve the Cost Sharing's result report.
+
+Attributes of a result report are:
+
+startDate- the start date of the cost data
+
+endDate- the end date of the cost data
+
+metric- the cost metric to use for this allocation
+
+Example Request - Retrieving Result Report
+
+Note:metricis required for any report using a non-Proportional type
+cost-sharing rule.
+
+- IBM Documentation Help
+
+```
+
+<h3>Request (17)</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+63436.0316036056"
+ },
+ {
+ "count": "0",
+ "max": "0",
+ "min": "0",
+ "sum": "0"
+ },
+ {
+ "count": "0",
+ "max": "0",
+ "min": "0",
+ "sum": "763436.0316036056"
+ },
+ {
+ "count": "0",
+ "max": "0",
+ "min": "0",
+ "sum": "0"
+ },
+ {
+ "count": "0",
+ "max": "0",
+ "min": "0",
+ "sum": "0"
+ },
+ {
+ "count": "0",
+ "max": "0",
+ "min": "0",
+ "sum": "0"
+ }
+ </a>
+ },
+ {
+ "dimensions": [
+ "big services"
+ ],
+ "metrics": [
+ {
+ "count": "0",
+ "max": "0",
+ "min": "0",
+ "sum": "135622.52503421396"
+ },
+ {
+ "count": "0",
+ "max": "0",
+ "min": "0",
+ "sum": "135622.52503421396"
+ },
+ {
+ "count": "0",
+ "max": "0",
+ "min": "0",
+ "sum": "0"
+ },
+ {
+ "count": "0",
+ "max": "0",
+ "min": "0",
+ "sum": "84070.49655704634"
+ },
+ {
+ "count": "0",
+ "max": "0",
+ "min": "0",
+ "sum": "0.10054724124811285"
+ },
+ {
+ "count": "0",
+ "max": "0",
+ "min": "0",
+ "sum": "219693.02159126033"
+ }
+ ]
+ }
+ ]
+}
+```
+
+<h3>Databricks End Points</h3>
+<small><i>Source: cloudability_documentation.md (cloudability)</i></small>
+
+",
+"discount": 50,
+"paymentModel": "Committed Contract"
+}
+]
+},
+"createdAt": "2024-03-20T13:55:57Z",
+"consumerOrgId": ""
+}
+}
+
+{
+"result": {
+"id": "c16a5b8d-0c80-4efd-97f8-a4370a97e90b",
+"vendorAccountName": "c16a5b8d-0c80-4efd-97f8-a4370a97e90b",
+"vendorAccountId": "c16a5b8d-0c80-4efd-97f8-a4370a97e90b",
+"vendorKey": "databricks",
+"verification": {
+"state": "archived"
+},
+"meta": {},
+"consumerOrgId": ""
+}
+}
+
+{
+ "cells": [
+ {
+ "cell_type": "code",
+ "execution_count": 0,
+ "metadata": {
+ "application/vnd.databricks.v1+cell": {
+ "cellMetadata": {},
+ "inputWidgets": {},
+ "nuid": "b7df6f6c-b571-4cbf-8321-f04c0c3ad88f",
+ "showTitle": false,
+ "title": ""
+ }
+ },
+ "outputs": <a href="],">"source": [
+ "%sql\n",
+ "DESCRIBE system.billing.list_prices;"
+ </a>
+ },
+ {
+ "cell_type": "code",
+ "execution_count": 0,
+ "metadata": {
+ "application/vnd.databricks.v1+cell": {
+ "cellMetadata": {},
+ "inputWidgets": {},
+ "nuid": "051de69e-5044-471d-917c-86a1d410105a",
+ "showTitle": false,
+ "title": ""
+ }
+ },
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:cloudability">cloudability Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:cloudability">Category:cloudability</a>
+</body>
+</html>

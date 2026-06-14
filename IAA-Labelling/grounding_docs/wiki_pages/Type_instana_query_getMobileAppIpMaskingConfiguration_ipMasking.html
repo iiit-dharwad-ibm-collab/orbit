@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_getMobileAppIpMaskingConfiguration_ipMasking</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_getMobileAppIpMaskingConfiguration_ipMasking</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_getMobileAppIpMaskingConfiguration_ipMasking</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>ENUM</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+query_getMobileAppIpMaskingConfiguration_ipMasking type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>DEFAULT</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>REMOVE_ALL_DETAILS</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+<tr><td>STRICT</td><td>ENUM_VALUE</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+enum query_getMobileAppIpMaskingConfiguration_ipMasking {
+  DEFAULT
+  STRICT
+  REMOVE_ALL_DETAILS
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_getMobileAppIpMaskingConfiguration_ipMasking</b>:
+
+<h3>Custom Geo IP mappings</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+/$UNIT-$TENANT.instana.io/api/mobile-app-monitoring/config/$MOBILE_APP_ID/geo-mapping-rules" \
+ -d 
+'network,latitude,longitude,accuracy_radius,city_name,subdivision_1_name,subdivision_1_iso_code,subdivision_2_name,subdivision_
+2_iso_code,country_name,country_iso_code,continent_name,continent_code
+
+<h3>Analyzing iOS app crashes with dSYM files</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+You can view details of iOS app crashes on Instana. The details include stack traces for all the active threads of your mobile app. These stack traces contain
+memory address and raw function name. You can use Instana to translate the stack trace into meaningful information.
+
+<h3>Listing supported mobile app monitoring tags</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+User interface
+You can see the available grouping and filtering tags for each beacon type within the mobile app monitoring analysis area by clicking Add filter or Add group.
+Figure 1. Available tags within Instana's user interface
+Instana REST API
+The following example Instana REST API calls to view the available grouping tags for sessionStart beacon type:
+curl -H "Authorization: apiToken $API_TOKEN" \
+ "https://$UNIT-$TENANT.instana.io/api/mobile-app-monitoring/catalog?beaconType=sessionStart&useCase=GROUPING&pretty"
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

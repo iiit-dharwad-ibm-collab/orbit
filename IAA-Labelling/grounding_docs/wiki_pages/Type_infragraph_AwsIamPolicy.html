@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:infragraph/AwsIamPolicy</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:infragraph/AwsIamPolicy</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>AwsIamPolicy</td></tr>
+<tr><td><b>product</b></td><td>infragraph</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+AwsIamPolicy type from infragraph.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>attachment_count</td><td>int32</td><td></td><td></td></tr>
+<tr><td>aws_resource</td><td>AwsResource</td><td></td><td></td></tr>
+<tr><td>policy</td><td>BasePolicy</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>AwsIamPolicy</b>:
+
+<h3>AWS</h3>
+<small><i>Source: kubecost.md (kubecost)</i></small>
+
+/aws-athena-query-results-*, so the IAM roles 
+defined above will automatically allow access to it. The bucket can have a canned ACL set to Private or 
+other permissions as needed.
+<ATHENA_REGION> is the AWS region Athena is running in
+<ATHENA_DATABASE> is the name of the database created by the Athena setup. The Athena database name 
+is available as the value (physical id) of AWSCURDatabase in the CloudFormation stack created above.
+<ATHENA_TABLE> is the name of the table created by the Athena setup The table name is typically the 
+database name with the leading athenacurcfn_ removed (but is not available as a CloudFormation stack 
+resource).
+<ATHENA_WORKGROUP> is the workgroup assigned to be used with Athena. Default value is Primary.
+<ATHENA_PROJECT_ID>is the AWS AccountID where the Athena CUR is.
+
+<h3>Copy the configurations in the code block of the IAM roles topic to a IAM_permission.json file. These configurations are used for the needed IAM role for the</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+EC2 virtual machine that runs the Instana AWS agent and enable the AWS agent to discover and monitor your AWS resources. Then, create an IAM role with the 
+IAM_permission.json file. For more information, see Creating a role to delegate permissions to an IAM user.
+
+<h3>5.1.1  Installing Storage Virtualize for Public Cloud on AWS</h3>
+<small><i>Source: redp5671.md (turbonomic)</i></small>
+
+s template, AWS CloudFormation might require an unrecognized capability: CAPABILITY \_AUTO\_EXPAND. Check the capabilities of these resources.
+
+Stack description
+
+• lacknowledge that AWS CloudFormation might create IAM resources with custom names.
+
+Step 2: Specify stack details
+
+• I acknowledge that AWS CloudFormation might require the following capability:
+
+Parameters (17)
+
+CAPABILITY \_AUTO\_EXPAND
+
+Q Search
+
+Key
+
+AccessSubnetCIDR
+
+AllowedIPRange
+
+AvailabilityZone
+
+Confirmpassword
+
+IDil Oroctem ll'drolien foe Dhl' Aioud, Otocl Daiinn cclont'ne ond t'nclient'n
+
+Figure 5-13   IBM Spectrum Virtualize for Public Cloud: Stack Review selections and finalization
+
+Figure 5-14   IBM Spectrum Virtualize for Public Cloud: CloudFormation Stack Final acknowledgment checkboxes
+
+Cim.
+
+<h3>Monitoring multiple AWS accounts</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+roles configuration.
+Instana Agent Tags
+Note that tags are only available along with the AWS Agent. More details on using tags are described here.
+AWS Compute Optimizer
+Instana provides an integration with AWS Compute Optimizer - a right-sizing tool for EC2 instances and autoscaling groups. After the integration is enabled, Instana sends
+up to 14 days of usage metrics from your environment to AWS for analysis. This analysis then yields automatic scaling recommendations that are available in your AWS
+console.
+To enable this integration, you must opt in with both AWS and Instana.
+Opt in with AWS
+To opt in with Instana, contact your customer service representative.
+Monitoring AWS ElastiCache
+The AWS ElastiCache sensor is automatically
+deployed and installed after you install the Instana agent.
+Note: Learn about the other supported AWS services with
+AWS documentation.
+732 IBM Instana Observability
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:infragraph">infragraph Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:infragraph">Category:infragraph</a>
+</body>
+</html>

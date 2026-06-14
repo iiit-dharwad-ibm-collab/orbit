@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/Source_repos_components</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/Source_repos_components</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Source_repos_components</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>2</td></tr></table>
+
+<h2>Overview</h2>
+Source_repos_components type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>component_id</td><td>ID</td><td></td><td>Component ID</td></tr>
+<tr><td>source_repo_id</td><td>ID</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Source_repos_components {
+  component_id: ID
+  source_repo_id: ID
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Source_repos_components</b>:
+
+<h3>Viewing a history of applications and components</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+You can view the build and deployment history of your applications in Concert, including the associated build
+artifacts and repositories. This feature provides a comprehensive view of the changes to build artifacts and
+repositories over time, as well as the associated scans and trends.
+Access control for applications, repositories, and build
+artifacts
+Concert applies role-based access control
+(RBAC) across applications, repositories, and build artifacts. Access to
+these assets is determined
+by the user’s role (L1 admin or L1 user) and their assigned access to specific
+applications or
+environments.
+
+<h3>Select the vulnerability scan File type and Scan source. Refer to the Supported vulnerability scan formats for</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+details.
+Note: For Vulnerability scan (source code) provide the following details:
+Branch Name (optional): Enter the branch name, if applicable.
+Commit Sha (optional): Enter the CommitSha, if applicable.
+Repository URL: Enter the URL of the repository.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

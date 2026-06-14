@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:infragraph/HcpTerraformOrganization</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:infragraph/HcpTerraformOrganization</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>HcpTerraformOrganization</td></tr>
+<tr><td><b>product</b></td><td>infragraph</td></tr>
+<tr><td><b>kind</b></td><td>MESSAGE</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+HcpTerraformOrganization is a type containing HCP TF Organization specific fields.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>agent_pool_id</td><td>string</td><td></td><td></td></tr>
+<tr><td>is_unified</td><td>bool</td><td></td><td></td></tr>
+<tr><td>organization</td><td>BaseOrganization</td><td></td><td></td></tr>
+</table>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>HcpTerraformOrganization</b>:
+
+<h3>hcpConfig</h3>
+<small><i>Source: IBMTurbonomic_8.16.5.md (turbonomic)</i></small>
+
+- description: HCP Config
+
+- reference: TerraformHcpBackendApiDTO
+
+<h3>HCP Terraform Plans and Features</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+HCP Terraform is a platform that performs Terraform runs to provision infrastructure, either on demand or in response to various events. Unlike a general-purpose continuous integration (CI) system, it is deeply integrated with Terraform's workflows and data, which allows it to make Terraform significantly more convenient and powerful.
+Hands On: Try our What is HCP Terraform - Intro and Sign Up tutorial.
+
+<h3>HCP Packer</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+For information about using HCP Packer to store metadata about build artifacts, refer to the HCP Packer documentation or sign into HCP to explore HCP Packer features.
+
+<h3>HCP Terraform's run environment</h3>
+<small><i>Source: hcp_documentation.md (hcp)</i></small>
+
+HCP Terraform is designed as an execution platform for Terraform, and most of its features are based around its ability to perform Terraform runs in a fleet of disposable worker VMs. This page describes some features of the run environment for Terraform runs managed by HCP Terraform.
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:infragraph/HcpResource">infragraph/HcpResource</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:infragraph/HcpOrganization">infragraph/HcpOrganization</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:infragraph/HcpTerraformProject">infragraph/HcpTerraformProject</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:infragraph/HcpTerraformRun">infragraph/HcpTerraformRun</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:infragraph/PackerRegistry">infragraph/PackerRegistry</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+<li><a href="#Type:infragraph/HcpTerraformStateVersion">infragraph/HcpTerraformStateVersion</a> (via ReAct (Granite), ReAct (Llama), ReAct (Mistral))</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>infragraph.HcpTerraformOrganization</b> maps to:
+
+<h3><a href="#Type:infragraph/HcpResource">infragraph.HcpResource</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:infragraph/HcpOrganization">infragraph.HcpOrganization</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:infragraph/HcpTerraformProject">infragraph.HcpTerraformProject</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h3><a href="#Type:infragraph/HcpTerraformRun">infragraph.HcpTerraformRun</a></h3>
+<i>Mapped by: ReAct (Granite), ReAct (Llama), ReAct (Mistral)</i>
+
+<i>No field-level mappings available.</i>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:infragraph">infragraph Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:infragraph">Category:infragraph</a>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:concert/Certificates_view</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:concert/Certificates_view</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>Certificates_view</td></tr>
+<tr><td><b>product</b></td><td>concert</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>23</td></tr></table>
+
+<h2>Overview</h2>
+Certificates_view type from concert.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>additional_data</td><td>JSON</td><td></td><td>Additional data</td></tr>
+<tr><td>api_server</td><td>String</td><td></td><td></td></tr>
+<tr><td>certificate_id</td><td>ID</td><td></td><td></td></tr>
+<tr><td>certificate_type</td><td>String</td><td></td><td></td></tr>
+<tr><td>cluster_name</td><td>String</td><td></td><td></td></tr>
+<tr><td>created_at</td><td>ID</td><td></td><td></td></tr>
+<tr><td>description</td><td>String</td><td></td><td>Vulnerability description</td></tr>
+<tr><td>dns_names</td><td>String</td><td></td><td></td></tr>
+<tr><td>environment_id</td><td>ID</td><td></td><td></td></tr>
+<tr><td>environment_name</td><td>String</td><td></td><td></td></tr>
+<tr><td>is_archived</td><td>Boolean</td><td></td><td>Whether the scan is archived</td></tr>
+<tr><td>issuer</td><td>String</td><td></td><td></td></tr>
+<tr><td>last_updated_by</td><td>String</td><td></td><td>Who last updated the issue</td></tr>
+<tr><td>last_updated_on</td><td>ID</td><td></td><td>Last updated timestamp</td></tr>
+<tr><td>metadata</td><td>JSON</td><td></td><td></td></tr>
+<tr><td>owner</td><td>String</td><td></td><td></td></tr>
+<tr><td>secret_key</td><td>String</td><td></td><td></td></tr>
+<tr><td>serial_number</td><td>String</td><td></td><td></td></tr>
+<tr><td>status</td><td>String</td><td></td><td>Current status</td></tr>
+<tr><td>subject</td><td>String</td><td></td><td></td></tr>
+<tr><td>validity_end_date</td><td>ID</td><td></td><td></td></tr>
+<tr><td>validity_period</td><td>ID</td><td></td><td></td></tr>
+<tr><td>validity_start_date</td><td>ID</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type Certificates_view {
+  additional_data: JSON
+  api_server: String
+  certificate_id: ID
+  certificate_type: String
+  cluster_name: String
+  created_at: ID
+  description: String
+  dns_names: String
+  environment_id: ID
+  environment_name: String
+  is_archived: Boolean
+  issuer: String
+  last_updated_by: String
+  last_updated_on: ID
+  metadata: JSON
+  owner: String
+  secret_key: String
+  serial_number: String
+  status: String
+  subject: String
+  validity_end_date: ID
+  validity_period: ID
+  validity_start_date: ID
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>Certificates_view</b>:
+
+<h3>Select the check boxes corresponding to the certificates that you want to delete.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Note: You can
+use the search bar to search for a specific certificate by serial number or use the table filters
+to
+adjust your view.
+
+<h3>Generate a custom CSV file containing details about your certificates for the specific environment. Find a</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+template for the CSV file here: Certificate sample CSV
+
+<h3>Click the Trusted certificates tab.</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+Make sure that you have permission to create and manage certificates.
+Procedure
+
+<h3>Under Certificates, search or browse for a certificate to locate a</h3>
+<small><i>Source: concert-2.2.x-documentation.md (concert)</i></small>
+
+certificate that must be renewed or
+replaced.
+Tip: Click the Valid not
+after column header to organize the list by expiration date.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:concert">concert Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:concert">Category:concert</a>
+</body>
+</html>

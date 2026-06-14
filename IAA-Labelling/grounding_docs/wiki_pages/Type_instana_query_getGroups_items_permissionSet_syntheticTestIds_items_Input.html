@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_getGroups_items_permissionSet_syntheticTestIds_items_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_getGroups_items_permissionSet_syntheticTestIds_items_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_getGroups_items_permissionSet_syntheticTestIds_items_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>2</td></tr></table>
+
+<h2>Overview</h2>
+query_getGroups_items_permissionSet_syntheticTestIds_items_Input type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>scopeId</td><td>query_getGroups_items_permissionSet_actionFilter_scopeId</td><td></td><td></td></tr>
+<tr><td>scopeRoleId</td><td>query_getGroups_items_permissionSet_actionFilter_scopeRoleId</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input query_getGroups_items_permissionSet_syntheticTestIds_items_Input {
+  scopeId: query_getGroups_items_permissionSet_actionFilter_scopeId
+  scopeRoleId: query_getGroups_items_permissionSet_actionFilter_scopeRoleId
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_getGroups_items_permissionSet_syntheticTestIds_items_Input</b>:
+
+<h3>Setting permissions for Synthetic monitoring</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+group. All Synthetic monitoring permissions are granted to the users in the Owner group by default. The Access All -
+Viewer permission is granted to the users in the Default group by default.
+By using Synthetic monitoring, access to various capabilities from both the Instana UI and API is limited to the set of users with that access.
+Before you grant permissions to create, update, or delete Synthetic tests, you must evaluate how granting these permissions might impact your operations.Deciding which
+permissions to grant on Synthetic tests. Familiarize with the requirements for securing Synthetic tests; see Securely using Synthetic test scripts.
+Note: In Instana 269 and later, only the users who are authenticated with two-factor authentication or by using an Identity Provider (IdP) can perform write operations for
+Synthetic tests.
+
+<h3>Synthetic test execution types</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+sure that the users with write access on Synthetic test definitions have only the necessary
+access. See Managing access with user permissions.
+Restrict the usage of Synthetic credentials: When you create the credentials that you will provide to Instana to run your Synthetic tests, make sure that the
+credentials are used only to run the Synthetic test. See Creating dedicated credentials for Synthetic test scripts.
+Before you create a credential or provide that credential in your Synthetic test running on Instana, you must evaluate the scope of access.
+Defining the scope of access for a Synthetic credential:
+In your credentials manager or by using your credentials process, create a dedicated credential with only limited access and scope to run the Synthetic test. Use the
+relevant operating system, application, or credential manager capabilities to create the credential and limit its scope.
+
+<h3>ROLE_IDS = {</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+"Reader": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
+ "Contributor": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+ "Owner": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
+ }
+ try:
+ credential = DefaultAzureCredential()
+ auth_client = AuthorizationManagementClient(credential, subscription_id)
+ for assignment in auth_client.role_assignments.list_for_subscription():
+ role_def_id = assignment.role_definition_id
+ for role_name, role_id in ROLE_IDS.items():
+ if role_id in role_def_id:
+ print(f"✓ Found {role_name} role for subscription: {subscription_id}")
+ return True = Return immediately when any role is found
+ return False = No matching roles found
+ except AzureError as e:
+ print(f"Azure Error:: {e}")
+ return False
+ except Exception as e:
+ print(f"Error:: {e}")
+ return False
+
+<h3>You can find a list of all the tests you created. The results from all the assigned locations are aggregated for the selected time interval. The test with the least</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+the count of associations is shown. To view the associations, click
+on the number of associations. A dialog is displayed with the names of the associated applications, websites, and mobile apps. To view the item, click the name.
+The associated page in the Applications or Websites & Mobile Apps section is shown.
+Health: Provides an indication of the overall health of the test across locations based on failing results that are compared with total results.
+Action: Contains pause and play buttons, which act as a toggle and provides a quick way to pause or resume a test. If a test is paused, it can be resumed by
+selecting the play button.
+Test results are shown in an expandable, paginated panel for each test.
+You can configure the columns that are displayed in the Synthetic tests table.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>10</td></tr></table>
+
+<h2>Overview</h2>
+Automation action definition. When this is used in policy creation request, only `id` should be specified.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>createdAt</td><td>DateTime</td><td></td><td>Action created time.</td></tr>
+<tr><td>description</td><td>query_getActions_items_description</td><td></td><td>The description provided, if any.</td></tr>
+<tr><td>fields</td><td>query_getActions_items_fields_items</td><td>Yes</td><td>List of fields that describe an action.</td></tr>
+<tr><td>id</td><td>query_getActions_items_id</td><td></td><td>GraphNode ID.</td></tr>
+<tr><td>inputParameters</td><td>query_getActions_items_inputParameters_items</td><td>Yes</td><td>List of input parameters to this action run.</td></tr>
+<tr><td>metadata</td><td>query_getActions_items_metadata</td><td></td><td>List of metadata parameters set to this action run by sensors.</td></tr>
+<tr><td>modifiedAt</td><td>DateTime</td><td></td><td>Action modified time.</td></tr>
+<tr><td>name</td><td>query_getActions_items_name</td><td></td><td>Name of the group.</td></tr>
+<tr><td>tags</td><td>String</td><td>Yes</td><td>List of queryable tags available in a tagTree. Eg: `call.erroneous`.</td></tr>
+<tr><td>type</td><td>query_getActions_items_type</td><td></td><td>Type of entities</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+# Automation action definition. When this is used in policy creation request, only `id` should be specified.
+type query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action {
+  # Action created time.
+  createdAt: DateTime!
+
+  # Action description.
+  description: query_getActions_items_description
+
+  # List of fields that describe an action.
+  fields: <a href="query_getActions_items_fields_items]"># Action identifier.
+  id: query_getActions_items_id!
+
+  # List of inputs to the action.
+  inputParameters: [query_getActions_items_inputParameters_items</a>
+  metadata: query_getActions_items_metadata
+
+  # Action modified time.
+  modifiedAt: DateTime!
+
+  # Action name.
+  name: query_getActions_items_name!
+
+  # List of tags added to the action.
+  tags: [String]
+  type: query_getActions_items_type!
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action</b>:
+
+<h3>configuration for IBM MQ Tracing user exit</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+set to otel
+For more information about the configuration parameters, see Configuration parameters.
+Configuration parameters
+The following table lists the configuration parameters:
+Table 1. Configuration parameters
+Parameter
+Description
+
+<h3>From the overflow menu of a policy or action, click</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+View and run policy if it is a policy, or click
+View and run action if it is an action . The
+system displayes the "Run
+action actionName" dialog
+box.
+
+<h3>Enable the action sensors on one or more Instana agents where</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+you can run actions. For more information, see Deploying and
+configuring action sensors.
+Review the automation framework security guidelines when you configure
+the action sensors.
+
+<h3>You notice that policies appear at the beginning of the</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Recommended Actions table, followed by recommended
+actions.
+
+<h3>Click Test Action.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Action history
+1916 IBM Instana Observability
+
+To view the details of action runs, click
+Automation > Action History in
+the Instana UI. For the selected time range, all action runs are
+displayed sorted from latest to
+earliest start time.
+You can sort the action history by any fields in the table.
+In addition to sorting the action history, you can filter the
+table by using the Type and
+Status filters. You can also search for an action
+run by its Name, Event Name,
+Initiator or Action Instance ID
+by using the Search field.
+If you click an action run, a new window opens with the
+following tabs:
+Properties tab contains the following
+information:
+Action Instance Id: The ID of the action run.
+Event: A link with event name to access the details of the
+event associated with this action run.
+Initiator: A link to access the details of the user or policy
+who ran the action.
+Return Code: The return code of the action run.
+Start Time: The start time of the action run.
+
+<h3>Click Run.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+If you started an action run, you can see a link to access one
+of the following items:
+Action
+History
+if you have the View action history
+permission
+Action log for the action.
+To access the associated URL from the event context for an
+associated Documentation Link action, select
+Launch.
+To test your action outside an event instance, run it from
+Action Catalog after specifying Target
+Agent.
+Parameter specification
+You can update any parameter values that are defined for the
+actions in the Parameters section.
+The default value for a parameter will be filled in if the
+parameter is specified when you define the parameter for the action
+definition.
+Any parameters that are marked as Required
+must be given a value.
+Any parameters that are marked as Hidden will
+not be visible.
+If a parameter is marked as Dynamic, the value
+of the parameter is derived from the event context if available.
+
+<h3>Configuration parameters</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+The following table outlines the configuration parameters:
+Parameter
+Description
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:concert/Automation_rules">concert/Automation_rules</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>instana.query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action</b> maps to:
+
+<h3><a href="#Type:concert/Automation_rules">concert.Automation_rules</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action Field</th><th>Automation_rules Field</th><th>Reason</th></tr>
+<tr><td>description</td><td>description</td><td></td></tr>
+<tr><td>id</td><td>id</td><td></td></tr>
+<tr><td>name</td><td>name</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+<li><a href="#Type:concert/Automation_rules">concert.Automation_rules</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>

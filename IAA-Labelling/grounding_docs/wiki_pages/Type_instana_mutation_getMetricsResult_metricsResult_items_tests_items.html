@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/mutation_getMetricsResult_metricsResult_items_tests_items</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/mutation_getMetricsResult_metricsResult_items_tests_items</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>mutation_getMetricsResult_metricsResult_items_tests_items</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>8</td></tr></table>
+
+<h2>Overview</h2>
+A description of the Synthetic test associated with the result item.  This information will be included if the request was grouped by synthetic.testId or if includeAggregatedTestId was true on the request.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>applicationId</td><td>String</td><td></td><td>Filter by application ID</td></tr>
+<tr><td>applicationIds</td><td>String</td><td>Yes</td><td>IDs of the applications that this Smart Alert is applied to.</td></tr>
+<tr><td>locationId</td><td>String</td><td>Yes</td><td>Defines the location id by which the returned synthetic tests will be filtered by.</td></tr>
+<tr><td>mobileApplicationIds</td><td>String</td><td>Yes</td><td>A list of the mobile applications associated with the Synthetic test.</td></tr>
+<tr><td>serviceId</td><td>String</td><td></td><td>The serviceId this endpoint belongs to.</td></tr>
+<tr><td>testId</td><td>String</td><td></td><td>The testId for the Synthetic test.</td></tr>
+<tr><td>testName</td><td>String</td><td></td><td>The Synthetic test's name.</td></tr>
+<tr><td>websiteIds</td><td>String</td><td>Yes</td><td>A list of the websites associated with the Synthetic test.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+# A description of the Synthetic test associated with the result item.  This information will be included if the request was grouped by synthetic.testId or if includeAggregatedTestId was true on the request.
+type mutation_getMetricsResult_metricsResult_items_tests_items {
+  # An identifier of an application associated with the Synthetic test.  This field is deprecated and will be replace by the applicationIds field.
+  applicationId: String
+
+  # A list of the applications associated with the Synthetic test.
+  applicationIds: <a href="String]"># A list of the locations associated with the Synthetic test.
+  locationId: [String</a>
+
+  # A list of the mobile applications associated with the Synthetic test.
+  mobileApplicationIds: <a href="String]"># A service associated with the Synthetic test.
+  serviceId: String
+
+  # The testId for the Synthetic test.
+  testId: String!
+
+  # The Synthetic test's name.
+  testName: String
+
+  # A list of the websites associated with the Synthetic test.
+  websiteIds: [String</a>
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>mutation_getMetricsResult_metricsResult_items_tests_items</b>:
+
+<h3>Example 3: Synthetic tests event-based availability</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+The following SLO targets a service quality of 96.99%, calculated from the ratio of non‑erroneous to erroneous synthetic test results. The error budget is calculated based
+on individual events over a rolling time window of 7 days. It is being measured from the backend application point of view. By default, this SLO is aligned with the UTC
+timezone.
+Payload:
+ {
+ "name": "Cupcake Shop Synthetic Availability",
+ "target": 0.9699,
+ "lastUpdated": 1742587582774,
+ "entity": {
+1976 IBM Instana Observability
+
+<h3>You can find a list of all the tests you created. The results from all the assigned locations are aggregated for the selected time interval. The test with the least</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+the count of associations is shown. To view the associations, click
+on the number of associations. A dialog is displayed with the names of the associated applications, websites, and mobile apps. To view the item, click the name.
+The associated page in the Applications or Websites & Mobile Apps section is shown.
+Health: Provides an indication of the overall health of the test across locations based on failing results that are compared with total results.
+Action: Contains pause and play buttons, which act as a toggle and provides a quick way to pause or resume a test. If a test is paused, it can be resumed by
+selecting the play button.
+Test results are shown in an expandable, paginated panel for each test.
+You can configure the columns that are displayed in the Synthetic tests table.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product:ns1</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Product:ns1</h1>
+
+
+<h2>Overview</h2>
+IBM NS1 Connect - Intelligent DNS and traffic management.
+
+<h2>Types</h2>
+<table>
+<tr><th>Type</th><th>Kind</th><th>Fields</th><th>Description</th></tr>
+<tr><td><a href="#Type:ns1/Aggregation">Aggregation</a></td><td>ENUM</td><td>8</td><td>NSOne Connect - Internet Weather API for Solis-DAL.</td></tr>
+<tr><td><a href="#Type:ns1/AppJob">AppJob</a></td><td>OBJECT</td><td>9</td><td>Pulsar job metadata</td></tr>
+<tr><td><a href="#Type:ns1/BoolFilter">BoolFilter</a></td><td>INPUT</td><td>2</td><td></td></tr>
+<tr><td><a href="#Type:ns1/EndTimeFrame">EndTimeFrame</a></td><td>INPUT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:ns1/JobConfig">JobConfig</a></td><td>OBJECT</td><td>9</td><td>Pulsar job details</td></tr>
+<tr><td><a href="#Type:ns1/JobTypeID">JobTypeID</a></td><td>ENUM</td><td>3</td><td>NSOne Connect - Internet Weather API for Solis-DAL.</td></tr>
+<tr><td><a href="#Type:ns1/JobsFilter">JobsFilter</a></td><td>INPUT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:ns1/JobsResponseTimes">JobsResponseTimes</a></td><td>OBJECT</td><td>4</td><td>NSOne Connect - Internet Weather API for Solis-DAL.  pulsar performance apis  *Experimental - subject to change*</td></tr>
+<tr><td><a href="#Type:ns1/PerformanceFilter">PerformanceFilter</a></td><td>INPUT</td><td>7</td><td></td></tr>
+<tr><td><a href="#Type:ns1/RUMData">RUMData</a></td><td>OBJECT</td><td>5</td><td></td></tr>
+<tr><td><a href="#Type:ns1/RealUserMeasurementPerformance">RealUserMeasurementPerformance</a></td><td>OBJECT</td><td>4</td><td></td></tr>
+<tr><td><a href="#Type:ns1/StartTimeFrame">StartTimeFrame</a></td><td>INPUT</td><td>1</td><td></td></tr>
+<tr><td><a href="#Type:ns1/_StartEndTimeFrame">_StartEndTimeFrame</a></td><td>OBJECT</td><td>2</td><td>jsonata:{"data": $, "minResponseTime": $min($.responseTime), "maxResponseTime": $max($.responseTime)}</td></tr>
+</table>
+
+<h2>Type Mappings</h2>
+Types from this product that map to other products:
+
+<table>
+<tr><th>Source Type</th><th>Maps To</th><th>Target Product</th></tr>
+<tr><td><a href="#Type:ns1/Aggregation">Aggregation</a></td><td><a href="#Type:instana/query_getSloConfigById_oneOf_0_indicator_aggregation">query_getSloConfigById_oneOf_0_indicator_aggregation</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:ns1/Aggregation">Aggregation</a></td><td><a href="#Type:instana/query_getApplicationCatalogMetrics_items_aggregations_items">query_getApplicationCatalogMetrics_items_aggregations_items</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:ns1/Aggregation">Aggregation</a></td><td><a href="#Type:instana/queryInput_getCallGroup_input_metrics_items_aggregation">queryInput_getCallGroup_input_metrics_items_aggregation</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:ns1/Aggregation">Aggregation</a></td><td><a href="#Type:instana/callGroup_input_metrics_items_aggregation">callGroup_input_metrics_items_aggregation</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:ns1/Aggregation">Aggregation</a></td><td><a href="#Type:instana/mutationInput_entities_input_metrics_items_aggregation">mutationInput_entities_input_metrics_items_aggregation</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:ns1/PerformanceFilter">PerformanceFilter</a></td><td><a href="#Type:instana/ApplicationFilter">ApplicationFilter</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:ns1/_StartEndTimeFrame">_StartEndTimeFrame</a></td><td><a href="#Type:instana/getEntities_200_response">getEntities_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:ns1/_StartEndTimeFrame">_StartEndTimeFrame</a></td><td><a href="#Type:instana/callGroup_200_response">callGroup_200_response</a></td><td>instana</td></tr>
+<tr><td><a href="#Type:ns1/_StartEndTimeFrame">_StartEndTimeFrame</a></td><td><a href="#Type:instana/_entities_200_response">_entities_200_response</a></td><td>instana</td></tr>
+</table>
+
+<a href="#Category:Products">Category:Products</a>
+<a href="#Category:GraphQL">Category:GraphQL</a>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:cloudability/RecommendationResultEntry</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:cloudability/RecommendationResultEntry</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>RecommendationResultEntry</td></tr>
+<tr><td><b>product</b></td><td>cloudability</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>40</td></tr></table>
+
+<h2>Overview</h2>
+RecommendationResultEntry type from cloudability.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>accountName</td><td>String</td><td></td><td></td></tr>
+<tr><td>availabilityZone</td><td>String</td><td></td><td></td></tr>
+<tr><td>cpuCapacity</td><td>Float</td><td></td><td></td></tr>
+<tr><td>cpuMax</td><td>Int</td><td></td><td></td></tr>
+<tr><td>currencyCode</td><td>String</td><td></td><td></td></tr>
+<tr><td>daysInactive</td><td>Int</td><td></td><td></td></tr>
+<tr><td>defaultCrossArchitecture</td><td>Boolean</td><td></td><td></td></tr>
+<tr><td>defaultCurrentGen</td><td>Boolean</td><td></td><td></td></tr>
+<tr><td>defaultMemoryFit</td><td>Boolean</td><td></td><td></td></tr>
+<tr><td>defaultSameFamily</td><td>Boolean</td><td></td><td></td></tr>
+<tr><td>gpuCapacity</td><td>Int</td><td></td><td></td></tr>
+<tr><td>gpuMax</td><td>String</td><td></td><td></td></tr>
+<tr><td>gpuMemoryCapacity</td><td>Int</td><td></td><td></td></tr>
+<tr><td>gpuMemoryMax</td><td>String</td><td></td><td></td></tr>
+<tr><td>hoursRunning</td><td>Float</td><td></td><td></td></tr>
+<tr><td>idle</td><td>Int</td><td></td><td></td></tr>
+<tr><td>instanceFamily</td><td>String</td><td></td><td></td></tr>
+<tr><td>lastSeen</td><td>DateTime</td><td></td><td></td></tr>
+<tr><td>localCapacity</td><td>Int</td><td></td><td></td></tr>
+<tr><td>localDrives</td><td>Int</td><td></td><td></td></tr>
+<tr><td>maxInstanceCount</td><td>Int</td><td></td><td></td></tr>
+<tr><td>memoryCapacity</td><td>Float</td><td></td><td></td></tr>
+<tr><td>memoryMax</td><td>String</td><td></td><td></td></tr>
+<tr><td>minInstanceCount</td><td>Int</td><td></td><td></td></tr>
+<tr><td>name</td><td>String</td><td></td><td></td></tr>
+<tr><td>networkCapacity</td><td>Int</td><td></td><td></td></tr>
+<tr><td>nodeType</td><td>String</td><td></td><td></td></tr>
+<tr><td>os</td><td>String</td><td></td><td></td></tr>
+<tr><td>provider</td><td>String</td><td></td><td></td></tr>
+<tr><td>recommendations</td><td>RecommendationsEntry</td><td>Yes</td><td></td></tr>
+<tr><td>region</td><td>String</td><td></td><td>(Dimension) Region</td></tr>
+<tr><td>resourceIdentifier</td><td>String</td><td></td><td></td></tr>
+<tr><td>service</td><td>String</td><td></td><td></td></tr>
+<tr><td>snoozeExpiresOn</td><td>String</td><td></td><td></td></tr>
+<tr><td>snoozed</td><td>Boolean</td><td></td><td></td></tr>
+<tr><td>tagMappings</td><td>TagMappingsEntry</td><td>Yes</td><td></td></tr>
+<tr><td>tenancy</td><td>String</td><td></td><td>(Dimension) Tenancy</td></tr>
+<tr><td>totalSpend</td><td>Float</td><td></td><td></td></tr>
+<tr><td>unitPrice</td><td>Float</td><td></td><td></td></tr>
+<tr><td>vendorAccountId</td><td>Float</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type RecommendationResultEntry {
+  accountName: String
+  availabilityZone: String
+  cpuCapacity: Float
+  cpuMax: Int
+  currencyCode: String
+  daysInactive: Int
+  defaultCrossArchitecture: Boolean
+  defaultCurrentGen: Boolean
+  defaultMemoryFit: Boolean
+  defaultSameFamily: Boolean
+  gpuCapacity: Int
+  gpuMax: String
+  gpuMemoryCapacity: Int
+  gpuMemoryMax: String
+  hoursRunning: Float
+  idle: Int
+  instanceFamily: String
+  lastSeen: DateTime
+  localCapacity: Int
+  localDrives: Int
+  maxInstanceCount: Int
+  memoryCapacity: Float
+  memoryMax: String
+  minInstanceCount: Int
+  name: String
+  networkCapacity: Int
+  nodeType: String
+  os: String
+  provider: String
+  recommendations: <a href="RecommendationsEntry]">region: String
+  resourceIdentifier: String
+  service: String
+  snoozeExpiresOn: String
+  snoozed: Boolean
+  tagMappings: [TagMappingsEntry</a>
+  tenancy: String
+  totalSpend: Float
+  unitPrice: Float
+  vendorAccountId: Float
+}
+</code></pre>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:cloudability">cloudability Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:cloudability">Category:cloudability</a>
+</body>
+</html>

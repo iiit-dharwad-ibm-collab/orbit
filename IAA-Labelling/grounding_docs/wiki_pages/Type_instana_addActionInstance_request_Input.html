@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:instana/addActionInstance_request_Input</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:instana/addActionInstance_request_Input</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>addActionInstance_request_Input</td></tr>
+<tr><td><b>product</b></td><td>instana</td></tr>
+<tr><td><b>kind</b></td><td>INPUT</td></tr>
+<tr><td><b>fields_count</b></td><td>7</td></tr></table>
+
+<h2>Overview</h2>
+addActionInstance_request_Input type from instana.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>actionId</td><td>String</td><td></td><td>Filter policies by action ID. This is an optional parameter.</td></tr>
+<tr><td>async</td><td>String</td><td></td><td>`"true"` if the action should be run in asynchronous mode `"false"` otherwise. Default is `"true"`.</td></tr>
+<tr><td>eventId</td><td>String</td><td></td><td>Event ID filter to get the action run result details</td></tr>
+<tr><td>hostId</td><td>String</td><td></td><td>Agent host identifier on which to run the action.</td></tr>
+<tr><td>inputParameters</td><td>mutationInput_addActionInstance_input_inputParameters_items_Input</td><td>Yes</td><td>List of input parameters to this action run.</td></tr>
+<tr><td>policyId</td><td>String</td><td></td><td>Identifier of the policy that triggered this action run.</td></tr>
+<tr><td>timeout</td><td>String</td><td></td><td>Action run time out. Default is `30 seconds`.</td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+input addActionInstance_request_Input {
+  # Action identifier of the action to run.
+  actionId: String!
+
+  # `"true"` if the action should be run in asynchronous mode `"false"` otherwise. Default is `"true"`.
+  async: String
+
+  # Event identifier (incident or issue) associated with the policy.
+  eventId: String
+
+  # Agent host identifier on which to run the action.
+  hostId: String!
+
+  # Action run input parameters.
+  inputParameters: <a href="mutationInput_addActionInstance_input_inputParameters_items_Input]"># Policy identifier that associates the action trigger (incident or issue) to the action to run.
+  policyId: String
+
+  # Action run time out. Default is `30 seconds`.
+  timeout: String
+}
+</code></pre>
+
+<h2>Documentation</h2>
+The following documentation is related to <b>addActionInstance_request_Input</b>:
+
+<h3>Creating a script action</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+To create a script action, complete the following steps:
+
+<h3>Click Create action and policy. The action is created successfully.</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+To create the new action without adding a policy, click Create action. The action is created successfully.
+Viewing the action and policy
+- The new action is available in the [../action-catalog.html Action Catalog</a> tab in the <b>Automation</b> section of Instana UI.
+- If a policy is created, the new policy is available at the beginning of the table on the <b>Recommended Actions</b> tab of the 
+incident. To see the steps, click <b>View</b>.
+
+<h3>Click an occurrence of action in the Actions swimlane. The</h3>
+<small><i>Source: instana-observability-1.0.312-documentation.md (instana)</i></small>
+
+Action History dialog is displayed with the details of the
+action.
+Securely using the
+automation framework
+When you adopt the automation framework, you
+must consider the potential security risks and take the appropriate
+steps to protect your systems and prevent
+unauthorized access. Use
+the following guidelines to optimize the secure usage of the
+automation framework.
+Limiting the
+enablement of action sensors
+Before you enable the action sensors on agents, you must
+understand how they might affect the action execution on hosts and
+agents.
+Deciding which
+sensors to enable on agents
+On the default agent configuration, all the action
+sensors are disabled (off). You must opt in to use the action
+sensors.
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:instana">instana Product Page</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:instana">Category:instana</a>
+</body>
+</html>

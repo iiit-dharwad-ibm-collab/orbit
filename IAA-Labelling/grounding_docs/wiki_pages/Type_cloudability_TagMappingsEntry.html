@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type:cloudability/TagMappingsEntry</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px 40px; color: #222; line-height: 1.6; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 6px; }
+  h2 { color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 1.5em; }
+  h3 { color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  th { background: #f0f0f0; font-weight: 600; }
+  tr:nth-child(even) { background: #fafafa; }
+  .infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #aaa; background: #f9f9f9; padding: 12px; width: 280px; font-size: 0.9em; }
+  .infobox th { background: #d0d0e0; text-align: center; }
+  .infobox td { border: none; padding: 3px 6px; }
+  pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.5em; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+<h1>Type:cloudability/TagMappingsEntry</h1>
+
+
+<table class="infobox"><tr><th colspan="2">Type Info</th></tr><tr><td><b>name</b></td><td>TagMappingsEntry</td></tr>
+<tr><td><b>product</b></td><td>cloudability</td></tr>
+<tr><td><b>kind</b></td><td>OBJECT</td></tr>
+<tr><td><b>fields_count</b></td><td>3</td></tr></table>
+
+<h2>Overview</h2>
+TagMappingsEntry type from cloudability.
+
+<h2>Fields</h2>
+<table>
+<tr><th>Field</th><th>Data Type</th><th>List</th><th>Description</th></tr>
+<tr><td>tag</td><td>String</td><td></td><td></td></tr>
+<tr><td>tagName</td><td>String</td><td></td><td></td></tr>
+<tr><td>vendorTagValue</td><td>String</td><td></td><td></td></tr>
+</table>
+
+<h2>Schema Definition</h2>
+The GraphQL schema definition for this type:
+
+<pre><code>
+type TagMappingsEntry {
+  tag: String
+  tagName: String
+  vendorTagValue: String
+}
+</code></pre>
+
+<h2>Related Types</h2>
+Types that map to/from this type:
+
+<ul>
+<li><a href="#Type:instana/getDynamicParametersTagCatalog_200_response">instana/getDynamicParametersTagCatalog_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/getBusinessTagCatalog_200_response">instana/getBusinessTagCatalog_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/getTagCatalogAll_200_response">instana/getTagCatalogAll_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/getTagCatalog_200_response">instana/getTagCatalog_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:turbonomic/TagValueFilterOperator">turbonomic/TagValueFilterOperator</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/query_getApplicationTagCatalog_tags_items_type">instana/query_getApplicationTagCatalog_tags_items_type</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/mutationInput_getLocationSummaryList_input_tagFilters_items">instana/mutationInput_getLocationSummaryList_input_tagFilters_items</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/getApplicationTagCatalog_200_response">instana/getApplicationTagCatalog_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/query_getApplicationTagCatalog_tagTree_items_children_items">instana/query_getApplicationTagCatalog_tagTree_items_children_items</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/query_getApplicationTagCatalog_tags_items">instana/query_getApplicationTagCatalog_tags_items</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/query_getApplicationTags_items">instana/query_getApplicationTags_items</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/getBusinessPerspectives_200_response">instana/getBusinessPerspectives_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/getBusinessPerspective_200_response">instana/getBusinessPerspective_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/getMobileAppTagCatalog_200_response">instana/getMobileAppTagCatalog_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/getSyntheticTagCatalog_200_response">instana/getSyntheticTagCatalog_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/getWebsiteTagCatalog_200_response">instana/getWebsiteTagCatalog_200_response</a> (via schema_mapping)</li>
+<li><a href="#Type:instana/mutation_getAvailableMetrics_metrics_items">instana/mutation_getAvailableMetrics_metrics_items</a> (via schema_mapping)</li>
+</ul>
+
+<h2>Cross-Product Type Mappings</h2>
+<b>cloudability.TagMappingsEntry</b> maps to:
+
+<h3><a href="#Type:instana/getDynamicParametersTagCatalog_200_response">instana.getDynamicParametersTagCatalog_200_response</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>TagMappingsEntry Field</th><th>getDynamicParametersTagCatalog_200_response Field</th><th>Reason</th></tr>
+<tr><td>tag</td><td>tags</td><td></td></tr>
+</table>
+
+<h3><a href="#Type:instana/getBusinessTagCatalog_200_response">instana.getBusinessTagCatalog_200_response</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>TagMappingsEntry Field</th><th>getBusinessTagCatalog_200_response Field</th><th>Reason</th></tr>
+<tr><td>tag</td><td>tags</td><td></td></tr>
+<tr><td>tagName</td><td>tags</td><td></td></tr>
+</table>
+
+<h3><a href="#Type:instana/getTagCatalogAll_200_response">instana.getTagCatalogAll_200_response</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>TagMappingsEntry Field</th><th>getTagCatalogAll_200_response Field</th><th>Reason</th></tr>
+<tr><td>tag</td><td>tags</td><td></td></tr>
+</table>
+
+<h3><a href="#Type:instana/getTagCatalog_200_response">instana.getTagCatalog_200_response</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>TagMappingsEntry Field</th><th>getTagCatalog_200_response Field</th><th>Reason</th></tr>
+<tr><td>tag</td><td>tags</td><td></td></tr>
+</table>
+
+<h3><a href="#Type:turbonomic/TagValueFilterOperator">turbonomic.TagValueFilterOperator</a></h3>
+<i>Mapped by: schema_mapping</i>
+
+<table>
+<tr><th>TagMappingsEntry Field</th><th>TagValueFilterOperator Field</th><th>Reason</th></tr>
+<tr><td>vendorTagValue</td><td>NEQ</td><td></td></tr>
+</table>
+
+<h2>See Also</h2>
+<ul>
+<li><a href="#Product:cloudability">cloudability Product Page</a></li>
+<li><a href="#Type:instana/getDynamicParametersTagCatalog_200_response">instana.getDynamicParametersTagCatalog_200_response</a></li>
+<li><a href="#Type:instana/getBusinessTagCatalog_200_response">instana.getBusinessTagCatalog_200_response</a></li>
+<li><a href="#Type:instana/getTagCatalogAll_200_response">instana.getTagCatalogAll_200_response</a></li>
+</ul>
+
+<a href="#Category:Types">Category:Types</a>
+<a href="#Category:cloudability">Category:cloudability</a>
+<a href="#Category:Mapped Types">Category:Mapped Types</a>
+</body>
+</html>
