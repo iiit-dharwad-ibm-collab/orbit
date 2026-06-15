@@ -1,8 +1,30 @@
 # qa/ — annotation quality pipeline
 
 Quality checking and repair for the ORBIT dataset export
-(`IAA-Labelling/combined_export.json`, 3,350 records). The original export is
+(`IAA-Labelling/combined_export.json`, 3,350 rows). The original export is
 never modified; every stage writes new files.
+
+The export's 3,350 rows are only **3,178 unique** records: 135 ids appear 2–3×
+as byte-identical copies (172 redundant rows, all in the open-ended postgresql /
+trino / kafka cohorts).
+
+## Tier 0 — deduplication (`dedup.py`)
+
+Drops the 172 exact-duplicate rows, keeping the first occurrence of each
+byte-identical row (lossless — only verbatim copies are removed; rows sharing an
+`id` but differing in content would both be kept and reported). Applied to the
+cleaned and fixed corpora.
+
+- `combined_export.cleaned.json`: 3,293 → **3,121**
+- `combined_export.fixed.json`: 3,350 → **3,178**
+- `qa/dedup_report.json` — every dropped row (id, index, the index it duplicates)
+
+Logically this is the first stage; it is applied last here only because the
+defects were found in that order. It is safe either way: the duplicate copies
+were byte-identical, so Tier 1/2 repaired them identically (the regeneration
+cache made the rewrites deterministic across copies).
+
+Run: `python3 qa/dedup.py`
 
 ## Tier 1 — deterministic cleaning (`fix_annotations.py`)
 
