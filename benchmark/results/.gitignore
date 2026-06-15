@@ -1,0 +1,3 @@
+# keep summary_*.json (small, useful); drop bulky/per-run artifacts
+preds_*.jsonl
+*.db
