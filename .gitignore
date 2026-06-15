@@ -13,3 +13,8 @@ venv/
 
 # Paper lives in Overleaf; ./paper is a clone of git.overleaf.com (synced separately)
 /paper/
+
+# Local convenience: symlink to a sibling clone of the grounding-source repo
+# (balajinix/itopsgraph_docs @ pinned commit). Never commit it — see grounding refs
+# in IAA-Labelling/combined_export.fixed.json which point here by repo+commit.
+/grounding_docs
