@@ -12,6 +12,7 @@ Supported services (selected via the ``service`` argument):
   - OPENAI     OpenAI / OpenAI-compatible endpoint (litellm)
   - ANTHROPIC  Anthropic Claude
   - LITELLM    Any generic OpenAI-compatible gateway (e.g. a LiteLLM proxy)
+  - GEMINI     Google Gemini via the Google AI Studio API (litellm "gemini/...")
 
 Credentials are read from environment variables (e.g. a ``.env`` file in the
 working directory). See ``.env.example`` for the full list. No secrets are
@@ -187,6 +188,15 @@ class LLMAgent:
             if not self.litellm_base_url:
                 raise ValueError("LITELLM_BASE_URL not found in environment")
 
+        elif self.service == "GEMINI":
+            # Google Gemini via the Google AI Studio API (routed through litellm as
+            # "gemini/<model_id>", e.g. gemini-2.5-pro, gemini-2.5-flash).
+            self.model_id = model_name
+            self.gemini_api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+            self.max_new_tokens = max_tokens or int(os.getenv("GEMINI_MAX_NEW_TOKENS", "4096"))
+            if not self.gemini_api_key:
+                raise ValueError("GEMINI_API_KEY (or GOOGLE_API_KEY) not found in environment")
+
         else:
             raise ValueError(f"Unsupported service: {self.service}")
 
@@ -346,6 +356,17 @@ class LLMAgent:
         )
         return response.choices[0].message.content
 
+    def _call_gemini(self, messages: list[dict]) -> str:
+        """Call Google Gemini via the Google AI Studio API (through litellm)."""
+        response = litellm.completion(
+            model=f"gemini/{self.model_id}",
+            messages=messages,
+            temperature=self.temperature,
+            max_tokens=self.max_new_tokens,
+            api_key=self.gemini_api_key,
+        )
+        return response.choices[0].message.content
+
     def _call_watsonx(self, messages: list[dict]) -> str:
         """Call watsonx.ai, preferring the new SDK and falling back to the legacy one."""
         prompt = self._messages_to_text(messages)
@@ -424,6 +445,7 @@ class LLMAgent:
             "WATSONX": self._call_watsonx,
             "ANTHROPIC": self._call_anthropic,
             "LITELLM": self._call_litellm,
+            "GEMINI": self._call_gemini,
         }
         handler = dispatch.get(self.service)
         if handler is None:
