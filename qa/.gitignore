@@ -3,6 +3,7 @@
 data/
 *.log
 
-# Tier 3 grounding-audit scratch (committed with the Tier 3 work later)
+# Tier 3 grounding-audit scratch (derived from the source repo's git tree; not committed)
 grounding_doc_refs.txt
 repo_tree.tsv
+basename_to_path.json
