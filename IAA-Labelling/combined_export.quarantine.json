@@ -1,0 +1,1484 @@
+[
+ {
+  "id": "DP-00017",
+  "question": "Considering the Turbonomic schema conventions, how would you classify the entry `.turbonomic`?",
+  "qtype": 0,
+  "choices": [
+   "`.turbonomic` is a category page for turbonomic",
+   "It monitors database transactions and latency.",
+   "It monitors database transactions and latency in turbonomic.",
+   "`.turbonomic` is a category page for turbonomic"
+  ],
+  "A": "`.turbonomic` is a category page for turbonomic",
+  "B": "It monitors database transactions and latency.",
+  "C": "It monitors database transactions and latency in turbonomic.",
+  "D": "`.turbonomic` is a category page for turbonomic",
+  "answer": "D",
+  "solution": "The `.turbonomic` is a category page in turbonomic serving as a navigational landing for related content. Category:turbonomic",
+  "reasoning_thought": "The Turbonomic documentation identifies `.turbonomic` as a structural element within their schema architecture. In the Turbonomic schema convention, entries prefixed with a period (like `.turbonomic`) serve as category landing pages that organize and group related content for navigational purposes. Option D correctly recognizes this as a category page, which is the semantic role of period-prefixed entries in this schema. Category pages aggregate related documentation entries under a unified topic. This entity falls under the Turbonomic ecosystem, which encompasses cloud infrastructure, service management, and operational tooling components. Other options describe alternative definitions (deprecated parameters, monitoring functions, authentication schemas) that do not match the documented purpose of category pages in this schema structure.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "turbonomic",
+    "url": "Category_turbonomic.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00036",
+  "question": "Based on Mappingstatus's organizational structure, what type of entry is `.MappingStatus`?",
+  "qtype": 0,
+  "choices": [
+   "`.MappingStatus` is a category page for mappingstatus",
+   "`.MappingStatus` is a category page for mappingstatus",
+   "It monitors database transactions and latency in mappingstatus.",
+   "It defines the data schema for authentication in mappingstatus."
+  ],
+  "A": "`.MappingStatus` is a category page for mappingstatus",
+  "B": "`.MappingStatus` is a category page for mappingstatus",
+  "C": "It monitors database transactions and latency in mappingstatus.",
+  "D": "It defines the data schema for authentication in mappingstatus.",
+  "answer": "B",
+  "solution": "The `.MappingStatus` is a category page in MappingStatus serving as a navigational landing for related content. Template:MappingStatus Usage",
+  "reasoning_thought": "The Mappingstatus documentation identifies `.MappingStatus` as a structural element within their schema architecture. In the Mappingstatus schema convention, entries prefixed with a period (like `.MappingStatus`) serve as category landing pages that organize and group related content for navigational purposes. Option B correctly recognizes this as a category page, which is the semantic role of period-prefixed entries in this schema. Category pages aggregate related documentation entries under a unified topic. This entity falls under the Mappingstatus ecosystem, which encompasses cloud infrastructure, service management, and operational tooling components. Other options describe alternative definitions (deprecated parameters, monitoring functions, authentication schemas) that do not match the documented purpose of category pages in this schema structure.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "MappingStatus",
+    "url": "Template_MappingStatus.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00006",
+  "question": "Based on GraphQL's organizational structure, what type of entry is `.GraphQL`?",
+  "qtype": 0,
+  "choices": [
+   "`.GraphQL` is a category page for graphql",
+   "It is a deprecated configuration parameter.",
+   "It monitors database transactions and latency in graphql.",
+   "`.GraphQL` is a category page for graphql"
+  ],
+  "A": "`.GraphQL` is a category page for graphql",
+  "B": "It is a deprecated configuration parameter.",
+  "C": "It monitors database transactions and latency in graphql.",
+  "D": "`.GraphQL` is a category page for graphql",
+  "answer": "D",
+  "solution": "The `.GraphQL` is a category page in GraphQL serving as a navigational landing for related content. Category:GraphQL",
+  "reasoning_thought": "The GraphQL documentation identifies `.GraphQL` as a structural element within their schema architecture. In the GraphQL schema convention, entries prefixed with a period (like `.GraphQL`) serve as category landing pages that organize and group related content for navigational purposes. Option D correctly recognizes this as a category page, which is the semantic role of period-prefixed entries in this schema. Category pages aggregate related documentation entries under a unified topic. This entity falls under the GraphQL ecosystem, which encompasses cloud infrastructure, service management, and operational tooling components. Other options describe alternative definitions (deprecated parameters, monitoring functions, authentication schemas) that do not match the documented purpose of category pages in this schema structure.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "GraphQL",
+    "url": "Category_GraphQL.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00062",
+  "question": "What is the complete field structure of the `Aggregate` type in Cloudability?",
+  "qtype": 0,
+  "choices": [
+   "`.Aggregate` is a category page for cloudability",
+   "It is a deprecated configuration parameter for cloudability.",
+   "`cloudability.Aggregate` (OBJECT) has 6 field(s): `data_type`, `description`, `label`, `name`, `type`, `value`.",
+   "`cloudability.Aggregate` (OBJECT) has 6 field(s): `data_type`, `description`, `label`, `name`, `type`, `value`."
+  ],
+  "A": "`.Aggregate` is a category page for cloudability",
+  "B": "It is a deprecated configuration parameter for cloudability.",
+  "C": "`cloudability.Aggregate` (OBJECT) has 6 field(s): `data_type`, `description`, `label`, `name`, `type`, `value`.",
+  "D": "`cloudability.Aggregate` (OBJECT) has 6 field(s): `data_type`, `description`, `label`, `name`, `type`, `value`.",
+  "answer": "C",
+  "solution": "The `cloudability.Aggregate` is a OBJECT in Aggregate with 6 fields for structured data. Key fields: data_type, description, label, name, type and 1 more.",
+  "reasoning_thought": "The Cloudability API reference documents `cloudability.Aggregate` as a structured object/interface within the schema. Upon analyzing the documentation for `Aggregate`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 6 fields within this object, covering data attributes relevant to its functional purpose. Option C is correct because it accurately reflects the documented field structure of `cloudability.Aggregate`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "Aggregate",
+    "url": "Type_cloudability_Aggregate.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00038",
+  "question": "What is the complete field structure of the `AwsAccount` type in Aws?",
+  "qtype": 0,
+  "choices": [
+   "`aws.AwsAccount` (MESSAGE) has 2 field(s): `account`, `aws_resource`.",
+   "It is a deprecated configuration parameter for aws.",
+   "`aws.AwsAccount` (MESSAGE) has 2 field(s): `account`, `aws_resource`.",
+   "It defines the data schema for authentication in aws."
+  ],
+  "A": "`aws.AwsAccount` (MESSAGE) has 2 field(s): `account`, `aws_resource`.",
+  "B": "It is a deprecated configuration parameter for aws.",
+  "C": "`aws.AwsAccount` (MESSAGE) has 2 field(s): `account`, `aws_resource`.",
+  "D": "It defines the data schema for authentication in aws.",
+  "answer": "A",
+  "solution": "The `aws.AwsAccount` is a MESSAGE in AwsAccount with 2 fields for structured data. Key fields: account, aws_resource.",
+  "reasoning_thought": "The Aws API reference documents `aws.AwsAccount` as a structured object/interface within the schema. Upon analyzing the documentation for `AwsAccount`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 2 fields within this object, covering data attributes relevant to its functional purpose. Option A is correct because it accurately reflects the documented field structure of `aws.AwsAccount`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "AwsAccount",
+    "url": "Type_aws_AwsAccount.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00033",
+  "question": "Based on Descriptionoverride's organizational structure, what type of entry is `.DescriptionOverride`?",
+  "qtype": 0,
+  "choices": [
+   "`.DescriptionOverride` is a category page for descriptionoverride",
+   "It is a deprecated configuration parameter for descriptionoverride.",
+   "It monitors database transactions and latency in descriptionoverride.",
+   "`.DescriptionOverride` is a category page for descriptionoverride"
+  ],
+  "A": "`.DescriptionOverride` is a category page for descriptionoverride",
+  "B": "It is a deprecated configuration parameter for descriptionoverride.",
+  "C": "It monitors database transactions and latency in descriptionoverride.",
+  "D": "`.DescriptionOverride` is a category page for descriptionoverride",
+  "answer": "D",
+  "solution": "The `.DescriptionOverride` is a category page in DescriptionOverride serving as a navigational landing for related content. Template:DescriptionOverride Usage",
+  "reasoning_thought": "The Descriptionoverride documentation identifies `.DescriptionOverride` as a structural element within their schema architecture. In the Descriptionoverride schema convention, entries prefixed with a period (like `.DescriptionOverride`) serve as category landing pages that organize and group related content for navigational purposes. Option D correctly recognizes this as a category page, which is the semantic role of period-prefixed entries in this schema. Category pages aggregate related documentation entries under a unified topic. This entity falls under the Descriptionoverride ecosystem, which encompasses cloud infrastructure, service management, and operational tooling components. Other options describe alternative definitions (deprecated parameters, monitoring functions, authentication schemas) that do not match the documented purpose of category pages in this schema structure.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "DescriptionOverride",
+    "url": "Template_DescriptionOverride.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00008",
+  "question": "Based on Terraform's organizational structure, what type of entry is `.terraform`?",
+  "qtype": 0,
+  "choices": [
+   "`.terraform` is a category page for hcp_terraform",
+   "It is a deprecated configuration parameter for hcp_terraform.",
+   "`.terraform` is a category page for hcp_terraform",
+   "It specifies resource allocation limits."
+  ],
+  "A": "`.terraform` is a category page for hcp_terraform",
+  "B": "It is a deprecated configuration parameter for hcp_terraform.",
+  "C": "`.terraform` is a category page for hcp_terraform",
+  "D": "It specifies resource allocation limits.",
+  "answer": "C",
+  "solution": "The `.terraform` is a category page in terraform serving as a navigational landing for related content. Category:hcp_terraform",
+  "reasoning_thought": "The Terraform documentation identifies `.terraform` as a structural element within their schema architecture. In the Terraform schema convention, entries prefixed with a period (like `.terraform`) serve as category landing pages that organize and group related content for navigational purposes. Option C correctly recognizes this as a category page, which is the semantic role of period-prefixed entries in this schema. Category pages aggregate related documentation entries under a unified topic. This entity falls under the Terraform ecosystem, which encompasses cloud infrastructure, service management, and operational tooling components. Other options describe alternative definitions (deprecated parameters, monitoring functions, authentication schemas) that do not match the documented purpose of category pages in this schema structure.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "terraform",
+    "url": "Category_hcp_terraform.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00114",
+  "question": "According to the Concert schema documentation, what are the required and optional fields for `concert.Application_cost`?",
+  "qtype": 0,
+  "choices": [
+   "`concert.Application_cost` (OBJECT) has 5 field(s): `application_id`, `cloud_cost`, `engineering_cost`, `total_cost`, `vendor_cost`.",
+   "It is a deprecated configuration parameter for concert.",
+   "`concert.About_categories` (OBJECT) has 3 field(s): `category`, `description`, `long_description`.",
+   "`concert.Application_cost` (OBJECT) has 5 field(s): `application_id`, `cloud_cost`, `engineering_cost`, `total_cost`, `vendor_cost`."
+  ],
+  "A": "`concert.Application_cost` (OBJECT) has 5 field(s): `application_id`, `cloud_cost`, `engineering_cost`, `total_cost`, `vendor_cost`.",
+  "B": "It is a deprecated configuration parameter for concert.",
+  "C": "`concert.About_categories` (OBJECT) has 3 field(s): `category`, `description`, `long_description`.",
+  "D": "`concert.Application_cost` (OBJECT) has 5 field(s): `application_id`, `cloud_cost`, `engineering_cost`, `total_cost`, `vendor_cost`.",
+  "answer": "A",
+  "solution": "The `concert.Application_cost` is a OBJECT in Application_cost with 5 fields for structured data. Key fields: application_id, cloud_cost, engineering_cost, total_cost, vendor_cost.",
+  "reasoning_thought": "The Concert API reference documents `concert.Application_cost` as a structured object/interface within the schema. Upon analyzing the documentation for `Application_cost`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 5 fields within this object, covering data attributes relevant to its functional purpose. Option A is correct because it accurately reflects the documented field structure of `concert.Application_cost`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "Application_cost",
+    "url": "Type_concert_Application_cost.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00130",
+  "question": "Looking at Concert's type definitions, what fields does the `ApplicationState` object contain?",
+  "qtype": 0,
+  "choices": [
+   "`concert.Applications_source_repo` (OBJECT) has 2 field(s): `app_release_id`, `source_repo_id`.",
+   "`concert.ApplicationState` (ENUM) has 2 field(s): `active`, `idle`.",
+   "`concert.ApplicationReleaseProperties` (OBJECT) has 1 field(s): `revenue`.",
+   "`concert.ApplicationState` (ENUM) has 2 field(s): `active`, `idle`."
+  ],
+  "A": "`concert.Applications_source_repo` (OBJECT) has 2 field(s): `app_release_id`, `source_repo_id`.",
+  "B": "`concert.ApplicationState` (ENUM) has 2 field(s): `active`, `idle`.",
+  "C": "`concert.ApplicationReleaseProperties` (OBJECT) has 1 field(s): `revenue`.",
+  "D": "`concert.ApplicationState` (ENUM) has 2 field(s): `active`, `idle`.",
+  "answer": "B",
+  "solution": "The `concert.ApplicationState` is a ENUM in ApplicationState with 2 fields for structured data. Key fields: active, idle.",
+  "reasoning_thought": "The Concert API reference documents `concert.ApplicationState` as a structured object/interface within the schema. Upon analyzing the documentation for `ApplicationState`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 2 fields within this object, covering data attributes relevant to its functional purpose. Option B is correct because it accurately reflects the documented field structure of `concert.ApplicationState`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "ApplicationState",
+    "url": "Type_concert_ApplicationState.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00180",
+  "question": "According to the Concert schema documentation, what are the required and optional fields for `concert.Environments_access_points`?",
+  "qtype": 0,
+  "choices": [
+   "`cloudability.MonthsEntry` (OBJECT) has 2 field(s): `month`, `threshold`.",
+   "`concert.Environments_access_points` (OBJECT) has 6 field(s): `access_point_id`, `certificate_id`, `environment_id`, `host_name`, `id`, `port`.",
+   "`concert.Businesses` (OBJECT) has 2 field(s): `id`, `name`.",
+   "`concert.Environments_access_points` (OBJECT) has 6 field(s): `access_point_id`, `certificate_id`, `environment_id`, `host_name`, `id`, `port`."
+  ],
+  "A": "`cloudability.MonthsEntry` (OBJECT) has 2 field(s): `month`, `threshold`.",
+  "B": "`concert.Environments_access_points` (OBJECT) has 6 field(s): `access_point_id`, `certificate_id`, `environment_id`, `host_name`, `id`, `port`.",
+  "C": "`concert.Businesses` (OBJECT) has 2 field(s): `id`, `name`.",
+  "D": "`concert.Environments_access_points` (OBJECT) has 6 field(s): `access_point_id`, `certificate_id`, `environment_id`, `host_name`, `id`, `port`.",
+  "answer": "B",
+  "solution": "The `concert.Environments_access_points` is a OBJECT in Environments_access_points with 6 fields for structured data. Key fields: access_point_id, certificate_id, environment_id, host_name, id and 1 more.",
+  "reasoning_thought": "The Concert API reference documents `concert.Environments_access_points` as a structured object/interface within the schema. Upon analyzing the documentation for `Environments_access_points`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 6 fields within this object, covering data attributes relevant to its functional purpose. Option B is correct because it accurately reflects the documented field structure of `concert.Environments_access_points`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "Environments_access_points",
+    "url": "Type_concert_Environments_access_points.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00186",
+  "question": "In the Concert schema reference, what field attributes are defined for `concert.Exposure_assessment`?",
+  "qtype": 0,
+  "choices": [
+   "`concert.Exposure_assessment` (OBJECT) has 18 field(s): `additional_details`, `application_id`, `assessment_date`, `created_by`, `created_date`, `custom_details`, `custom_score`, `details_url`, `findings_id`, `fix_by`, `history`, `id`, `last_updated_by`, `lin2el`, `priority`, `recommendation`, `risk_score`, `status`.",
+   "`concert.Automation_rules` (OBJECT) has 13 field(s): `action`, `component_id`, `component_type`, `created_by`, `created_on`, `credential_id`, `description`, `id`, `name`, `option`, `status`, `target_service_details`, `use_case`.",
+   "`cloudability.ReportSortInput` (INPUT) has 2 field(s): `direction`, `field`.",
+   "`concert.Exposure_assessment` (OBJECT) has 18 field(s): `additional_details`, `application_id`, `assessment_date`, `created_by`, `created_date`, `custom_details`, `custom_score`, `details_url`, `findings_id`, `fix_by`, `history`, `id`, `last_updated_by`, `lin2el`, `priority`, `recommendation`, `risk_score`, `status`."
+  ],
+  "A": "`concert.Exposure_assessment` (OBJECT) has 18 field(s): `additional_details`, `application_id`, `assessment_date`, `created_by`, `created_date`, `custom_details`, `custom_score`, `details_url`, `findings_id`, `fix_by`, `history`, `id`, `last_updated_by`, `lin2el`, `priority`, `recommendation`, `risk_score`, `status`.",
+  "B": "`concert.Automation_rules` (OBJECT) has 13 field(s): `action`, `component_id`, `component_type`, `created_by`, `created_on`, `credential_id`, `description`, `id`, `name`, `option`, `status`, `target_service_details`, `use_case`.",
+  "C": "`cloudability.ReportSortInput` (INPUT) has 2 field(s): `direction`, `field`.",
+  "D": "`concert.Exposure_assessment` (OBJECT) has 18 field(s): `additional_details`, `application_id`, `assessment_date`, `created_by`, `created_date`, `custom_details`, `custom_score`, `details_url`, `findings_id`, `fix_by`, `history`, `id`, `last_updated_by`, `lin2el`, `priority`, `recommendation`, `risk_score`, `status`.",
+  "answer": "A",
+  "solution": "The `concert.Exposure_assessment` is a OBJECT in Exposure_assessment with 18 fields for structured data. Key fields: additional_details, application_id, assessment_date, created_by, created_date and 13 more.",
+  "reasoning_thought": "The Concert API reference documents `concert.Exposure_assessment` as a structured object/interface within the schema. Upon analyzing the documentation for `Exposure_assessment`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 18 fields within this object, covering data attributes relevant to its functional purpose. Option A is correct because it accurately reflects the documented field structure of `concert.Exposure_assessment`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "Exposure_assessment",
+    "url": "Type_concert_Exposure_assessment.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00222",
+  "question": "In the Concert schema reference, what field attributes are defined for `concert.Ingestion_jobs`?",
+  "qtype": 0,
+  "choices": [
+   "`concert.Cd_rule_mapping` (OBJECT) has 11 field(s): `component_definition_id`, `component_id`, `component_name`, `control_code`, `last_updated_by`, `last_updated_on`, `profile_name`, `rule_description`, `rule_id`, `rule_name`, `type`.",
+   "`concert.AssessmentState` (ENUM) has 7 field(s): `assessment_in_progress`, `exception_approved`, `exception_requested`, `false_positive`, `mitigated`, `mitigation_in_progress`, `unassessed`.",
+   "`concert.Ingestion_jobs` (OBJECT) has 14 field(s): `created_by`, `created_on`, `credentials_id`, `description`, `details`, `enabled`, `id`, `last_run`, `last_updated_by`, `last_updated_on`, `name`, `scheduled`, `status`, `type`.",
+   "`concert.Ingestion_jobs` (OBJECT) has 14 field(s): `created_by`, `created_on`, `credentials_id`, `description`, `details`, `enabled`, `id`, `last_run`, `last_updated_by`, `last_updated_on`, `name`, `scheduled`, `status`, `type`."
+  ],
+  "A": "`concert.Cd_rule_mapping` (OBJECT) has 11 field(s): `component_definition_id`, `component_id`, `component_name`, `control_code`, `last_updated_by`, `last_updated_on`, `profile_name`, `rule_description`, `rule_id`, `rule_name`, `type`.",
+  "B": "`concert.AssessmentState` (ENUM) has 7 field(s): `assessment_in_progress`, `exception_approved`, `exception_requested`, `false_positive`, `mitigated`, `mitigation_in_progress`, `unassessed`.",
+  "C": "`concert.Ingestion_jobs` (OBJECT) has 14 field(s): `created_by`, `created_on`, `credentials_id`, `description`, `details`, `enabled`, `id`, `last_run`, `last_updated_by`, `last_updated_on`, `name`, `scheduled`, `status`, `type`.",
+  "D": "`concert.Ingestion_jobs` (OBJECT) has 14 field(s): `created_by`, `created_on`, `credentials_id`, `description`, `details`, `enabled`, `id`, `last_run`, `last_updated_by`, `last_updated_on`, `name`, `scheduled`, `status`, `type`.",
+  "answer": "C",
+  "solution": "The `concert.Ingestion_jobs` is a OBJECT in Ingestion_jobs with 14 fields for structured data. Key fields: created_by, created_on, credentials_id, description, details and 9 more.",
+  "reasoning_thought": "The Concert API reference documents `concert.Ingestion_jobs` as a structured object/interface within the schema. Upon analyzing the documentation for `Ingestion_jobs`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 14 fields within this object, covering data attributes relevant to its functional purpose. Option C is correct because it accurately reflects the documented field structure of `concert.Ingestion_jobs`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "Ingestion_jobs",
+    "url": "Type_concert_Ingestion_jobs.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00240",
+  "question": "In the Concert schema reference, what field attributes are defined for `concert.Package_business_impact_view`?",
+  "qtype": 0,
+  "choices": [
+   "`concert.FiltersValues` (OBJECT) has 4 field(s): `filter_key`, `filter_values`, `label`, `type`.",
+   "`concert.Images_access_points` (OBJECT) has 2 field(s): `access_point_id`, `image_id`.",
+   "`concert.Package_business_impact_view` (OBJECT) has 21 field(s): `action`, `action_metadata`, `created_date`, `description`, `findings_id`, `is_archived`, `issue_id`, `last_updated_by`, `object_id`, `object_type`, `package_id`, `package_name`, `package_version`, `recommendation`, `recommendation_id`, `risk_type`, `sbom_id`, `sbom_name`, `sbom_version`, `status`, `updated_date`.",
+   "`concert.Package_business_impact_view` (OBJECT) has 21 field(s): `action`, `action_metadata`, `created_date`, `description`, `findings_id`, `is_archived`, `issue_id`, `last_updated_by`, `object_id`, `object_type`, `package_id`, `package_name`, `package_version`, `recommendation`, `recommendation_id`, `risk_type`, `sbom_id`, `sbom_name`, `sbom_version`, `status`, `updated_date`."
+  ],
+  "A": "`concert.FiltersValues` (OBJECT) has 4 field(s): `filter_key`, `filter_values`, `label`, `type`.",
+  "B": "`concert.Images_access_points` (OBJECT) has 2 field(s): `access_point_id`, `image_id`.",
+  "C": "`concert.Package_business_impact_view` (OBJECT) has 21 field(s): `action`, `action_metadata`, `created_date`, `description`, `findings_id`, `is_archived`, `issue_id`, `last_updated_by`, `object_id`, `object_type`, `package_id`, `package_name`, `package_version`, `recommendation`, `recommendation_id`, `risk_type`, `sbom_id`, `sbom_name`, `sbom_version`, `status`, `updated_date`.",
+  "D": "`concert.Package_business_impact_view` (OBJECT) has 21 field(s): `action`, `action_metadata`, `created_date`, `description`, `findings_id`, `is_archived`, `issue_id`, `last_updated_by`, `object_id`, `object_type`, `package_id`, `package_name`, `package_version`, `recommendation`, `recommendation_id`, `risk_type`, `sbom_id`, `sbom_name`, `sbom_version`, `status`, `updated_date`.",
+  "answer": "C",
+  "solution": "The `concert.Package_business_impact_view` is a OBJECT in Package_business_impact_view with 21 fields for structured data. Key fields: action, action_metadata, created_date, description, findings_id and 16 more.",
+  "reasoning_thought": "The Concert API reference documents `concert.Package_business_impact_view` as a structured object/interface within the schema. Upon analyzing the documentation for `Package_business_impact_view`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 21 fields within this object, covering data attributes relevant to its functional purpose. Option C is correct because it accurately reflects the documented field structure of `concert.Package_business_impact_view`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "Package_business_impact_view",
+    "url": "Type_concert_Package_business_impact_view.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00287",
+  "question": "In the Concert schema reference, what field attributes are defined for `concert.Sbomid_to_scorecard_categories`?",
+  "qtype": 0,
+  "choices": [
+   "`concert.FilterInfo` (OBJECT) has 2 field(s): `key`, `value`.",
+   "`concert.Sbomid_to_scorecard_categories` (OBJECT) has 6 field(s): `category`, `description`, `ossrepo`, `sbom_id`, `score`, `version`.",
+   "`concert.Sbomid_to_scorecard_categories` (OBJECT) has 6 field(s): `category`, `description`, `ossrepo`, `sbom_id`, `score`, `version`.",
+   "`concert.IngestionJobCredentialCollection` (OBJECT) has 1 field(s): `credentials`."
+  ],
+  "A": "`concert.FilterInfo` (OBJECT) has 2 field(s): `key`, `value`.",
+  "B": "`concert.Sbomid_to_scorecard_categories` (OBJECT) has 6 field(s): `category`, `description`, `ossrepo`, `sbom_id`, `score`, `version`.",
+  "C": "`concert.Sbomid_to_scorecard_categories` (OBJECT) has 6 field(s): `category`, `description`, `ossrepo`, `sbom_id`, `score`, `version`.",
+  "D": "`concert.IngestionJobCredentialCollection` (OBJECT) has 1 field(s): `credentials`.",
+  "answer": "B",
+  "solution": "The `concert.Sbomid_to_scorecard_categories` is a OBJECT in Sbomid_to_scorecard_categories with 6 fields for structured data. Key fields: category, description, ossrepo, sbom_id, score and 1 more.",
+  "reasoning_thought": "The Concert API reference documents `concert.Sbomid_to_scorecard_categories` as a structured object/interface within the schema. Upon analyzing the documentation for `Sbomid_to_scorecard_categories`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 6 fields within this object, covering data attributes relevant to its functional purpose. Option B is correct because it accurately reflects the documented field structure of `concert.Sbomid_to_scorecard_categories`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "Sbomid_to_scorecard_categories",
+    "url": "Type_concert_Sbomid_to_scorecard_categories.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00307",
+  "question": "Looking at Concert's type definitions, what fields does the `Topology_access_point_view` object contain?",
+  "qtype": 0,
+  "choices": [
+   "`concert.Topology_access_point_view` (OBJECT) has 10 field(s): `access_points`, `applications`, `certificates`, `compliance_assessments`, `cves`, `dast_exposures`, `environments`, `images`, `repositories`, `sast_exposures`.",
+   "`concert.Topology_access_point_view` (OBJECT) has 10 field(s): `access_points`, `applications`, `certificates`, `compliance_assessments`, `cves`, `dast_exposures`, `environments`, `images`, `repositories`, `sast_exposures`.",
+   "`concert.Materialized_view_refresh_flag` (OBJECT) has 2 field(s): `refresh_needed`, `view_name`.",
+   "`concert.PackageDetailsCollection` (OBJECT) has 1 field(s): `packages`."
+  ],
+  "A": "`concert.Topology_access_point_view` (OBJECT) has 10 field(s): `access_points`, `applications`, `certificates`, `compliance_assessments`, `cves`, `dast_exposures`, `environments`, `images`, `repositories`, `sast_exposures`.",
+  "B": "`concert.Topology_access_point_view` (OBJECT) has 10 field(s): `access_points`, `applications`, `certificates`, `compliance_assessments`, `cves`, `dast_exposures`, `environments`, `images`, `repositories`, `sast_exposures`.",
+  "C": "`concert.Materialized_view_refresh_flag` (OBJECT) has 2 field(s): `refresh_needed`, `view_name`.",
+  "D": "`concert.PackageDetailsCollection` (OBJECT) has 1 field(s): `packages`.",
+  "answer": "A",
+  "solution": "The `concert.Topology_access_point_view` is a OBJECT in Topology_access_point_view with 10 fields for structured data. Key fields: access_points, applications, certificates, compliance_assessments, cves and 5 more.",
+  "reasoning_thought": "The Concert API reference documents `concert.Topology_access_point_view` as a structured object/interface within the schema. Upon analyzing the documentation for `Topology_access_point_view`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 10 fields within this object, covering data attributes relevant to its functional purpose. Option A is correct because it accurately reflects the documented field structure of `concert.Topology_access_point_view`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "Topology_access_point_view",
+    "url": "Type_concert_Topology_access_point_view.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00419",
+  "question": "According to the InfraGraph schema documentation, what are the required and optional fields for `infragraph.BaseRegion`?",
+  "qtype": 0,
+  "choices": [
+   "`concert.Zsys_sysplex` (OBJECT) has 2 field(s): `id`, `name`.",
+   "`infragraph.AwsSecurityGroupRule` (MESSAGE) has 2 field(s): `aws_resource`, `security_rule`.",
+   "`infragraph.BaseRegion` (MESSAGE) has 1 field(s): `base`.",
+   "`infragraph.BaseRegion` (MESSAGE) has 1 field(s): `base`."
+  ],
+  "A": "`concert.Zsys_sysplex` (OBJECT) has 2 field(s): `id`, `name`.",
+  "B": "`infragraph.AwsSecurityGroupRule` (MESSAGE) has 2 field(s): `aws_resource`, `security_rule`.",
+  "C": "`infragraph.BaseRegion` (MESSAGE) has 1 field(s): `base`.",
+  "D": "`infragraph.BaseRegion` (MESSAGE) has 1 field(s): `base`.",
+  "answer": "C",
+  "solution": "The `infragraph.BaseRegion` is a MESSAGE in BaseRegion with 1 fields for structured data. Key fields: base.",
+  "reasoning_thought": "The InfraGraph API reference documents `infragraph.BaseRegion` as a structured object/interface within the schema. Upon analyzing the documentation for `BaseRegion`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 1 fields within this object, covering data attributes relevant to its functional purpose. Option C is correct because it accurately reflects the documented field structure of `infragraph.BaseRegion`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "BaseRegion",
+    "url": "Type_infragraph_BaseRegion.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00494",
+  "question": "According to the Instana schema documentation, what are the required and optional fields for `instana.callGroup_input_metrics_items_aggregation`?",
+  "qtype": 0,
+  "choices": [
+   "`infragraph.AwsResource` (MESSAGE) has 1 field(s): `arn`.",
+   "`instana.callGroup_input_metrics_items_aggregation` (ENUM) has 17 field(s): `DISTINCT_COUNT`, `INCREASE`, `MAX`, `MEAN`, `MIN`, `P25`, `P50`, `P75`, `P90`, `P95`, `P98`, `P99`, `P99_9`, `P99_99`, `PER_SECOND`, `SUM`, `SUM_POSITIVE`.",
+   "`instana.addServiceConfig_200_response` (OBJECT) has 6 field(s): `comment`, `enabled`, `id`, `label`, `matchSpecification`, `name`.",
+   "`instana.callGroup_input_metrics_items_aggregation` (ENUM) has 17 field(s): `DISTINCT_COUNT`, `INCREASE`, `MAX`, `MEAN`, `MIN`, `P25`, `P50`, `P75`, `P90`, `P95`, `P98`, `P99`, `P99_9`, `P99_99`, `PER_SECOND`, `SUM`, `SUM_POSITIVE`."
+  ],
+  "A": "`infragraph.AwsResource` (MESSAGE) has 1 field(s): `arn`.",
+  "B": "`instana.callGroup_input_metrics_items_aggregation` (ENUM) has 17 field(s): `DISTINCT_COUNT`, `INCREASE`, `MAX`, `MEAN`, `MIN`, `P25`, `P50`, `P75`, `P90`, `P95`, `P98`, `P99`, `P99_9`, `P99_99`, `PER_SECOND`, `SUM`, `SUM_POSITIVE`.",
+  "C": "`instana.addServiceConfig_200_response` (OBJECT) has 6 field(s): `comment`, `enabled`, `id`, `label`, `matchSpecification`, `name`.",
+  "D": "`instana.callGroup_input_metrics_items_aggregation` (ENUM) has 17 field(s): `DISTINCT_COUNT`, `INCREASE`, `MAX`, `MEAN`, `MIN`, `P25`, `P50`, `P75`, `P90`, `P95`, `P98`, `P99`, `P99_9`, `P99_99`, `PER_SECOND`, `SUM`, `SUM_POSITIVE`.",
+  "answer": "B",
+  "solution": "The `instana.callGroup_input_metrics_items_aggregation` is a ENUM in callGroup_input_metrics_items_aggregation with 17 fields for structured data. Key fields: DISTINCT_COUNT, INCREASE, MAX, MEAN, MIN and 12 more.",
+  "reasoning_thought": "The Instana API reference documents `instana.callGroup_input_metrics_items_aggregation` as a structured object/interface within the schema. Upon analyzing the documentation for `callGroup_input_metrics_items_aggregation`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 17 fields within this object, covering data attributes relevant to its functional purpose. This is an array item type, representing the schema for individual elements within a list structure. Option B is correct because it accurately reflects the documented field structure of `instana.callGroup_input_metrics_items_aggregation`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "callGroup_input_metrics_items_aggregation",
+    "url": "Type_instana_callGroup_input_metrics_items_aggregation.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00502",
+  "question": "In the Instana schema reference, what field attributes are defined for `instana.createApdexConfiguration_request_Input`?",
+  "qtype": 0,
+  "choices": [
+   "`infragraph.Model` (MESSAGE) has 39 field(s): `aws_account`, `aws_ami`, `aws_availability_zone`, `aws_ec2_instance`, `aws_ec2_instance_type`, `aws_ec2_volume`, `aws_ecs_cluster`, `aws_ecs_service`, `aws_iam_policy`, `aws_iam_role`, `aws_iam_role_policy_attachment`, `aws_iam_user`, `aws_lambda_function`, `aws_network_interface`, `aws_region`, `aws_s3_bucket`, `aws_security_group`, `aws_security_group_rule`, `aws_subnet`, `aws_vpc`, `azure_virtual_machine`, `gcp_compute_instance`, `hcp_organization`, `hcp_project`, `hcp_terraform_agent_pool`, `hcp_terraform_organization`, `hcp_terraform_project`, `hcp_terraform_run`, `hcp_terraform_state_version`, `hcp_terraform_workspace`, `packer_ancestry`, `packer_artifact`, `packer_bucket`, `packer_build`, `packer_channel`, `packer_inherited_revocation`, `packer_registry`, `packer_sbom`, `packer_version`.",
+   "`instana.ApplicationFilter` (INPUT) has 3 field(s): `boundaryScope`, `label`, `timeFrame`.",
+   "`instana.createApdexConfiguration_request_Input` (INPUT) has 2 field(s): `apdexEntity`, `apdexName`.",
+   "`instana.createApdexConfiguration_request_Input` (INPUT) has 2 field(s): `apdexEntity`, `apdexName`."
+  ],
+  "A": "`infragraph.Model` (MESSAGE) has 39 field(s): `aws_account`, `aws_ami`, `aws_availability_zone`, `aws_ec2_instance`, `aws_ec2_instance_type`, `aws_ec2_volume`, `aws_ecs_cluster`, `aws_ecs_service`, `aws_iam_policy`, `aws_iam_role`, `aws_iam_role_policy_attachment`, `aws_iam_user`, `aws_lambda_function`, `aws_network_interface`, `aws_region`, `aws_s3_bucket`, `aws_security_group`, `aws_security_group_rule`, `aws_subnet`, `aws_vpc`, `azure_virtual_machine`, `gcp_compute_instance`, `hcp_organization`, `hcp_project`, `hcp_terraform_agent_pool`, `hcp_terraform_organization`, `hcp_terraform_project`, `hcp_terraform_run`, `hcp_terraform_state_version`, `hcp_terraform_workspace`, `packer_ancestry`, `packer_artifact`, `packer_bucket`, `packer_build`, `packer_channel`, `packer_inherited_revocation`, `packer_registry`, `packer_sbom`, `packer_version`.",
+  "B": "`instana.ApplicationFilter` (INPUT) has 3 field(s): `boundaryScope`, `label`, `timeFrame`.",
+  "C": "`instana.createApdexConfiguration_request_Input` (INPUT) has 2 field(s): `apdexEntity`, `apdexName`.",
+  "D": "`instana.createApdexConfiguration_request_Input` (INPUT) has 2 field(s): `apdexEntity`, `apdexName`.",
+  "answer": "C",
+  "solution": "The `instana.createApdexConfiguration_request_Input` is a INPUT in createApdexConfiguration_request_Input with 2 fields for structured data. Key fields: apdexEntity, apdexName.",
+  "reasoning_thought": "The Instana API reference documents `instana.createApdexConfiguration_request_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `createApdexConfiguration_request_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 2 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option C is correct because it accurately reflects the documented field structure of `instana.createApdexConfiguration_request_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "createApdexConfiguration_request_Input",
+    "url": "Type_instana_createApdexConfiguration_request_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00521",
+  "question": "Looking at Instana's type definitions, what fields does the `createMobileAppAlertConfig_200_response` object contain?",
+  "qtype": 0,
+  "choices": [
+   "`infragraph.HcpTerraformProject` (MESSAGE) has 3 field(s): `account`, `is_legacy_organization_project`, `is_unified`.",
+   "`infragraph.BaseVolume` (MESSAGE) has 6 field(s): `attached_virtual_machine_ids`, `base`, `iops`, `is_encrypted`, `size`, `throughput`.",
+   "`instana.createMobileAppAlertConfig_200_response` (OBJECT) has 20 field(s): `alertChannelIds`, `completeTagFilterExpression`, `created`, `customPayloadFields`, `description`, `enabled`, `gracePeriod`, `granularity`, `id`, `initialCreated`, `mobileAppId`, `name`, `readOnly`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`, `triggering`.",
+   "`instana.createMobileAppAlertConfig_200_response` (OBJECT) has 20 field(s): `alertChannelIds`, `completeTagFilterExpression`, `created`, `customPayloadFields`, `description`, `enabled`, `gracePeriod`, `granularity`, `id`, `initialCreated`, `mobileAppId`, `name`, `readOnly`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`, `triggering`."
+  ],
+  "A": "`infragraph.HcpTerraformProject` (MESSAGE) has 3 field(s): `account`, `is_legacy_organization_project`, `is_unified`.",
+  "B": "`infragraph.BaseVolume` (MESSAGE) has 6 field(s): `attached_virtual_machine_ids`, `base`, `iops`, `is_encrypted`, `size`, `throughput`.",
+  "C": "`instana.createMobileAppAlertConfig_200_response` (OBJECT) has 20 field(s): `alertChannelIds`, `completeTagFilterExpression`, `created`, `customPayloadFields`, `description`, `enabled`, `gracePeriod`, `granularity`, `id`, `initialCreated`, `mobileAppId`, `name`, `readOnly`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`, `triggering`.",
+  "D": "`instana.createMobileAppAlertConfig_200_response` (OBJECT) has 20 field(s): `alertChannelIds`, `completeTagFilterExpression`, `created`, `customPayloadFields`, `description`, `enabled`, `gracePeriod`, `granularity`, `id`, `initialCreated`, `mobileAppId`, `name`, `readOnly`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`, `triggering`.",
+  "answer": "C",
+  "solution": "The `instana.createMobileAppAlertConfig_200_response` is a OBJECT in createMobileAppAlertConfig_200_response with 20 fields for structured data. Key fields: alertChannelIds, completeTagFilterExpression, created, customPayloadFields, description and 15 more.",
+  "reasoning_thought": "The Instana API reference documents `instana.createMobileAppAlertConfig_200_response` as a structured object/interface within the schema. Upon analyzing the documentation for `createMobileAppAlertConfig_200_response`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 20 fields within this object, covering data attributes relevant to its functional purpose. This represents a response schema, detailing the structure of data returned by successful API calls. Option C is correct because it accurately reflects the documented field structure of `instana.createMobileAppAlertConfig_200_response`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "createMobileAppAlertConfig_200_response",
+    "url": "Type_instana_createMobileAppAlertConfig_200_response.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00567",
+  "question": "What is the complete field structure of the `getActivitiesCsv_request_Input` type in Instana?",
+  "qtype": 0,
+  "choices": [
+   "`instana.getActivitiesCsv_request_Input` (INPUT) has 5 field(s): `order`, `pagination`, `tagFilterExpression`, `timeFrame`, `timeframe`.",
+   "`instana.createGlobalApplicationAlertConfig_request_Input` (INPUT) has 19 field(s): `alertChannelIds`, `alertChannels`, `applications`, `boundaryScope`, `customPayloadFields`, `description`, `evaluationType`, `gracePeriod`, `granularity`, `includeInternal`, `includeSynthetic`, `name`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`, `triggering`.",
+   "`instana.addUsersToGroup_200_response` (OBJECT) has 4 field(s): `id`, `members`, `name`, `permissionSet`.",
+   "`instana.getActivitiesCsv_request_Input` (INPUT) has 5 field(s): `order`, `pagination`, `tagFilterExpression`, `timeFrame`, `timeframe`."
+  ],
+  "A": "`instana.getActivitiesCsv_request_Input` (INPUT) has 5 field(s): `order`, `pagination`, `tagFilterExpression`, `timeFrame`, `timeframe`.",
+  "B": "`instana.createGlobalApplicationAlertConfig_request_Input` (INPUT) has 19 field(s): `alertChannelIds`, `alertChannels`, `applications`, `boundaryScope`, `customPayloadFields`, `description`, `evaluationType`, `gracePeriod`, `granularity`, `includeInternal`, `includeSynthetic`, `name`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`, `triggering`.",
+  "C": "`instana.addUsersToGroup_200_response` (OBJECT) has 4 field(s): `id`, `members`, `name`, `permissionSet`.",
+  "D": "`instana.getActivitiesCsv_request_Input` (INPUT) has 5 field(s): `order`, `pagination`, `tagFilterExpression`, `timeFrame`, `timeframe`.",
+  "answer": "A",
+  "solution": "The `instana.getActivitiesCsv_request_Input` is a INPUT in getActivitiesCsv_request_Input with 5 fields for structured data. Key fields: order, pagination, tagFilterExpression, timeFrame, timeframe.",
+  "reasoning_thought": "The Instana API reference documents `instana.getActivitiesCsv_request_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `getActivitiesCsv_request_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 5 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option A is correct because it accurately reflects the documented field structure of `instana.getActivitiesCsv_request_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "getActivitiesCsv_request_Input",
+    "url": "Type_instana_getActivitiesCsv_request_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00608",
+  "question": "In the Instana schema reference, what field attributes are defined for `instana.getEndpointConfig_200_response`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.getEndpointConfig_200_response` (OBJECT) has 5 field(s): `endpointCase`, `endpointNameByCollectedPathTemplateRuleEnabled`, `endpointNameByFirstPathSegmentRuleEnabled`, `rules`, `serviceId`.",
+   "`instana.getBeaconMetrics_200_response` (OBJECT) has 1 field(s): `empty`.",
+   "`instana.createMobileAppAlertConfig_200_response` (OBJECT) has 20 field(s): `alertChannelIds`, `completeTagFilterExpression`, `created`, `customPayloadFields`, `description`, `enabled`, `gracePeriod`, `granularity`, `id`, `initialCreated`, `mobileAppId`, `name`, `readOnly`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`, `triggering`.",
+   "`instana.getEndpointConfig_200_response` (OBJECT) has 5 field(s): `endpointCase`, `endpointNameByCollectedPathTemplateRuleEnabled`, `endpointNameByFirstPathSegmentRuleEnabled`, `rules`, `serviceId`."
+  ],
+  "A": "`instana.getEndpointConfig_200_response` (OBJECT) has 5 field(s): `endpointCase`, `endpointNameByCollectedPathTemplateRuleEnabled`, `endpointNameByFirstPathSegmentRuleEnabled`, `rules`, `serviceId`.",
+  "B": "`instana.getBeaconMetrics_200_response` (OBJECT) has 1 field(s): `empty`.",
+  "C": "`instana.createMobileAppAlertConfig_200_response` (OBJECT) has 20 field(s): `alertChannelIds`, `completeTagFilterExpression`, `created`, `customPayloadFields`, `description`, `enabled`, `gracePeriod`, `granularity`, `id`, `initialCreated`, `mobileAppId`, `name`, `readOnly`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`, `triggering`.",
+  "D": "`instana.getEndpointConfig_200_response` (OBJECT) has 5 field(s): `endpointCase`, `endpointNameByCollectedPathTemplateRuleEnabled`, `endpointNameByFirstPathSegmentRuleEnabled`, `rules`, `serviceId`.",
+  "answer": "A",
+  "solution": "The `instana.getEndpointConfig_200_response` is a OBJECT in getEndpointConfig_200_response with 5 fields for structured data. Key fields: endpointCase, endpointNameByCollectedPathTemplateRuleEnabled, endpointNameByFirstPathSegmentRuleEnabled, rules, serviceId.",
+  "reasoning_thought": "The Instana API reference documents `instana.getEndpointConfig_200_response` as a structured object/interface within the schema. Upon analyzing the documentation for `getEndpointConfig_200_response`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 5 fields within this object, covering data attributes relevant to its functional purpose. This represents a response schema, detailing the structure of data returned by successful API calls. Option A is correct because it accurately reflects the documented field structure of `instana.getEndpointConfig_200_response`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "getEndpointConfig_200_response",
+    "url": "Type_instana_getEndpointConfig_200_response.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00686",
+  "question": "Looking at Instana's type definitions, what fields does the `manuallyCloseEvent_200_response` object contain?",
+  "qtype": 0,
+  "choices": [
+   "`instana.manuallyCloseEvent_200_response` (OBJECT) has 13 field(s): `end`, `endpointServiceId`, `entityId`, `entityType`, `id`, `metadata`, `metricAccessId`, `plugin`, `problem`, `rca`, `start`, `state`, `type`.",
+   "`instana.getMobileAppBeacons_request_Input` (INPUT) has 4 field(s): `pagination`, `tagFilters`, `timeFrame`, `type`.",
+   "`instana.getCallDetails_200_response` (OBJECT) has 15 field(s): `batchSelfTime`, `batchSize`, `destination`, `duration`, `errorCount`, `id`, `isSynthetic`, `label`, `logs`, `minSelfTime`, `networkTime`, `source`, `spans`, `start`, `synthetic`.",
+   "`instana.manuallyCloseEvent_200_response` (OBJECT) has 13 field(s): `end`, `endpointServiceId`, `entityId`, `entityType`, `id`, `metadata`, `metricAccessId`, `plugin`, `problem`, `rca`, `start`, `state`, `type`."
+  ],
+  "A": "`instana.manuallyCloseEvent_200_response` (OBJECT) has 13 field(s): `end`, `endpointServiceId`, `entityId`, `entityType`, `id`, `metadata`, `metricAccessId`, `plugin`, `problem`, `rca`, `start`, `state`, `type`.",
+  "B": "`instana.getMobileAppBeacons_request_Input` (INPUT) has 4 field(s): `pagination`, `tagFilters`, `timeFrame`, `type`.",
+  "C": "`instana.getCallDetails_200_response` (OBJECT) has 15 field(s): `batchSelfTime`, `batchSize`, `destination`, `duration`, `errorCount`, `id`, `isSynthetic`, `label`, `logs`, `minSelfTime`, `networkTime`, `source`, `spans`, `start`, `synthetic`.",
+  "D": "`instana.manuallyCloseEvent_200_response` (OBJECT) has 13 field(s): `end`, `endpointServiceId`, `entityId`, `entityType`, `id`, `metadata`, `metricAccessId`, `plugin`, `problem`, `rca`, `start`, `state`, `type`.",
+  "answer": "A",
+  "solution": "The `instana.manuallyCloseEvent_200_response` is a OBJECT in manuallyCloseEvent_200_response with 13 fields for structured data. Key fields: end, endpointServiceId, entityId, entityType, id and 8 more.",
+  "reasoning_thought": "The Instana API reference documents `instana.manuallyCloseEvent_200_response` as a structured object/interface within the schema. Upon analyzing the documentation for `manuallyCloseEvent_200_response`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 13 fields within this object, covering data attributes relevant to its functional purpose. This represents a response schema, detailing the structure of data returned by successful API calls. Option A is correct because it accurately reflects the documented field structure of `instana.manuallyCloseEvent_200_response`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "manuallyCloseEvent_200_response",
+    "url": "Type_instana_manuallyCloseEvent_200_response.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00759",
+  "question": "What is the complete field structure of the `mutation_resolve_parameters_items_Input` type in Instana?",
+  "qtype": 0,
+  "choices": [
+   "`instana.mutation_getMobileAppBeaconGroups_adjustedTimeframe` (OBJECT) has 2 field(s): `to`, `windowSize`.",
+   "`instana.mutation_getApplicationMetrics_adjustedTimeframe` (OBJECT) has 2 field(s): `to`, `windowSize`.",
+   "`instana.mutation_resolve_parameters_items_Input` (INPUT) has 4 field(s): `key`, `name`, `resolvedValue`, `tagName`.",
+   "`instana.mutation_resolve_parameters_items_Input` (INPUT) has 4 field(s): `key`, `name`, `resolvedValue`, `tagName`."
+  ],
+  "A": "`instana.mutation_getMobileAppBeaconGroups_adjustedTimeframe` (OBJECT) has 2 field(s): `to`, `windowSize`.",
+  "B": "`instana.mutation_getApplicationMetrics_adjustedTimeframe` (OBJECT) has 2 field(s): `to`, `windowSize`.",
+  "C": "`instana.mutation_resolve_parameters_items_Input` (INPUT) has 4 field(s): `key`, `name`, `resolvedValue`, `tagName`.",
+  "D": "`instana.mutation_resolve_parameters_items_Input` (INPUT) has 4 field(s): `key`, `name`, `resolvedValue`, `tagName`.",
+  "answer": "C",
+  "solution": "The `instana.mutation_resolve_parameters_items_Input` is a INPUT in mutation_resolve_parameters_items_Input with 4 fields for structured data. Key fields: key, name, resolvedValue, tagName.",
+  "reasoning_thought": "The Instana API reference documents `instana.mutation_resolve_parameters_items_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `mutation_resolve_parameters_items_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 4 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option C is correct because it accurately reflects the documented field structure of `instana.mutation_resolve_parameters_items_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "mutation_resolve_parameters_items_Input",
+    "url": "Type_instana_mutation_resolve_parameters_items_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00791",
+  "question": "Looking at Instana's type definitions, what fields does the `mutationInput_createGlobalApplicationAlertConfig_input_rule_Input` object contain?",
+  "qtype": 0,
+  "choices": [
+   "`instana.mutationInput_createGlobalApplicationAlertConfig_input_rule_Input` (INPUT) has 3 field(s): `aggregation`, `alertType`, `metricName`.",
+   "`instana.mutationInput_addPolicies_input_items_Input` (INPUT) has 6 field(s): `description`, `id`, `name`, `tags`, `trigger`, `typeConfigurations`.",
+   "`instana.mutation_inviteUsers_oneOf_0_items` (OBJECT) has 1 field(s): `invitationResults`.",
+   "`instana.mutationInput_createGlobalApplicationAlertConfig_input_rule_Input` (INPUT) has 3 field(s): `aggregation`, `alertType`, `metricName`."
+  ],
+  "A": "`instana.mutationInput_createGlobalApplicationAlertConfig_input_rule_Input` (INPUT) has 3 field(s): `aggregation`, `alertType`, `metricName`.",
+  "B": "`instana.mutationInput_addPolicies_input_items_Input` (INPUT) has 6 field(s): `description`, `id`, `name`, `tags`, `trigger`, `typeConfigurations`.",
+  "C": "`instana.mutation_inviteUsers_oneOf_0_items` (OBJECT) has 1 field(s): `invitationResults`.",
+  "D": "`instana.mutationInput_createGlobalApplicationAlertConfig_input_rule_Input` (INPUT) has 3 field(s): `aggregation`, `alertType`, `metricName`.",
+  "answer": "A",
+  "solution": "The `instana.mutationInput_createGlobalApplicationAlertConfig_input_rule_Input` is a INPUT in mutationInput_createGlobalApplicationAlertConfig_input_rule_Input with 3 fields for structured data. Key fields: aggregation, alertType, metricName.",
+  "reasoning_thought": "The Instana API reference documents `instana.mutationInput_createGlobalApplicationAlertConfig_input_rule_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `mutationInput_createGlobalApplicationAlertConfig_input_rule_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 3 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option A is correct because it accurately reflects the documented field structure of `instana.mutationInput_createGlobalApplicationAlertConfig_input_rule_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "mutationInput_createGlobalApplicationAlertConfig_input_rule_Input",
+    "url": "Type_instana_mutationInput_createGlobalApplicationAlertConfig_input_rule_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00796",
+  "question": "According to the Instana schema documentation, what are the required and optional fields for `instana.mutationInput_createGroup_input_members_items_Input`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.mutation_getEntities_items_items_entityHealthInfo` (OBJECT) has 2 field(s): `maxSeverity`, `openIssues`.",
+   "`instana.mutationInput_createGroup_input_members_items_Input` (INPUT) has 2 field(s): `email`, `userId`.",
+   "`instana.mutation_shareAndInviteUsers_oneOf_0_items_invitationResults_items` (OBJECT) has 2 field(s): `invitationStatus`, `userEmail`.",
+   "`instana.mutationInput_createGroup_input_members_items_Input` (INPUT) has 2 field(s): `email`, `userId`."
+  ],
+  "A": "`instana.mutation_getEntities_items_items_entityHealthInfo` (OBJECT) has 2 field(s): `maxSeverity`, `openIssues`.",
+  "B": "`instana.mutationInput_createGroup_input_members_items_Input` (INPUT) has 2 field(s): `email`, `userId`.",
+  "C": "`instana.mutation_shareAndInviteUsers_oneOf_0_items_invitationResults_items` (OBJECT) has 2 field(s): `invitationStatus`, `userEmail`.",
+  "D": "`instana.mutationInput_createGroup_input_members_items_Input` (INPUT) has 2 field(s): `email`, `userId`.",
+  "answer": "B",
+  "solution": "The `instana.mutationInput_createGroup_input_members_items_Input` is a INPUT in mutationInput_createGroup_input_members_items_Input with 2 fields for structured data. Key fields: email, userId.",
+  "reasoning_thought": "The Instana API reference documents `instana.mutationInput_createGroup_input_members_items_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `mutationInput_createGroup_input_members_items_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 2 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option B is correct because it accurately reflects the documented field structure of `instana.mutationInput_createGroup_input_members_items_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "mutationInput_createGroup_input_members_items_Input",
+    "url": "Type_instana_mutationInput_createGroup_input_members_items_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00821",
+  "question": "In the Instana schema reference, what field attributes are defined for `instana.mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.mutation_upsertCustomPayloadConfiguration_items` (OBJECT) has 2 field(s): `fields`, `lastUpdated`.",
+   "`instana.mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input` (INPUT) has 2 field(s): `longTimeWindow`, `shortTimeWindow`.",
+   "`instana.mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input` (INPUT) has 2 field(s): `longTimeWindow`, `shortTimeWindow`.",
+   "`instana.mutationInput_createApdexConfiguration_input_apdexEntity_Input` (INPUT) has 4 field(s): `apdexType`, `entityId`, `tagFilterExpression`, `threshold`."
+  ],
+  "A": "`instana.mutation_upsertCustomPayloadConfiguration_items` (OBJECT) has 2 field(s): `fields`, `lastUpdated`.",
+  "B": "`instana.mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input` (INPUT) has 2 field(s): `longTimeWindow`, `shortTimeWindow`.",
+  "C": "`instana.mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input` (INPUT) has 2 field(s): `longTimeWindow`, `shortTimeWindow`.",
+  "D": "`instana.mutationInput_createApdexConfiguration_input_apdexEntity_Input` (INPUT) has 4 field(s): `apdexType`, `entityId`, `tagFilterExpression`, `threshold`.",
+  "answer": "B",
+  "solution": "The `instana.mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input` is a INPUT in mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input with 2 fields for structured data. Key fields: longTimeWindow, shortTimeWindow.",
+  "reasoning_thought": "The Instana API reference documents `instana.mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 2 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option B is correct because it accurately reflects the documented field structure of `instana.mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input",
+    "url": "Type_instana_mutationInput_createServiceLevelsAlertConfig_input_burnRateTimeWindows_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00851",
+  "question": "In the Instana schema reference, what field attributes are defined for `instana.mutationInput_getActivities_input_tagFilterExpression_Input`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.mutationInput_createGroup_input_permissionSet_Input` (INPUT) has 12 field(s): `actionFilter`, `applicationIds`, `businessPerspectiveIds`, `infraDfqFilter`, `kubernetesClusterUUIDs`, `kubernetesNamespaceUIDs`, `mobileAppIds`, `permissions`, `restrictedApplicationFilter`, `syntheticCredentialKeys`, `syntheticTestIds`, `websiteIds`.",
+   "`instana.mutationInput_addManualServiceConfig_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+   "`instana.mutationInput_getActivities_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+   "`instana.mutationInput_getActivities_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`."
+  ],
+  "A": "`instana.mutationInput_createGroup_input_permissionSet_Input` (INPUT) has 12 field(s): `actionFilter`, `applicationIds`, `businessPerspectiveIds`, `infraDfqFilter`, `kubernetesClusterUUIDs`, `kubernetesNamespaceUIDs`, `mobileAppIds`, `permissions`, `restrictedApplicationFilter`, `syntheticCredentialKeys`, `syntheticTestIds`, `websiteIds`.",
+  "B": "`instana.mutationInput_addManualServiceConfig_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+  "C": "`instana.mutationInput_getActivities_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+  "D": "`instana.mutationInput_getActivities_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+  "answer": "C",
+  "solution": "The `instana.mutationInput_getActivities_input_tagFilterExpression_Input` is a INPUT in mutationInput_getActivities_input_tagFilterExpression_Input with 1 fields for structured data. Key fields: type.",
+  "reasoning_thought": "The Instana API reference documents `instana.mutationInput_getActivities_input_tagFilterExpression_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `mutationInput_getActivities_input_tagFilterExpression_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 1 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option C is correct because it accurately reflects the documented field structure of `instana.mutationInput_getActivities_input_tagFilterExpression_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "mutationInput_getActivities_input_tagFilterExpression_Input",
+    "url": "Type_instana_mutationInput_getActivities_input_tagFilterExpression_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00904",
+  "question": "In the Instana schema reference, what field attributes are defined for `instana.mutationInput_getEntities_input_metrics_items_aggregation`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.mutationInput_getEndpointsMetrics_input_endpointTypes_items` (ENUM) has 14 field(s): `BATCH`, `DATABASE`, `EVENT`, `GRAPHQL`, `HTTP`, `INTERNAL`, `MESSAGING`, `OPENTELEMETRY`, `PAGE`, `PAGE_RESOURCE`, `RPC`, `SDK`, `SHELL`, `UNDEFINED`.",
+   "`instana.mutationInput_getCallGroup_input_order_direction` (ENUM) has 2 field(s): `ASC`, `DESC`.",
+   "`instana.mutationInput_getEntities_input_metrics_items_aggregation` (ENUM) has 17 field(s): `DISTINCT_COUNT`, `INCREASE`, `MAX`, `MEAN`, `MIN`, `P25`, `P50`, `P75`, `P90`, `P95`, `P98`, `P99`, `P99_9`, `P99_99`, `PER_SECOND`, `SUM`, `SUM_POSITIVE`.",
+   "`instana.mutationInput_getEntities_input_metrics_items_aggregation` (ENUM) has 17 field(s): `DISTINCT_COUNT`, `INCREASE`, `MAX`, `MEAN`, `MIN`, `P25`, `P50`, `P75`, `P90`, `P95`, `P98`, `P99`, `P99_9`, `P99_99`, `PER_SECOND`, `SUM`, `SUM_POSITIVE`."
+  ],
+  "A": "`instana.mutationInput_getEndpointsMetrics_input_endpointTypes_items` (ENUM) has 14 field(s): `BATCH`, `DATABASE`, `EVENT`, `GRAPHQL`, `HTTP`, `INTERNAL`, `MESSAGING`, `OPENTELEMETRY`, `PAGE`, `PAGE_RESOURCE`, `RPC`, `SDK`, `SHELL`, `UNDEFINED`.",
+  "B": "`instana.mutationInput_getCallGroup_input_order_direction` (ENUM) has 2 field(s): `ASC`, `DESC`.",
+  "C": "`instana.mutationInput_getEntities_input_metrics_items_aggregation` (ENUM) has 17 field(s): `DISTINCT_COUNT`, `INCREASE`, `MAX`, `MEAN`, `MIN`, `P25`, `P50`, `P75`, `P90`, `P95`, `P98`, `P99`, `P99_9`, `P99_99`, `PER_SECOND`, `SUM`, `SUM_POSITIVE`.",
+  "D": "`instana.mutationInput_getEntities_input_metrics_items_aggregation` (ENUM) has 17 field(s): `DISTINCT_COUNT`, `INCREASE`, `MAX`, `MEAN`, `MIN`, `P25`, `P50`, `P75`, `P90`, `P95`, `P98`, `P99`, `P99_9`, `P99_99`, `PER_SECOND`, `SUM`, `SUM_POSITIVE`.",
+  "answer": "C",
+  "solution": "The `instana.mutationInput_getEntities_input_metrics_items_aggregation` is a ENUM in mutationInput_getEntities_input_metrics_items_aggregation with 17 fields for structured data. Key fields: DISTINCT_COUNT, INCREASE, MAX, MEAN, MIN and 12 more.",
+  "reasoning_thought": "The Instana API reference documents `instana.mutationInput_getEntities_input_metrics_items_aggregation` as a structured object/interface within the schema. Upon analyzing the documentation for `mutationInput_getEntities_input_metrics_items_aggregation`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 17 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option C is correct because it accurately reflects the documented field structure of `instana.mutationInput_getEntities_input_metrics_items_aggregation`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "mutationInput_getEntities_input_metrics_items_aggregation",
+    "url": "Type_instana_mutationInput_getEntities_input_metrics_items_aggregation.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00919",
+  "question": "According to the Instana schema documentation, what are the required and optional fields for `instana.mutationInput_getLocationSummaryList_input_tagFilterExpression_Input`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.mutationInput_getLocationSummaryList_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+   "`instana.mutationInput_getBeacons_input_type` (ENUM) has 6 field(s): `CUSTOM`, `ERROR`, `HTTPREQUEST`, `PAGELOAD`, `PAGE_CHANGE`, `RESOURCELOAD`.",
+   "`instana.mutationInput_createWebsiteAlertConfig_input_customPayloadFields_items_Input` (INPUT) has 2 field(s): `key`, `type`.",
+   "`instana.mutationInput_getLocationSummaryList_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`."
+  ],
+  "A": "`instana.mutationInput_getLocationSummaryList_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+  "B": "`instana.mutationInput_getBeacons_input_type` (ENUM) has 6 field(s): `CUSTOM`, `ERROR`, `HTTPREQUEST`, `PAGELOAD`, `PAGE_CHANGE`, `RESOURCELOAD`.",
+  "C": "`instana.mutationInput_createWebsiteAlertConfig_input_customPayloadFields_items_Input` (INPUT) has 2 field(s): `key`, `type`.",
+  "D": "`instana.mutationInput_getLocationSummaryList_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+  "answer": "A",
+  "solution": "The `instana.mutationInput_getLocationSummaryList_input_tagFilterExpression_Input` is a INPUT in mutationInput_getLocationSummaryList_input_tagFilterExpression_Input with 1 fields for structured data. Key fields: type.",
+  "reasoning_thought": "The Instana API reference documents `instana.mutationInput_getLocationSummaryList_input_tagFilterExpression_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `mutationInput_getLocationSummaryList_input_tagFilterExpression_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 1 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option A is correct because it accurately reflects the documented field structure of `instana.mutationInput_getLocationSummaryList_input_tagFilterExpression_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "mutationInput_getLocationSummaryList_input_tagFilterExpression_Input",
+    "url": "Type_instana_mutationInput_getLocationSummaryList_input_tagFilterExpression_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-00977",
+  "question": "Looking at Instana's type definitions, what fields does the `mutationInput_getTestSummaryList_input_tagFilters_items` object contain?",
+  "qtype": 0,
+  "choices": [
+   "`instana.mutationInput_getTestSummaryList_input_tagFilters_items` (OBJECT) has 6 field(s): `entity`, `key`, `name`, `operator`, `type`, `value`.",
+   "`instana.mutationInput_getTestSummaryList_input_tagFilters_items` (OBJECT) has 6 field(s): `entity`, `key`, `name`, `operator`, `type`, `value`.",
+   "`instana.mutationInput_getEntities_input_timeFrame_Input` (INPUT) has 2 field(s): `to`, `windowSize`.",
+   "`instana.mutationInput_getMetricsResult_input_metrics_items_aggregation` (ENUM) has 17 field(s): `DISTINCT_COUNT`, `INCREASE`, `MAX`, `MEAN`, `MIN`, `P25`, `P50`, `P75`, `P90`, `P95`, `P98`, `P99`, `P99_9`, `P99_99`, `PER_SECOND`, `SUM`, `SUM_POSITIVE`."
+  ],
+  "A": "`instana.mutationInput_getTestSummaryList_input_tagFilters_items` (OBJECT) has 6 field(s): `entity`, `key`, `name`, `operator`, `type`, `value`.",
+  "B": "`instana.mutationInput_getTestSummaryList_input_tagFilters_items` (OBJECT) has 6 field(s): `entity`, `key`, `name`, `operator`, `type`, `value`.",
+  "C": "`instana.mutationInput_getEntities_input_timeFrame_Input` (INPUT) has 2 field(s): `to`, `windowSize`.",
+  "D": "`instana.mutationInput_getMetricsResult_input_metrics_items_aggregation` (ENUM) has 17 field(s): `DISTINCT_COUNT`, `INCREASE`, `MAX`, `MEAN`, `MIN`, `P25`, `P50`, `P75`, `P90`, `P95`, `P98`, `P99`, `P99_9`, `P99_99`, `PER_SECOND`, `SUM`, `SUM_POSITIVE`.",
+  "answer": "A",
+  "solution": "The `instana.mutationInput_getTestSummaryList_input_tagFilters_items` is a OBJECT in mutationInput_getTestSummaryList_input_tagFilters_items with 6 fields for structured data. Key fields: entity, key, name, operator, type and 1 more.",
+  "reasoning_thought": "The Instana API reference documents `instana.mutationInput_getTestSummaryList_input_tagFilters_items` as a structured object/interface within the schema. Upon analyzing the documentation for `mutationInput_getTestSummaryList_input_tagFilters_items`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 6 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option A is correct because it accurately reflects the documented field structure of `instana.mutationInput_getTestSummaryList_input_tagFilters_items`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "mutationInput_getTestSummaryList_input_tagFilters_items",
+    "url": "Type_instana_mutationInput_getTestSummaryList_input_tagFilters_items.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01002",
+  "question": "According to the Instana schema documentation, what are the required and optional fields for `instana.mutationInput_putMaintenanceConfig_input_windows_items_Input`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.mutationInput_getTestSummaryList_input_metrics_items_Input` (INPUT) has 3 field(s): `aggregation`, `granularity`, `metric`.",
+   "`instana.mutationInput_getTraceGroups_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+   "`instana.mutationInput_putMaintenanceConfig_input_windows_items_Input` (INPUT) has 3 field(s): `end`, `id`, `start`.",
+   "`instana.mutationInput_putMaintenanceConfig_input_windows_items_Input` (INPUT) has 3 field(s): `end`, `id`, `start`."
+  ],
+  "A": "`instana.mutationInput_getTestSummaryList_input_metrics_items_Input` (INPUT) has 3 field(s): `aggregation`, `granularity`, `metric`.",
+  "B": "`instana.mutationInput_getTraceGroups_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+  "C": "`instana.mutationInput_putMaintenanceConfig_input_windows_items_Input` (INPUT) has 3 field(s): `end`, `id`, `start`.",
+  "D": "`instana.mutationInput_putMaintenanceConfig_input_windows_items_Input` (INPUT) has 3 field(s): `end`, `id`, `start`.",
+  "answer": "C",
+  "solution": "The `instana.mutationInput_putMaintenanceConfig_input_windows_items_Input` is a INPUT in mutationInput_putMaintenanceConfig_input_windows_items_Input with 3 fields for structured data. Key fields: end, id, start.",
+  "reasoning_thought": "The Instana API reference documents `instana.mutationInput_putMaintenanceConfig_input_windows_items_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `mutationInput_putMaintenanceConfig_input_windows_items_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 3 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option C is correct because it accurately reflects the documented field structure of `instana.mutationInput_putMaintenanceConfig_input_windows_items_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "mutationInput_putMaintenanceConfig_input_windows_items_Input",
+    "url": "Type_instana_mutationInput_putMaintenanceConfig_input_windows_items_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01072",
+  "question": "What is the complete field structure of the `query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry` type in Instana?",
+  "qtype": 0,
+  "choices": [
+   "`instana.query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry` (OBJECT) has 2 field(s): `key`, `value`.",
+   "`instana.mutationInput_getTraces_input_pagination_Input` (INPUT) has 3 field(s): `ingestionTime`, `offset`, `retrievalSize`.",
+   "`instana.mutationInput_updateBusinessPerspective_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+   "`instana.query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry` (OBJECT) has 2 field(s): `key`, `value`."
+  ],
+  "A": "`instana.query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry` (OBJECT) has 2 field(s): `key`, `value`.",
+  "B": "`instana.mutationInput_getTraces_input_pagination_Input` (INPUT) has 3 field(s): `ingestionTime`, `offset`, `retrievalSize`.",
+  "C": "`instana.mutationInput_updateBusinessPerspective_input_tagFilterExpression_Input` (INPUT) has 1 field(s): `type`.",
+  "D": "`instana.query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry` (OBJECT) has 2 field(s): `key`, `value`.",
+  "answer": "A",
+  "solution": "The `instana.query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry` is a OBJECT in query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry with 2 fields for structured data. Key fields: key, value.",
+  "reasoning_thought": "The Instana API reference documents `instana.query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry` as a structured object/interface within the schema. Upon analyzing the documentation for `query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 2 fields within this object, covering data attributes relevant to its functional purpose. This is an array item type, representing the schema for individual elements within a list structure. Option A is correct because it accurately reflects the documented field structure of `instana.query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry",
+    "url": "Type_instana_query_findActiveGlobalApplicationAlertConfigs_items_applications_additionalProperties_entry.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01076",
+  "question": "What is the complete field structure of the `query_findActiveGlobalApplicationAlertConfigs_items_granularity` type in Instana?",
+  "qtype": 0,
+  "choices": [
+   "`instana.query_findActiveApplicationAlertConfigs_items_boundaryScope` (ENUM) has 2 field(s): `ALL`, `INBOUND`.",
+   "`instana.query_findActiveApplicationAlertConfigs_items_applications_additionalProperties_services_additionalProperties_endpoints_additionalProperties` (OBJECT) has 2 field(s): `endpointId`, `inclusive`.",
+   "`instana.query_findActiveGlobalApplicationAlertConfigs_items_granularity` (ENUM) has 6 field(s): `_1200000`, `_1800000`, `_300000`, `_60000`, `_600000`, `_900000`.",
+   "`instana.query_findActiveGlobalApplicationAlertConfigs_items_granularity` (ENUM) has 6 field(s): `_1200000`, `_1800000`, `_300000`, `_60000`, `_600000`, `_900000`."
+  ],
+  "A": "`instana.query_findActiveApplicationAlertConfigs_items_boundaryScope` (ENUM) has 2 field(s): `ALL`, `INBOUND`.",
+  "B": "`instana.query_findActiveApplicationAlertConfigs_items_applications_additionalProperties_services_additionalProperties_endpoints_additionalProperties` (OBJECT) has 2 field(s): `endpointId`, `inclusive`.",
+  "C": "`instana.query_findActiveGlobalApplicationAlertConfigs_items_granularity` (ENUM) has 6 field(s): `_1200000`, `_1800000`, `_300000`, `_60000`, `_600000`, `_900000`.",
+  "D": "`instana.query_findActiveGlobalApplicationAlertConfigs_items_granularity` (ENUM) has 6 field(s): `_1200000`, `_1800000`, `_300000`, `_60000`, `_600000`, `_900000`.",
+  "answer": "C",
+  "solution": "The `instana.query_findActiveGlobalApplicationAlertConfigs_items_granularity` is a ENUM in query_findActiveGlobalApplicationAlertConfigs_items_granularity with 6 fields for structured data. Key fields: _1200000, _1800000, _300000, _60000, _600000 and 1 more.",
+  "reasoning_thought": "The Instana API reference documents `instana.query_findActiveGlobalApplicationAlertConfigs_items_granularity` as a structured object/interface within the schema. Upon analyzing the documentation for `query_findActiveGlobalApplicationAlertConfigs_items_granularity`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 6 fields within this object, covering data attributes relevant to its functional purpose. This is an array item type, representing the schema for individual elements within a list structure. Option C is correct because it accurately reflects the documented field structure of `instana.query_findActiveGlobalApplicationAlertConfigs_items_granularity`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "query_findActiveGlobalApplicationAlertConfigs_items_granularity",
+    "url": "Type_instana_query_findActiveGlobalApplicationAlertConfigs_items_granularity.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01082",
+  "question": "In the Instana schema reference, what field attributes are defined for `instana.query_findActiveInfraAlertConfigs_items`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.postSnapshots_200_response` (OBJECT) has 2 field(s): `items`, `notFoundSnapshotsIds`.",
+   "`instana.mutationInput_postRelease_input_services_items_scopedTo_Input` (INPUT) has 1 field(s): `applications`.",
+   "`instana.query_findActiveInfraAlertConfigs_items` (OBJECT) has 19 field(s): `alertChannelIds`, `alertChannels`, `created`, `customPayloadFields`, `description`, `enabled`, `gracePeriod`, `granularity`, `groupBy`, `id`, `initialCreated`, `name`, `readOnly`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`.",
+   "`instana.query_findActiveInfraAlertConfigs_items` (OBJECT) has 19 field(s): `alertChannelIds`, `alertChannels`, `created`, `customPayloadFields`, `description`, `enabled`, `gracePeriod`, `granularity`, `groupBy`, `id`, `initialCreated`, `name`, `readOnly`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`."
+  ],
+  "A": "`instana.postSnapshots_200_response` (OBJECT) has 2 field(s): `items`, `notFoundSnapshotsIds`.",
+  "B": "`instana.mutationInput_postRelease_input_services_items_scopedTo_Input` (INPUT) has 1 field(s): `applications`.",
+  "C": "`instana.query_findActiveInfraAlertConfigs_items` (OBJECT) has 19 field(s): `alertChannelIds`, `alertChannels`, `created`, `customPayloadFields`, `description`, `enabled`, `gracePeriod`, `granularity`, `groupBy`, `id`, `initialCreated`, `name`, `readOnly`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`.",
+  "D": "`instana.query_findActiveInfraAlertConfigs_items` (OBJECT) has 19 field(s): `alertChannelIds`, `alertChannels`, `created`, `customPayloadFields`, `description`, `enabled`, `gracePeriod`, `granularity`, `groupBy`, `id`, `initialCreated`, `name`, `readOnly`, `rule`, `rules`, `severity`, `tagFilterExpression`, `threshold`, `timeThreshold`.",
+  "answer": "C",
+  "solution": "The `instana.query_findActiveInfraAlertConfigs_items` is a OBJECT in query_findActiveInfraAlertConfigs_items with 19 fields for structured data. Key fields: alertChannelIds, alertChannels, created, customPayloadFields, description and 14 more.",
+  "reasoning_thought": "The Instana API reference documents `instana.query_findActiveInfraAlertConfigs_items` as a structured object/interface within the schema. Upon analyzing the documentation for `query_findActiveInfraAlertConfigs_items`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 19 fields within this object, covering data attributes relevant to its functional purpose. Option C is correct because it accurately reflects the documented field structure of `instana.query_findActiveInfraAlertConfigs_items`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "query_findActiveInfraAlertConfigs_items",
+    "url": "Type_instana_query_findActiveInfraAlertConfigs_items.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01150",
+  "question": "In the Instana schema reference, what field attributes are defined for `instana.query_findActiveWebsiteAlertConfigs_items_timeThreshold`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.query_findActiveWebsiteAlertConfigs_items_timeThreshold` (OBJECT) has 2 field(s): `timeWindow`, `type`.",
+   "`instana.query_findActiveWebsiteAlertConfigs_items_timeThreshold` (OBJECT) has 2 field(s): `timeWindow`, `type`.",
+   "`instana.query_findActiveApplicationAlertConfigs_items_threshold_operator` (ENUM) has 4 field(s): `_GREATER_THAN_`, `_GREATER_THAN__EQUALS_`, `_LESS_THAN_`, `_LESS_THAN__EQUALS_`.",
+   "`instana.query_findActiveServiceLevelsAlertConfigs_items_rule` (OBJECT) has 1 field(s): `alertType`."
+  ],
+  "A": "`instana.query_findActiveWebsiteAlertConfigs_items_timeThreshold` (OBJECT) has 2 field(s): `timeWindow`, `type`.",
+  "B": "`instana.query_findActiveWebsiteAlertConfigs_items_timeThreshold` (OBJECT) has 2 field(s): `timeWindow`, `type`.",
+  "C": "`instana.query_findActiveApplicationAlertConfigs_items_threshold_operator` (ENUM) has 4 field(s): `_GREATER_THAN_`, `_GREATER_THAN__EQUALS_`, `_LESS_THAN_`, `_LESS_THAN__EQUALS_`.",
+  "D": "`instana.query_findActiveServiceLevelsAlertConfigs_items_rule` (OBJECT) has 1 field(s): `alertType`.",
+  "answer": "A",
+  "solution": "The `instana.query_findActiveWebsiteAlertConfigs_items_timeThreshold` is a OBJECT in query_findActiveWebsiteAlertConfigs_items_timeThreshold with 2 fields for structured data. Key fields: timeWindow, type.",
+  "reasoning_thought": "The Instana API reference documents `instana.query_findActiveWebsiteAlertConfigs_items_timeThreshold` as a structured object/interface within the schema. Upon analyzing the documentation for `query_findActiveWebsiteAlertConfigs_items_timeThreshold`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 2 fields within this object, covering data attributes relevant to its functional purpose. This is an array item type, representing the schema for individual elements within a list structure. Option A is correct because it accurately reflects the documented field structure of `instana.query_findActiveWebsiteAlertConfigs_items_timeThreshold`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "query_findActiveWebsiteAlertConfigs_items_timeThreshold",
+    "url": "Type_instana_query_findActiveWebsiteAlertConfigs_items_timeThreshold.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01190",
+  "question": "According to the Instana schema documentation, what are the required and optional fields for `instana.query_getAllApdexConfigurations_items`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.query_findActiveServiceLevelsAlertConfigs_items_rule` (OBJECT) has 1 field(s): `alertType`.",
+   "`instana.query_getAllApdexConfigurations_items` (OBJECT) has 4 field(s): `apdexEntity`, `apdexName`, `createdAt`, `id`.",
+   "`instana.query_findActiveMobileAppAlertConfigs_items_rules_items` (OBJECT) has 3 field(s): `rule`, `thresholdOperator`, `thresholds`.",
+   "`instana.query_getAllApdexConfigurations_items` (OBJECT) has 4 field(s): `apdexEntity`, `apdexName`, `createdAt`, `id`."
+  ],
+  "A": "`instana.query_findActiveServiceLevelsAlertConfigs_items_rule` (OBJECT) has 1 field(s): `alertType`.",
+  "B": "`instana.query_getAllApdexConfigurations_items` (OBJECT) has 4 field(s): `apdexEntity`, `apdexName`, `createdAt`, `id`.",
+  "C": "`instana.query_findActiveMobileAppAlertConfigs_items_rules_items` (OBJECT) has 3 field(s): `rule`, `thresholdOperator`, `thresholds`.",
+  "D": "`instana.query_getAllApdexConfigurations_items` (OBJECT) has 4 field(s): `apdexEntity`, `apdexName`, `createdAt`, `id`.",
+  "answer": "B",
+  "solution": "The `instana.query_getAllApdexConfigurations_items` is a OBJECT in query_getAllApdexConfigurations_items with 4 fields for structured data. Key fields: apdexEntity, apdexName, createdAt, id.",
+  "reasoning_thought": "The Instana API reference documents `instana.query_getAllApdexConfigurations_items` as a structured object/interface within the schema. Upon analyzing the documentation for `query_getAllApdexConfigurations_items`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 4 fields within this object, covering data attributes relevant to its functional purpose. Option B is correct because it accurately reflects the documented field structure of `instana.query_getAllApdexConfigurations_items`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "query_getAllApdexConfigurations_items",
+    "url": "Type_instana_query_getAllApdexConfigurations_items.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01223",
+  "question": "Looking at Instana's type definitions, what fields does the `query_getApplicationConfigs_items_matchSpecification` object contain?",
+  "qtype": 0,
+  "choices": [
+   "`instana.query_findActiveServiceLevelsAlertConfigs_items_threshold_allOf_0` (INTERFACE) has 2 field(s): `operator`, `type`.",
+   "`instana.query_getApplicationConfigs_items_matchSpecification` (OBJECT) has 1 field(s): `type`.",
+   "`instana.query_getApplicationConfigs_items_matchSpecification` (OBJECT) has 1 field(s): `type`.",
+   "`instana.query_findActiveServiceLevelsAlertConfigs_items_rule` (OBJECT) has 1 field(s): `alertType`."
+  ],
+  "A": "`instana.query_findActiveServiceLevelsAlertConfigs_items_threshold_allOf_0` (INTERFACE) has 2 field(s): `operator`, `type`.",
+  "B": "`instana.query_getApplicationConfigs_items_matchSpecification` (OBJECT) has 1 field(s): `type`.",
+  "C": "`instana.query_getApplicationConfigs_items_matchSpecification` (OBJECT) has 1 field(s): `type`.",
+  "D": "`instana.query_findActiveServiceLevelsAlertConfigs_items_rule` (OBJECT) has 1 field(s): `alertType`.",
+  "answer": "B",
+  "solution": "The `instana.query_getApplicationConfigs_items_matchSpecification` is a OBJECT in query_getApplicationConfigs_items_matchSpecification with 1 fields for structured data. Key fields: type.",
+  "reasoning_thought": "The Instana API reference documents `instana.query_getApplicationConfigs_items_matchSpecification` as a structured object/interface within the schema. Upon analyzing the documentation for `query_getApplicationConfigs_items_matchSpecification`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 1 fields within this object, covering data attributes relevant to its functional purpose. This is an array item type, representing the schema for individual elements within a list structure. Option B is correct because it accurately reflects the documented field structure of `instana.query_getApplicationConfigs_items_matchSpecification`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "query_getApplicationConfigs_items_matchSpecification",
+    "url": "Type_instana_query_getApplicationConfigs_items_matchSpecification.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01303",
+  "question": "According to the Instana schema documentation, what are the required and optional fields for `instana.query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.query_getAllSliConfigs_items_metricConfiguration` (OBJECT) has 3 field(s): `metricAggregation`, `metricName`, `threshold`.",
+   "`instana.query_getAllUsage_items_items_items` (OBJECT) has 2 field(s): `name`, `sims`.",
+   "`instana.query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression` (OBJECT) has 1 field(s): `type`.",
+   "`instana.query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression` (OBJECT) has 1 field(s): `type`."
+  ],
+  "A": "`instana.query_getAllSliConfigs_items_metricConfiguration` (OBJECT) has 3 field(s): `metricAggregation`, `metricName`, `threshold`.",
+  "B": "`instana.query_getAllUsage_items_items_items` (OBJECT) has 2 field(s): `name`, `sims`.",
+  "C": "`instana.query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression` (OBJECT) has 1 field(s): `type`.",
+  "D": "`instana.query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression` (OBJECT) has 1 field(s): `type`.",
+  "answer": "C",
+  "solution": "The `instana.query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression` is a OBJECT in query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression with 1 fields for structured data. Key fields: type.",
+  "reasoning_thought": "The Instana API reference documents `instana.query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression` as a structured object/interface within the schema. Upon analyzing the documentation for `query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 1 fields within this object, covering data attributes relevant to its functional purpose. This is an array item type, representing the schema for individual elements within a list structure. Option C is correct because it accurately reflects the documented field structure of `instana.query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression",
+    "url": "Type_instana_query_getGroups_items_permissionSet_restrictedApplicationFilter_tagFilterExpression.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01370",
+  "question": "What is the complete field structure of the `query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input` type in Instana?",
+  "qtype": 0,
+  "choices": [
+   "`instana.query_getPageLoad_items_parsedStackTrace_items` (OBJECT) has 6 field(s): `column`, `file`, `line`, `name`, `translationExplanation`, `translationStatus`.",
+   "`instana.query_getMobileAppGeoLocationConfiguration_geoMappingRules_items_Input` (INPUT) has 11 field(s): `accuracyRadius`, `cidr`, `city`, `continent`, `continentCode`, `country`, `countryCode`, `latitude`, `leastSpecificSubdivision`, `longitude`, `subdivisions`.",
+   "`instana.query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input` (INPUT) has 10 field(s): `createdAt`, `description`, `fields`, `id`, `inputParameters`, `metadata`, `modifiedAt`, `name`, `tags`, `type`.",
+   "`instana.query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input` (INPUT) has 10 field(s): `createdAt`, `description`, `fields`, `id`, `inputParameters`, `metadata`, `modifiedAt`, `name`, `tags`, `type`."
+  ],
+  "A": "`instana.query_getPageLoad_items_parsedStackTrace_items` (OBJECT) has 6 field(s): `column`, `file`, `line`, `name`, `translationExplanation`, `translationStatus`.",
+  "B": "`instana.query_getMobileAppGeoLocationConfiguration_geoMappingRules_items_Input` (INPUT) has 11 field(s): `accuracyRadius`, `cidr`, `city`, `continent`, `continentCode`, `country`, `countryCode`, `latitude`, `leastSpecificSubdivision`, `longitude`, `subdivisions`.",
+  "C": "`instana.query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input` (INPUT) has 10 field(s): `createdAt`, `description`, `fields`, `id`, `inputParameters`, `metadata`, `modifiedAt`, `name`, `tags`, `type`.",
+  "D": "`instana.query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input` (INPUT) has 10 field(s): `createdAt`, `description`, `fields`, `id`, `inputParameters`, `metadata`, `modifiedAt`, `name`, `tags`, `type`.",
+  "answer": "C",
+  "solution": "The `instana.query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input` is a INPUT in query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input with 10 fields for structured data. Key fields: createdAt, description, fields, id, inputParameters and 5 more.",
+  "reasoning_thought": "The Instana API reference documents `instana.query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 10 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option C is correct because it accurately reflects the documented field structure of `instana.query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input",
+    "url": "Type_instana_query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01397",
+  "question": "What is the complete field structure of the `query_getSloConfigById_oneOf_0_indicator_Input` type in Instana?",
+  "qtype": 0,
+  "choices": [
+   "`instana.query_getMobileAppGeoLocationConfiguration_geoMappingRules_items` (OBJECT) has 11 field(s): `accuracyRadius`, `cidr`, `city`, `continent`, `continentCode`, `country`, `countryCode`, `latitude`, `leastSpecificSubdivision`, `longitude`, `subdivisions`.",
+   "`instana.query_getSloConfigById_oneOf_0_indicator_Input` (INPUT) has 6 field(s): `aggregation`, `blueprint`, `operator`, `serviceLevelsMeasurement`, `threshold`, `type`.",
+   "`instana.query_getSloConfigById_oneOf_0_indicator_Input` (INPUT) has 6 field(s): `aggregation`, `blueprint`, `operator`, `serviceLevelsMeasurement`, `threshold`, `type`.",
+   "`instana.query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action` (OBJECT) has 10 field(s): `createdAt`, `description`, `fields`, `id`, `inputParameters`, `metadata`, `modifiedAt`, `name`, `tags`, `type`."
+  ],
+  "A": "`instana.query_getMobileAppGeoLocationConfiguration_geoMappingRules_items` (OBJECT) has 11 field(s): `accuracyRadius`, `cidr`, `city`, `continent`, `continentCode`, `country`, `countryCode`, `latitude`, `leastSpecificSubdivision`, `longitude`, `subdivisions`.",
+  "B": "`instana.query_getSloConfigById_oneOf_0_indicator_Input` (INPUT) has 6 field(s): `aggregation`, `blueprint`, `operator`, `serviceLevelsMeasurement`, `threshold`, `type`.",
+  "C": "`instana.query_getSloConfigById_oneOf_0_indicator_Input` (INPUT) has 6 field(s): `aggregation`, `blueprint`, `operator`, `serviceLevelsMeasurement`, `threshold`, `type`.",
+  "D": "`instana.query_getPolicies_items_typeConfigurations_items_runnable_runConfiguration_actions_items_action` (OBJECT) has 10 field(s): `createdAt`, `description`, `fields`, `id`, `inputParameters`, `metadata`, `modifiedAt`, `name`, `tags`, `type`.",
+  "answer": "B",
+  "solution": "The `instana.query_getSloConfigById_oneOf_0_indicator_Input` is a INPUT in query_getSloConfigById_oneOf_0_indicator_Input with 6 fields for structured data. Key fields: aggregation, blueprint, operator, serviceLevelsMeasurement, threshold and 1 more.",
+  "reasoning_thought": "The Instana API reference documents `instana.query_getSloConfigById_oneOf_0_indicator_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `query_getSloConfigById_oneOf_0_indicator_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 6 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option B is correct because it accurately reflects the documented field structure of `instana.query_getSloConfigById_oneOf_0_indicator_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "query_getSloConfigById_oneOf_0_indicator_Input",
+    "url": "Type_instana_query_getSloConfigById_oneOf_0_indicator_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01537",
+  "question": "According to the Instana schema documentation, what are the required and optional fields for `instana.updateConfigurationByQuery_request_Input`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.updateConfigurationByQuery_request_Input` (INPUT) has 3 field(s): `remoteBranch`, `remoteName`, `remoteUri`.",
+   "`instana.updateConfigurationByQuery_request_Input` (INPUT) has 3 field(s): `remoteBranch`, `remoteName`, `remoteUri`.",
+   "`instana.query_getTrace_rootSpan_destination_physicalContext` (OBJECT) has 6 field(s): `cloudfoundry`, `cluster`, `container`, `host`, `kubernetes`, `process`.",
+   "`instana.queryInput_getSyntheticResultDetailDataFile_type` (ENUM) has 5 field(s): `HAR`, `IMAGES`, `LOGS`, `SUBTRANSACTIONS`, `VIDEOS`."
+  ],
+  "A": "`instana.updateConfigurationByQuery_request_Input` (INPUT) has 3 field(s): `remoteBranch`, `remoteName`, `remoteUri`.",
+  "B": "`instana.updateConfigurationByQuery_request_Input` (INPUT) has 3 field(s): `remoteBranch`, `remoteName`, `remoteUri`.",
+  "C": "`instana.query_getTrace_rootSpan_destination_physicalContext` (OBJECT) has 6 field(s): `cloudfoundry`, `cluster`, `container`, `host`, `kubernetes`, `process`.",
+  "D": "`instana.queryInput_getSyntheticResultDetailDataFile_type` (ENUM) has 5 field(s): `HAR`, `IMAGES`, `LOGS`, `SUBTRANSACTIONS`, `VIDEOS`.",
+  "answer": "A",
+  "solution": "The `instana.updateConfigurationByQuery_request_Input` is a INPUT in updateConfigurationByQuery_request_Input with 3 fields for structured data. Key fields: remoteBranch, remoteName, remoteUri.",
+  "reasoning_thought": "The Instana API reference documents `instana.updateConfigurationByQuery_request_Input` as a structured object/interface within the schema. Upon analyzing the documentation for `updateConfigurationByQuery_request_Input`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 3 fields within this object, covering data attributes relevant to its functional purpose. This is an input type used in API mutations, defining the expected payload structure for create/update operations. Option A is correct because it accurately reflects the documented field structure of `instana.updateConfigurationByQuery_request_Input`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "updateConfigurationByQuery_request_Input",
+    "url": "Type_instana_updateConfigurationByQuery_request_Input.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01538",
+  "question": "In the Instana schema reference, what field attributes are defined for `instana.updateCustomDashboard_200_response`?",
+  "qtype": 0,
+  "choices": [
+   "`instana.updateCustomDashboard_200_response` (OBJECT) has 4 field(s): `accessRules`, `id`, `title`, `widgets`.",
+   "`instana.resolve_request_Input` (INPUT) has 3 field(s): `eventId`, `parameters`, `timestamp`.",
+   "`instana.query_softwareVersions_items_softwareType` (ENUM) has 11 field(s): `API_GATEWAY`, `APPLICATION_FRAMEWORK`, `CACHE`, `DATABASE`, `DEPENDENCY`, `MESSAGING`, `OS`, `OTHER`, `PACKAGE`, `PLATFORM`, `RUNTIME`.",
+   "`instana.updateCustomDashboard_200_response` (OBJECT) has 4 field(s): `accessRules`, `id`, `title`, `widgets`."
+  ],
+  "A": "`instana.updateCustomDashboard_200_response` (OBJECT) has 4 field(s): `accessRules`, `id`, `title`, `widgets`.",
+  "B": "`instana.resolve_request_Input` (INPUT) has 3 field(s): `eventId`, `parameters`, `timestamp`.",
+  "C": "`instana.query_softwareVersions_items_softwareType` (ENUM) has 11 field(s): `API_GATEWAY`, `APPLICATION_FRAMEWORK`, `CACHE`, `DATABASE`, `DEPENDENCY`, `MESSAGING`, `OS`, `OTHER`, `PACKAGE`, `PLATFORM`, `RUNTIME`.",
+  "D": "`instana.updateCustomDashboard_200_response` (OBJECT) has 4 field(s): `accessRules`, `id`, `title`, `widgets`.",
+  "answer": "A",
+  "solution": "The `instana.updateCustomDashboard_200_response` is a OBJECT in updateCustomDashboard_200_response with 4 fields for structured data. Key fields: accessRules, id, title, widgets.",
+  "reasoning_thought": "The Instana API reference documents `instana.updateCustomDashboard_200_response` as a structured object/interface within the schema. Upon analyzing the documentation for `updateCustomDashboard_200_response`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 4 fields within this object, covering data attributes relevant to its functional purpose. This represents a response schema, detailing the structure of data returned by successful API calls. Option A is correct because it accurately reflects the documented field structure of `instana.updateCustomDashboard_200_response`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "updateCustomDashboard_200_response",
+    "url": "Type_instana_updateCustomDashboard_200_response.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01600",
+  "question": "In the Turbonomic schema reference, what field attributes are defined for `turbonomic.AccessToken`?",
+  "qtype": 0,
+  "choices": [
+   "`ns1.JobsResponseTimes` (OBJECT) has 4 field(s): `arguments`, `job`, `jobid`, `responseTime`.",
+   "`turbonomic.AccessToken` (OBJECT) has 4 field(s): `access_token`, `expires_in`, `scope`, `token_type`.",
+   "`turbonomic.AccessToken` (OBJECT) has 4 field(s): `access_token`, `expires_in`, `scope`, `token_type`.",
+   "`instana.String_container` (OBJECT) has 1 field(s): `String`."
+  ],
+  "A": "`ns1.JobsResponseTimes` (OBJECT) has 4 field(s): `arguments`, `job`, `jobid`, `responseTime`.",
+  "B": "`turbonomic.AccessToken` (OBJECT) has 4 field(s): `access_token`, `expires_in`, `scope`, `token_type`.",
+  "C": "`turbonomic.AccessToken` (OBJECT) has 4 field(s): `access_token`, `expires_in`, `scope`, `token_type`.",
+  "D": "`instana.String_container` (OBJECT) has 1 field(s): `String`.",
+  "answer": "B",
+  "solution": "The `turbonomic.AccessToken` is a OBJECT in AccessToken with 4 fields for structured data. Key fields: access_token, expires_in, scope, token_type.",
+  "reasoning_thought": "The Turbonomic API reference documents `turbonomic.AccessToken` as a structured object/interface within the schema. Upon analyzing the documentation for `AccessToken`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 4 fields within this object, covering data attributes relevant to its functional purpose. Option B is correct because it accurately reflects the documented field structure of `turbonomic.AccessToken`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "AccessToken",
+    "url": "Type_turbonomic_AccessToken.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01646",
+  "question": "Looking at Turbonomic's type definitions, what fields does the `StatFilterEntry` object contain?",
+  "qtype": 0,
+  "choices": [
+   "`ns1.AppJob` (OBJECT) has 9 field(s): `active`, `appid`, `community`, `config`, `customer`, `jobid`, `name`, `shared`, `typeid`.",
+   "`turbonomic.StatFilterEntry` (OBJECT) has 3 field(s): `displayName`, `type`, `value`.",
+   "`turbonomic.CompoundActionsEntry` (OBJECT) has 15 field(s): `actionMode`, `actionState`, `actionType`, `currentEntity`, `currentLocation`, `currentValue`, `details`, `displayName`, `newEntity`, `newLocation`, `newValue`, `resizeAttribute`, `risk`, `target`, `valueUnits`.",
+   "`turbonomic.StatFilterEntry` (OBJECT) has 3 field(s): `displayName`, `type`, `value`."
+  ],
+  "A": "`ns1.AppJob` (OBJECT) has 9 field(s): `active`, `appid`, `community`, `config`, `customer`, `jobid`, `name`, `shared`, `typeid`.",
+  "B": "`turbonomic.StatFilterEntry` (OBJECT) has 3 field(s): `displayName`, `type`, `value`.",
+  "C": "`turbonomic.CompoundActionsEntry` (OBJECT) has 15 field(s): `actionMode`, `actionState`, `actionType`, `currentEntity`, `currentLocation`, `currentValue`, `details`, `displayName`, `newEntity`, `newLocation`, `newValue`, `resizeAttribute`, `risk`, `target`, `valueUnits`.",
+  "D": "`turbonomic.StatFilterEntry` (OBJECT) has 3 field(s): `displayName`, `type`, `value`.",
+  "answer": "B",
+  "solution": "The `turbonomic.StatFilterEntry` is a OBJECT in StatFilterEntry with 3 fields for structured data. Key fields: displayName, type, value.",
+  "reasoning_thought": "The Turbonomic API reference documents `turbonomic.StatFilterEntry` as a structured object/interface within the schema. Upon analyzing the documentation for `StatFilterEntry`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 3 fields within this object, covering data attributes relevant to its functional purpose. Option B is correct because it accurately reflects the documented field structure of `turbonomic.StatFilterEntry`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "StatFilterEntry",
+    "url": "Type_turbonomic_StatFilterEntry.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01658",
+  "question": "In the Turbonomic schema reference, what field attributes are defined for `turbonomic.WorkloadControllerEntity`?",
+  "qtype": 0,
+  "choices": [
+   "`turbonomic.WorkloadControllerEntity` (OBJECT) has 3 field(s): `className`, `displayName`, `uuid`.",
+   "`turbonomic.WorkloadControllerEntity` (OBJECT) has 3 field(s): `className`, `displayName`, `uuid`.",
+   "`turbonomic.CurrentEntity` (OBJECT) has 9 field(s): `aspects`, `className`, `discoveredBy`, `displayName`, `environmentType`, `state`, `tags`, `uuid`, `vendorIds`.",
+   "`turbonomic.NewEntity` (OBJECT) has 9 field(s): `aspects`, `className`, `discoveredBy`, `displayName`, `environmentType`, `state`, `tags`, `uuid`, `vendorIds`."
+  ],
+  "A": "`turbonomic.WorkloadControllerEntity` (OBJECT) has 3 field(s): `className`, `displayName`, `uuid`.",
+  "B": "`turbonomic.WorkloadControllerEntity` (OBJECT) has 3 field(s): `className`, `displayName`, `uuid`.",
+  "C": "`turbonomic.CurrentEntity` (OBJECT) has 9 field(s): `aspects`, `className`, `discoveredBy`, `displayName`, `environmentType`, `state`, `tags`, `uuid`, `vendorIds`.",
+  "D": "`turbonomic.NewEntity` (OBJECT) has 9 field(s): `aspects`, `className`, `discoveredBy`, `displayName`, `environmentType`, `state`, `tags`, `uuid`, `vendorIds`.",
+  "answer": "A",
+  "solution": "The `turbonomic.WorkloadControllerEntity` is a OBJECT in WorkloadControllerEntity with 3 fields for structured data. Key fields: className, displayName, uuid.",
+  "reasoning_thought": "The Turbonomic API reference documents `turbonomic.WorkloadControllerEntity` as a structured object/interface within the schema. Upon analyzing the documentation for `WorkloadControllerEntity`, it is classified as a schema type that contains multiple field definitions. The schema defines approximately 3 fields within this object, covering data attributes relevant to its functional purpose. Option A is correct because it accurately reflects the documented field structure of `turbonomic.WorkloadControllerEntity`. Incorrect options either misrepresent the field count, omit critical fields, or describe unrelated object types.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "WorkloadControllerEntity",
+    "url": "Type_turbonomic_WorkloadControllerEntity.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01666",
+  "question": "What fields does `Watsonx Orchestrate.AssistantRunEdge` have?",
+  "qtype": 0,
+  "choices": [
+   "`instana.updateUser_request_Input` (INPUT) has 1 field(s): `fullName`.",
+   "`watsonx-orchestrate.AssistantRunEdge` (OBJECT) has 2 field(s): `cursor`, `node`.",
+   "`instana.updateWebsiteGeoLocationConfiguration_200_response` (OBJECT) has 2 field(s): `geoDetailRemoval`, `geoMappingRules`.",
+   "`watsonx-orchestrate.AssistantRunEdge` (OBJECT) has 2 field(s): `cursor`, `node`."
+  ],
+  "A": "`instana.updateUser_request_Input` (INPUT) has 1 field(s): `fullName`.",
+  "B": "`watsonx-orchestrate.AssistantRunEdge` (OBJECT) has 2 field(s): `cursor`, `node`.",
+  "C": "`instana.updateWebsiteGeoLocationConfiguration_200_response` (OBJECT) has 2 field(s): `geoDetailRemoval`, `geoMappingRules`.",
+  "D": "`watsonx-orchestrate.AssistantRunEdge` (OBJECT) has 2 field(s): `cursor`, `node`.",
+  "answer": "B",
+  "solution": "The `watsonx-orchestrate.AssistantRunEdge` is a OBJECT in AssistantRunEdge with 2 fields for structured data. Key fields: cursor, node.",
+  "reasoning_thought": "The `watsonx-orchestrate.AssistantRunEdge` schema type is defined in the Watsonx Orchestrate documentation as a **OBJECT** type with 2 documented fields. This object type encapsulates related data fields that represent a coherent data structure within the Watsonx Orchestrate schema. Key fields in this type include: `cursor`, `node`. Option B accurately reflects the documented field structure. The other answer choices either misrepresent the field count, describe incorrect field types, or reference unrelated schema objects.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "AssistantRunEdge",
+    "url": "Type_watsonx-orchestrate_AssistantRunEdge.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01691",
+  "question": "What fields does `Watsonx Orchestrate.ModelParams2` have?",
+  "qtype": 0,
+  "choices": [
+   "`ns1.JobsFilter` (INPUT) has 4 field(s): `active`, `community`, `jobid`, `shared`.",
+   "`turbonomic.CompoundActionsEntry` (OBJECT) has 15 field(s): `actionMode`, `actionState`, `actionType`, `currentEntity`, `currentLocation`, `currentValue`, `details`, `displayName`, `newEntity`, `newLocation`, `newValue`, `resizeAttribute`, `risk`, `target`, `valueUnits`.",
+   "`watsonx-orchestrate.ModelParams2` (OBJECT) has 9 field(s): `decoding_method`, `max_new_tokens`, `min_new_tokens`, `random_seed`, `repetition_penalty`, `return_options`, `temperature`, `top_k`, `top_p`.",
+   "`watsonx-orchestrate.ModelParams2` (OBJECT) has 9 field(s): `decoding_method`, `max_new_tokens`, `min_new_tokens`, `random_seed`, `repetition_penalty`, `return_options`, `temperature`, `top_k`, `top_p`."
+  ],
+  "A": "`ns1.JobsFilter` (INPUT) has 4 field(s): `active`, `community`, `jobid`, `shared`.",
+  "B": "`turbonomic.CompoundActionsEntry` (OBJECT) has 15 field(s): `actionMode`, `actionState`, `actionType`, `currentEntity`, `currentLocation`, `currentValue`, `details`, `displayName`, `newEntity`, `newLocation`, `newValue`, `resizeAttribute`, `risk`, `target`, `valueUnits`.",
+  "C": "`watsonx-orchestrate.ModelParams2` (OBJECT) has 9 field(s): `decoding_method`, `max_new_tokens`, `min_new_tokens`, `random_seed`, `repetition_penalty`, `return_options`, `temperature`, `top_k`, `top_p`.",
+  "D": "`watsonx-orchestrate.ModelParams2` (OBJECT) has 9 field(s): `decoding_method`, `max_new_tokens`, `min_new_tokens`, `random_seed`, `repetition_penalty`, `return_options`, `temperature`, `top_k`, `top_p`.",
+  "answer": "C",
+  "solution": "The `watsonx-orchestrate.ModelParams2` is a OBJECT in ModelParams2 with 9 fields for structured data. Key fields: decoding_method, max_new_tokens, min_new_tokens, random_seed, repetition_penalty and 4 more.",
+  "reasoning_thought": "The `watsonx-orchestrate.ModelParams2` schema type is defined in the Watsonx Orchestrate documentation as a **OBJECT** type with 9 documented fields. This object type encapsulates related data fields that represent a coherent data structure within the Watsonx Orchestrate schema. Key fields in this type include: `decoding_method`, `max_new_tokens`, `min_new_tokens`, `random_seed`, `repetition_penalty`, and 4 more. Option C accurately reflects the documented field structure. The other answer choices either misrepresent the field count, describe incorrect field types, or reference unrelated schema objects.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "ModelParams2",
+    "url": "Type_watsonx-orchestrate_ModelParams2.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01700",
+  "question": "What fields does `Watsonx Orchestrate.ReturnOptionsInput` have?",
+  "qtype": 0,
+  "choices": [
+   "`watsonx-orchestrate.GuardrailsInput` (INPUT) has 3 field(s): `hap`, `pii`, `social_bias`.",
+   "`watsonx-orchestrate.ReturnOptionsInput` (INPUT) has 7 field(s): `generated_tokens`, `input_parameters`, `input_text`, `input_tokens`, `token_logprobs`, `token_ranks`, `top_n_tokens`.",
+   "`watsonx-orchestrate.ReturnOptionsInput` (INPUT) has 7 field(s): `generated_tokens`, `input_parameters`, `input_text`, `input_tokens`, `token_logprobs`, `token_ranks`, `top_n_tokens`.",
+   "`turbonomic.DetailLevel` (ENUM) has 2 field(s): `EXECUTION`, `STANDARD`."
+  ],
+  "A": "`watsonx-orchestrate.GuardrailsInput` (INPUT) has 3 field(s): `hap`, `pii`, `social_bias`.",
+  "B": "`watsonx-orchestrate.ReturnOptionsInput` (INPUT) has 7 field(s): `generated_tokens`, `input_parameters`, `input_text`, `input_tokens`, `token_logprobs`, `token_ranks`, `top_n_tokens`.",
+  "C": "`watsonx-orchestrate.ReturnOptionsInput` (INPUT) has 7 field(s): `generated_tokens`, `input_parameters`, `input_text`, `input_tokens`, `token_logprobs`, `token_ranks`, `top_n_tokens`.",
+  "D": "`turbonomic.DetailLevel` (ENUM) has 2 field(s): `EXECUTION`, `STANDARD`.",
+  "answer": "B",
+  "solution": "The `watsonx-orchestrate.ReturnOptionsInput` is a INPUT in ReturnOptionsInput with 7 fields for structured data. Key fields: generated_tokens, input_parameters, input_text, input_tokens, token_logprobs and 2 more.",
+  "reasoning_thought": "The `watsonx-orchestrate.ReturnOptionsInput` schema type is defined in the Watsonx Orchestrate documentation as a **INPUT** type with 7 documented fields. This is an INPUT_OBJECT type, used to define the structure of arguments passed to GraphQL mutations for creating or updating resources. Key fields in this type include: `generated_tokens`, `input_parameters`, `input_text`, `input_tokens`, `token_logprobs`, and 2 more. Option B accurately reflects the documented field structure. The other answer choices either misrepresent the field count, describe incorrect field types, or reference unrelated schema objects.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "ReturnOptionsInput",
+    "url": "Type_watsonx-orchestrate_ReturnOptionsInput.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01712",
+  "question": "What fields does `Watsonx Orchestrate.Usage` have?",
+  "qtype": 0,
+  "choices": [
+   "`watsonx-orchestrate.ThreadConnection` (OBJECT) has 2 field(s): `edges`, `pageInfo`.",
+   "`watsonx-orchestrate.AccessToken` (OBJECT) has 3 field(s): `expired_in`, `token`, `token_type`.",
+   "`watsonx-orchestrate.Usage` (OBJECT) has 2 field(s): `model_name`, `token_usage`.",
+   "`watsonx-orchestrate.Usage` (OBJECT) has 2 field(s): `model_name`, `token_usage`."
+  ],
+  "A": "`watsonx-orchestrate.ThreadConnection` (OBJECT) has 2 field(s): `edges`, `pageInfo`.",
+  "B": "`watsonx-orchestrate.AccessToken` (OBJECT) has 3 field(s): `expired_in`, `token`, `token_type`.",
+  "C": "`watsonx-orchestrate.Usage` (OBJECT) has 2 field(s): `model_name`, `token_usage`.",
+  "D": "`watsonx-orchestrate.Usage` (OBJECT) has 2 field(s): `model_name`, `token_usage`.",
+  "answer": "C",
+  "solution": "The `watsonx-orchestrate.Usage` is a OBJECT in Usage with 2 fields for structured data. Key fields: model_name, token_usage.",
+  "reasoning_thought": "The `watsonx-orchestrate.Usage` schema type is defined in the Watsonx Orchestrate documentation as a **OBJECT** type with 2 documented fields. This object type encapsulates related data fields that represent a coherent data structure within the Watsonx Orchestrate schema. Key fields in this type include: `model_name`, `token_usage`. Option C accurately reflects the documented field structure. The other answer choices either misrepresent the field count, describe incorrect field types, or reference unrelated schema objects.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "Usage",
+    "url": "Type_watsonx-orchestrate_Usage.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01768",
+  "question": "Which HTTP method(s) are documented for the `instana_API_instana_instana_rest_api_documentation_bulkDisableMobileAppAlertConfigs` endpoint in the Instana API reference?",
+  "qtype": 0,
+  "choices": [
+   "`instana_API_instana_instana_rest_api_documentation_bulkDisableMobileAppAlertConfigs` uses: PUT.",
+   "`watsonx-orchestrate.Result` (OBJECT) has 3 field(s): `data`, `next_run_id`, `type`.",
+   "`instana_API_instana_instana_rest_api_documentation_addManualServiceConfig` uses: POST.",
+   "`instana_API_instana_instana_rest_api_documentation_bulkDisableMobileAppAlertConfigs` uses: PUT."
+  ],
+  "A": "`instana_API_instana_instana_rest_api_documentation_bulkDisableMobileAppAlertConfigs` uses: PUT.",
+  "B": "`watsonx-orchestrate.Result` (OBJECT) has 3 field(s): `data`, `next_run_id`, `type`.",
+  "C": "`instana_API_instana_instana_rest_api_documentation_addManualServiceConfig` uses: POST.",
+  "D": "`instana_API_instana_instana_rest_api_documentation_bulkDisableMobileAppAlertConfigs` uses: PUT.",
+  "answer": "A",
+  "solution": "The `instana_API_instana_instana_rest_api_documentation_bulkDisableMobileAppAlertConfigs` is an API endpoint in instana_API_instana_instana_rest_api_documentation_bulkDisableMobileAppAlertConfigs that handles API operations and supports HTTP method(s) PUT, defining available RESTful operations.",
+  "reasoning_thought": "The Instana API reference documents the `instana_API_instana_instana_rest_api_documentation_bulkDisableMobileAppAlertConfigs` endpoint. The API specification indicates that this endpoint supports the PUT HTTP method for handling resource operations. This method allows clients to interact with the documented endpoint according to RESTful API conventions. Option A accurately identifies the supported HTTP method(s) for the `instana_API_instana_instana_rest_api_documentation_bulkDisableMobileAppAlertConfigs` endpoint based on the API documentation. The other answer choices reference HTTP methods not supported or not applicable to this specific endpoint, as confirmed by the API specification.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "instana_API_instana_instana_rest_api_documentation_bulkDisableMobileAppAlertConfigs",
+    "url": "instana_API_instana_instana_rest_api_documentation_bulkDisableMobileAppAlertConfigs.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01797",
+  "question": "Which HTTP method(s) are documented for the `instana_API_instana_instana_rest_api_documentation_deleteMobileAppAlertConfig` endpoint in the Instana API reference?",
+  "qtype": 0,
+  "choices": [
+   "`Users End Point` uses: PUT, GET.",
+   "`watsonx-orchestrate.ReturnOptions` (OBJECT) has 6 field(s): `generated_tokens`, `input_text`, `input_tokens`, `token_logprobs`, `token_ranks`, `top_n_tokens`.",
+   "`instana_API_instana_instana_rest_api_documentation_deleteMobileAppAlertConfig` uses: DELETE.",
+   "`instana_API_instana_instana_rest_api_documentation_deleteMobileAppAlertConfig` uses: DELETE."
+  ],
+  "A": "`Users End Point` uses: PUT, GET.",
+  "B": "`watsonx-orchestrate.ReturnOptions` (OBJECT) has 6 field(s): `generated_tokens`, `input_text`, `input_tokens`, `token_logprobs`, `token_ranks`, `top_n_tokens`.",
+  "C": "`instana_API_instana_instana_rest_api_documentation_deleteMobileAppAlertConfig` uses: DELETE.",
+  "D": "`instana_API_instana_instana_rest_api_documentation_deleteMobileAppAlertConfig` uses: DELETE.",
+  "answer": "C",
+  "solution": "The `instana_API_instana_instana_rest_api_documentation_deleteMobileAppAlertConfig` is an API endpoint in instana_API_instana_instana_rest_api_documentation_deleteMobileAppAlertConfig that handles API operations and supports HTTP method(s) DELETE, defining available RESTful operations.",
+  "reasoning_thought": "The Instana API reference documents the `instana_API_instana_instana_rest_api_documentation_deleteMobileAppAlertConfig` endpoint. The API specification indicates that this endpoint supports the DELETE HTTP method for handling resource operations. This method allows clients to interact with the documented endpoint according to RESTful API conventions. Option C accurately identifies the supported HTTP method(s) for the `instana_API_instana_instana_rest_api_documentation_deleteMobileAppAlertConfig` endpoint based on the API documentation. The other answer choices reference HTTP methods not supported or not applicable to this specific endpoint, as confirmed by the API specification.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "instana_API_instana_instana_rest_api_documentation_deleteMobileAppAlertConfig",
+    "url": "instana_API_instana_instana_rest_api_documentation_deleteMobileAppAlertConfig.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01819",
+  "question": "Based on the Instana API specification, which HTTP method(s) can be used to interact with `instana_API_instana_instana_rest_api_documentation_findActiveInfraAlertConfigs`?",
+  "qtype": 0,
+  "choices": [
+   "`instana_API_instana_instana_rest_api_documentation_deleteEndpointConfig` uses: DELETE.",
+   "`instana_API_instana_instana_rest_api_documentation_createEndpointConfig` uses: POST.",
+   "`instana_API_instana_instana_rest_api_documentation_findActiveInfraAlertConfigs` uses: GET.",
+   "`instana_API_instana_instana_rest_api_documentation_findActiveInfraAlertConfigs` uses: GET."
+  ],
+  "A": "`instana_API_instana_instana_rest_api_documentation_deleteEndpointConfig` uses: DELETE.",
+  "B": "`instana_API_instana_instana_rest_api_documentation_createEndpointConfig` uses: POST.",
+  "C": "`instana_API_instana_instana_rest_api_documentation_findActiveInfraAlertConfigs` uses: GET.",
+  "D": "`instana_API_instana_instana_rest_api_documentation_findActiveInfraAlertConfigs` uses: GET.",
+  "answer": "C",
+  "solution": "The `instana_API_instana_instana_rest_api_documentation_findActiveInfraAlertConfigs` is an API endpoint in instana_API_instana_instana_rest_api_documentation_findActiveInfraAlertConfigs that handles API operations and supports HTTP method(s) GET, defining available RESTful operations.",
+  "reasoning_thought": "The Instana API reference documents the `instana_API_instana_instana_rest_api_documentation_findActiveInfraAlertConfigs` endpoint. The API specification indicates that this endpoint supports the GET HTTP method for handling resource operations. This method allows clients to interact with the documented endpoint according to RESTful API conventions. Option C accurately identifies the supported HTTP method(s) for the `instana_API_instana_instana_rest_api_documentation_findActiveInfraAlertConfigs` endpoint based on the API documentation. The other answer choices reference HTTP methods not supported or not applicable to this specific endpoint, as confirmed by the API specification.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "instana_API_instana_instana_rest_api_documentation_findActiveInfraAlertConfigs",
+    "url": "instana_API_instana_instana_rest_api_documentation_findActiveInfraAlertConfigs.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01854",
+  "question": "Which HTTP method(s) are documented for the `instana_API_instana_instana_rest_api_documentation_getBeaconGroups` endpoint in the Instana API reference?",
+  "qtype": 0,
+  "choices": [
+   "`instana_API_instana_instana_rest_api_documentation_getBeaconGroups` uses: POST.",
+   "`instana_API_instana_instana_rest_api_documentation_findApplicationAlertConfig` uses: GET.",
+   "`instana_API_instana_instana_rest_api_documentation_bulkEnableWebsiteAlertConfigs` uses: PUT.",
+   "`instana_API_instana_instana_rest_api_documentation_getBeaconGroups` uses: POST."
+  ],
+  "A": "`instana_API_instana_instana_rest_api_documentation_getBeaconGroups` uses: POST.",
+  "B": "`instana_API_instana_instana_rest_api_documentation_findApplicationAlertConfig` uses: GET.",
+  "C": "`instana_API_instana_instana_rest_api_documentation_bulkEnableWebsiteAlertConfigs` uses: PUT.",
+  "D": "`instana_API_instana_instana_rest_api_documentation_getBeaconGroups` uses: POST.",
+  "answer": "A",
+  "solution": "The `instana_API_instana_instana_rest_api_documentation_getBeaconGroups` is an API endpoint in instana_API_instana_instana_rest_api_documentation_getBeaconGroups that handles API operations and supports HTTP method(s) POST, defining available RESTful operations.",
+  "reasoning_thought": "The Instana API reference documents the `instana_API_instana_instana_rest_api_documentation_getBeaconGroups` endpoint. The API specification indicates that this endpoint supports the POST HTTP method for handling resource operations. This method allows clients to interact with the documented endpoint according to RESTful API conventions. Option A accurately identifies the supported HTTP method(s) for the `instana_API_instana_instana_rest_api_documentation_getBeaconGroups` endpoint based on the API documentation. The other answer choices reference HTTP methods not supported or not applicable to this specific endpoint, as confirmed by the API specification.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "instana_API_instana_instana_rest_api_documentation_getBeaconGroups",
+    "url": "instana_API_instana_instana_rest_api_documentation_getBeaconGroups.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01921",
+  "question": "Based on the Instana API specification, which HTTP method(s) can be used to interact with `instana_API_instana_instana_rest_api_documentation_getWebsiteCatalogMetrics`?",
+  "qtype": 0,
+  "choices": [
+   "`instana_API_instana_instana_rest_api_documentation_getMobileAppBeacons` uses: POST.",
+   "`instana_API_instana_instana_rest_api_documentation_getWebsiteCatalogMetrics` uses: GET.",
+   "`instana_API_instana_instana_rest_api_documentation_getEntities` uses: POST.",
+   "`instana_API_instana_instana_rest_api_documentation_getWebsiteCatalogMetrics` uses: GET."
+  ],
+  "A": "`instana_API_instana_instana_rest_api_documentation_getMobileAppBeacons` uses: POST.",
+  "B": "`instana_API_instana_instana_rest_api_documentation_getWebsiteCatalogMetrics` uses: GET.",
+  "C": "`instana_API_instana_instana_rest_api_documentation_getEntities` uses: POST.",
+  "D": "`instana_API_instana_instana_rest_api_documentation_getWebsiteCatalogMetrics` uses: GET.",
+  "answer": "B",
+  "solution": "The `instana_API_instana_instana_rest_api_documentation_getWebsiteCatalogMetrics` is an API endpoint in instana_API_instana_instana_rest_api_documentation_getWebsiteCatalogMetrics that handles API operations and supports HTTP method(s) GET, defining available RESTful operations.",
+  "reasoning_thought": "The Instana API reference documents the `instana_API_instana_instana_rest_api_documentation_getWebsiteCatalogMetrics` endpoint. The API specification indicates that this endpoint supports the GET HTTP method for handling resource operations. This method allows clients to interact with the documented endpoint according to RESTful API conventions. Option B accurately identifies the supported HTTP method(s) for the `instana_API_instana_instana_rest_api_documentation_getWebsiteCatalogMetrics` endpoint based on the API documentation. The other answer choices reference HTTP methods not supported or not applicable to this specific endpoint, as confirmed by the API specification.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "instana_API_instana_instana_rest_api_documentation_getWebsiteCatalogMetrics",
+    "url": "instana_API_instana_instana_rest_api_documentation_getWebsiteCatalogMetrics.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01965",
+  "question": "Which HTTP method(s) are documented for the `instana_API_instana_instana_rest_api_documentation_updateManualServiceConfig` endpoint in the Instana API reference?",
+  "qtype": 0,
+  "choices": [
+   "`instana_API_instana_instana_rest_api_documentation_updateManualServiceConfig` uses: PUT.",
+   "`instana_API_instana_instana_rest_api_documentation_updateManualServiceConfig` uses: PUT.",
+   "`instana_API_instana_instana_rest_api_documentation_getSnapshots` uses: GET.",
+   "`instana_API_instana_instana_rest_api_documentation_getCustomPayloadTagCatalog` uses: GET."
+  ],
+  "A": "`instana_API_instana_instana_rest_api_documentation_updateManualServiceConfig` uses: PUT.",
+  "B": "`instana_API_instana_instana_rest_api_documentation_updateManualServiceConfig` uses: PUT.",
+  "C": "`instana_API_instana_instana_rest_api_documentation_getSnapshots` uses: GET.",
+  "D": "`instana_API_instana_instana_rest_api_documentation_getCustomPayloadTagCatalog` uses: GET.",
+  "answer": "A",
+  "solution": "The `instana_API_instana_instana_rest_api_documentation_updateManualServiceConfig` is an API endpoint in instana_API_instana_instana_rest_api_documentation_updateManualServiceConfig that handles API operations and supports HTTP method(s) PUT, defining available RESTful operations.",
+  "reasoning_thought": "The Instana API reference documents the `instana_API_instana_instana_rest_api_documentation_updateManualServiceConfig` endpoint. The API specification indicates that this endpoint supports the PUT HTTP method for handling resource operations. This method allows clients to interact with the documented endpoint according to RESTful API conventions. Option A accurately identifies the supported HTTP method(s) for the `instana_API_instana_instana_rest_api_documentation_updateManualServiceConfig` endpoint based on the API documentation. The other answer choices reference HTTP methods not supported or not applicable to this specific endpoint, as confirmed by the API specification.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "instana_API_instana_instana_rest_api_documentation_updateManualServiceConfig",
+    "url": "instana_API_instana_instana_rest_api_documentation_updateManualServiceConfig.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-01986",
+  "question": "What is Documentation?",
+  "qtype": 0,
+  "choices": [
+   "Documentation: Documentation",
+   "`instana_API_instana_instana_rest_api_documentation_updateApplicationAlertConfig` uses: POST.",
+   "Documentation: Documentation",
+   "`instana_API_instana_instana_rest_api_documentation_sendTestAlertingById` uses: POST."
+  ],
+  "A": "Documentation: Documentation",
+  "B": "`instana_API_instana_instana_rest_api_documentation_updateApplicationAlertConfig` uses: POST.",
+  "C": "Documentation: Documentation",
+  "D": "`instana_API_instana_instana_rest_api_documentation_sendTestAlertingById` uses: POST.",
+  "answer": "A",
+  "solution": "The correct answer is A: Documentation: Documentation. This describes `the entity` in consul.",
+  "reasoning_thought": "The `Documentation` is documented in the platform documentation. This reference entry describes the purpose and structure of this entity within the operational tooling ecosystem. The documentation indicates that Documentation: Documentation. This definition is derived from the authoritative source documentation. Option A correctly identifies the nature of `Documentation`. Other options provide alternative interpretations that do not match the source documentation.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "consul",
+    "url": "consul.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ },
+ {
+  "id": "DP-02001",
+  "question": "What is the instana_Websites_Mobile_Apps documentation about?",
+  "qtype": 0,
+  "choices": [
+   "Instana REST API - IBM API Hub - IBM Developer \n  \n     \n     \n   \n   \n     You need to enable JavaScript to run this app. \n     Skip to main content IBM Developer  IBM API Hub My APIs Open Support Ti",
+   "Instana REST API - IBM API Hub - IBM Developer \n  \n     \n     \n   \n   \n     You need to enable JavaScript to run this app. \n     Skip to main content IBM Developer  IBM API Hub My APIs Open Support Ti",
+   "`instana_API_instana_instana_rest_api_documentation_setMobileAppGeoMappingRules` uses: PUT.",
+   "`instana_API_instana_instana_rest_api_documentation_postMobileAppSourceMapConfig` uses: POST."
+  ],
+  "A": "Instana REST API - IBM API Hub - IBM Developer \n  \n     \n     \n   \n   \n     You need to enable JavaScript to run this app. \n     Skip to main content IBM Developer  IBM API Hub My APIs Open Support Ti",
+  "B": "Instana REST API - IBM API Hub - IBM Developer \n  \n     \n     \n   \n   \n     You need to enable JavaScript to run this app. \n     Skip to main content IBM Developer  IBM API Hub My APIs Open Support Ti",
+  "C": "`instana_API_instana_instana_rest_api_documentation_setMobileAppGeoMappingRules` uses: PUT.",
+  "D": "`instana_API_instana_instana_rest_api_documentation_postMobileAppSourceMapConfig` uses: POST.",
+  "answer": "A",
+  "solution": "The correct answer is A: Instana REST API - IBM API Hub - IBM Developer \n  \n     \n     \n   \n   \n     You need to enable JavaScript to run this app. \n     Skip to main content IBM Developer  IBM API Hub My APIs Open Support Ti. This describes `the entity` in instana_Websites_Mobile_Apps.",
+  "reasoning_thought": "The `the instana_Websites_Mobile_Apps documentation` is documented in the platform documentation. This reference entry describes the purpose and structure of this entity within the operational tooling ecosystem. The documentation indicates that Instana REST API - IBM API Hub - IBM Developer \n  \n     \n     \n   \n   \n     You need to enable JavaScript to run this app. \n     Skip to main content IBM Developer  IBM API Hub My APIs Open Support Ti. This definition is derived from the authoritative source documentation. Option A correctly identifies the nature of `the instana_Websites_Mobile_Apps documentation`. Other options provide alternative interpretations that do not match the source documentation.",
+  "grounding": [
+   {
+    "type": "document",
+    "title": "instana_Websites_Mobile_Apps",
+    "url": "instana_Websites_Mobile_Apps.html"
+   }
+  ],
+  "_quarantine_reason": "ambiguous_answer: correct option text is duplicated"
+ }
+]

@@ -1,0 +1,8 @@
+# local python env + LLM response cache (not artifacts)
+.venv/
+data/
+*.log
+
+# Tier 3 grounding-audit scratch (committed with the Tier 3 work later)
+grounding_doc_refs.txt
+repo_tree.tsv

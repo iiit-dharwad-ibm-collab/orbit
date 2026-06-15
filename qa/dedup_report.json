@@ -1,0 +1,1750 @@
+{
+  "targets": {
+    "combined_export.cleaned.json": {
+      "rows_before": 3293,
+      "rows_after": 3121,
+      "dropped": 172,
+      "dropped_by_cohort": {
+        "kafka": 9,
+        "trino": 73,
+        "postgresql": 90
+      },
+      "remaining_id_collisions": [],
+      "dropped_rows": [
+        {
+          "id": "kafka-092",
+          "index": 2913,
+          "duplicate_of_index": 2912
+        },
+        {
+          "id": "kafka-093",
+          "index": 2915,
+          "duplicate_of_index": 2914
+        },
+        {
+          "id": "kafka-094",
+          "index": 2917,
+          "duplicate_of_index": 2916
+        },
+        {
+          "id": "kafka-095",
+          "index": 2919,
+          "duplicate_of_index": 2918
+        },
+        {
+          "id": "kafka-096",
+          "index": 2921,
+          "duplicate_of_index": 2920
+        },
+        {
+          "id": "kafka-097",
+          "index": 2923,
+          "duplicate_of_index": 2922
+        },
+        {
+          "id": "kafka-098",
+          "index": 2925,
+          "duplicate_of_index": 2924
+        },
+        {
+          "id": "kafka-099",
+          "index": 2927,
+          "duplicate_of_index": 2926
+        },
+        {
+          "id": "kafka-100",
+          "index": 2929,
+          "duplicate_of_index": 2928
+        },
+        {
+          "id": "trino-110",
+          "index": 2940,
+          "duplicate_of_index": 2939
+        },
+        {
+          "id": "trino-111",
+          "index": 2942,
+          "duplicate_of_index": 2941
+        },
+        {
+          "id": "trino-112",
+          "index": 2944,
+          "duplicate_of_index": 2943
+        },
+        {
+          "id": "trino-118",
+          "index": 2951,
+          "duplicate_of_index": 2950
+        },
+        {
+          "id": "trino-119",
+          "index": 2953,
+          "duplicate_of_index": 2952
+        },
+        {
+          "id": "trino-120",
+          "index": 2955,
+          "duplicate_of_index": 2954
+        },
+        {
+          "id": "trino-121",
+          "index": 2957,
+          "duplicate_of_index": 2956
+        },
+        {
+          "id": "trino-122",
+          "index": 2959,
+          "duplicate_of_index": 2958
+        },
+        {
+          "id": "trino-123",
+          "index": 2961,
+          "duplicate_of_index": 2960
+        },
+        {
+          "id": "trino-124",
+          "index": 2963,
+          "duplicate_of_index": 2962
+        },
+        {
+          "id": "trino-125",
+          "index": 2965,
+          "duplicate_of_index": 2964
+        },
+        {
+          "id": "trino-137",
+          "index": 2978,
+          "duplicate_of_index": 2977
+        },
+        {
+          "id": "trino-139",
+          "index": 2981,
+          "duplicate_of_index": 2980
+        },
+        {
+          "id": "trino-140",
+          "index": 2983,
+          "duplicate_of_index": 2982
+        },
+        {
+          "id": "trino-140",
+          "index": 2984,
+          "duplicate_of_index": 2982
+        },
+        {
+          "id": "trino-141",
+          "index": 2986,
+          "duplicate_of_index": 2985
+        },
+        {
+          "id": "trino-141",
+          "index": 2987,
+          "duplicate_of_index": 2985
+        },
+        {
+          "id": "trino-142",
+          "index": 2989,
+          "duplicate_of_index": 2988
+        },
+        {
+          "id": "trino-142",
+          "index": 2990,
+          "duplicate_of_index": 2988
+        },
+        {
+          "id": "trino-143",
+          "index": 2992,
+          "duplicate_of_index": 2991
+        },
+        {
+          "id": "trino-143",
+          "index": 2993,
+          "duplicate_of_index": 2991
+        },
+        {
+          "id": "trino-145",
+          "index": 2996,
+          "duplicate_of_index": 2995
+        },
+        {
+          "id": "trino-147",
+          "index": 2999,
+          "duplicate_of_index": 2998
+        },
+        {
+          "id": "trino-149",
+          "index": 3002,
+          "duplicate_of_index": 3001
+        },
+        {
+          "id": "trino-151",
+          "index": 3005,
+          "duplicate_of_index": 3004
+        },
+        {
+          "id": "trino-153",
+          "index": 3008,
+          "duplicate_of_index": 3007
+        },
+        {
+          "id": "trino-155",
+          "index": 3011,
+          "duplicate_of_index": 3010
+        },
+        {
+          "id": "trino-157",
+          "index": 3014,
+          "duplicate_of_index": 3013
+        },
+        {
+          "id": "trino-159",
+          "index": 3017,
+          "duplicate_of_index": 3016
+        },
+        {
+          "id": "trino-159",
+          "index": 3018,
+          "duplicate_of_index": 3016
+        },
+        {
+          "id": "trino-160",
+          "index": 3020,
+          "duplicate_of_index": 3019
+        },
+        {
+          "id": "trino-160",
+          "index": 3021,
+          "duplicate_of_index": 3019
+        },
+        {
+          "id": "trino-161",
+          "index": 3023,
+          "duplicate_of_index": 3022
+        },
+        {
+          "id": "trino-161",
+          "index": 3024,
+          "duplicate_of_index": 3022
+        },
+        {
+          "id": "trino-162",
+          "index": 3026,
+          "duplicate_of_index": 3025
+        },
+        {
+          "id": "trino-162",
+          "index": 3027,
+          "duplicate_of_index": 3025
+        },
+        {
+          "id": "trino-163",
+          "index": 3029,
+          "duplicate_of_index": 3028
+        },
+        {
+          "id": "trino-163",
+          "index": 3030,
+          "duplicate_of_index": 3028
+        },
+        {
+          "id": "trino-164",
+          "index": 3032,
+          "duplicate_of_index": 3031
+        },
+        {
+          "id": "trino-164",
+          "index": 3033,
+          "duplicate_of_index": 3031
+        },
+        {
+          "id": "trino-165",
+          "index": 3035,
+          "duplicate_of_index": 3034
+        },
+        {
+          "id": "trino-165",
+          "index": 3036,
+          "duplicate_of_index": 3034
+        },
+        {
+          "id": "trino-166",
+          "index": 3038,
+          "duplicate_of_index": 3037
+        },
+        {
+          "id": "trino-166",
+          "index": 3039,
+          "duplicate_of_index": 3037
+        },
+        {
+          "id": "trino-167",
+          "index": 3041,
+          "duplicate_of_index": 3040
+        },
+        {
+          "id": "trino-170",
+          "index": 3045,
+          "duplicate_of_index": 3044
+        },
+        {
+          "id": "trino-172",
+          "index": 3048,
+          "duplicate_of_index": 3047
+        },
+        {
+          "id": "trino-174",
+          "index": 3051,
+          "duplicate_of_index": 3050
+        },
+        {
+          "id": "trino-176",
+          "index": 3054,
+          "duplicate_of_index": 3053
+        },
+        {
+          "id": "trino-178",
+          "index": 3057,
+          "duplicate_of_index": 3056
+        },
+        {
+          "id": "trino-180",
+          "index": 3060,
+          "duplicate_of_index": 3059
+        },
+        {
+          "id": "trino-182",
+          "index": 3063,
+          "duplicate_of_index": 3062
+        },
+        {
+          "id": "trino-184",
+          "index": 3066,
+          "duplicate_of_index": 3065
+        },
+        {
+          "id": "trino-186",
+          "index": 3069,
+          "duplicate_of_index": 3068
+        },
+        {
+          "id": "trino-188",
+          "index": 3072,
+          "duplicate_of_index": 3071
+        },
+        {
+          "id": "trino-188",
+          "index": 3073,
+          "duplicate_of_index": 3071
+        },
+        {
+          "id": "trino-189",
+          "index": 3075,
+          "duplicate_of_index": 3074
+        },
+        {
+          "id": "trino-189",
+          "index": 3076,
+          "duplicate_of_index": 3074
+        },
+        {
+          "id": "trino-190",
+          "index": 3078,
+          "duplicate_of_index": 3077
+        },
+        {
+          "id": "trino-190",
+          "index": 3079,
+          "duplicate_of_index": 3077
+        },
+        {
+          "id": "trino-191",
+          "index": 3081,
+          "duplicate_of_index": 3080
+        },
+        {
+          "id": "trino-191",
+          "index": 3082,
+          "duplicate_of_index": 3080
+        },
+        {
+          "id": "trino-192",
+          "index": 3084,
+          "duplicate_of_index": 3083
+        },
+        {
+          "id": "trino-192",
+          "index": 3085,
+          "duplicate_of_index": 3083
+        },
+        {
+          "id": "trino-193",
+          "index": 3087,
+          "duplicate_of_index": 3086
+        },
+        {
+          "id": "trino-193",
+          "index": 3088,
+          "duplicate_of_index": 3086
+        },
+        {
+          "id": "trino-194",
+          "index": 3090,
+          "duplicate_of_index": 3089
+        },
+        {
+          "id": "trino-194",
+          "index": 3091,
+          "duplicate_of_index": 3089
+        },
+        {
+          "id": "trino-195",
+          "index": 3093,
+          "duplicate_of_index": 3092
+        },
+        {
+          "id": "trino-196",
+          "index": 3095,
+          "duplicate_of_index": 3094
+        },
+        {
+          "id": "trino-197",
+          "index": 3097,
+          "duplicate_of_index": 3096
+        },
+        {
+          "id": "trino-198",
+          "index": 3099,
+          "duplicate_of_index": 3098
+        },
+        {
+          "id": "trino-200",
+          "index": 3102,
+          "duplicate_of_index": 3101
+        },
+        {
+          "id": "postgresql-201",
+          "index": 3104,
+          "duplicate_of_index": 3103
+        },
+        {
+          "id": "postgresql-203",
+          "index": 3107,
+          "duplicate_of_index": 3106
+        },
+        {
+          "id": "postgresql-203",
+          "index": 3108,
+          "duplicate_of_index": 3106
+        },
+        {
+          "id": "postgresql-204",
+          "index": 3110,
+          "duplicate_of_index": 3109
+        },
+        {
+          "id": "postgresql-205",
+          "index": 3112,
+          "duplicate_of_index": 3111
+        },
+        {
+          "id": "postgresql-207",
+          "index": 3115,
+          "duplicate_of_index": 3114
+        },
+        {
+          "id": "postgresql-207",
+          "index": 3116,
+          "duplicate_of_index": 3114
+        },
+        {
+          "id": "postgresql-209",
+          "index": 3119,
+          "duplicate_of_index": 3118
+        },
+        {
+          "id": "postgresql-209",
+          "index": 3120,
+          "duplicate_of_index": 3118
+        },
+        {
+          "id": "postgresql-211",
+          "index": 3123,
+          "duplicate_of_index": 3122
+        },
+        {
+          "id": "postgresql-211",
+          "index": 3124,
+          "duplicate_of_index": 3122
+        },
+        {
+          "id": "postgresql-213",
+          "index": 3127,
+          "duplicate_of_index": 3126
+        },
+        {
+          "id": "postgresql-213",
+          "index": 3128,
+          "duplicate_of_index": 3126
+        },
+        {
+          "id": "postgresql-215",
+          "index": 3131,
+          "duplicate_of_index": 3130
+        },
+        {
+          "id": "postgresql-215",
+          "index": 3132,
+          "duplicate_of_index": 3130
+        },
+        {
+          "id": "postgresql-216",
+          "index": 3134,
+          "duplicate_of_index": 3133
+        },
+        {
+          "id": "postgresql-217",
+          "index": 3136,
+          "duplicate_of_index": 3135
+        },
+        {
+          "id": "postgresql-218",
+          "index": 3138,
+          "duplicate_of_index": 3137
+        },
+        {
+          "id": "postgresql-219",
+          "index": 3140,
+          "duplicate_of_index": 3139
+        },
+        {
+          "id": "postgresql-220",
+          "index": 3142,
+          "duplicate_of_index": 3141
+        },
+        {
+          "id": "postgresql-221",
+          "index": 3144,
+          "duplicate_of_index": 3143
+        },
+        {
+          "id": "postgresql-222",
+          "index": 3146,
+          "duplicate_of_index": 3145
+        },
+        {
+          "id": "postgresql-222",
+          "index": 3147,
+          "duplicate_of_index": 3145
+        },
+        {
+          "id": "postgresql-224",
+          "index": 3150,
+          "duplicate_of_index": 3149
+        },
+        {
+          "id": "postgresql-225",
+          "index": 3152,
+          "duplicate_of_index": 3151
+        },
+        {
+          "id": "postgresql-226",
+          "index": 3154,
+          "duplicate_of_index": 3153
+        },
+        {
+          "id": "postgresql-227",
+          "index": 3156,
+          "duplicate_of_index": 3155
+        },
+        {
+          "id": "postgresql-228",
+          "index": 3158,
+          "duplicate_of_index": 3157
+        },
+        {
+          "id": "postgresql-229",
+          "index": 3160,
+          "duplicate_of_index": 3159
+        },
+        {
+          "id": "postgresql-230",
+          "index": 3162,
+          "duplicate_of_index": 3161
+        },
+        {
+          "id": "postgresql-231",
+          "index": 3164,
+          "duplicate_of_index": 3163
+        },
+        {
+          "id": "postgresql-232",
+          "index": 3166,
+          "duplicate_of_index": 3165
+        },
+        {
+          "id": "postgresql-233",
+          "index": 3168,
+          "duplicate_of_index": 3167
+        },
+        {
+          "id": "postgresql-236",
+          "index": 3172,
+          "duplicate_of_index": 3171
+        },
+        {
+          "id": "postgresql-236",
+          "index": 3173,
+          "duplicate_of_index": 3171
+        },
+        {
+          "id": "postgresql-238",
+          "index": 3176,
+          "duplicate_of_index": 3175
+        },
+        {
+          "id": "postgresql-238",
+          "index": 3177,
+          "duplicate_of_index": 3175
+        },
+        {
+          "id": "postgresql-240",
+          "index": 3180,
+          "duplicate_of_index": 3179
+        },
+        {
+          "id": "postgresql-240",
+          "index": 3181,
+          "duplicate_of_index": 3179
+        },
+        {
+          "id": "postgresql-242",
+          "index": 3184,
+          "duplicate_of_index": 3183
+        },
+        {
+          "id": "postgresql-242",
+          "index": 3185,
+          "duplicate_of_index": 3183
+        },
+        {
+          "id": "postgresql-244",
+          "index": 3188,
+          "duplicate_of_index": 3187
+        },
+        {
+          "id": "postgresql-244",
+          "index": 3189,
+          "duplicate_of_index": 3187
+        },
+        {
+          "id": "postgresql-246",
+          "index": 3192,
+          "duplicate_of_index": 3191
+        },
+        {
+          "id": "postgresql-246",
+          "index": 3193,
+          "duplicate_of_index": 3191
+        },
+        {
+          "id": "postgresql-247",
+          "index": 3195,
+          "duplicate_of_index": 3194
+        },
+        {
+          "id": "postgresql-248",
+          "index": 3197,
+          "duplicate_of_index": 3196
+        },
+        {
+          "id": "postgresql-249",
+          "index": 3199,
+          "duplicate_of_index": 3198
+        },
+        {
+          "id": "postgresql-250",
+          "index": 3201,
+          "duplicate_of_index": 3200
+        },
+        {
+          "id": "postgresql-251",
+          "index": 3203,
+          "duplicate_of_index": 3202
+        },
+        {
+          "id": "postgresql-252",
+          "index": 3205,
+          "duplicate_of_index": 3204
+        },
+        {
+          "id": "postgresql-253",
+          "index": 3207,
+          "duplicate_of_index": 3206
+        },
+        {
+          "id": "postgresql-254",
+          "index": 3209,
+          "duplicate_of_index": 3208
+        },
+        {
+          "id": "postgresql-255",
+          "index": 3211,
+          "duplicate_of_index": 3210
+        },
+        {
+          "id": "postgresql-256",
+          "index": 3213,
+          "duplicate_of_index": 3212
+        },
+        {
+          "id": "postgresql-257",
+          "index": 3215,
+          "duplicate_of_index": 3214
+        },
+        {
+          "id": "postgresql-257",
+          "index": 3216,
+          "duplicate_of_index": 3214
+        },
+        {
+          "id": "postgresql-259",
+          "index": 3219,
+          "duplicate_of_index": 3218
+        },
+        {
+          "id": "postgresql-259",
+          "index": 3220,
+          "duplicate_of_index": 3218
+        },
+        {
+          "id": "postgresql-261",
+          "index": 3223,
+          "duplicate_of_index": 3222
+        },
+        {
+          "id": "postgresql-262",
+          "index": 3225,
+          "duplicate_of_index": 3224
+        },
+        {
+          "id": "postgresql-263",
+          "index": 3227,
+          "duplicate_of_index": 3226
+        },
+        {
+          "id": "postgresql-264",
+          "index": 3229,
+          "duplicate_of_index": 3228
+        },
+        {
+          "id": "postgresql-265",
+          "index": 3231,
+          "duplicate_of_index": 3230
+        },
+        {
+          "id": "postgresql-266",
+          "index": 3233,
+          "duplicate_of_index": 3232
+        },
+        {
+          "id": "postgresql-269",
+          "index": 3237,
+          "duplicate_of_index": 3236
+        },
+        {
+          "id": "postgresql-271",
+          "index": 3240,
+          "duplicate_of_index": 3239
+        },
+        {
+          "id": "postgresql-272",
+          "index": 3242,
+          "duplicate_of_index": 3241
+        },
+        {
+          "id": "postgresql-274",
+          "index": 3245,
+          "duplicate_of_index": 3244
+        },
+        {
+          "id": "postgresql-274",
+          "index": 3246,
+          "duplicate_of_index": 3244
+        },
+        {
+          "id": "postgresql-276",
+          "index": 3249,
+          "duplicate_of_index": 3248
+        },
+        {
+          "id": "postgresql-276",
+          "index": 3250,
+          "duplicate_of_index": 3248
+        },
+        {
+          "id": "postgresql-278",
+          "index": 3253,
+          "duplicate_of_index": 3252
+        },
+        {
+          "id": "postgresql-278",
+          "index": 3254,
+          "duplicate_of_index": 3252
+        },
+        {
+          "id": "postgresql-280",
+          "index": 3257,
+          "duplicate_of_index": 3256
+        },
+        {
+          "id": "postgresql-281",
+          "index": 3259,
+          "duplicate_of_index": 3258
+        },
+        {
+          "id": "postgresql-282",
+          "index": 3261,
+          "duplicate_of_index": 3260
+        },
+        {
+          "id": "postgresql-283",
+          "index": 3263,
+          "duplicate_of_index": 3262
+        },
+        {
+          "id": "postgresql-284",
+          "index": 3265,
+          "duplicate_of_index": 3264
+        },
+        {
+          "id": "postgresql-285",
+          "index": 3267,
+          "duplicate_of_index": 3266
+        },
+        {
+          "id": "postgresql-289",
+          "index": 3272,
+          "duplicate_of_index": 3271
+        },
+        {
+          "id": "postgresql-292",
+          "index": 3276,
+          "duplicate_of_index": 3275
+        },
+        {
+          "id": "postgresql-293",
+          "index": 3278,
+          "duplicate_of_index": 3277
+        },
+        {
+          "id": "postgresql-294",
+          "index": 3280,
+          "duplicate_of_index": 3279
+        },
+        {
+          "id": "postgresql-295",
+          "index": 3282,
+          "duplicate_of_index": 3281
+        },
+        {
+          "id": "postgresql-296",
+          "index": 3284,
+          "duplicate_of_index": 3283
+        },
+        {
+          "id": "postgresql-297",
+          "index": 3286,
+          "duplicate_of_index": 3285
+        },
+        {
+          "id": "postgresql-298",
+          "index": 3288,
+          "duplicate_of_index": 3287
+        },
+        {
+          "id": "postgresql-299",
+          "index": 3290,
+          "duplicate_of_index": 3289
+        },
+        {
+          "id": "postgresql-300",
+          "index": 3292,
+          "duplicate_of_index": 3291
+        }
+      ]
+    },
+    "combined_export.fixed.json": {
+      "rows_before": 3350,
+      "rows_after": 3178,
+      "dropped": 172,
+      "dropped_by_cohort": {
+        "kafka": 9,
+        "trino": 73,
+        "postgresql": 90
+      },
+      "remaining_id_collisions": [],
+      "dropped_rows": [
+        {
+          "id": "kafka-092",
+          "index": 2913,
+          "duplicate_of_index": 2912
+        },
+        {
+          "id": "kafka-093",
+          "index": 2915,
+          "duplicate_of_index": 2914
+        },
+        {
+          "id": "kafka-094",
+          "index": 2917,
+          "duplicate_of_index": 2916
+        },
+        {
+          "id": "kafka-095",
+          "index": 2919,
+          "duplicate_of_index": 2918
+        },
+        {
+          "id": "kafka-096",
+          "index": 2921,
+          "duplicate_of_index": 2920
+        },
+        {
+          "id": "kafka-097",
+          "index": 2923,
+          "duplicate_of_index": 2922
+        },
+        {
+          "id": "kafka-098",
+          "index": 2925,
+          "duplicate_of_index": 2924
+        },
+        {
+          "id": "kafka-099",
+          "index": 2927,
+          "duplicate_of_index": 2926
+        },
+        {
+          "id": "kafka-100",
+          "index": 2929,
+          "duplicate_of_index": 2928
+        },
+        {
+          "id": "trino-110",
+          "index": 2940,
+          "duplicate_of_index": 2939
+        },
+        {
+          "id": "trino-111",
+          "index": 2942,
+          "duplicate_of_index": 2941
+        },
+        {
+          "id": "trino-112",
+          "index": 2944,
+          "duplicate_of_index": 2943
+        },
+        {
+          "id": "trino-118",
+          "index": 2951,
+          "duplicate_of_index": 2950
+        },
+        {
+          "id": "trino-119",
+          "index": 2953,
+          "duplicate_of_index": 2952
+        },
+        {
+          "id": "trino-120",
+          "index": 2955,
+          "duplicate_of_index": 2954
+        },
+        {
+          "id": "trino-121",
+          "index": 2957,
+          "duplicate_of_index": 2956
+        },
+        {
+          "id": "trino-122",
+          "index": 2959,
+          "duplicate_of_index": 2958
+        },
+        {
+          "id": "trino-123",
+          "index": 2961,
+          "duplicate_of_index": 2960
+        },
+        {
+          "id": "trino-124",
+          "index": 2963,
+          "duplicate_of_index": 2962
+        },
+        {
+          "id": "trino-125",
+          "index": 2965,
+          "duplicate_of_index": 2964
+        },
+        {
+          "id": "trino-137",
+          "index": 2978,
+          "duplicate_of_index": 2977
+        },
+        {
+          "id": "trino-139",
+          "index": 2981,
+          "duplicate_of_index": 2980
+        },
+        {
+          "id": "trino-140",
+          "index": 2983,
+          "duplicate_of_index": 2982
+        },
+        {
+          "id": "trino-140",
+          "index": 2984,
+          "duplicate_of_index": 2982
+        },
+        {
+          "id": "trino-141",
+          "index": 2986,
+          "duplicate_of_index": 2985
+        },
+        {
+          "id": "trino-141",
+          "index": 2987,
+          "duplicate_of_index": 2985
+        },
+        {
+          "id": "trino-142",
+          "index": 2989,
+          "duplicate_of_index": 2988
+        },
+        {
+          "id": "trino-142",
+          "index": 2990,
+          "duplicate_of_index": 2988
+        },
+        {
+          "id": "trino-143",
+          "index": 2992,
+          "duplicate_of_index": 2991
+        },
+        {
+          "id": "trino-143",
+          "index": 2993,
+          "duplicate_of_index": 2991
+        },
+        {
+          "id": "trino-145",
+          "index": 2996,
+          "duplicate_of_index": 2995
+        },
+        {
+          "id": "trino-147",
+          "index": 2999,
+          "duplicate_of_index": 2998
+        },
+        {
+          "id": "trino-149",
+          "index": 3002,
+          "duplicate_of_index": 3001
+        },
+        {
+          "id": "trino-151",
+          "index": 3005,
+          "duplicate_of_index": 3004
+        },
+        {
+          "id": "trino-153",
+          "index": 3008,
+          "duplicate_of_index": 3007
+        },
+        {
+          "id": "trino-155",
+          "index": 3011,
+          "duplicate_of_index": 3010
+        },
+        {
+          "id": "trino-157",
+          "index": 3014,
+          "duplicate_of_index": 3013
+        },
+        {
+          "id": "trino-159",
+          "index": 3017,
+          "duplicate_of_index": 3016
+        },
+        {
+          "id": "trino-159",
+          "index": 3018,
+          "duplicate_of_index": 3016
+        },
+        {
+          "id": "trino-160",
+          "index": 3020,
+          "duplicate_of_index": 3019
+        },
+        {
+          "id": "trino-160",
+          "index": 3021,
+          "duplicate_of_index": 3019
+        },
+        {
+          "id": "trino-161",
+          "index": 3023,
+          "duplicate_of_index": 3022
+        },
+        {
+          "id": "trino-161",
+          "index": 3024,
+          "duplicate_of_index": 3022
+        },
+        {
+          "id": "trino-162",
+          "index": 3026,
+          "duplicate_of_index": 3025
+        },
+        {
+          "id": "trino-162",
+          "index": 3027,
+          "duplicate_of_index": 3025
+        },
+        {
+          "id": "trino-163",
+          "index": 3029,
+          "duplicate_of_index": 3028
+        },
+        {
+          "id": "trino-163",
+          "index": 3030,
+          "duplicate_of_index": 3028
+        },
+        {
+          "id": "trino-164",
+          "index": 3032,
+          "duplicate_of_index": 3031
+        },
+        {
+          "id": "trino-164",
+          "index": 3033,
+          "duplicate_of_index": 3031
+        },
+        {
+          "id": "trino-165",
+          "index": 3035,
+          "duplicate_of_index": 3034
+        },
+        {
+          "id": "trino-165",
+          "index": 3036,
+          "duplicate_of_index": 3034
+        },
+        {
+          "id": "trino-166",
+          "index": 3038,
+          "duplicate_of_index": 3037
+        },
+        {
+          "id": "trino-166",
+          "index": 3039,
+          "duplicate_of_index": 3037
+        },
+        {
+          "id": "trino-167",
+          "index": 3041,
+          "duplicate_of_index": 3040
+        },
+        {
+          "id": "trino-170",
+          "index": 3045,
+          "duplicate_of_index": 3044
+        },
+        {
+          "id": "trino-172",
+          "index": 3048,
+          "duplicate_of_index": 3047
+        },
+        {
+          "id": "trino-174",
+          "index": 3051,
+          "duplicate_of_index": 3050
+        },
+        {
+          "id": "trino-176",
+          "index": 3054,
+          "duplicate_of_index": 3053
+        },
+        {
+          "id": "trino-178",
+          "index": 3057,
+          "duplicate_of_index": 3056
+        },
+        {
+          "id": "trino-180",
+          "index": 3060,
+          "duplicate_of_index": 3059
+        },
+        {
+          "id": "trino-182",
+          "index": 3063,
+          "duplicate_of_index": 3062
+        },
+        {
+          "id": "trino-184",
+          "index": 3066,
+          "duplicate_of_index": 3065
+        },
+        {
+          "id": "trino-186",
+          "index": 3069,
+          "duplicate_of_index": 3068
+        },
+        {
+          "id": "trino-188",
+          "index": 3072,
+          "duplicate_of_index": 3071
+        },
+        {
+          "id": "trino-188",
+          "index": 3073,
+          "duplicate_of_index": 3071
+        },
+        {
+          "id": "trino-189",
+          "index": 3075,
+          "duplicate_of_index": 3074
+        },
+        {
+          "id": "trino-189",
+          "index": 3076,
+          "duplicate_of_index": 3074
+        },
+        {
+          "id": "trino-190",
+          "index": 3078,
+          "duplicate_of_index": 3077
+        },
+        {
+          "id": "trino-190",
+          "index": 3079,
+          "duplicate_of_index": 3077
+        },
+        {
+          "id": "trino-191",
+          "index": 3081,
+          "duplicate_of_index": 3080
+        },
+        {
+          "id": "trino-191",
+          "index": 3082,
+          "duplicate_of_index": 3080
+        },
+        {
+          "id": "trino-192",
+          "index": 3084,
+          "duplicate_of_index": 3083
+        },
+        {
+          "id": "trino-192",
+          "index": 3085,
+          "duplicate_of_index": 3083
+        },
+        {
+          "id": "trino-193",
+          "index": 3087,
+          "duplicate_of_index": 3086
+        },
+        {
+          "id": "trino-193",
+          "index": 3088,
+          "duplicate_of_index": 3086
+        },
+        {
+          "id": "trino-194",
+          "index": 3090,
+          "duplicate_of_index": 3089
+        },
+        {
+          "id": "trino-194",
+          "index": 3091,
+          "duplicate_of_index": 3089
+        },
+        {
+          "id": "trino-195",
+          "index": 3093,
+          "duplicate_of_index": 3092
+        },
+        {
+          "id": "trino-196",
+          "index": 3095,
+          "duplicate_of_index": 3094
+        },
+        {
+          "id": "trino-197",
+          "index": 3097,
+          "duplicate_of_index": 3096
+        },
+        {
+          "id": "trino-198",
+          "index": 3099,
+          "duplicate_of_index": 3098
+        },
+        {
+          "id": "trino-200",
+          "index": 3102,
+          "duplicate_of_index": 3101
+        },
+        {
+          "id": "postgresql-201",
+          "index": 3104,
+          "duplicate_of_index": 3103
+        },
+        {
+          "id": "postgresql-203",
+          "index": 3107,
+          "duplicate_of_index": 3106
+        },
+        {
+          "id": "postgresql-203",
+          "index": 3108,
+          "duplicate_of_index": 3106
+        },
+        {
+          "id": "postgresql-204",
+          "index": 3110,
+          "duplicate_of_index": 3109
+        },
+        {
+          "id": "postgresql-205",
+          "index": 3112,
+          "duplicate_of_index": 3111
+        },
+        {
+          "id": "postgresql-207",
+          "index": 3115,
+          "duplicate_of_index": 3114
+        },
+        {
+          "id": "postgresql-207",
+          "index": 3116,
+          "duplicate_of_index": 3114
+        },
+        {
+          "id": "postgresql-209",
+          "index": 3119,
+          "duplicate_of_index": 3118
+        },
+        {
+          "id": "postgresql-209",
+          "index": 3120,
+          "duplicate_of_index": 3118
+        },
+        {
+          "id": "postgresql-211",
+          "index": 3123,
+          "duplicate_of_index": 3122
+        },
+        {
+          "id": "postgresql-211",
+          "index": 3124,
+          "duplicate_of_index": 3122
+        },
+        {
+          "id": "postgresql-213",
+          "index": 3127,
+          "duplicate_of_index": 3126
+        },
+        {
+          "id": "postgresql-213",
+          "index": 3128,
+          "duplicate_of_index": 3126
+        },
+        {
+          "id": "postgresql-215",
+          "index": 3131,
+          "duplicate_of_index": 3130
+        },
+        {
+          "id": "postgresql-215",
+          "index": 3132,
+          "duplicate_of_index": 3130
+        },
+        {
+          "id": "postgresql-216",
+          "index": 3134,
+          "duplicate_of_index": 3133
+        },
+        {
+          "id": "postgresql-217",
+          "index": 3136,
+          "duplicate_of_index": 3135
+        },
+        {
+          "id": "postgresql-218",
+          "index": 3138,
+          "duplicate_of_index": 3137
+        },
+        {
+          "id": "postgresql-219",
+          "index": 3140,
+          "duplicate_of_index": 3139
+        },
+        {
+          "id": "postgresql-220",
+          "index": 3142,
+          "duplicate_of_index": 3141
+        },
+        {
+          "id": "postgresql-221",
+          "index": 3144,
+          "duplicate_of_index": 3143
+        },
+        {
+          "id": "postgresql-222",
+          "index": 3146,
+          "duplicate_of_index": 3145
+        },
+        {
+          "id": "postgresql-222",
+          "index": 3147,
+          "duplicate_of_index": 3145
+        },
+        {
+          "id": "postgresql-224",
+          "index": 3150,
+          "duplicate_of_index": 3149
+        },
+        {
+          "id": "postgresql-225",
+          "index": 3152,
+          "duplicate_of_index": 3151
+        },
+        {
+          "id": "postgresql-226",
+          "index": 3154,
+          "duplicate_of_index": 3153
+        },
+        {
+          "id": "postgresql-227",
+          "index": 3156,
+          "duplicate_of_index": 3155
+        },
+        {
+          "id": "postgresql-228",
+          "index": 3158,
+          "duplicate_of_index": 3157
+        },
+        {
+          "id": "postgresql-229",
+          "index": 3160,
+          "duplicate_of_index": 3159
+        },
+        {
+          "id": "postgresql-230",
+          "index": 3162,
+          "duplicate_of_index": 3161
+        },
+        {
+          "id": "postgresql-231",
+          "index": 3164,
+          "duplicate_of_index": 3163
+        },
+        {
+          "id": "postgresql-232",
+          "index": 3166,
+          "duplicate_of_index": 3165
+        },
+        {
+          "id": "postgresql-233",
+          "index": 3168,
+          "duplicate_of_index": 3167
+        },
+        {
+          "id": "postgresql-236",
+          "index": 3172,
+          "duplicate_of_index": 3171
+        },
+        {
+          "id": "postgresql-236",
+          "index": 3173,
+          "duplicate_of_index": 3171
+        },
+        {
+          "id": "postgresql-238",
+          "index": 3176,
+          "duplicate_of_index": 3175
+        },
+        {
+          "id": "postgresql-238",
+          "index": 3177,
+          "duplicate_of_index": 3175
+        },
+        {
+          "id": "postgresql-240",
+          "index": 3180,
+          "duplicate_of_index": 3179
+        },
+        {
+          "id": "postgresql-240",
+          "index": 3181,
+          "duplicate_of_index": 3179
+        },
+        {
+          "id": "postgresql-242",
+          "index": 3184,
+          "duplicate_of_index": 3183
+        },
+        {
+          "id": "postgresql-242",
+          "index": 3185,
+          "duplicate_of_index": 3183
+        },
+        {
+          "id": "postgresql-244",
+          "index": 3188,
+          "duplicate_of_index": 3187
+        },
+        {
+          "id": "postgresql-244",
+          "index": 3189,
+          "duplicate_of_index": 3187
+        },
+        {
+          "id": "postgresql-246",
+          "index": 3192,
+          "duplicate_of_index": 3191
+        },
+        {
+          "id": "postgresql-246",
+          "index": 3193,
+          "duplicate_of_index": 3191
+        },
+        {
+          "id": "postgresql-247",
+          "index": 3195,
+          "duplicate_of_index": 3194
+        },
+        {
+          "id": "postgresql-248",
+          "index": 3197,
+          "duplicate_of_index": 3196
+        },
+        {
+          "id": "postgresql-249",
+          "index": 3199,
+          "duplicate_of_index": 3198
+        },
+        {
+          "id": "postgresql-250",
+          "index": 3201,
+          "duplicate_of_index": 3200
+        },
+        {
+          "id": "postgresql-251",
+          "index": 3203,
+          "duplicate_of_index": 3202
+        },
+        {
+          "id": "postgresql-252",
+          "index": 3205,
+          "duplicate_of_index": 3204
+        },
+        {
+          "id": "postgresql-253",
+          "index": 3207,
+          "duplicate_of_index": 3206
+        },
+        {
+          "id": "postgresql-254",
+          "index": 3209,
+          "duplicate_of_index": 3208
+        },
+        {
+          "id": "postgresql-255",
+          "index": 3211,
+          "duplicate_of_index": 3210
+        },
+        {
+          "id": "postgresql-256",
+          "index": 3213,
+          "duplicate_of_index": 3212
+        },
+        {
+          "id": "postgresql-257",
+          "index": 3215,
+          "duplicate_of_index": 3214
+        },
+        {
+          "id": "postgresql-257",
+          "index": 3216,
+          "duplicate_of_index": 3214
+        },
+        {
+          "id": "postgresql-259",
+          "index": 3219,
+          "duplicate_of_index": 3218
+        },
+        {
+          "id": "postgresql-259",
+          "index": 3220,
+          "duplicate_of_index": 3218
+        },
+        {
+          "id": "postgresql-261",
+          "index": 3223,
+          "duplicate_of_index": 3222
+        },
+        {
+          "id": "postgresql-262",
+          "index": 3225,
+          "duplicate_of_index": 3224
+        },
+        {
+          "id": "postgresql-263",
+          "index": 3227,
+          "duplicate_of_index": 3226
+        },
+        {
+          "id": "postgresql-264",
+          "index": 3229,
+          "duplicate_of_index": 3228
+        },
+        {
+          "id": "postgresql-265",
+          "index": 3231,
+          "duplicate_of_index": 3230
+        },
+        {
+          "id": "postgresql-266",
+          "index": 3233,
+          "duplicate_of_index": 3232
+        },
+        {
+          "id": "postgresql-269",
+          "index": 3237,
+          "duplicate_of_index": 3236
+        },
+        {
+          "id": "postgresql-271",
+          "index": 3240,
+          "duplicate_of_index": 3239
+        },
+        {
+          "id": "postgresql-272",
+          "index": 3242,
+          "duplicate_of_index": 3241
+        },
+        {
+          "id": "postgresql-274",
+          "index": 3245,
+          "duplicate_of_index": 3244
+        },
+        {
+          "id": "postgresql-274",
+          "index": 3246,
+          "duplicate_of_index": 3244
+        },
+        {
+          "id": "postgresql-276",
+          "index": 3249,
+          "duplicate_of_index": 3248
+        },
+        {
+          "id": "postgresql-276",
+          "index": 3250,
+          "duplicate_of_index": 3248
+        },
+        {
+          "id": "postgresql-278",
+          "index": 3253,
+          "duplicate_of_index": 3252
+        },
+        {
+          "id": "postgresql-278",
+          "index": 3254,
+          "duplicate_of_index": 3252
+        },
+        {
+          "id": "postgresql-280",
+          "index": 3257,
+          "duplicate_of_index": 3256
+        },
+        {
+          "id": "postgresql-281",
+          "index": 3259,
+          "duplicate_of_index": 3258
+        },
+        {
+          "id": "postgresql-282",
+          "index": 3261,
+          "duplicate_of_index": 3260
+        },
+        {
+          "id": "postgresql-283",
+          "index": 3263,
+          "duplicate_of_index": 3262
+        },
+        {
+          "id": "postgresql-284",
+          "index": 3265,
+          "duplicate_of_index": 3264
+        },
+        {
+          "id": "postgresql-285",
+          "index": 3267,
+          "duplicate_of_index": 3266
+        },
+        {
+          "id": "postgresql-289",
+          "index": 3272,
+          "duplicate_of_index": 3271
+        },
+        {
+          "id": "postgresql-292",
+          "index": 3276,
+          "duplicate_of_index": 3275
+        },
+        {
+          "id": "postgresql-293",
+          "index": 3278,
+          "duplicate_of_index": 3277
+        },
+        {
+          "id": "postgresql-294",
+          "index": 3280,
+          "duplicate_of_index": 3279
+        },
+        {
+          "id": "postgresql-295",
+          "index": 3282,
+          "duplicate_of_index": 3281
+        },
+        {
+          "id": "postgresql-296",
+          "index": 3284,
+          "duplicate_of_index": 3283
+        },
+        {
+          "id": "postgresql-297",
+          "index": 3286,
+          "duplicate_of_index": 3285
+        },
+        {
+          "id": "postgresql-298",
+          "index": 3288,
+          "duplicate_of_index": 3287
+        },
+        {
+          "id": "postgresql-299",
+          "index": 3290,
+          "duplicate_of_index": 3289
+        },
+        {
+          "id": "postgresql-300",
+          "index": 3292,
+          "duplicate_of_index": 3291
+        }
+      ]
+    }
+  }
+}
