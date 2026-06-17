@@ -368,54 +368,51 @@ class LLMAgent:
         return response.choices[0].message.content
 
     def _call_watsonx(self, messages: list[dict]) -> str:
-        """Call watsonx.ai, preferring the new SDK and falling back to the legacy one."""
-        prompt = self._messages_to_text(messages)
+        """Call watsonx.ai via the chat endpoint (``/ml/v1/text/chat``).
 
-        # New SDK: ibm_watsonx_ai
+        Chat takes system+user roles natively (no manual chat-template flattening) and
+        is the supported replacement for the deprecated ``/ml/v1/text/generation`` path;
+        it also serves models that reject text-generation. Falls back to text generation
+        for the rare model that only supports the legacy endpoint.
+        """
+        from ibm_watsonx_ai import Credentials
+        from ibm_watsonx_ai.foundation_models import ModelInference
+
+        credentials = Credentials(url=WATSONX_URL, api_key=self.watsonx_api_key)
+        model = ModelInference(
+            model_id=self.model_id,
+            credentials=credentials,
+            project_id=self.watsonx_project_id,
+        )
+        chat_params = {"max_tokens": self.max_new_tokens, "temperature": self.temperature}
         try:
-            from ibm_watsonx_ai import Credentials
+            response = model.chat(messages=messages, params=chat_params)
+            return response["choices"][0]["message"]["content"]
+        except Exception as chat_err:  # noqa: BLE001
+            msg = str(chat_err).lower()
+            # Only fall back when the model genuinely doesn't serve chat; re-raise
+            # transient/credential errors so call_llm's retry logic can handle them.
+            if "not support" not in msg and "function" not in msg:
+                raise
             from ibm_watsonx_ai.metanames import GenTextParamsMetaNames as GenParams
             from ibm_watsonx_ai.foundation_models.utils.enums import DecodingMethods
-            from ibm_watsonx_ai.foundation_models import ModelInference
 
-            parameters = {
+            gen_params = {
                 GenParams.MIN_NEW_TOKENS: 0,
                 GenParams.MAX_NEW_TOKENS: self.max_new_tokens,
                 GenParams.DECODING_METHOD: DecodingMethods.GREEDY,
                 GenParams.REPETITION_PENALTY: 1,
                 GenParams.STOP_SEQUENCES: ["<|endoftext|>"],
             }
-            credentials = Credentials(url=WATSONX_URL, api_key=self.watsonx_api_key)
-            model = ModelInference(
+            gen_model = ModelInference(
                 model_id=self.model_id,
-                params=parameters,
+                params=gen_params,
                 credentials=credentials,
                 project_id=self.watsonx_project_id,
             )
-            response = model.generate_text(prompt=[prompt])
+            prompt = self._messages_to_text(messages)
+            response = gen_model.generate_text(prompt=[prompt])
             return response[0]() if callable(response[0]) else response[0]
-        except ImportError:
-            pass
-
-        # Legacy SDK: ibm_watson_machine_learning
-        from ibm_watson_machine_learning.foundation_models import Model
-        from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenParams
-
-        parameters = {
-            GenParams.MIN_NEW_TOKENS: 0,
-            GenParams.MAX_NEW_TOKENS: self.max_new_tokens,
-            GenParams.DECODING_METHOD: "greedy",
-            GenParams.REPETITION_PENALTY: 1,
-            GenParams.STOP_SEQUENCES: ["<|endoftext|>"],
-        }
-        model = Model(
-            model_id=self.model_id,
-            params=parameters,
-            credentials={"url": WATSONX_URL, "apikey": self.watsonx_api_key},
-            project_id=self.watsonx_project_id,
-        )
-        response = model.generate_text(prompt=[prompt])
-        return response[0]() if callable(response[0]) else response[0]
 
     # ------------------------------------------------------------------ #
     # Public API
