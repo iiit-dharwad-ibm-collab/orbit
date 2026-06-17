@@ -1,0 +1,32 @@
+{
+  "model": "mistralai/mistral-small-3-1-24b-instruct-2503",
+  "service": "WATSONX",
+  "dataset": "combined_export.fixed.json",
+  "n": 90,
+  "errors": 0,
+  "overall_acc": 0.7555555555555555,
+  "by_qtype": {
+    "mcq": {
+      "n": 30,
+      "acc": 0.6333333333333333
+    },
+    "open": {
+      "n": 30,
+      "acc": 0.8
+    },
+    "troubleshooting": {
+      "n": 30,
+      "acc": 0.8333333333333334
+    }
+  },
+  "by_domain": {
+    "DP": {
+      "n": 89,
+      "acc": 0.7528089887640449
+    },
+    "inst": {
+      "n": 1,
+      "acc": 1.0
+    }
+  }
+}
