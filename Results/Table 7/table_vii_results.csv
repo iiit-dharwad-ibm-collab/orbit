@@ -1,0 +1,9 @@
+Mode,Model,LONG_CONTEXT_LOCALIZATION,MULTI_HOP_CAUSAL_INFERENCE,TROUBLESHOOTING
+zero_shot,Llama 3.3 70B Instruct,66.67,73.12,47.21
+zero_shot,Mistral Small 3.1 (24B),66.67,67.59,42.65
+zero_shot,Granite 4.0 H Small,50.00,52.57,41.32
+zero_shot,Mistral Medium (2505),66.67,70.75,48.24
+few_shot,Llama 3.3 70B Instruct,83.33,73.91,50.74
+few_shot,Mistral Small 3.1 (24B),66.67,79.05,48.09
+few_shot,Granite 4.0 H Small,66.67,66.40,44.85
+few_shot,Mistral Medium (2505),83.33,73.12,46.18
