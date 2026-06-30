@@ -4,7 +4,8 @@ Compute human-vs-judge agreement (the number the reviewer asked for) once annota
 graded the 120 responses in the Streamlit app.
 
 Inputs:
-  - human scores: pulled from the response_scores DB table (export_response_scores)
+  - human scores: --human-dir DIR  ->  a folder of the per-annotator JSON files downloaded from
+                  the grading app, each {"annotator": "...", "scores": {response_id: {"score": int}}}
   - judge scores: --judge judge_scores.json  ->  {response_id: <1-5 int>} from the LLM-judge run
                   (response_id must match: "model::question_id")
 
@@ -66,15 +67,24 @@ def spearman(x, y):
 
 
 def main():
+    import glob, os
     ap = argparse.ArgumentParser()
+    ap.add_argument("--human-dir", required=True,
+                    help="folder of per-annotator JSON files downloaded from the grading app")
     ap.add_argument("--judge", required=True, help="judge_scores.json: {response_id: 1-5}")
     args = ap.parse_args()
-    from db import export_response_scores  # needs DATABASE_URL
 
-    # human scores: {response_id: {annotator: score}}
+    # human scores: {response_id: {annotator: score}}  (from the downloaded JSON files)
     human = collections.defaultdict(dict)
-    for response_id, annotator, score, notes, _ in export_response_scores():
-        human[response_id][annotator] = int(score)
+    files = sorted(glob.glob(os.path.join(args.human_dir, "*.json")))
+    for fp in files:
+        payload = json.load(open(fp))
+        who = payload.get("annotator") or os.path.splitext(os.path.basename(fp))[0]
+        for rid, rec in (payload.get("scores") or {}).items():
+            s = rec.get("score") if isinstance(rec, dict) else rec
+            if s in (1, 2, 3, 4, 5):
+                human[rid][who] = int(s)
+    print(f"Loaded {len(files)} annotator file(s).")
     judge = {k: int(round(v)) for k, v in json.load(open(args.judge)).items()}
 
     # human consensus = rounded mean across annotators
