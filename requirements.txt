@@ -1,0 +1,8 @@
+# Repo-root requirements for Streamlit Community Cloud.
+# This monorepo has no top-level build; each component manages its own deps. This file exists
+# only so Streamlit Cloud reliably resolves dependencies for the IAA-Labelling annotation apps
+# (IAA-Labelling/app.py and IAA-Labelling/response_grading_app.py).
+# Mirrors IAA-Labelling/requirements.txt.
+streamlit
+psycopg2-binary
+python-dotenv
