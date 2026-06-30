@@ -7,3 +7,7 @@ __pycache__/
 *.sqlite3
 .streamlit/
 .DS_Store
+
+# human-vs-judge: held-out judge verdicts (maintainer-only; regenerable; keep grading blind)
+judge_verdicts_heldout.json
+judge_scores.json
