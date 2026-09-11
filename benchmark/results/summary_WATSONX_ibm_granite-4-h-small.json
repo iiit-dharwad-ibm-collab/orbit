@@ -1,0 +1,32 @@
+{
+  "model": "ibm/granite-4-h-small",
+  "service": "WATSONX",
+  "dataset": "combined_export.fixed.json",
+  "n": 90,
+  "errors": 0,
+  "overall_acc": 0.6111111111111112,
+  "by_qtype": {
+    "mcq": {
+      "n": 30,
+      "acc": 0.5
+    },
+    "open": {
+      "n": 30,
+      "acc": 0.6333333333333333
+    },
+    "troubleshooting": {
+      "n": 30,
+      "acc": 0.7
+    }
+  },
+  "by_domain": {
+    "DP": {
+      "n": 89,
+      "acc": 0.6067415730337079
+    },
+    "inst": {
+      "n": 1,
+      "acc": 1.0
+    }
+  }
+}

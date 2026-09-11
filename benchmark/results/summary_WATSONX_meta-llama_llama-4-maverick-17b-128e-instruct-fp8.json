@@ -1,0 +1,32 @@
+{
+  "model": "meta-llama/llama-4-maverick-17b-128e-instruct-fp8",
+  "service": "WATSONX",
+  "dataset": "combined_export.fixed.json",
+  "n": 90,
+  "errors": 0,
+  "overall_acc": 0.7333333333333333,
+  "by_qtype": {
+    "mcq": {
+      "n": 30,
+      "acc": 0.6666666666666666
+    },
+    "open": {
+      "n": 30,
+      "acc": 0.7
+    },
+    "troubleshooting": {
+      "n": 30,
+      "acc": 0.8333333333333334
+    }
+  },
+  "by_domain": {
+    "DP": {
+      "n": 89,
+      "acc": 0.7303370786516854
+    },
+    "inst": {
+      "n": 1,
+      "acc": 1.0
+    }
+  }
+}

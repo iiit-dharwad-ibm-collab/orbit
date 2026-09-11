@@ -1,0 +1,32 @@
+{
+  "model": "mistralai/mistral-medium-2505",
+  "service": "WATSONX",
+  "dataset": "combined_export.fixed.json",
+  "n": 90,
+  "errors": 0,
+  "overall_acc": 0.7888888888888889,
+  "by_qtype": {
+    "mcq": {
+      "n": 30,
+      "acc": 0.6666666666666666
+    },
+    "open": {
+      "n": 30,
+      "acc": 0.8666666666666667
+    },
+    "troubleshooting": {
+      "n": 30,
+      "acc": 0.8333333333333334
+    }
+  },
+  "by_domain": {
+    "DP": {
+      "n": 89,
+      "acc": 0.7865168539325843
+    },
+    "inst": {
+      "n": 1,
+      "acc": 1.0
+    }
+  }
+}

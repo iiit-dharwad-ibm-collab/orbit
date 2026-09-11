@@ -11,6 +11,9 @@ venv/
 .DS_Store
 *.pem
 
+# llm_agent.py on-disk response cache (shelve)
+benchmark/data/
+
 # Paper lives in Overleaf; ./paper is a clone of git.overleaf.com (synced separately)
 /paper/
 

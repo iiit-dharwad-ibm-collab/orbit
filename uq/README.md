@@ -15,16 +15,21 @@ The finalized ORBIT JSON exported from the dataset pipeline (`Dataset-Annotator`
 
 ## Metrics
 
-Reported in the paper's dataset-statistics table (Table II):
+> **Unsourced values — do not cite.** The figures below were carried over from an early
+> manuscript draft of the dataset-statistics table. **No committed script or result file in this
+> artifact produces them.** They must not be reported until they are recomputed on the cleaned
+> 3,178-instance corpus (`IAA-Labelling/combined_export.fixed.json`) by a checked-in script. The
+> paper currently keeps the two semantic rows as placeholders pending that computation; this table
+> is kept only to record what needs to be reproduced.
 
-| Metric | Value |
-|--------|-------|
-| Semantic consistency score | 0.944 ± 0.041 |
-| Semantic entropy | 0.234 ± 0.666 |
-| Question complexity score | 1.49 ± 0.30 |
+| Metric | Draft value (unsourced) | Status |
+|--------|-------------------------|--------|
+| Semantic consistency score | 0.944 ± 0.041 | needs recompute on 3,178 |
+| Semantic entropy | 0.234 ± 0.666 | needs recompute on 3,178 |
+| Question complexity score | 1.49 ± 0.30 | needs recompute on 3,178 |
 
-UQ outputs feed the difficulty/uncertainty discussion and help select adversarial vs. correct
-instances (76.7% / 23.3% split).
+UQ outputs are intended to feed the difficulty/uncertainty discussion and help select adversarial
+vs. correct instances (76.7% / 23.3% split).
 
 ## lm-polygraph
 

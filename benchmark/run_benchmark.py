@@ -36,9 +36,13 @@ QTYPE_NAME = {0: "mcq", 1: "open", 2: "troubleshooting"}
 LETTERS = ("A", "B", "C", "D")
 
 JUDGE_SYS = (
-    "You grade answers to IT-operations questions. Given the question, the reference answer, "
-    "and a candidate answer, decide whether the candidate is correct, i.e. factually equivalent "
-    "to the reference. Reply with ONLY 'YES' or 'NO'."
+    "You are a STRICT grader for IT-operations question answering. You are given the question, "
+    "the reference (gold) answer, a reference explanation, and a candidate answer. Mark the "
+    "candidate CORRECT only if it states the same core conclusion as the reference: the specific "
+    "root cause, fix, command, or value must actually match. Mark it INCORRECT if it is vague or "
+    "hedged, only partially correct, omits the key point, contradicts the reference, leads with a "
+    "different primary claim, or merely restates the question. Being plausible or topically related "
+    "is NOT sufficient. When in doubt, answer NO. Reply with ONLY 'YES' or 'NO'."
 )
 
 
