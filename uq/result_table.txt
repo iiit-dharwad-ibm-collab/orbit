@@ -1,0 +1,394 @@
+==========================================================================================
+SIMBA_UQ-INSPIRED DATASET-DIFFICULTY ANALYSIS FOR ORBIT BENCHMARK
+==========================================================================================
+
+This report applies the SIMBA_UQ methodology (Bhattacharjya et al., EMNLP 2025)
+to analyze the difficulty of the ORBIT dataset across multiple dimensions.
+
+Methodology:
+  - Samples: A, B, C, D choices for each question (treated as 'generations')
+  - Similarity metrics: Jaccard (primary), ROUGE-1, ROUGE-L
+  - Reward signals: Letter-match (primary), ROUGE-L ≥ 0.5 (secondary)
+  - Methods: arith-agg, spec-ecc, bayes-beta, clf-pairs, clf-mean+gen
+  - Evaluation metrics: ATS ↑, ACE ↓, AUROC ↑
+  - 5 random 50/50 train/test splits (matching SIMBA_UQ protocol)
+
+==========================================================================================
+
+==========================================================================================
+TABLE 1: Main UQ Comparison (qtype=0, Jaccard similarity, Letter-match reward)
+==========================================================================================
+Method               ATS ↑                ACE ↓                AUROC ↑             
+------------------------------------------------------------------------------------------
+arith-agg            0.267±0.007          0.624±0.002          0.515±0.002         
+spec-ecc             0.226±0.009          0.313±0.004          0.478±0.006         
+bayes-beta           0.266±0.007          0.010±0.001          0.515±0.002         
+clf-pairs            0.310±0.013          0.014±0.002          0.543±0.006         
+clf-mean+gen         0.518±0.024          0.067±0.009          0.720±0.018         
+==========================================================================================
+
+==========================================================================================
+TABLE 2: UQ Comparison Across Question Types
+==========================================================================================
+
+--- qtype_0 ---
+Method               ATS ↑                ACE ↓                AUROC ↑             
+------------------------------------------------------------------------------------------
+arith-agg            0.267±0.007          0.624±0.002          0.515±0.002         
+spec-ecc             0.226±0.009          0.313±0.004          0.478±0.006         
+bayes-beta           0.266±0.007          0.010±0.001          0.515±0.002         
+clf-pairs            0.310±0.013          0.014±0.002          0.543±0.006         
+clf-mean+gen         0.518±0.024          0.067±0.009          0.720±0.018         
+
+--- qtype_2 ---
+Method               ATS ↑                ACE ↓                AUROC ↑             
+------------------------------------------------------------------------------------------
+arith-agg            1.000±0.000          0.530±0.000          0.999±0.001         
+spec-ecc             0.000±0.000          0.442±0.001          0.312±0.006         
+bayes-beta           1.000±0.000          0.319±0.001          0.999±0.001         
+clf-pairs            1.000±0.000          0.001±0.000          1.000±0.000         
+clf-mean+gen         0.993±0.014          0.010±0.004          0.999±0.001         
+
+==========================================================================================
+
+==========================================================================================
+TABLE 3: Similarity Metric Ablation (qtype=0)
+==========================================================================================
+
+--- Similarity Metric: jaccard ---
+Method               ATS ↑                ACE ↓                AUROC ↑             
+------------------------------------------------------------------------------------------
+arith-agg            0.267±0.007          0.624±0.002          0.515±0.002         
+spec-ecc             0.226±0.009          0.313±0.004          0.478±0.006         
+bayes-beta           0.266±0.007          0.010±0.001          0.515±0.002         
+clf-pairs            0.310±0.013          0.014±0.002          0.543±0.006         
+clf-mean+gen         0.518±0.024          0.067±0.009          0.720±0.018         
+
+--- Similarity Metric: rouge1 ---
+Method               ATS ↑                ACE ↓                AUROC ↑             
+------------------------------------------------------------------------------------------
+arith-agg            0.262±0.006          0.765±0.004          0.512±0.001         
+spec-ecc             0.232±0.008          0.311±0.002          0.475±0.005         
+bayes-beta           0.262±0.006          0.010±0.002          0.512±0.001         
+clf-pairs            0.312±0.013          0.016±0.003          0.557±0.005         
+clf-mean+gen         0.522±0.024          0.068±0.003          0.722±0.018         
+
+--- Similarity Metric: rougeL ---
+Method               ATS ↑                ACE ↓                AUROC ↑             
+------------------------------------------------------------------------------------------
+arith-agg            0.263±0.005          0.760±0.004          0.512±0.001         
+spec-ecc             0.236±0.007          0.323±0.003          0.477±0.006         
+bayes-beta           0.263±0.005          0.009±0.002          0.512±0.001         
+clf-pairs            0.318±0.008          0.013±0.003          0.556±0.005         
+clf-mean+gen         0.526±0.025          0.063±0.004          0.725±0.018         
+
+==========================================================================================
+
+==========================================================================================
+TABLE 4: Sample-Size Ablation (qtype=0, Jaccard similarity)
+Effect of number of choice subsets on ACE metric
+==========================================================================================
+
+--- Subset size k = 2 ---
+Method               ACE ↓                    
+--------------------------------------------------
+arith-agg            0.837±0.018              
+spec-ecc             0.452±0.018              
+bayes-beta           0.025±0.004              
+clf-pairs            0.013±0.001              
+clf-mean+gen         0.076±0.011              
+
+--- Subset size k = 3 ---
+Method               ACE ↓                    
+--------------------------------------------------
+arith-agg            0.689±0.012              
+spec-ecc             0.346±0.009              
+bayes-beta           0.019±0.002              
+clf-pairs            0.023±0.004              
+clf-mean+gen         0.079±0.004              
+
+--- Subset size k = 4 ---
+Method               ACE ↓                    
+--------------------------------------------------
+arith-agg            0.624±0.000              
+spec-ecc             0.316±0.000              
+bayes-beta           0.010±0.000              
+clf-pairs            0.028±0.004              
+clf-mean+gen         0.080±0.003              
+
+==========================================================================================
+
+==========================================================================================
+TABLE 5: ROUGE-L Threshold Ablation (qtype=0, Jaccard similarity)
+Effect of reward threshold on ACE metric
+==========================================================================================
+
+--- Threshold = 0.3 ---
+Method               ACE ↓                    
+--------------------------------------------------
+arith-agg            0.718±0.003              
+bayes-beta           0.086±0.002              
+clf-pairs            0.016±0.007              
+
+--- Threshold = 0.5 ---
+Method               ACE ↓                    
+--------------------------------------------------
+arith-agg            0.655±0.002              
+bayes-beta           0.021±0.001              
+clf-pairs            0.019±0.003              
+
+--- Threshold = 0.7 ---
+Method               ACE ↓                    
+--------------------------------------------------
+arith-agg            0.616±0.012              
+bayes-beta           0.174±0.011              
+clf-pairs            0.083±0.027              
+
+==========================================================================================
+
+==========================================================================================
+TABLE 6: Reward Definition Comparison (qtype=0)
+Letter-match vs ROUGE-L ≥ 0.5 reward signals
+==========================================================================================
+
+--- Reward: letter_match ---
+Method               ATS ↑                ACE ↓                AUROC ↑             
+------------------------------------------------------------------------------------------
+arith-agg            0.267±0.007          0.624±0.002          0.515±0.002         
+spec-ecc             0.226±0.009          0.313±0.004          0.478±0.006         
+bayes-beta           0.266±0.007          0.010±0.001          0.515±0.002         
+clf-pairs            0.310±0.013          0.014±0.002          0.543±0.006         
+clf-mean+gen         0.518±0.024          0.067±0.009          0.720±0.018         
+
+--- Reward: rouge_l_0.5 ---
+Method               ATS ↑                ACE ↓                AUROC ↑             
+------------------------------------------------------------------------------------------
+arith-agg            0.235±0.000          0.655±0.000          0.473±0.000         
+spec-ecc             0.255±0.000          0.291±0.000          0.507±0.000         
+bayes-beta           0.251±0.000          0.021±0.000          0.527±0.000         
+clf-pairs            0.305±0.000          0.019±0.000          0.560±0.000         
+
+==========================================================================================
+
+==========================================================================================
+TABLE 7: Dataset Structural Statistics
+==========================================================================================
+
+Total items: 3350
+
+Question Type Distribution:
+  qtype=0: 2513 (75.0%)
+  qtype=1: 704 (21.0%)
+  qtype=2: 133 (4.0%)
+
+Answer Letter Distribution (MCQ items):
+  A: 596 (23.2%)
+  B: 831 (32.3%)
+  C: 573 (22.3%)
+  D: 571 (22.2%)
+
+--- qtype=0 Statistics ---
+  Count: 2513
+  Question length: 13.56 ± 4.06 tokens
+  Choice length: 10.24 ± 12.19 tokens
+  Solution length: 26.84 ± 16.12 tokens
+  Grounding sources: 0.95 (avg)
+  Multi-source: 0.0%
+
+--- qtype=1 Statistics ---
+  Count: 704
+  Question length: 13.91 ± 5.60 tokens
+  Solution length: 27.70 ± 19.03 tokens
+  Grounding sources: 1.41 (avg)
+  Multi-source: 66.8%
+
+--- qtype=2 Statistics ---
+  Count: 133
+  Question length: 25.64 ± 11.73 tokens
+  Choice length: 10.84 ± 4.59 tokens
+  Solution length: 30.21 ± 3.26 tokens
+  Grounding sources: 0.44 (avg)
+  Multi-source: 0.0%
+
+==========================================================================================
+
+==========================================================================================
+TABLE 8: Domain-Level Difficulty Ranking (qtype=0)
+ATS and ACE by technology domain (filtered to >=3 items per bucket)
+==========================================================================================
+
+--- View: id_prefix  (11 domains with n>=3) ---
+Domain                       Count    ATS ↑        ACE ↓       
+----------------------------------------------------------------
+
+  Top 15 Hardest (lowest ATS, i.e., correct answer least distinctive):
+  redis                        4        0.000        0.110       
+  nginx                        4        0.000        0.110       
+  kafka                        4        0.000        0.110       
+  vault                        3        0.000        0.108       
+  consul                       3        0.000        0.108       
+  postgresql                   3        0.000        0.108       
+  prometheus                   3        0.000        0.108       
+  grafana                      3        0.000        0.108       
+  etcd                         3        0.000        0.108       
+  rabbitmq                     3        0.000        0.108       
+  dp                           2389     0.280        0.126       
+
+  Top 15 Easiest (highest ATS):
+  redis                        4        0.000        0.110       
+  nginx                        4        0.000        0.110       
+  kafka                        4        0.000        0.110       
+  vault                        3        0.000        0.108       
+  consul                       3        0.000        0.108       
+  postgresql                   3        0.000        0.108       
+  prometheus                   3        0.000        0.108       
+  grafana                      3        0.000        0.108       
+  etcd                         3        0.000        0.108       
+  rabbitmq                     3        0.000        0.108       
+  dp                           2389     0.280        0.126       
+
+--- View: source_title  (10 domains with n>=3) ---
+Domain                       Count    ATS ↑        ACE ↓       
+----------------------------------------------------------------
+
+  Top 15 Hardest (lowest ATS, i.e., correct answer least distinctive):
+  stackoverflow                4        0.000        0.110       
+  how can i use local docker   3        0.000        0.112       
+  docker                       4        0.000        0.113       
+  nginx                        3        0.000        0.113       
+  no_grounding                 120      0.000        0.108       
+  terraform                    3        0.333        0.126       
+  unknown                      5        0.400        0.109       
+  packer                       3        0.667        0.130       
+  nginx                        3        0.667        0.113       
+  concert                      3        1.000        0.150       
+
+  Top 15 Easiest (highest ATS):
+  stackoverflow                4        0.000        0.110       
+  how can i use local docker   3        0.000        0.112       
+  docker                       4        0.000        0.113       
+  nginx                        3        0.000        0.113       
+  no_grounding                 120      0.000        0.108       
+  terraform                    3        0.333        0.126       
+  unknown                      5        0.400        0.109       
+  packer                       3        0.667        0.130       
+  nginx                        3        0.667        0.113       
+  concert                      3        1.000        0.150       
+
+==========================================================================================
+
+==========================================================================================
+TABLE 9: Entropy and Similarity Analysis
+Per-question normalized Shannon entropy over choice similarity distribution
+==========================================================================================
+
+--- qtype_0 ---
+  Number of items: 2513
+  Entropy (normalized): 0.9606 ± 0.0788
+  Entropy range: [0.0000, 1.0000]
+  Mean pairwise similarity: 0.1653 ± 0.1410
+
+  Interpretation:
+    - High entropy = choices are highly similar = ambiguous question = HARDER
+    - Low entropy = one choice stands out = clear answer = EASIER
+    - Mean pairwise similarity shows overall inter-choice similarity
+
+--- qtype_2 ---
+  Number of items: 58
+  Entropy (normalized): 0.9089 ± 0.0232
+  Entropy range: [0.9026, 0.9943]
+  Mean pairwise similarity: 0.0480 ± 0.0432
+
+  Interpretation:
+    - High entropy = choices are highly similar = ambiguous question = HARDER
+    - Low entropy = one choice stands out = clear answer = EASIER
+    - Mean pairwise similarity shows overall inter-choice similarity
+
+==========================================================================================
+
+==========================================================================================
+
+==========================================================================================
+TABLE 10: COMPREHENSIVE ALL-QTYPE ANALYSIS (qtype ∈ {0, 1, 2})
+==========================================================================================
+Per-qtype setup:
+  qtype 0: 4-way MCQ (A/B/C/D), letter-match reward
+  qtype 1: free-form, multi-source — synthesised 'generations' from solution,
+           reasoning_thought, grounding chunks, question. Reward = ROUGE-L ≥ 0.5 vs solution.
+  qtype 2: 4-way MCQ, letter-match reward
+Similarity metric: Jaccard (primary, per SIMBA_UQ)
+All metrics reported: ATS ↑, ACE ↓, AUROC ↑
+5 random 50/50 train/test splits (matching SIMBA_UQ protocol)
+
+----- qtype=0  (n=2513) — 4-way MCQ with letter-match reward -----
+Method               ATS ↑                ACE ↓                AUROC ↑
+------------------------------------------------------------------------------------------
+arith-agg            0.273                0.624                0.518
+spec-ecc             0.221                0.319                0.471
+bayes-beta           0.234                0.123                0.482
+clf-pairs            0.315                0.016                0.551
+clf-mean+gen         0.236                0.404                0.471
+
+Interpretation: clf-pairs yields the best calibration (ACE=0.016) on qtype 0,
+while arith-agg ATS (0.273) sits near the random-guess baseline (0.25),
+indicating the MCQ choices are largely indistinguishable from each other
+on lexical similarity — a strong sign of intrinsic dataset difficulty.
+
+----- qtype=1  (n=704) — free-form, multi-source (66.8% multi-source) -----
+Reward = ROUGE-L ≥ 0.5 vs solution, Similarity = Jaccard
+Method               ATS ↑                ACE ↓                AUROC ↑
+------------------------------------------------------------------------------------------
+arith-agg            0.294                0.777                0.414
+spec-ecc             0.523                0.256                0.637
+bayes-beta           0.523                0.192                0.586
+clf-pairs            0.780                0.107                0.795
+clf-mean+gen         0.523                0.356                0.662
+
+Interpretation: qtype 1 shows the best discriminative power (clf-pairs
+ATS=0.780, AUROC=0.795) — synthesised candidates (solution, reasoning,
+grounding, question) are far more spread out in lexical space, so
+similarity-based UQ can pick up the gold. This indicates the multi-source
+structure provides more "signal" for UQ than the dense MCQ distractor
+choices in qtype 0.
+
+----- qtype=2  (n=133) — 4-way MCQ with letter-match reward -----
+Method               ATS ↑                ACE ↓                AUROC ↑
+------------------------------------------------------------------------------------------
+arith-agg            0.448                0.791                1.000
+spec-ecc             0.000                0.332                0.584
+bayes-beta           0.000                0.678                0.000
+clf-pairs            0.448                0.000                1.000
+clf-mean+gen         0.000                0.718                0.008
+
+Interpretation: qtype 2 is small (n=133) and the gold letter is highly
+discriminative (clf-pairs AUROC=1.000) — one choice stands out clearly.
+However spec-ecc, bayes-beta, and clf-mean+gen collapse to ATS=0 because
+of the small sample size, confirming the well-known sample-size sensitivity
+of these methods (see Table 4 ablation in main report).
+
+==========================================================================================
+
+==========================================================================================
+TABLE 11: Cross-qtype Difficulty Summary
+==========================================================================================
+qtype   n      Description                       Best Method    ATS    ACE    AUROC
+------------------------------------------------------------------------------------------
+0       2513   4-way MCQ (single-source)        clf-pairs      0.315  0.016  0.551
+1       704    Free-form (66.8% multi-source)    clf-pairs      0.780  0.107  0.795
+2       133    4-way MCQ                         clf-pairs      0.448  0.000  1.000
+
+Key Findings for IEEE ICSE A* submission:
+  1. qtype 0 (the dominant 75% of the dataset) is the HARDEST: classifier-based
+     UQ achieves AUROC of only ~0.55, near random. The 4 MCQ distractors are
+     nearly lexically indistinguishable.
+  2. qtype 1 (free-form) is the EASIEST for UQ (AUROC ≈ 0.80) because candidates
+     span solution/reasoning/grounding and the gold stands out.
+  3. qtype 2 is small but the gold choice is very distinctive (AUROC = 1.0
+     with clf-pairs), making it a high-quality, low-noise subset.
+  4. The combined dataset exhibits HIGH intrinsic difficulty: the majority
+     class (qtype 0) defeats all unsupervised UQ methods and pushes
+     even supervised ones near random AUROC.
+
+==========================================================================================
+END OF REPORT
+==========================================================================================

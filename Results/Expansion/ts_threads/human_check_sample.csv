@@ -1,0 +1,453 @@
+id,source_url,scenario,reference_answer,key_points,faithful_to_thread(Y/N),scenario_hides_cause(Y/N),solvable_from_scenario(Y/N),notes
+TSF-0185,https://serverfault.com/questions/565339,"CentOS 6.5 host running nginx 1.4.4. Running `sudo service nginx stop` just prints `Stopping nginx: [FAILED]`. nginx.conf contains `pid /var/run/nginx.pid;`, but no such file exists in /var/run. An older locate database listed both /var/run/nginx.pid and /var/run/nginx.pid.oldbin; after running updatedb, neither shows up.
+
+`ps -ef | grep nginx` shows:
+```
+root     19506     1  0  2013 ?  00:00:00 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf
+ironsand 19507 19506  0  2013 ?  00:00:25 nginx: worker process
+```
+
+`sudo service nginx restart` produces:
+```
+Stopping nginx: [FAILED]
+Starting nginx: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+... (repeated)
+nginx: [emerg] still could not bind()
+ [FAILED]
+```
+The same bind errors also appear in /var/log/nginx/error.log. We need to get nginx stopped and restarted cleanly.
+
+What is the most likely root cause, and how would you fix it?","Root cause: An nginx master process (PID 19506) was left running from an improper shutdown, and its PID file /var/run/nginx.pid no longer exists. The init script relies on that file, so it can't find or stop the process. The orphaned master still holds port 80, which makes every new start fail with 'Address already in use'. Fix: Find the nginx master PID with `ps -ef | grep nginx` and kill it manually (e.g. `kill -9 19506`). Then confirm with `ps` and `netstat -tulpn | grep 80` that nothing is left on port 80, and that /var is readable and writable. Finally run `service nginx start`.","(1) An old nginx master process is still running even though the service reports stop failure (2) The PID file referenced in nginx.conf is missing, so the init script cannot stop the process (3) The leftover process holds port 80, causing the bind() 'Address already in use' errors on start (4) Kill the master process manually, verify port 80 is free, then start nginx via the service",,,,
+TSO-0021,https://stackoverflow.com/questions/63573535,"We run a Linux container-based Azure Function on an ElasticPremium EP1 App Service Plan. Both are managed in Terraform with azurerm provider ~>2.24.0. The plan is defined with kind = ""FunctionApp"", reserved = true and sku tier ElasticPremium/EP1. The function_app references the plan's id and has an explicit depends_on on the plan.
+
+The function runs fine. However, every terraform apply now fails, even for unrelated changes:
+
+Error deleting App Service Plan ""asp-staging"" ... StatusCode=409 -- Conflict: Server farm 'asp-staging' cannot be deleted because it has web app(s) function-staging assigned to it. (ExtendedCode 11003)
+
+Another plan in the same setup hosts a regular App Service and applies without problems. I tried removing every reference to the function and its plan from the config, and the same error appeared. Adding depends_on, as suggested by the provider maintainers, did not help either.
+
+If I delete the function and the plan in the portal, the next apply succeeds once and recreates them. After that, applies fail again. Why does Terraform keep trying to delete this plan?
+
+What is the most likely root cause, and how would you fix it?","Root cause: Azure stores the Elastic Premium plan's kind as ""elastic"" rather than the configured ""FunctionApp"". On every plan, Terraform sees a diff on kind, which forces replacement (destroy/recreate) of the App Service Plan. The delete fails with a 409 because the function app is still attached. Fix: Change the azurerm_app_service_plan kind attribute to ""elastic"" so it matches what Azure reports. Terraform then stops planning a replacement of the service plan on each apply.","(1) terraform plan shows the app service plan 'must be replaced' on each apply (2) kind drifts from ""FunctionApp"" to ""elastic"" for ElasticPremium plans and the kind change forces replacement (3) the 409 occurs because Terraform tries to delete the plan while the function app is still assigned to it (4) set kind = ""elastic"" in config to stop the replacement",,,,
+TSF-0183,https://serverfault.com/questions/1110280,"We upgraded our AKS cluster from Kubernetes 1.23.8 to 1.24.3, and ingress traffic from outside the cluster stopped working. ingress-nginx is deployed through a Helm release, chart version 4.2.5.
+
+No errors appear in cluster events, and the ingress-nginx controller pod logs show nothing unusual. Inside the cluster everything behaves normally: curling the web apps from other pods works, and the controller routes requests fine. From the internet, every port on the ingress public IP looks closed.
+
+To rule out our own configuration, we built fresh, plain AKS clusters and ran a stock `helm install quickstart ingress-nginx/ingress-nginx` on each. On 1.23.8 external access works. On 1.24.0 and 1.24.3 it does not. The controller Service of type LoadBalancer still gets its public IP on every version. We suspect some ingress or controller setting needs to change for 1.24, but we have not identified which.
+
+What is the most likely root cause, and how would you fix it?","Root cause: Starting with AKS/Kubernetes 1.24, the Azure load balancer health probes for the ingress-nginx LoadBalancer service use HTTP/HTTPS instead of TCP, probing a path the controller does not answer successfully. The probes fail, so Azure marks the backends unhealthy and drops all external traffic. Fix: Add the annotation service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: /healthz to the ingress-nginx controller service via Helm values (controller.service.annotations). Alternatively, switch the LB health probes to TCP.","(1) Azure Load Balancer health probes changed from TCP to HTTP/HTTPS for AKS 1.24+ (2) The probes fail against ingress-nginx, so the LB considers backends unhealthy and blocks external traffic (3) Fix: set the azure-load-balancer-health-probe-request-path annotation to /healthz on the controller service (or use TCP probes)",,,,
+TSO-0056,https://stackoverflow.com/questions/30668090,"I'm running a LAMP-style PHP 5.4 container under boot2docker on a Mac. The app is reachable in the browser at http://192.168.99.100:32775. It was started with:
+
+ docker run --name lampf -d -p 32775:80 -v /Users/sja/Sites/lamkepf2:/var/www/html --link=lampf_db:db codinglimo/apache_php540_gs_imgmck_pdflib9
+
+The bind mount works, and file edits show up immediately. I installed Xdebug in the container with this xdebug.ini:
+
+ zend_extension=""/usr/local/lib/php/extensions/no-debug-non-zts-20100525/xdebug.so""
+ xdebug.remote_enable=on
+ xdebug.remote_host=127.0.0.1
+ xdebug.remote_port=9000
+ xdebug.remote_handler=dbgp
+ xdebug.profiler_enable=0
+ xdebug.profiler_output_dir=""/temp/profiledir""
+
+The extension loads. PhpStorm on the Mac is listening for debug connections on port 9000, and a server/path mapping is configured for /var/www/html. Even so, when I load index.php in the browser, every breakpoint is ignored. No debug session ever appears in the IDE, and the page renders normally. What's wrong?
+
+What is the most likely root cause, and how would you fix it?","Root cause: xdebug.remote_host is set to 127.0.0.1. Inside the container that address is the container's own loopback, not the host machine running PhpStorm. Xdebug therefore never reaches the IDE listening on port 9000. Fix: Point xdebug.remote_host at the host's IP as seen from inside the container (by default the Docker bridge gateway, e.g. 172.17.42.1) and set xdebug.remote_connect_back=Off. Determine the host's actual IP from within the container rather than assuming the default.","(1) 127.0.0.1 inside a container refers to the container itself, not the host or IDE (2) Xdebug must connect to the host machine's IP reachable from the container (e.g. the docker bridge gateway 172.17.42.1) (3) The default bridge IP may vary, so the actual host IP should be verified (4) remote_connect_back is not the recommended approach here; use an explicit remote_host",,,,
+TSO-0045,https://stackoverflow.com/questions/51332154,"We're bringing up a small Spring Boot 2.0.3.RELEASE service (spring-beans 5.0.7) that talks to a local Redis 2.4.5. The setup was adapted from an older online Spring Data Redis sample plus the Spring Session Redis guide. We have a RedisConfig class that declares a jedisConnectionFactory @Bean. Running the main method fails during context startup:
+
+```
+BeanCreationException: Error creating bean with name 'jedisConnectionFactory' defined in class path resource [com/javasampleapproach/redis/config/RedisConfig.class]: Bean instantiation via factory method failed; nested exception is BeanInstantiationException: Failed to instantiate [org.springframework.data.redis.connection.jedis.JedisConnectionFactory]: Factory method 'jedisConnectionFactory' threw exception; nested exception is java.lang.BootstrapMethodError: java.lang.NoClassDefFoundError: redis/clients/jedis/Tuple
+```
+
+The project compiles without errors and the Spring Data Redis starter is in the pom. Redis itself is running. Why does startup fail before it ever connects to Redis?
+
+What is the most likely root cause, and how would you fix it?","Root cause: The sample was written for Spring Boot 1.5.x, where the Redis starter used Jedis. In Spring Boot 2.0 the Redis starter uses Lettuce by default and no longer brings in the Jedis library. JedisConnectionFactory therefore cannot load Jedis classes such as redis.clients.jedis.Tuple. Fix: Add the redis.clients:jedis dependency to the pom explicitly, specifying a version if needed. Alternatively, rewrite the configuration to use Lettuce, for example with LettuceConnectionFactory.","(1) Spring Boot 2.0 defaults to the Lettuce Redis client instead of Jedis (2) Jedis is not on the classpath, so redis.clients.jedis.Tuple cannot be loaded (3) The sample code targets Boot 1.5.x, which used Jedis (4) Fix by adding the jedis dependency or switching the config to Lettuce",,,,
+TSO-0029,https://stackoverflow.com/questions/56749417,"We deployed oauth2-proxy and put a Service in front of it. The Service listens on port 80 and targets container port 4180, and we've checked the port and targetPort mapping more than once. The endpoints object looks correct:
+
+```
+$ kubectl get endpoints
+NAME           ENDPOINTS           AGE
+kubernetes     10.40.63.79:443     82d
+oauth2-proxy   10.40.34.212:4180   33s
+```
+
+From another pod in the same namespace, a direct curl fails:
+
+```
+# curl 10.40.34.212:4180
+curl: (7) Failed to connect to 10.40.34.212 port 4180: Connection refused
+```
+
+Curling the Service name fails the same way.
+
+If we run `kubectl port-forward oauth2-proxy-559dd9ddf4-8z72c 4180:4180` and then curl localhost:4180, we get the expected HTTP 403 page back from oauth2-proxy.
+
+We also confirmed that the Service selector (app.kubernetes.io/name=oauth2-proxy, app.kubernetes.io/part-of=oauth2-proxy) matches the pod. That pod is 1/1 Running with 0 restarts.
+
+Why is the endpoint refusing connections when port-forward works?
+
+What is the most likely root cause, and how would you fix it?","Root cause: oauth2-proxy by default binds its HTTP listener to 127.0.0.1:4180 (loopback only) inside the container, so connections arriving on the pod IP are refused, while kubectl port-forward connects via the pod's localhost and succeeds. Fix: Configure oauth2-proxy to listen on all interfaces by adding the argument -http-address=0.0.0.0:4180 to the container.","(1) The process is listening on 127.0.0.1:4180, not 0.0.0.0 (visible via netstat inside the container) (2) port-forward reaches the container's localhost, which is why it works while pod IP/Service traffic is refused (3) Fix is setting -http-address=0.0.0.0:4180 so the app binds all interfaces",,,,
+TSO-0077,https://stackoverflow.com/questions/49674004,"I'm on Windows with Docker Toolbox, using the boot2docker VM under VirtualBox at 192.168.99.100. I deployed a private registry container on port 5000 by following the official ""deploying a registry"" guide.
+
+Pulling from it fails:
+
+```
+$ docker pull 192.168.99.100:5000/image
+Using default tag: latest
+Error response from daemon: Get https://192.168.99.100:5000/v2/: http: server gave HTTP response to HTTPS client
+```
+
+The same steps work fine on a Mac.
+
+Relevant parts of `docker info`:
+- Server Version: 17.06.0-ce
+- Operating System: Boot2Docker 17.06.0-ce (TCL 7.2)
+- Kernel 4.4.74-boot2docker
+- Storage Driver: aufs
+- Labels: provider=virtualbox
+- Registry: https://index.docker.io/v1/
+- Insecure Registries: 127.0.0.0/8
+- Debug Mode (server): true
+
+I suspect something on the client side is misconfigured. What is causing the HTTPS/HTTP mismatch, and how do I fix it?
+
+What is the most likely root cause, and how would you fix it?","Root cause: The registry serves plain HTTP. The Docker daemon only trusts 127.0.0.0/8 as an insecure registry, so it tries HTTPS against 192.168.99.100:5000 and fails. Fix: Add ""insecure-registries"":[""192.168.99.100:5000""] to the Docker daemon's daemon.json (C:\ProgramData\Docker\config\daemon.json on Windows, /etc/docker/daemon.json on Linux). Then restart the Docker daemon.","(1) The registry is served over HTTP, not TLS (2) The daemon's Insecure Registries list only contains 127.0.0.0/8, so 192.168.99.100:5000 is not trusted for HTTP (3) Add 192.168.99.100:5000 to insecure-registries in the daemon.json config (4) Restart the Docker daemon for the change to take effect",,,,
+TSF-0141,https://serverfault.com/questions/980528,"Our home gateway runs Snort in inline mode through NFQUEUE. Four Snort processes read queues 0-3 via an iptables rule: `NFQUEUE balance 0:3 bypass cpu-fanout`. New inbound TCP/80 connections from one allowed remote host jump to a chain that NFLOGs and then queues them. Established traffic is sent to Snort through a separate chain.
+
+Rules come from Emerging Threats via pulledpork. One example is sid:2017590, the D-Link backdoor User-Agent rule:
+
+`alert tcp $EXTERNAL_NET any -> $HOME_NET $HTTP_PORTS (... content:""xmlset_roodkcableoj28840ybtide""; http_header; ...)`
+
+To test it, lighttpd was started on the gateway itself, listening on port 80 of its WAN interface. From a remote host I ran:
+
+`curl -A 'xmlset_roodkcableoj28840ybtide' 'http://<EXTERNAL_IP>'`
+
+The page comes back immediately and Snort logs no alert. The iptables counters show packets hitting the NFQUEUE rule, so Snort is receiving traffic.
+
+During BitTorrent load, only the Snort processes on CPUs 1 and 2 get busy, while those on CPUs 0 and 3 stay idle. I have already reviewed the iptables/NFQUEUE setup, the systemd units and the alert output, and found nothing obviously wrong.
+
+What is the most likely root cause, and how would you fix it?","Root cause: The test traffic was aimed at the gateway's own public IP, which is not part of $HOME_NET (only the LAN subnets are). Rules written as $EXTERNAL_NET any -> $HOME_NET therefore never match that traffic, so Snort processes the packets but raises no alert. Fix: Test against a host or address inside the defined HOME_NET, such as a LAN server reached through the gateway. Alternatively, include the gateway's public IP in HOME_NET if traffic to the gateway itself should be inspected.","(1) Snort is receiving packets; the issue is rule matching, not packet delivery (2) The rule's direction is $EXTERNAL_NET -> $HOME_NET (3) The gateway's own public/WAN IP is not part of HOME_NET (only LAN subnets are) (4) Traffic to the gateway's public IP does not match the rule, so the testing method is at fault",,,,
+TSF-0172,https://serverfault.com/questions/424922,"A Debian server has a public IPv4 address on eth0, and IPv4 works normally. IPv6 does not work at all. Running `ping6 ipv6.google.com` immediately returns `connect: Network is unreachable`.
+
+ifconfig for eth0 shows the IPv4 address with mask 255.255.255.224 and one IPv6 line:
+`inet6 addr: fe80::16da:e9ff:feb6:357e/64 Scope:Link`
+
+`route -6` shows:
+- fe80::/64 on eth0 and on tap0
+- ff00::/8 on eth0 and on tap0
+- local /128 entries on lo
+- `::/0 :: !n -1 1 5400 lo`, listed twice
+
+Pinging the machine's own IPv6 address only works with `-I eth0`. Without it, ping6 fails.
+
+The operator has read that a router may need to be added to the routing table. They do not know the router's IPv6 address or how to find it. They are not sure why the host cannot reach anything over IPv6.
+
+What is the most likely root cause, and how would you fix it?","Root cause: The interface has only a link-local (fe80::/10) address and no global unicast IPv6 address (2000::/3). There is no usable default route to an IPv6-forwarding router; the only ::/0 entry is an unreachable (!n) route on lo. In practice this means the uplink provides no IPv6 connectivity. Fix: Obtain real IPv6 connectivity. Either have the ISP or hosting provider enable native IPv6, which supplies a global address and a router, or set up an IPv6 tunnel through a tunnel broker. That provides a global address and a default (::/0) route through a forwarding router.","(1) fe80:: Scope:Link is a link-local address only, not routable on the internet (2) A global unicast address (from 2000::/3) is needed to reach the IPv6 internet (3) No valid default route exists (::/0 is unreachable via lo), so there is no router to forward packets (4) Fix is to get native IPv6 from the ISP or use an IPv6 tunnel broker",,,,
+TSO-0065,https://stackoverflow.com/questions/43584760,"We run a minimal gunicorn 19.7.1 WSGI app in a container built from the official python image, managed with docker-compose 1.12.0 (compose file v3, one service exposing 8000). Every `docker-compose stop` takes exactly 10 seconds, which matches compose's default stop timeout before it force-kills the container. Replacing the container by running `docker-compose up -d` again with a new image shows the same 10s delay. The app is trivial (a single function returning 'Hello, World!'), so it's not long-running requests.
+
+Dockerfile:
+```
+FROM python
+RUN pip install gunicorn
+COPY test.py .
+EXPOSE 8000
+CMD gunicorn -b :8000 test:app
+```
+
+Gunicorn's source has signal handlers for graceful shutdown, so we expected it to exit promptly on stop. Why does the container hang until it gets killed, and how can we get a fast, graceful shutdown?
+
+What is the most likely root cause, and how would you fix it?","Root cause: The shell-form CMD runs the command via `/bin/sh -c`, so the shell is PID 1 in the container and gunicorn's master is a child process. Docker's SIGTERM goes to PID 1 (the shell), which doesn't forward it, so gunicorn never shuts down gracefully and is killed after the 10s timeout. Fix: Make gunicorn PID 1, e.g. `CMD exec gunicorn -b :8000 test:app` (or use exec-form JSON CMD), so it receives SIGTERM directly and shuts down gracefully.","(1) Shell-form CMD wraps the process in /bin/sh -c, making sh PID 1 (2) docker-compose stop sends SIGTERM to PID 1 only; the shell doesn't forward it to gunicorn (3) After the timeout docker sends SIGKILL, hence the consistent 10s delay (4) Using exec (or exec-form CMD) makes gunicorn master PID 1 so it handles SIGTERM",,,,
+TSO-0090,https://stackoverflow.com/questions/21606242,"Our Rails 3 app runs background jobs in Sidekiq against a remote PostgreSQL host. During production job runs, jobs intermittently fail with ActiveRecord::ConnectionTimeoutError. The full message in the worker output is: ""could not obtain a database connection within 5 seconds (waited 5.82230675 seconds). The max pool size is currently 25; consider increasing it.""
+
+The relevant production section of database.yml is:
+```
+production:
+ adapter: postgresql
+ encoding: unicode
+ database: app_production
+ host: app.domain.com
+ pool: 25
+```
+The production section of sidekiq.yml is:
+```
+production:
+ concurrency: 25
+ timeout: 300
+```
+The errors show up while the job queue is busy. We need to know why connections can't be obtained and how to fix it.
+
+What is the most likely root cause, and how would you fix it?","Root cause: The ActiveRecord connection pool (25) is the same size as Sidekiq's concurrency (25). When all Sidekiq threads are busy they hold every pooled connection, and any other consumer waits past the 5-second checkout timeout. Fix: Increase the pool size in database.yml so it is larger than Sidekiq concurrency (recommended), or reduce Sidekiq concurrency. Stay within Postgres max_connections, which defaults to 100.","(1) The pool size of 25 equals the Sidekiq concurrency of 25 (2) When all Sidekiq threads are busy, no spare connection is left in the pool (3) Fix by raising the pool above the concurrency, or by lowering the concurrency (4) Postgres allows 100 connections by default, so there is headroom to raise the pool",,,,
+TSF-0182,https://serverfault.com/questions/91797,"We have an Addonics NAS Adapter (hardware NAS running Samba; no access to its logs) serving a share at \\192.168.0.20\Smd. From existing Windows XP and Windows Vista machines, `net use l: \\192.168.0.20\Smd` prompts for username/password and maps fine. A newly purchased Windows 7 PC running the identical `net use` command with the exact same credentials fails with ""The specified network password is not correct."" Mapping through Explorer's Map Network Drive gives the same error. We synchronized the clock on the Windows 7 box with the other machines and retried; no change. Credentials have been double-checked and work everywhere else. Need to find out why only the Windows 7 client is rejected and how to get it to connect.
+
+What is the most likely root cause, and how would you fix it?","Root cause: Windows 7 (like Vista/2008 R2) defaults to sending only NTLMv2 authentication responses, and the older Samba implementation on the NAS does not support NTLMv2, so it rejects the login as a bad password. Fix: On the Windows 7 client, open secpol.msc > Local Policies > Security Options > 'Network security: LAN Manager authentication level' and change it from 'Send NTLMv2 response only' to 'Send LM & NTLM - use NTLMv2 session security if negotiated' (or set HKLM\SYSTEM\CurrentControlSet\Control\Lsa\LmCompatibilityLevel from 3 to 1), then reboot if needed.",(1) Windows 7 defaults to NTLMv2-only authentication (2) The NAS's old Samba version does not support NTLMv2 and returns a password failure (3) Lower the LAN Manager authentication level / LmCompatibilityLevel to allow LM & NTLM (v1) (4) Change via secpol.msc or registry Lsa\LmCompatibilityLevel=1,,,,
+TSO-0026,https://stackoverflow.com/questions/44993788,"A developer on Windows runs an ASP.NET Core project with Visual Studio 2017 Docker tooling, using Linux containers. The project compiles, but launching it with F5 or the Docker run button fails in the PrepareForLaunch MSBuild task:
+
+```
+Creating network ""dockercompose1627893588_default"" with the default driver
+Building pswebapi
+Service 'pswebapi' failed to build: Get https://registry-1.docker.io/v2/microsoft/aspnetcore/manifests/1.1: unauthorized: incorrect username or password
+```
+
+The Dockerfile is minimal:
+```
+FROM microsoft/aspnetcore:1.1
+ARG source
+WORKDIR /app
+EXPOSE 80
+COPY ${source:-obj/Docker/publish} .
+ENTRYPOINT [""dotnet"", ""PsWebApi.dll""]
+```
+
+The C: drive is shared in Docker settings. All NuGet packages have been updated to the latest versions, and the error persists. The developer had previously signed in to Docker Hub on this machine.
+
+What is the most likely root cause, and how would you fix it?","Root cause: Docker was logged in to Docker Hub using the account's email address instead of the Docker ID (username). Registry pulls of the base image are rejected with 'incorrect username or password' as a result. Fix: Run `docker logout`, then run `docker login` and enter the Docker ID username, not the email address. The ID is shown on the Docker Hub site after signing in with the email.","(1) The error comes from authenticating to registry-1.docker.io while pulling the base image, not from the project build itself. (2) The stored login used the email address rather than the Docker ID/username. (3) Fix by running docker logout, then docker login with the Docker ID.",,,,
+TSO-0073,https://stackoverflow.com/questions/63032953,"We run an ECS cluster of three m5.large container instances, one in each of AZs A, B and C.
+
+Service settings:
+- REPLICA service, desired count 3
+- Minimum healthy percent 30, maximum percent 100
+- AZ balanced spread placement, no service autoscaling
+
+Task definition settings:
+- awsvpc network mode
+- No task-level CPU or memory
+- Container memory soft limit 2048 MB, no hard limit
+- awslogs logging
+
+The first start works: one container per instance. `docker stats` shows 230MiB / 7.501GiB. The ECS console shows each instance with Memory Registered 7680 / Available 5632 and CPU 2048 / 2048.
+
+When Jenkins triggers a force-new-deployment, the job reports Success, but the old code keeps running. The deployment events show:
+
+""(service App-V1-Service) was unable to place a task because no container instance met all of its requirements. The closest matching (container-instance 90d4ba21-...) has insufficient memory available.""
+
+Actual memory usage on every host is very low. I had already dropped minimum healthy percent to 30, hoping ECS would stop old containers before starting new ones, but placement still fails. Why can't the new tasks be scheduled?
+
+What is the most likely root cause, and how would you fix it?","Root cause: The ECS scheduler places tasks by the reserved memory (the 2048 MB container soft limit), not by actual usage. During the rolling deployment the old tasks still hold their 2048 MB reservations, so the reservations needed for the new tasks exceed the instances' registered available memory and placement fails. Fix: Lower the container soft limit (memoryReservation) to about 1 GB or less. The container can still use more memory when needed, and old and new tasks can then coexist during deployment. Alternatively, keep the 2048 MB reservation and lower the minimum healthy percent so old tasks are stopped first, freeing reservations.","(1) ECS placement uses the memoryReservation (soft limit) reserved per container, not actual memory usage (2) During deployment, old tasks' reservations plus new tasks' reservations exceed available instance memory (5632 MB available per instance) (3) Reduce the soft limit to ≤1 GB, or reduce minimum healthy percent so old tasks are stopped before new ones are placed",,,,
+TSO-0082,https://stackoverflow.com/questions/22946423,"Developer on macOS running Docker in an early setup that includes VirtualBox. They built a LAMP image from ubuntu:precise. The Dockerfile has `expose 80` and enables a custom Apache vhost on *:80. After seeding MySQL data into a bind mount, they start the container interactively with:
+
+`docker run -i -t -v $(pwd)/mysql:/var/lib/mysql -v $(pwd)/www:/var/www -p 8080:80 test1 /bin/bash`
+
+Inside the container they run `service apache2 start`. Running `curl localhost` from inside the container returns the default Apache page with no problem.
+
+From the Mac's browser, http://127.0.0.1:8080 does not load anything. The build succeeds and Apache logs show nothing unusual. The operator expected host port 8080 to forward to container port 80. They are unsure whether something in VirtualBox is involved. What is preventing access from the Mac?
+
+What is the most likely root cause, and how would you fix it?","Root cause: On macOS, the Docker daemon runs inside a VirtualBox VM (boot2docker-vm). `-p 8080:80` publishes port 8080 on that VM's interface, not on the Mac itself. Nothing forwards 127.0.0.1:8080 on the Mac to the VM. Fix: Add a VirtualBox NAT port-forwarding rule from the Mac to the VM while the VM is powered off. For example: `VBoxManage modifyvm ""boot2docker-vm"" --natpf1 ""tcp-port8080,tcp,,8080,,8080""`. You can also loop over Docker's random port range (49000-49900). Choose a different port if 8080 is already used on the Mac.","(1) Docker on Mac runs inside a VirtualBox (boot2docker) VM, not natively on the host (2) -p publishes the port on the VM, not on the Mac's localhost (3) A VirtualBox NAT port forward (VBoxManage modifyvm --natpf1) is needed from Mac to VM (4) The VM must be powered off when adding the forwarding rule",,,,
+TSO-0124,https://stackoverflow.com/questions/2732878,"A small Hibernate 3.5.1 test app on Ubuntu 9.10 fails when saving an entity to PostgreSQL 8.4.3. The app is run from Eclipse with HibernateTools. Each insert fails with SQL Error: 0, SQLState: 42P01, and PostgreSQL reports that relation ""public.messages"" does not exist.
+
+The mapping file maps class hello.Message to table=""public.messages"", with columns id (assigned generator) and messagetext.
+
+hibernate.cfg.xml contains:
+- driver org.postgresql.Driver
+- user foo, password bar
+- dialect PostgreSQLDialect
+- show_sql=true
+- hibernate.connection.url = jdbc:postgresql:postgres/tommy
+
+When the operator connects with psql as foo and runs \d messages, the table is listed as ""public.messages"" with columns id integer and messagetext text. The table clearly exists from psql. Several fixes found online for this error have been tried, and none of them helped.
+
+What is the most likely root cause, and how would you fix it?","Root cause: The JDBC URL 'jdbc:postgresql:postgres/tommy' is malformed or unusual. As a result, Hibernate connects to a different database, most likely the default 'postgres' database, instead of the one that contains the messages table. Fix: Correct the connection URL to the standard form jdbc:postgresql://hostname/databasename. Use the same host and database you pass to psql. To confirm which database the app actually connects to, enable log_connections, log_disconnections and a log_line_prefix that includes %d in postgresql.conf.","(1) The JDBC URL format jdbc:postgresql:postgres/tommy is not the standard form (2) The application is connecting to the wrong database (likely the default 'postgres' DB), not the one where the table exists (3) Use jdbc:postgresql://host/dbname that matches the psql connection (4) Server connection logging with the database name (%d) can verify which DB is being hit",,,,
+TSO-0061,https://stackoverflow.com/questions/47030285,"We have a small VB.NET data-access layer on .NET Framework 4.6, built with VS 2017, using Npgsql 3.2.2.0 against PostgreSQL.
+
+- `TDBACore` is an abstract base class. It holds `Friend Shared FConnection As IDbConnection` and a ref count. Its constructor calls the abstract `CreateConnection()` (which returns `New NpgsqlConnection()`) when the ref count is 0.
+- `TDBOpener` is a sealed subclass with `Public Shared ReadOnly _TDBOpener As New TDBOpener()`.
+- `TDBOpener` exposes `Public Shared Sub Open(cs)`, which just calls `TDBACore.OpenConnection(cs)`. That method checks `FConnection.State`, sets `ConnectionString`, and calls `Open()`.
+
+The app calls:
+`TDBOpener.Open(""Server=192.168.1.10;Port=5434;UserId=postgres;Password=123456;Database=testdb;CommandTimeout=300;"")`
+
+On Windows 10 64-bit:
+- **Debug build:** breakpoints show `TDBACore.New()` is hit and the connection opens fine.
+- **Release build:** the constructor is never entered, the connection object is never set up, and connecting fails.
+
+The same Release build works on a Windows 7 machine. No code differs between configurations.
+
+What is the most likely root cause, and how would you fix it?","Root cause: In Release on Win10 x64, the shared ReadOnly field `_TDBOpener` (the `New TDBOpener()` initializer) is never initialized. `TDBOpener.Open` only touches `TDBACore`'s shared members, so the subclass's static initialization is never triggered. As a result, the base constructor that assigns `FConnection` never runs and `FConnection` stays Nothing. Fix: Force the singleton to be created before using the connection. In `TDBOpener.Open`, add `If TDBACore.FConnection Is Nothing Then Dim obOpen = _TDBOpener` before calling `TDBACore.OpenConnection(ConnectionString)`.","(1) The shared `_TDBOpener = New TDBOpener()` initializer does not run in the Release build. (2) Because the constructor never runs, `CreateConnection` is never called and the shared `FConnection` remains Nothing. (3) `Open` only accesses base-class shared members, so nothing forces initialization of `TDBOpener`'s static field. (4) Fix: explicitly reference `_TDBOpener` (e.g., when `FConnection` is Nothing) before opening.",,,,
+TSO-0064,https://stackoverflow.com/questions/56590778,"I need to dump the environment variables inside our WordPress pod on a small Kubernetes cluster. The deployments are about three months old. `kubectl get pods` shows both pods as Running and 1/1 ready:
+
+```
+wordpress-77f45f895-lxh5t        1/1  Running  993  92d
+wordpress-mysql-7d4fc77fdc-x4bfm 1/1  Running  87   92d
+```
+
+Running `kubectl exec wordpress-77f45f895-lxh5t env` fails with:
+
+```
+error: unable to upgrade connection: container not found (""wordpress"")
+```
+
+Trying the same against the MySQL pod gives a different error: `Unable to connect to the server: net/http: TLS handshake timeout`.
+
+Services are `wordpress` (NodePort 80:31262/TCP) and `wordpress-mysql` (ClusterIP None, 3306/TCP), both created 94 days ago. The pod status says Running, so why does exec say the container isn't found?
+
+What is the most likely root cause, and how would you fix it?","Root cause: The containers keep crashing and restarting. The RESTARTS column shows 993 restarts for wordpress and 87 for mysql, so exec often lands while the container is down or being recreated and reports it as not found. Fix: Find out why the containers are crashing with `kubectl logs <pod>` (add `--previous` for the last crashed instance) and `kubectl describe pod <pod>` to see events and termination reasons. Also check the port configuration and whether the app is reachable on the NodePort. Fix the underlying failure so the container stays up, then exec will work.",(1) The RESTARTS column (993 and 87) shows the containers are crash-looping even though the status reads Running (2) exec fails because the container is not up at the moment of the call (3) Use kubectl logs and kubectl describe pod to find the crash reason (4) Check ports and whether the app answers on the NodePort,,,,
+TSF-0189,https://serverfault.com/questions/25423,"We're consolidating several web apps behind Apache 2.2 on one host, and every app has to be served over HTTPS. The first app is a Tomcat instance that already serves HTTPS directly on port 8443, and that works fine. I created this vhost to front it on port 443:
+
+<VirtualHost 1.2.3.4:443>
+ ServerName host.example.org
+ <Proxy *> Order deny,allow / Allow from all </Proxy>
+ SSLProxyEngine On
+ ProxyRequests Off
+ ProxyPreserveHost On
+ ProxyPass / https://localhost:8443/
+ ProxyPassReverse / https://localhost:8443/
+</VirtualHost>
+
+https://host.example.org:8443 loads correctly. https://host.example.org does not. Firefox connects, then reports that the connection was interrupted.
+
+Apache's error.log shows: ""proxy: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be host.example.org for uri"".
+
+Tomcat's access log records an odd request line for these attempts: ""?O^A^C / HTTP/1.1"" 302. When I hit 8443 directly, the same log shows a normal ""GET / HTTP/1.1"" 302.
+
+The same vhost pattern works when SSL is not involved at all.
+
+What is the most likely root cause, and how would you fix it?","Root cause: The port-443 VirtualHost never enables SSL on the client-facing side: there is no SSLEngine on and no certificate or key. Apache therefore reads the browser's TLS handshake bytes as a plain (HTTP/0.9-style) request and forwards that garbage to Tomcat. Fix: Add SSLEngine on, plus SSLCertificateFile and SSLCertificateKeyFile, to the VirtualHost so Apache terminates TLS from the browser. Keep SSLProxyEngine On so Apache can still proxy to https://localhost:8443/.","(1) The 443 vhost lacks SSLEngine on and a certificate/key, so it speaks plain HTTP to clients. (2) SSLProxyEngine only handles the backend connection; it does not enable TLS toward the browser. (3) The binary request line in Tomcat's log and the HTTP 0.9 warning are TLS handshake bytes being treated as HTTP. (4) Both SSLEngine (frontend) and SSLProxyEngine (backend) are needed.",,,,
+TSO-0033,https://stackoverflow.com/questions/49417575,"Installing a Helm (v2, Tiller tunnel) chart fails with: `Error: found in requirements.yaml, but missing in charts/ directory: dependency-chart`.
+
+requirements.yaml:
+```
+dependencies:
+- name: dependency-chart
+  repository: ""@some-repo""
+  version: 0.1.0
+```
+Steps run:
+```
+rm -rf charts
+helm dep up
+helm upgrade --install chart-to-install . --debug
+```
+`helm dep up` reports success: it updates the some-repo repo (gs://some-repo), prints ""Saving 1 charts"", downloads dependency-chart and deletes outdated charts. After that, `ls charts/` shows dependency-chart-0.1.0.tgz. The install still fails with the error above right after the debug tunnel is created.
+
+Several other charts depend on the same dependency-chart and install fine. `helm lint` reports that the directory name (helm) does not match the chart name, recommends an icon, and warns that templates/ was not found. The other, working charts show the same lint error, so it doesn't seem relevant. Changing the requirement to point at a local copy of the chart instead of the repo alias gives the same error. What is causing Helm to not see the dependency?
+
+What is the most likely root cause, and how would you fix it?","Root cause: The chart's .helmignore file contains an entry for charts/. When Helm loads the chart it skips everything .helmignore matches, so the downloaded dependency tarball in charts/ is ignored. Helm then treats the dependency as missing. Fix: Remove the charts/ entry from .helmignore, then re-run helm dep up and the install.","(1) Helm skips any file matched by .helmignore when it loads the chart (2) charts/ is listed in .helmignore (3) Because of this, the dependency tgz is present on disk but not loaded (4) Removing charts/ from .helmignore fixes the error",,,,
+TSF-0150,https://serverfault.com/questions/416787,"Local Ubuntu 12.04 box running nginx 1.1.19. nginx.conf is stock apart from the user directive, now `user nginx www-data;`. A test vhost serves static files with `root /home;`, `index index.html`, `server_name localhost`, and `try_files $uri $uri/ /index.html`.
+
+A page at /home/index.html loads fine at http://localhost/. I changed root to /home/ubuntu, moved the file to /home/ubuntu/index.html, recreated the sites-enabled symlink, and stopped and started nginx. Now every request returns 403 Forbidden.
+
+The file itself shows `-rw-r--r-- 1 nginx www-data 183 ... index.html`. Running chmod 777 on it made no difference. `/etc/init.d/nginx configtest` reports no errors, and the symlink is correct.
+
+The same behaviour appears on an EC2 Ubuntu 12.04 instance. I wondered whether home-directory encryption is involved, but I can't see why content under the user's home folder can't be served when the same file one level up works.
+
+What is the most likely root cause, and how would you fix it?","Root cause: The user's home directory /home/ubuntu has default permissions 700 on Ubuntu 12.04, so the nginx worker user has no execute (traverse) permission on that parent directory. It therefore cannot reach the file, whatever the file's own permissions are. Fix: Give others execute permission on the home directory with `chmod 701 /home/ubuntu` (or 755). Make sure every directory on the path to the web root is executable by the nginx user/group, and every served file is readable by it.","(1) Ubuntu home directories default to mode 700 (2) nginx needs execute permission on every parent directory along the path, not just read on the file (3) Changing the file's own permissions (even 777) does not help when a parent directory blocks traversal (4) Fix: chmod 701 or 755 on the home directory",,,,
+TSF-0203,https://serverfault.com/questions/890904,"After the January 2018 Meltdown/Spectre patch round, two CentOS 7 hosts were updated to kernel-3.10.0-693.11.6.el7.x86_64 and microcode_ctl-2.1-22.2.el7.x86_64, then rebooted. The CPU is an Intel Xeon D-1540 (Broadwell, family 6, model 86, stepping 2).
+
+Verification via the debugfs tunables shows:
+- /sys/kernel/debug/x86/pti_enabled = 1
+- ibpb_enabled = 0
+- ibrs_enabled = 0
+
+Trying to turn them on fails. For example, `echo 1 > /sys/kernel/debug/x86/ibrs_enabled` returns ""-bash: echo: write error: No such device"", and ibpb_enabled gives the same error.
+
+The microcode.service unit ran successfully at boot (status=0/SUCCESS). dmesg shows the microcode driver loading on all 16 CPUs with ""sig=0x50662, pf=0x10, revision=0xf"". /proc/cpuinfo still reports ""microcode : 0xf"".
+
+The flags list in cpuinfo does not show anything obviously branch-speculation related. Page table isolation appears active, but the other two mitigation knobs refuse to be enabled. Why are only some of the mitigations working?
+
+What is the most likely root cause, and how would you fix it?","Root cause: Spectre variant 2 (CVE-2017-5715) mitigations controlled by ibrs_enabled/ibpb_enabled require CPU microcode that exposes IBRS/IBPB support. This CPU is still running microcode revision 0xf, which lacks it. The kernel therefore has no IBRS/IBPB capability to enable, hence ""No such device"", while PTI (Meltdown) needs only the kernel. Fix: Obtain and apply updated microcode for this CPU from the hardware vendor, typically via a BIOS/firmware update. Then reboot and recheck that ibrs_enabled and ibpb_enabled read 1.","(1) Spectre v2 (CVE-2017-5715) needs both a kernel patch and updated CPU microcode (2) The ibrs/ibpb tunables only work in conjunction with microcode support; PTI needs only the kernel (3) The loaded microcode (rev 0xf) does not provide IBRS/IBPB for this CPU, so the writes fail with 'No such device' (4) A microcode/BIOS update from the hardware vendor is required",,,,
+TSO-0096,https://stackoverflow.com/questions/23491207,"We're running Elasticsearch 1.1 and trying to use the percolator against documents that contain a nested field. A percolator query (id 27, type .percolator in index 'test') is registered as a filtered query: match_all with a nested filter on path 'location' and a term filter city:london.
+
+We then send a percolate request whose body is our document as-is. Simplified, it looks like {""location"": {""date"": ""2014-05-05T15:07:58"", ""namedplaces"": {""city"": ""london""}}}. No matches come back. Every shard reports a failure:
+
+BroadcastShardOperationFailedException[[test][4] ]; nested: PercolateException[failed to percolate]; nested: ElasticsearchIllegalArgumentException[Nothing to percolate]
+
+The node log at DEBUG shows the same thing coming from action.percolate:
+
+PercolateException: failed to percolate at TransportPercolateAction.shardOperation(TransportPercolateAction.java:198) ... Caused by: ElasticsearchIllegalArgumentException: Nothing to percolate at PercolatorService.percolate(PercolatorService.java:187)
+
+We understood that nested-document percolation is supported in this version, so we're unsure why it fails.
+
+What is the most likely root cause, and how would you fix it?","Root cause: The percolate request body contained the raw document fields at the top level instead of wrapping them in the required ""doc"" object. Elasticsearch therefore found no document to percolate and threw ""Nothing to percolate"". Fix: Wrap the document being percolated in a ""doc"" element, e.g. {""doc"": {""location"": {""date"": ""..."", ""namedplaces"": {""city"": ""london""}}}}, and resend the percolate request.","(1) The percolate API requires the document to be wrapped in a top-level ""doc"" field (2) Sending raw document fields at the top level makes ES find no document to percolate (3) The 'Nothing to percolate' IllegalArgumentException is caused by the request format, not by nested-mapping support",,,,
+TSO-0047,https://stackoverflow.com/questions/53188306,"Our backend service runs in Docker and is written in Python 3.6. It talks to a remote PostgreSQL server through plain SQLAlchemy with psycopg2. We do not use flask-sqlalchemy, because the same DB connector also runs outside any Flask context. A periodic worker (backlistener.py) receives events and inserts rows into a table.
+
+At random times, sometimes hours apart, a commit fails with:
+
+(psycopg2.OperationalError) server closed the connection unexpectedly
+This probably means the server terminated abnormally before or while processing the request.
+[SQL: 'INSERT INTO scan_oee (uniqid, id_kanban, created_at, finished, debug) VALUES (...)']
+
+The traceback runs from session.commit() through flush() into cursor.execute() in sqlalchemy/engine/default.py.
+
+The database server itself stays up, and other clients are unaffected. We tried adding flush calls, a crude reconnect-on-error, and rebuilding the engine. None of it was reliable. We cannot reproduce the failure on demand. It seems to show up after the process has been running for a while.
+
+What is the most likely root cause, and how would you fix it?","Root cause: SQLAlchemy's connection pool reuses connections that the remote server or the network path has already closed, for example after an idle period. The next statement on such a stale pooled connection fails with 'server closed the connection unexpectedly'. Fix: Create the engine with pool_pre_ping=True, e.g. create_engine(url, pool_pre_ping=True), or set options['pool_pre_ping']=True when using flask-sqlalchemy. SQLAlchemy then tests each connection on checkout and transparently replaces dead ones.","(1) The error comes from reusing a stale or dead pooled connection, not from the database server crashing. (2) The connections are closed on the remote or network side while sitting idle in the pool. (3) Enable pool_pre_ping=True on the SQLAlchemy engine so connections are checked before use and recycled if dead.",,,,
+TSO-0071,https://stackoverflow.com/questions/46322773,"We deploy a Yesod web app to Heroku as a Docker container. The app sends mail through Amazon SES. Under `yesod devel` on a developer laptop, email sending works. In the deployed container, every send attempt fails with an http-client exception:
+
+```
+HttpExceptionRequest Request { host = ""email.eu-west-1.amazonaws.com"" port = 443 secure = True ... method = ""POST"" ... }
+ (ConnectionFailure Network.BSD.getProtocolByName: does not exist (no such protocol name: tcp))
+```
+
+The container runs the compiled binary built with `stack build`. The Dockerfile is:
+
+```
+FROM ubuntu:17.04
+RUN apt-get update && apt-get install -y libpq-dev
+WORKDIR /app
+ADD . /app
+EXPOSE 8080
+ENV PGHOST localhost
+CMD ""./run""
+```
+
+The rest of the app comes up. Only the outbound SES call fails. We suspect something is missing from the image but don't know what.
+
+What is the most likely root cause, and how would you fix it?","Root cause: The minimal ubuntu:17.04 base image lacks the netbase package, so /etc/protocols does not exist. The Haskell network library's getProtocolByName(""tcp"") call therefore fails before any connection is made. Fix: Install netbase in the Dockerfile to populate /etc/protocols. Also install ca-certificates so the TLS connection to SES can verify Amazon's certificate. Add any other missing runtime libraries such as libstdc++6 and libgnutls30, e.g. `apt-get install -y libpq-dev libgnutls30 netbase libstdc++6 ca-certificates`.","(1) The error comes from getProtocolByName failing because /etc/protocols is missing in the container (2) The netbase package provides /etc/protocols and is absent from the minimal Ubuntu image (3) After fixing that, ca-certificates is needed for the HTTPS/TLS connection to SES to validate the certificate",,,,
+TSO-0134,https://stackoverflow.com/questions/35731548,"On a Mac I'm containerizing a basic ASP.NET demo built from the yo aspnet 'Empty Application' template. Running it directly with `dnx web` works: Kestrel prints 'Hosting environment: Production / Now listening on: http://localhost:5000 / Application started' and the browser shows 'Hello World!' at http://localhost:5000.
+
+Inside Docker it doesn't work. The image builds fine. The Dockerfile has `EXPOSE 5000` and I start the container with `docker run -i -t -p 5000:5000 container_name`. Kestrel prints the same startup lines, including 'Now listening on: http://localhost:5000'. But http://localhost:5000 in the browser gives ERR_CONNECTION_REFUSED.
+
+Docker reports it is using the default machine at 192.168.99.100. http://192.168.99.100:5000 also returns ERR_CONNECTION_REFUSED. `docker inspect container_name | grep IPAddress` shows the container IP is 172.17.0.2. Browsing http://172.17.0.2:5000 just spins and then times out. How do I reach the app from my browser?
+
+What is the most likely root cause, and how would you fix it?","Root cause: Kestrel inside the container listens only on localhost (http://localhost:5000). Traffic forwarded by Docker's port mapping does not arrive on the container's loopback interface, so nothing answers it. The container IP 172.17.0.2 is not reachable from the Mac. The correct address is the Docker VM at 192.168.99.100. Fix: Make Kestrel bind to all interfaces by changing the Dockerfile entrypoint to `ENTRYPOINT [""dnx"", ""web"", ""--server.urls"", ""http://0.0.0.0:5000""]`. Then run with a port mapping such as `-p 80:5000` and browse to the VM IP, http://192.168.99.100.","(1) Kestrel is bound to localhost inside the container, so it is unreachable through Docker's forwarded port (2) The server must listen on 0.0.0.0 (for example via --server.urls http://0.0.0.0:5000) (3) On Mac with docker-machine, browse to the VM IP 192.168.99.100, not localhost and not the container IP 172.17.0.2 (4) The -p port mapping is what links host and container ports; EXPOSE alone is not sufficient",,,,
+TSF-0176,https://serverfault.com/questions/806141,"We're testing TLS connectivity to a service on port 9093 (example.xyz) from a Linux box using the OpenSSL CLI:
+
+  openssl s_client -host example.xyz -port 9093
+
+The output contains these errors:
+
+  error:14094412:SSL routines:SSL3_READ_BYTES:sslv3 alert bad certificate:s3_pkt.c:1259:SSL alert number 42
+  error:140790E5:SSL routines:SSL23_WRITE:ssl handshake failure:s23_lib.c:184:
+
+The session summary at the end still looks normal: ""SSL handshake has read 6648 bytes and written 354 bytes"", Protocol TLSv1.2, Cipher AES128-SHA, server public key 2048 bit, secure renegotiation supported, and ""Verify return code: 0 (ok)"". The server certificate appears to validate. We aren't sure whether the connection actually succeeded or what the alert means, given the verify result is OK. No additional options were passed to s_client.
+
+What is the most likely root cause, and how would you fix it?","Root cause: The server requires client certificate authentication (mutual TLS) and the s_client invocation presented no client certificate, so the server sent alert 42 (bad certificate) and the handshake failed. ""Verify return code 0"" only refers to the server's certificate checking out, not to the connection succeeding. Fix: Obtain a client certificate issued by a CA in the server's ""Acceptable client certificate CA names"" list along with its private key in PEM format, and pass them with -cert and -key (adding any needed intermediate chain certs, e.g. via the truststore/CAfile). If the material is in a Java keystore, convert it via keytool to PKCS12 and then openssl pkcs12 to PEM.",(1) The handshake actually failed; no TLS connection was established despite Verify return code 0 (2) Verify return code 0 only means the server's certificate was found OK (3) Alert 42 bad certificate here means the server demanded a client certificate and none was sent (4) Fix is supplying a client cert/key trusted by the server via -cert/-key (check Acceptable client certificate CA names),,,,
+TSO-0042,https://stackoverflow.com/questions/40855090,"We're building a simple chat room on Laravel with laravel-echo-server (socket.io), Redis as the queue/broadcast backend, Laravel Echo and Vue. A message typed into an input is POSTed to /chat. The route fires a MessageSent event that implements ShouldBroadcast on the public channel 'test-chat-channel'.
+
+Observed behaviour: the first message produces one console log of the event. The second message produces two, the third produces three, and the count keeps growing with every send. Everything also feels sluggish.
+
+Checks so far:
+- laravel-echo-server shows the client joining the channel only once.
+- The queue worker processes exactly one broadcast job per message.
+
+Relevant front-end code:
+```
+methods: {
+  sendMessage: function () {
+    this.$http.post('/chat', {message: this.message}).then((response) => {
+      window.Echo.channel('test-chat-channel')
+        .listen('MessageSent', (event) => { console.log(event.message); });
+    }, (response) => {});
+    this.message = '';
+  }
+}
+```
+
+Why does a single broadcast show up more times with each message sent?
+
+What is the most likely root cause, and how would you fix it?","Root cause: The Echo channel .listen('MessageSent') call sits inside sendMessage's success callback. Every send registers another persistent listener on the same channel, so each single broadcast is delivered to all accumulated listeners and fires N times. Fix: Subscribe to the channel and register the listener once, for example at component creation or mount, instead of on every send. Alternatively, detect an existing subscription or unsubscribe after each cycle so listeners don't accumulate. Redis PUBSUB NUMSUB or the publish return value can confirm how many subscribers exist.","(1) listen() is called inside sendMessage on every send (2) Subscriptions/listeners are persistent and accumulate (3) One broadcast is delivered to each accumulated listener, so the duplicate count equals the number of messages sent (4) Register the listener once (or unsubscribe) instead of per send",,,,
+TSO-0107,https://stackoverflow.com/questions/29637123,"We're trying to deploy a Perl/Mojolicious app to AWS Elastic Beanstalk as a single Docker container. The Dockerfile starts from perl:latest. It installs git, adds an SSH deploy key, and runs ssh-keyscan for bitbucket.org. It then installs cpanminus and Mojolicious, clones a branch from Bitbucket, exposes 8080, sets WORKDIR to the project, and ends with:
+
+CMD hypnotoad script/project
+
+Locally, `docker build -t name/project .` finishes with ""Successfully built"". I zipped the Dockerfile with the key file and used Upload and Deploy. The 2048 sample deployed fine the same way.
+
+The first attempt failed with ""Dockerrun.aws.json: No such file or directory"". I added a minimal Dockerrun.aws.json (AWSEBDockerrunVersion 1, ContainerPort 8080, empty Volumes). Deployment still fails. The logs show:
+
+[CMD-AppDeploy/AppDeployStage0/AppDeployPreHook/04run.sh] command failed with error code 1
+
+followed by ""Docker container quit unexpectedly after launch"". The image builds without errors, so I'm not sure what's wrong.
+
+What is the most likely root cause, and how would you fix it?","Root cause: Hypnotoad daemonizes and runs in the background by default. The container's foreground process therefore exits right away, and Docker/Elastic Beanstalk sees the container quit immediately after launch. Fix: Run hypnotoad in the foreground with the -f flag, e.g. `ENTRYPOINT [""hypnotoad"", ""-f"", ""./script/project""]`. Keep providing both the Dockerfile and Dockerrun.aws.json to Elastic Beanstalk.",(1) The container exits because its main process ends (2) Hypnotoad forks into the background (daemonizes) by default (3) Use hypnotoad -f to keep it in the foreground as the container's main process,,,,
+TSO-0130,https://stackoverflow.com/questions/8619648,"Our reporting tool stores generated reports in the PHP session as $_SESSION['report_name_<unixtimestamp>'] = gzcompress(serialize($report)) so users can later export the exact report they viewed (PDF, Excel). The export endpoint reads the key from a GET parameter, then decompresses and unserializes it. This worked fine with file-based sessions. After moving sessions to Redis through a custom save handler registered before session_start(), the behavior changed. We tried both the phpredis extension and Predis. The first report run in a session exports correctly. When the same user runs the report again, a new timestamped key should appear next to the old one, but the export fails with ""file doesn't exist"". In Redis the session blob still holds the older report key and the newer one is missing. Dumping $_SESSION during the report request shows the new key is present, yet it never persists. Redis has plenty of memory. The report class is included before unserialize. Stepping through with xdebug and breakpoints makes the export work. Without breakpoints it fails. Adding sleep() calls in places didn't help. The report page also issues several AJAX calls to the server.
+
+What is the most likely root cause, and how would you fix it?","Root cause: The custom Redis session save handler has no session locking. Concurrent AJAX requests from the report page read the session before the new report is saved. When they finish, they write back their stale copy and overwrite the session that contains the new report. Fix: Prevent concurrent requests from clobbering the session. One way is to implement locking in the Redis save handler, as file sessions do. Another is to have the parallel AJAX requests avoid writing the session, for example by calling session_write_close early or using read-only sessions.","(1) The custom Redis save handler lacks the session locking that file sessions provide. (2) Parallel AJAX requests on the report page read the session before the report is stored. (3) Those requests write their older session copy at shutdown, overwriting the new report key (last write wins). (4) It is a timing race, which explains why debugging with breakpoints makes it work.",,,,

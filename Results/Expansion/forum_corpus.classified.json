@@ -1,0 +1,2929 @@
+[
+ {
+  "question_id": "403732",
+  "source": "serverfault",
+  "title": "Anyone else experiencing high rates of Linux server crashes during a leap second day?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires identifying the underlying cause of Linux server crashes during a leap second day, involving analysis of symptoms and tracing effects across multiple components."
+  }
+ },
+ {
+  "question_id": "725262",
+  "source": "serverfault",
+  "title": "What causes the 'Connection Refused' message?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires inferring the most likely underlying cause of the 'Connection Refused' message from its symptoms, which is a classic example of abductive reasoning for diagnosis."
+  }
+ },
+ {
+  "question_id": "309691",
+  "source": "serverfault",
+  "title": "Why is our firewall (Ubuntu 8.04) rejecting the final packet (FIN, ACK, PSH) with a RST",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the firewall rejecting the final packet with a RST, which involves analyzing the packet trace and understanding the interactions between the client, webserver, and firewall, and then tracing the effects of the INVALID packet state on the system's behavio"
+  }
+ },
+ {
+  "question_id": "640248",
+  "source": "serverfault",
+  "title": "ps aux hanging on high cpu/IO with java processes",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solution requires inferring the underlying cause of the high CPU/IO usage and stalled reads, and tracing the effects of the storage subsystem and Java processes on the system's performance."
+  }
+ },
+ {
+  "question_id": "449651",
+  "source": "serverfault",
+  "title": "Why is my crontab not working, and how can I troubleshoot it?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "LONG_CONTEXT_LOCALIZATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires diagnosing the cause of a non-functioning crontab, which involves abductive reasoning to identify the underlying issue from symptoms, and localizing relevant information within a lengthy context."
+  }
+ },
+ {
+  "question_id": "596994",
+  "source": "serverfault",
+  "title": "How can I debug a docker container initialization?",
+  "v3": {
+   "reasoning_types": [
+    "TEMPORAL",
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "TEMPORAL",
+   "confidence": 0.8,
+   "rationale": "The question requires reasoning about the sequence of events and timelines of docker container initialization, as well as understanding the meaning and role of docker commands and logs."
+  }
+ },
+ {
+  "question_id": "198002",
+  "source": "serverfault",
+  "title": "Postgresql: what does GRANT ALL PRIVILEGES ON DATABASE do?",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "FACTUAL_SCHEMA_RETRIEVAL",
+   "confidence": 0.9,
+   "rationale": "The question requires locating specific information about PostgreSQL commands and their effects, as well as understanding the meaning of database privileges and roles."
+  }
+ },
+ {
+  "question_id": "449048",
+  "source": "serverfault",
+  "title": "Why is it so difficult to upgrade between major versions of Red Hat and CentOS?",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "TEMPORAL"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the causal dependencies between upgrading major versions of Red Hat and CentOS, and the downstream effects on the systems, as well as considering the temporal aspects of the upgrade process and its impact on the environments."
+  }
+ },
+ {
+  "question_id": "696182",
+  "source": "serverfault",
+  "title": "Debugging iptables and common firewall pitfalls?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the concepts and structure of iptables and its configuration, as well as interpreting the output of commands, which involves semantic interpretation and classification of firewall rules and concepts."
+  }
+ },
+ {
+  "question_id": "10852",
+  "source": "serverfault",
+  "title": "What limits the maximum number of connections on a Linux server?",
+  "v3": {
+   "reasoning_types": [
+    "NUMERICAL_QUANTITATIVE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "NUMERICAL_QUANTITATIVE",
+   "confidence": 0.9,
+   "rationale": "The question requires analyzing numerical values and thresholds related to TCP connections, as well as understanding the causal relationships between kernel parameters and connection limits."
+  }
+ },
+ {
+  "question_id": "212093",
+  "source": "serverfault",
+  "title": "How to reduce number of sockets in TIME_WAIT?",
+  "v3": {
+   "reasoning_types": [
+    "NUMERICAL_QUANTITATIVE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "NUMERICAL_QUANTITATIVE",
+   "confidence": 0.8,
+   "rationale": "The solution involves analyzing and adjusting numerical values such as tcp_fin_timeout and understanding the quantitative impact on socket states and memory usage, requiring numerical and quantitative reasoning, as well as tracing the effects of these adjustments across multiple components and depen"
+  }
+ },
+ {
+  "question_id": "505098",
+  "source": "serverfault",
+  "title": "What does this nginx error \"rewrite or internal redirection cycle\" mean?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the 'rewrite or internal redirection cycle' error by analyzing the nginx configuration and logs, and then interpret the configuration to identify the problematic directive."
+  }
+ },
+ {
+  "question_id": "329592",
+  "source": "serverfault",
+  "title": "How does try_files work?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the meaning and behavior of the try_files directive in nginx, including how it checks paths and handles internal redirects, which involves semantic interpretation of the documentation and factual retrieval of specific details."
+  }
+ },
+ {
+  "question_id": "478636",
+  "source": "serverfault",
+  "title": "tcpdump: out.pcap: Permission denied",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the 'Permission denied' error by analyzing the symptoms and the system's behavior, as shown in the strace output."
+  }
+ },
+ {
+  "question_id": "561107",
+  "source": "serverfault",
+  "title": "How to find out the reason(s) why the network interface is dropping packets?",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "FACTUAL_SCHEMA_RETRIEVAL",
+   "confidence": 0.9,
+   "rationale": "The question requires locating specific fields and values in Linux network interface statistics, as well as understanding the meaning of these statistics to diagnose packet drops."
+  }
+ },
+ {
+  "question_id": "531941",
+  "source": "serverfault",
+  "title": "I am under DDoS. What can I do?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires diagnosing the underlying cause of the observed symptoms (DDoS attack) and understanding the effects of the attack on the system, which involves abductive reasoning and causal analysis."
+  }
+ },
+ {
+  "question_id": "458553",
+  "source": "serverfault",
+  "title": "Can't log in via SSH to any accounts using /bin/bash shell on Synology NAS",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the SSH login issue from the observed symptoms and debugging information, which requires abductive reasoning to diagnose the root cause of the problem."
+  }
+ },
+ {
+  "question_id": "732474",
+  "source": "serverfault",
+  "title": "Nginx configured with http2 doesn't deliver HTTP/2",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver needs to diagnose the underlying cause of the issue with Nginx not delivering HTTP/2, tracing the effects of the outdated OpenSSL version and its lack of ALPN support, and understanding how this impacts the negotiation of HTTP/2 connections with different browsers."
+  }
+ },
+ {
+  "question_id": "963759",
+  "source": "serverfault",
+  "title": "Docker breaks libvirt bridge network",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the issue with Docker breaking libvirt bridge network, involving complex interactions between Docker, iptables, and bridge netfilter, requiring abductive reasoning to identify the underlying cause and causal multi-hop forward reasoning to understand the eff"
+  }
+ },
+ {
+  "question_id": "533704",
+  "source": "serverfault",
+  "title": "Why is iptables rejecting the second and subsequent fragments of an allowed packet?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the iptables rejecting packet fragments, which requires abductive reasoning to infer the root cause from the observed symptoms, and also interpret the semantic meaning of connection tracking in the firewall rules."
+  }
+ },
+ {
+  "question_id": "705588",
+  "source": "serverfault",
+  "title": "How to choose the external IP address of a Kubernetes load balancer in Google Kubernetes Engine",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the meaning and role of Kubernetes and Google Cloud Platform components, such as load balancers, services, and IP addresses, to determine how to configure a load balancer to use a chosen static IP address."
+  }
+ },
+ {
+  "question_id": "502305",
+  "source": "serverfault",
+  "title": "Linux networking port exhaustion",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the concept of port exhaustion, ephemeral ports, and their relationship with IP addresses, which involves semantic interpretation of networking concepts and factual retrieval of specific details about IPv4 port usage."
+  }
+ },
+ {
+  "question_id": "627903",
+  "source": "serverfault",
+  "title": "Is the PHP option 'cgi.fix_pathinfo' really dangerous with Nginx + PHP-FPM?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the meaning and role of PATH_INFO and SCRIPT_FILENAME variables in PHP, as well as the potential security implications of the cgi.fix_pathinfo option, which involves interpreting documentation and tracing effects forward across multiple components."
+  }
+ },
+ {
+  "question_id": "293226",
+  "source": "serverfault",
+  "title": "Linux: logwatch(8) is too noisy. How can I control the noise level?",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.8,
+   "rationale": "The solution requires determining the correct sequence of steps to customize logwatch configuration and reduce noise level, involving procedural reasoning, as well as looking up specific configuration files and settings, which is a factual schema retrieval task."
+  }
+ },
+ {
+  "question_id": "592793",
+  "source": "serverfault",
+  "title": "Mysql crashed and won't start up",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solution requires diagnosing the root cause of the MySQL crash and then following a sequential procedure to recover from the corruption."
+  }
+ },
+ {
+  "question_id": "650117",
+  "source": "serverfault",
+  "title": "Serving multiple proxy endpoints under location in Nginx",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the structure and behavior of Nginx configuration, specifically location blocks and proxy_pass directives, to determine the correct configuration for routing requests to different endpoints."
+  }
+ },
+ {
+  "question_id": "106537",
+  "source": "serverfault",
+  "title": "Tuning Linux IP routing parameters -- secret_interval and tcp_mem",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "NUMERICAL_QUANTITATIVE"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The solution requires tracing the effects of changing Linux IP routing parameters on the system's performance and identifying the root cause of the issues, involving numerical calculations and considerations of resource allocation."
+  }
+ },
+ {
+  "question_id": "861519",
+  "source": "serverfault",
+  "title": "How to turn off 'protected-mode' in Redis?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the error and understand the configuration and version of the Redis server to resolve the issue."
+  }
+ },
+ {
+  "question_id": "489192",
+  "source": "serverfault",
+  "title": "ssh tunnel refusing connections with \"channel 2: open failed\"",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the ssh tunnel refusing connections and interpret the meaning of the error messages and network configurations to arrive at the solution."
+  }
+ },
+ {
+  "question_id": "406069",
+  "source": "serverfault",
+  "title": "Why are my XFS filesystems suddenly consuming more space and full of sparse files?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the sudden increase in disk space consumption and sparse files, tracing the symptoms back to a specific kernel patch and XFS feature, and then understand the forward effects of this feature on disk usage and various systems."
+  }
+ },
+ {
+  "question_id": "1093511",
+  "source": "serverfault",
+  "title": "Apt-Get Update Failing because of Certificate Validation",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solution requires inferring the underlying cause of the certificate validation error and then applying a sequence of remediation steps to resolve the issue."
+  }
+ },
+ {
+  "question_id": "685697",
+  "source": "serverfault",
+  "title": "Multiple commands in Docker CMD directive",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the difference between exec and shell forms of the CMD directive in Docker, which involves interpreting documentation and classifying the type of command execution."
+  }
+ },
+ {
+  "question_id": "592744",
+  "source": "serverfault",
+  "title": "How to hide a password passed as command line argument?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the security implications of passing a password as a command line argument and interpreting the provided solution to hide the password, which involves compiling a custom library to intercept and replace the password."
+  }
+ },
+ {
+  "question_id": "355750",
+  "source": "serverfault",
+  "title": "MySQL lowering wait_timeout value to lower number of open connections",
+  "v3": {
+   "reasoning_types": [
+    "NUMERICAL_QUANTITATIVE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "NUMERICAL_QUANTITATIVE",
+   "confidence": 0.8,
+   "rationale": "The solution involves adjusting numerical values (wait_timeout, interactive_timeout) and understanding the quantitative impact on open connections, as well as tracing the effects of this change on the system's behavior (e.g., connection timeouts, race conditions)."
+  }
+ },
+ {
+  "question_id": "394902",
+  "source": "serverfault",
+  "title": "Resizing a LUKS encrypted volume",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The solution requires determining the correct sequence of steps to resize a LUKS encrypted volume, involving unmounting, resizing, and remounting, which is a procedural sequential task."
+  }
+ },
+ {
+  "question_id": "655090",
+  "source": "serverfault",
+  "title": "New server unable to fetch configuration from Puppetmaster due to some ssl error",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "TEMPORAL"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the SSL error, which is a temporal issue related to the clock being out of sync between the Puppet-agent and Puppetmaster."
+  }
+ },
+ {
+  "question_id": "686665",
+  "source": "serverfault",
+  "title": "Mysql showing 100% CPU usage",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the 100% CPU usage issue in MySQL by analyzing the provided configuration, performance metrics, and recommendations, which requires abductive reasoning and tracing the effects of various factors across multiple components."
+  }
+ },
+ {
+  "question_id": "482875",
+  "source": "serverfault",
+  "title": "Why does Nginx remove Content-Length header for chunked content?",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires diagnosing the cause of Nginx removing the Content-Length header for chunked content, involving understanding of Nginx's behavior and its interaction with the upstream server."
+  }
+ },
+ {
+  "question_id": "889631",
+  "source": "serverfault",
+  "title": "curl fails to retrieve HTTPS content: error:14094410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the SSL handshake failure by analyzing the symptoms and tracing the effects of the server's outdated protocols and ciphersuites."
+  }
+ },
+ {
+  "question_id": "516074",
+  "source": "serverfault",
+  "title": "Why are applications in a memory-limited LXC container writing large files to disk being killed by the OOM?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires inferring the underlying cause of the OOM killer being triggered by a file write in an LXC container, which involves understanding the interactions between the kernel, page cache, and flush daemon, and tracing the effects of these interactions across multiple components."
+  }
+ },
+ {
+  "question_id": "750094",
+  "source": "serverfault",
+  "title": "remove tagged Docker image from private registry",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.8,
+   "rationale": "The solution involves a series of steps to remove a tagged Docker image from a private registry, including using a script and manual removal, which requires procedural sequential reasoning, along with some factual schema retrieval to understand Docker registry operations."
+  }
+ },
+ {
+  "question_id": "515125",
+  "source": "serverfault",
+  "title": "OOM despite available memory (cache)",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the OOM killer despite available memory, which requires understanding the nuances of Linux memory management and PostgreSQL's shared_buffers, making it a case of abductive reasoning with some semantic interpretation of technical concepts."
+  }
+ },
+ {
+  "question_id": "253313",
+  "source": "serverfault",
+  "title": "ssh returns \"Bad owner or permissions on ~/.ssh/config\"",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the ssh error message based on the provided symptoms and file permissions, which requires abductive reasoning to infer the most likely cause."
+  }
+ },
+ {
+  "question_id": "103501",
+  "source": "serverfault",
+  "title": "How can I fully log all bash scripts actions?",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The solution requires understanding the meaning and role of bash script redirection and logging mechanisms to capture all actions and error messages in a log file."
+  }
+ },
+ {
+  "question_id": "1015547",
+  "source": "serverfault",
+  "title": "What causes SSH error: kex_exchange_identification: Connection closed by remote host?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires inferring the underlying cause of the SSH error kex_exchange_identification: Connection closed by remote host from the observed symptoms and logs, which is a classic example of abductive reasoning for root cause diagnosis."
+  }
+ },
+ {
+  "question_id": "872749",
+  "source": "serverfault",
+  "title": "bzip2 too slow. Multiple cores are avaible",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "NUMERICAL_QUANTITATIVE"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The solver must analyze the symptoms of slow performance, identify the bottleneck in the bzip2 process, and then reason about the effects of alternative compression algorithms and parallel implementations on performance, involving numerical comparisons of compression speeds and sizes."
+  }
+ },
+ {
+  "question_id": "190685",
+  "source": "serverfault",
+  "title": "What's the best way to get info about currently unmounted drives?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires interpreting the structure and meaning of Linux commands and their outputs to determine the best way to query information about unmounted drives."
+  }
+ },
+ {
+  "question_id": "587386",
+  "source": "serverfault",
+  "title": "an upstream response is buffered to a temporary file",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding of nginx configuration and behavior, including the meaning of proxy buffering and temporary file buffering, as well as the relationships between these concepts and performance optimization."
+  }
+ },
+ {
+  "question_id": "587324",
+  "source": "serverfault",
+  "title": "Heartbleed: how to reliably and portably check the OpenSSL version?",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the meaning and behavior of OpenSSL versioning and how different Linux distributions handle updates, which involves semantic interpretation and classification of the situation rather than just factual retrieval."
+  }
+ },
+ {
+  "question_id": "341290",
+  "source": "serverfault",
+  "title": "MySQL [Warning] IP address could not be resolved",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires identifying the underlying cause of the MySQL warning and understanding the implications of the network configuration, which involves abductive reasoning and semantic interpretation of the system's behavior."
+  }
+ },
+ {
+  "question_id": "564068",
+  "source": "serverfault",
+  "title": "Linux oom situation (32 bit kernel)",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "NUMERICAL_QUANTITATIVE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the OOM situation from the given symptoms and logs, and also reason about numerical values such as order sizes and memory allocation to understand the kernel's behavior."
+  }
+ },
+ {
+  "question_id": "362589",
+  "source": "serverfault",
+  "title": "Effects of configuring vm.overcommit_memory",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires analyzing the effects of configuring vm.overcommit_memory and understanding the root cause of the oom-killer issue, involving both symptom diagnosis and tracing effects forward across multiple components."
+  }
+ },
+ {
+  "question_id": "641794",
+  "source": "serverfault",
+  "title": "Random TCP RST's on certain websites, what's going on?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the TCP RSTs from the observed symptoms and network behavior, and then trace the effects of the Explicit Congestion Notification (ECN) setting forward to understand its impact on the connections."
+  }
+ },
+ {
+  "question_id": "381013",
+  "source": "serverfault",
+  "title": "Shell command slow when using pipe, fast with intermediate file",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the performance difference between using a pipe and an intermediate file, which involves analyzing the symptoms and tracing the effects of buffering and pipe issues across multiple components."
+  }
+ },
+ {
+  "question_id": "935802",
+  "source": "serverfault",
+  "title": "NGINX SSL does not respond over IPv6",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the NGINX SSL not responding over IPv6 by analyzing symptoms and tracing effects forward across multiple components, ultimately identifying an MTU problem."
+  }
+ },
+ {
+  "question_id": "827082",
+  "source": "serverfault",
+  "title": "OpenVPN for certain IPs, eth0 for everything else",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "TEMPORAL"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The problem requires tracing the effects of VPN connection settings on network routing and identifying the cause of the issue with accessing external resources, involving multiple hops and dependencies between VPN settings, routing tables, and network interfaces."
+  }
+ },
+ {
+  "question_id": "730922",
+  "source": "serverfault",
+  "title": "How can I get information about a binary file that won't execute?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the binary file not executing, which involves interpreting the output of various commands and understanding the differences between object files and executables."
+  }
+ },
+ {
+  "question_id": "549273",
+  "source": "serverfault",
+  "title": "Diagnosing packet loss / high latency in Ubuntu",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "NUMERICAL_QUANTITATIVE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of packet loss and latency spikes by analyzing network traffic and error counters, which requires abductive reasoning and quantitative analysis of numerical data."
+  }
+ },
+ {
+  "question_id": "387268",
+  "source": "serverfault",
+  "title": "Linux CPU usage and Process Execution History",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires inferring the underlying cause of high CPU usage, and the solution involves using various commands and tools to diagnose the issue, which involves abductive reasoning to identify the root cause."
+  }
+ },
+ {
+  "question_id": "361159",
+  "source": "serverfault",
+  "title": "Nginx multiple location issues",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The solution requires tracing the effects of Nginx configuration settings across multiple location blocks and understanding how they interact to cause the observed issue, involving causal multi-hop forward reasoning and semantic interpretation of Nginx configuration structure."
+  }
+ },
+ {
+  "question_id": "595323",
+  "source": "serverfault",
+  "title": "SSH remote port forwarding failed",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the SSH remote port forwarding failure, tracing the effects of defunct SSH connections and potential network outages to identify the root cause of the problem."
+  }
+ },
+ {
+  "question_id": "580753",
+  "source": "serverfault",
+  "title": "SSH aborts with Too many authentication failures",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the SSH authentication failure by analyzing the symptoms and configuration to determine that the issue is due to SSH trying all known keys, which can be resolved by setting IdentitiesOnly=yes."
+  }
+ },
+ {
+  "question_id": "214435",
+  "source": "serverfault",
+  "title": "\"Error 1067: The process terminated unexpectedly\" when trying to install MySQL on Win7 x64",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the MySQL service failing to start from the observed symptoms and troubleshooting steps, which requires abductive reasoning to diagnose the root cause of the problem."
+  }
+ },
+ {
+  "question_id": "611120",
+  "source": "serverfault",
+  "title": "Failed tls handshake. Does not contain any IP SANs",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the failed TLS handshake and interpret the error message to identify the missing IP SANs in the certificate."
+  }
+ },
+ {
+  "question_id": "367438",
+  "source": "serverfault",
+  "title": "ls hangs for a certain directory",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the cause of the ls command hanging and trace the effects of the potential causes, such as file system or disk issues, to determine the root cause of the problem."
+  }
+ },
+ {
+  "question_id": "294209",
+  "source": "serverfault",
+  "title": "\"Possible SYN flooding\" in log despite low number of SYN_RECV connections",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the 'possible SYN flooding' message despite a low number of SYN_RECV connections, requiring abductive reasoning to infer the root cause and causal multi-hop reasoning to understand the effects of various TCP settings."
+  }
+ },
+ {
+  "question_id": "686286",
+  "source": "serverfault",
+  "title": "Very low TCP OpenVPN throughput (100Mbit port, low CPU utilization)",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the low OpenVPN throughput from the observed symptoms, such as low CPU utilization and slow transfer rates, to arrive at the solution of adjusting the socket buffer settings."
+  }
+ },
+ {
+  "question_id": "875229",
+  "source": "serverfault",
+  "title": "Two Way SSL Error - 400 The SSL certificate error just for client certificate",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the two-way SSL error by analyzing the given configuration, error logs, and troubleshooting steps, and then trace the effects of the missing extendedKeyUsage and ssl_verify_depth parameter forward to understand how they contributed to the error."
+  }
+ },
+ {
+  "question_id": "675553",
+  "source": "serverfault",
+  "title": "stunnel vpn traffic and ensure it looks like SSL traffic on port 443",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the protocol stack and traffic encryption to determine if the traffic looks like SSL traffic, involving semantic interpretation and causal reasoning to trace the effects of the stunnel configuration."
+  }
+ },
+ {
+  "question_id": "178671",
+  "source": "serverfault",
+  "title": "Nginx + php-fpm \"504 Gateway Time-out\" error with almost zero load (on a test-server)",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the '504 Gateway Time-out' error from the given symptoms and nginx error logs, which requires abductive reasoning to diagnose the root cause."
+  }
+ },
+ {
+  "question_id": "43123483",
+  "source": "stackoverflow",
+  "title": "Running MongoDB on Kubernetes Minikube with local persistent storage",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the issue with the StatefulSet and Service, tracing the effects of the invalid PersistentVolumeClaim and its impact on the Pods and Service, requiring abductive reasoning and causal analysis."
+  }
+ },
+ {
+  "question_id": "61567697",
+  "source": "stackoverflow",
+  "title": "Azure function HTTP triggered on linux container - function not working 404",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the 404 error by analyzing the symptoms and tracing the effects of the Docker file configuration on the Azure Function deployment."
+  }
+ },
+ {
+  "question_id": "52211628",
+  "source": "stackoverflow",
+  "title": "How do I successfully connect to a Dockerized DB2 database/server from an app running on a dockerized Tomee server - both containers using jdk10?",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The question requires tracing the effects of Docker container networking and configuration on the connection between a Tomcat server and a DB2 database server, involving multiple dependency hops and semantic understanding of container networking concepts."
+  }
+ },
+ {
+  "question_id": "51880905",
+  "source": "stackoverflow",
+  "title": "How to use variable settings in trigger functions?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the behavior of trigger functions and variable settings in PostgreSQL, as well as interpreting the documentation and taxonomy structure to resolve the issue with current_setting returning NULL."
+  }
+ },
+ {
+  "question_id": "34848422",
+  "source": "stackoverflow",
+  "title": "How can I debug \"ImagePullBackOff\"?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the ImagePullBackOff error by analyzing the pod status, events, and logs, and then follow a sequential procedure to debug and potentially resolve the issue."
+  }
+ },
+ {
+  "question_id": "69769567",
+  "source": "stackoverflow",
+  "title": "GKE Internal Load Balancer does not distribute load between gRPC servers",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the uneven load distribution, tracing the symptoms through the GKE load balancer, Kubernetes autoscaling, and gRPC request handling to identify the underlying issue with load balancing gRPC requests."
+  }
+ },
+ {
+  "question_id": "9386803",
+  "source": "stackoverflow",
+  "title": "Problems connecting Pentaho Kettle/Spoon to Heroku PostgreSQL using SSL",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the SSL connection issue, which is not a straightforward lookup, but rather a diagnosis of the symptoms presented in the error message."
+  }
+ },
+ {
+  "question_id": "35400740",
+  "source": "stackoverflow",
+  "title": "How to set docker mongo data volume",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the MongoDB container's failure to start when using a data volume, tracing the effects of file ownership and permission issues, and ultimately identifying the root cause as an unsupported filesystem type."
+  }
+ },
+ {
+  "question_id": "27804069",
+  "source": "stackoverflow",
+  "title": "Hibernate mapping between PostgreSQL enum and Java enum",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The solver must trace the effects of Hibernate mapping and database interactions to diagnose the cause of the SQLGrammarException and understand the semantic meaning of enum types in both Java and PostgreSQL to resolve the issue."
+  }
+ },
+ {
+  "question_id": "52146001",
+  "source": "stackoverflow",
+  "title": "Kafka not able to connect with zookeeper with error \"Timed out waiting for connection while in state: CONNECTING\"",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solution requires interpreting the meaning of the ZooKeeper connection string and the service name in the Kubernetes configuration to identify the cause of the connection timeout error."
+  }
+ },
+ {
+  "question_id": "67012383",
+  "source": "stackoverflow",
+  "title": "Postgres long-running transaction holding lock on parent partitioned table",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires diagnosing the root cause of lock contention between long-running imports and creating new inventories, involving multi-hop reasoning across Postgres locking mechanisms and transactional behavior."
+  }
+ },
+ {
+  "question_id": "51859636",
+  "source": "stackoverflow",
+  "title": "Docker : sharing /dev/snd on multiple containers leads to \"device or resource busy\"",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.8,
+   "rationale": "The question requires tracing the effects of sharing a device (/dev/snd) across multiple containers and the host, and understanding the underlying cause of the 'device or resource busy' error, which involves causal multi-hop reasoning and semantic interpretation of the system's behavior."
+  }
+ },
+ {
+  "question_id": "65669818",
+  "source": "stackoverflow",
+  "title": "DNS error with MySQL integration with kubernetes cluster",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the DNS error with MySQL integration in a Kubernetes cluster, involving semantic interpretation of the cluster's configuration and networking setup."
+  }
+ },
+ {
+  "question_id": "8465508",
+  "source": "stackoverflow",
+  "title": "Can not connect to local PostgreSQL",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solution requires inferring the underlying cause of the permission denied error and tracing the effects of file permissions on the Unix domain socket to diagnose the issue."
+  }
+ },
+ {
+  "question_id": "20963450",
+  "source": "stackoverflow",
+  "title": "Controlling duration of PostgreSQL lock waits",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the meaning and role of PostgreSQL lock waits, FOR UPDATE, and lock_timeout settings, as well as interpreting the documentation to address the user's specific issues."
+  }
+ },
+ {
+  "question_id": "59286100",
+  "source": "stackoverflow",
+  "title": "AspNetCore.Identity using PostgreSQL: how to create structure?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the meaning and structure of the ASP.NET Core Identity framework and its interaction with PostgreSQL, as well as tracing the effects of configuration changes across multiple components."
+  }
+ },
+ {
+  "question_id": "48238592",
+  "source": "stackoverflow",
+  "title": "Docker container running fast when connected to localhost db but very slow on external db",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.8,
+   "rationale": "The solver must infer the underlying cause of the performance issue from the observed symptoms and debug information, and potentially trace the effects of the issue across multiple components, such as the Docker container, network, and database."
+  }
+ },
+ {
+  "question_id": "27735411",
+  "source": "stackoverflow",
+  "title": "Understanding latency using Redis-Cli",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the meaning and interpretation of the values returned by the redis-cli command, which involves semantic interpretation of the documentation and command output."
+  }
+ },
+ {
+  "question_id": "60541105",
+  "source": "stackoverflow",
+  "title": "stackdriver-metadata-agent-cluster-level gets OOMKilled",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "NUMERICAL_QUANTITATIVE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the stackdriver-metadata-agent-cluster-level pod getting OOMKilled and reason about numerical values such as memory limits to arrive at the solution."
+  }
+ },
+ {
+  "question_id": "21925083",
+  "source": "stackoverflow",
+  "title": "SQL Error: 0, SQLState: 08006",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the PostgreSQL connection error from the given symptoms and logs, which requires abductive reasoning to diagnose the root cause of the issue."
+  }
+ },
+ {
+  "question_id": "11455548",
+  "source": "stackoverflow",
+  "title": "PostgreSQL query/error logging for .sql scripts",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the functionality of PostgreSQL commands and logging mechanisms, and interpreting the syntax and behavior of redirecting output to a file."
+  }
+ },
+ {
+  "question_id": "47959481",
+  "source": "stackoverflow",
+  "title": "Airflow - Task Instance in EMR operator",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solver must interpret the Airflow operator's functionality and customize it to enable templating for steps in the EmrAddStepsOperator, then apply procedural reasoning to implement the custom operator and plugin."
+  }
+ },
+ {
+  "question_id": "55104705",
+  "source": "stackoverflow",
+  "title": "airflow cleared tasks not getting executed",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the Airflow tasks not getting executed, tracing back from symptoms like tasks stuck in 'none' state and infinite loops, to potential causes like server running out of space, logging issues, and configuration problems."
+  }
+ },
+ {
+  "question_id": "52911291",
+  "source": "stackoverflow",
+  "title": "Kafka with Confluent Kubernetes Helm Charts = Schema Registry WakeupException",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the schema-registry crash by analyzing the logs and configuration, which requires abductive reasoning to infer the underlying issue from the observed symptoms."
+  }
+ },
+ {
+  "question_id": "25329302",
+  "source": "stackoverflow",
+  "title": "Laravel: Error [PDOException]: Could not Find Driver in PostgreSQL",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The solution requires understanding the configuration and dependencies for PostgreSQL in Laravel, including the database.php file and PHP extensions, which involves interpreting documentation structure and classifying entities."
+  }
+ },
+ {
+  "question_id": "18310635",
+  "source": "stackoverflow",
+  "title": "Scaling Socket.IO to multiple Node.js processes using cluster",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The solution requires understanding the causal relationships between multiple worker processes and the master node, as well as interpreting the roles of Socket.IO, Redis, and the cluster module to resolve the issue of duplicate messages being sent."
+  }
+ },
+ {
+  "question_id": "10282402",
+  "source": "stackoverflow",
+  "title": "How to set up PostgreSQL for Play 2.0?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the internal server error by interpreting the configuration files and error messages, and then apply semantic understanding of the PostgreSQL setup to identify the incorrect JDBC URL format and port number."
+  }
+ },
+ {
+  "question_id": "59547662",
+  "source": "stackoverflow",
+  "title": "Keep running into \"exceeded its progress dead line\" despite changing progressDeadlineSeconds",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The solver must trace the effects of the missing namespace parameter in the Create imagePullSecret and Deploy to Kubernetes cluster tasks, leading to the creation of separate namespaces and secrets, causing the deployment to fail due to the unavailability of the secret in the current namespace."
+  }
+ },
+ {
+  "question_id": "46065342",
+  "source": "stackoverflow",
+  "title": "(Kubernetes + Minikube) can't get docker image from local registry",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The problem requires tracing the effects of using 127.0.0.1 to access the local registry across multiple components, including Docker, Minikube, and Kubernetes, and understanding the implications of using a hostname versus an IP address."
+  }
+ },
+ {
+  "question_id": "59976480",
+  "source": "stackoverflow",
+  "title": "Docker [Errno 111] Connect call failed ('127.0.0.1', 6379)",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the connection refusal error by inferring the underlying cause, which involves understanding the network namespace of containers and how they communicate with each other, requiring abductive reasoning and causal analysis."
+  }
+ },
+ {
+  "question_id": "67851351",
+  "source": "stackoverflow",
+  "title": "Cannot install additional requirements to apache airflow",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "NUMERICAL_QUANTITATIVE"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.8,
+   "rationale": "The solution requires following a sequence of steps to build a new image and update the docker-compose file, involving numerical versioning and quantitative considerations."
+  }
+ },
+ {
+  "question_id": "58275233",
+  "source": "stackoverflow",
+  "title": "Terraform depends_on with modules",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The question requires determining the correct sequence of operational steps to implement dependencies between Terraform modules, specifically using the depends_on attribute to ensure a storage account is created before enabling diagnostics settings."
+  }
+ },
+ {
+  "question_id": "57480205",
+  "source": "stackoverflow",
+  "title": "Error while applying JSON Patch to Kubernetes Custom Resource",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the error by analyzing the symptoms and the JSON patch specification to infer that the Kubernetes API server will not recursively create nested objects for a JSON patch input."
+  }
+ },
+ {
+  "question_id": "48442485",
+  "source": "stackoverflow",
+  "title": "NodePort services not available on all nodes",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the issue with NodePort services not being available on all nodes and infer the underlying cause, which involves understanding the configuration and behavior of Kubernetes services and node ports."
+  }
+ },
+ {
+  "question_id": "65744565",
+  "source": "stackoverflow",
+  "title": "Kubernetes DNS lookg not working from worker node - connection timed out; no servers could be reached",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the Kubernetes DNS lookup issue, which involves analyzing symptoms and tracing the effects of using RHEL 8 with nftables, to arrive at the conclusion that nftables is the likely cause of the problem."
+  }
+ },
+ {
+  "question_id": "57504063",
+  "source": "stackoverflow",
+  "title": "Calico: Kubernetes pods can't ping each other use Cluster IP",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the observed symptoms (pods can't ping each other) and interpret the Calico configuration and logs to identify the root cause of the issue, which is the incorrect autodetection of the network interface."
+  }
+ },
+ {
+  "question_id": "72584282",
+  "source": "stackoverflow",
+  "title": "Django + Caddy = CSRF protection issues",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the CSRF protection issue by analyzing the symptoms and tracing the effects of the Caddy reverse proxy and Django configuration across multiple components."
+  }
+ },
+ {
+  "question_id": "38333172",
+  "source": "stackoverflow",
+  "title": "Kubectl: Kubernetes with minikube times out",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the TLS handshake timeout error and then trace the effects of the proxy settings on the Kubernetes cluster and minikube setup."
+  }
+ },
+ {
+  "question_id": "61305722",
+  "source": "stackoverflow",
+  "title": "Why can't I Access a Service Exposed from Minikube on Windows?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "LONG_CONTEXT_LOCALIZATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the issue with accessing a service exposed from Minikube on Windows, which requires analyzing the provided context and identifying the relevant information to diagnose the problem."
+  }
+ },
+ {
+  "question_id": "51598467",
+  "source": "stackoverflow",
+  "title": "Kubernetes RBAC - forbidden attempt to grant extra privileges",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solution requires interpreting the Kubernetes RBAC documentation and taxonomy structure to diagnose the issue with privilege escalation prevention and then tracing the effects of the incorrect configuration forward to determine the necessary steps to resolve the issue."
+  }
+ },
+ {
+  "question_id": "62003579",
+  "source": "stackoverflow",
+  "title": "Kubernetes DNS no longer resolving names",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the Kubernetes DNS resolution failure by analyzing the provided symptoms and logs, and then potentially trace the effects of the failure across multiple components."
+  }
+ },
+ {
+  "question_id": "60531350",
+  "source": "stackoverflow",
+  "title": "Kubernetes metrics-server FailedDiscoveryCheck",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the Kubernetes metrics-server FailedDiscoveryCheck error, which involves analyzing symptoms and tracing effects across multiple components, including the metrics-server deployment, service, and API service, to identify the root cause of the issue."
+  }
+ },
+ {
+  "question_id": "23707988",
+  "source": "stackoverflow",
+  "title": "psql can connect to a unix domain socket, but py-postgresql with the same parameters gets 'Permission denied'",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "LONG_CONTEXT_LOCALIZATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the permission denied error by analyzing the system calls and identifying the difference in the path used by psql and py-postgresql."
+  }
+ },
+ {
+  "question_id": "63994701",
+  "source": "stackoverflow",
+  "title": "How Do I Properly Set --kubelet-certificate-authority apiserver parameter?",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The solution requires following a sequence of steps to enable Kubelet authentication and authorization, and then configuring the API server, which involves procedural sequential reasoning, as well as understanding the semantic meaning of the various flags and configurations."
+  }
+ },
+ {
+  "question_id": "57164521",
+  "source": "stackoverflow",
+  "title": "Recover from k8s and helm drift",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "TEMPORAL"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The solution requires determining the correct sequence of remediation steps to recover from k8s and helm drift, involving fetching helm state, checking differences, and applying changes, which also involves understanding the temporal aspect of when changes were made."
+  }
+ },
+ {
+  "question_id": "32968530",
+  "source": "stackoverflow",
+  "title": "HikariCP - connection is not available",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the connection timeout issue from the given symptoms and configuration details, which requires abductive reasoning to diagnose the root cause of the problem."
+  }
+ },
+ {
+  "question_id": "42360356",
+  "source": "stackoverflow",
+  "title": "Docker Redis Connection refused",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The solver needs to understand the multi-container setup and how port bindings work across containers to diagnose the connection refusal issue and apply this knowledge to find the correct solution."
+  }
+ },
+ {
+  "question_id": "28624943",
+  "source": "stackoverflow",
+  "title": "Cannot start service after Elasticsearch upgrade from 1.4.1 to 1.4.4",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "LONG_CONTEXT_LOCALIZATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the Elasticsearch service failure after an upgrade, requiring analysis of logs and error messages to identify the root cause, which involves localizing relevant information within a large context."
+  }
+ },
+ {
+  "question_id": "9064018",
+  "source": "stackoverflow",
+  "title": "How to debug: Internal Error current transaction is aborted, commands ignored until end of transaction block",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solution requires inferring the underlying cause of the error and then following a sequence of steps to debug and identify the faulty SQL statement."
+  }
+ },
+ {
+  "question_id": "306439",
+  "source": "stackoverflow",
+  "title": "debugging postgresql trigger",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.8,
+   "rationale": "The solution requires determining the correct sequence of steps to debug a PostgreSQL trigger, including using specific code and tools, which involves procedural sequential reasoning, with some factual schema retrieval to understand the trigger's definition."
+  }
+ },
+ {
+  "question_id": "66963068",
+  "source": "stackoverflow",
+  "title": "Docker Alpine executable binary not found even if in PATH",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the 'not found' error, which is a dynamic link failure due to the incompatibility between musl libc and glibc, and understand the semantic differences between the two libraries to arrive at the solution."
+  }
+ },
+ {
+  "question_id": "47664889",
+  "source": "stackoverflow",
+  "title": "JDBC batch operations understanding",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding of how batch operations work with Hibernate ORM and PostgreSQL, and the solver must interpret the documentation and source code to determine the correct behavior."
+  }
+ },
+ {
+  "question_id": "59514234",
+  "source": "stackoverflow",
+  "title": "Viewing The Interactive Cypress Test Runner In Docker On Linux",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solver must understand the underlying X Window System and its client-server model to diagnose the issue and apply the correct solution, which involves providing a way for the GUI application in the Docker container to communicate with the X server on the host."
+  }
+ },
+ {
+  "question_id": "51332154",
+  "source": "stackoverflow",
+  "title": "Caused by: java.lang.BootstrapMethodError: java.lang.NoClassDefFoundError: redis/clients/jedis/Tuple - Redis Spring Boot",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the error by analyzing the stacktrace and understanding the dependencies and configurations involved in the Spring Boot application."
+  }
+ },
+ {
+  "question_id": "50985766",
+  "source": "stackoverflow",
+  "title": "How to use Redis with Rails?",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.8,
+   "rationale": "The solver must trace the effects of creating a new Redis connection for each controller request and understand the implications of this approach on the application's performance and scalability."
+  }
+ },
+ {
+  "question_id": "38927895",
+  "source": "stackoverflow",
+  "title": "How do you get debugging symbols working in linux perf tool inside Docker containers?",
+  "v3": {
+   "reasoning_types": [
+    "TEMPORAL",
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The solution requires understanding the causal relationship between the containerized environment, the perf tool, and the host system, and tracing the effects of running perf report with the --symfs flag to resolve the symbolization issue."
+  }
+ },
+ {
+  "question_id": "50468354",
+  "source": "stackoverflow",
+  "title": "KubeDNS error, server misbehaving",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the KubeDNS error by analyzing the symptoms and logs, and then trace the effects forward to understand the impact on the system."
+  }
+ },
+ {
+  "question_id": "41332673",
+  "source": "stackoverflow",
+  "title": "Best way to reduce the size of a custom Docker image",
+  "v3": {
+   "reasoning_types": [
+    "NUMERICAL_QUANTITATIVE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "NUMERICAL_QUANTITATIVE",
+   "confidence": 0.8,
+   "rationale": "The question requires analyzing the size increase of a Docker image and identifying the contributing factors, which involves numerical quantitative reasoning and causal multi-hop forward reasoning to understand the effects of installed packages on image size."
+  }
+ },
+ {
+  "question_id": "25471828",
+  "source": "stackoverflow",
+  "title": "elasticsearch exceptions ConnectionError",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires inferring the most likely underlying cause of the ConnectionError, given the symptoms and error messages, which is a classic example of abductive reasoning for root cause diagnosis."
+  }
+ },
+ {
+  "question_id": "25447869",
+  "source": "stackoverflow",
+  "title": "Logging using elasticsearch-py",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding of the logger hierarchy propagation and how it affects the logging behavior in the provided code snippet, which involves semantic interpretation and classification of the logging concepts."
+  }
+ },
+ {
+  "question_id": "23605060",
+  "source": "stackoverflow",
+  "title": "Parallel execution with StackExchange.Redis?",
+  "v3": {
+   "reasoning_types": [
+    "NUMERICAL_QUANTITATIVE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "NUMERICAL_QUANTITATIVE",
+   "confidence": 0.8,
+   "rationale": "The question requires analyzing performance metrics and optimizing the code for parallel execution, involving numerical computations and causal reasoning about the effects of different approaches on performance."
+  }
+ },
+ {
+  "question_id": "65429877",
+  "source": "stackoverflow",
+  "title": "AWS Lambda Container Running Selenium With Headless Chrome Works Locally But Not In AWS Lambda",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The solver must interpret the documentation and taxonomy structure of AWS Lambda and Docker to understand the issue with the containerized application and identify the correct solution."
+  }
+ },
+ {
+  "question_id": "57739617",
+  "source": "stackoverflow",
+  "title": "Spring Config server not reachable with docker-compose until client is restarted",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "TEMPORAL"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The solution requires tracing the effects of the config-server's availability on the client-server's registration and connection, involving multiple components and temporal considerations."
+  }
+ },
+ {
+  "question_id": "30209776",
+  "source": "stackoverflow",
+  "title": "Docker container will automatically stop after \"docker run -d\"",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the Docker container stopping immediately after running in detached mode, which requires tracing the effects of the default command and the container's behavior."
+  }
+ },
+ {
+  "question_id": "19828385",
+  "source": "stackoverflow",
+  "title": "PG::ConnectionBad - could not connect to server: Connection refused",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must infer the underlying cause of the connection refusal error from the given symptoms and logs, which requires abductive reasoning to diagnose the issue as a stale PID file preventing PostgreSQL from starting."
+  }
+ },
+ {
+  "question_id": "30848670",
+  "source": "stackoverflow",
+  "title": "How to customize the configuration file of the official PostgreSQL Docker image?",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The solution requires determining the correct sequence of steps to customize the PostgreSQL configuration file, including understanding the implications of the volume declaration in the Dockerfile and choosing the appropriate method to apply the configuration changes."
+  }
+ },
+ {
+  "question_id": "13236160",
+  "source": "stackoverflow",
+  "title": "Is there a timeout for idle PostgreSQL connections?",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the concept of idle connections in PostgreSQL and interpreting the provided information to determine the best course of action, which involves semantic interpretation of the database state and configuration."
+  }
+ },
+ {
+  "question_id": "29937378",
+  "source": "stackoverflow",
+  "title": "django.db.utils.OperationalError Could not connect to server",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solution requires inferring the most likely underlying cause of the django.db.utils.OperationalError from the given error message and traceback, which involves diagnosing the potential issues with the PostgreSQL connection."
+  }
+ },
+ {
+  "question_id": "23496546",
+  "source": "stackoverflow",
+  "title": "Start redis-server with config file",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the meaning and usage of Redis configuration files and commands, as well as interpreting the provided configuration file example to determine how to start and stop the Redis server with a custom configuration."
+  }
+ },
+ {
+  "question_id": "57297337",
+  "source": "stackoverflow",
+  "title": "Docker for Desktop Kubernetes Unable to connect to the server: dial tcp [::1]:6445",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the connection error by analyzing the symptoms and the Kubernetes configuration to infer that the issue is due to the wrong context being used, and then trace the effects of changing the context to resolve the issue."
+  }
+ },
+ {
+  "question_id": "10312",
+  "source": "devops",
+  "title": "Automate custom docker image deployment on AWS",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The question requires determining the correct sequence of steps to automate custom Docker image deployment on AWS, involving setting up an environment, starting an instance, and running the image, which involves procedural sequential reasoning, as well as understanding the roles of different AWS ser"
+  }
+ },
+ {
+  "question_id": "11630",
+  "source": "devops",
+  "title": "how to run Docker/Jenkins behind a proxy",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The solution requires understanding the meaning and role of environment variables in Docker and their correct usage, as well as determining the correct sequence of steps to resolve the proxy issue."
+  }
+ },
+ {
+  "question_id": "740",
+  "source": "devops",
+  "title": "How to remove directories and files in another layer using Docker?",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The question requires determining the correct sequence of commands to remove directories and files in a Docker image, involving understanding of Dockerfile instructions and command execution order."
+  }
+ },
+ {
+  "question_id": "5087",
+  "source": "devops",
+  "title": "Kubernetes - unable to login to Dashboard",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The solution requires a sequence of steps to resolve the authentication issue with the Kubernetes Dashboard, involving extracting certificates, creating a service account, and binding a cluster role, which necessitates procedural sequential reasoning and understanding of Kubernetes concepts."
+  }
+ },
+ {
+  "question_id": "10142",
+  "source": "devops",
+  "title": "Using `dig` Ansible module?",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the configuration and behavior of Ansible, specifically how it uses Python interpreters and versions, which involves interpreting documentation and taxonomy structure."
+  }
+ },
+ {
+  "question_id": "10639",
+  "source": "devops",
+  "title": "helm install causes nil pointer",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.8,
+   "rationale": "The solver must diagnose the nil pointer error by analyzing the symptoms and Helm chart configuration to infer the underlying cause, and also perform factual schema retrieval to understand the values.yaml and serviceaccount.yaml files."
+  }
+ },
+ {
+  "question_id": "11420",
+  "source": "devops",
+  "title": "Question on NGINX reverse proxy when there are services on the host and on containers",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.8,
+   "rationale": "The question requires tracing the effects of proxying requests across multiple components, including the host machine and containers, and understanding the role of server_name directives in the container's nginx configuration."
+  }
+ },
+ {
+  "question_id": "9483",
+  "source": "devops",
+  "title": "How can I add an additional IP / hostname to my Kubernetes certificate?",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The solution requires a sequence of steps to regenerate and update the Kubernetes certificate, involving file modifications, certificate generation, and container restarts, which is a procedural and sequential reasoning process."
+  }
+ },
+ {
+  "question_id": "11668",
+  "source": "devops",
+  "title": "Stress testing for docker container",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires interpreting the context of stress testing for a docker container and understanding the role of tools like stress and pumba to simulate heavy load, which involves semantic interpretation and some factual retrieval about the tools and their usage."
+  }
+ },
+ {
+  "question_id": "11078",
+  "source": "devops",
+  "title": "Creating Keycloak Realm via Ansible",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "TEMPORAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the Keycloak REST API documentation and the Ansible playbook to troubleshoot the error and find the correct solution, involving semantic interpretation of the API endpoint and request structure."
+  }
+ },
+ {
+  "question_id": "14179",
+  "source": "devops",
+  "title": "SSL issue while reaching kubernetes dashboard",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The solver must trace the effects of the SSL issue across multiple components, including Traefik and the Kubernetes dashboard, and infer the underlying cause of the problem, which is the verification of the dashboard's TLS certificate by Traefik."
+  }
+ },
+ {
+  "question_id": "13092",
+  "source": "devops",
+  "title": "Terraform variable Validation",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the meaning and role of Terraform variable validation and the correct usage of the alltrue function and for expressions to validate a list of security group IDs."
+  }
+ },
+ {
+  "question_id": "6785",
+  "source": "devops",
+  "title": "How to connect to host during a Docker build?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solver must interpret the concept of 'localhost' in the context of a Docker container and understand how to communicate with the host machine, requiring semantic interpretation and some factual knowledge about Docker configuration."
+  }
+ },
+ {
+  "question_id": "12837",
+  "source": "devops",
+  "title": "Kubernetes configuration with yaml anchors",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the meaning and role of YAML anchors in Kubernetes configuration and interpreting the structure of the provided YAML files to determine the correct approach for reusing repeating blocks."
+  }
+ },
+ {
+  "question_id": "10751",
+  "source": "devops",
+  "title": "Error from server (Forbidden): error when retrieving current configuration of: Resource: \"apps/v1, Resource=deployments\",",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the Forbidden error by analyzing the provided error message, Kubernetes configuration, and GitLab CI/CD pipeline, and then interpret the semantic meaning of the Kubernetes resources and roles to identify the root cause of the issue."
+  }
+ },
+ {
+  "question_id": "3253",
+  "source": "devops",
+  "title": "Nginx reverse proxy setup issues with Docker containers",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.8,
+   "rationale": "The solution requires tracing the effects of Nginx configuration and Docker container networking across multiple components to identify the root cause of the issue, involving semantic interpretation of Docker and Nginx configurations."
+  }
+ },
+ {
+  "question_id": "2731",
+  "source": "devops",
+  "title": "Downloading Docker Images from Docker Hub without using Docker",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "TEMPORAL"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The solution involves a sequence of steps to download a Docker image from Docker Hub without using the Docker client, including obtaining an authorization token, downloading layer blobs, and importing the image into Docker, which requires procedural and temporal reasoning to understand the order of "
+  }
+ },
+ {
+  "question_id": "2967",
+  "source": "devops",
+  "title": "Why are unnamed volumes created when `docker-compose up` is run and do these double after issuing `docker-compose down && docker-compose up`?",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The question requires tracing the effects of running docker-compose up and down on volume creation, involving multiple dependency hops and diagnosing the root cause of the issue with unnamed volumes."
+  }
+ },
+ {
+  "question_id": "9359",
+  "source": "devops",
+  "title": "Gitlab CI error during connect: Get http://docker:2375/v1.40/containers/json?all=1: dial tcp: lookup docker on xx.xx.xx.x:xx: no such host",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the error by analyzing the symptoms and logs, and then trace the effects forward to identify the root cause of the issue, which involves multiple components and dependencies."
+  }
+ },
+ {
+  "question_id": "2159",
+  "source": "devops",
+  "title": "org.jenkinsci.lib.envinject.EnvInjectException: java.io.IOException: remote file operation failed",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the root cause of the EnvInjectException by analyzing the error messages and tracing the effects of the Java JDK installation process to determine why the EnvInject plugin is failing to load the build environment."
+  }
+ },
+ {
+  "question_id": "202",
+  "source": "devops",
+  "title": "Vagrantfile change with Ansible playbook to control file permission on Vagrant synced folder for Trellis",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the structure and configuration of the Vagrantfile and Ansible playbook to modify file permissions, which involves interpreting the documentation and taxonomy of the setup."
+  }
+ },
+ {
+  "question_id": "900",
+  "source": "devops",
+  "title": "How to let build fail when docker image size exceeds certain threshold?",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "NUMERICAL_QUANTITATIVE"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The solution involves determining the correct sequence of operational steps to check the Docker image size and comparing it to a numerical threshold."
+  }
+ },
+ {
+  "question_id": "10894",
+  "source": "devops",
+  "title": "Including vault-encrypted variables in a task",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The solver must interpret the error message, understand the Ansible vault format, and classify the issue as a formatting problem to determine the correct solution."
+  }
+ },
+ {
+  "question_id": "8369",
+  "source": "devops",
+  "title": "Terraform | The \"count\" object can be used only in \"resource\" and \"data\" blocks,",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solution requires understanding the meaning and role of the 'count' object in Terraform, as well as interpreting the structure of the resource blocks to resolve the error."
+  }
+ },
+ {
+  "question_id": "5237",
+  "source": "devops",
+  "title": "How to pull all alternative tags of a Docker image?",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "TEMPORAL"
+   ],
+   "primary_type": "FACTUAL_SCHEMA_RETRIEVAL",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding of Docker commands and image management, involving lookup of specific fields and values, as well as reasoning about the timing and versioning of images."
+  }
+ },
+ {
+  "question_id": "11476",
+  "source": "devops",
+  "title": "Terraform fails to modify DNS settings a recently created VPC Peering connection because it is not yet active",
+  "v3": {
+   "reasoning_types": [
+    "TEMPORAL",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "TEMPORAL",
+   "confidence": 0.9,
+   "rationale": "The problem requires understanding the temporal dependency between the creation of a VPC peering connection and the activation of the connection, as well as the causal relationship between the connection's status and the ability to modify its DNS settings."
+  }
+ },
+ {
+  "question_id": "17429",
+  "source": "devops",
+  "title": "How do I find out the attributes of a terraform object?",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "FACTUAL_SCHEMA_RETRIEVAL",
+   "confidence": 0.9,
+   "rationale": "The question requires locating the attributes of a Terraform object, which involves looking up the schema or structural facts stated in the provider documentation or using the terraform console to inspect the object's type and attributes."
+  }
+ },
+ {
+  "question_id": "9546",
+  "source": "devops",
+  "title": "How to resolve the dependencies while installing locally downloaded packages?",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The question requires tracing the effects of dependency installation forward across multiple components and diagnosing the underlying cause of the installation error, involving multiple hops of dependency resolution."
+  }
+ },
+ {
+  "question_id": "12942",
+  "source": "devops",
+  "title": "Use a volume or copy my artefacts into docker image",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the best practice for dockerizing a PHP application and deploying it in production, involving semantic interpretation of Docker concepts and causal reasoning about the effects of using COPY vs volumes."
+  }
+ },
+ {
+  "question_id": "13939",
+  "source": "devops",
+  "title": "How to allow a non-root user to write to a mounted EFS in EKS",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the configuration and permissions of EFS in EKS, as well as the correct sequence of steps to allow non-root users to write to the mounted file system."
+  }
+ },
+ {
+  "question_id": "1682",
+  "source": "devops",
+  "title": "Why does the datasource \"external\" always fail?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solver must interpret the documentation and taxonomy structure of the Terraform configuration and the AWS CLI command to understand the cause of the error and determine the correct solution, which involves modifying the command and its execution context."
+  }
+ },
+ {
+  "question_id": "5473",
+  "source": "devops",
+  "title": "Automating the creation of an Apache virtual-host file specifically",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the context and meaning of automating Apache virtual-host file creation, and identifying the most suitable approach, which involves interpreting the user's script and the capabilities of Apache and Docker."
+  }
+ },
+ {
+  "question_id": "9665",
+  "source": "devops",
+  "title": "How to specify specific subnet in Terraform when using for each",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding of Terraform syntax and semantics to resolve the issue of referencing a specific subnet in a for_each loop, involving interpretation of documentation and taxonomy structure."
+  }
+ },
+ {
+  "question_id": "18576",
+  "source": "devops",
+  "title": "Creating a cmd task with all the private ip address details collected from gather_facts",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding of Ansible playbook syntax and variables, as well as the ability to interpret the structure of the provided code to determine how to extract and use private IP addresses from multiple hosts."
+  }
+ },
+ {
+  "question_id": "8937",
+  "source": "devops",
+  "title": "Terraform | Upgrade to 0.12 error Reference to \"count\" in non-counted context",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solver must interpret the error message, understand the context of Terraform 0.12 upgrade, and classify the issue as a misuse of the 'count' object, requiring semantic interpretation of the documentation and schema."
+  }
+ },
+ {
+  "question_id": "13549",
+  "source": "devops",
+  "title": "Problem with Ansible Asynchronous actions",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The solution requires determining the correct sequence of remediation steps to orchestrate the use-case, involving understanding the roles of Task A and Task B and their dependencies."
+  }
+ },
+ {
+  "question_id": "11719",
+  "source": "devops",
+  "title": "Why I cannot access k3s service from pod in rasbian?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.8,
+   "rationale": "The solver must diagnose the underlying cause of the service accessibility issue, tracing the effects of the service configuration across multiple components and dependencies."
+  }
+ },
+ {
+  "question_id": "4864",
+  "source": "devops",
+  "title": "Why use EXPOSE in Dockerfile -- since you can bind to all ports anyways",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the purpose and functionality of the EXPOSE instruction in a Dockerfile, which involves interpreting documentation and taxonomy structure."
+  }
+ },
+ {
+  "question_id": "1957",
+  "source": "devops",
+  "title": "Running the docker daemon without root",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the security implications of running the Docker daemon and containers, and interpreting the security boundaries and potential vulnerabilities in a Docker environment, which involves semantic interpretation and causal reasoning to trace potential security risks."
+  }
+ },
+ {
+  "question_id": "2980",
+  "source": "devops",
+  "title": "Why is environment variable mangled in docker compose environment file",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires diagnosing the underlying cause of the mangled environment variable, involving interpretation of the Docker Compose configuration and the environment file."
+  }
+ },
+ {
+  "question_id": "3488",
+  "source": "devops",
+  "title": "How do I provision a Windows Docker container with Ansible?",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The question requires determining the correct sequence of steps to provision a Windows Docker container with Ansible, involving understanding the roles of various tools and technologies, such as Packer, Ansible, and WinRM."
+  }
+ },
+ {
+  "question_id": "11900",
+  "source": "devops",
+  "title": "Jenkins cron works only for the 1st line",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solver must interpret the cron job syntax and its implications on job execution, as well as understand the causal relationship between the job scheduling and the observed behavior of only the first job running."
+  }
+ },
+ {
+  "question_id": "885",
+  "source": "devops",
+  "title": "Cleanest way to prematurely exit a Jenkins Pipeline job as a success?",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The question requires determining the correct sequence of operational steps to exit a Jenkins Pipeline job as a success, involving procedural reasoning and understanding of Jenkins pipeline semantics."
+  }
+ },
+ {
+  "question_id": "11967",
+  "source": "devops",
+  "title": "how to set a variable from an ini file in ansible?",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The solver must interpret the Ansible documentation and understand how to use the ini lookup plugin and set_fact module to set a variable from an ini file, which requires understanding the roles of different components and their interactions."
+  }
+ },
+ {
+  "question_id": "4616",
+  "source": "devops",
+  "title": "Amazon EKS from local kubectl does not cache MFA token/session",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding of AWS configuration and authentication mechanisms, as well as the differences between aws-cli and kubectl, to diagnose the issue with MFA token caching."
+  }
+ },
+ {
+  "question_id": "15345",
+  "source": "devops",
+  "title": "How to run short-lived command using kubectl",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the behavior of kubectl and the meaning of its options, as well as looking up the correct option to achieve the desired outcome."
+  }
+ },
+ {
+  "question_id": "15931",
+  "source": "devops",
+  "title": "In Ansible, how do I assign a hostvar to a playbook's host?",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The solution requires understanding Ansible's variable interpolation and host pattern matching, which involves interpreting the documentation structure and classifying the entity 'hostvars' to resolve the issue."
+  }
+ },
+ {
+  "question_id": "2506",
+  "source": "devops",
+  "title": "Docker In Kubernetes Deployment",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solver must interpret the Kubernetes deployment configuration and understand the role of volumes and securityContext to resolve the issue of mounting /var/run/docker.sock as a volume in a deployment yaml."
+  }
+ },
+ {
+  "question_id": "1237",
+  "source": "devops",
+  "title": "How do I configure SSH keys in a Vagrant multi-machine setup?",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The question requires determining the correct sequence of steps to configure SSH keys in a Vagrant multi-machine setup and understanding the roles of different components in the setup."
+  }
+ },
+ {
+  "question_id": "764",
+  "source": "devops",
+  "title": "What are the correct permission settings when running Docker in a Jenkins Pipeline?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The question requires understanding the role of user permissions and sudo settings in a Docker-Jenkins pipeline, and the solution involves interpreting the sudoers file structure and its implications on passwordless sudo for the Jenkins user."
+  }
+ },
+ {
+  "question_id": "15842",
+  "source": "devops",
+  "title": "Kubernetes container networking between pods",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding of Kubernetes concepts, such as Services and Pods, and how they interact with each other, which involves semantic interpretation of the Kubernetes architecture and schema."
+  }
+ },
+ {
+  "question_id": "1490",
+  "source": "devops",
+  "title": "How to configure gitlab-runner to run in the same docker host as gitlab?",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The solution requires understanding the configuration and behavior of gitlab-runner in a docker container, including the mounting of volumes and the default values of configuration options, to diagnose and fix the issue."
+  }
+ },
+ {
+  "question_id": "735",
+  "source": "devops",
+  "title": "Ansible expected paths error",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solution requires understanding the structure of the Ansible roles and files, as well as the semantics of the copy task, to diagnose the issue with the expected paths."
+  }
+ },
+ {
+  "question_id": "2209",
+  "source": "devops",
+  "title": "Why is Jenkins unable to read config.xml?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the symptom of Jenkins being unable to read config.xml and infer the likely cause, such as a syntax error, and then determine the correct sequence of remediation steps to recover from the issue."
+  }
+ },
+ {
+  "question_id": "3514",
+  "source": "devops",
+  "title": "Why does Helm time out on almost every action?",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of Helm timeouts by analyzing symptoms and tracing effects across multiple components, including Kubernetes cluster configuration and node networking."
+  }
+ },
+ {
+  "question_id": "12411",
+  "source": "devops",
+  "title": "ansible error: skipping: no hosts matched",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solution requires understanding the meaning and role of 'hosts: all' in the playbook and how it relates to the implicit localhost, as well as knowing the correct configuration and inventory settings to match localhost."
+  }
+ },
+ {
+  "question_id": "2526",
+  "source": "devops",
+  "title": "Interference of Docker CMD with su: works with su-exec but not with su?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solver must interpret the documentation of su and su-exec commands, as well as the error messages, to understand the correct order of arguments and options, and classify the difference between su and su-exec."
+  }
+ },
+ {
+  "question_id": "3075",
+  "source": "devops",
+  "title": "What's missing from this simple recipe that creates a user?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "ABDUCTIVE_ROOT_CAUSE"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must interpret the symptoms of the failed login and the provided recipe to abductively infer the most likely cause, which is a permissions issue with the ~/.ssh directory."
+  }
+ },
+ {
+  "question_id": "3408",
+  "source": "devops",
+  "title": "How can I get terraforms extern to execute `ssh-keygen -y -f ~/.ssh/id_rsa`?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the meaning and role of Terraform's external data provider and its alternatives, such as the tls_public_key data provider, to solve the problem of generating an OpenSSH public key from a private key."
+  }
+ },
+ {
+  "question_id": "8409",
+  "source": "devops",
+  "title": "How to forcibly remove the resource created by the broken module?",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The solution requires determining the correct sequence of operational steps to forcibly remove resources and edit the state file, which involves procedural sequential reasoning, along with some factual schema retrieval to understand the Terraform commands and state file structure."
+  }
+ },
+ {
+  "question_id": "3648",
+  "source": "devops",
+  "title": "Deploy to server after merge to master branch",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The question requires determining the correct sequence of operational steps to ensure deployment to the production server only after the merge request has been accepted, involving conditional builds and stages in Travis CI."
+  }
+ },
+ {
+  "question_id": "8571",
+  "source": "devops",
+  "title": "Volumes Not Mounting with Docker-Compose",
+  "v3": {
+   "reasoning_types": [
+    "CAUSAL_MULTIHOP_FORWARD",
+    "TEMPORAL"
+   ],
+   "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+   "confidence": 0.9,
+   "rationale": "The solution requires tracing the effects of docker-compose volume management and understanding the causal relationships between volume names, project names, and data persistence across multiple steps and components."
+  }
+ },
+ {
+  "question_id": "10598",
+  "source": "devops",
+  "title": "Can't make MySQL 5.7 work with Docker Compose, no matter what",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The solver must diagnose the underlying cause of the access denied error by analyzing the symptoms and the provided docker-compose configuration, and then trace the effects of the existing MySQL filesystem on the container's behavior."
+  }
+ },
+ {
+  "question_id": "4153",
+  "source": "devops",
+  "title": "problems running Ansible with become on domain-connected Windows Server",
+  "v3": {
+   "reasoning_types": [
+    "ABDUCTIVE_ROOT_CAUSE",
+    "CAUSAL_MULTIHOP_FORWARD"
+   ],
+   "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+   "confidence": 0.9,
+   "rationale": "The question requires inferring the underlying cause of the error message and tracing the effects of group policy settings on the Ansible become method, involving multiple dependency hops and symptom diagnosis."
+  }
+ },
+ {
+  "question_id": "8548",
+  "source": "devops",
+  "title": "npm not found but installed from the shell script file in Dockerfile",
+  "v3": {
+   "reasoning_types": [
+    "FACTUAL_SCHEMA_RETRIEVAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the difference in shell environments and how it affects the installation and availability of npm, which involves interpreting the documentation and taxonomy of Dockerfile directives and shell scripts."
+  }
+ },
+ {
+  "question_id": "8977",
+  "source": "devops",
+  "title": "Terraform | After upgrading to 0.12 receive a lots of error \"unsupported value for \"%s\" at 0: string required.\"",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The solution requires understanding the meaning and structure of Terraform configuration and the implications of the upgrade to version 0.12, including the change in handling list variables."
+  }
+ },
+ {
+  "question_id": "2859",
+  "source": "devops",
+  "title": "Jenkins - sending email after build with the build version as a subject",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "FACTUAL_SCHEMA_RETRIEVAL"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The question requires determining the correct sequence of steps to load dynamic data into the email plugin in Jenkins, involving scripting and plugin configuration."
+  }
+ },
+ {
+  "question_id": "6694",
+  "source": "devops",
+  "title": "error validating data: ValidationError(Deployment): unknown field \"spec\" in",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "LONG_CONTEXT_LOCALIZATION"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.8,
+   "rationale": "The solver must interpret the YAML file structure and identify the issue with the indentation, which requires understanding the semantic meaning of YAML formatting and localizing the specific part of the file causing the error."
+  }
+ },
+ {
+  "question_id": "2027",
+  "source": "devops",
+  "title": "How to connect to external etcd server inside of docker container (python application)?",
+  "v3": {
+   "reasoning_types": [
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+    "PROCEDURAL_SEQUENTIAL"
+   ],
+   "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+   "confidence": 0.9,
+   "rationale": "The question requires understanding the meaning of connecting to an external etcd server from a docker container and classifying the solution as using the host network driver, as well as sequentially applying the correct docker run command to achieve this connection."
+  }
+ },
+ {
+  "question_id": "4161",
+  "source": "devops",
+  "title": "Join a Linux Docker swarm with a local Windows Docker for test purposes",
+  "v3": {
+   "reasoning_types": [
+    "PROCEDURAL_SEQUENTIAL",
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+   ],
+   "primary_type": "PROCEDURAL_SEQUENTIAL",
+   "confidence": 0.9,
+   "rationale": "The solution requires understanding the problem context and sequentially applying a series of steps to establish a connection between the Linux Docker swarm and the local Windows Docker, involving procedural reasoning to resolve the issue."
+  }
+ }
+]

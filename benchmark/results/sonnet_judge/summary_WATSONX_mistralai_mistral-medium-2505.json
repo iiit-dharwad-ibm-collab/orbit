@@ -1,0 +1,252 @@
+{
+  "model": "mistralai/mistral-medium-2505",
+  "service": "WATSONX",
+  "dataset": "combined_export.fixed.json",
+  "n": 665,
+  "errors": 3,
+  "overall_acc": 0.283987915407855,
+  "by_qtype": {
+    "open": {
+      "n": 532,
+      "acc": 0.3314500941619586
+    },
+    "troubleshooting": {
+      "n": 133,
+      "acc": 0.0916030534351145
+    }
+  },
+  "by_domain": {
+    "DP": {
+      "n": 112,
+      "acc": 0.09174311926605505
+    },
+    "ansible": {
+      "n": 2,
+      "acc": 1.0
+    },
+    "argocd": {
+      "n": 2,
+      "acc": 0.5
+    },
+    "aws": {
+      "n": 2,
+      "acc": 0.5
+    },
+    "azure": {
+      "n": 2,
+      "acc": 0.0
+    },
+    "cert": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "cloudflare": {
+      "n": 2,
+      "acc": 0.5
+    },
+    "cloudwatch": {
+      "n": 1,
+      "acc": 1.0
+    },
+    "consul": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "containerd": {
+      "n": 2,
+      "acc": 1.0
+    },
+    "dhcp": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "dns": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "docker": {
+      "n": 2,
+      "acc": 0.5
+    },
+    "ecs": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "eks": {
+      "n": 1,
+      "acc": 1.0
+    },
+    "elasticsearch": {
+      "n": 2,
+      "acc": 0.5
+    },
+    "etcd": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "fluentbit": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "fluentd": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "flux": {
+      "n": 2,
+      "acc": 0.0
+    },
+    "gcp": {
+      "n": 2,
+      "acc": 0.5
+    },
+    "gitlab": {
+      "n": 2,
+      "acc": 0.0
+    },
+    "grafana": {
+      "n": 1,
+      "acc": 1.0
+    },
+    "haproxy": {
+      "n": 2,
+      "acc": 0.5
+    },
+    "iam": {
+      "n": 1,
+      "acc": 1.0
+    },
+    "istio": {
+      "n": 2,
+      "acc": 0.0
+    },
+    "jaeger": {
+      "n": 1,
+      "acc": 1.0
+    },
+    "jenkins": {
+      "n": 2,
+      "acc": 0.0
+    },
+    "kafka": {
+      "n": 99,
+      "acc": 0.5959595959595959
+    },
+    "kubernetes": {
+      "n": 2,
+      "acc": 0.0
+    },
+    "lambda": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "linkerd": {
+      "n": 2,
+      "acc": 0.0
+    },
+    "linux": {
+      "n": 2,
+      "acc": 0.5
+    },
+    "logstash": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "loki": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "mongodb": {
+      "n": 2,
+      "acc": 0.0
+    },
+    "mysql": {
+      "n": 2,
+      "acc": 1.0
+    },
+    "nginx": {
+      "n": 1,
+      "acc": 1.0
+    },
+    "ntp": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "opensearch": {
+      "n": 2,
+      "acc": 0.0
+    },
+    "openshift": {
+      "n": 2,
+      "acc": 0.5
+    },
+    "otel": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "postgresql": {
+      "n": 101,
+      "acc": 0.6633663366336634
+    },
+    "prometheus": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "rabbitmq": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "rds": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "redis": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "rv": {
+      "n": 175,
+      "acc": 0.005714285714285714
+    },
+    "s": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "systemd": {
+      "n": 2,
+      "acc": 0.5
+    },
+    "tempo": {
+      "n": 1,
+      "acc": 1.0
+    },
+    "terraform": {
+      "n": 2,
+      "acc": 0.0
+    },
+    "tls": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "traefik": {
+      "n": 2,
+      "acc": 0.5
+    },
+    "trino": {
+      "n": 100,
+      "acc": 0.26
+    },
+    "vault": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "vpc": {
+      "n": 1,
+      "acc": 0.0
+    },
+    "windows": {
+      "n": 2,
+      "acc": 0.5
+    }
+  }
+}

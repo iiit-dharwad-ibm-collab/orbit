@@ -1,0 +1,293 @@
+[
+  {
+    "question": "If a user specifies a 'type' discriminator as 'EXPRESSION' in the universal_tagFilterExpressionElement_Input, what is the required field that determines how the nested universal_tagFilterExpressionElement_Inputs in the 'elements' array are logically combined?",
+    "A": "operator",
+    "B": "logicalOperator",
+    "C": "entity",
+    "D": "name",
+    "answer": "B",
+    "reasoning_thought": "To answer this question, we need to follow two hops of relationships. First, we need to understand the 'type' discriminator in the universal_tagFilterExpressionElement_Input and how it affects the fields that are valid. When 'type' is 'EXPRESSION', the valid fields include 'elements' and 'logicalOperator'. Then, we need to consider the purpose of the 'elements' field, which is an array of nested universal_tagFilterExpressionElement_Inputs, and how these are combined. The field that determines how these nested inputs are logically combined is the 'logicalOperator'.",
+    "solution": "The 'logicalOperator' field is required when the 'type' discriminator is 'EXPRESSION', and it determines how the nested universal_tagFilterExpressionElement_Inputs in the 'elements' array are logically combined.",
+    "_meta": {
+      "target_type": "CAUSAL_MULTIHOP_FORWARD",
+      "source": "itopsgraph_docs",
+      "seed_doc": "wiki_pages/Type_instana_universal_tagFilterExpressionElement_Input.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "CAUSAL_MULTIHOP_FORWARD",
+          "FACTUAL_SCHEMA_RETRIEVAL"
+        ],
+        "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+        "confidence": 0.9,
+        "rationale": "The question requires tracing two hops of relationships to determine the required field based on the 'type' discriminator and its effect on the 'elements' array."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "If a user revokes their existing API key, what will be the impact on the PackageDetailsCollection?",
+    "A": "The PackageDetailsCollection will be updated with the new API key",
+    "B": "The PackageDetailsCollection will no longer be accessible",
+    "C": "The PackageDetailsCollection will remain unchanged",
+    "D": "The PackageDetailsCollection will be deleted",
+    "answer": "B",
+    "reasoning_thought": "To answer this question, we need to chain at least two mapping/relationship hops. First, we know that concert.ApiKeyDate maps to concert.IssueLink, concert.PackageDetailsCollection, and unknown.updated. Since revoking an API key affects the ApiKeyDate, we need to find a connection between ApiKeyDate and PackageDetailsCollection. We see that both ApiKeyDate and PackageDetailsCollection are mapped by ReAct (Granite), ReAct (Llama), and ReAct (Mistral). Additionally, we know that revoking an API key deactivates it and makes it no longer work for authenticating API requests. Since PackageDetailsCollection is related to ApiKeyDate, and ApiKeyDate is affected by revoking the API key, it is reasonable to conclude that the PackageDetailsCollection will no longer be accessible with the revoked API key.",
+    "solution": "The correct answer is B, as the PackageDetailsCollection will no longer be accessible with the revoked API key.",
+    "_meta": {
+      "target_type": "CAUSAL_MULTIHOP_FORWARD",
+      "source": "itopsgraph_docs",
+      "seed_doc": "wiki_pages/Type_concert_ApiKeyDate.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "CAUSAL_MULTIHOP_FORWARD"
+        ],
+        "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+        "confidence": 0.9,
+        "rationale": "The question requires tracing the effects of revoking an API key on the PackageDetailsCollection, involving multiple dependency hops and relationships between ApiKeyDate and PackageDetailsCollection."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "If the query_findActiveMobileAppAlertConfigs_items_rule_aggregation type is used with the P50 field, what is the corresponding field in the ns1/Aggregation type that it maps to?",
+    "A": "max",
+    "B": "avg",
+    "C": "p50",
+    "D": "min",
+    "answer": "C",
+    "reasoning_thought": "To answer this question, we need to follow the cross-product type mappings from the query_findActiveMobileAppAlertConfigs_items_rule_aggregation type to the ns1/Aggregation type. According to the documentation, the query_findActiveMobileAppAlertConfigs_items_rule_aggregation type maps to ns1/Aggregation via schema_mapping. Then, we need to look at the field mappings between the two types. The P50 field in query_findActiveMobileAppAlertConfigs_items_rule_aggregation maps to the p50 field in ns1/Aggregation.",
+    "solution": "By chaining the type mapping and then the field mapping, we can determine that the P50 field in query_findActiveMobileAppAlertConfigs_items_rule_aggregation corresponds to the p50 field in ns1/Aggregation.",
+    "_meta": {
+      "target_type": "CAUSAL_MULTIHOP_FORWARD",
+      "source": "itopsgraph_docs",
+      "seed_doc": "wiki_pages/Type_instana_query_findActiveMobileAppAlertConfigs_items_rule_aggregation.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "FACTUAL_SCHEMA_RETRIEVAL"
+        ],
+        "primary_type": "FACTUAL_SCHEMA_RETRIEVAL",
+        "confidence": 1.0,
+        "rationale": "The question requires locating an exact field mapping stated in the schema documentation, which is a straightforward lookup task."
+      },
+      "type_match": false
+    }
+  },
+  {
+    "question": "If an EC2 instance has been running for 30 days and its utilization is measured in terms of 'Days Alive', what would be the utilization metric if the instance was initially launched 15 days ago and then stopped for 5 days before being restarted?",
+    "A": "20",
+    "B": "30",
+    "C": "25",
+    "D": "40",
+    "answer": "C",
+    "reasoning_thought": "To calculate the utilization metric 'Days Alive', we need to consider the total number of days the instance has been running. The instance was initially launched 15 days ago, but it was stopped for 5 days. Therefore, the total number of days it has been running is 15 - 5 = 10 days. However, the question also states that the instance has been running for 30 days in total, which means it was running for 20 days before it was stopped and restarted. So, the total 'Days Alive' would be 20 + 5 (days it was running after restart) = 25 days.",
+    "solution": "Calculate the total number of days the instance has been running by subtracting the days it was stopped from the total days it was launched, and then add the days it was running after restart.",
+    "_meta": {
+      "target_type": "NUMERICAL_QUANTITATIVE",
+      "source": "itopsgraph_docs",
+      "seed_doc": "glossary/cloudability_utlization_dimensions_and_metrics.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "NUMERICAL_QUANTITATIVE",
+          "TEMPORAL"
+        ],
+        "primary_type": "NUMERICAL_QUANTITATIVE",
+        "confidence": 0.9,
+        "rationale": "The question requires numerical calculations to determine the utilization metric based on the instance's runtime and downtime, involving quantitative reasoning and temporal considerations."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "If the total cost for an AWS account is $1000 and the cost for the 'General Purpose' instance category is $300, what percentage of the total cost is spent on 'General Purpose' instances?",
+    "A": "20%",
+    "B": "30%",
+    "C": "40%",
+    "D": "50%",
+    "answer": "B",
+    "reasoning_thought": "To find the percentage of the total cost spent on 'General Purpose' instances, we need to divide the cost of 'General Purpose' instances by the total cost and multiply by 100. This requires a quantitative comparison and calculation.",
+    "solution": "Percentage = (Cost of 'General Purpose' instances / Total cost) * 100 = ($300 / $1000) * 100 = 30%",
+    "_meta": {
+      "target_type": "NUMERICAL_QUANTITATIVE",
+      "source": "itopsgraph_docs",
+      "seed_doc": "glossary/cloudability_cost_dimensions_and_metrics.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "NUMERICAL_QUANTITATIVE"
+        ],
+        "primary_type": "NUMERICAL_QUANTITATIVE",
+        "confidence": 1.0,
+        "rationale": "This question requires numerical reasoning to calculate the percentage of total cost spent on 'General Purpose' instances through a quantitative comparison and calculation."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "If the total cost for an AWS account is $1000 and the cost for the 'General Purpose' instance category is $300, what percentage of the total cost is spent on 'General Purpose' instances?",
+    "A": "20%",
+    "B": "30%",
+    "C": "40%",
+    "D": "50%",
+    "answer": "B",
+    "reasoning_thought": "To find the percentage of the total cost spent on 'General Purpose' instances, we need to divide the cost of 'General Purpose' instances by the total cost and multiply by 100. This requires a quantitative comparison and calculation.",
+    "solution": "Percentage = (Cost of 'General Purpose' instances / Total cost) * 100 = ($300 / $1000) * 100 = 30%",
+    "_meta": {
+      "target_type": "NUMERICAL_QUANTITATIVE",
+      "source": "itopsgraph_docs",
+      "seed_doc": "glossary/cloudability_cost_dimensions_and_metrics.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "NUMERICAL_QUANTITATIVE"
+        ],
+        "primary_type": "NUMERICAL_QUANTITATIVE",
+        "confidence": 1.0,
+        "rationale": "This question requires numerical reasoning to calculate the percentage of total cost spent on 'General Purpose' instances through a quantitative comparison and calculation."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "To configure a new website and update its geo location configuration, what is the correct order of operations?",
+    "A": "Configure new website, Get configured websites, Update geo location configuration for website",
+    "B": "Get configured websites, Configure new website, Update geo location configuration for website",
+    "C": "Update geo location configuration for website, Configure new website, Get configured websites",
+    "D": "Configure new website, Update geo location configuration for website, Get configured websites",
+    "answer": "D",
+    "reasoning_thought": "To determine the correct order of operations, we need to consider the logical sequence of steps. First, we need to configure a new website. After configuring the website, we can update its geo location configuration. Finally, we can retrieve the list of configured websites to verify the changes. This sequence ensures that the website exists before updating its configuration and that the updated configuration is reflected in the list of configured websites.",
+    "solution": "The correct order of operations is to configure the new website, update its geo location configuration, and then retrieve the list of configured websites.",
+    "_meta": {
+      "target_type": "PROCEDURAL_SEQUENTIAL",
+      "source": "itopsgraph_docs",
+      "seed_doc": "product_docs/instana/instana_Applications.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "PROCEDURAL_SEQUENTIAL"
+        ],
+        "primary_type": "PROCEDURAL_SEQUENTIAL",
+        "confidence": 1.0,
+        "rationale": "The question requires determining the correct sequence of operational steps to configure a new website and update its geo location configuration."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "To configure a new website and update its geo location configuration, what is the correct order of operations?",
+    "A": "Configure new website, Get geo location configuration for website, Update geo location configuration for website",
+    "B": "Get geo location configuration for website, Configure new website, Update geo location configuration for website",
+    "C": "Update geo location configuration for website, Configure new website, Get geo location configuration for website",
+    "D": "Get geo location configuration for website, Update geo location configuration for website, Configure new website",
+    "answer": "A",
+    "reasoning_thought": "To configure a new website and update its geo location configuration, one must first create the website, then retrieve its current geo location configuration to know what needs to be updated, and finally update the geo location configuration. This sequence is logical because you cannot update a configuration for a non-existent entity, and retrieving the current configuration before updating is a prudent step to ensure the update is done correctly.",
+    "solution": "The correct sequence is to first configure the new website, then get its current geo location configuration, and finally update the geo location configuration.",
+    "_meta": {
+      "target_type": "PROCEDURAL_SEQUENTIAL",
+      "source": "itopsgraph_docs",
+      "seed_doc": "product_docs/instana/instana_Websites_Mobile_Apps.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "PROCEDURAL_SEQUENTIAL"
+        ],
+        "primary_type": "PROCEDURAL_SEQUENTIAL",
+        "confidence": 1.0,
+        "rationale": "The question requires determining the correct sequence of operational steps to configure a new website and update its geo location configuration."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "To configure a new website, what is the correct order of operations?",
+    "A": "Get configured websites, Configure new website, Update geo location configuration for website",
+    "B": "Get geo location configuration for website, Configure new website, Get configured websites",
+    "C": "Get custom geo mapping rules for website, Configure new website, Get configured websites",
+    "D": "Get configured websites, Update geo location configuration for website, Configure new website",
+    "answer": "A",
+    "reasoning_thought": "To configure a new website, one must first know what websites are already configured to avoid conflicts or duplicates, then configure the new website, and finally update any necessary configurations such as geo location. This sequence ensures that the configuration process is informed by existing settings and that the new website is properly set up and customized.",
+    "solution": "The correct sequence starts with retrieving a list of configured websites to understand the current state, followed by configuring the new website, and then updating the geo location configuration as needed for the new website.",
+    "_meta": {
+      "target_type": "PROCEDURAL_SEQUENTIAL",
+      "source": "itopsgraph_docs",
+      "seed_doc": "product_docs/instana/instana_Settings.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "PROCEDURAL_SEQUENTIAL",
+          "TEMPORAL"
+        ],
+        "primary_type": "PROCEDURAL_SEQUENTIAL",
+        "confidence": 0.9,
+        "rationale": "The question requires determining the correct sequence of operational steps to configure a new website, which involves understanding the order of events and procedures."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "What is the correct order of operations when adding a new website configuration using the Instana REST API?",
+    "A": "Get website tag catalog, Configure new website, Get all existing website tags",
+    "B": "Get all existing website tags, Configure new website, Get website tag catalog",
+    "C": "Configure new website, Get website tag catalog, Get all existing website tags",
+    "D": "Get website tag catalog, Get all existing website tags, Configure new website",
+    "answer": "D",
+    "reasoning_thought": "To add a new website configuration, one would first need to understand the available tags (Get website tag catalog) and then know the existing tags (Get all existing website tags) before actually configuring the new website (Configure new website). This order makes sense because you would want to know what tags are available and which ones are already in use before setting up a new website.",
+    "solution": "The correct order is to first get the available tags (Get website tag catalog), then get the existing tags (Get all existing website tags), and finally configure the new website (Configure new website).",
+    "_meta": {
+      "target_type": "TEMPORAL",
+      "source": "itopsgraph_docs",
+      "seed_doc": "product_docs/instana/instana_Applications.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "PROCEDURAL_SEQUENTIAL"
+        ],
+        "primary_type": "PROCEDURAL_SEQUENTIAL",
+        "confidence": 1.0,
+        "rationale": "The question requires determining the correct sequence of operational steps to add a new website configuration using the Instana REST API."
+      },
+      "type_match": false
+    }
+  },
+  {
+    "question": "What is the order of operations when configuring a new website in the Instana REST API?",
+    "A": "Get configured websites, Configure new website, Get website tag catalog",
+    "B": "Get website tag catalog, Configure new website, Get configured websites",
+    "C": "Configure new website, Get configured websites, Get website tag catalog",
+    "D": "Get configured websites, Get website tag catalog, Update geo location configuration for website",
+    "answer": "B",
+    "reasoning_thought": "To determine the correct order of operations, we need to analyze the API endpoints related to website configuration. The correct order is to first retrieve the available tags for the website (Get website tag catalog), then configure the new website (Configure new website), and finally retrieve the list of configured websites (Get configured websites). This order makes sense because you would want to know the available tags before configuring a new website, and then verify that the new website is correctly configured by retrieving the list of configured websites.",
+    "solution": "The correct order of operations is to retrieve the website tag catalog, then configure the new website, and finally retrieve the list of configured websites.",
+    "_meta": {
+      "target_type": "TEMPORAL",
+      "source": "itopsgraph_docs",
+      "seed_doc": "product_docs/instana/instana_Websites_Mobile_Apps.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "PROCEDURAL_SEQUENTIAL"
+        ],
+        "primary_type": "PROCEDURAL_SEQUENTIAL",
+        "confidence": 1.0,
+        "rationale": "The question requires determining the correct sequence of operational steps for configuring a new website in the Instana REST API."
+      },
+      "type_match": false
+    }
+  },
+  {
+    "question": "According to the Instana REST API documentation, which of the following operations can be performed on an existing website configuration?",
+    "A": "Only add, update, and delete",
+    "B": "Only create, update, and remove",
+    "C": "Add, update, delete, rename, and update geo location configuration",
+    "D": "Create, update, delete, and clear source map files",
+    "answer": "C",
+    "reasoning_thought": "To answer this question, we need to analyze the provided documentation and identify the operations that can be performed on an existing website configuration. We can see that there are endpoints for updating (Update website), deleting (Remove website), renaming (Rename website), and updating geo location configuration (Update geo location configuration for website). Therefore, option C is the correct answer because it includes all these operations.",
+    "solution": "Option C is the correct answer because it includes all the operations that can be performed on an existing website configuration, such as add, update, delete, rename, and update geo location configuration.",
+    "_meta": {
+      "target_type": "TEMPORAL",
+      "source": "itopsgraph_docs",
+      "seed_doc": "product_docs/instana/instana_Settings.html",
+      "v3_classified": {
+        "reasoning_types": [
+          "FACTUAL_SCHEMA_RETRIEVAL"
+        ],
+        "primary_type": "FACTUAL_SCHEMA_RETRIEVAL",
+        "confidence": 1.0,
+        "rationale": "The question requires locating specific operations that can be performed on an existing website configuration, which involves looking up exact fields or endpoints in the Instana REST API documentation."
+      },
+      "type_match": false
+    }
+  }
+]

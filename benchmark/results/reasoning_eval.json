@@ -1,0 +1,216 @@
+{
+  "pool_sizes": {
+    "FACTUAL_SCHEMA_RETRIEVAL": 40,
+    "SEMANTIC_INTERPRETATION_CLASSIFICATION": 40,
+    "ABDUCTIVE_ROOT_CAUSE": 40,
+    "CAUSAL_MULTIHOP_FORWARD": 37,
+    "PROCEDURAL_SEQUENTIAL": 40,
+    "NUMERICAL_QUANTITATIVE": 26
+  },
+  "models": {
+    "mistralai/mistral-medium-2505": {
+      "by_type": {
+        "FACTUAL_SCHEMA_RETRIEVAL": {
+          "correct": 38,
+          "total": 40,
+          "acc": 95.0
+        },
+        "SEMANTIC_INTERPRETATION_CLASSIFICATION": {
+          "correct": 29,
+          "total": 40,
+          "acc": 72.5
+        },
+        "ABDUCTIVE_ROOT_CAUSE": {
+          "correct": 21,
+          "total": 40,
+          "acc": 52.5
+        },
+        "CAUSAL_MULTIHOP_FORWARD": {
+          "correct": 23,
+          "total": 37,
+          "acc": 62.2
+        },
+        "PROCEDURAL_SEQUENTIAL": {
+          "correct": 23,
+          "total": 40,
+          "acc": 57.5
+        },
+        "NUMERICAL_QUANTITATIVE": {
+          "correct": 22,
+          "total": 26,
+          "acc": 84.6
+        }
+      },
+      "by_type_source": {
+        "FACTUAL_SCHEMA_RETRIEVAL/corpus": {
+          "correct": 38,
+          "total": 40
+        },
+        "SEMANTIC_INTERPRETATION_CLASSIFICATION/corpus": {
+          "correct": 29,
+          "total": 40
+        },
+        "ABDUCTIVE_ROOT_CAUSE/corpus": {
+          "correct": 21,
+          "total": 40
+        },
+        "CAUSAL_MULTIHOP_FORWARD/corpus": {
+          "correct": 2,
+          "total": 12
+        },
+        "CAUSAL_MULTIHOP_FORWARD/generated": {
+          "correct": 21,
+          "total": 25
+        },
+        "PROCEDURAL_SEQUENTIAL/corpus": {
+          "correct": 23,
+          "total": 40
+        },
+        "NUMERICAL_QUANTITATIVE/corpus": {
+          "correct": 1,
+          "total": 1
+        },
+        "NUMERICAL_QUANTITATIVE/generated": {
+          "correct": 21,
+          "total": 25
+        }
+      }
+    },
+    "meta-llama/llama-3-3-70b-instruct": {
+      "by_type": {
+        "FACTUAL_SCHEMA_RETRIEVAL": {
+          "correct": 33,
+          "total": 40,
+          "acc": 82.5
+        },
+        "SEMANTIC_INTERPRETATION_CLASSIFICATION": {
+          "correct": 22,
+          "total": 40,
+          "acc": 55.0
+        },
+        "ABDUCTIVE_ROOT_CAUSE": {
+          "correct": 19,
+          "total": 40,
+          "acc": 47.5
+        },
+        "CAUSAL_MULTIHOP_FORWARD": {
+          "correct": 23,
+          "total": 37,
+          "acc": 62.2
+        },
+        "PROCEDURAL_SEQUENTIAL": {
+          "correct": 17,
+          "total": 40,
+          "acc": 42.5
+        },
+        "NUMERICAL_QUANTITATIVE": {
+          "correct": 24,
+          "total": 26,
+          "acc": 92.3
+        }
+      },
+      "by_type_source": {
+        "FACTUAL_SCHEMA_RETRIEVAL/corpus": {
+          "correct": 33,
+          "total": 40
+        },
+        "SEMANTIC_INTERPRETATION_CLASSIFICATION/corpus": {
+          "correct": 22,
+          "total": 40
+        },
+        "ABDUCTIVE_ROOT_CAUSE/corpus": {
+          "correct": 19,
+          "total": 40
+        },
+        "CAUSAL_MULTIHOP_FORWARD/corpus": {
+          "correct": 2,
+          "total": 12
+        },
+        "CAUSAL_MULTIHOP_FORWARD/generated": {
+          "correct": 21,
+          "total": 25
+        },
+        "PROCEDURAL_SEQUENTIAL/corpus": {
+          "correct": 17,
+          "total": 40
+        },
+        "NUMERICAL_QUANTITATIVE/corpus": {
+          "correct": 1,
+          "total": 1
+        },
+        "NUMERICAL_QUANTITATIVE/generated": {
+          "correct": 23,
+          "total": 25
+        }
+      }
+    },
+    "ibm/granite-4-h-small": {
+      "by_type": {
+        "FACTUAL_SCHEMA_RETRIEVAL": {
+          "correct": 31,
+          "total": 40,
+          "acc": 77.5
+        },
+        "SEMANTIC_INTERPRETATION_CLASSIFICATION": {
+          "correct": 15,
+          "total": 40,
+          "acc": 37.5
+        },
+        "ABDUCTIVE_ROOT_CAUSE": {
+          "correct": 20,
+          "total": 40,
+          "acc": 50.0
+        },
+        "CAUSAL_MULTIHOP_FORWARD": {
+          "correct": 16,
+          "total": 37,
+          "acc": 43.2
+        },
+        "PROCEDURAL_SEQUENTIAL": {
+          "correct": 12,
+          "total": 40,
+          "acc": 30.0
+        },
+        "NUMERICAL_QUANTITATIVE": {
+          "correct": 12,
+          "total": 26,
+          "acc": 46.2
+        }
+      },
+      "by_type_source": {
+        "FACTUAL_SCHEMA_RETRIEVAL/corpus": {
+          "correct": 31,
+          "total": 40
+        },
+        "SEMANTIC_INTERPRETATION_CLASSIFICATION/corpus": {
+          "correct": 15,
+          "total": 40
+        },
+        "ABDUCTIVE_ROOT_CAUSE/corpus": {
+          "correct": 20,
+          "total": 40
+        },
+        "CAUSAL_MULTIHOP_FORWARD/corpus": {
+          "correct": 3,
+          "total": 12
+        },
+        "CAUSAL_MULTIHOP_FORWARD/generated": {
+          "correct": 13,
+          "total": 25
+        },
+        "PROCEDURAL_SEQUENTIAL/corpus": {
+          "correct": 12,
+          "total": 40
+        },
+        "NUMERICAL_QUANTITATIVE/corpus": {
+          "correct": 1,
+          "total": 1
+        },
+        "NUMERICAL_QUANTITATIVE/generated": {
+          "correct": 11,
+          "total": 25
+        }
+      }
+    }
+  }
+}

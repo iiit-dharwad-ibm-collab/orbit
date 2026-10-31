@@ -1,0 +1,399 @@
+[
+  {
+    "question": "On a leap-second day, multiple Linux servers running kernels newer than ~2.6.26 crash or become unresponsive well before midnight UTC. Administrators confirm ntpd is running and no other unusual workload is present. What is the root cause of these crashes, and why do they occur before the leap second is actually inserted?",
+    "A": "ntpd calls adjtimex(2) during the day to notify the kernel of the upcoming leap second, triggering a kernel livelock/spinlock bug that causes the system to hang before the leap second is applied at midnight.",
+    "B": "The leap second causes an integer overflow in the kernel's timekeeping subsystem at exactly midnight UTC, resulting in a NULL pointer dereference that crashes all processes using CLOCK_REALTIME.",
+    "C": "ntpd's clock-slewing mode (-x) conflicts with the hardware RTC interrupt, causing a race condition in the interrupt handler that deadlocks the CPU only on multi-socket NUMA systems.",
+    "D": "The kernel's NTP phase-locked loop accumulates rounding errors throughout the day and exceeds a threshold at the leap second boundary, triggering a BUG_ON assertion in the scheduler's tick handler.",
+    "answer": "A",
+    "reasoning_thought": "The accepted answer explicitly states the root cause is a livelock triggered when ntpd calls adjtimex(2) to inform the kernel to insert a leap second. This call happens during the day (not at midnight) because ntpd must alert the kernel in advance, which is why crashes occur before the actual leap second. The other options describe plausible-sounding but incorrect mechanisms: integer overflow at midnight, RTC/slew conflict on NUMA, and PLL rounding errors are all fabricated distractors not supported by the thread.",
+    "_meta": {
+      "intended_type": "ABDUCTIVE_ROOT_CAUSE",
+      "source": "serverfault",
+      "question_id": "403732",
+      "tags": "linux|debian|ntp|server-crashes|leapsecond",
+      "v3_classified": {
+        "reasoning_types": [
+          "ABDUCTIVE_ROOT_CAUSE",
+          "TEMPORAL"
+        ],
+        "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+        "confidence": 0.92,
+        "rationale": "The question presents observed symptoms (crashes before midnight on leap-second day) and asks for the root cause, requiring abductive reasoning; the temporal aspect (why crashes occur before midnight, not at midnight) is also essential to distinguish the correct answer."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "An engineer attempts to connect to a remote service on TCP port 8443 and receives 'Connection Refused'. They run 'ss -tnlp | grep :8443' on the remote host and get no output. A tcpdump capture on the client shows the remote host responding to the SYN packet with RST,ACK. What is the most accurate conclusion about the root cause?",
+    "A": "A firewall on the remote host is actively blocking port 8443 and returning an ICMP port-unreachable message",
+    "B": "No process is listening on port 8443 on the remote host, causing the TCP stack to respond with RST,ACK to the incoming SYN",
+    "C": "The connection is being silently dropped by a stateful firewall, which is why no response is seen beyond the initial SYN",
+    "D": "The remote host's TCP stack is misconfigured and is sending RST,ACK instead of SYN,ACK due to a kernel parameter issue",
+    "answer": "B",
+    "reasoning_thought": "The accepted answer explains two causes of 'Connection Refused': (1) no process listening on the port, and (2) a firewall configured to respond with ICMP port-unreachable. The diagnostic evidence here is key: 'ss -tnlp | grep :8443' returns no output (confirming nothing is listening) AND tcpdump shows RST,ACK in response to the SYN (which the answer explicitly states is the TCP-level behavior when nothing is listening). A firewall blocking with ICMP port-unreachable would show an ICMP unreachable packet in tcpdump, not RST,ACK. A silent drop would show no response at all. Therefore the correct conclusion is that no process is listening, causing the OS TCP stack to send RST,ACK.",
+    "_meta": {
+      "intended_type": "ABDUCTIVE_ROOT_CAUSE",
+      "source": "serverfault",
+      "question_id": "725262",
+      "tags": "networking|connection-refused",
+      "v3_classified": {
+        "reasoning_types": [
+          "ABDUCTIVE_ROOT_CAUSE"
+        ],
+        "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+        "confidence": 0.97,
+        "rationale": "The solver must infer the root cause from multiple diagnostic symptoms (no ss output, RST,ACK in tcpdump) and eliminate alternative hypotheses (firewall ICMP, silent drop) to conclude no process is listening."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "A stateful iptables/NAT firewall on Ubuntu 8.04 is sending TCP RST packets to a web server, causing HTTP responses to hang on the client. Packet captures show that when the web server sends several rapid response packets before the client ACKs them, the firewall rejects the final FIN/PSH/ACK with a RST. What is the most likely root cause and correct remediation?",
+    "A": "The firewall's connection tracking table is full, causing new packets to be dropped; the fix is to increase nf_conntrack_max and add a rule to DROP packets in state INVALID so they do not reach a local process and trigger RST.",
+    "B": "Some packets in the burst are being marked as INVALID by the conntrack module instead of ESTABLISHED, causing them to bypass NAT and reach the INPUT chain where a local process responds with RST; the fix is to add a rule to DROP INVALID state packets.",
+    "C": "The firewall's NAT masquerade rule is expiring the connection entry due to an idle timeout during the burst; the fix is to increase the TCP ESTABLISHED timeout in nf_conntrack and restart the iptables service.",
+    "D": "The web server is sending packets faster than the firewall's forwarding queue can handle, causing tail-drop and out-of-order delivery; the fix is to enable TCP window scaling and increase the net.core.rmem_max kernel parameter on the firewall.",
+    "answer": "B",
+    "reasoning_thought": "The accepted answer explicitly identifies the root cause: certain packets that should be tracked as ESTABLISHED are instead marked INVALID by the conntrack/NAT subsystem. Because NAT is not applied to INVALID packets, their addresses may be wrong, and they end up in the INPUT chain where a local process (the kernel TCP stack) sees an unexpected packet and responds with RST. The recommended workaround is 'iptables -I INPUT -m state --state INVALID -j DROP', which prevents the INVALID packet from reaching the local process and triggering the RST, allowing TCP to recover via retransmission. Option A conflates a full conntrack table (a different problem) with the INVALID-drop fix. Option C incorrectly attributes the issue to a NAT timeout. Option D incorrectly attributes it to queue/bandwidth issues.",
+    "_meta": {
+      "intended_type": "ABDUCTIVE_ROOT_CAUSE",
+      "source": "serverfault",
+      "question_id": "309691",
+      "tags": "firewall|iptables|ubuntu-8.04",
+      "v3_classified": {
+        "reasoning_types": [
+          "ABDUCTIVE_ROOT_CAUSE"
+        ],
+        "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+        "confidence": 0.95,
+        "rationale": "The question presents observed symptoms (RST packets, HTTP hangs, rapid burst triggering rejection) and asks for the most likely underlying cause and fix, requiring diagnosis from symptoms to root cause."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "A 32-core CentOS 6.5 server running heavily multi-threaded Java processes periodically reaches load averages of 90\u2013160. During these spikes, 'ps aux' hangs at reading '/proc/<pid>/cmdline', and NRPE monitoring times out. The I/O scheduler is already set to 'deadline', and ionice adjustments have had no effect. Which root cause most directly explains why 'ps aux' hangs specifically on the Java process's /proc entry while the rest of the system remains SSH-accessible?",
+    "A": "The deadline I/O scheduler deprioritizes reads from the /proc virtual filesystem during high I/O load, causing procfs reads to queue behind disk writes.",
+    "B": "A stalled read on '/proc/<pid>/cmdline' caused by extreme I/O saturation starving the storage subsystem, preventing the kernel from servicing the procfs read for that process.",
+    "C": "The NRPE check_procs plugin lacks sufficient privileges to read /proc entries of Java processes owned by a different UID during high CPU load.",
+    "D": "The Java JVM locks its /proc/cmdline entry during garbage collection pauses, causing any external reader like ps to block until the GC cycle completes.",
+    "answer": "B",
+    "reasoning_thought": "The accepted answer explicitly states the root cause is a 'stalled-read' confirmed by the strace output: ps aux hangs when attempting to read /proc/<pid>/cmdline. The extreme I/O load (load average 90-160, likely caused by write-heavy workloads on slow nearline SATA/SAS disks without write caching) starves the storage subsystem, which in turn stalls the kernel's ability to service the procfs read for that specific process. The other options are plausible distractors: the deadline scheduler affecting procfs (wrong\u2014procfs is a virtual filesystem not subject to block I/O scheduling), privilege issues (wrong\u2014root is running the checks), and JVM GC locking procfs (wrong\u2014the JVM has no such mechanism). The correct answer B directly matches the accepted answer's diagnosis.",
+    "_meta": {
+      "intended_type": "ABDUCTIVE_ROOT_CAUSE",
+      "source": "serverfault",
+      "question_id": "640248",
+      "tags": "linux|centos|java|cpu-usage|high-load",
+      "v3_classified": {
+        "reasoning_types": [
+          "ABDUCTIVE_ROOT_CAUSE",
+          "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+        ],
+        "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+        "confidence": 0.92,
+        "rationale": "The question presents observed symptoms (ps hangs on /proc/<pid>/cmdline, load averages 90-160, NRPE timeouts) and asks for the most likely underlying cause, requiring abductive reasoning to eliminate plausible distractors and identify I/O saturation stalling procfs reads as the root cause."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "A systems engineer is advising two clients who want to upgrade from EL5 to EL6 in-place rather than performing a full rebuild. Red Hat's official position is that in-place major-version upgrades are unsupported. What is the PRIMARY technical reason Red Hat recommends a fresh install over an in-place upgrade between major versions, even though the RPM packaging system is technically capable of performing the upgrade?",
+    "A": "Individual package configuration files, system settings, and custom configurations are not guaranteed to be preserved or remain functional after an in-place upgrade due to changes in configuration file formats, layouts, and deprecated packages, leaving the system in an unpredictable state with no vendor support path.",
+    "B": "The RPM database becomes permanently corrupted during a major-version in-place upgrade, making it impossible to manage packages afterward without a full reinstall.",
+    "C": "Red Hat's licensing terms explicitly prohibit in-place upgrades and will automatically revoke subscription entitlements if the upgrade method is detected.",
+    "D": "The YUM package manager lacks the dependency-resolution capability needed to handle the delta between major EL versions, so all packages must be reinstalled from scratch via the installer.",
+    "answer": "A",
+    "reasoning_thought": "The accepted answer directly quotes Red Hat's official documentation stating that 'in-place upgrades across major releases do not preserve all system settings, services or custom configurations' and warns that 'individual package configuration files may or may not work after performing an upgrade due to changes in various configuration file formats or layouts.' The core technical reason is not that the RPM system cannot perform the upgrade mechanically (the answer explicitly notes the feature exists and Red Hat even documents how to do it), but that the resulting system state is unpredictable \u2014 configs may break, layered products may need manual intervention, and third-party apps may fail. Option B is wrong because RPM database corruption is not cited as the primary reason. Option C is wrong because it's a licensing claim not supported by the thread. Option D is wrong because the thread explicitly states 'The RPM packaging system is more than capable of handling in-place upgrades, but it's the little details that get you.'",
+    "_meta": {
+      "intended_type": "CAUSAL_MULTIHOP_FORWARD",
+      "source": "serverfault",
+      "question_id": "449048",
+      "tags": "linux|centos|redhat|puppet|configuration-management",
+      "v3_classified": {
+        "reasoning_types": [
+          "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+          "FACTUAL_SCHEMA_RETRIEVAL"
+        ],
+        "primary_type": "SEMANTIC_INTERPRETATION_CLASSIFICATION",
+        "confidence": 0.82,
+        "rationale": "The question requires interpreting Red Hat's official position and understanding the technical reasoning behind their recommendation, distinguishing between mechanical capability and systemic reliability concerns across configuration formats and system state."
+      },
+      "type_match": false
+    }
+  },
+  {
+    "question": "An HAProxy VM with 1 GB of RAM is logging 'Out of socket memory' errors. The administrator quadruples the tcp_mem values so that the upper limit (tcp_mem[2]) becomes 367,872 pages. What is the primary operational risk introduced by this change?",
+    "A": "The route cache hash chains will become too long, triggering 'Route hash chain too long' kernel warnings unrelated to memory pressure.",
+    "B": "The TCP stack is now permitted to consume up to ~1.5 GB of RAM for socket buffers alone, which can exhaust total system memory on a 1 GB host.",
+    "C": "Increasing tcp_mem disables the kernel's garbage collection of TIME_WAIT sockets, causing connection table exhaustion.",
+    "D": "The new tcp_mem values conflict with HAProxy's internal buffer limits, causing HAProxy to silently drop connections above 3,000 concurrent sessions.",
+    "answer": "B",
+    "reasoning_thought": "The accepted answer explicitly calculates that 367,872 pages \u00d7 4,096 bytes/page \u2248 1.5 GB, which exceeds the total RAM of the 1 GB VM. The answer warns this is dangerous because you can run out of memory entirely. Option A describes a separate, pre-existing issue (route hash chain length) that is not caused by the tcp_mem change. Option C is fabricated; tcp_mem does not control TIME_WAIT GC. Option D is plausible-sounding but incorrect; the conflict is with system RAM, not HAProxy's internal limits. Therefore B is the correct answer.",
+    "_meta": {
+      "intended_type": "CAUSAL_MULTIHOP_FORWARD",
+      "source": "serverfault",
+      "question_id": "106537",
+      "tags": "linux|routing|tcpip",
+      "v3_classified": {
+        "reasoning_types": [
+          "NUMERICAL_QUANTITATIVE",
+          "CAUSAL_MULTIHOP_FORWARD"
+        ],
+        "primary_type": "NUMERICAL_QUANTITATIVE",
+        "confidence": 0.95,
+        "rationale": "The solver must multiply 367,872 pages \u00d7 4,096 bytes/page to get ~1.5 GB, then compare that to the 1 GB host RAM to identify the risk of memory exhaustion\u2014a numerical calculation followed by a causal inference about system impact."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "A sysadmin is running `pg_dumpall | bzip2 > backup.sql.bz2` on a 16-core server. Profiling shows bzip2 consuming ~95% of a single CPU core while disk I/O wait is negligible. Which of the following best explains the root cause of the bottleneck AND the most appropriate remediation?",
+    "A": "The bottleneck is disk throughput; switching to a faster storage backend (e.g., NVMe) will resolve the slow backup.",
+    "B": "The bottleneck is single-threaded CPU usage by bzip2; replacing it with a parallel or faster compression tool (e.g., pigz, lbzip2, lzop, or zstd) will utilize multiple cores and significantly reduce wall-clock time.",
+    "C": "The bottleneck is PostgreSQL's dump speed; tuning pg_dumpall parallelism with --jobs will resolve the issue regardless of the compression algorithm used.",
+    "D": "The bottleneck is memory bandwidth; increasing RAM will allow bzip2 to buffer more data and compress faster across all cores.",
+    "answer": "B",
+    "reasoning_thought": "The thread clearly shows that bzip2 is single-threaded and CPU-bound (95% of one core, low disk I/O wait). The accepted answer benchmarks multiple compression tools and their parallel variants, concluding that the fix is to use a faster or parallelized compression algorithm (lzop, lz4, pigz, lbzip2, zstd, brotli q1) to exploit the available 16 cores. Options A (disk), C (pg_dumpall parallelism), and D (RAM/memory bandwidth) are plausible-sounding but incorrect given the profiling data showing CPU is the sole bottleneck and the solution is compression tool replacement.",
+    "_meta": {
+      "intended_type": "CAUSAL_MULTIHOP_FORWARD",
+      "source": "serverfault",
+      "question_id": "872749",
+      "tags": "performance|postgresql|gzip",
+      "v3_classified": {
+        "reasoning_types": [
+          "ABDUCTIVE_ROOT_CAUSE",
+          "NUMERICAL_QUANTITATIVE"
+        ],
+        "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+        "confidence": 0.97,
+        "rationale": "The question requires diagnosing the root cause from observed symptoms (bzip2 at 95% single-core, negligible disk I/O wait on a 16-core server) and identifying the correct remediation, which is classic symptom-to-cause abductive reasoning with a quantitative element (single core vs. 16 available cor"
+      },
+      "type_match": false
+    }
+  },
+  {
+    "question": "A Linux client connects to an OpenVPN server and can reach the VPN-internal 10.132.x.x hosts, but loses all general internet access (e.g., cannot resolve or reach google.com). The routing table shows two default routes: one via tun0 (metric 50) and one via eth0 (metric 100). The server pushes only 'route 10.132.0.0 255.255.0.0'. What is the root cause of the broken internet access?",
+    "A": "The pushed route 10.132.0.0/16 is overlapping with the eth0 subnet, causing all traffic to be blackholed.",
+    "B": "NetworkManager is installing a default route (0.0.0.0/0) via tun0 with a lower metric than the eth0 default route, so all non-VPN traffic is sent through the tunnel instead of eth0.",
+    "C": "The OpenVPN server's 'comp-lzo' compression setting is incompatible with the client, dropping packets destined for the internet.",
+    "D": "The tun0 interface MTU of 1500 is too large, causing fragmentation that prevents DNS resolution and general internet traffic.",
+    "answer": "B",
+    "reasoning_thought": "The accepted answer explicitly shows two routing tables. In the broken state there are two default routes (0.0.0.0) \u2014 one via tun0 at metric 50 and one via eth0 at metric 100. Because tun0 has the lower metric, the kernel prefers it for all traffic, routing everything through the VPN tunnel. Since the VPN server only knows about the internal network and not the general internet, all non-VPN traffic is effectively dropped. The fix (checking 'Use this connection only for resources on its network') removes the tun0 default route, leaving only the eth0 default route, so only the pushed 10.132.0.0/16 route goes through tun0 and everything else uses eth0.",
+    "_meta": {
+      "intended_type": "CAUSAL_MULTIHOP_FORWARD",
+      "source": "serverfault",
+      "question_id": "827082",
+      "tags": "ubuntu|networking|openvpn|linux-networking|ubuntu-16.04",
+      "v3_classified": {
+        "reasoning_types": [
+          "ABDUCTIVE_ROOT_CAUSE",
+          "CAUSAL_MULTIHOP_FORWARD"
+        ],
+        "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+        "confidence": 0.95,
+        "rationale": "The question presents observed symptoms (lost internet, two default routes) and asks for the root cause, requiring diagnosis from symptoms to cause; it also involves tracing how the lower-metric tun0 default route causes all traffic to be misrouted through the VPN tunnel."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "During load testing, an Apache server halts after ~11,000 requests with thousands of connections stuck in TIME_WAIT state. Investigation reveals the kernel log shows 'ip_conntrack: table full, dropping packet.' Which kernel parameter is the root cause of this connection ceiling, and what is the correct remediation?",
+    "A": "net.ipv4.tcp_fin_timeout is too high; reducing it below 30 seconds will immediately free TIME_WAIT slots and remove the ceiling.",
+    "B": "net.ipv4.netfilter.ip_conntrack_max is set too low (e.g., 11,776); raising it above the number of concurrently tracked connections (or above the available local port range) allows the kernel to track more connections instead of dropping packets.",
+    "C": "net.ipv4.tcp_tw_recycle should be enabled; this is the safest and recommended way to reuse TIME_WAIT connections and eliminate the ceiling.",
+    "D": "net.ipv4.ip_local_port_range is exhausted; widening the ephemeral port range alone is sufficient to resolve the drop because the conntrack table size automatically scales with available ports.",
+    "answer": "B",
+    "reasoning_thought": "The accepted answer explicitly identifies net.ipv4.netfilter.ip_conntrack_max (set to 11,776) as the binding limit causing packet drops and the connection ceiling. The fix was raising it to 32,768 (larger than the local port range), which allowed the kernel to track all connections without dropping packets. Option A (reducing tcp_fin_timeout) is a partial mitigation but not the root cause parameter. Option C (tcp_tw_recycle) is explicitly called out as dangerous in the accepted answer and was left disabled. Option D misattributes the root cause to ip_local_port_range exhaustion alone, whereas the conntrack table was the actual bottleneck.",
+    "_meta": {
+      "intended_type": "NUMERICAL_QUANTITATIVE",
+      "source": "serverfault",
+      "question_id": "10852",
+      "tags": "linux|apache-2.2|performance|scaling|tuning",
+      "v3_classified": {
+        "reasoning_types": [
+          "ABDUCTIVE_ROOT_CAUSE",
+          "FACTUAL_SCHEMA_RETRIEVAL"
+        ],
+        "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+        "confidence": 0.95,
+        "rationale": "The question requires diagnosing the root cause from observed symptoms (TIME_WAIT connections, kernel log message 'ip_conntrack: table full') and identifying the specific kernel parameter responsible, which is classic symptom-to-cause abductive reasoning."
+      },
+      "type_match": false
+    }
+  },
+  {
+    "question": "An Ubuntu server running nginx as a reverse proxy handles ~230 requests/second and accumulates a large number of TIME_WAIT sockets. The administrator has already set tcp_fin_timeout=1, tcp_tw_recycle=1, and tcp_tw_reuse=1. Which of the following best describes the most critical misconfiguration and its operational risk?",
+    "A": "Setting tcp_fin_timeout=1 is dangerously low; it controls FIN-WAIT-2 duration and should be closer to 30-60 seconds, as an extremely low value can cause premature socket teardown issues rather than reducing TIME_WAIT count.",
+    "B": "Setting tcp_tw_reuse=1 is the primary problem because reuse is incompatible with tcp_tw_recycle and the two settings conflict, causing sockets to remain in TIME_WAIT indefinitely.",
+    "C": "The TIME_WAIT accumulation is caused by nginx not supporting HTTP keep-alive to upstream workers; enabling keep-alive will eliminate all TIME_WAIT sockets.",
+    "D": "Setting tcp_tw_recycle=1 is the sole misconfiguration; it must be set to 0 and tcp_fin_timeout must be raised to 180 seconds to match legacy kernel defaults.",
+    "answer": "A",
+    "reasoning_thought": "The accepted answer explicitly calls out tcp_fin_timeout=1 as 'way too low' and states it should not be taken below ~30. It clarifies that tcp_fin_timeout controls FIN-WAIT-2 duration (not TIME_WAIT directly), and that setting it to 1 is the most critical misconfiguration. The answer also warns against tcp_tw_recycle due to NAT client issues, but the *most critical* identified problem is the fin_timeout=1 setting. Option B is wrong because reuse and recycle are independent knobs that don't inherently conflict. Option C is wrong because keep-alive would help but is not identified as the root cause. Option D is wrong because the answer does not say recycle is the 'sole' issue nor recommend restoring fin_timeout to 180s as mandatory.",
+    "_meta": {
+      "intended_type": "NUMERICAL_QUANTITATIVE",
+      "source": "serverfault",
+      "question_id": "212093",
+      "tags": "ubuntu|nginx|linux-networking|high-load",
+      "v3_classified": {
+        "reasoning_types": [
+          "ABDUCTIVE_ROOT_CAUSE",
+          "FACTUAL_SCHEMA_RETRIEVAL"
+        ],
+        "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+        "confidence": 0.82,
+        "rationale": "The question requires diagnosing which specific kernel parameter misconfiguration is most critical given observed symptoms (TIME_WAIT accumulation), requiring both knowledge of what each parameter controls and inferring which setting causes the most harmful operational risk."
+      },
+      "type_match": false
+    }
+  },
+  {
+    "question": "A busy web server shows over 10,000 MySQL connections in TIME_WAIT state during peak hours. The DBA decides to lower wait_timeout from the default 28,800 seconds to 30 seconds. Which of the following best describes a critical operational risk introduced by this change if application code is not adjusted accordingly?",
+    "A": "Lowering wait_timeout will cause MySQL to reject new connections entirely once the timeout threshold is crossed, requiring a full mysqld restart to recover.",
+    "B": "If Apache closes a DB connection without explicitly calling mysql_close(), mysqld may not be notified and will hold the connection open until the new (shorter) timeout expires, potentially increasing TIME_WAIT occurrences rather than reducing them.",
+    "C": "Setting wait_timeout below 60 seconds invalidates the my.cnf configuration and the value will silently revert to the default 28,800 seconds on the next reload.",
+    "D": "Reducing wait_timeout forces all currently ESTABLISHED connections to be immediately terminated, causing active queries to fail with a lost-connection error.",
+    "answer": "B",
+    "reasoning_thought": "The accepted answer explicitly warns: 'Make sure to explicitly use mysql_close. If not, sometimes, there is a race condition where Apache closes a DB Connection but does not inform mysqld and mysqld holds that connection open until it times out. Even worse, you may see TIME_WAITs more often.' This means the risk is not a hard rejection (A), not a config invalidation (C), and not immediate termination of active connections (D). The real risk is that without explicit mysql_close(), the race condition between Apache and mysqld can actually worsen TIME_WAIT counts despite the lower timeout, making B the correct answer.",
+    "_meta": {
+      "intended_type": "NUMERICAL_QUANTITATIVE",
+      "source": "serverfault",
+      "question_id": "355750",
+      "tags": "mysql|tuning",
+      "v3_classified": {
+        "reasoning_types": [
+          "ABDUCTIVE_ROOT_CAUSE",
+          "CAUSAL_MULTIHOP_FORWARD"
+        ],
+        "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+        "confidence": 0.88,
+        "rationale": "The question requires tracing a causal chain: lowering wait_timeout \u2192 application doesn't call mysql_close() \u2192 race condition between Apache and mysqld \u2192 connection held open \u2192 increased TIME_WAIT occurrences, spanning multiple dependency hops from configuration change to operational outcome."
+      },
+      "type_match": false
+    }
+  },
+  {
+    "question": "A developer builds a Docker image from php:7.0.14-fpm-alpine (27 MB) and installs build-time dependencies (autoconf, g++, make, openssl-dev, libxml2-dev) in one RUN layer, then installs PHP extensions in a second RUN layer, then attempts to remove the build-time packages in a third RUN layer. After all this, the image is still ~267 MB. What is the PRIMARY reason the cleanup in the third RUN layer fails to reduce the final image size?",
+    "A": "Alpine's apk package manager does not support removing packages that were installed as dependencies of other packages.",
+    "B": "Each RUN instruction creates a separate, immutable layer; the packages added in the first layer are permanently stored in that layer and still contribute to the total image size even if removed in a later layer.",
+    "C": "The /var/cache/apk/* directory is the main contributor to image size, and clearing it in a separate RUN step is sufficient to reclaim space.",
+    "D": "The php:7.0.14-fpm-alpine base image itself already contains g++ and the dev libraries, so reinstalling them has no effect on size.",
+    "answer": "B",
+    "reasoning_thought": "The accepted answer explicitly explains that each RUN command creates a new Docker layer. Even if you remove packages in a later RUN step, the earlier layer that installed those packages is immutable and still contributes its full size to the final image. The only way to avoid this is to combine the install, use, and cleanup steps into a single RUN command so they all exist in one layer. Option A is incorrect because apk does support removing dependency packages. Option C is incorrect because the accepted answer tested this and found the cache cleanup saved only ~0.8 MB, not the bulk of the size. Option D is incorrect because the base alpine image does not include those build tools.",
+    "_meta": {
+      "intended_type": "NUMERICAL_QUANTITATIVE",
+      "source": "stackoverflow",
+      "question_id": "41332673",
+      "tags": "php|docker|docker-compose|dockerfile",
+      "v3_classified": {
+        "reasoning_types": [
+          "CAUSAL_MULTIHOP_FORWARD",
+          "SEMANTIC_INTERPRETATION_CLASSIFICATION"
+        ],
+        "primary_type": "CAUSAL_MULTIHOP_FORWARD",
+        "confidence": 0.95,
+        "rationale": "The question requires tracing the causal chain: RUN creates immutable layer \u2192 packages stored permanently in that layer \u2192 later removal in a new layer cannot affect prior layer \u2192 total image size unchanged, which is a multi-hop forward reasoning from Docker's layering mechanism to the observed size "
+      },
+      "type_match": false
+    }
+  },
+  {
+    "question": "An operations team manages 100 Linux servers running logwatch via /etc/cron.daily/. They want to suppress the 'httpd' service reports and daily disk-space summaries entirely, while still receiving logwatch alerts for other services. Which configuration approach correctly achieves this?",
+    "A": "Add 'Service = \"-http\"' and 'Service = \"-zz-disk_space\"' to /etc/logwatch/conf/logwatch.conf to override the default configuration and exclude those services.",
+    "B": "Edit /usr/share/logwatch/default.conf/logwatch.conf directly and comment out the http and disk_space service entries.",
+    "C": "Create entries in /etc/logwatch/conf/ignore.conf with regex patterns matching all httpd and disk_space output lines.",
+    "D": "Set 'Detail = Low' in /etc/logwatch/conf/logwatch.conf, which automatically suppresses httpd and disk_space reporting at low verbosity levels.",
+    "answer": "A",
+    "reasoning_thought": "The accepted answer explicitly states that the default logwatch configuration lives under /usr/share/logwatch/default.conf/logwatch.conf and that local overrides should be placed in /etc/logwatch/conf/logwatch.conf. It then shows the exact syntax 'Service = \"-http\"' and 'Service = \"-zz-disk_space\"' to completely exclude those services. Option B is wrong because editing the default conf directly is not the recommended approach and will be overwritten on package updates. Option C (ignore.conf) is mentioned in the answer but noted as unreliable and only suppresses output lines rather than disabling the service entirely. Option D (Detail = Low) reduces verbosity globally but does not selectively disable specific services like httpd and disk_space.",
+    "_meta": {
+      "intended_type": "PROCEDURAL_SEQUENTIAL",
+      "source": "serverfault",
+      "question_id": "293226",
+      "tags": "linux|monitoring|syslog|logwatch",
+      "v3_classified": {
+        "reasoning_types": [
+          "FACTUAL_SCHEMA_RETRIEVAL",
+          "PROCEDURAL_SEQUENTIAL"
+        ],
+        "primary_type": "FACTUAL_SCHEMA_RETRIEVAL",
+        "confidence": 0.85,
+        "rationale": "The question requires knowing the correct logwatch configuration file location and exact syntax for excluding services, which is a documentation/schema lookup, plus understanding the correct procedural approach (local override vs. editing defaults)."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "An administrator needs to shrink a LUKS-encrypted ext4 filesystem that sits on top of an LVM logical volume (stack: ext4 \u2192 LUKS \u2192 LV). Which sequence of operations is both correct and safe for performing the shrink?",
+    "A": "Unmount the filesystem \u2192 resize2fs (shrink) \u2192 cryptsetup luksClose \u2192 lvreduce \u2192 cryptsetup luksOpen \u2192 mount",
+    "B": "lvreduce \u2192 cryptsetup resize \u2192 resize2fs (shrink) \u2192 unmount \u2192 mount",
+    "C": "Unmount the filesystem \u2192 lvreduce \u2192 cryptsetup resize \u2192 resize2fs (shrink) \u2192 mount",
+    "D": "Unmount the filesystem \u2192 cryptsetup luksClose \u2192 lvreduce \u2192 cryptsetup luksOpen \u2192 resize2fs (shrink) \u2192 mount",
+    "answer": "A",
+    "reasoning_thought": "When shrinking a layered stack you must always shrink from the top layer downward to avoid data loss. The filesystem (ext4) must be shrunk first before the container it lives in is reduced. Therefore: (1) unmount, (2) resize2fs to shrink the filesystem, (3) close the LUKS volume, (4) lvreduce the LV, (5) reopen the LUKS volume (so it rediscovers the new size), (6) remount. Option A matches this exact order. Option B shrinks the LV before the filesystem, which would truncate live data. Option C also shrinks the LV before the filesystem. Option D closes LUKS and shrinks the LV before the filesystem has been shrunk, which would destroy filesystem data.",
+    "_meta": {
+      "intended_type": "PROCEDURAL_SEQUENTIAL",
+      "source": "serverfault",
+      "question_id": "394902",
+      "tags": "linux|filesystems|lvm|encryption|luks",
+      "v3_classified": {
+        "reasoning_types": [
+          "PROCEDURAL_SEQUENTIAL"
+        ],
+        "primary_type": "PROCEDURAL_SEQUENTIAL",
+        "confidence": 0.97,
+        "rationale": "The question requires determining the correct ordered sequence of shrink operations across layered storage components to avoid data loss, which is purely procedural/sequential reasoning."
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "An engineer attempts to delete a mistakenly pushed tag from a private Docker Registry v2 using `docker rmi myregistry:5000/user/image:bad-tag` and receives 'no such id' error. They then try `curl -X DELETE localhost:5000/v2/alpine/manifests/v1` and receive `{\"errors\":[{\"code\":\"UNSUPPORTED\",\"message\":\"The operation is unsupported.\"}]}`. What is the root cause of both failures, and what is the correct remediation approach?",
+    "A": "The image tag format is invalid; re-tagging the image locally with `docker tag` and re-pushing will overwrite and effectively remove the old tag from the registry.",
+    "B": "The Docker daemon lacks registry credentials; adding `--insecure-registry` to the daemon options and re-running `docker rmi` will allow remote image deletion.",
+    "C": "Registry v2 does not support deletion via the standard Docker client `rmi` command (which only removes locally cached images) nor via the DELETE manifest API in its default configuration; the correct approach is to directly manipulate the registry's storage layer, e.g., using a script like `delete_docker_registry_image` executed inside the registry container.",
+    "D": "The registry container must be stopped before any deletion is possible; stopping the container and manually deleting files under `/var/lib/registry` without any tooling is the only supported method.",
+    "answer": "C",
+    "reasoning_thought": "The accepted answer explains two distinct failure modes: (1) `docker rmi` only removes locally cached images and cannot delete images from a remote registry, and (2) the DELETE API endpoint returns UNSUPPORTED in the default Registry v2 configuration (deletion was a planned feature for a later milestone). The correct remediation described is to exec into the registry container, install required tools (curl, jq), and run the `delete_docker_registry_image` script that directly manipulates the registry's on-disk storage. Option A is wrong because re-tagging doesn't delete old tags. Option B is wrong because credentials/insecure-registry flags are unrelated to this error. Option D is partially correct about manual file manipulation but incorrectly states the container must be stopped and dismisses tooling, which contradicts the accepted answer's recommended approach.",
+    "_meta": {
+      "intended_type": "PROCEDURAL_SEQUENTIAL",
+      "source": "serverfault",
+      "question_id": "750094",
+      "tags": "docker|docker-registry",
+      "v3_classified": {
+        "reasoning_types": [
+          "ABDUCTIVE_ROOT_CAUSE",
+          "PROCEDURAL_SEQUENTIAL"
+        ],
+        "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+        "confidence": 0.92,
+        "rationale": "The question presents two observed failure symptoms and asks for the root cause diagnosis plus correct remediation steps, requiring abductive reasoning from symptoms to underlying causes (docker rmi only affects local cache; DELETE API disabled by default) and procedural knowledge of the correct fix"
+      },
+      "type_match": true
+    }
+  },
+  {
+    "question": "A team is running Apache Airflow 2.0.0 via the official docker-compose setup and sets `_PIP_ADDITIONAL_REQUIREMENTS=apache-airflow-providers-apache-spark` in the environment block, expecting the provider package to be installed automatically. After bringing up the stack, the package is missing and DAGs fail with import errors. What is the root cause and correct remediation?",
+    "A": "The environment variable name is misspelled; it should be `_PIP_EXTRA_REQUIREMENTS`. Renaming it and restarting the stack will install the package correctly on Airflow 2.0.0.",
+    "B": "`_PIP_ADDITIONAL_REQUIREMENTS` is not supported in Airflow 2.0.0 (it was introduced in a later release). The correct fix is to build a custom Docker image that runs `pip install` for the required package and reference that image in docker-compose.",
+    "C": "The package installation is silently skipped because the Celery executor does not propagate environment variables to workers. Adding the variable explicitly to the `airflow-worker` service section will resolve the issue.",
+    "D": "pip package installation via environment variables requires the `_AIRFLOW_DB_UPGRADE` flag to also be set to `true` so the init container triggers the install. Setting both flags together will make the package available.",
+    "answer": "B",
+    "reasoning_thought": "The accepted answer explicitly states that `_PIP_ADDITIONAL_REQUIREMENTS` was not yet released in Airflow 2.0.0 and is only available in the developer/unreleased image (planned for 2.1.1). Therefore the root cause is a version incompatibility, not a naming error, executor limitation, or missing flag. The prescribed fix is to create a custom Dockerfile that installs the package via `pip install`, build a new image, and point docker-compose to that image \u2014 matching option B exactly.",
+    "_meta": {
+      "intended_type": "PROCEDURAL_SEQUENTIAL",
+      "source": "stackoverflow",
+      "question_id": "67851351",
+      "tags": "python|docker|docker-compose|airflow",
+      "v3_classified": {
+        "reasoning_types": [
+          "ABDUCTIVE_ROOT_CAUSE",
+          "FACTUAL_SCHEMA_RETRIEVAL"
+        ],
+        "primary_type": "ABDUCTIVE_ROOT_CAUSE",
+        "confidence": 0.9,
+        "rationale": "The solver must diagnose why the package is missing (symptom->cause) by identifying that the feature was not available in Airflow 2.0.0, requiring version-specific knowledge retrieval to confirm the root cause."
+      },
+      "type_match": false
+    }
+  }
+]

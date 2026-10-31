@@ -1,0 +1,28 @@
+EXPERT CHECK OF ORBIT TROUBLESHOOTING ITEMS
+
+Work alone. Do not discuss items with the other experts until everyone has finished.
+Answer every Y/N cell with exactly Y or N. Open the CSV files in Excel or Google Sheets.
+
+PART 1. items_<you>.csv (one row per item, about 3-5 minutes each)
+Work left to right and do not open source_url until step 4.
+ 1. Read only the scenario. Write your own guess at the root cause in your_guess_of_root_cause.
+ 2. solvable_from_scenario: Y if an experienced engineer could reach the reference cause from the
+    scenario alone (your guess matches it, or the scenario holds the evidence that points to it).
+ 3. scenario_hides_cause: N if the scenario states or strongly hints at the cause, for example by
+    naming the misconfigured setting. Y otherwise.
+ 4. Now open source_url and read the question and the accepted answer.
+ 5. faithful_to_thread: Y if reference_answer and key_points say what the accepted answer says,
+    with nothing invented or overstated.
+ 6. notes: anything off, such as "fix right but cause oversimplified" or "two plausible causes".
+
+PART 2. judge_<you>.csv (one row per model answer, about 1-2 minutes each)
+Each row is one model's answer to one of the same incidents. Rows are shuffled and the model is
+hidden.
+ correct: Y if the candidate's main diagnosis is the same root cause as the reference (the same
+ underlying mechanism, not merely the same component) and its main fix would resolve that cause.
+ It need not repeat secondary details or exact commands. N if it names a different cause, lists
+ several causes without committing to the right one, is vague, or its fix would not resolve the
+ cause. If the answer is right but misses something you consider essential, mark Y and say what
+ in notes.
+
+Return both files with your name in the file name unchanged.
