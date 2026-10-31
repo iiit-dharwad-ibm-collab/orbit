@@ -39,12 +39,15 @@ from __future__ import annotations
 import os
 import time
 import shelve
+import threading
 import traceback
 
 import litellm
 from dotenv import load_dotenv
 
-load_dotenv(override=True)
+# LLM_AGENT_ENV_WINS=1 keeps credentials already exported in the shell (e.g. a rotated key)
+# instead of letting a stale .env overwrite them.
+load_dotenv(override=os.getenv("LLM_AGENT_ENV_WINS") != "1")
 
 # --------------------------------------------------------------------------- #
 # RITS model catalog
@@ -110,6 +113,7 @@ class LLMAgent:
 
     # Class-level on-disk response cache, shared across instances in a process.
     _cache = {}
+    _cache_lock = threading.Lock()
     _cache_file = os.getenv("LLM_AGENT_CACHE", "./data/cache/llm_agent_cache.db")
     _cache_loaded = False
 
@@ -218,15 +222,15 @@ class LLMAgent:
             print(f"[WARNING] Could not load cache from disk: {e}")
 
     @classmethod
-    def _save_cache(cls):
-        """Persist the class-level cache dict to disk (shelve)."""
+    def _save_cache(cls, key: str):
+        """Persist one cache entry to disk (shelve). Writing only the new key keeps
+        each save O(1); rewriting every entry made the file grow quadratically."""
         try:
             cache_dir = os.path.dirname(cls._cache_file)
             if cache_dir:
                 os.makedirs(cache_dir, exist_ok=True)
-            with shelve.open(cls._cache_file, flag="c") as db:
-                for key, value in cls._cache.items():
-                    db[key] = value
+            with cls._cache_lock, shelve.open(cls._cache_file, flag="c") as db:
+                db[key] = cls._cache[key]
         except Exception as e:
             print(f"[WARNING] Could not save cache to disk: {e}")
 
@@ -283,13 +287,13 @@ class LLMAgent:
         error_str = str(error).lower()
         error_type = type(error).__name__
         retryable_patterns = [
-            "overloaded", "rate_limit", "ratelimit", "too many requests",
+            "overloaded", "rate_limit", "ratelimit", "too many requests", "exceeded limit",
             "timeout", "temporarily unavailable",
             "429", "500", "502", "503", "504",
         ]
         retryable_types = [
             "InternalServerError", "RateLimitError",
-            "TimeoutError", "ServiceUnavailableError", "APIConnectionError",
+            "TimeoutError", "ServiceUnavailableError", "APIConnectionError", "ExceededLimitOfAPICalls",
         ]
         return (
             any(p in error_str for p in retryable_patterns)
@@ -343,11 +347,13 @@ class LLMAgent:
         import openai
         import httpx
 
-        client = openai.OpenAI(
-            api_key=self.litellm_api_key,
-            base_url=self.litellm_base_url,
-            http_client=httpx.Client(verify=False),
-        )
+        client = getattr(self, "_litellm_client", None)
+        if client is None:
+            client = self._litellm_client = openai.OpenAI(
+                api_key=self.litellm_api_key,
+                base_url=self.litellm_base_url,
+                http_client=httpx.Client(verify=False),
+            )
         response = client.chat.completions.create(
             model=self.model_id,
             messages=messages,
@@ -368,59 +374,53 @@ class LLMAgent:
         return response.choices[0].message.content
 
     def _call_watsonx(self, messages: list[dict]) -> str:
-        """Call watsonx.ai, preferring the new SDK and falling back to the legacy one."""
-        prompt = self._messages_to_text(messages)
+        """Call watsonx.ai via the chat endpoint (``/ml/v1/text/chat``).
 
-        # New SDK: ibm_watsonx_ai
+        Chat applies each model's own chat template to the system+user roles, so instruct
+        models answer the question instead of continuing it. Falls back to the deprecated
+        text-generation endpoint only for a model that does not serve chat.
+        """
+        from ibm_watsonx_ai import Credentials
+        from ibm_watsonx_ai.foundation_models import ModelInference
+
+        # Build the client once per agent: each ModelInference() re-authenticates,
+        # and per-call construction trips watsonx's IAM / API-call rate limits.
+        model = getattr(self, "_wx_model", None)
+        if model is None:
+            credentials = Credentials(url=WATSONX_URL, api_key=self.watsonx_api_key)
+            model = self._wx_model = ModelInference(
+                model_id=self.model_id,
+                credentials=credentials,
+                project_id=self.watsonx_project_id,
+            )
+        chat_params = {"max_tokens": self.max_new_tokens, "temperature": self.temperature}
         try:
-            from ibm_watsonx_ai import Credentials
+            response = model.chat(messages=messages, params=chat_params)
+            return response["choices"][0]["message"]["content"]
+        except Exception as chat_err:  # noqa: BLE001
+            msg = str(chat_err).lower()
+            # Only fall back when the model genuinely doesn't serve chat; re-raise
+            # transient/credential errors so call_llm's retry logic can handle them.
+            if "not support" not in msg and "function" not in msg:
+                raise
             from ibm_watsonx_ai.metanames import GenTextParamsMetaNames as GenParams
             from ibm_watsonx_ai.foundation_models.utils.enums import DecodingMethods
-            from ibm_watsonx_ai.foundation_models import ModelInference
 
-            parameters = {
+            gen_params = {
                 GenParams.MIN_NEW_TOKENS: 0,
                 GenParams.MAX_NEW_TOKENS: self.max_new_tokens,
                 GenParams.DECODING_METHOD: DecodingMethods.GREEDY,
                 GenParams.REPETITION_PENALTY: 1,
                 GenParams.STOP_SEQUENCES: ["<|endoftext|>"],
             }
-            credentials = Credentials(url=WATSONX_URL, api_key=self.watsonx_api_key)
-            model = ModelInference(
-                model_id=self.model_id,
-                params=parameters,
-                credentials=credentials,
-                project_id=self.watsonx_project_id,
-            )
-            response = model.generate_text(prompt=[prompt])
+            prompt = self._messages_to_text(messages)
+            response = model.generate_text(prompt=[prompt], params=gen_params)
             return response[0]() if callable(response[0]) else response[0]
-        except ImportError:
-            pass
-
-        # Legacy SDK: ibm_watson_machine_learning
-        from ibm_watson_machine_learning.foundation_models import Model
-        from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenParams
-
-        parameters = {
-            GenParams.MIN_NEW_TOKENS: 0,
-            GenParams.MAX_NEW_TOKENS: self.max_new_tokens,
-            GenParams.DECODING_METHOD: "greedy",
-            GenParams.REPETITION_PENALTY: 1,
-            GenParams.STOP_SEQUENCES: ["<|endoftext|>"],
-        }
-        model = Model(
-            model_id=self.model_id,
-            params=parameters,
-            credentials={"url": WATSONX_URL, "apikey": self.watsonx_api_key},
-            project_id=self.watsonx_project_id,
-        )
-        response = model.generate_text(prompt=[prompt])
-        return response[0]() if callable(response[0]) else response[0]
 
     # ------------------------------------------------------------------ #
     # Public API
     # ------------------------------------------------------------------ #
-    def call_llm(self, prompt: str, system_prompt: str = "", max_retries: int = 3) -> str:
+    def call_llm(self, prompt: str, system_prompt: str = "", max_retries: int = 6) -> str:
         """Call the configured LLM and return the generated text.
 
         Transient errors are retried with exponential backoff. On unrecoverable
@@ -458,12 +458,12 @@ class LLMAgent:
                 final_text = (generated_text or "").strip()
                 if self.use_cache and final_text:
                     LLMAgent._cache[cache_key] = final_text
-                    LLMAgent._save_cache()
+                    LLMAgent._save_cache(cache_key)
                 return final_text
             except Exception as e:
                 last_error = e
                 if self._is_retryable_error(e) and attempt < max_retries - 1:
-                    wait_time = 2 ** (attempt + 1)  # 2s, 4s, 8s
+                    wait_time = 2 ** (attempt + 1)  # 2s, 4s, ... 32s
                     print(
                         f"[retry {attempt + 1}/{max_retries}] {type(e).__name__}: "
                         f"{str(e)[:120]} -- retrying in {wait_time}s"
@@ -477,7 +477,7 @@ class LLMAgent:
         return f"Error calling LLM after {max_retries} attempts: {str(last_error)}"
 
     # Convenience alias for message-style callers.
-    def call(self, user_prompt: str, system_prompt: str = "", max_retries: int = 3) -> str:
+    def call(self, user_prompt: str, system_prompt: str = "", max_retries: int = 6) -> str:
         return self.call_llm(user_prompt, system_prompt=system_prompt, max_retries=max_retries)
 
 

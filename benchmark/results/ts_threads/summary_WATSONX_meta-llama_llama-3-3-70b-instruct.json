@@ -1,0 +1,28 @@
+{
+  "model": "meta-llama/llama-3-3-70b-instruct",
+  "service": "WATSONX",
+  "dataset": "ts_threads.json",
+  "n": 208,
+  "errors": 0,
+  "overall_acc": 0.16826923076923078,
+  "by_qtype": {
+    "troubleshooting": {
+      "n": 208,
+      "acc": 0.16826923076923078
+    }
+  },
+  "by_domain": {
+    "TDO": {
+      "n": 5,
+      "acc": 0.4
+    },
+    "TSF": {
+      "n": 67,
+      "acc": 0.19402985074626866
+    },
+    "TSO": {
+      "n": 136,
+      "acc": 0.14705882352941177
+    }
+  }
+}

@@ -21,6 +21,7 @@ import json
 import re
 import sys
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -36,9 +37,13 @@ QTYPE_NAME = {0: "mcq", 1: "open", 2: "troubleshooting"}
 LETTERS = ("A", "B", "C", "D")
 
 JUDGE_SYS = (
-    "You grade answers to IT-operations questions. Given the question, the reference answer, "
-    "and a candidate answer, decide whether the candidate is correct, i.e. factually equivalent "
-    "to the reference. Reply with ONLY 'YES' or 'NO'."
+    "You are a STRICT grader for IT-operations question answering. You are given the question, "
+    "the reference (gold) answer, a reference explanation, and a candidate answer. Mark the "
+    "candidate CORRECT only if it states the same core conclusion as the reference: the specific "
+    "root cause, fix, command, or value must actually match. Mark it INCORRECT if it is vague or "
+    "hedged, only partially correct, omits the key point, contradicts the reference, leads with a "
+    "different primary claim, or merely restates the question. Being plausible or topically related "
+    "is NOT sufficient. When in doubt, answer NO. Reply with ONLY 'YES' or 'NO'."
 )
 
 
@@ -81,7 +86,17 @@ def judge_prompt(rec, candidate):
     return (f"Question:\n{rec['question'].strip()}\n\n"
             f"Reference answer:\n{rec['answer']}\n\n"
             f"Reference explanation:\n{rec.get('solution', '')}\n\n"
-            f"Candidate answer:\n{candidate}\n\nIs the candidate correct? (YES/NO):")
+            f"Candidate answer:\n{candidate}\n\nIs the candidate correct? Your first word must be YES or NO:")
+
+
+def parse_verdict(text):
+    """YES/NO from a judge reply: the leading word if it is one, else the last YES/NO mentioned."""
+    t = text.strip().upper()
+    m = re.match(r"\W*(YES|NO)\b", t)
+    if m:
+        return m.group(1)
+    found = re.findall(r"\b(YES|NO)\b", t)
+    return found[-1] if found else None
 
 
 def score_record(rec, agent, judge):
@@ -95,8 +110,10 @@ def score_record(rec, agent, judge):
     if err:
         return {"raw": raw, "pred": None, "correct": False, "error": True}
     verdict = judge.call(judge_prompt(rec, raw), system_prompt=JUDGE_SYS)
-    return {"raw": raw, "pred": raw[:200], "correct": verdict.strip().upper().startswith("Y"),
-            "error": False, "judge": verdict.strip()[:8]}
+    v = parse_verdict(verdict)
+    return {"raw": raw, "pred": raw[:200], "correct": v == "YES",
+            # An empty or unparseable verdict is an error, so --resume asks the judge again.
+            "error": v is None, "judge": v or verdict.strip()[:300]}
 
 
 def acc(rows):
@@ -115,6 +132,10 @@ def main():
     ap.add_argument("--judge-model", default=None, help="judge model (default: same as --model)")
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--out-dir", default=str(HERE / "results"))
+    ap.add_argument("--qtypes", default="", help="comma list of qtypes to keep: mcq,open,troubleshooting")
+    ap.add_argument("--workers", type=int, default=1, help="records scored in parallel")
+    ap.add_argument("--resume", action="store_true",
+                    help="reuse non-error rows from an existing preds file; re-run only the rest")
     args = ap.parse_args()
 
     data_path = resolve_data(args.data)
@@ -126,25 +147,46 @@ def main():
         data = [r for qt in sorted(by) for r in by[qt][: args.stratify]]
     elif args.limit:
         data = data[: args.limit]
+    if args.qtypes:
+        keep = {qt for qt, name in QTYPE_NAME.items() if name in args.qtypes.split(",")}
+        data = [r for r in data if r["qtype"] in keep]
     print(f"dataset: {data_path.name} | evaluating {len(data)} records | model: {args.model}")
 
     agent = LLMAgent(service=args.service, model_name=args.model, temperature=args.temperature, use_cache=True)
     judge = LLMAgent(service=args.judge_service or args.service,
-                     model_name=args.judge_model or args.model, temperature=0.0, use_cache=True)
+                     model_name=args.judge_model or args.model, temperature=0.0, max_tokens=4096,
+                     use_cache=True)
 
     slug = re.sub(r"[^A-Za-z0-9.-]+", "_", f"{args.service}_{args.model}")
     out = Path(args.out_dir)
     out.mkdir(parents=True, exist_ok=True)
     preds_path, summ_path = out / f"preds_{slug}.jsonl", out / f"summary_{slug}.json"
 
+    done = {}
+    if args.resume and preds_path.exists():
+        for line in preds_path.read_text().splitlines():
+            row = json.loads(line)
+            if not row["error"] and (row["qtype"] == 0 or row.get("judge") in ("YES", "NO")):
+                done[row["id"]] = row
+        print(f"resuming: {len(done)} scored rows reused")
+
+    def score(rec):
+        return None if rec["id"] in done else score_record(rec, agent, judge)
+
     results = []
-    with preds_path.open("w") as pf:
-        for i, rec in enumerate(data, 1):
-            r = score_record(rec, agent, judge)
+    with preds_path.open("w") as pf, ThreadPoolExecutor(args.workers) as ex:
+        for i, (rec, r) in enumerate(zip(data, ex.map(score, data)), 1):
+            if r is None:
+                saved = done[rec["id"]]
+                results.append({k: v for k, v in saved.items() if k != "raw"})
+                pf.write(json.dumps(saved) + "\n")
+                continue
             row = {"id": rec["id"], "qtype": rec["qtype"], "domain": domain_of(rec),
-                   "correct": r["correct"], "error": r["error"], "pred": r.get("pred")}
+                   "correct": r["correct"], "error": r["error"], "pred": r.get("pred"),
+                   "judge": r.get("judge")}
             results.append(row)
-            pf.write(json.dumps({**row, "raw": r["raw"][:500]}) + "\n")
+            pf.write(json.dumps({**row, "raw": r["raw"][:4000]}) + "\n")
+            pf.flush()
             if i % 25 == 0 or i == len(data):
                 print(f"  {i}/{len(data)}")
 

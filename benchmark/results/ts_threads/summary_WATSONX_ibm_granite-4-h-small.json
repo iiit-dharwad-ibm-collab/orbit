@@ -1,0 +1,28 @@
+{
+  "model": "ibm/granite-4-h-small",
+  "service": "WATSONX",
+  "dataset": "ts_threads.json",
+  "n": 208,
+  "errors": 0,
+  "overall_acc": 0.125,
+  "by_qtype": {
+    "troubleshooting": {
+      "n": 208,
+      "acc": 0.125
+    }
+  },
+  "by_domain": {
+    "TDO": {
+      "n": 5,
+      "acc": 0.2
+    },
+    "TSF": {
+      "n": 67,
+      "acc": 0.11940298507462686
+    },
+    "TSO": {
+      "n": 136,
+      "acc": 0.125
+    }
+  }
+}

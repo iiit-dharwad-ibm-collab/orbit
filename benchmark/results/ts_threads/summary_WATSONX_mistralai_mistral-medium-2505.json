@@ -1,0 +1,28 @@
+{
+  "model": "mistralai/mistral-medium-2505",
+  "service": "WATSONX",
+  "dataset": "ts_threads.json",
+  "n": 208,
+  "errors": 0,
+  "overall_acc": 0.16826923076923078,
+  "by_qtype": {
+    "troubleshooting": {
+      "n": 208,
+      "acc": 0.16826923076923078
+    }
+  },
+  "by_domain": {
+    "TDO": {
+      "n": 5,
+      "acc": 0.0
+    },
+    "TSF": {
+      "n": 67,
+      "acc": 0.14925373134328357
+    },
+    "TSO": {
+      "n": 136,
+      "acc": 0.18382352941176472
+    }
+  }
+}

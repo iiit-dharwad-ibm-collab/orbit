@@ -18,3 +18,9 @@ venv/
 # (balajinix/itopsgraph_docs @ pinned commit). Never commit it — see grounding refs
 # in IAA-Labelling/combined_export.fixed.json which point here by repo+commit.
 /grounding_docs
+
+# Benchmark response caches and run logs (logs record watsonx project IDs)
+*.db
+benchmark/logs/
+# Expert grading answer key: must not be visible to the graders (public repo)
+Results/Expansion/ts_threads/human_check/key/

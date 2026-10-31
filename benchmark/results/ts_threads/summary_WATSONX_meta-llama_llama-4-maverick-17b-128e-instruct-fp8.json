@@ -1,0 +1,28 @@
+{
+  "model": "meta-llama/llama-4-maverick-17b-128e-instruct-fp8",
+  "service": "WATSONX",
+  "dataset": "ts_threads.json",
+  "n": 208,
+  "errors": 0,
+  "overall_acc": 0.2692307692307692,
+  "by_qtype": {
+    "troubleshooting": {
+      "n": 208,
+      "acc": 0.2692307692307692
+    }
+  },
+  "by_domain": {
+    "TDO": {
+      "n": 5,
+      "acc": 0.2
+    },
+    "TSF": {
+      "n": 67,
+      "acc": 0.31343283582089554
+    },
+    "TSO": {
+      "n": 136,
+      "acc": 0.25
+    }
+  }
+}

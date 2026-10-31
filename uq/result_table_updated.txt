@@ -1,0 +1,322 @@
+==========================================================================================
+SIMBA-UQ DATASET-DIFFICULTY ANALYSIS — UPDATED REPORT (cleaned corpus)
+==========================================================================================
+
+Corpus: combined_export.fixed.json (cleaned & re-indexed; see cleaning_report.json).
+Reference: Bhattacharjya, Mirylenka, Glass & Shou. SIMBA-UQ. EMNLP 2025.
+
+Metric definitions (self-contained, paraphrased from SIMBA-UQ §3.2 / §4.1):
+  ATS  (Accuracy from Top Selection) — fraction of items where
+        argmax(confidence) coincides with the binary reward. ↑
+  ACE  (Adaptive Calibration Error)  — mean |acc - conf| over K=2
+        classes × B=5 equal-count adaptive bins per class. ↓
+  AUROC (Area Under ROC)             — confidence vs binary reward. ↑
+  All five SIMBA-UQ methods are evaluated: arith-agg, spec-ecc,
+  bayes-beta, clf-pairs, clf-pairs+gen (here labelled clf-mean+gen).
+  5 random 50/50 train/test splits; report mean ± std.
+
+==========================================================================================
+TABLE 1: Main UQ Comparison (qtype=0, Jaccard similarity, letter-match reward)
+  n_items = 2513
+==========================================================================================
+Method              ATS ↑                 ACE ↓                 AUROC ↑               
+------------------------------------------------------------------------------------------
+arith-agg           0.291±0.007           0.493±0.001           0.529±0.002           
+spec-ecc            0.225±0.010           0.423±0.006           0.462±0.008           
+bayes-beta          0.291±0.008           0.500±0.000           0.529±0.002           
+clf-pairs           0.320±0.016           0.506±0.000           0.560±0.008           
+clf-mean+gen        0.334±0.007           0.488±0.002           0.585±0.008           
+
+==========================================================================================
+TABLE 2: UQ Comparison Across Question Types (Jaccard similarity)
+==========================================================================================
+
+--- qtype_0 (n_items=2513) ---
+Method              ATS ↑                 ACE ↓                 AUROC ↑               
+------------------------------------------------------------------------------------------
+arith-agg           0.291±0.007           0.493±0.001           0.529±0.002           
+spec-ecc            0.225±0.010           0.423±0.006           0.462±0.008           
+bayes-beta          0.291±0.008           0.500±0.000           0.529±0.002           
+clf-pairs           0.320±0.016           0.506±0.000           0.560±0.008           
+clf-mean+gen        0.334±0.007           0.488±0.002           0.585±0.008           
+
+--- qtype_1 (n_items=532) ---
+Method              ATS ↑                 ACE ↓                 AUROC ↑               
+------------------------------------------------------------------------------------------
+arith-agg           0.000±0.000           0.589±0.004           0.046±0.002           
+spec-ecc            0.937±0.006           0.476±0.004           0.904±0.004           
+bayes-beta          1.000±0.000           0.682±0.003           0.954±0.002           
+clf-pairs           1.000±0.000           0.440±0.003           0.984±0.003           
+clf-mean+gen        1.000±0.000           0.440±0.003           0.983±0.003           
+
+--- qtype_2 (n_items=58) ---
+Method              ATS ↑                 ACE ↓                 AUROC ↑               
+------------------------------------------------------------------------------------------
+arith-agg           1.000±0.000           0.477±0.000           0.999±0.000           
+spec-ecc            0.000±0.000           0.456±0.000           0.324±0.003           
+bayes-beta          1.000±0.000           0.503±0.000           0.999±0.000           
+clf-pairs           1.000±0.000           0.501±0.001           1.000±0.000           
+clf-mean+gen        1.000±0.000           0.502±0.002           1.000±0.000           
+
+==========================================================================================
+TABLE 3: Similarity Metric Ablation (qtype=0)
+==========================================================================================
+
+--- Similarity Metric: jaccard (n_items=2513) ---
+Method              ATS ↑                 ACE ↓                 AUROC ↑               
+------------------------------------------------------------------------------------------
+arith-agg           0.291±0.007           0.493±0.001           0.529±0.002           
+spec-ecc            0.225±0.010           0.423±0.006           0.462±0.008           
+bayes-beta          0.291±0.008           0.500±0.000           0.529±0.002           
+clf-pairs           0.320±0.016           0.506±0.000           0.560±0.008           
+clf-mean+gen        0.334±0.007           0.488±0.002           0.585±0.008           
+
+--- Similarity Metric: rouge1 (n_items=2513) ---
+Method              ATS ↑                 ACE ↓                 AUROC ↑               
+------------------------------------------------------------------------------------------
+arith-agg           0.265±0.004           0.472±0.005           0.516±0.002           
+spec-ecc            0.231±0.011           0.418±0.002           0.481±0.008           
+bayes-beta          0.265±0.004           0.500±0.000           0.516±0.002           
+clf-pairs           0.323±0.008           0.507±0.001           0.569±0.008           
+clf-mean+gen        0.320±0.010           0.492±0.002           0.584±0.009           
+
+--- Similarity Metric: rougeL (n_items=2513) ---
+Method              ATS ↑                 ACE ↓                 AUROC ↑               
+------------------------------------------------------------------------------------------
+arith-agg           0.267±0.005           0.475±0.005           0.516±0.002           
+spec-ecc            0.235±0.010           0.417±0.002           0.486±0.009           
+bayes-beta          0.267±0.005           0.500±0.000           0.516±0.002           
+clf-pairs           0.320±0.010           0.489±0.002           0.565±0.006           
+clf-mean+gen        0.318±0.007           0.492±0.002           0.582±0.006           
+
+==========================================================================================
+TABLE 4: Sample-Size Ablation (qtype=0, Jaccard similarity) — ACE only
+==========================================================================================
+
+--- Subset size k = 2 (n_items=2513) ---
+Method              ACE ↓                 
+--------------------------------------------------
+arith-agg           0.487±0.002           
+spec-ecc            0.500±0.000           
+bayes-beta          0.500±0.000           
+clf-pairs           0.500±0.000           
+clf-mean+gen        0.484±0.004           
+
+--- Subset size k = 3 (n_items=2513) ---
+Method              ACE ↓                 
+--------------------------------------------------
+arith-agg           0.488±0.003           
+spec-ecc            0.473±0.009           
+bayes-beta          0.500±0.000           
+clf-pairs           0.503±0.001           
+clf-mean+gen        0.488±0.002           
+
+--- Subset size k = 4 (n_items=2513) ---
+Method              ACE ↓                 
+--------------------------------------------------
+arith-agg           0.493±0.001           
+spec-ecc            0.424±0.004           
+bayes-beta          0.500±0.000           
+clf-pairs           0.506±0.000           
+clf-mean+gen        0.488±0.002           
+
+==========================================================================================
+TABLE 5: ROUGE-L Threshold Ablation (qtype=0, Jaccard similarity) — ACE only
+==========================================================================================
+
+--- Threshold = 0.3 (n_items=1731) ---
+Method              ACE ↓                 
+--------------------------------------------------
+arith-agg           0.512±0.002           
+bayes-beta          0.500±0.000           
+clf-pairs           0.451±0.009           
+
+--- Threshold = 0.5 (n_items=1494) ---
+Method              ACE ↓                 
+--------------------------------------------------
+arith-agg           0.496±0.001           
+bayes-beta          0.500±0.000           
+clf-pairs           0.493±0.010           
+
+--- Threshold = 0.7 (n_items=33) ---
+Method              ACE ↓                 
+--------------------------------------------------
+arith-agg           0.452±0.009           
+bayes-beta          0.503±0.000           
+clf-pairs           0.518±0.017           
+
+==========================================================================================
+TABLE 6: Reward Definition Comparison (qtype=0, Jaccard similarity)
+==========================================================================================
+
+--- Reward: letter_match (n_items=2513) ---
+Method              ATS ↑                 ACE ↓                 AUROC ↑               
+------------------------------------------------------------------------------------------
+arith-agg           0.291±0.007           0.493±0.001           0.529±0.002           
+spec-ecc            0.225±0.010           0.423±0.006           0.462±0.008           
+bayes-beta          0.291±0.008           0.500±0.000           0.529±0.002           
+clf-pairs           0.320±0.016           0.506±0.000           0.560±0.008           
+clf-mean+gen        0.334±0.007           0.488±0.002           0.585±0.008           
+
+--- Reward: rouge_l_0.5 (n_items=1494) ---
+Method              ATS ↑                 ACE ↓                 AUROC ↑               
+------------------------------------------------------------------------------------------
+arith-agg           0.269±0.006           0.496±0.001           0.500±0.007           
+spec-ecc            0.244±0.014           0.418±0.002           0.487±0.008           
+bayes-beta          0.235±0.010           0.500±0.000           0.500±0.007           
+clf-pairs           0.302±0.014           0.493±0.010           0.554±0.010           
+clf-mean+gen        0.346±0.019           0.506±0.006           0.604±0.009           
+
+==========================================================================================
+TABLE 7: Dataset Structural Statistics (cleaned corpus)
+==========================================================================================
+
+Total items: 3178
+
+Question Type Distribution:
+  qtype=0: 2513 (79.1%)
+  qtype=1: 532 (16.7%)
+  qtype=2: 133 (4.2%)
+
+Answer Letter Distribution (MCQ items):
+  A: 596 (23.2%)
+  B: 831 (32.3%)
+  C: 573 (22.3%)
+  D: 571 (22.2%)
+
+--- qtype=0 Statistics ---
+  Count: 2513
+  Question length: 13.56 ± 4.06 tokens
+  Choice length: 10.18 ± 11.61 tokens
+  Solution length: 26.84 ± 16.12 tokens
+  Grounding sources: 0.95 (avg)
+  Multi-source: 0.0%
+
+--- qtype=1 Statistics ---
+  Count: 532
+  Question length: 14.85 ± 6.11 tokens
+  Solution length: 30.32 ± 21.12 tokens
+  Grounding sources: 1.22 (avg)
+  Multi-source: 56.0%
+
+--- qtype=2 Statistics ---
+  Count: 133
+  Question length: 25.64 ± 11.73 tokens
+  Choice length: 10.84 ± 4.59 tokens
+  Solution length: 30.21 ± 3.26 tokens
+  Grounding sources: 0.44 (avg)
+  Multi-source: 0.0%
+
+==========================================================================================
+TABLE 8: Per-Domain Difficulty Ranking (qtype=0, Jaccard similarity, arith-agg)
+  Bucketing: id_prefix (technology) and source_title (grounding host).
+  Filtered to domains with ≥3 items.
+==========================================================================================
+
+--- View: id_prefix (11 domains with n≥3) ---
+Domain                      Count   ATS ↑       ACE ↓       
+----------------------------------------------------------------
+
+  Top 15 Hardest (lowest ATS):
+  redis                       4       0.000       0.487       
+  kafka                       4       0.000       0.493       
+  vault                       3       0.000       0.000       
+  consul                      3       0.000       0.000       
+  postgresql                  3       0.000       0.000       
+  prometheus                  3       0.000       0.000       
+  grafana                     3       0.000       0.000       
+  etcd                        3       0.000       0.000       
+  rabbitmq                    3       0.000       0.000       
+  nginx                       4       0.250       0.487       
+  dp                          2389    0.305       0.492       
+
+  Top 15 Easiest (highest ATS):
+  redis                       4       0.000       0.487       
+  kafka                       4       0.000       0.493       
+  vault                       3       0.000       0.000       
+  consul                      3       0.000       0.000       
+  postgresql                  3       0.000       0.000       
+  prometheus                  3       0.000       0.000       
+  grafana                     3       0.000       0.000       
+  etcd                        3       0.000       0.000       
+  rabbitmq                    3       0.000       0.000       
+  nginx                       4       0.250       0.487       
+  dp                          2389    0.305       0.492       
+
+--- View: source_title (10 domains with n≥3) ---
+Domain                      Count   ATS ↑       ACE ↓       
+----------------------------------------------------------------
+
+  Top 15 Hardest (lowest ATS):
+  stackoverflow               4       0.000       0.497       
+  how can i use local docker  3       0.000       0.000       
+  docker                      4       0.000       0.493       
+  nginx                       3       0.000       0.000       
+  no_grounding                120     0.000       0.500       
+  packer                      3       0.333       0.000       
+  unknown                     5       0.400       0.499       
+  concert                     3       0.667       0.000       
+  terraform                   3       0.667       0.000       
+  nginx                       3       0.667       0.000       
+
+  Top 15 Easiest (highest ATS):
+  stackoverflow               4       0.000       0.497       
+  how can i use local docker  3       0.000       0.000       
+  docker                      4       0.000       0.493       
+  nginx                       3       0.000       0.000       
+  no_grounding                120     0.000       0.500       
+  packer                      3       0.333       0.000       
+  unknown                     5       0.400       0.499       
+  concert                     3       0.667       0.000       
+  terraform                   3       0.667       0.000       
+  nginx                       3       0.667       0.000       
+
+==========================================================================================
+TABLE 9: Inter-Choice Similarity & Entropy (difficulty proxy, NOT a SIMBA-UQ metric)
+  Note: SIMBA-UQ does NOT produce a 'semantic entropy' / 'semantic
+  consistency' metric natively. The values reported here are an
+  information-theoretic proxy computed on the per-question similarity
+  distribution, used here as a difficulty signal only.
+==========================================================================================
+
+--- qtype_0 ---
+  Number of items: 2513
+  Entropy (normalised): 0.9643 ± 0.0760
+  Entropy range: [0.0000, 1.0000]
+  Mean pairwise similarity: 0.1651 ± 0.1318
+
+--- qtype_1 ---
+  Number of items: 532
+  Entropy (normalised): 0.8251 ± 0.0255
+  Entropy range: [0.7925, 0.8913]
+  Mean pairwise similarity: 0.5122 ± 0.4880
+
+--- qtype_2 ---
+  Number of items: 58
+  Entropy (normalised): 0.9089 ± 0.0232
+  Entropy range: [0.9026, 0.9943]
+  Mean pairwise similarity: 0.0480 ± 0.0432
+
+==========================================================================================
+TABLE 10: Classifier Stability Diagnostic (qtype=0, Jaccard similarity)
+  Reports mean ± std of ATS/ACE/AUROC across 3 random seeds × 5 splits
+  to confirm the inter-run discrepancy reported in the legacy run has
+  been resolved by using a fixed-length feature vector in clf-mean+gen.
+==========================================================================================
+Method              ATS ↑                 ACE ↓                 AUROC ↑               
+------------------------------------------------------------------------------------------
+clf-pairs           0.316±0.004           0.505±0.001           0.560±0.001           
+clf-mean+gen        0.332±0.003           0.489±0.001           0.585±0.002           
+
+==========================================================================================
+TABLE 11: Cross-qtype Difficulty Summary
+==========================================================================================
+qtype   n       Best method     ATS       ACE       AUROC     
+----------------------------------------------------------------
+0       2513    clf-mean+gen    0.334     0.488     0.585     
+1       532     clf-pairs       1.000     0.440     0.984     
+2       58      clf-pairs       1.000     0.501     1.000     
+
+==========================================================================================
+END OF UPDATED REPORT
+==========================================================================================
