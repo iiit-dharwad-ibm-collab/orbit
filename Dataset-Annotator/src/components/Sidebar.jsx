@@ -7,10 +7,12 @@ import { logout, getUsername } from "@/lib/api";
 const NAV_ITEMS = [
   { href: "/dashboard", icon: "📊", label: "Dashboard" },
   { href: "/create", icon: "✏️", label: "Create Entry" },
+  { href: "/mcp", icon: "🛰️", label: "MCP Studio" },
   { href: "/knowledge", icon: "📚", label: "Knowledge Base" },
   { href: "/leaderboard", icon: "🏆", label: "Leaderboard" },
   { href: "/browse", icon: "🔍", label: "Browse & Export" },
   { href: "/help", icon: "🧭", label: "Help & Training" },
+  { href: "/blog", icon: "📝", label: "Blog" },
 ];
 
 export default function Sidebar() {

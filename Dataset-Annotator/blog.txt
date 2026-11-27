@@ -1,0 +1,173 @@
+ITOps Dataset Creation Methodology
+==================================
+
+# Overview
+
+1000_mcq.html is a standalone practice and evaluation lab containing 1,000 multi-select ITOps questions. Each question describes an on-call incident, lists the evidence the responder has confirmed, and offers six or seven options. More than one option is correct, and an answer scores only if it picks exactly the right set. Every question cites the official documentation for the system involved. This post explains how the questions were built, how they were checked against documentation, and how the file is put together.
+
+# The dataset at a glance
+
+  questions           1,000 multi-select MCQs (qtype 3), 6 or 7 options each
+  incident_families   100 authored incidents, 10 option-set variants per family
+  domains             Kubernetes 150, PostgreSQL 120, Automation and PKI 120,
+                      Kafka 100, Linux 100, NGINX and TLS 100, Observability 100,
+                      Redis 80, RabbitMQ 80, etcd 50
+  answer_sizes        2 correct (200), 3 correct (500), 4 correct (300)
+  grounding           1,390 citations from 55 unique official documentation pages
+  source_clusters     26 topic clusters that group related families
+
+# Step 1: Start from documentation
+
+Before any question was written, we chose 55 official documentation pages. Each page explains one operational mechanism, for example how a Service selects its pods, why autovacuum falls behind, or how a Redis eviction policy picks keys. The pages come only from each project's own documentation sites:
+
+  - kubernetes.io (Debug Services, DNS debugging, probes, disruptions, network policies, autoscaling)
+  - postgresql.org, PostgreSQL 17 (vacuuming, hot standby, replication, PITR, locking, EXPLAIN)
+  - kafka.apache.org, Kafka 4.1 (design, producer, consumer and topic configuration)
+  - nginx.org, docs.kernel.org and man7.org (proxying, upstreams, TLS, cgroup v2, PSI, sysctl, syscalls)
+  - prometheus.io and opentelemetry.io (alerting rules, histograms, query functions, collector resiliency)
+  - redis.io, rabbitmq.com and etcd.io (eviction, persistence, quorum queues, alarms, maintenance, disaster recovery)
+  - docs.ansible.com, argo-cd.readthedocs.io and cert-manager.io (handlers, check mode, sync waves, ACME troubleshooting)
+
+Each page was retrieved in a single pass on 2026-09-10 and its contents hashed. Every citation stores the URL, the retrieval time and a snapshot_sha256, so you can later tell whether a page has changed since the question was written.
+
+# Step 2: Author an incident family
+
+Each of the 100 families is one realistic incident written as an on-call engineer's request. For example, in "Healthy pods behind a silent Service", checkout requests fail even though the pods look healthy. The family then lists numbered evidence (E1, E2, ...) that the reader must treat as given:
+
+  E1. DNS resolves checkout to its expected ClusterIP.
+  E2. Requests to each pod IP on TCP 8080 succeed from the affected client pod.
+  E3. The Service selects app=checkout-v1, but every serving pod is labelled
+      app=checkout-v2; its EndpointSlice has no endpoints.
+  E4. No NetworkPolicy changed and there are no container restarts.
+
+The evidence is written so that the documented mechanism is the only explanation that fits. Here, the Debug Services page explains that a Service with no matching selector has no endpoints, so restarting DNS cannot help.
+
+# Step 3: Write eight candidate options per family
+
+Every family has exactly eight candidate options, each tagged with the role it plays:
+
+  cause               The diagnosis that the evidence supports.
+  fix                 The correct remediation, applied through declared config.
+  check               A check that confirms the diagnosis before acting.
+  verify              A recovery check that proves the fix worked.
+  original_proposal   The tempting first instinct (for example "restart CoreDNS"),
+                      which the evidence rules out.
+  misconception_1-3   Plausible but wrong statements that come from common
+                      misunderstandings of the mechanism.
+
+That gives four valid and four invalid options per family. Each option carries an explanation of why it is right or wrong, written against the specific evidence lines. These explanations form the worked solution shown after you submit.
+
+# Step 4: Expand each family into 10 variants
+
+One family produces 10 questions. Each variant shows a different subset of the eight options (six or seven of them) in a different order, so the number of correct answers changes from variant to variant. In family IRH-F001, the 10 variants have the answer sets BCD, ADE, AC, BDE, ADE, CDEG, ABDE, AD, ABFG and DEF, all drawn from the same eight option texts and the same evidence.
+
+Each variant is fingerprinted with an option_set_id, a SHA-256 hash of its exact option set. All 1,000 fingerprints are unique, so no two questions in the file are identical.
+
+# Step 5: Strict, variant-aware scoring
+
+The scoring rule is deliberately unforgiving:
+
+1. Confirm the variant first.
+   A response must copy the variant_ref (question_id, family_id, variant number and option_set_id). If it doesn't match the question shown, the response scores zero. This catches models that memorised a sibling variant.
+
+2. Require the exact set, in order.
+   selected_labels must exactly equal the correct labels in displayed A-to-G order. Missing, extra, duplicate or invalid labels all score zero. There is no partial credit.
+
+3. Review reasoning separately.
+   Each response also includes a judgment for every option. These judgments are graded against a separate rubric (rubrics.md) and never change the exact-match score.
+
+# Step 6: Verify against documentation
+
+Because the file claims every question is grounded in documentation, we re-checked that claim directly against the file:
+
+1. Every question is grounded.
+   All 1,000 records have at least one citation (630 have one, 350 have two, 20 have three). All 1,390 citations are of type official_project_documentation, and none comes from a blog, forum or AI-generated page.
+
+2. Every source is live.
+   We requested all 55 unique URLs and every one returned HTTP 200.
+
+3. Sources match their questions.
+   We spot-checked documentation pages against the questions that cite them. The Kubernetes "Debug Services" page explains selectors and EndpointSlices, which family IRH-F001 depends on. The Redis "Key eviction" page covers maxmemory and eviction policies. Kafka's producer configuration documents acks and idempotence. PostgreSQL's hot standby page covers the autovacuum behaviour behind replica-feedback bloat.
+
+4. Answer keys are consistent.
+   For all 1,000 records, answer equals correct_answers, and both equal the options marked is_correct.
+
+The file is honest about what is documented and what is not. Each citation says it "Documents mechanisms; incident observations and proposed interventions are synthetic." The technical facts come from the documentation, while the incident stories were written to exercise those facts.
+
+# Step 7: Package as a single HTML file
+
+All 1,000 records are embedded as JSON in one <script id="dataset"> tag (about 9 MB), followed by a small vanilla-JavaScript app. Nothing is fetched at runtime, so the file works offline and can be emailed or opened straight from disk. The app includes:
+
+  - Domain cards grouped by ITOps category (for example "Cluster Orchestration & Workload Mgmt" for Kubernetes).
+  - Search and filters by domain and option count, 20 questions per page.
+  - Tick-all-that-apply answering with exact-set checking, and a running score.
+  - After submitting, the full solution: every option marked correct or incorrect with its explanation, plus the cited documentation.
+
+# Step 8: Reproduce it through the app's MCP endpoint
+
+Dataset Annotator now has an MCP server at /api/mcp. It runs inside the Next.js app, uses the same JWT login, and writes to the same database. Each write tool accepts a whole batch:
+
+  expand_families     Turn authored families (stem, evidence, option pool, grounding)
+                      into variant records, validate them, and save. dry_run=true
+                      builds and checks the records without saving them.
+  create_examples     Validate and save up to 50 records per call (QA, MCQ or
+                      multi-select). Invalid items are skipped with reasons.
+  validate_examples   Re-check up to 100 saved rows by ID. Read-only.
+  review_examples     Record yes/no verdicts with corrections. Each review adds a version.
+  generate_drafts     Generate up to 20 LLM drafts in parallel, optionally grounded in
+                      the knowledge base, and save them in the same call.
+  get_example         Read back the latest version of a row.
+  list_topics         Read the topic registry.
+  search_knowledge    Semantic search over the knowledge base.
+
+For multi-select records, validation checks that the answer key matches the options marked is_correct, that labels are in display order, that answer_count and correct_answers agree with the answer, that variant_ref matches the record, and that every evidence line appears in the question text.
+
+To test whether the endpoint can reproduce the dataset, scripts/mcp_reproduce_check.mjs breaks 1000_mcq.html back into its 100 families and sends them through the endpoint with the official MCP client. The results:
+
+  reconstruction      100 families with 8 options each; no option text or
+                      explanation differs between variants of a family
+  content_match       1000/1000 rebuilt records match the originals field by field:
+                      question text, answer keys, solutions, evidence, grounding,
+                      variant_ref and expected_response
+  key_order           The only byte-level difference is key order inside options: in
+                      the original, incorrect options list explanation before is_correct
+  saved               1000/1000 saved through expand_families in about 1 second
+  round_trip          1000/1000 read back unchanged via get_example; the app adds
+                      only its derived concept_coverage
+  validation          1000/1000 saved rows pass validate_examples, and all raw records
+                      pass create_examples
+  negative_control    A tampered answer key and a missing evidence line are both rejected
+  review              A "no" verdict with correction A,D creates version 2; model_answer
+                      keeps the authored A,D,E
+
+One thing cannot be reproduced: the original option_set_id hashes. The recipe that produced them is not in the file, and none of the obvious serialisations match. The endpoint therefore keeps a given option_set_id unchanged and computes its own fingerprint only for new variants: sha256 of {family_id, ordered concept_ids}. Without an original hash, only solution, variant_ref and expected_response change, because they are the fields that contain the hash.
+
+To run the check yourself:
+
+  node scripts/mcp_reproduce_check.mjs --token <JWT>
+  node scripts/mcp_reproduce_check.mjs --token <JWT> --save
+
+# Connecting an agent
+
+  1. Log in to get a token:
+       curl -s -X POST http://localhost:3000/api/auth/login \
+         -H "Content-Type: application/json" \
+         -d '{"username":"<USERNAME>","password":"<PASSWORD>"}'
+
+  2. Register the server with Claude Code:
+       claude mcp add --transport http dataset-annotator \
+         http://localhost:3000/api/mcp \
+         --header "Authorization: Bearer <TOKEN>"
+
+  3. Ask in plain language:
+       "Expand these three incident families into 10 variants each, validate
+        them, save the ones that pass, and list any warnings."
+
+Locally, without DATABASE_URL, the app stores everything in dataset_generator.sqlite3. Create an account with POST /api/auth/register (or the Create Account page) and use it to get the token.
+
+# Known limits
+
+  - Review status is "author_reviewed_draft_requires_independent_expert_validation", so treat the answer keys as a strong draft rather than a certified benchmark.
+  - Difficulty is labelled "hard_intended_not_calibrated". No model or human baseline has been measured yet.
+  - Risk of leakage: options recur across the 10 variants of a family. When you split the data for training and evaluation, keep each whole family, in both its open-ended and MCQ forms, in the same split.
+  - Snapshot hashes are from 2026-09-10. If a page's hash changes, recheck the questions that cite it.

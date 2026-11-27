@@ -14,8 +14,8 @@ function getHeaders() {
 
 export async function api(path, options = {}) {
   const res = await fetch(`${API_BASE}${path}`, {
-    headers: getHeaders(),
     ...options,
+    headers: { ...getHeaders(), ...(options.headers || {}) },
   });
   if (res.status === 401) {
     if (typeof window !== "undefined") {
