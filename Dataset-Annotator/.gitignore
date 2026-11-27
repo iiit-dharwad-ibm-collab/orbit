@@ -20,10 +20,18 @@
 # production
 /build
 
+# local databases (SQLite fallback + WAL/journal files); they hold user accounts and data
+dataset_generator.sqlite3*
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-journal
+
 # misc
 .DS_Store
 *.pem
-dataset_generator.sqlite3
+*.log
 
 # debug
 npm-debug.log*
@@ -33,7 +41,14 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
-.env.local
+!.env.example
+
+# local tool / editor state
+.claude/settings.local.json
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
 # vercel
 .vercel
 

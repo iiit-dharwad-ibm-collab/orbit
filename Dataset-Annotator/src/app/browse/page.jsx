@@ -4,8 +4,8 @@ import { useRouter } from "next/navigation";
 import Sidebar from "@/components/Sidebar";
 import { apiJson, isLoggedIn } from "@/lib/api";
 
-const QTYPE_ICON = { 0: "🔵", 1: "🟢", 2: "🟡" };
-const QTYPE_LABEL = { 0: "MCQ", 1: "QA", 2: "Reasoning" };
+const QTYPE_ICON = { 0: "🔵", 1: "🟢", 2: "🟡", 3: "🟣" };
+const QTYPE_LABEL = { 0: "MCQ", 1: "QA", 2: "Reasoning", 3: "Multi-select" };
 
 export default function BrowseExportPage() {
   const router = useRouter();
@@ -217,6 +217,28 @@ export default function BrowseExportPage() {
                                 <strong>{l}.</strong> {content[l]}
                               </div>
                             ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {qt === 3 && (
+                        <div className="form-group">
+                          <label className="form-label">Choices (select all that apply)</label>
+                          <div style={{ fontSize: "0.85rem" }}>
+                            {(content.choices || []).map((text, i) => {
+                              const l = String.fromCharCode(65 + i);
+                              const correct = Array.isArray(content.answer) && content.answer.includes(l);
+                              return (
+                                <div key={l} style={{
+                                  padding: "0.3rem 0.6rem",
+                                  background: correct ? "#ECFDF5" : undefined,
+                                  borderRadius: "6px",
+                                  fontWeight: correct ? 600 : 400,
+                                }}>
+                                  <strong>{l}.</strong> {text}
+                                </div>
+                              );
+                            })}
                           </div>
                         </div>
                       )}

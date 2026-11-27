@@ -22,7 +22,7 @@ export default function DashboardPage() {
         apiJson("/api/vectors/stats"),
       ]);
 
-      const qtypeCounts = { 0: 0, 1: 0, 2: 0 };
+      const qtypeCounts = { 0: 0, 1: 0, 2: 0, 3: 0 };
       for (const ex of examples) {
         try {
           const content = JSON.parse(ex.latest_content || "{}");
@@ -36,6 +36,7 @@ export default function DashboardPage() {
         mcq: qtypeCounts[0],
         qa: qtypeCounts[1],
         reasoning: qtypeCounts[2],
+        multiSelect: qtypeCounts[3],
         wikiDocs: wikiDocs.length,
         vectorChunks: vectorStats.total_chunks || 0,
       });
@@ -81,6 +82,10 @@ export default function DashboardPage() {
             <div className="stat-card">
               <div className="stat-value">{stats.reasoning}</div>
               <div className="stat-label">Multi-step</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-value">{stats.multiSelect}</div>
+              <div className="stat-label">Multi-select</div>
             </div>
             <div className="stat-card">
               <div className="stat-value">{stats.wikiDocs}</div>

@@ -43,6 +43,7 @@ Internal web app to create, manage, and export ITOps training examples with opti
 - `src/app/knowledge`: wiki docs and embedding management
 - `src/app/browse`: detail view + export
 - `src/app/help`: interactive page-by-page training guide
+- `src/app/mcp`: MCP Studio, batch creation and review via `/api/mcp`
 - `src/app/api`: backend routes (auth, datasets, wiki, vectors, generate)
 - `src/lib/db.js`: Neon DB client + schema init
 - `src/lib/auth.js`: JWT + password helpers
@@ -138,6 +139,34 @@ AI + enrichment:
 - `GET /api/concepts`
 
 Most routes (except login/register) require `Authorization: Bearer <JWT>`.
+
+## MCP Server (batch creation and validation)
+
+`POST /api/mcp` is a stateless MCP server (Streamable HTTP, JSON responses) that uses the same Bearer JWT as the REST API.
+
+```bash
+claude mcp add --transport http dataset-annotator http://localhost:3000/api/mcp \
+  --header "Authorization: Bearer <TOKEN>"
+```
+
+Tools (each write tool takes a batch and returns a status for every item):
+
+- `expand_families`: authored incident families → multi-select (qtype 3) variant records; validate, then save (or `dry_run`)
+- `create_examples`: validate and save up to 50 QA/MCQ/multi-select records
+- `validate_examples`: re-check saved rows by id (or inline items); read-only
+- `review_examples`: annotator verdicts with corrections; each review adds a version
+- `generate_drafts`: parallel LLM drafts, optionally grounded in the knowledge base, with optional save
+- `get_example`, `list_topics`, `search_knowledge`
+
+The **MCP Studio** page (`/mcp`) calls the same tools from the browser:
+
+- **Family Builder**: write one incident (request, evidence, 8 tagged options, grounding), plan seeded unique variants, preview with a dry run, then save. Families can also be queued and saved together.
+- **AI Generate**: one objective per line → `generate_drafts`, optionally grounded and saved.
+- **Validate & Review**: validate a range of row IDs, then approve or correct them in bulk.
+
+Large batches are split automatically to fit the per-call limits, and every MCP call appears in the page's activity log.
+
+`scripts/mcp_reproduce_check.mjs --token <JWT> [--save]` rebuilds all 1,000 records of `1000_mcq.html` through the endpoint and compares them field by field.
 
 ## Annotation Workflow
 
