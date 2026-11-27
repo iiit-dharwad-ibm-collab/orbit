@@ -1,0 +1,9 @@
+Mode,Model,Standard,Adversarial,Gap
+zero_shot,Llama 3.3 70B Instruct,89.38,51.22,38.16
+zero_shot,Mistral Small 3.1 (24B),89.70,46.49,43.21
+zero_shot,Granite 4.0 H Small,83.18,41.89,41.29
+zero_shot,Mistral Medium (2505),89.99,52.43,37.56
+few_shot,Llama 3.3 70B Instruct,86.38,54.86,31.52
+few_shot,Mistral Small 3.1 (24B),88.80,55.00,33.80
+few_shot,Granite 4.0 H Small,85.36,48.92,36.44
+few_shot,Mistral Medium (2505),89.50,50.54,38.96

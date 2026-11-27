@@ -1,0 +1,7 @@
+| Model | MCQ | Open-ended | Troubleshooting | Overall |
+|---|---:|---:|---:|---:|
+| Llama 3.3 70B Instruct | 86.79 | 50.94 | 39.85 | 78.82 |
+| Mistral Small 3.1 (24B) | 88.38 | 46.43 | 24.81 | 78.70 |
+| Llama 4 Maverick (17B-128E) | 87.31 | 42.48 | 29.32 | 77.38 |
+| Granite 4.0 H Small | 83.92 | 42.48 | 34.59 | 74.92 |
+| Mistral Medium (2505) | 88.46 | 51.50 | 36.84 | 80.11 |
